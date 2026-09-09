@@ -17,7 +17,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = projects.find(item => item.slug === slug);
   if (!project) notFound();
   const category = categories.find(item => item.id === project.category)!;
-  return <GridlineShell current={project.name} category={project.category}>
+  return <GridlineShell current={project.name} category={project.category} project={project.slug}>
     <nav className="gl-breadcrumb" aria-label="Breadcrumb"><a href="/">Projects</a><span>/</span><a href={`/#${category.id}`}>{category.name}</a><span>/</span><span>{project.name}</span></nav>
     <section className="gl-introduction"><div><p className="gl-kicker">{project.fork ? 'FORK / UPSTREAM CREDITED BELOW' : category.name.toUpperCase()}</p><h1>{project.name}</h1><p>{project.summary}</p></div></section>
     <p className={project.category === 'hardware' ? 'gl-caution' : 'gl-state-line'}>{project.status}</p>

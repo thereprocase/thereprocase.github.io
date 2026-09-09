@@ -20,7 +20,7 @@ export const projects: Project[] = [
     description: 'Trio connects independent Claude Code sessions through an MCP server. Work locally with Trio, or connect machines through Quartet and Tailscale. Participants communicate asynchronously and claim tasks without duplicating work.',
     status: 'Developer tool · local and cross-machine workflows',
     highlights: ['Asynchronous channels, mentions, and atomic task claims.', 'A web dashboard with participant status and task visibility.', 'Setup instructions and a diagnostic tool for checking the connection.'],
-    links: [{ label: 'Setup & documentation', href: 'https://github.com/thereprocase/trio#installation' }],
+    links: [{ label: 'Open the Trio / nth site', href: '/trio/' }, { label: 'Choose local or cross-machine setup', href: '/trio/#setup' }],
   },
   {
     slug: 'lord-of-the-code', name: 'Lord of the Code', category: 'agent-collaboration', spotlight: true,
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description: 'A Claude Code skill that assigns review roles to a cast of Middle-earth characters. Choose a review formation, bring in the right specialists, and carry findings through fixes with the Scribe-Merge workflow.',
     status: 'Claude Code skill · review workflows',
     highlights: ['Specialized reviewer roles and selectable formations.', 'A packaged skill, agent definitions, and an install script.', 'Scribe-Merge connects review findings with the follow-up work.'],
-    links: [{ label: 'Install & choose a workflow', href: 'https://github.com/thereprocase/lord-of-the-code#readme' }],
+    links: [{ label: 'Open Lord of the Code', href: '/lord-of-the-code/' }, { label: 'Choose a review formation', href: '/lord-of-the-code/#formations' }],
   },
   {
     image: { src: '/dell-5560-wall-mount/assets/minimalist-with-envelopes.png', alt: 'Minimalist laptop wall mount CAD with laptop and fan envelopes' },
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     status: 'Geometry-checked prototype · printed fit and load testing remain',
     highlights: ['Functional STEP geometry for integration into your designs.', 'An allowed host volume to preserve insertion and removal clearance.', 'Movement analysis and explicit print-preparation limitations.'],
     image: { src: 'https://raw.githubusercontent.com/thereprocase/peg/main/visuals/conformal-hero.png', alt: 'Rendered conformal pegboard anchor and its curved bearing surfaces' },
-    links: [{ label: 'Downloads & integration guide', href: 'https://github.com/thereprocase/peg#current-downloads' }],
+    links: [{ label: 'Explore the conformal anchor', href: '/peg/' }, { label: 'Current CAD downloads', href: '/peg/#downloads' }, { label: 'Host integration & movement envelope', href: '/peg/#interface' }],
   },
   {
     image: { src: '/onshape-reference-align/images/workspace-preview.png', alt: 'Reference Align workspace using a sample image and local test account' },
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     status: 'Terminal utility · Bash required',
     highlights: ['Fourteen themes, from monochrome to retro terminals.', 'Context and rate-limit indicators alongside workspace details.', 'Install, theme-switching, and uninstall instructions.'],
     image: { src: 'https://raw.githubusercontent.com/thereprocase/claude-statusline/main/images/statusline-clean.svg', alt: 'Claude Code status line showing session and context indicators' },
-    links: [{ label: 'Themes & installation', href: 'https://github.com/thereprocase/claude-statusline#readme' }, { label: 'Companion usage heatmap', href: '/projects/claude-usage/' }],
+    links: [{ label: 'Explore the fourteen themes', href: '/claude-statusline/' }, { label: 'Install & configure', href: '/claude-statusline/#install' }, { label: 'Companion usage heatmap', href: '/claude-usage/' }],
   },
   {
     slug: 'claude-usage', name: 'Claude usage', category: 'developer-tools',
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     description: 'See when and where you use Claude Code without API calls or a separate account. Read local transcript data and optionally include rate-limit threshold markers recorded by the companion status line.',
     status: 'Local utility · Python standard library',
     highlights: ['Daily heatmap, session counts, and token summaries.', 'Project and model breakdowns from local data.', 'Launch instructions for Windows, macOS, and Linux.'],
-    links: [{ label: 'Preview & installation', href: '/claude-usage/' }, { label: 'Companion status line', href: '/projects/claude-statusline/' }],
+    links: [{ label: 'Preview & installation', href: '/claude-usage/' }, { label: 'Companion status line', href: '/claude-statusline/' }],
   },
   {
     slug: 'homekit-preview', name: 'HomeKit Preview', category: 'home-automation',
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     description: 'A Home Assistant integration shows bridge configuration in a room, device, and entity view. Preview the current filter, browse candidates, and apply changes to the selected HomeKit Bridge from one sidebar.',
     status: 'Home Assistant custom integration · early development',
     highlights: ['Bridge selection, entity previews, and room/device filters.', 'Visible warnings for broad domain inclusion.', 'A filter builder that can update and reload the selected bridge.'],
-    links: [{ label: 'Install & configure', href: 'https://github.com/thereprocase/homekit-preview#readme' }],
+    links: [{ label: 'Open HomeKit Preview', href: '/homekit-preview/' }, { label: 'Try the filter example', href: '/homekit-preview/#example' }, { label: 'Install with HACS', href: '/homekit-preview/#install' }],
   },
   ...[
     ['codex', 'Codex CLI', 'openai/codex', 'Working fork for coding-agent experiments, including the monitor workflow described in the repository.'],
@@ -108,3 +108,4 @@ export const projects: Project[] = [
 
 export const featuredProjects = projects.filter(project => !project.fork);
 export const sourceUrl = (project: Project) => `https://github.com/thereprocase/${project.slug}`;
+export const projectUrl = (project: Project) => project.fork ? `/projects/${project.slug}/` : `/${project.slug}/`;

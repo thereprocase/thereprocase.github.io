@@ -1,6 +1,6 @@
 # Gridline across the project network
 
-The public project directory and all four project sites use the user-supplied
+The public project directory and all nine project sites use the user-supplied
 **Gridline Design System.zip** (9 September 2026).
 
 | Site | Published files | Content |
@@ -10,6 +10,11 @@ The public project directory and all four project sites use the user-supplied
 | 5680-dock | `docs/` | Current D8 design, CAD viewers, archived studies |
 | onshape-reference-align | `docs/` | Downloads and setup guide |
 | claude-usage | repository root | Terminal preview and installation |
+| trio | `docs/` | Local and cross-machine setup, tool reference |
+| lord-of-the-code | `docs/` | Interactive formations, agent roster, installation |
+| peg | `docs/` | Current CAD, drawings, host envelope and evidence |
+| claude-statusline | `docs/` | 28 actual theme renders, setup and companions |
+| homekit-preview | `docs/` | Interactive filter explanation, HACS and manual setup |
 
 ## Design source
 
@@ -79,3 +84,40 @@ JavaScript errors. Desktop sticky navigation, phone menu expansion, category
 selection and menu closure passed. Screenshots were inspected at phone,
 tablet, desktop and 4K sizes. Movie files were excluded from these layout
 checks; their existing scientific content and playback files are unchanged.
+
+## Project identities and dedicated sites
+
+All nine featured projects now have their own sites, linked directly from the
+directory. The six upstream forks retain credited directory records.
+`themes.css` assigns a project field and border through `data-project`:
+Trio uses a cyan communication register; Lord of the Code an ink council with
+an amber review boundary; Peg a light engineering sheet; the wall mount a deep
+blue design journal with cyan flow sections; D8 an ink hardware bench;
+Reference Align a white calibration workbench; Statusline a terminal gallery;
+Usage a local analysis console; and HomeKit Preview a cyan bridge inspector.
+Blue underlined links and outlined controls retain their meaning throughout.
+
+`project.css` supplies the five new static sites. Their contents rail follows
+desktop scrolling and becomes an expandable sticky menu below 760 pixels.
+Wide screens arrange complementary sections side by side. Tables and terminal
+previews scroll locally, preserving readable text on very small screens.
+
+The formation chooser selects real documented roles and commands. Trio's
+setup controls switch between local and remote instructions. HomeKit's example
+uses explicitly synthetic entities and performs no network requests. The
+Statusline gallery renders actual theme functions at 42% and 85% sample context;
+`scripts/build-site-previews.py` in that repository records source hashes and
+does not consult an installed account or transcript data.
+
+The CFD adapter adds the wall-mount identity and shared theme stylesheet on
+every new report. Existing reports, CAD viewers and downloadable files retain
+their routes. The D8 embedded viewer hides the surrounding project chrome.
+
+The project-site expansion passed 264 browser layout checks over 44 routes at
+280, 390, 768, 1280, 1920 and 3840 pixels, with no page overflow or JavaScript
+errors. Thirty follow-up checks covered the final phone dimension strip,
+desktop menu visibility and terminal line spacing. All five formation choices,
+28 rendered theme previews, both Trio setup modes, HomeKit filter states,
+clipboard copying and the five responsive contents rails passed. Static checks
+covered 58 HTML files and 712 local URLs; 21 existing technical pages retained
+their IDs, media and scripts. The production build, export, types and lint passed.
