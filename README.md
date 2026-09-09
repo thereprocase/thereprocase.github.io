@@ -6,7 +6,7 @@ The public project directory, grouped by what each project does. Every listed
 repository has a landing page with its current status, source, and useful links.
 Trio and Lord of the Code lead the featured selection.
 
-The directory and thirteen project sites use the supplied Gridline design system, with labeled render panes,
+All ten sites use the supplied Gridline design system, with labeled render panes,
 semantic color blocks, sticky project navigation and ruled project registers.
 Layouts adapt from 280-pixel phones through 4K; links and actions have persistent
 visual cues. See
@@ -15,11 +15,10 @@ visual cues. See
 | Category | Featured projects |
 | --- | --- |
 | Agent collaboration | [Trio / nth](https://thereprocase.github.io/trio/), [Lord of the Code](https://thereprocase.github.io/lord-of-the-code/) |
-| Hardware & mechanisms | [Laptop wall mount](https://thereprocase.github.io/dell-5560-wall-mount/), [Precision 5680 desk dock](https://thereprocase.github.io/5680-dock/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/), [Net Hunter](https://thereprocase.github.io/net-hunter/) |
+| Hardware & mechanisms | [Laptop wall mount](https://thereprocase.github.io/dell-5560-wall-mount/), [Precision 5680 desk dock](https://thereprocase.github.io/5680-dock/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
 | CAD tools | [Reference Align for Onshape](https://thereprocase.github.io/onshape-reference-align/) |
-| Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/), [Claude usage](https://thereprocase.github.io/claude-usage/), [ControlTower](https://thereprocase.github.io/controltower/), [Phosphor desktop](https://thereprocase.github.io/phosphor-desktop/) |
+| Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/), [Claude usage](https://thereprocase.github.io/claude-usage/) |
 | Home automation | [HomeKit Preview](https://thereprocase.github.io/homekit-preview/) |
-| Music & practice | [BellCurve](https://thereprocase.github.io/saxophone-intonation-android/) |
 
 Public working forks appear separately under **Forks & upstream work**, with
 links to the original projects. The index itself is linked in the footer.
