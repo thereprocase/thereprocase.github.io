@@ -7,7 +7,9 @@ repository has a landing page with its current status, source, and useful links.
 Trio and Lord of the Code lead the featured selection.
 
 All five sites use the supplied Gridline design system, with labeled render panes,
-semantic color blocks, visible navigation and ruled project registers. See
+semantic color blocks, sticky project navigation and ruled project registers.
+Layouts adapt from 280-pixel phones through 4K; links and actions have persistent
+visual cues. See
 [Gridline maintenance notes](GRIDLINE.md) for the shared assets and publishing flow.
 
 | Category | Featured projects |

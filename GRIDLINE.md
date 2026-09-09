@@ -53,4 +53,29 @@ GitHub Pages build when a push does not trigger one.
 - Installation button state changes without reliance on a global event.
 - Live Pages deployment commits and served HTML/CSS after publishing.
 
-Browser visual and interaction testing was not run for this design port.
+## Responsive layout and interaction update
+
+The layout is verified from 280 CSS pixels through 3840 pixels. Phone layouts
+stack their panes, tablets use compact arrangements, and wide monitors gain
+additional columns. Content padding scales within bounds; technical prose
+keeps a readable line length while CAD and flow views can expand. Tables,
+terminal previews and long contents menus scroll inside their own regions.
+
+Project Groups stays in view while the desktop page scrolls. Below 900 pixels
+it becomes a sticky expandable bar. Selecting a category closes that menu and
+places the heading below it. Navigation and primary controls have larger touch
+areas on phone layouts.
+
+Underlined blue text identifies inline links. Outlined actions and persistent
+Open markers identify clickable rows and images. Static title strips, gray
+structure, white content, cyan flow sections and amber prototype notes have
+separate roles. The numbered decorative workflow strips were removed; the
+featured projects offer useful descriptions and working project/setup links.
+
+Browser checks covered all 39 unique routes and viewer modes at 15 widths:
+280, 320, 360, 390, 480, 600, 768, 900, 1024, 1280, 1440, 1760, 1920, 2560
+and 3840 pixels. All 585 layout checks passed with no page overflow or
+JavaScript errors. Desktop sticky navigation, phone menu expansion, category
+selection and menu closure passed. Screenshots were inspected at phone,
+tablet, desktop and 4K sizes. Movie files were excluded from these layout
+checks; their existing scientific content and playback files are unchanged.

@@ -1,6 +1,6 @@
 {
   "../../../thereprocase.github.io/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-PtfVbQDF.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-BeR2IOTN.js",
     "name": "app-route-prefetch-policy",
     "src": "../../../thereprocase.github.io/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -9,7 +9,7 @@
     ]
   },
   "../../../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-QQ008rbl.js",
+    "file": "_next/static/chunks/layout-segment-context-DibAAymm.js",
     "name": "layout-segment-context",
     "src": "../../../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -20,7 +20,7 @@
     ]
   },
   "../../../thereprocase.github.io/node_modules/vinext/dist/shims/streamed-icons.js": {
-    "file": "_next/static/chunks/streamed-icons-DNogeH_Z.js",
+    "file": "_next/static/chunks/streamed-icons-Bumrcy-j.js",
     "name": "streamed-icons",
     "src": "../../../thereprocase.github.io/node_modules/vinext/dist/shims/streamed-icons.js",
     "isDynamicEntry": true,
@@ -40,8 +40,18 @@
     "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
     "name": "rolldown-runtime"
   },
+  "components/project-navigation.tsx": {
+    "file": "_next/static/chunks/project-navigation-vTcI1fRU.js",
+    "name": "project-navigation",
+    "src": "components/project-navigation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-BDQqnqOM.js",
+    "file": "_next/static/chunks/index-CYmD2tG7.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -53,7 +63,8 @@
       "../../../thereprocase.github.io/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
       "virtual:vinext-app-browser-entry",
       "../../../thereprocase.github.io/node_modules/vinext/dist/shims/streamed-icons.js",
-      "../../../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js"
+      "../../../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js",
+      "components/project-navigation.tsx"
     ]
   }
 }
