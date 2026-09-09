@@ -121,3 +121,8 @@ desktop menu visibility and terminal line spacing. All five formation choices,
 clipboard copying and the five responsive contents rails passed. Static checks
 covered 58 HTML files and 712 local URLs; 21 existing technical pages retained
 their IDs, media and scripts. The production build, export, types and lint passed.
+
+Bambu Bridge adds an eleventh Gridline site and a Home automation entry. Its
+green and lime theme uses the shared responsive panes and sticky contents rail.
+The 9 September release passed static markup, link and packaging checks; a new
+Bambu viewport sweep and live printer acceptance were not performed.

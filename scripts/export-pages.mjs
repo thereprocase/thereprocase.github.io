@@ -17,6 +17,6 @@ for (const file of projectFiles) {
   await copyFile(path.join(built, 'projects', file), path.join(directory, 'index.html'));
   pages += 1;
 }
-if (pages !== 15) throw new Error(`Expected 15 public project pages; received ${pages}. Update this check when curating the registry.`);
+if (pages !== 16) throw new Error(`Expected 16 public project pages; received ${pages}. Update this check when curating the registry.`);
 await writeFile(path.join(published, '.nojekyll'), '');
 console.log(`Exported the index and ${pages} project landing pages to docs/.`);

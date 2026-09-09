@@ -84,6 +84,14 @@ export const projects: Project[] = [
     links: [{ label: 'Preview & installation', href: '/claude-usage/' }, { label: 'Companion status line', href: '/claude-statusline/' }],
   },
   {
+    slug: 'bambu-bridge', name: 'Bambu Bridge', category: 'home-automation',
+    summary: 'A local P1S printer bridge with a browser dashboard, 3D print-progress viewer, and Home Assistant integration.',
+    description: 'Connect to your own printer over the LAN with its access code. The bridge shares MQTT, file-transfer, and camera connections among browser and API clients. The AGPL source release includes installation instructions, upstream notices, and firmware compatibility limits.',
+    status: 'AGPL source release · mock-tested; current firmware acceptance remains',
+    highlights: ['Browser dashboard and 3D print-progress viewer.', 'HTTP and WebSocket API with Home Assistant integration and add-on source.', 'LAN and Developer Mode requirements, source access, and validation records.'],
+    links: [{ label: 'Explore Bambu Bridge', href: '/bambu-bridge/' }, { label: 'Install & configure', href: '/bambu-bridge/#setup' }, { label: 'LAN compatibility & access', href: 'https://github.com/thereprocase/bambu-bridge/blob/main/docs/LAN-COMPATIBILITY.md' }],
+  },
+  {
     slug: 'homekit-preview', name: 'HomeKit Preview', category: 'home-automation',
     summary: 'See which Home Assistant entities a HomeKit Bridge exposes before you pair or change it.',
     description: 'A Home Assistant integration shows bridge configuration in a room, device, and entity view. Preview the current filter, browse candidates, and apply changes to the selected HomeKit Bridge from one sidebar.',

@@ -6,7 +6,7 @@ The public project directory, grouped by what each project does. Every listed
 repository has a landing page with its current status, source, and useful links.
 Trio and Lord of the Code lead the featured selection.
 
-All ten sites use the supplied Gridline design system, with labeled render panes,
+All eleven sites use the supplied Gridline design system, with labeled render panes,
 semantic color blocks, sticky project navigation and ruled project registers.
 Layouts adapt from 280-pixel phones through 4K; links and actions have persistent
 visual cues. See
@@ -18,14 +18,13 @@ visual cues. See
 | Hardware & mechanisms | [Laptop wall mount](https://thereprocase.github.io/dell-5560-wall-mount/), [Precision 5680 desk dock](https://thereprocase.github.io/5680-dock/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
 | CAD tools | [Reference Align for Onshape](https://thereprocase.github.io/onshape-reference-align/) |
 | Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/), [Claude usage](https://thereprocase.github.io/claude-usage/) |
-| Home automation | [HomeKit Preview](https://thereprocase.github.io/homekit-preview/) |
+| Home automation | [Bambu Bridge](https://thereprocase.github.io/bambu-bridge/), [HomeKit Preview](https://thereprocase.github.io/homekit-preview/) |
 
 Public working forks appear separately under **Forks & upstream work**, with
 links to the original projects. The index itself is linked in the footer.
 
-The airflow panel uses the existing cumulative particle-video aliases, so hourly
-CFD publications appear without rebuilding this index. No simulation files are
-copied here.
+The airflow panel links the final particle-flow videos at about 1/200th speed.
+CFD is paused with resumable checkpoints. No simulation files are copied here.
 
 ## Development and publishing
 
