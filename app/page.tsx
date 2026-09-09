@@ -1,66 +1,20 @@
-/* oxlint-disable next/no-html-link-for-pages -- Document navigation also links independent GitHub Pages sites. */
+/* oxlint-disable next/no-html-link-for-pages, next/no-img-element, jsx-a11y/media-has-caption -- Static Pages uses document navigation and original renders. The CFD videos are silent; adjacent text describes both sequences and their limitations. */
 import { categories, featuredProjects, projects } from '@/lib/projects';
+import { GridlineShell, Workflow } from '@/components/gridline-shell';
 
 const flowBase = '/dell-5560-wall-mount/simulation/revh-transient/sequence/';
+const renders = [
+  { slug: '5680-dock', name: 'Precision 5680 / D8', src: '/5680-dock/assets/D8-assembled.png', alt: 'CAD assembly of the Precision 5680 dock with laptop, recessed fans and adjustable connector', caption: 'ASSEMBLY RENDER · D8 PROTOTYPE' },
+  { slug: 'dell-5560-wall-mount', name: 'Laptop wall mount / M1.1', src: '/dell-5560-wall-mount/assets/minimalist-with-envelopes.png', alt: 'Minimalist laptop wall mount CAD with laptop and fan envelopes', caption: 'CAD GEOMETRY · M1.1 PROTOTYPE' },
+  { slug: 'peg', name: 'Conformal pegboard anchor', src: 'https://raw.githubusercontent.com/thereprocase/peg/main/visuals/conformal-hero.png', alt: 'Rendered conformal pegboard anchor and curved bearing surfaces', caption: 'GEOMETRY STUDY · PROTOTYPE' },
+];
 
 export default function Home() {
-  return (
-    <>
-      <a className="skip" href="#projects">Skip to projects</a>
-      <header className="masthead">
-        <a className="brand" href="/" aria-label="thereprocase home"><span className="mark" aria-hidden="true">r.</span>thereprocase</a>
-        <nav aria-label="Main navigation"><a href="#projects">Projects</a><a href="#airflow">Flow videos</a><a href="https://github.com/thereprocase">GitHub ↗</a></nav>
-      </header>
-      <main>
-        <section className="intro" aria-labelledby="page-title">
-          <p className="eyebrow">THE PROJECT INDEX · {featuredProjects.length} FEATURED PROJECTS</p>
-          <h1 id="page-title">Tools, parts<br /><span>&amp; experiments.</span></h1>
-          <p className="lede">Coding agents, printable hardware, and tools built around everyday problems.</p>
-        </section>
-        <section className="spotlights" aria-label="Featured collaboration tools">
-          {projects.filter(project => project.spotlight).map(project => (
-            <a className="spotlight" key={project.slug} href={`/projects/${project.slug}/`}>
-              <p className="eyebrow">AGENT COLLABORATION</p>
-              <h2>{project.name}<span aria-hidden="true">↗</span></h2>
-              <p>{project.summary}</p>
-              <span className="spotlight-action">Explore the project →</span>
-            </a>
-          ))}
-        </section>
-        <nav className="category-nav" aria-label="Project categories">
-          {categories.map(category => <a key={category.id} href={`#${category.id}`}>{category.name}</a>)}
-        </nav>
-        <div className="content-grid">
-          <div id="projects">
-            {categories.map(category => (
-              <section className="project-group" id={category.id} aria-labelledby={`${category.id}-title`} key={category.id}>
-                <div className="section-label"><h2 id={`${category.id}-title`}>{category.name}</h2><span>{projects.filter(project => project.category === category.id).length} projects</span></div>
-                <p className="group-description">{category.description}</p>
-                <div className="project-list">
-                  {projects.filter(project => project.category === category.id).map(project => (
-                    <a className={`project${project.fork ? ' fork-project' : ''}`} href={`/projects/${project.slug}/`} key={project.slug}>
-                      <div><h3>{project.name}</h3><p className="description">{project.summary}</p></div><span className="project-arrow" aria-hidden="true">↗</span>
-                    </a>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-          <aside id="airflow" aria-labelledby="airflow-title">
-            <div className="flow-panel">
-              <p className="eyebrow">REV H / AIRFLOW STUDY</p>
-              <h2 id="airflow-title">Follow<br />the flow.</h2>
-              <p className="flow-copy">Moving particles and trails at 5× playback. These links follow each newly published checkpoint.</p>
-              <div className="video-link"><div><span className="video-index">A</span><h3>Started from still air</h3></div><a href={flowBase + 'latest-tracers.mp4'}>Play latest particle video <span aria-hidden="true">↗</span></a></div>
-              <div className="video-link"><div><span className="video-index">B</span><h3>Already flowing</h3></div><a href={flowBase + 'flowing/latest-tracers.mp4'}>Play latest particle video <span aria-hidden="true">↗</span></a></div>
-              <a className="archive-link" href={flowBase}>Progress &amp; archived videos <span aria-hidden="true">↗</span></a>
-              <p className="flow-note">Exploratory CFD for visualization. The flowing case starts from an unconverged steady-solver field; these videos do not establish validated cooling performance.</p>
-            </div>
-            <p className="side-note">Each project page points to its source, current status, and the files or instructions needed to explore it.</p>
-          </aside>
-        </div>
-      </main>
-      <footer><span>thereprocase / project index</span><a href="https://github.com/thereprocase/thereprocase.github.io">Source for this index ↗</a></footer>
-    </>
-  );
+  return <GridlineShell>
+    <section className="gl-introduction"><div><p className="gl-kicker">TOOLS / HARDWARE / EXPERIMENTS</p><h1>The project directory.</h1><p>Browse the work, inspect the models, and follow the evidence.</p></div><dl className="gl-counts"><div><dt>Featured</dt><dd>{featuredProjects.length.toString().padStart(2, '0')}</dd></div><div><dt>Categories</dt><dd>06</dd></div><div><dt>Sites</dt><dd>05</dd></div></dl></section>
+    <section className="gl-pane" aria-labelledby="featured-title"><div className="gl-pane-title"><h2 id="featured-title">FEATURED / AGENT COLLABORATION</h2><span>02 PROJECTS</span></div><div className="gl-featured">{projects.filter(project => project.spotlight).map(project => <article key={project.slug}><p className="gl-kicker">{project.slug === 'trio' ? 'COORDINATE THE WORK' : 'REVIEW THE RESULT'}</p><h3><a href={`/projects/${project.slug}/`}>{project.name} <span aria-hidden="true">↗</span></a></h3><p>{project.summary}</p><Workflow kind={project.slug as 'trio' | 'lord-of-the-code'} /><a className="gl-button" href={`/projects/${project.slug}/`}>Open project →</a></article>)}</div></section>
+    <section className="gl-pane" id="render-library" aria-labelledby="renders-title"><div className="gl-pane-title"><h2 id="renders-title">RENDER LIBRARY / HARDWARE &amp; MECHANISMS</h2><span>03 STUDIES</span></div><div className="gl-render-grid">{renders.map(render => <figure key={render.slug}><a className="gl-render-link" href={`/projects/${render.slug}/`}><img src={render.src} alt={render.alt} width="1000" height="750" loading="lazy" /></a><figcaption><span className="gl-state">{render.caption}</span><a href={`/projects/${render.slug}/`}>{render.name} ↗</a></figcaption></figure>)}</div><p className="gl-caution">PROTOTYPES / Rendered geometry. Physical fit, loads, and cooling still require testing.</p></section>
+    <section className="gl-pane gl-flow-pane" id="airflow" aria-labelledby="airflow-title"><div className="gl-pane-title gl-linked"><h2 id="airflow-title">REV H / FLOW VIDEO CHECKPOINTS</h2><span>LINKS FOLLOW PUBLICATIONS</span></div><div className="gl-flow-grid">{[{ name: 'Startup from still air', path: '', id: 'A' }, { name: 'Already flowing', path: 'flowing/', id: 'B' }].map(item => <figure key={item.id}><div className="gl-media-label"><span>SEQUENCE {item.id}</span><h3>{item.name}</h3><span>5× PLAYBACK</span></div><video controls playsInline preload="none" poster={flowBase + item.path + 'latest-tracers.png'}><source src={flowBase + item.path + 'latest-tracers.mp4'} type="video/mp4" /><a href={flowBase + item.path + 'latest-tracers.mp4'}>Open the particle-flow MP4</a></video><figcaption><a href={flowBase + item.path + 'latest-tracers.mp4'}>Open latest MP4 ↗</a><a href={flowBase + item.path}>Checkpoint record →</a></figcaption></figure>)}</div><p className="gl-caution">EXPLORATORY CFD / Particles follow recorded velocity fields. The flowing case begins from an unconverged field; mesh and timestep independence remain untested.</p></section>
+    <div id="projects">{categories.map((category, index) => <section className="gl-pane gl-register" id={category.id} aria-labelledby={`${category.id}-title`} key={category.id}><div className="gl-pane-title"><h2 id={`${category.id}-title`}>0{index + 1} / {category.name.toUpperCase()}</h2><span>{projects.filter(project => project.category === category.id).length.toString().padStart(2, '0')} PROJECTS</span></div><p className="gl-register-description">{category.description}</p><div className="gl-register-head" aria-hidden="true"><span>PROJECT</span><span>PURPOSE</span><span>OPEN</span></div>{projects.filter(project => project.category === category.id).map(project => <a className="gl-project-row" href={`/projects/${project.slug}/`} key={project.slug}><strong>{project.name}</strong><span>{project.summary}</span><span className="gl-row-action" aria-hidden="true">↗</span></a>)}</section>)}</div>
+  </GridlineShell>;
 }

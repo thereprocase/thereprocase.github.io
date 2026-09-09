@@ -31,6 +31,7 @@ export const projects: Project[] = [
     links: [{ label: 'Install & choose a workflow', href: 'https://github.com/thereprocase/lord-of-the-code#readme' }],
   },
   {
+    image: { src: '/dell-5560-wall-mount/assets/minimalist-with-envelopes.png', alt: 'Minimalist laptop wall mount CAD with laptop and fan envelopes' },
     slug: 'dell-5560-wall-mount', name: 'Laptop wall mount', category: 'hardware',
     summary: 'Minimalist M1 and ducted Rev H: two approaches to mounting and cooling a closed laptop.',
     description: 'Follow the design from fit and print orientation through retention details and airflow studies. Download the models, inspect assembly guides, and watch the cumulative Rev H flow videos as new checkpoints are published.',
@@ -57,12 +58,13 @@ export const projects: Project[] = [
     links: [{ label: 'Downloads & integration guide', href: 'https://github.com/thereprocase/peg#current-downloads' }],
   },
   {
+    image: { src: '/onshape-reference-align/images/workspace-preview.png', alt: 'Reference Align workspace using a sample image and local test account' },
     slug: 'onshape-reference-align', name: 'Reference Align for Onshape', category: 'cad-tools',
     summary: 'Scale and rotate reference images using distances and directions you already know.',
     description: 'A local companion app gives you a precise image picker and sends the resulting calibration to Onshape. Separate scale and rotation pairs help when the best known distance and direction are in different parts of an image.',
     status: 'Desktop downloads · Windows, macOS, and Linux',
     highlights: ['Zoom, pan, a loupe, and subpixel point selection.', 'Separate pixel pairs for scale and rotation.', 'Packaged launchers, setup instructions, and backups before feature updates.'],
-    links: [{ label: 'Get the app', href: 'https://github.com/thereprocase/onshape-reference-align/releases/latest' }, { label: 'Setup & calibration guide', href: 'https://github.com/thereprocase/onshape-reference-align#readme' }],
+    links: [{ label: 'Preview & setup', href: '/onshape-reference-align/' }, { label: 'Get the app', href: 'https://github.com/thereprocase/onshape-reference-align/releases/latest' }, { label: 'Setup & calibration guide', href: 'https://github.com/thereprocase/onshape-reference-align#readme' }],
   },
   {
     slug: 'claude-statusline', name: 'Claude Code status line', category: 'developer-tools',
@@ -79,7 +81,7 @@ export const projects: Project[] = [
     description: 'See when and where you use Claude Code without API calls or a separate account. Read local transcript data and optionally include rate-limit threshold markers recorded by the companion status line.',
     status: 'Local utility · Python standard library',
     highlights: ['Daily heatmap, session counts, and token summaries.', 'Project and model breakdowns from local data.', 'Launch instructions for Windows, macOS, and Linux.'],
-    links: [{ label: 'Preview & installation', href: 'https://github.com/thereprocase/claude-usage#readme' }, { label: 'Companion status line', href: '/projects/claude-statusline/' }],
+    links: [{ label: 'Preview & installation', href: '/claude-usage/' }, { label: 'Companion status line', href: '/projects/claude-statusline/' }],
   },
   {
     slug: 'homekit-preview', name: 'HomeKit Preview', category: 'home-automation',

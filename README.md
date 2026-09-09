@@ -6,6 +6,10 @@ The public project directory, grouped by what each project does. Every listed
 repository has a landing page with its current status, source, and useful links.
 Trio and Lord of the Code lead the featured selection.
 
+All five sites use the supplied Gridline design system, with labeled render panes,
+semantic color blocks, visible navigation and ruled project registers. See
+[Gridline maintenance notes](GRIDLINE.md) for the shared assets and publishing flow.
+
 | Category | Featured projects |
 | --- | --- |
 | Agent collaboration | [Trio / nth](https://thereprocase.github.io/projects/trio/), [Lord of the Code](https://thereprocase.github.io/projects/lord-of-the-code/) |
