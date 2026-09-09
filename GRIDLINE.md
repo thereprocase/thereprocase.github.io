@@ -1,11 +1,11 @@
 # Gridline across the project network
 
-The public project directory and all nine project sites use the user-supplied
+The public project directory and all thirteen project sites use the user-supplied
 **Gridline Design System.zip** (9 September 2026).
 
 | Site | Published files | Content |
 | --- | --- | --- |
-| thereprocase.github.io | `docs/`, exported from the React app | Directory, 15 project landings, 404 |
+| thereprocase.github.io | `docs/`, exported from the React app | Directory, 19 project landings, 404 |
 | dell-5560-wall-mount | `docs/` | Models, assembly guides, CFD and checkpoint reports |
 | 5680-dock | `docs/` | Current D8 design, CAD viewers, archived studies |
 | onshape-reference-align | `docs/` | Downloads and setup guide |
@@ -15,6 +15,10 @@ The public project directory and all nine project sites use the user-supplied
 | peg | `docs/` | Current CAD, drawings, host envelope and evidence |
 | claude-statusline | `docs/` | 28 actual theme renders, setup and companions |
 | homekit-preview | `docs/` | Interactive filter explanation, HACS and manual setup |
+| controltower | `docs/` | Windows process supervisor, setup and source validation |
+| phosphor-desktop | `docs/` | Rainmeter telemetry skins and optional collectors |
+| net-hunter | repository root | Interactive board viewer with original synthetic data |
+| saxophone-intonation-android | `docs/` | BellCurve Android practice tools and development setup |
 
 ## Design source
 
@@ -58,7 +62,7 @@ GitHub Pages build when a push does not trigger one.
 - Installation button state changes without reliance on a global event.
 - Live Pages deployment commits and served HTML/CSS after publishing.
 
-## Responsive layout and interaction update
+## Responsive layout and interaction update (original network)
 
 The layout is verified from 280 CSS pixels through 3840 pixels. Phone layouts
 stack their panes, tablets use compact arrangements, and wide monitors gain
@@ -87,7 +91,7 @@ checks; their existing scientific content and playback files are unchanged.
 
 ## Project identities and dedicated sites
 
-All nine featured projects now have their own sites, linked directly from the
+The original nine featured projects have their own sites, linked directly from the
 directory. The six upstream forks retain credited directory records.
 `themes.css` assigns a project field and border through `data-project`:
 Trio uses a cyan communication register; Lord of the Code an ink council with
@@ -121,3 +125,18 @@ desktop menu visibility and terminal line spacing. All five formation choices,
 clipboard copying and the five responsive contents rails passed. Static checks
 covered 58 HTML files and 712 local URLs; 21 existing technical pages retained
 their IDs, media and scripts. The production build, export, types and lint passed.
+
+## Four source releases added on 9 September 2026
+
+ControlTower uses blue and amber, Phosphor green and lime, BellCurve warm amber,
+and Net Hunter a light board workspace with blue controls. The index now has
+thirteen featured projects, six upstream records and seven categories, including
+Music & Practice. The three source-information sites reuse the responsive
+contents rail; Net Hunter keeps its interactive board controls and compact
+phone panel. Its board artwork and data are entirely synthetic.
+
+This addition passed the production build, static export, local file and anchor
+checks, and source syntax checks. The earlier browser coverage above describes
+the original network; a new browser viewport sweep was not performed for these
+four additions. Project-specific runtime validation is recorded in each source
+repository's `VALIDATION.md`.

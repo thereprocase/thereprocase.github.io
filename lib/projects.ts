@@ -10,10 +10,111 @@ export const categories = [
   { id: 'cad-tools', name: 'CAD tools', description: 'Small tools for more precise design work.' },
   { id: 'developer-tools', name: 'Developer tools', description: 'Keep usage and context in view.' },
   { id: 'home-automation', name: 'Home automation', description: 'Make the configuration easier to understand.' },
+  { id: 'music-tools', name: 'Music & practice', description: 'Pitch, timing, and tools for deliberate practice.' },
   { id: 'upstream-work', name: 'Forks & upstream work', description: 'Separate working copies of open-source projects. Original projects are credited on each page.' },
 ];
 
 export const projects: Project[] = [
+{
+  "slug": "controltower",
+  "name": "ControlTower",
+  "category": "developer-tools",
+  "summary": "A Windows process supervisor with an offline panel, readiness checks and explicit lifecycle controls.",
+  "description": "Use a local manifest to identify programs, check their readiness and supervise their lifecycle. The public source includes the latest v2 work and a sample configuration with autostart disabled.",
+  "status": "Public source · Windows / Tauri / Rust",
+  "highlights": [
+    "Exact process matching and readiness evidence.",
+    "Editable per-component controls and startup policy.",
+    "Offline panel and tray workflow."
+  ],
+  "links": [
+    {
+      "label": "Open ControlTower",
+      "href": "/controltower/"
+    },
+    {
+      "label": "Build and configure",
+      "href": "/controltower/#setup"
+    }
+  ],
+  "image": {
+    "src": "/controltower/assets/controltower.png",
+    "alt": "ControlTower application icon"
+  }
+},
+{
+  "slug": "phosphor-desktop",
+  "name": "Phosphor desktop",
+  "category": "developer-tools",
+  "summary": "Compact and expanded Rainmeter telemetry panels with separate GPU and NAS collectors.",
+  "description": "A quiet desktop panel that makes resource use and stale data visible. Shared palette and measures keep two layouts consistent; portable configuration supplies your own drives and NAS share.",
+  "status": "Public source · Windows / Rainmeter",
+  "highlights": [
+    "Shared palette and telemetry measures.",
+    "Independent GPU and NAS collectors.",
+    "Explicit stale and unavailable states."
+  ],
+  "links": [
+    {
+      "label": "Open Phosphor desktop",
+      "href": "/phosphor-desktop/"
+    },
+    {
+      "label": "Install the skin",
+      "href": "/phosphor-desktop/#setup"
+    }
+  ]
+},
+{
+  "slug": "net-hunter",
+  "name": "Net Hunter",
+  "category": "hardware",
+  "summary": "Trace board nets and accessible probe pads in a browser. Try it with an entirely synthetic board.",
+  "description": "A dependency-free viewer for nets, parts, probe points and repair notes. The public demo uses original synthetic data and includes exploratory conversion scripts with their limitations documented.",
+  "status": "Interactive synthetic demo · original tooling",
+  "highlights": [
+    "Net search, pan, zoom, side and X-ray controls.",
+    "Probe-point highlights and nearby ground references.",
+    "No real-board files or manufacturer schematics included."
+  ],
+  "links": [
+    {
+      "label": "Open the synthetic demo",
+      "href": "/net-hunter/"
+    },
+    {
+      "label": "Bring your own board",
+      "href": "https://github.com/thereprocase/net-hunter#bring-your-own-board"
+    }
+  ]
+},
+{
+  "slug": "saxophone-intonation-android",
+  "name": "BellCurve",
+  "category": "music-tools",
+  "summary": "An Android practice workspace with intonation analysis, metronome, drone, pitch pipes and a recording deck.",
+  "description": "The current local Android branch brings pitch feedback and practice tools together. This public source export uses a new application identifier and retains third-party audio and font licenses.",
+  "status": "Public source · Android / Expo 56",
+  "highlights": [
+    "Transposition-aware tuner and note statistics.",
+    "Configurable metronome, drone and pitch pipes.",
+    "Local recording deck and explicit sharing."
+  ],
+  "links": [
+    {
+      "label": "Open BellCurve",
+      "href": "/saxophone-intonation-android/"
+    },
+    {
+      "label": "Development setup",
+      "href": "/saxophone-intonation-android/#setup"
+    }
+  ],
+  "image": {
+    "src": "/saxophone-intonation-android/assets/bellcurve.png",
+    "alt": "BellCurve application icon"
+  }
+},
   {
     slug: 'trio', name: 'Trio / nth', category: 'agent-collaboration', spotlight: true,
     summary: 'A shared workspace for coding agents: messages, task claims, and a live view of who is doing what.',

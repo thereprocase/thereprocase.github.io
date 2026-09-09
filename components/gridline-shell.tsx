@@ -1,4 +1,5 @@
 /* oxlint-disable next/no-html-link-for-pages, next/no-img-element -- Pages links are document navigation; the supplied logo is a static asset. */
+import { featuredProjects } from '@/lib/projects';
 import { ProjectNavigation } from '@/components/project-navigation';
 
 export function GridlineShell({ children, current = 'Project directory', category, project }: { children: React.ReactNode; current?: string; category?: string; project?: string }) {
@@ -10,6 +11,6 @@ export function GridlineShell({ children, current = 'Project directory', categor
       <ProjectNavigation category={category} />
       <main id="content" className={`gl-content ${current === 'Project directory' ? 'gl-home' : 'gl-project-detail'}`}>{children}</main>
     </div>
-    <footer className="gl-statusbar"><span>THEREPROCASE / PROJECT INDEX</span><span>GRIDLINE · 10 CONNECTED SITES</span><a href="https://github.com/thereprocase">Open GitHub ↗</a></footer>
+    <footer className="gl-statusbar"><span>THEREPROCASE / PROJECT INDEX</span><span>GRIDLINE · {featuredProjects.length + 1} CONNECTED SITES</span><a href="https://github.com/thereprocase">Open GitHub ↗</a></footer>
   </div>;
 }
