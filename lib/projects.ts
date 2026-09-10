@@ -31,6 +31,15 @@ export const projects: Project[] = [
     links: [{ label: 'Open Lord of the Code', href: '/lord-of-the-code/' }, { label: 'Choose a review formation', href: '/lord-of-the-code/#formations' }],
   },
   {
+    slug: 'spool-wall-rack', name: 'Spool wall rack', category: 'hardware',
+    summary: 'A printable two-rail spool rack with an angular reinforced bracket, finished CAD and a full engineering record.',
+    description: 'E13 combines an 11 mm angular reinforcement with preserved snap fingers and mirrored 50° chamfers. Explore the geometry, refined three-dimensional stress fields, actual slicer paths and downloadable print geometry.',
+    status: 'E13 engineering prototype · physical fit, hot-load and lifetime testing remain',
+    highlights: ['STEP with aligned infill helpers, plus an STL fallback.', 'Three global mesh levels and matched E12 stress comparisons.', 'Verified geometry and OrcaSlicer paths, with physical checks clearly identified.'],
+    image: { src: '/spool-wall-rack/assets/progress-exterior.png', alt: 'Finished E13 spool rack bracket with two rod seats and a straight tapered reinforcement' },
+    links: [{ label: 'Explore E13', href: '/spool-wall-rack/' }, { label: 'CAD downloads & print setup', href: '/spool-wall-rack/#downloads' }],
+  },
+  {
     image: { src: '/dell-5560-wall-mount/assets/minimalist-with-envelopes.png', alt: 'Minimalist laptop wall mount CAD with laptop and fan envelopes' },
     slug: 'dell-5560-wall-mount', name: 'Laptop wall mount', category: 'hardware',
     summary: 'Minimalist M1 and ducted Rev H: two approaches to mounting and cooling a closed laptop.',

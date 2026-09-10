@@ -1,0 +1,116 @@
+{
+  "source_repository": "https://github.com/thereprocase/spool-wall-rack",
+  "revision": "5e95cbf5544b205bdf2b73611d24ce3f826e837d",
+  "design_revision": "E13",
+  "files": [
+    {
+      "source": "designs/closed-wall-e13/progress-exterior.png",
+      "published": "/spool-wall-rack/assets/progress-exterior.png",
+      "bytes": 46757,
+      "sha256": "073629137d18e7c977eca4af6bb3112396c359549d073cb228fb3f0652cda573",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "source": "designs/closed-wall-e13/depth-comparison.png",
+      "published": "/spool-wall-rack/assets/depth-comparison.png",
+      "bytes": 163888,
+      "sha256": "af81a2626eee2e9c7151359c4324319ee755d4b012371c6673f5ec9194e8b281",
+      "width": 1920,
+      "height": 1120
+    },
+    {
+      "source": "designs/closed-wall-e13/finish-inner-front.png",
+      "published": "/spool-wall-rack/assets/finish-inner-front.png",
+      "bytes": 54992,
+      "sha256": "d4663eb4ddcc6a73698a4995be0b97135d4d566f44bff9fd743c5caff36e0930",
+      "width": 1800,
+      "height": 1500
+    },
+    {
+      "source": "designs/closed-wall-e13/engineering-drawing.png",
+      "published": "/spool-wall-rack/assets/engineering-drawing.png",
+      "bytes": 232000,
+      "sha256": "2a243aa5558b92a3dce579bec6bad0069859d93e7595656a0b13af19a94e181e",
+      "width": 2080,
+      "height": 1280
+    },
+    {
+      "source": "designs/closed-wall-e13/modifier-stack.png",
+      "published": "/spool-wall-rack/assets/modifier-stack.png",
+      "bytes": 107163,
+      "sha256": "5343b581e2190c5de1d636c2426b80575011f97410956c03484b91fb08780b4d",
+      "width": 1920,
+      "height": 1120
+    },
+    {
+      "source": "designs/closed-wall-e13/toolpath-sections.png",
+      "published": "/spool-wall-rack/assets/toolpath-sections.png",
+      "bytes": 702960,
+      "sha256": "d1672195c3b9af7f2e6aa419784d481c51f40d54449ae76f8797f9f640e3ea3d",
+      "width": 1950,
+      "height": 1350
+    },
+    {
+      "source": "analysis/e13/fem-3d.png",
+      "published": "/spool-wall-rack/assets/fem-3d.png",
+      "bytes": 507464,
+      "sha256": "a614895d9a30228ee303dda50c30b1763c245229bde4a8c172ea254e772a179c",
+      "width": 2015,
+      "height": 1395
+    },
+    {
+      "source": "analysis/e13/fem-sections.png",
+      "published": "/spool-wall-rack/assets/fem-sections.png",
+      "bytes": 1054515,
+      "sha256": "169f2345052d9eb607e3c02d567199d1adc109e41896d3915e3c5b839622793b",
+      "width": 1860,
+      "height": 1705
+    },
+    {
+      "source": "analysis/e13/hotspot-comparison.png",
+      "published": "/spool-wall-rack/assets/hotspot-comparison.png",
+      "bytes": 1643523,
+      "sha256": "fb8178552af30c44f48404794f619397ca2b04e1994846c41178a31dad092928",
+      "width": 2015,
+      "height": 1395
+    },
+    {
+      "source": "designs/closed-wall-e13/bracket-with-modifier-helpers.step",
+      "published": "/spool-wall-rack/downloads/bracket-with-modifier-helpers.step",
+      "bytes": 15249832,
+      "sha256": "3976c8fe07a3274f9260fb2b5e333bf29c531de5c387366385ad0eec5c6f5933"
+    },
+    {
+      "source": "designs/closed-wall-e13/body-only.stl",
+      "published": "/spool-wall-rack/downloads/body-only.stl",
+      "bytes": 646684,
+      "sha256": "13efd0718c46972dcd884e1d79a4b8c093bb4fc04ac85b0a2ce8bcf39950bec8"
+    },
+    {
+      "source": "designs/closed-wall-e13/helper-1.stl",
+      "published": "/spool-wall-rack/downloads/helper-1.stl",
+      "bytes": 684,
+      "sha256": "731f48ad774e22ef6ee7b5eb675897b062620270c7b951cf6e0b04aadca2b2ca"
+    },
+    {
+      "source": "designs/closed-wall-e13/helper-2.stl",
+      "published": "/spool-wall-rack/downloads/helper-2.stl",
+      "bytes": 684,
+      "sha256": "dd7218245493832a2a2b4b7f972b9b46446ebf9e8d516b35c06d70b450194456"
+    }
+  ],
+  "bundles": [
+    {
+      "published": "/spool-wall-rack/downloads/e13-stl-bundle.zip",
+      "files": [
+        "body-only.stl",
+        "helper-1.stl",
+        "helper-2.stl",
+        "README.txt"
+      ],
+      "bytes": 209166,
+      "sha256": "0763490b51c31d1c55cd7ace6dba5c9097b1cb69fd189748fd22932bfa5b5fc6"
+    }
+  ]
+}
