@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     slug: '5680-dock', name: 'Precision 5680 desk dock', category: 'hardware',
     summary: 'A compact dock with recessed fans, a removable connector module, and printed adjustment hardware.',
-    description: 'D8 combines a cooling plenum with a captured USB-C plug and a serviceable shell. Explore the current design, manufacturing files, and assembly sequence, including the checks still needed before physical qualification.',
+    description: 'D8 combines a cooling plenum with a captured USB-C plug and a serviceable shell. Six chamfered bearing bridges support the straight hinge edge at quarter intervals along the two inlet slots. Explore the updated CAD, renders, manufacturing files and remaining physical checks.',
     status: 'D8 prototype · physical fit, strength, and cooling tests remain',
     highlights: ['A removable, adjustable connector module.', 'Recessed fans with slide-in grilles and replaceable clips.', 'Downloadable CAD and documented print orientations.'],
     image: { src: 'https://raw.githubusercontent.com/thereprocase/5680-dock/main/desk-dock/D8/D8-assembled.png', alt: 'CAD rendering of the D8 desk dock with laptop envelope and recessed fans' },
