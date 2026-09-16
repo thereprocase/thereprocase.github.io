@@ -5,7 +5,7 @@ import { GridlineShell } from '@/components/gridline-shell';
 const flowBase = '/dell-5560-wall-mount/simulation/revh-transient/sequence/';
 const renders = [
   { slug: 'spool-wall-rack', name: 'Spool wall rack / E13', src: '/spool-wall-rack/assets/progress-exterior.png', alt: 'Actual E13 spool rack CAD with two rod seats, retained fingers and angular underside reinforcement', caption: 'FINISHED CAD · E13 PROTOTYPE' },
-  { slug: '5680-dock', name: 'Precision 5680 / D8', src: '/5680-dock/assets/D8-assembled.png', alt: 'CAD assembly of the Precision 5680 dock with laptop, recessed fans and adjustable connector', caption: 'ASSEMBLY RENDER · D8 PROTOTYPE' },
+  { slug: '5680-dock', name: 'Precision 5680 / D8', src: '/5680-dock/assets/D8-hinge-bearings.png', alt: 'Exact D8 CAD showing six chamfered hinge-bearing bridges across the two inlet slots', caption: 'CHAMFERED HINGE BEARINGS · D8 PROTOTYPE' },
   { slug: 'dell-5560-wall-mount', name: 'Laptop wall mount / M1.1', src: '/dell-5560-wall-mount/assets/minimalist-with-envelopes.png', alt: 'Minimalist laptop wall mount CAD with laptop and fan envelopes', caption: 'CAD GEOMETRY · M1.1 PROTOTYPE' },
   { slug: 'peg', name: 'Conformal pegboard anchor', src: 'https://raw.githubusercontent.com/thereprocase/peg/main/visuals/conformal-hero.png', alt: 'Rendered conformal pegboard anchor and curved bearing surfaces', caption: 'GEOMETRY STUDY · PROTOTYPE' },
 ];
