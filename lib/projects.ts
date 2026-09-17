@@ -50,12 +50,12 @@ export const projects: Project[] = [
   },
   {
     slug: '5680-dock', name: 'Precision 5680 desk dock', category: 'hardware',
-    summary: 'D9 P1: printable cradles, split plenums, fan guards and frame ties on six prepared Orca plates.',
-    description: 'D9 P1 is the current Precision 5680 dock prototype. Ten new parts have completed CAD, nominal enclosure and Orca toolpath checks. Download the complete print kit, inspect the selected orientations, and use the V4 coupons to check the real laptop contact. The plug mechanism is outside this revision.',
-    status: 'D9 P1 print kit ready · physical fit, loads and cooling remain untested',
+    summary: 'D9 P2: cradles, plenums, fan guards and braces with printed pins and locking keys. No added metal hardware.',
+    description: 'D9 P2 is the current Precision 5680 dock prototype. Fifty printed parts have completed CAD and nominal enclosure checks; seven assembly plates plus a fastener fit plate passed Orca verification. Start with the printed-fastener fit plate and the V4 laptop-contact coupons, then use the complete P2 print kit. The plug mechanism is outside this revision.',
+    status: 'D9 P2 print kit ready · physical fit, loads and cooling remain untested',
     highlights: ['Two split plenums with full-height R2 cradles and bolted frame ties.', 'Fan guards with integral standoffs; accessible internal supports.', 'Six native Orca plates, matching G-code, STEP/STL, source and assembly instructions.'],
-    image: { src: '/5680-dock/printables/d9-p1/D9-P1-assembly.png', alt: 'D9 P1 CAD assembly with paired cradles, split plenums, fan guards and frame ties' },
-    links: [{ label: 'Explore D9 P1', href: '/5680-dock/' }, { label: 'Download D9 print kit', href: '/5680-dock/printables/d9-p1/Precision_5680_D9_P1_Print_Kit.zip' }, { label: 'Orca plates & instructions', href: '/5680-dock/handoff-2026-09-17.html#d9-printables' }],
+    image: { src: '/5680-dock/printables/d9-p2/D9-P2-assembly.png', alt: 'D9 P2 CAD assembly with paired cradles, split plenums, fan guards and frame ties' },
+    links: [{ label: 'Explore D9 P2', href: '/5680-dock/' }, { label: 'Fastener fit plate', href: '/5680-dock/printables/d9-p2/OPEN-ME.3mf' }, { label: 'Download D9 print kit', href: '/5680-dock/printables/d9-p2/Precision_5680_D9_P2_Print_Kit.zip' }, { label: 'Orca plates & instructions', href: '/5680-dock/handoff-2026-09-17.html#d9-printables' }],
   },
   {
     slug: 'peg', name: 'Conformal pegboard anchor', category: 'hardware',
