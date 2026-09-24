@@ -1,3 +1,5 @@
 # Preserve exact bytes of downloadable CAD and its provenance hashes.
 public/spool-wall-rack/downloads/*.step binary
 docs/spool-wall-rack/downloads/*.step binary
+public/p1s-feet/**/*.step binary
+docs/p1s-feet/**/*.step binary
