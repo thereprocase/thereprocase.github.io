@@ -64,3 +64,9 @@ builds preserve the public files. It does not require a React route or a change
 to the project-registry export count. `README.md` within that directory records
 the sizing assumptions, limitations and reproduction instructions. Advance the
 CAD, calculation JSON, source bundle and displayed revision together.
+
+The default foot viewer now loads versioned `p02/` assets. P01 remains at
+`p01.html` with its original model files and separate viewer/calculator scripts.
+`review/` contains the isolation study, full uncertainty sweep, plots and
+reproducible analysis source. Its force-transmission results are model outputs,
+not measured sound reductions; preserve the clearance and material qualifications.

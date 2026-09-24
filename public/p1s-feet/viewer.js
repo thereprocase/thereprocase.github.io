@@ -14,12 +14,13 @@ try{
  const material=color=>new THREE.MeshStandardMaterial({color,roughness:.75,metalness:0,side:THREE.DoubleSide});
  const grid=new THREE.GridHelper(220,22,0xa8adb3,0xc8ccd0);grid.rotation.x=Math.PI/2;grid.position.z=-.1;scene.add(grid);
  const loader=new STLLoader();
- const [b,c]=await Promise.all([loader.loadAsync('./base.stl'),loader.loadAsync('./cradle.stl')]);
+ const geometry=await fetch('./p02/geometry.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()});const dimensions=geometry.assembly;
+ const [b,c]=await Promise.all([loader.loadAsync('./p02/base.stl'),loader.loadAsync('./p02/cradle.stl')]);
  const base=new THREE.Mesh(b,material(0x66717e)),cradle=new THREE.Mesh(c,material(0x008e9c));scene.add(base,cradle);
  const ball=new THREE.Mesh(new THREE.SphereGeometry(20,48,32),new THREE.MeshStandardMaterial({color:0x20252c,roughness:.85,transparent:true,opacity:.72}));scene.add(ball);
  let layout=false;
  function update(){const e=+$('explode').value;
-  base.position.set(layout?-45:0,0,0);cradle.position.set(layout?45:0,0,layout?0:14+e);ball.position.set(0,0,36+e*1.7);ball.visible=$('ball').checked&&!layout;
+  base.position.set(layout?-45:0,0,0);cradle.position.set(layout?45:0,0,layout?0:dimensions.seat_z_mm+e);ball.position.set(0,0,dimensions.ball_center_z_mm+e*1.7);ball.visible=$('ball').checked&&!layout;
   [base,cradle,ball].forEach(m=>{m.material.clippingPlanes=$('cut').checked?[plane]:[];m.material.needsUpdate=true});
   $('assembled').setAttribute('aria-pressed',String(!layout));$('layout').setAttribute('aria-pressed',String(layout));$('explode').disabled=layout;
  }
