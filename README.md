@@ -54,3 +54,13 @@ reproducible STL fallback bundle and add its checksum to that record.
 
 Review the page's numerical claims and print instructions before advancing the
 source revision. Preserve original scientific scales and qualification limits.
+
+## P1S squash-ball foot
+
+`public/p1s-feet/` is a standalone static prototype page with a locally vendored
+Three.js viewer, parameterized deflection calculator, and CAD/source downloads.
+The published copy lives at `docs/p1s-feet/`. Update both copies together; normal
+builds preserve the public files. It does not require a React route or a change
+to the project-registry export count. `README.md` within that directory records
+the sizing assumptions, limitations and reproduction instructions. Advance the
+CAD, calculation JSON, source bundle and displayed revision together.
