@@ -1,0 +1,50 @@
+{
+  "base": {
+    "bounds_mm": [
+      [
+        -40.0,
+        -39.99209213256836,
+        0.0
+      ],
+      [
+        40.0,
+        39.99209213256836,
+        17.0
+      ]
+    ],
+    "volume_mm3": 21613.02664823421,
+    "triangles": 2566,
+    "watertight": true,
+    "mass_g_at_1_22": 26.367892510845735
+  },
+  "cradle": {
+    "bounds_mm": [
+      [
+        -38.0,
+        -37.992488861083984,
+        0.0
+      ],
+      [
+        38.0,
+        37.992488861083984,
+        15.333333015441895
+      ]
+    ],
+    "volume_mm3": 25947.0610531034,
+    "triangles": 9830,
+    "watertight": true,
+    "mass_g_at_1_22": 31.655414484786146
+  },
+  "assembly": {
+    "diameter_mm": 80.0,
+    "height_mm": 29.333333333333336,
+    "cup_depth_mm": 13.333333333333334,
+    "unloaded_stop_gap_mm": 9.0,
+    "ball_bottom_above_table_mm": 16.0,
+    "seat_z_mm": 14.0,
+    "rib_height_mm": 10.0,
+    "ball_diameter_mm": 40.0,
+    "ball_center_z_mm": 36.0,
+    "radial_socket_clearance_mm": 0.25
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "revision": "P01",
+  "method": "Linear curved-beam estimate: vertical translation + two bending/twist rotations.\n\nTimoshenko bending and Saint-Venant rectangular torsion, isotropic TPU.\nRigid cup/rim, six clamped curved ribs. No ball, contact, creep, hyperelasticity\nor layer anisotropy. Units N, mm, MPa. This is NOT a solid-element FEA.\n",
+  "rib_width_mm": 4.0,
+  "rib_height_mm": 10.0,
+  "E_reference_MPa": 9.8,
+  "k_reference_N_mm": 14.195604416117305,
+  "ribs": [
+    {
+      "k": 3.277174322284907,
+      "length": 16.082353502029356,
+      "bending_strain_per_mm": 0.03848156166922967,
+      "torque_per_mm": 13.889402781236317,
+      "equilibrium_error": 6.88338275267597e-14
+    },
+    {
+      "k": 2.250580759186448,
+      "length": 18.746644833339438,
+      "bending_strain_per_mm": 0.03164007505947993,
+      "torque_per_mm": 13.780788976945049,
+      "equilibrium_error": 2.4424906541753444e-13
+    },
+    {
+      "k": 1.570047126587724,
+      "length": 21.785049382500404,
+      "bending_strain_per_mm": 0.026639992480482686,
+      "torque_per_mm": 12.445080893619657,
+      "equilibrium_error": 1.0458300891968975e-13
+    },
+    {
+      "k": 3.2771743222850205,
+      "length": 16.082353502029363,
+      "bending_strain_per_mm": 0.03848156166922914,
+      "torque_per_mm": 13.889402781236369,
+      "equilibrium_error": 9.414691248821327e-14
+    },
+    {
+      "k": 2.2505807591859366,
+      "length": 18.74664483333944,
+      "bending_strain_per_mm": 0.031640075059480535,
+      "torque_per_mm": 13.78078897694518,
+      "equilibrium_error": 2.9398705692074145e-13
+    },
+    {
+      "k": 1.5700471265872693,
+      "length": 21.785049382500414,
+      "bending_strain_per_mm": 0.026639992480482575,
+      "torque_per_mm": 12.445080893621155,
+      "equilibrium_error": 3.679279103607769e-13
+    }
+  ],
+  "cases": [
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 7.4,
+      "load_factor": 1.0,
+      "force_N": 31.749029374999996,
+      "stiffness_N_mm": 10.719129865231436,
+      "sag_mm": 2.961903603573377,
+      "stop_clearance_mm": 6.0380963964266225,
+      "foot_only_frequency_Hz": 9.157881284370532,
+      "nominal_max_bending_strain": 0.1139786761792225
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 7.4,
+      "load_factor": 1.3,
+      "force_N": 41.273738187499994,
+      "stiffness_N_mm": 10.719129865231436,
+      "sag_mm": 3.85047468464539,
+      "stop_clearance_mm": 5.1495253153546106,
+      "foot_only_frequency_Hz": 9.157881284370532,
+      "nominal_max_bending_strain": 0.14817227903298924
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 9.8,
+      "load_factor": 1.0,
+      "force_N": 31.749029374999996,
+      "stiffness_N_mm": 14.195604416117305,
+      "sag_mm": 2.236539455759489,
+      "stop_clearance_mm": 6.763460544240511,
+      "foot_only_frequency_Hz": 10.538824863092401,
+      "nominal_max_bending_strain": 0.08606553099247413
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 9.8,
+      "load_factor": 1.3,
+      "force_N": 41.273738187499994,
+      "stiffness_N_mm": 14.195604416117305,
+      "sag_mm": 2.9075012924873356,
+      "stop_clearance_mm": 6.092498707512664,
+      "foot_only_frequency_Hz": 10.538824863092401,
+      "nominal_max_bending_strain": 0.11188519029021637
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 15.0,
+      "load_factor": 1.0,
+      "force_N": 31.749029374999996,
+      "stiffness_N_mm": 21.72796594303669,
+      "sag_mm": 1.4612057777628662,
+      "stop_clearance_mm": 7.538794222237134,
+      "foot_only_frequency_Hz": 13.038414367818682,
+      "nominal_max_bending_strain": 0.05622948024841644
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 15.0,
+      "load_factor": 1.3,
+      "force_N": 41.273738187499994,
+      "stiffness_N_mm": 21.72796594303669,
+      "sag_mm": 1.899567511091726,
+      "stop_clearance_mm": 7.1004324889082735,
+      "foot_only_frequency_Hz": 13.038414367818682,
+      "nominal_max_bending_strain": 0.07309832432294137
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 26.0,
+      "load_factor": 1.0,
+      "force_N": 31.749029374999996,
+      "stiffness_N_mm": 37.66180763459693,
+      "sag_mm": 0.8430033333247304,
+      "stop_clearance_mm": 8.15699666667527,
+      "foot_only_frequency_Hz": 17.165870169031063,
+      "nominal_max_bending_strain": 0.03244008475870179
+    },
+    {
+      "mass_kg": 12.95,
+      "E_MPa": 26.0,
+      "load_factor": 1.3,
+      "force_N": 41.273738187499994,
+      "stiffness_N_mm": 37.66180763459693,
+      "sag_mm": 1.0959043333221496,
+      "stop_clearance_mm": 7.904095666677851,
+      "foot_only_frequency_Hz": 17.165870169031063,
+      "nominal_max_bending_strain": 0.042172110186312325
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 7.4,
+      "load_factor": 1.0,
+      "force_N": 49.033249999999995,
+      "stiffness_N_mm": 10.719129865231436,
+      "sag_mm": 4.574368499727223,
+      "stop_clearance_mm": 4.425631500272777,
+      "foot_only_frequency_Hz": 7.369107563203233,
+      "nominal_max_bending_strain": 0.17602884352003473
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 7.4,
+      "load_factor": 1.3,
+      "force_N": 63.743224999999995,
+      "stiffness_N_mm": 10.719129865231436,
+      "sag_mm": 5.9466790496453905,
+      "stop_clearance_mm": 3.0533209503546095,
+      "foot_only_frequency_Hz": 7.369107563203233,
+      "nominal_max_bending_strain": 0.22883749657604519
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 9.8,
+      "load_factor": 1.0,
+      "force_N": 49.033249999999995,
+      "stiffness_N_mm": 14.195604416117305,
+      "sag_mm": 3.4541149895899443,
+      "stop_clearance_mm": 5.545885010410055,
+      "foot_only_frequency_Hz": 8.480316745144025,
+      "nominal_max_bending_strain": 0.13291973898451603
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 9.8,
+      "load_factor": 1.3,
+      "force_N": 63.743224999999995,
+      "stiffness_N_mm": 14.195604416117305,
+      "sag_mm": 4.490349486466928,
+      "stop_clearance_mm": 4.509650513533072,
+      "foot_only_frequency_Hz": 8.480316745144025,
+      "nominal_max_bending_strain": 0.17279566067987087
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 15.0,
+      "load_factor": 1.0,
+      "force_N": 49.033249999999995,
+      "stiffness_N_mm": 21.72796594303669,
+      "sag_mm": 2.2566884598654307,
+      "stop_clearance_mm": 6.743311540134569,
+      "foot_only_frequency_Hz": 10.491671047761841,
+      "nominal_max_bending_strain": 0.0868408961365505
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 15.0,
+      "load_factor": 1.3,
+      "force_N": 63.743224999999995,
+      "stiffness_N_mm": 21.72796594303669,
+      "sag_mm": 2.93369499782506,
+      "stop_clearance_mm": 6.06630500217494,
+      "foot_only_frequency_Hz": 10.491671047761841,
+      "nominal_max_bending_strain": 0.11289316497751564
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 26.0,
+      "load_factor": 1.0,
+      "force_N": 49.033249999999995,
+      "stiffness_N_mm": 37.66180763459693,
+      "sag_mm": 1.3019356499223638,
+      "stop_clearance_mm": 7.698064350077637,
+      "foot_only_frequency_Hz": 13.812926785528466,
+      "nominal_max_bending_strain": 0.050100517001856054
+    },
+    {
+      "mass_kg": 20.0,
+      "E_MPa": 26.0,
+      "load_factor": 1.3,
+      "force_N": 63.743224999999995,
+      "stiffness_N_mm": 37.66180763459693,
+      "sag_mm": 1.6925163448990728,
+      "stop_clearance_mm": 7.307483655100928,
+      "foot_only_frequency_Hz": 13.812926785528466,
+      "nominal_max_bending_strain": 0.06513067210241286
+    }
+  ],
+  "convergence_relative": 0.0013007818363166557,
+  "straight_beam_reference_error": 9.614531393253856e-14,
+  "unloaded_stop_gap_mm": 9.0
+}
