@@ -1,9 +1,9 @@
 {
-  "status": "Candidate launch branding; no font rename",
+  "status": "Released Fillaprint artwork",
   "candidate": "Fillaprint",
-  "font": "Brewster Technical",
-  "version": "Version 1.201",
-  "source": "/brewster-technical/fonts/BrewsterTechnical-Regular.ttf",
-  "sha256": "393b4040ec780e03029b7e54542ee219b98ce7c1635187382f90298979c12374",
+  "font": "Fillaprint",
+  "version": "Version 0.100",
+  "source": "/fillaprint/fonts/Fillaprint-Regular.ttf",
+  "sha256": "afe88d138d5842726a7c0eecedeb5fd8e17047e27a976c6878c77c88794c4c07",
   "method": "HarfBuzz shaping and fontTools SVG glyph outlines; Pillow raster specimen"
 }

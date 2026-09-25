@@ -71,26 +71,13 @@ The default foot viewer now loads versioned `p02/` assets. P01 remains at
 reproducible analysis source. Its force-transmission results are model outputs,
 not measured sound reductions; preserve the clearance and material qualifications.
 
-## Brewster Technical
+## Fillaprint
 
-`public/brewster-technical/` contains the FDM font showcase, live type tester,
-print-size calculator and downloads. `python scripts/sync-brewster.py <font-checkout>`
+`public/fillaprint/` contains the FDM font showcase, live type tester,
+print-size calculator and downloads. `python scripts/sync-fillaprint.py <font-checkout>`
 copies assets from the pinned public font commit and creates the reproducible ZIP
 and provenance record. Advance the source pin when updating fonts or specimens,
 then build and export `docs/` with the rest of the site.
 
-## Linepair candidate branding
-
-`public/linepair/` is a branding study using Brewster Technical, not a font
-rename or a release. The homepage and font showcase link to it.
-`python scripts/build-linepair.py` generates four outlined SVGs and a PNG
-from the released TTF using fontTools, uharfbuzz, and Pillow. The source
-font hash is recorded in `artwork/provenance.json`. Build and export to
-update the published `docs/linepair/` copy.
-
-## Fillaprint candidate branding
-
-`public/fillaprint/` is a second name study in the same font and layouts.
-Generate its artwork with `python scripts/build-linepair.py Fillaprint`.
-The two studies link to each other for comparison. Both keep Brewster
-Technical as the working font name. Build and export to update `docs/`.
+Artwork is built with `python scripts/build-fillaprint.py` from the released fonts.
+The launch page includes wordmarks, label applications, and licensed font downloads.
