@@ -4,10 +4,10 @@
 
 The public project directory, grouped by what each project does. Every listed
 repository has a landing page with its current status, source, and useful links.
-Trio and Lord of the Code lead the agent selection. The E13 spool wall rack has
-a dedicated hardware feature, original engineering figures and local CAD downloads.
+The E13 spool wall rack has a dedicated hardware feature, original engineering
+figures and local CAD downloads.
 
-All twelve sites use the supplied Gridline design system, with labeled render panes,
+All sites use the supplied Gridline design system, with labeled render panes,
 semantic color blocks, sticky project navigation and ruled project registers.
 Layouts adapt from 280-pixel phones through 4K; links and actions have persistent
 visual cues. See
@@ -15,17 +15,12 @@ visual cues. See
 
 | Category | Featured projects |
 | --- | --- |
-| Agent collaboration | [Trio / nth](https://thereprocase.github.io/trio/), [Lord of the Code](https://thereprocase.github.io/lord-of-the-code/) |
-| Hardware & mechanisms | [Spool wall rack / E13](https://thereprocase.github.io/spool-wall-rack/), [Laptop wall mount](https://thereprocase.github.io/dell-5560-wall-mount/), [Precision 5680 desk dock](https://thereprocase.github.io/5680-dock/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
-| CAD tools | [Reference Align for Onshape](https://thereprocase.github.io/onshape-reference-align/) |
-| Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/), [Claude usage](https://thereprocase.github.io/claude-usage/) |
-| Home automation | [Bambu Bridge](https://thereprocase.github.io/bambu-bridge/), [HomeKit Preview](https://thereprocase.github.io/homekit-preview/) |
+| Hardware & mechanisms | [Spool wall rack / E13](https://thereprocase.github.io/spool-wall-rack/), [TPU paver feet](https://thereprocase.github.io/paver-feet/), [P1S squash-ball cradles](https://thereprocase.github.io/p1s-feet/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
+| CAD tools | [Fillaprint](https://thereprocase.github.io/fillaprint/) |
+| Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/) |
+| Home automation | [Bambu Bridge](https://thereprocase.github.io/bambu-bridge/) |
 
-Public working forks appear separately under **Forks & upstream work**, with
-links to the original projects. The index itself is linked in the footer.
-
-The airflow panel links the final particle-flow videos at about 1/200th speed.
-CFD is paused with resumable checkpoints. No simulation files are copied here.
+The index itself is linked in the footer.
 
 ## Development and publishing
 

@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'thereprocase | Tools, parts & experiments',
-  description: 'Explore Trio, Lord of the Code, printable hardware, CAD tools, developer utilities, home automation, and the latest CFD airflow videos.',
+  description: 'Explore printable hardware, CAD tools and fonts, developer utilities, and home automation projects.',
   metadataBase: new URL('https://thereprocase.github.io/'),
   alternates: { canonical: '/' },
   icons: { icon: '/gridline/logo.svg' },
