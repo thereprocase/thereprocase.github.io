@@ -87,3 +87,10 @@ rename or a release. The homepage and font showcase link to it.
 from the released TTF using fontTools, uharfbuzz, and Pillow. The source
 font hash is recorded in `artwork/provenance.json`. Build and export to
 update the published `docs/linepair/` copy.
+
+## Fillaprint candidate branding
+
+`public/fillaprint/` is a second name study in the same font and layouts.
+Generate its artwork with `python scripts/build-linepair.py Fillaprint`.
+The two studies link to each other for comparison. Both keep Brewster
+Technical as the working font name. Build and export to update `docs/`.
