@@ -1,20 +1,14 @@
 # Gridline across the project network
 
-The public project directory and all nine project sites use the user-supplied
+The public project directory and the project sites use the user-supplied
 **Gridline Design System.zip** (9 September 2026).
 
 | Site | Published files | Content |
 | --- | --- | --- |
-| thereprocase.github.io | `docs/`, exported from the React app | Directory, 15 project landings, 404 |
-| dell-5560-wall-mount | `docs/` | Models, assembly guides, CFD and checkpoint reports |
-| 5680-dock | `docs/` | Current D8 design, CAD viewers, archived studies |
-| onshape-reference-align | `docs/` | Downloads and setup guide |
-| claude-usage | repository root | Terminal preview and installation |
-| trio | `docs/` | Local and cross-machine setup, tool reference |
-| lord-of-the-code | `docs/` | Interactive formations, agent roster, installation |
+| thereprocase.github.io | `docs/`, exported from the React app | Directory, 7 project landings, Fillaprint, TPU feet and spool rack sites, 404 |
 | peg | `docs/` | Current CAD, drawings, host envelope and evidence |
-| claude-statusline | `docs/` | 28 actual theme renders, setup and companions |
-| homekit-preview | `docs/` | Interactive filter explanation, HACS and manual setup |
+| claude-statusline | `docs/` | 28 actual theme renders, setup and rate-limit log |
+| bambu-bridge | `docs/` | Dashboard, API, Home Assistant setup and LAN compatibility |
 
 ## Design source
 
@@ -25,10 +19,8 @@ viewer controls, media or scientific color scales. Supplied token files and
 logo SVGs are retained in this directory.
 
 The main directory uses System Gray for structure, white for content, Active
-Blue for pane titles and selection, cyan for linked flow records, and amber
-for prototype limitations. CAD renders retain their original colors and
-captions. Flow videos use the existing published MP4 aliases, with controls
-and no autoplay or preloading of the video files.
+Blue for pane titles and selection, and amber for prototype limitations. CAD
+renders retain their original colors and captions.
 
 Copy the entire shared directory to each project's published `gridline/`
 directory when changing the common design. Local copies keep the guides
@@ -38,15 +30,8 @@ fallbacks work offline.
 
 ## Continuing publication
 
-The Dell CFD publishers call `fusion/cfd/gridline_html.py` before writing a
-report. The standard-library adapter also handles the older documents with
-omitted optional head/body tags. It preserves script payloads, element IDs,
-media sources, video attributes and technical text, adds section links, and
-is safe to call repeatedly. Hourly publications therefore retain Gridline.
-
 The site source and generated `docs/` export must be committed together.
-Keep the existing canonical routes, downloadable files, viewer hooks and
-checkpoint aliases. Follow the README build workflow and explicitly request a
+Keep the existing canonical routes, downloadable files and viewer hooks. Follow the README build workflow and explicitly request a
 GitHub Pages build when a push does not trigger one.
 
 ## Verification for this port
@@ -87,31 +72,21 @@ checks; their existing scientific content and playback files are unchanged.
 
 ## Project identities and dedicated sites
 
-All nine featured projects now have their own sites, linked directly from the
-directory. The six upstream forks retain credited directory records.
-`themes.css` assigns a project field and border through `data-project`:
-Trio uses a cyan communication register; Lord of the Code an ink council with
-an amber review boundary; Peg a light engineering sheet; the wall mount a deep
-blue design journal with cyan flow sections; D8 an ink hardware bench;
-Reference Align a white calibration workbench; Statusline a terminal gallery;
-Usage a local analysis console; and HomeKit Preview a cyan bridge inspector.
-Blue underlined links and outlined controls retain their meaning throughout.
+Each listed project has a site linked directly from the directory. Peg,
+Claude Code status line and Bambu Bridge publish from their own repositories;
+Fillaprint, the TPU feet and the spool rack are served from this repository.
+`themes.css` assigns a project field and border through `data-project`: Peg
+uses a light engineering sheet and Statusline a terminal gallery. Blue
+underlined links and outlined controls retain their meaning throughout.
 
-`project.css` supplies the five new static sites. Their contents rail follows
+`project.css` supplies the static project sites. Their contents rail follows
 desktop scrolling and becomes an expandable sticky menu below 760 pixels.
 Wide screens arrange complementary sections side by side. Tables and terminal
 previews scroll locally, preserving readable text on very small screens.
 
-The formation chooser selects real documented roles and commands. Trio's
-setup controls switch between local and remote instructions. HomeKit's example
-uses explicitly synthetic entities and performs no network requests. The
-Statusline gallery renders actual theme functions at 42% and 85% sample context;
+The Statusline gallery renders actual theme functions at 42% and 85% sample context;
 `scripts/build-site-previews.py` in that repository records source hashes and
 does not consult an installed account or transcript data.
-
-The CFD adapter adds the wall-mount identity and shared theme stylesheet on
-every new report. Existing reports, CAD viewers and downloadable files retain
-their routes. The D8 embedded viewer hides the surrounding project chrome.
 
 The project-site expansion passed 264 browser layout checks over 44 routes at
 280, 390, 768, 1280, 1920 and 3840 pixels, with no page overflow or JavaScript
@@ -126,3 +101,11 @@ Bambu Bridge adds an eleventh Gridline site and a Home automation entry. Its
 green and lime theme uses the shared responsive panes and sticky contents rail.
 The 9 September release passed static markup, link and packaging checks; a new
 Bambu viewport sweep and live printer acceptance were not performed.
+
+## 25 September 2026: private projects removed
+
+Thirteen projects whose repositories became private were removed from the
+directory, together with their landing pages, renders, the flow-video section
+and their `themes.css`/`project.css` rules. GitHub Pages was re-enabled
+for Peg, Claude Code status line and Bambu Bridge. The verification records
+above describe the network as it was when each check ran.
