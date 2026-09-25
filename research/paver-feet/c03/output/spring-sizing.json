@@ -1,0 +1,52 @@
+{
+  "spring_wire_mm": 5.0,
+  "mean_diameter_mm": 50.0,
+  "outer_diameter_mm": 55.0,
+  "free_length_mm": 58.0,
+  "active_coils": 5.0,
+  "total_coils_assumed": 7.0,
+  "solid_height_mm": 35.0,
+  "spring_index": 10.0,
+  "wahl_factor": 1.1448333333333331,
+  "rate_N_per_mm": 9.9125,
+  "min_assumed_UTS_MPa": 1650.0,
+  "gravity_deflection_frequency_Hz": 5.85681080307027,
+  "stop_compression_mm": 16.64564943253468,
+  "stop_force_N": 165.0,
+  "stop_FoS": 4.95104645208787,
+  "cases": [
+    {
+      "case": "nominal",
+      "force_N": 71.7830239123445,
+      "compression_mm": 7.241666977285701,
+      "max_shear_MPa": 83.70745170762922,
+      "von_mises_MPa": 144.98555932973198,
+      "conservative_static_rupture_FoS": 11.380443732658255,
+      "remaining_to_solid_mm": 15.758333022714297
+    },
+    {
+      "case": "uneven design",
+      "force_N": 111.55064374999999,
+      "compression_mm": 11.253532786885245,
+      "max_shear_MPa": 130.08117540521008,
+      "von_mises_MPa": 225.30720491010288,
+      "conservative_static_rupture_FoS": 7.323334380977061,
+      "remaining_to_solid_mm": 11.746467213114755
+    },
+    {
+      "case": "20% peak margin",
+      "force_N": 133.8607725,
+      "compression_mm": 13.504239344262295,
+      "max_shear_MPa": 156.0974104862521,
+      "von_mises_MPa": 270.3686458921235,
+      "conservative_static_rupture_FoS": 6.1027786508142166,
+      "remaining_to_solid_mm": 9.495760655737705
+    }
+  ],
+  "stop_tolerance_case": {
+    "spring_rate_factor": 1.1,
+    "stop_travel_increase_mm": 1.0,
+    "force_N": 192.40375,
+    "FoS": 4.245877040309758
+  }
+}
