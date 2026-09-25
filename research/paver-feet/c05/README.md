@@ -1,5 +1,7 @@
 # C05: petal vase-mode TPU spring — experimental prototype
 
+> Repository copy: run `python build.py` and `python preview.py` to create the STL, STEP, centerline CSV and preview listed below. The prebuilt models are in the separate C05 prototype archive.
+
 Ten circumferential petals form one continuous open-ended cup. Its circular bottom and top rims blend into a gently corrugated 1 mm wall. Overall envelope is 125 mm diameter × 50 mm high; calculated solid volume is 16.807 cm³, about 20.3 g at SUNLU's published 1.21 g/cm³ density. Four fit under the 399 mm reference paver with centers 75–80 mm inward from the edges.
 
 **Status: printable geometry, NOT a load-rated foot.** This is a deliberately aggressive prototype. There has been no credible shell buckling, nonlinear large-deflection, or viscoelastic creep FEA for C05. The C04 tensile FoS cannot be carried over; a 1 mm wall can buckle well before tensile failure. SUNLU's ~31 MPa published tensile strength is measured in XY; neither interlayer strength nor compression set for this print is established. Do not place the printer/paver on four untested C05 feet.

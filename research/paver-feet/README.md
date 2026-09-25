@@ -17,4 +17,4 @@ Before selecting a replacement, measure paver/shelf accelerations in X, Y, and Z
 
 ## Reproduction
 
-Each revision has its own README and build/analysis scripts. STL/STEP are checked-in for C04 and C05 so the prototypes can be inspected without installing CAD dependencies. C05's `build.py` also regenerates the long helical centerline CSV, omitted because it is derived data; the CSV is not printer G-code. C04 FEA results are checked-in as small JSON summaries; full simulation field archives and older intermediate outputs are omitted. Run from a revision folder with the dependencies described in its README.
+Each revision has its own README and build/analysis scripts. C04 and C05 `build.py` regenerate their STL/STEP models; C05 also regenerates the helical centerline CSV, which is not printer G-code. The binary models and previews are in the separately supplied prototype archives, and are omitted from this source branch. C04 FEA results are checked in as small JSON summaries; full simulation field archives and older intermediate outputs are omitted. Run from a revision folder with the dependencies described in its README.

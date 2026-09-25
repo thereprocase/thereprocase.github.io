@@ -1,5 +1,7 @@
 # C04 — one-piece TPU compression spring for a P1S paver
 
+> Repository copy: this source branch includes the analysis JSON and generators. Run `python build.py` to create `output/C04-spring.stl` and `.step`; the full field NPZ and preview are in the separate C04 prototype archive.
+
 **Result:** A 140 mm diameter × 86 mm high, one-piece corrugated annular spring. Four identical prints fit under the reference 399 mm square paver with their centers 80 mm inward from each edge (about 10 mm perimeter setback). This replaces the four C01/C02 short-arm feet with no metal spring, bolt, rigid tie or load-carrying TPU root joint. Each is about 186 g for 1.22 g/cm³ TPU, about 0.74 kg for four.
 
 ## Conditional tensile safety factor
@@ -37,4 +39,4 @@ The worst-case factor of safety here is for **static tensile rupture of the prin
 
 ## Reproduction
 
-From this folder: `python build.py`, then `OPENBLAS_NUM_THREADS=1 python fea.py --volume 8 --nu .49 --force 133.8607725 --eccentric 2`. Dependencies: `cadquery`, `trimesh`, `tetgen`, `scikit-fem`, `numpy`, `scipy`, `matplotlib`. The STL/STEP and final FEA JSON/NPZ are included. `quality=False` is deliberately used for the reported TetGen mesh; further high-order or mixed near-incompressible analysis would improve confidence. All dimensions are millimetres.
+From this folder: `python build.py`, then `OPENBLAS_NUM_THREADS=1 python fea.py --volume 8 --nu .49 --force 133.8607725 --eccentric 2`. Dependencies: `cadquery`, `trimesh`, `tetgen`, `scikit-fem`, `numpy`, `scipy`, `matplotlib`. The separate C04 prototype archive contains the STL/STEP and final FEA JSON/NPZ; this source branch carries the JSON summaries and generators. `quality=False` is deliberately used for the reported TetGen mesh; further high-order or mixed near-incompressible analysis would improve confidence. All dimensions are millimetres.
