@@ -78,3 +78,12 @@ print-size calculator and downloads. `python scripts/sync-brewster.py <font-chec
 copies assets from the pinned public font commit and creates the reproducible ZIP
 and provenance record. Advance the source pin when updating fonts or specimens,
 then build and export `docs/` with the rest of the site.
+
+## Linepair candidate branding
+
+`public/linepair/` is a branding study using Brewster Technical, not a font
+rename or a release. The homepage and font showcase link to it.
+`python scripts/build-linepair.py` generates four outlined SVGs and a PNG
+from the released TTF using fontTools, uharfbuzz, and Pillow. The source
+font hash is recorded in `artwork/provenance.json`. Build and export to
+update the published `docs/linepair/` copy.

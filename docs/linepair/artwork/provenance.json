@@ -1,0 +1,8 @@
+{
+  "status": "Candidate launch branding; no font rename",
+  "font": "Brewster Technical",
+  "version": "Version 1.201",
+  "source": "/brewster-technical/fonts/BrewsterTechnical-Regular.ttf",
+  "sha256": "393b4040ec780e03029b7e54542ee219b98ce7c1635187382f90298979c12374",
+  "method": "HarfBuzz shaping and fontTools SVG glyph outlines; Pillow raster specimen"
+}
