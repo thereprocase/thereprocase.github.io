@@ -15,6 +15,16 @@ export const categories = [
 
 export const projects: Project[] = [
   {
+    slug: 'brewster-technical', name: 'Brewster Technical', category: 'cad-tools',
+    summary: 'Strokes and gaps reach the same minimum printable size together.',
+    description: 'Three TrueType families designed around extrusion width. Try your own lettering, calculate a reference print size, and download proportional, tabular-figure, and monospace fonts.',
+    status: 'Version 1.201 · SIL Open Font License 1.1 · commercial use welcome',
+    highlights: ['A live type tester using the actual font files.', 'Print-size calculator based on extrusion line width.', 'Three downloadable font families with broad Latin coverage.'],
+    sourceHref: 'https://github.com/thereprocase/double-bead',
+    image: { src: '/brewster-technical/images/hero.png', alt: 'Brewster Technical letterforms and measurement symbols rendered from the font' },
+    links: [{ label: 'Explore the typeface', href: '/brewster-technical/' }, { label: 'Download the fonts', href: '/brewster-technical/#downloads' }],
+  },
+  {
     slug: 'paver-feet', name: 'TPU paver feet', category: 'hardware',
     summary: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf.',
     description: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf. Inspect the actual CAD, load and clearance calculations, and modeled force transmission before printing.',

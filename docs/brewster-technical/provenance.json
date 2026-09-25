@@ -1,0 +1,76 @@
+{
+  "font_version": "1.201",
+  "source": "https://github.com/thereprocase/double-bead",
+  "revision": "57599a9aeba3efb201b89520c810fd17a8726a8a",
+  "assets": {
+    "OFL.txt": {
+      "source": "OFL.txt",
+      "bytes": 4527,
+      "sha256": "09b25e6de043cc86b4490ad7dceb0a056e83385073763abccb09b479ef493025"
+    },
+    "LICENSE.md": {
+      "source": "docs/LICENSING.md",
+      "bytes": 1929,
+      "sha256": "1295c26b85a8a20f265d3500827a860c7b4847743e32f8b001943e498b546288"
+    },
+    "PRINTING.md": {
+      "source": "docs/PRINTING.md",
+      "bytes": 2257,
+      "sha256": "2222f9ce2711672680d02e3ba93e349a04f8e27970c05bdf80b65b46cdfec23b"
+    },
+    "images/hero.png": {
+      "source": "showcase/hero.png",
+      "bytes": 123182,
+      "sha256": "4aed33cdc141ebc431ad85e315472a5e18626b296cd8e1e77d99aeede8aaa926"
+    },
+    "images/two-bead-rule.png": {
+      "source": "showcase/two-bead-rule.png",
+      "bytes": 124242,
+      "sha256": "545d3d0753f5600ca7a0c6a73220b16bf5d9c61bdfe0a95658a8cf99daf5e194"
+    },
+    "images/labels.png": {
+      "source": "showcase/labels.png",
+      "bytes": 163232,
+      "sha256": "7d9cd22d3f89eaa76025fc38dc2f159921a7d73f8317793c62b9537dc575d2f7"
+    },
+    "images/6-sliced.png": {
+      "source": "showcase/6-sliced.png",
+      "bytes": 1023111,
+      "sha256": "3ad3c457924c7bb29f55350f869ddae7ecdbf470fe24e6b59c487f18c1f464fd"
+    },
+    "images/2-all-glyphs.png": {
+      "source": "showcase/2-all-glyphs.png",
+      "bytes": 478723,
+      "sha256": "5a8b1ce019b9c6f75f8194f6f748c58179342e317909fc3dbcbd86acdae71458"
+    },
+    "images/3-languages.png": {
+      "source": "showcase/3-languages.png",
+      "bytes": 473143,
+      "sha256": "67d463159e9ab176aa20d378bd5c928d8c9eef4b3aaab81c98173d97cdfaeed5"
+    },
+    "images/5-families.png": {
+      "source": "showcase/5-families.png",
+      "bytes": 125220,
+      "sha256": "6780378315b18104f168f3fbacfdef4095ef1a227021220d94580639be3a74b8"
+    },
+    "fonts/BrewsterTechnical-Regular.ttf": {
+      "source": "fonts/BrewsterTechnical-Regular.ttf",
+      "bytes": 309292,
+      "sha256": "393b4040ec780e03029b7e54542ee219b98ce7c1635187382f90298979c12374"
+    },
+    "fonts/BrewsterTechnicalTab-Regular.ttf": {
+      "source": "fonts/BrewsterTechnicalTab-Regular.ttf",
+      "bytes": 309600,
+      "sha256": "a59b038c6f93c796f95cbf70374f0515a4249f42988d79a92d43f34748f38661"
+    },
+    "fonts/BrewsterTechnicalMono-Regular.ttf": {
+      "source": "fonts/BrewsterTechnicalMono-Regular.ttf",
+      "bytes": 139632,
+      "sha256": "276a2931d888bcff9ac38d3e4c281837cedba5ac978a06abf9f4fb7ec4d97d10"
+    },
+    "downloads/BrewsterTechnical-1.201.zip": {
+      "bytes": 243291,
+      "sha256": "bb8780fbb816542bc049de5dbeae535887882627a64e3d5fc0fab6871b27f972"
+    }
+  }
+}

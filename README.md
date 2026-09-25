@@ -70,3 +70,11 @@ The default foot viewer now loads versioned `p02/` assets. P01 remains at
 `review/` contains the isolation study, full uncertainty sweep, plots and
 reproducible analysis source. Its force-transmission results are model outputs,
 not measured sound reductions; preserve the clearance and material qualifications.
+
+## Brewster Technical
+
+`public/brewster-technical/` contains the FDM font showcase, live type tester,
+print-size calculator and downloads. `python scripts/sync-brewster.py <font-checkout>`
+copies assets from the pinned public font commit and creates the reproducible ZIP
+and provenance record. Advance the source pin when updating fonts or specimens,
+then build and export `docs/` with the rest of the site.
