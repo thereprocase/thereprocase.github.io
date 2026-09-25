@@ -1,0 +1,2152 @@
+{
+  "revision": "C01",
+  "k_center_N_mm": 39.59075533175928,
+  "K_N_mm_rad": [
+    [
+      111.91736523202007,
+      7.105427357601002e-15,
+      0.0,
+      5.684341886080802e-14,
+      -2081.6629933155737,
+      -1.7053025658242404e-13
+    ],
+    [
+      7.105427357601002e-15,
+      111.91736523202007,
+      0.0,
+      2081.6629933155737,
+      0.0,
+      2.842170943040401e-14
+    ],
+    [
+      0.0,
+      0.0,
+      39.59075533175928,
+      5.684341886080802e-14,
+      4.440892098500626e-14,
+      0.0
+    ],
+    [
+      5.684341886080802e-14,
+      2081.6629933155737,
+      5.684341886080802e-14,
+      56024.769220806484,
+      1.3642420526593924e-12,
+      -1.3642420526593924e-12
+    ],
+    [
+      -2081.6629933155737,
+      0.0,
+      4.440892098500626e-14,
+      1.3642420526593924e-12,
+      56024.76922080648,
+      3.637978807091713e-12
+    ],
+    [
+      -1.7053025658242404e-13,
+      2.842170943040401e-14,
+      0.0,
+      -1.3642420526593924e-12,
+      3.637978807091713e-12,
+      71886.694563863
+    ]
+  ],
+  "convergence": 7.216656225483842e-05,
+  "unit_center_response": {
+    "center_sag_mm": 0.025258421861878717,
+    "stop_sag_mm": 0.025258421861878717,
+    "rim_sag_mm": 0.02525842186187872,
+    "tilt_deg": 6.032214310865019e-18,
+    "lateral_center_mm": 1.9582452169355858e-18
+  },
+  "unit_offset_response": {
+    "center_sag_mm": 0.025258421861878717,
+    "stop_sag_mm": 0.027338644787010504,
+    "rim_sag_mm": 0.031142180808840327,
+    "tilt_deg": 0.00936429320370105,
+    "lateral_center_mm": 0.003039942122596832
+  },
+  "reference_modulus_MPa": 9.8,
+  "compression_allowance_mm": 0.8,
+  "nominal_mass_kg": 29.27932532,
+  "paver_mass_kg": 16.329325320000002,
+  "design_case": {
+    "mass_kg": 35,
+    "E_MPa": 5,
+    "corner_factor": 1.3,
+    "eccentricity_mm": 2,
+    "sag_multiplier": 1.5,
+    "force_N": 111.55064374999999,
+    "center_sag_mm": 5.522482708851223,
+    "stop_sag_mm": 5.977301113477463,
+    "rim_sag_mm": 6.808903421329868,
+    "tilt_deg": 2.0474021528677406,
+    "lateral_center_mm": 0.6646507014472995,
+    "stop_clearance_mm": 3.234048329783806,
+    "paver_to_rim_clearance_mm": 3.186644868005197,
+    "conservative_radial_clearance_mm": 1.2702040983703502,
+    "passes": true
+  },
+  "cases": [
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 3.5537267649786775,
+      "stop_sag_mm": 3.5537267649786775,
+      "rim_sag_mm": 3.553726764978678,
+      "tilt_deg": 8.487007448775724e-16,
+      "lateral_center_mm": 2.7551477593770194e-16,
+      "stop_clearance_mm": 8.646273235021322,
+      "paver_to_rim_clearance_mm": 9.846273235021322,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 3.5537267649786775,
+      "stop_sag_mm": 3.5537267649786775,
+      "rim_sag_mm": 3.553726764978678,
+      "tilt_deg": 8.487007448775724e-16,
+      "lateral_center_mm": 2.7551477593770194e-16,
+      "stop_clearance_mm": 6.869409852531984,
+      "paver_to_rim_clearance_mm": 8.069409852531981,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 4.6198447944722805,
+      "stop_sag_mm": 5.000324109631568,
+      "rim_sag_mm": 5.696002809873663,
+      "tilt_deg": 1.712758676990942,
+      "lateral_center_mm": 0.5560149746240481,
+      "stop_clearance_mm": 7.199675890368432,
+      "paver_to_rim_clearance_mm": 7.703997190126336,
+      "conservative_radial_clearance_mm": 2.2564396266472904,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 4.6198447944722805,
+      "stop_sag_mm": 5.000324109631568,
+      "rim_sag_mm": 5.696002809873663,
+      "tilt_deg": 1.712758676990942,
+      "lateral_center_mm": 0.5560149746240481,
+      "stop_clearance_mm": 4.699513835552648,
+      "paver_to_rim_clearance_mm": 4.855995785189504,
+      "conservative_radial_clearance_mm": 1.6346594399709355,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 2.4011667330937008,
+      "stop_sag_mm": 2.4011667330937008,
+      "rim_sag_mm": 2.401166733093701,
+      "tilt_deg": 5.734464492416027e-16,
+      "lateral_center_mm": 1.86158632390339e-16,
+      "stop_clearance_mm": 9.798833266906298,
+      "paver_to_rim_clearance_mm": 10.998833266906297,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 2.4011667330937008,
+      "stop_sag_mm": 2.4011667330937008,
+      "rim_sag_mm": 2.401166733093701,
+      "tilt_deg": 5.734464492416027e-16,
+      "lateral_center_mm": 1.86158632390339e-16,
+      "stop_clearance_mm": 8.598249900359448,
+      "paver_to_rim_clearance_mm": 9.798249900359448,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 3.1215167530218113,
+      "stop_sag_mm": 3.378597371372681,
+      "rim_sag_mm": 3.8486505472119346,
+      "tilt_deg": 1.1572693763452302,
+      "lateral_center_mm": 0.375685793664897,
+      "stop_clearance_mm": 8.821402628627318,
+      "paver_to_rim_clearance_mm": 9.551349452788063,
+      "conservative_radial_clearance_mm": 2.659756504491413,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 3.1215167530218113,
+      "stop_sag_mm": 3.378597371372681,
+      "rim_sag_mm": 3.8486505472119346,
+      "tilt_deg": 1.1572693763452302,
+      "lateral_center_mm": 0.375685793664897,
+      "stop_clearance_mm": 7.1321039429409785,
+      "paver_to_rim_clearance_mm": 7.627024179182098,
+      "conservative_radial_clearance_mm": 2.2396347567371198,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 1.813125900499325,
+      "stop_sag_mm": 1.813125900499325,
+      "rim_sag_mm": 1.8131259004993252,
+      "tilt_deg": 4.330105841212104e-16,
+      "lateral_center_mm": 1.4056876323352139e-16,
+      "stop_clearance_mm": 10.386874099500675,
+      "paver_to_rim_clearance_mm": 11.586874099500672,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 1.813125900499325,
+      "stop_sag_mm": 1.813125900499325,
+      "rim_sag_mm": 1.8131259004993252,
+      "tilt_deg": 4.330105841212104e-16,
+      "lateral_center_mm": 1.4056876323352139e-16,
+      "stop_clearance_mm": 9.480311149251012,
+      "paver_to_rim_clearance_mm": 10.680311149251011,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 2.3570636706491226,
+      "stop_sag_mm": 2.5511857702201874,
+      "rim_sag_mm": 2.9061238825886035,
+      "tilt_deg": 0.8738564678525211,
+      "lateral_center_mm": 0.28368110950206527,
+      "stop_clearance_mm": 9.648814229779813,
+      "paver_to_rim_clearance_mm": 10.493876117411395,
+      "conservative_radial_clearance_mm": 2.8655304217588218,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 2.3570636706491226,
+      "stop_sag_mm": 2.5511857702201874,
+      "rim_sag_mm": 2.9061238825886035,
+      "tilt_deg": 0.8738564678525211,
+      "lateral_center_mm": 0.28368110950206527,
+      "stop_clearance_mm": 8.373221344669718,
+      "paver_to_rim_clearance_mm": 9.040814176117093,
+      "conservative_radial_clearance_mm": 2.548295632638233,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 1.1845755883262257,
+      "stop_sag_mm": 1.1845755883262257,
+      "rim_sag_mm": 1.184575588326226,
+      "tilt_deg": 2.8290024829252406e-16,
+      "lateral_center_mm": 9.18382586459006e-17,
+      "stop_clearance_mm": 11.015424411673774,
+      "paver_to_rim_clearance_mm": 12.215424411673773,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 1.1845755883262257,
+      "stop_sag_mm": 1.1845755883262257,
+      "rim_sag_mm": 1.184575588326226,
+      "tilt_deg": 2.8290024829252406e-16,
+      "lateral_center_mm": 9.18382586459006e-17,
+      "stop_clearance_mm": 10.42313661751066,
+      "paver_to_rim_clearance_mm": 11.62313661751066,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 1.5399482648240936,
+      "stop_sag_mm": 1.666774703210523,
+      "rim_sag_mm": 1.8986676032912213,
+      "tilt_deg": 0.5709195589969804,
+      "lateral_center_mm": 0.18533832487468263,
+      "stop_clearance_mm": 10.533225296789476,
+      "paver_to_rim_clearance_mm": 11.501332396708777,
+      "conservative_radial_clearance_mm": 3.085479875549097,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 1.5399482648240936,
+      "stop_sag_mm": 1.666774703210523,
+      "rim_sag_mm": 1.8986676032912213,
+      "tilt_deg": 0.5709195589969804,
+      "lateral_center_mm": 0.18533832487468263,
+      "stop_clearance_mm": 9.699837945184214,
+      "paver_to_rim_clearance_mm": 10.551998595063166,
+      "conservative_radial_clearance_mm": 2.8782198133236454,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 0.6834089932651303,
+      "stop_sag_mm": 0.6834089932651303,
+      "rim_sag_mm": 0.6834089932651304,
+      "tilt_deg": 1.6321168170722554e-16,
+      "lateral_center_mm": 5.298361075725041e-17,
+      "stop_clearance_mm": 11.516591006734869,
+      "paver_to_rim_clearance_mm": 12.716591006734868,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 71.7830239123445,
+      "center_sag_mm": 0.6834089932651303,
+      "stop_sag_mm": 0.6834089932651303,
+      "rim_sag_mm": 0.6834089932651304,
+      "tilt_deg": 1.6321168170722554e-16,
+      "lateral_center_mm": 5.298361075725041e-17,
+      "stop_clearance_mm": 11.174886510102304,
+      "paver_to_rim_clearance_mm": 12.374886510102304,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 0.8884316912446695,
+      "stop_sag_mm": 0.9616007903137632,
+      "rim_sag_mm": 1.0953851557449354,
+      "tilt_deg": 0.32937666865210424,
+      "lateral_center_mm": 0.10692595665847082,
+      "stop_clearance_mm": 11.238399209686236,
+      "paver_to_rim_clearance_mm": 12.304614844255063,
+      "conservative_radial_clearance_mm": 3.260853774355248,
+      "passes": true
+    },
+    {
+      "mass_kg": 29.27932532,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 93.31793108604786,
+      "center_sag_mm": 0.8884316912446695,
+      "stop_sag_mm": 0.9616007903137632,
+      "rim_sag_mm": 1.0953851557449354,
+      "tilt_deg": 0.32937666865210424,
+      "lateral_center_mm": 0.10692595665847082,
+      "stop_clearance_mm": 10.757598814529354,
+      "paver_to_rim_clearance_mm": 11.756922266382595,
+      "conservative_radial_clearance_mm": 3.141280661532872,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 4.248063622193248,
+      "stop_sag_mm": 4.248063622193248,
+      "rim_sag_mm": 4.248063622193249,
+      "tilt_deg": 1.0145222181887022e-15,
+      "lateral_center_mm": 3.293456065817423e-16,
+      "stop_clearance_mm": 7.951936377806752,
+      "paver_to_rim_clearance_mm": 9.151936377806749,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 4.248063622193248,
+      "stop_sag_mm": 4.248063622193248,
+      "rim_sag_mm": 4.248063622193249,
+      "tilt_deg": 1.0145222181887022e-15,
+      "lateral_center_mm": 3.293456065817423e-16,
+      "stop_clearance_mm": 5.827904566710128,
+      "paver_to_rim_clearance_mm": 7.027904566710126,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.522482708851223,
+      "stop_sag_mm": 5.977301113477463,
+      "rim_sag_mm": 6.808903421329868,
+      "tilt_deg": 2.0474021528677406,
+      "lateral_center_mm": 0.6646507014472995,
+      "stop_clearance_mm": 6.222698886522537,
+      "paver_to_rim_clearance_mm": 6.591096578670132,
+      "conservative_radial_clearance_mm": 2.013469398913567,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.522482708851223,
+      "stop_sag_mm": 5.977301113477463,
+      "rim_sag_mm": 6.808903421329868,
+      "tilt_deg": 2.0474021528677406,
+      "lateral_center_mm": 0.6646507014472995,
+      "stop_clearance_mm": 3.234048329783806,
+      "paver_to_rim_clearance_mm": 3.186644868005197,
+      "conservative_radial_clearance_mm": 1.2702040983703502,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 2.870313258238681,
+      "stop_sag_mm": 2.870313258238681,
+      "rim_sag_mm": 2.8703132582386814,
+      "tilt_deg": 6.854879852626361e-16,
+      "lateral_center_mm": 2.225308152579338e-16,
+      "stop_clearance_mm": 9.329686741761318,
+      "paver_to_rim_clearance_mm": 10.529686741761317,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 2.870313258238681,
+      "stop_sag_mm": 2.870313258238681,
+      "rim_sag_mm": 2.8703132582386814,
+      "tilt_deg": 6.854879852626361e-16,
+      "lateral_center_mm": 2.225308152579338e-16,
+      "stop_clearance_mm": 7.894530112641978,
+      "paver_to_rim_clearance_mm": 9.094530112641976,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.7314072357102854,
+      "stop_sag_mm": 4.038716968565852,
+      "rim_sag_mm": 4.600610419817477,
+      "tilt_deg": 1.383379833018743,
+      "lateral_center_mm": 0.4490883117887155,
+      "stop_clearance_mm": 8.161283031434147,
+      "paver_to_rim_clearance_mm": 8.79938958018252,
+      "conservative_radial_clearance_mm": 2.4955874316983566,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.7314072357102854,
+      "stop_sag_mm": 4.038716968565852,
+      "rim_sag_mm": 4.600610419817477,
+      "tilt_deg": 1.383379833018743,
+      "lateral_center_mm": 0.4490883117887155,
+      "stop_clearance_mm": 6.141924547151222,
+      "paver_to_rim_clearance_mm": 6.499084370273784,
+      "conservative_radial_clearance_mm": 1.993381147547535,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 2.1673793990781878,
+      "stop_sag_mm": 2.1673793990781878,
+      "rim_sag_mm": 2.167379399078188,
+      "tilt_deg": 5.176133766268888e-16,
+      "lateral_center_mm": 1.6803347274578688e-16,
+      "stop_clearance_mm": 10.032620600921812,
+      "paver_to_rim_clearance_mm": 11.23262060092181,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 2.1673793990781878,
+      "stop_sag_mm": 2.1673793990781878,
+      "rim_sag_mm": 2.167379399078188,
+      "tilt_deg": 5.176133766268888e-16,
+      "lateral_center_mm": 1.6803347274578688e-16,
+      "stop_clearance_mm": 8.948930901382717,
+      "paver_to_rim_clearance_mm": 10.148930901382716,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 2.817593218801644,
+      "stop_sag_mm": 3.0496434252436027,
+      "rim_sag_mm": 3.473930317005034,
+      "tilt_deg": 1.0445929351366021,
+      "lateral_center_mm": 0.33910750073841806,
+      "stop_clearance_mm": 9.150356574756398,
+      "paver_to_rim_clearance_mm": 9.926069682994964,
+      "conservative_radial_clearance_mm": 2.7415660198538605,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 2.817593218801644,
+      "stop_sag_mm": 3.0496434252436027,
+      "rim_sag_mm": 3.473930317005034,
+      "tilt_deg": 1.0445929351366021,
+      "lateral_center_mm": 0.33910750073841806,
+      "stop_clearance_mm": 7.625534862134596,
+      "paver_to_rim_clearance_mm": 8.189104524492448,
+      "conservative_radial_clearance_mm": 2.362349029780791,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 1.4160212073977494,
+      "stop_sag_mm": 1.4160212073977494,
+      "rim_sag_mm": 1.4160212073977496,
+      "tilt_deg": 3.3817407272956724e-16,
+      "lateral_center_mm": 1.0978186886058072e-16,
+      "stop_clearance_mm": 10.78397879260225,
+      "paver_to_rim_clearance_mm": 11.98397879260225,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 1.4160212073977494,
+      "stop_sag_mm": 1.4160212073977494,
+      "rim_sag_mm": 1.4160212073977496,
+      "tilt_deg": 3.3817407272956724e-16,
+      "lateral_center_mm": 1.0978186886058072e-16,
+      "stop_clearance_mm": 10.075968188903374,
+      "paver_to_rim_clearance_mm": 11.275968188903374,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 1.8408275696170742,
+      "stop_sag_mm": 1.9924337044924874,
+      "rim_sag_mm": 2.269634473776622,
+      "tilt_deg": 0.6824673842892466,
+      "lateral_center_mm": 0.2215502338157664,
+      "stop_clearance_mm": 10.207566295507512,
+      "paver_to_rim_clearance_mm": 11.130365526223377,
+      "conservative_radial_clearance_mm": 3.004489799637856,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 1.8408275696170742,
+      "stop_sag_mm": 1.9924337044924874,
+      "rim_sag_mm": 2.269634473776622,
+      "tilt_deg": 0.6824673842892466,
+      "lateral_center_mm": 0.2215502338157664,
+      "stop_clearance_mm": 9.211349443261268,
+      "paver_to_rim_clearance_mm": 9.995548289335066,
+      "conservative_radial_clearance_mm": 2.756734699456784,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 0.81693531196024,
+      "stop_sag_mm": 0.81693531196024,
+      "rim_sag_mm": 0.8169353119602402,
+      "tilt_deg": 1.951004265747505e-16,
+      "lateral_center_mm": 6.333569357341203e-17,
+      "stop_clearance_mm": 11.38306468803976,
+      "paver_to_rim_clearance_mm": 12.583064688039759,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 85.80818749999999,
+      "center_sag_mm": 0.81693531196024,
+      "stop_sag_mm": 0.81693531196024,
+      "rim_sag_mm": 0.8169353119602402,
+      "tilt_deg": 1.951004265747505e-16,
+      "lateral_center_mm": 6.333569357341203e-17,
+      "stop_clearance_mm": 10.97459703205964,
+      "paver_to_rim_clearance_mm": 12.174597032059639,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 1.062015905548312,
+      "stop_sag_mm": 1.1494809833610504,
+      "rim_sag_mm": 1.3094045041018976,
+      "tilt_deg": 0.3937311832437964,
+      "lateral_center_mm": 0.1278174425860192,
+      "stop_clearance_mm": 11.05051901663895,
+      "paver_to_rim_clearance_mm": 12.090595495898102,
+      "conservative_radial_clearance_mm": 3.2141287305603012,
+      "passes": true
+    },
+    {
+      "mass_kg": 35.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 1.062015905548312,
+      "stop_sag_mm": 1.1494809833610504,
+      "rim_sag_mm": 1.3094045041018976,
+      "tilt_deg": 0.3937311832437964,
+      "lateral_center_mm": 0.1278174425860192,
+      "stop_clearance_mm": 10.475778524958423,
+      "paver_to_rim_clearance_mm": 11.435893243847152,
+      "conservative_radial_clearance_mm": 3.0711930958404516,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 110.3248125,
+      "center_sag_mm": 5.461796085677033,
+      "stop_sag_mm": 5.461796085677033,
+      "rim_sag_mm": 5.461796085677034,
+      "tilt_deg": 1.3043857090997599e-15,
+      "lateral_center_mm": 4.23444351319383e-16,
+      "stop_clearance_mm": 6.738203914322967,
+      "paver_to_rim_clearance_mm": 7.938203914322966,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 110.3248125,
+      "center_sag_mm": 5.461796085677033,
+      "stop_sag_mm": 5.461796085677033,
+      "rim_sag_mm": 5.461796085677034,
+      "tilt_deg": 1.3043857090997599e-15,
+      "lateral_center_mm": 4.23444351319383e-16,
+      "stop_clearance_mm": 4.0073058714844505,
+      "paver_to_rim_clearance_mm": 5.207305871484448,
+      "conservative_radial_clearance_mm": 3.4999999999999987,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 143.42225625,
+      "center_sag_mm": 7.100334911380144,
+      "stop_sag_mm": 7.685101431613881,
+      "rim_sag_mm": 8.754304398852687,
+      "tilt_deg": 2.6323741965442387,
+      "lateral_center_mm": 0.8545509018608142,
+      "stop_clearance_mm": 4.514898568386119,
+      "paver_to_rim_clearance_mm": 4.645695601147312,
+      "conservative_radial_clearance_mm": 1.588746370031728,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 143.42225625,
+      "center_sag_mm": 7.100334911380144,
+      "stop_sag_mm": 7.685101431613881,
+      "rim_sag_mm": 8.754304398852687,
+      "tilt_deg": 2.6323741965442387,
+      "lateral_center_mm": 0.8545509018608142,
+      "stop_clearance_mm": 0.672347852579178,
+      "paver_to_rim_clearance_mm": 0.26854340172096935,
+      "conservative_radial_clearance_mm": 0.6331195550475917,
+      "passes": false
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 110.3248125,
+      "center_sag_mm": 3.69040276059259,
+      "stop_sag_mm": 3.69040276059259,
+      "rim_sag_mm": 3.6904027605925904,
+      "tilt_deg": 8.813416953376752e-16,
+      "lateral_center_mm": 2.8611104818877214e-16,
+      "stop_clearance_mm": 8.509597239407409,
+      "paver_to_rim_clearance_mm": 9.709597239407408,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 110.3248125,
+      "center_sag_mm": 3.69040276059259,
+      "stop_sag_mm": 3.69040276059259,
+      "rim_sag_mm": 3.6904027605925904,
+      "tilt_deg": 8.813416953376752e-16,
+      "lateral_center_mm": 2.8611104818877214e-16,
+      "stop_clearance_mm": 6.664395859111115,
+      "paver_to_rim_clearance_mm": 7.864395859111114,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 143.42225625,
+      "center_sag_mm": 4.7975235887703676,
+      "stop_sag_mm": 5.192636102441811,
+      "rim_sag_mm": 5.9150705397653285,
+      "tilt_deg": 1.7786312138812412,
+      "lateral_center_mm": 0.577399258014063,
+      "stop_clearance_mm": 7.007363897558189,
+      "paver_to_rim_clearance_mm": 7.484929460234672,
+      "conservative_radial_clearance_mm": 2.208612412183601,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 7.4,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 143.42225625,
+      "center_sag_mm": 4.7975235887703676,
+      "stop_sag_mm": 5.192636102441811,
+      "rim_sag_mm": 5.9150705397653285,
+      "tilt_deg": 1.7786312138812412,
+      "lateral_center_mm": 0.577399258014063,
+      "stop_clearance_mm": 4.4110458463372835,
+      "paver_to_rim_clearance_mm": 4.527394190352006,
+      "conservative_radial_clearance_mm": 1.5629186182754016,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 110.3248125,
+      "center_sag_mm": 2.78663065595767,
+      "stop_sag_mm": 2.78663065595767,
+      "rim_sag_mm": 2.7866306559576706,
+      "tilt_deg": 6.655029128059999e-16,
+      "lateral_center_mm": 2.160430363874403e-16,
+      "stop_clearance_mm": 9.41336934404233,
+      "paver_to_rim_clearance_mm": 10.613369344042328,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 110.3248125,
+      "center_sag_mm": 2.78663065595767,
+      "stop_sag_mm": 2.78663065595767,
+      "rim_sag_mm": 2.7866306559576706,
+      "tilt_deg": 6.655029128059999e-16,
+      "lateral_center_mm": 2.160430363874403e-16,
+      "stop_clearance_mm": 8.020054016063494,
+      "paver_to_rim_clearance_mm": 9.220054016063493,
+      "conservative_radial_clearance_mm": 3.499999999999999,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 143.42225625,
+      "center_sag_mm": 3.6226198527449713,
+      "stop_sag_mm": 3.920970118170347,
+      "rim_sag_mm": 4.466481836149329,
+      "tilt_deg": 1.3430480594613459,
+      "lateral_center_mm": 0.4359953580922519,
+      "stop_clearance_mm": 8.279029881829652,
+      "paver_to_rim_clearance_mm": 8.93351816385067,
+      "conservative_radial_clearance_mm": 2.5248705969549636,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 9.8,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 143.42225625,
+      "center_sag_mm": 3.6226198527449713,
+      "stop_sag_mm": 3.920970118170347,
+      "rim_sag_mm": 4.466481836149329,
+      "tilt_deg": 1.3430480594613459,
+      "lateral_center_mm": 0.4359953580922519,
+      "stop_clearance_mm": 6.31854482274448,
+      "paver_to_rim_clearance_mm": 6.700277245776006,
+      "conservative_radial_clearance_mm": 2.0373058954324454,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 110.3248125,
+      "center_sag_mm": 1.8205986952256779,
+      "stop_sag_mm": 1.8205986952256779,
+      "rim_sag_mm": 1.820598695225678,
+      "tilt_deg": 4.347952363665864e-16,
+      "lateral_center_mm": 1.4114811710646092e-16,
+      "stop_clearance_mm": 10.379401304774321,
+      "paver_to_rim_clearance_mm": 11.57940130477432,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 110.3248125,
+      "center_sag_mm": 1.8205986952256779,
+      "stop_sag_mm": 1.8205986952256779,
+      "rim_sag_mm": 1.820598695225678,
+      "tilt_deg": 4.347952363665864e-16,
+      "lateral_center_mm": 1.4114811710646092e-16,
+      "stop_clearance_mm": 9.469101957161483,
+      "paver_to_rim_clearance_mm": 10.669101957161482,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 143.42225625,
+      "center_sag_mm": 2.3667783037933816,
+      "stop_sag_mm": 2.561700477204627,
+      "rim_sag_mm": 2.918101466284229,
+      "tilt_deg": 0.8774580655147458,
+      "lateral_center_mm": 0.28485030062027117,
+      "stop_clearance_mm": 9.638299522795371,
+      "paver_to_rim_clearance_mm": 10.48189853371577,
+      "conservative_radial_clearance_mm": 2.862915456677243,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 15.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 143.42225625,
+      "center_sag_mm": 2.3667783037933816,
+      "stop_sag_mm": 2.561700477204627,
+      "rim_sag_mm": 2.918101466284229,
+      "tilt_deg": 0.8774580655147458,
+      "lateral_center_mm": 0.28485030062027117,
+      "stop_clearance_mm": 8.35744928419306,
+      "paver_to_rim_clearance_mm": 9.022847800573654,
+      "conservative_radial_clearance_mm": 2.5443731850158646,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.0,
+      "force_N": 110.3248125,
+      "center_sag_mm": 1.0503454010917372,
+      "stop_sag_mm": 1.0503454010917372,
+      "rim_sag_mm": 1.0503454010917375,
+      "tilt_deg": 2.508434055961078e-16,
+      "lateral_center_mm": 8.143160602295832e-17,
+      "stop_clearance_mm": 11.149654598908262,
+      "paver_to_rim_clearance_mm": 12.349654598908261,
+      "conservative_radial_clearance_mm": 3.5,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.0,
+      "eccentricity_mm": 0.0,
+      "sag_multiplier": 1.5,
+      "force_N": 110.3248125,
+      "center_sag_mm": 1.0503454010917372,
+      "stop_sag_mm": 1.0503454010917372,
+      "rim_sag_mm": 1.0503454010917375,
+      "tilt_deg": 2.508434055961078e-16,
+      "lateral_center_mm": 8.143160602295832e-17,
+      "stop_clearance_mm": 10.624481898362394,
+      "paver_to_rim_clearance_mm": 11.824481898362393,
+      "conservative_radial_clearance_mm": 3.4999999999999996,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.0,
+      "force_N": 143.42225625,
+      "center_sag_mm": 1.3654490214192585,
+      "stop_sag_mm": 1.477904121464208,
+      "rim_sag_mm": 1.6835200767024399,
+      "tilt_deg": 0.5062258070277383,
+      "lateral_center_mm": 0.16433671189631044,
+      "stop_clearance_mm": 10.722095878535791,
+      "paver_to_rim_clearance_mm": 11.716479923297559,
+      "conservative_radial_clearance_mm": 3.1324512250061014,
+      "passes": true
+    },
+    {
+      "mass_kg": 45.0,
+      "E_MPa": 26.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 143.42225625,
+      "center_sag_mm": 1.3654490214192585,
+      "stop_sag_mm": 1.477904121464208,
+      "rim_sag_mm": 1.6835200767024399,
+      "tilt_deg": 0.5062258070277383,
+      "lateral_center_mm": 0.16433671189631044,
+      "stop_clearance_mm": 9.983143817803688,
+      "paver_to_rim_clearance_mm": 10.87471988494634,
+      "conservative_radial_clearance_mm": 2.948676837509152,
+      "passes": true
+    }
+  ],
+  "nominal_modes_Hz": [
+    7.159628659936703,
+    17.529790824561147,
+    208.57427066507094
+  ],
+  "frequency_cases": 90,
+  "frequency_scenarios": [
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.439106683736488,
+        12.051417956347732,
+        124.82689488070606
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.135357602872621,
+        16.50727954127219,
+        157.55264439418457
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.439106683736488,
+        12.051417956347732,
+        124.82689488070606
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.135357602872621,
+        16.50727954127219,
+        157.55264439418457
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.439106683736488,
+        12.051417956347732,
+        124.82689488070606
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.135357602872621,
+        16.50727954127219,
+        157.55264439418457
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.545277990226116,
+        12.936334620123933,
+        186.1818453673344
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        7.209595598041983,
+        17.688773338257754,
+        209.45622296216365
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.545277990226116,
+        12.936334620123933,
+        186.1818453673344
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        7.209595598041983,
+        17.688773338257754,
+        209.45622296216365
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.545277990226116,
+        12.936334620123933,
+        186.1818453673344
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        7.209595598041983,
+        17.688773338257754,
+        209.45622296216365
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.984747713159859,
+        13.502070954648833,
+        369.5818735988728
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.297249982407513,
+        18.85533508312002,
+        381.78464911837006
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.984747713159859,
+        13.502070954648833,
+        369.5818735988728
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.297249982407513,
+        18.85533508312002,
+        381.78464911837006
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.984747713159859,
+        13.502070954648833,
+        369.5818735988728
+      ]
+    },
+    {
+      "E_MPa": 5.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.297249982407513,
+        18.85533508312002,
+        381.78464911837006
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.856973356548154,
+        14.382906470023414,
+        141.47875725015984
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.436073369943037,
+        19.8077259894935,
+        183.575060547978
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.856973356548154,
+        14.382906470023414,
+        141.47875725015984
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.436073369943037,
+        19.8077259894935,
+        183.575060547978
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        4.856973356548154,
+        14.382906470023414,
+        141.47875725015984
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.436073369943037,
+        19.8077259894935,
+        183.575060547978
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        6.4697570206007695,
+        15.454765009525314,
+        197.68933153224975
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.17182714216862,
+        21.0683974195787,
+        229.62170194995278
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        6.4697570206007695,
+        15.454765009525314,
+        197.68933153224975
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.17182714216862,
+        21.0683974195787,
+        229.62170194995278
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        6.4697570206007695,
+        15.454765009525314,
+        197.68933153224975
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.17182714216862,
+        21.0683974195787,
+        229.62170194995278
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.211187470513824,
+        16.323640396660288,
+        375.48691438033853
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.908374203589686,
+        22.69250986641914,
+        393.15488330173
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.211187470513824,
+        16.323640396660288,
+        375.48691438033853
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.908374203589686,
+        22.69250986641914,
+        393.15488330173
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.211187470513824,
+        16.323640396660288,
+        375.48691438033853
+      ]
+    },
+    {
+      "E_MPa": 7.4,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.908374203589686,
+        22.69250986641914,
+        393.15488330173
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.1179509794953635,
+        16.354431241900755,
+        156.37466870174669
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.609383869247149,
+        22.616028453495506,
+        206.34619369869358
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.1179509794953635,
+        16.354431241900755,
+        156.37466870174669
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.609383869247149,
+        22.616028453495506,
+        206.34619369869358
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.1179509794953635,
+        16.354431241900755,
+        156.37466870174669
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.609383869247149,
+        22.616028453495506,
+        206.34619369869358
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.159628659936703,
+        17.529790824561147,
+        208.57427066507094
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.832278612144885,
+        23.885605732156733,
+        248.16980609046252
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.159628659936703,
+        17.529790824561147,
+        208.57427066507094
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.832278612144885,
+        23.885605732156733,
+        248.16980609046252
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        7.159628659936703,
+        17.529790824561147,
+        208.57427066507094
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        8.832278612144885,
+        23.885605732156733,
+        248.16980609046252
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.220302537520524,
+        18.67471844339378,
+        381.3037736004562
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        11.198224687077097,
+        25.863160741034203,
+        404.2147778772105
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.220302537520524,
+        18.67471844339378,
+        381.3037736004562
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        11.198224687077097,
+        25.863160741034203,
+        404.2147778772105
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.220302537520524,
+        18.67471844339378,
+        381.3037736004562
+      ]
+    },
+    {
+      "E_MPa": 9.8,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        11.198224687077097,
+        25.863160741034203,
+        404.2147778772105
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.4451334001935905,
+        19.932890531169242,
+        184.5798749354502
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.812292862993286,
+        27.72579182511652,
+        248.6346783159871
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.4451334001935905,
+        19.932890531169242,
+        184.5798749354502
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.812292862993286,
+        27.72579182511652,
+        248.6346783159871
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.4451334001935905,
+        19.932890531169242,
+        184.5798749354502
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.812292862993286,
+        27.72579182511652,
+        248.6346783159871
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.204161794631414,
+        21.19488644983001,
+        230.42406716486443
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.740453516407955,
+        28.94188321993716,
+        284.26093449547227
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.204161794631414,
+        21.19488644983001,
+        230.42406716486443
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.740453516407955,
+        28.94188321993716,
+        284.26093449547227
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        8.204161794631414,
+        21.19488644983001,
+        230.42406716486443
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        9.740453516407955,
+        28.94188321993716,
+        284.26093449547227
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.967491095858836,
+        22.83564182241631,
+        393.6217356896249
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        13.343842290878605,
+        31.43218483989072,
+        427.22108276710446
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.967491095858836,
+        22.83564182241631,
+        393.6217356896249
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        13.343842290878605,
+        31.43218483989072,
+        427.22108276710446
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.967491095858836,
+        22.83564182241631,
+        393.6217356896249
+      ]
+    },
+    {
+      "E_MPa": 15.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        13.343842290878605,
+        31.43218483989072,
+        427.22108276710446
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.751431480157465,
+        25.881830417971496,
+        233.2782799789482
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.9889978570285125,
+        36.216616981598264,
+        320.19400755306214
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.751431480157465,
+        25.881830417971496,
+        233.2782799789482
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.9889978570285125,
+        36.216616981598264,
+        320.19400755306214
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        5.751431480157465,
+        25.881830417971496,
+        233.2782799789482
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 5.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        5.9889978570285125,
+        36.216616981598264,
+        320.19400755306214
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.450245679527375,
+        27.123719986547854,
+        270.9460888586358
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        10.688758189192821,
+        37.283888031600995,
+        348.5433379549026
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.450245679527375,
+        27.123719986547854,
+        270.9460888586358
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        10.688758189192821,
+        37.283888031600995,
+        348.5433379549026
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        9.450245679527375,
+        27.123719986547854,
+        270.9460888586358
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 20.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        10.688758189192821,
+        37.283888031600995,
+        348.5433379549026
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        12.59980955502281,
+        29.44973939569189,
+        418.5186376472807
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.1,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        16.33809772166022,
+        40.252311535985704,
+        472.2782233835283
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        12.59980955502281,
+        29.44973939569189,
+        418.5186376472807
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.3,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        16.33809772166022,
+        40.252311535985704,
+        472.2782233835283
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 1.0,
+      "modes_Hz": [
+        12.59980955502281,
+        29.44973939569189,
+        418.5186376472807
+      ]
+    },
+    {
+      "E_MPa": 26.0,
+      "ball_k": 100.0,
+      "loss_factor": 0.6,
+      "dynamic_ratio": 2.0,
+      "modes_Hz": [
+        16.33809772166022,
+        40.252311535985704,
+        472.2782233835283
+      ]
+    }
+  ],
+  "transfer_samples": [
+    {
+      "f_Hz": 5.0,
+      "existing_force_ratio": 1.5262445746829771,
+      "new_force_ratio": 1.9008961583022703
+    },
+    {
+      "f_Hz": 10.0,
+      "existing_force_ratio": 1.6951925931296754,
+      "new_force_ratio": 1.483929844357562
+    },
+    {
+      "f_Hz": 20.0,
+      "existing_force_ratio": 0.20381012390557254,
+      "new_force_ratio": 0.3794063886535384
+    },
+    {
+      "f_Hz": 30.0,
+      "existing_force_ratio": 0.08276942337578498,
+      "new_force_ratio": 0.03437159134306845
+    },
+    {
+      "f_Hz": 50.0,
+      "existing_force_ratio": 0.02939917360896583,
+      "new_force_ratio": 0.003372157228638436
+    },
+    {
+      "f_Hz": 100.0,
+      "existing_force_ratio": 0.008625149258088011,
+      "new_force_ratio": 0.00022490428719275759
+    }
+  ],
+  "assumptions": {
+    "paver_reference": "Lowe\u2019s 16-inch square model 104801256, 36 lb; actual purchase unconfirmed",
+    "printer": "P1S without AMS, 12.95 kg reference",
+    "material": "5 MPa assumed low-end effective stiffness; actual TPU unspecified",
+    "worst_load": "35 kg combined, 30% extra on one corner, load offset +2 mm in X and Y",
+    "drift": "1.5\u00d7 displacement stress test, not a creep law",
+    "compression_reserve_mm": 0.8,
+    "dynamics": "Vertical 3-mass model with existing squash balls and P02 feet above paver; fixed shelf",
+    "limits": "Linear beam screening only; thick short ribs, anisotropy, large strain, contacts and table modes unmodeled"
+  }
+}

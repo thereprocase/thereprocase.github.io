@@ -1,0 +1,58 @@
+{
+  "base": {
+    "bounds_mm": [
+      [
+        -38.099998474121094,
+        -38.099998474121094,
+        0.0
+      ],
+      [
+        38.099998474121094,
+        38.099998474121094,
+        18.0
+      ]
+    ],
+    "volume_mm3": 40887.562959038776,
+    "watertight": true,
+    "triangles": 1364,
+    "estimated_mass_g": 49.882826810027304
+  },
+  "floating-pad": {
+    "bounds_mm": [
+      [
+        -36.0,
+        -35.99288558959961,
+        0.0
+      ],
+      [
+        36.0,
+        35.99288558959961,
+        23.0
+      ]
+    ],
+    "volume_mm3": 48089.26827895388,
+    "watertight": true,
+    "triangles": 2916,
+    "estimated_mass_g": 58.66890730032373
+  },
+  "assembly": {
+    "width_mm": 76.2,
+    "height_under_paver_mm": 38.0,
+    "seat_z_mm": 15.0,
+    "stop_gap_mm": 13.0,
+    "paver_to_rim_gap_mm": 14.2,
+    "pad_width_mm": 48.0,
+    "pad_recess_width_mm": 24,
+    "pad_bearing_area_mm2": 1656.0,
+    "paver_reference_side_mm": 398.78,
+    "paver_reference_thickness_mm": 45.0,
+    "paver_reference_mass_kg": 16.329325320000002,
+    "printer_mass_kg": 12.95,
+    "rib_width_mm": 7.2,
+    "rib_height_mm": 8.8,
+    "rib_sweep_deg": 12.0,
+    "socket_radial_clearance_mm": 0.25,
+    "alignment_lips": false,
+    "parts_per_foot": 2
+  }
+}

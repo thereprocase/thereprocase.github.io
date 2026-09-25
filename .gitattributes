@@ -3,3 +3,6 @@ public/spool-wall-rack/downloads/*.step binary
 docs/spool-wall-rack/downloads/*.step binary
 public/p1s-feet/**/*.step binary
 docs/p1s-feet/**/*.step binary
+
+public/paver-feet/*.step binary
+docs/paver-feet/*.step binary

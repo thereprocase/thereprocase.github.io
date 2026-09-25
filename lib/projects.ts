@@ -1,7 +1,7 @@
 export type Project = {
   slug: string; name: string; category: string; summary: string; description: string;
   status: string; highlights: string[]; links: { label: string; href: string }[];
-  image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
+  sourceHref?: string; image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
 };
 
 export const categories = [
@@ -14,6 +14,26 @@ export const categories = [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: 'paver-feet', name: 'TPU paver feet', category: 'hardware',
+    summary: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf.',
+    description: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf. Inspect the actual CAD, load and clearance calculations, and modeled force transmission before printing.',
+    status: 'C01 engineering prototype · physical load and vibration testing remain',
+    highlights: ['Interactive CAD viewer and printable STL / STEP downloads.', 'Load and clearance estimates with explicit material assumptions.', 'Transmission analysis distinguishes modeled forces from audible noise.'],
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/paver-feet',
+    image: { src: '/paver-feet/featured.png', alt: 'Actual C01 TPU isolation foot CAD geometry' },
+    links: [{ label: 'Explore C01', href: '/paver-feet/' }, { label: 'Model and analysis', href: '/paver-feet/' }],
+  },
+  {
+    slug: 'p1s-feet', name: 'P1S squash-ball cradles', category: 'hardware',
+    summary: 'Two-piece TPU cradles with compliant ribs beneath the P1S squash-ball feet.',
+    description: 'Two-piece TPU cradles with compliant ribs beneath the P1S squash-ball feet. Inspect the actual CAD, load and clearance calculations, and modeled force transmission before printing.',
+    status: 'P02 engineering prototype · physical load and vibration testing remain',
+    highlights: ['Interactive CAD viewer and printable STL / STEP downloads.', 'Load and clearance estimates with explicit material assumptions.', 'Transmission analysis distinguishes modeled forces from audible noise.'],
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-feet',
+    image: { src: '/p1s-feet/p02/print-layout.png', alt: 'Actual P02 TPU isolation foot CAD geometry' },
+    links: [{ label: 'Explore P02', href: '/p1s-feet/' }, { label: 'Model and analysis', href: '/p1s-feet/' }],
+  },
   {
     slug: 'trio', name: 'Trio / nth', category: 'agent-collaboration', spotlight: true,
     summary: 'A shared workspace for coding agents: messages, task claims, and a live view of who is doing what.',
@@ -124,5 +144,5 @@ export const projects: Project[] = [
 ];
 
 export const featuredProjects = projects.filter(project => !project.fork);
-export const sourceUrl = (project: Project) => `https://github.com/thereprocase/${project.slug}`;
+export const sourceUrl = (project: Project) => project.sourceHref ?? `https://github.com/thereprocase/${project.slug}`;
 export const projectUrl = (project: Project) => project.fork ? `/projects/${project.slug}/` : `/${project.slug}/`;

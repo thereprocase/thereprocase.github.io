@@ -1,0 +1,2678 @@
+{
+  "candidates": [
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 17.455223012172837,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 20.35723580439742,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 23.279727652855627,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 26.209741799678795,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 29.139171095704114,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 32.06309542180452,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 21.62176665811785,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 25.25477383686234,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 28.914710703629908,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 32.58424371258366,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 36.252505095558035,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 39.912897076834724,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 25.735182410750895,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 30.090686240864898,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 34.47989026368009,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 38.88083443487267,
+      "k_center": 38.8551950917049,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.627027768975911,
+      "stop_sag_mm": 6.090961567765077,
+      "rim_sag_mm": 6.9392307095577275,
+      "tilt_deg": 2.088435843333167,
+      "lateral_center_mm": 0.6488114539543427,
+      "stop_clearance_mm": 3.0635576483523854,
+      "paver_to_rim_clearance_mm": 1.391153935663408,
+      "conservative_radial_clearance_mm": 1.2692550010109125,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 43.27978603322367,
+      "k_center": 43.25085160131948,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.055143509436236,
+      "stop_sag_mm": 5.470572002710001,
+      "rim_sag_mm": 6.230152728204193,
+      "tilt_deg": 1.870085253454667,
+      "lateral_center_mm": 0.5679211224045126,
+      "stop_clearance_mm": 3.9941419959349984,
+      "paver_to_rim_clearance_mm": 1.6547709076937103,
+      "conservative_radial_clearance_mm": 1.5220678150739384,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 47.66841945290025,
+      "k_center": 47.636189047690095,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.589772316402416,
+      "stop_sag_mm": 4.965713822932845,
+      "rim_sag_mm": 5.653095470791028,
+      "tilt_deg": 1.6923313612501405,
+      "lateral_center_mm": 0.5021248229057328,
+      "stop_clearance_mm": 4.751429265600733,
+      "paver_to_rim_clearance_mm": 1.720356793813459,
+      "conservative_radial_clearance_mm": 1.7277947426856484,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 29.80841703679266,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 34.8779190229709,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 39.98908638666239,
+      "k_center": 39.96732259522469,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.470450546920627,
+      "stop_sag_mm": 5.920779086500038,
+      "rim_sag_mm": 6.744172003314371,
+      "tilt_deg": 2.0271906590727236,
+      "lateral_center_mm": 0.6439369585101703,
+      "stop_clearance_mm": 3.318831370249943,
+      "paver_to_rim_clearance_mm": 2.4837419950284447,
+      "conservative_radial_clearance_mm": 1.31344483319074,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 45.11460489047863,
+      "k_center": 45.08973488069478,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.84898086734173,
+      "stop_sag_mm": 5.24660477531679,
+      "rim_sag_mm": 5.973631114105972,
+      "tilt_deg": 1.7899364602204888,
+      "lateral_center_mm": 0.5560770664556527,
+      "stop_clearance_mm": 4.330092837024815,
+      "paver_to_rim_clearance_mm": 2.839553328841041,
+      "conservative_radial_clearance_mm": 1.5880945805007896,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 50.23758048856803,
+      "k_center": 50.20959023028445,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.354531888175527,
+      "stop_sag_mm": 4.710202336600013,
+      "rim_sag_mm": 5.360519831969986,
+      "tilt_deg": 1.6010795394573996,
+      "lateral_center_mm": 0.4862275061673217,
+      "stop_clearance_mm": 5.13469649509998,
+      "paver_to_rim_clearance_mm": 2.9592202520450224,
+      "conservative_radial_clearance_mm": 1.8065869612793275,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 55.347836767763056,
+      "k_center": 55.3167263667583,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.952498206426542,
+      "stop_sag_mm": 4.2740376828187925,
+      "rim_sag_mm": 4.861949183131072,
+      "tilt_deg": 1.447436184422781,
+      "lateral_center_mm": 0.4294629612215837,
+      "stop_clearance_mm": 5.788943475771812,
+      "paver_to_rim_clearance_mm": 2.907076225303392,
+      "conservative_radial_clearance_mm": 1.9842483721591166,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 33.8563447925319,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 39.6291776663777,
+      "k_center": 39.610727812663754,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.519698168234614,
+      "stop_sag_mm": 5.974297690088682,
+      "rim_sag_mm": 6.80549978674331,
+      "tilt_deg": 2.0464168342121836,
+      "lateral_center_mm": 0.664330836229493,
+      "stop_clearance_mm": 3.2385534648669774,
+      "paver_to_rim_clearance_mm": 3.1917503198850357,
+      "conservative_radial_clearance_mm": 1.2712771945849273,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 45.45478446078005,
+      "k_center": 45.43338831644314,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.812303679117646,
+      "stop_sag_mm": 5.206923336851311,
+      "rim_sag_mm": 5.928456623009604,
+      "tilt_deg": 1.7764125826697594,
+      "lateral_center_mm": 0.5642773216342671,
+      "stop_clearance_mm": 4.389614994723034,
+      "paver_to_rim_clearance_mm": 3.707315065485594,
+      "conservative_radial_clearance_mm": 1.583937446318807,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 51.298720246209086,
+      "k_center": 51.27435956496993,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.2641051707912885,
+      "stop_sag_mm": 4.6122168327667445,
+      "rim_sag_mm": 5.248713637963144,
+      "tilt_deg": 1.56705304560535,
+      "lateral_center_mm": 0.48683418654608424,
+      "stop_clearance_mm": 5.281674750849883,
+      "paver_to_rim_clearance_mm": 3.9269295430552837,
+      "conservative_radial_clearance_mm": 1.8261656058078453,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 57.1401597275476,
+      "k_center": 57.11282607391877,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.8281989664987726,
+      "stop_sag_mm": 4.139306750458818,
+      "rim_sag_mm": 4.708144661371042,
+      "tilt_deg": 1.4004770699135447,
+      "lateral_center_mm": 0.42530708585493043,
+      "stop_clearance_mm": 5.991039874311773,
+      "paver_to_rim_clearance_mm": 3.9377830079434375,
+      "conservative_radial_clearance_mm": 2.0187580802983454,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 62.96673845128271,
+      "k_center": 62.93643343174472,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.4739696838257728,
+      "stop_sag_mm": 3.754987150433511,
+      "rim_sag_mm": 4.268807108906556,
+      "tilt_deg": 1.2650230515604062,
+      "lateral_center_mm": 0.37533989517703625,
+      "stop_clearance_mm": 6.567519274349734,
+      "paver_to_rim_clearance_mm": 3.796789336640167,
+      "conservative_radial_clearance_mm": 2.1752709581986953,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 37.89882889861224,
+      "k_center": 37.88343868599668,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.771367894087669,
+      "stop_sag_mm": 6.2475061042937226,
+      "rim_sag_mm": 7.118090122962573,
+      "tilt_deg": 2.1433749969717573,
+      "lateral_center_mm": 0.7107700652395323,
+      "stop_clearance_mm": 2.828740843559417,
+      "paver_to_rim_clearance_mm": 3.522864815556141,
+      "conservative_radial_clearance_mm": 1.1432360994689188,
+      "passes": false
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 44.35853716413067,
+      "k_center": 44.34020683257086,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.930948170259657,
+      "stop_sag_mm": 5.335919585780911,
+      "rim_sag_mm": 6.0763803066668345,
+      "tilt_deg": 1.8230118648551241,
+      "lateral_center_mm": 0.5918066038103749,
+      "stop_clearance_mm": 4.196120621328633,
+      "paver_to_rim_clearance_mm": 4.285429539999748,
+      "conservative_radial_clearance_mm": 1.5145842968942262,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 50.88877421091911,
+      "k_center": 50.86756430553669,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.298205835780546,
+      "stop_sag_mm": 4.649526285420109,
+      "rim_sag_mm": 5.291890125019112,
+      "tilt_deg": 1.5814976650507444,
+      "lateral_center_mm": 0.5023626128928306,
+      "stop_clearance_mm": 5.225710571869837,
+      "paver_to_rim_clearance_mm": 4.662164812471333,
+      "conservative_radial_clearance_mm": 1.7941753034737953,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 57.444438738451026,
+      "k_center": 57.42036653403147,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.807695334379632,
+      "stop_sag_mm": 4.117387248904467,
+      "rim_sag_mm": 4.683636345736253,
+      "tilt_deg": 1.3941034181432028,
+      "lateral_center_mm": 0.4331041667263293,
+      "stop_clearance_mm": 6.0239191266433005,
+      "paver_to_rim_clearance_mm": 4.774545481395621,
+      "conservative_radial_clearance_mm": 2.010900280693744,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 63.99911016545775,
+      "k_center": 63.972182058605085,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.417723996810113,
+      "stop_sag_mm": 3.6942938466210293,
+      "rim_sag_mm": 4.199981661902288,
+      "tilt_deg": 1.2450017417094403,
+      "lateral_center_mm": 0.3780912047945511,
+      "stop_clearance_mm": 6.658559230068456,
+      "paver_to_rim_clearance_mm": 4.70002750714657,
+      "conservative_radial_clearance_mm": 2.183199597094839,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 70.5374653943968,
+      "k_center": 70.50768837410214,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.1009279525650624,
+      "stop_sag_mm": 3.350569875723112,
+      "rim_sag_mm": 3.807021939499094,
+      "tilt_deg": 1.1237834830801525,
+      "lateral_center_mm": 0.3334332716077371,
+      "stop_clearance_mm": 7.174145186415332,
+      "paver_to_rim_clearance_mm": 4.48946709075136,
+      "conservative_radial_clearance_mm": 2.323176688443281,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 14.681621897813216,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 17.194331224737425,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 19.734940161575878,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 22.290439998370175,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 24.852269746498223,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 27.414880286282596,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 18.356008525830248,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 21.542178918169384,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 24.765694455213634,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 28.008713890032823,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 31.259489566739376,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 34.510427020367615,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 21.982791373644204,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 25.835944316985433,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 29.736364968787484,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 33.661014582982716,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 37.5947720795516,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 41.52788932361659,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 25.570531420145926,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 30.082622578225937,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 34.65333313408087,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 39.253566523083464,
+      "k_center": 39.22427963086011,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.5740797232636305,
+      "stop_sag_mm": 6.0302953245076205,
+      "rim_sag_mm": 6.864452304554525,
+      "tilt_deg": 2.053691747426943,
+      "lateral_center_mm": 0.6380175540827198,
+      "stop_clearance_mm": 3.154557013238569,
+      "paver_to_rim_clearance_mm": 1.503321543168213,
+      "conservative_radial_clearance_mm": 1.3063666118054802,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 43.86445252545036,
+      "k_center": 43.831303949920766,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.988198890906945,
+      "stop_sag_mm": 5.39501363672788,
+      "rim_sag_mm": 6.138844752733602,
+      "tilt_deg": 1.8313097665794653,
+      "lateral_center_mm": 0.5561454998828843,
+      "stop_clearance_mm": 4.107479544908181,
+      "paver_to_rim_clearance_mm": 1.791732870899598,
+      "conservative_radial_clearance_mm": 1.563079465925127,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 48.47391625984028,
+      "k_center": 48.436887850620224,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.51389986954334,
+      "stop_sag_mm": 4.880720519355297,
+      "rim_sag_mm": 5.551425345388502,
+      "tilt_deg": 1.6512730806452838,
+      "lateral_center_mm": 0.4899425858157709,
+      "stop_clearance_mm": 4.878919220967055,
+      "paver_to_rim_clearance_mm": 1.8728619819172472,
+      "conservative_radial_clearance_mm": 1.770790873591397,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 29.133102107634386,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 34.292777596240285,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 39.526038171962,
+      "k_center": 39.50082645986777,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.535055373389064,
+      "stop_sag_mm": 5.987800042629433,
+      "rim_sag_mm": 6.815610676452766,
+      "tilt_deg": 2.038067063851283,
+      "lateral_center_mm": 0.6473918476599825,
+      "stop_clearance_mm": 3.2182999360558506,
+      "paver_to_rim_clearance_mm": 2.3765839853208517,
+      "conservative_radial_clearance_mm": 1.3017133964073118,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 44.79571415827559,
+      "k_center": 44.766823940270115,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.883957415467271,
+      "stop_sag_mm": 5.281774620539242,
+      "rim_sag_mm": 6.00915438898355,
+      "tilt_deg": 1.7908066028715623,
+      "lateral_center_mm": 0.5563473924608267,
+      "stop_clearance_mm": 4.277338069191138,
+      "paver_to_rim_clearance_mm": 2.786268416524675,
+      "conservative_radial_clearance_mm": 1.587165145022326,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 50.078289079276146,
+      "k_center": 50.04569025906767,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.368793009311831,
+      "stop_sag_mm": 4.723145944807949,
+      "rim_sag_mm": 5.371054463802489,
+      "tilt_deg": 1.59514864752661,
+      "lateral_center_mm": 0.4844263696704849,
+      "stop_clearance_mm": 5.115281082788077,
+      "paver_to_rim_clearance_mm": 2.9434183042962667,
+      "conservative_radial_clearance_mm": 1.812859884940725,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 55.35895451367969,
+      "k_center": 55.322633174437215,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.9520761974689607,
+      "stop_sag_mm": 4.271265944767662,
+      "rim_sag_mm": 4.85488113666949,
+      "tilt_deg": 1.4368586872154225,
+      "lateral_center_mm": 0.426324554622472,
+      "stop_clearance_mm": 5.793101082848508,
+      "paver_to_rim_clearance_mm": 2.917678294995766,
+      "conservative_radial_clearance_mm": 1.9953251013324516,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 32.691755653950395,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 38.48054993010419,
+      "k_center": 38.45899137135348,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.684997290720823,
+      "stop_sag_mm": 6.150566656588748,
+      "rim_sag_mm": 7.001826313592546,
+      "tilt_deg": 2.0957984819690525,
+      "lateral_center_mm": 0.6803616618170569,
+      "stop_clearance_mm": 2.9741500151168774,
+      "paver_to_rim_clearance_mm": 2.89726052961118,
+      "conservative_radial_clearance_mm": 1.2174963603556797,
+      "passes": false
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 44.36548084958213,
+      "k_center": 44.34035468563161,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.930931727996518,
+      "stop_sag_mm": 5.332883410390902,
+      "rim_sag_mm": 6.067822769318161,
+      "tilt_deg": 1.8094182898323155,
+      "lateral_center_mm": 0.5747615820014967,
+      "stop_clearance_mm": 4.200674884413647,
+      "paver_to_rim_clearance_mm": 3.4982658460227603,
+      "conservative_radial_clearance_mm": 1.5483370457311816,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 50.29733523201185,
+      "k_center": 50.26863651758049,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.349416990324277,
+      "stop_sag_mm": 4.702287790865863,
+      "rim_sag_mm": 5.347486334107,
+      "tilt_deg": 1.5884766961150445,
+      "lateral_center_mm": 0.49348984220367914,
+      "stop_clearance_mm": 5.146568313701207,
+      "paver_to_rim_clearance_mm": 3.7787704988395,
+      "conservative_radial_clearance_mm": 1.8032821155693726,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 56.24604331899627,
+      "k_center": 56.213761253702614,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.889425949693038,
+      "stop_sag_mm": 4.20346147839759,
+      "rim_sag_mm": 4.777652557215003,
+      "tilt_deg": 1.4136565517286557,
+      "lateral_center_mm": 0.42930952696894975,
+      "stop_clearance_mm": 5.894807782403615,
+      "paver_to_rim_clearance_mm": 3.8335211641774967,
+      "conservative_radial_clearance_mm": 2.004818544004692,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 62.193163564575116,
+      "k_center": 62.15729269514259,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.517515841983993,
+      "stop_sag_mm": 3.8001441634751654,
+      "rim_sag_mm": 4.316909452711111,
+      "tilt_deg": 1.2722744462329925,
+      "lateral_center_mm": 0.3774914272878058,
+      "stop_clearance_mm": 6.499783754787252,
+      "paver_to_rim_clearance_mm": 3.724635820933334,
+      "conservative_radial_clearance_mm": 2.167677315454803,
+      "passes": true
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 12.291951428335892,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 14.462875899413575,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 16.668100026790853,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 18.894717493705002,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 21.133850629276594,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 23.37943708896205,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 15.485004450316865,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 18.267450732059615,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 21.09655999995266,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 23.9543083869562,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 26.828298081988805,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 29.710095843997806,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 18.639736060831638,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 22.02986196962138,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 25.479676267291325,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 28.96558235262546,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 32.47139820718553,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 35.98615089915779,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 21.760095207995846,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 25.751118585402537,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 29.81642992639786,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 33.92594190494765,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 38.059259104974444,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 42.202652265871166,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 24.857827046056627,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 29.438796993267488,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 34.112427636327766,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 38.84007589264206,
+      "k_center": 38.808831199387896,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.633750231402187,
+      "stop_sag_mm": 6.091156146094178,
+      "rim_sag_mm": 6.9274895275363555,
+      "tilt_deg": 2.059050040519823,
+      "lateral_center_mm": 0.6396822075330058,
+      "stop_clearance_mm": 3.0632657808587327,
+      "paver_to_rim_clearance_mm": 1.4087657086954664,
+      "conservative_radial_clearance_mm": 1.3006431965719134,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 43.5961865921181,
+      "k_center": 43.560706875948654,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.0191853491412965,
+      "stop_sag_mm": 5.425054743097839,
+      "rim_sag_mm": 6.167157352112277,
+      "tilt_deg": 1.827054188039355,
+      "lateral_center_mm": 0.5548531347693071,
+      "stop_clearance_mm": 4.062417885353242,
+      "paver_to_rim_clearance_mm": 1.7492639718315857,
+      "conservative_radial_clearance_mm": 1.5675804616655167,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 48.36382858259549,
+      "k_center": 48.32407483590168,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.524437611945031,
+      "stop_sag_mm": 4.888828881271274,
+      "rim_sag_mm": 5.55509176212807,
+      "tilt_deg": 1.640337026198073,
+      "lateral_center_mm": 0.4866977931419906,
+      "stop_clearance_mm": 4.866756678093089,
+      "paver_to_rim_clearance_mm": 1.8673623568078959,
+      "conservative_radial_clearance_mm": 1.7822430830282685,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 27.953683495329642,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 33.105831101119065,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 38.37684275418678,
+      "k_center": 38.34972508152123,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.701195022525757,
+      "stop_sag_mm": 6.164321655470745,
+      "rim_sag_mm": 7.011114953339734,
+      "tilt_deg": 2.0848023204363813,
+      "lateral_center_mm": 0.6622372983559554,
+      "stop_clearance_mm": 2.953517516793881,
+      "paver_to_rim_clearance_mm": 2.0833275699903995,
+      "conservative_radial_clearance_mm": 1.2513041187693381,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 43.715485328540126,
+      "k_center": 43.68429146466951,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.00498587522768,
+      "stop_sag_mm": 5.409680142644851,
+      "rim_sag_mm": 6.149634118419695,
+      "tilt_deg": 1.8217642600546313,
+      "lateral_center_mm": 0.5659649646893852,
+      "stop_clearance_mm": 4.085479786032724,
+      "paver_to_rim_clearance_mm": 2.5755488223704566,
+      "conservative_radial_clearance_mm": 1.5540979865735745,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 49.08906895048631,
+      "k_center": 49.05375989744516,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.457135644792587,
+      "stop_sag_mm": 4.815854747879634,
+      "rim_sag_mm": 5.471746486128613,
+      "tilt_deg": 1.6148033071325525,
+      "lateral_center_mm": 0.4903952399790791,
+      "stop_clearance_mm": 4.97621787818055,
+      "paver_to_rim_clearance_mm": 2.7923802708070804,
+      "conservative_radial_clearance_mm": 1.7920717504176902,
+      "passes": false
+    },
+    {
+      "sweep": 18.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 54.47650978692809,
+      "k_center": 54.437058151354904,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.016368062030519,
+      "stop_sag_mm": 4.338103674352089,
+      "rim_sag_mm": 4.926373794917673,
+      "tilt_deg": 1.448319106309534,
+      "lateral_center_mm": 0.4297249294189334,
+      "stop_clearance_mm": 5.6928444884718665,
+      "paver_to_rim_clearance_mm": 2.810439307623491,
+      "conservative_radial_clearance_mm": 1.9833237785214113,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 10.296259623293281,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 12.174654946983651,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 14.092524747853304,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 16.037261624549274,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 17.999853207871638,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 19.97388068455689,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 13.046232206173954,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 15.474245463334,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 17.956654222176212,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 20.475636481454103,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 23.018448799626867,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 25.576050945139286,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 15.767335890250934,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 18.74358357572146,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 21.79000761205998,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 24.883061780489015,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 28.005946383904075,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 31.14677594592399,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 18.45988395408449,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 21.97909342424532,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 25.585913066333205,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 29.250158897273195,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 32.9505190407358,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 36.67201283009081,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 21.13330102103805,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 25.185537996208495,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 29.34653024144609,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 33.577475413917,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 37.85161436612907,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 42.15041335459591,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 23.806780848101198,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 28.374130351284293,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 33.07896383942034,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 37.870023523933014,
+      "k_center": 37.83805209648972,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.7782906263899205,
+      "stop_sag_mm": 6.243573390078184,
+      "rim_sag_mm": 7.094309015882674,
+      "tilt_deg": 2.09450831887607,
+      "lateral_center_mm": 0.6506979814714173,
+      "stop_clearance_mm": 2.8346399148827244,
+      "paver_to_rim_clearance_mm": 1.158536476175988,
+      "conservative_radial_clearance_mm": 1.2627687378623182,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 42.71318776104545,
+      "k_center": 42.676754387529854,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.1231464268493285,
+      "stop_sag_mm": 5.533785911326961,
+      "rim_sag_mm": 6.284610283237658,
+      "tilt_deg": 1.848527139667778,
+      "lateral_center_mm": 0.561374197254359,
+      "stop_clearance_mm": 3.8993211330095585,
+      "paver_to_rim_clearance_mm": 1.5730845751435136,
+      "conservative_radial_clearance_mm": 1.5448691750796462,
+      "passes": false
+    },
+    {
+      "sweep": 21.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 47.585427872185846,
+      "k_center": 47.54447525526757,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.598626035435661,
+      "stop_sag_mm": 4.965538475301644,
+      "rim_sag_mm": 5.636411132759411,
+      "tilt_deg": 1.6516862810617863,
+      "lateral_center_mm": 0.49006518484732675,
+      "stop_clearance_mm": 4.751692287047534,
+      "paver_to_rim_clearance_mm": 1.745383300860884,
+      "conservative_radial_clearance_mm": 1.770358171127082,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 8.652990378224786,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 10.283464105094708,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 11.957341910376954,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 13.66250932250341,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 15.390007024697297,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 17.13322532156053,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 11.010288526898876,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 13.131345185720647,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 15.312765385120429,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 17.53729981736069,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 19.79217825527894,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 22.068011472013268,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 13.346759309991967,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 15.958949516526445,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 18.649505863245622,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 21.395516715901977,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 24.180036564318698,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 26.990629411017608,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 15.660303128389387,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 18.759779389841697,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 21.9573054200373,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 25.22344242091731,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 28.536610897283254,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 31.8810571021736,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 17.958279064356475,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 21.53637077713165,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 25.23571104090024,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 29.018516079652954,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 32.85768896575655,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 36.733708273420234,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 20.25787353586884,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 24.29816152026092,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 28.48994653796717,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 32.783603253052206,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 37.14473902561667,
+      "passes": false
+    },
+    {
+      "sweep": 24.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 41.54917151831205,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 7.306223795694564,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 8.726936332699324,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 10.193806989171662,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 11.695378176401391,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 13.222913350542058,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 14.76976742666534,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 9.32357118565642,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 11.180244143629125,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 13.10150131274986,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 15.070976913668119,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 17.076165512379475,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 19.10757912931831,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 11.326358931436289,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 13.620892661245307,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 15.999625443836749,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 18.440769065122367,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 20.9276685900104,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 23.447697747493066,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 13.311110316252552,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 16.04085511164385,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 18.876081364926904,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 21.78878950765261,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 24.757732950555464,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 27.766867824995188,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 15.283507946612872,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 18.441078113094136,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 21.72866139295752,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 25.11042684349468,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 28.55972759106544,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 32.056674563140405,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 17.258648940333615,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 20.829386539639017,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 24.5610537589655,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 28.40688762261152,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 32.33323671398193,
+      "passes": false
+    },
+    {
+      "sweep": 27.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 36.315544543748274,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 8.0,
+      "k_screen": 6.201864268133818,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 8.8,
+      "k_screen": 7.444675948734357,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 9.6,
+      "k_screen": 8.735337171761557,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 10.4,
+      "k_screen": 10.063168389751127,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 11.2,
+      "k_screen": 11.41979524228418,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.0,
+      "height": 12.0,
+      "k_screen": 12.798672315943804,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 8.0,
+      "k_screen": 7.929010387521203,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 8.8,
+      "k_screen": 9.558239366647967,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 9.6,
+      "k_screen": 11.254659353904117,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 10.4,
+      "k_screen": 13.003017794364268,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 11.2,
+      "k_screen": 14.791315052318168,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 4.8,
+      "height": 12.0,
+      "k_screen": 16.610185767685607,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 8.0,
+      "k_screen": 9.646265439234412,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 8.8,
+      "k_screen": 11.664653402488511,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 9.6,
+      "k_screen": 13.770858041589236,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 10.4,
+      "k_screen": 15.944575516501573,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 11.2,
+      "k_screen": 18.169804473370732,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 5.6,
+      "height": 12.0,
+      "k_screen": 20.43405207550404,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 8.0,
+      "k_screen": 11.349516216371512,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 8.8,
+      "k_screen": 13.75535416887601,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 9.6,
+      "k_screen": 16.271254144705154,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 10.4,
+      "k_screen": 18.871161172205348,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 11.2,
+      "k_screen": 21.53466047130655,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 6.4,
+      "height": 12.0,
+      "k_screen": 24.245855704235055,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 8.0,
+      "k_screen": 13.043144366765546,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 15.830236323947702,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 18.752591652564888,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 21.776988018114707,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 24.87787363063535,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 28.035552606655074,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 8.0,
+      "k_screen": 14.740268709105521,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 17.895746451799823,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 21.21737974543339,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 24.66207401418069,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 28.197719862433132,
+      "passes": false
+    },
+    {
+      "sweep": 30.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 31.800080352782516,
+      "passes": false
+    }
+  ],
+  "ranked": [
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 8.8,
+      "k_screen": 39.6291776663777,
+      "k_center": 39.610727812663754,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 5.519698168234614,
+      "stop_sag_mm": 5.974297690088682,
+      "rim_sag_mm": 6.80549978674331,
+      "tilt_deg": 2.0464168342121836,
+      "lateral_center_mm": 0.664330836229493,
+      "stop_clearance_mm": 3.2385534648669774,
+      "paver_to_rim_clearance_mm": 3.1917503198850357,
+      "conservative_radial_clearance_mm": 1.2712771945849273,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 8.8,
+      "k_screen": 44.35853716413067,
+      "k_center": 44.34020683257086,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.930948170259657,
+      "stop_sag_mm": 5.335919585780911,
+      "rim_sag_mm": 6.0763803066668345,
+      "tilt_deg": 1.8230118648551241,
+      "lateral_center_mm": 0.5918066038103749,
+      "stop_clearance_mm": 4.196120621328633,
+      "paver_to_rim_clearance_mm": 4.285429539999748,
+      "conservative_radial_clearance_mm": 1.5145842968942262,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 44.36548084958213,
+      "k_center": 44.34035468563161,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.930931727996518,
+      "stop_sag_mm": 5.332883410390902,
+      "rim_sag_mm": 6.067822769318161,
+      "tilt_deg": 1.8094182898323155,
+      "lateral_center_mm": 0.5747615820014967,
+      "stop_clearance_mm": 4.200674884413647,
+      "paver_to_rim_clearance_mm": 3.4982658460227603,
+      "conservative_radial_clearance_mm": 1.5483370457311816,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 9.6,
+      "k_screen": 45.45478446078005,
+      "k_center": 45.43338831644314,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.812303679117646,
+      "stop_sag_mm": 5.206923336851311,
+      "rim_sag_mm": 5.928456623009604,
+      "tilt_deg": 1.7764125826697594,
+      "lateral_center_mm": 0.5642773216342671,
+      "stop_clearance_mm": 4.389614994723034,
+      "paver_to_rim_clearance_mm": 3.707315065485594,
+      "conservative_radial_clearance_mm": 1.583937446318807,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 50.29733523201185,
+      "k_center": 50.26863651758049,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.349416990324277,
+      "stop_sag_mm": 4.702287790865863,
+      "rim_sag_mm": 5.347486334107,
+      "tilt_deg": 1.5884766961150445,
+      "lateral_center_mm": 0.49348984220367914,
+      "stop_clearance_mm": 5.146568313701207,
+      "paver_to_rim_clearance_mm": 3.7787704988395,
+      "conservative_radial_clearance_mm": 1.8032821155693726,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 9.6,
+      "k_screen": 50.88877421091911,
+      "k_center": 50.86756430553669,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.298205835780546,
+      "stop_sag_mm": 4.649526285420109,
+      "rim_sag_mm": 5.291890125019112,
+      "tilt_deg": 1.5814976650507444,
+      "lateral_center_mm": 0.5023626128928306,
+      "stop_clearance_mm": 5.225710571869837,
+      "paver_to_rim_clearance_mm": 4.662164812471333,
+      "conservative_radial_clearance_mm": 1.7941753034737953,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 10.4,
+      "k_screen": 51.298720246209086,
+      "k_center": 51.27435956496993,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 4.2641051707912885,
+      "stop_sag_mm": 4.6122168327667445,
+      "rim_sag_mm": 5.248713637963144,
+      "tilt_deg": 1.56705304560535,
+      "lateral_center_mm": 0.48683418654608424,
+      "stop_clearance_mm": 5.281674750849883,
+      "paver_to_rim_clearance_mm": 3.9269295430552837,
+      "conservative_radial_clearance_mm": 1.8261656058078453,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 56.24604331899627,
+      "k_center": 56.213761253702614,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.889425949693038,
+      "stop_sag_mm": 4.20346147839759,
+      "rim_sag_mm": 4.777652557215003,
+      "tilt_deg": 1.4136565517286557,
+      "lateral_center_mm": 0.42930952696894975,
+      "stop_clearance_mm": 5.894807782403615,
+      "paver_to_rim_clearance_mm": 3.8335211641774967,
+      "conservative_radial_clearance_mm": 2.004818544004692,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 11.2,
+      "k_screen": 57.1401597275476,
+      "k_center": 57.11282607391877,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.8281989664987726,
+      "stop_sag_mm": 4.139306750458818,
+      "rim_sag_mm": 4.708144661371042,
+      "tilt_deg": 1.4004770699135447,
+      "lateral_center_mm": 0.42530708585493043,
+      "stop_clearance_mm": 5.991039874311773,
+      "paver_to_rim_clearance_mm": 3.9377830079434375,
+      "conservative_radial_clearance_mm": 2.0187580802983454,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 10.4,
+      "k_screen": 57.444438738451026,
+      "k_center": 57.42036653403147,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.807695334379632,
+      "stop_sag_mm": 4.117387248904467,
+      "rim_sag_mm": 4.683636345736253,
+      "tilt_deg": 1.3941034181432028,
+      "lateral_center_mm": 0.4331041667263293,
+      "stop_clearance_mm": 6.0239191266433005,
+      "paver_to_rim_clearance_mm": 4.774545481395621,
+      "conservative_radial_clearance_mm": 2.010900280693744,
+      "passes": true
+    },
+    {
+      "sweep": 15.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 62.193163564575116,
+      "k_center": 62.15729269514259,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.517515841983993,
+      "stop_sag_mm": 3.8001441634751654,
+      "rim_sag_mm": 4.316909452711111,
+      "tilt_deg": 1.2722744462329925,
+      "lateral_center_mm": 0.3774914272878058,
+      "stop_clearance_mm": 6.499783754787252,
+      "paver_to_rim_clearance_mm": 3.724635820933334,
+      "conservative_radial_clearance_mm": 2.167677315454803,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 7.2,
+      "height": 12.0,
+      "k_screen": 62.96673845128271,
+      "k_center": 62.93643343174472,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.4739696838257728,
+      "stop_sag_mm": 3.754987150433511,
+      "rim_sag_mm": 4.268807108906556,
+      "tilt_deg": 1.2650230515604062,
+      "lateral_center_mm": 0.37533989517703625,
+      "stop_clearance_mm": 6.567519274349734,
+      "paver_to_rim_clearance_mm": 3.796789336640167,
+      "conservative_radial_clearance_mm": 2.1752709581986953,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 11.2,
+      "k_screen": 63.99911016545775,
+      "k_center": 63.972182058605085,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.417723996810113,
+      "stop_sag_mm": 3.6942938466210293,
+      "rim_sag_mm": 4.199981661902288,
+      "tilt_deg": 1.2450017417094403,
+      "lateral_center_mm": 0.3780912047945511,
+      "stop_clearance_mm": 6.658559230068456,
+      "paver_to_rim_clearance_mm": 4.70002750714657,
+      "conservative_radial_clearance_mm": 2.183199597094839,
+      "passes": true
+    },
+    {
+      "sweep": 12.0,
+      "width": 8.0,
+      "height": 12.0,
+      "k_screen": 70.5374653943968,
+      "k_center": 70.50768837410214,
+      "mass_kg": 35.0,
+      "E_MPa": 5.0,
+      "corner_factor": 1.3,
+      "eccentricity_mm": 2.0,
+      "sag_multiplier": 1.5,
+      "force_N": 111.55064374999999,
+      "center_sag_mm": 3.1009279525650624,
+      "stop_sag_mm": 3.350569875723112,
+      "rim_sag_mm": 3.807021939499094,
+      "tilt_deg": 1.1237834830801525,
+      "lateral_center_mm": 0.3334332716077371,
+      "stop_clearance_mm": 7.174145186415332,
+      "paver_to_rim_clearance_mm": 4.48946709075136,
+      "conservative_radial_clearance_mm": 2.323176688443281,
+      "passes": true
+    }
+  ]
+}

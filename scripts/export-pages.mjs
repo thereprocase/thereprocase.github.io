@@ -17,7 +17,7 @@ for (const file of projectFiles) {
   await copyFile(path.join(built, 'projects', file), path.join(directory, 'index.html'));
   pages += 1;
 }
-if (pages !== 17) throw new Error(`Expected 17 public project pages; received ${pages}. Update this check when curating the registry.`);
+if (pages !== 19) throw new Error(`Expected 19 public project pages; received ${pages}. Update this check when curating the registry.`);
 await mkdir(path.join(published, 'spool-wall-rack'), { recursive: true });
 await copyFile(path.join(built, 'spool-wall-rack.html'), path.join(published, 'spool-wall-rack', 'index.html'));
 await writeFile(path.join(published, '.nojekyll'), '');
