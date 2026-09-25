@@ -1,7 +1,7 @@
 "use strict";
 const $ = (id) => document.getElementById(id);
 const notes = {
-  Brewster: "Proportional spacing and kerning for everyday labels.",
+  Brewster: "Proportional letter widths and kerning.",
   BrewsterTab: "Proportional letters, equal-width digits for measurements in columns.",
   BrewsterMono: "Fixed 12w character cells. Fourteen wider characters are omitted from this family."
 };

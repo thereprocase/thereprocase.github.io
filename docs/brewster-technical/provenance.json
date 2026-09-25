@@ -1,7 +1,7 @@
 {
   "font_version": "1.201",
   "source": "https://github.com/thereprocase/double-bead",
-  "revision": "57599a9aeba3efb201b89520c810fd17a8726a8a",
+  "revision": "567c07de39c4a25fa2f348714fa5e268c7180c3f",
   "assets": {
     "OFL.txt": {
       "source": "OFL.txt",
@@ -20,18 +20,18 @@
     },
     "images/hero.png": {
       "source": "showcase/hero.png",
-      "bytes": 123182,
-      "sha256": "4aed33cdc141ebc431ad85e315472a5e18626b296cd8e1e77d99aeede8aaa926"
+      "bytes": 133113,
+      "sha256": "152ee363e9316dbc4fa2da156d2a4a39b0a33dc9eb8632324b410c7e7dcb0332"
     },
     "images/two-bead-rule.png": {
       "source": "showcase/two-bead-rule.png",
-      "bytes": 124242,
-      "sha256": "545d3d0753f5600ca7a0c6a73220b16bf5d9c61bdfe0a95658a8cf99daf5e194"
+      "bytes": 119483,
+      "sha256": "43d09e972a8fb7afe5b49b0874375e24f6959b166ea581e1ec5acc60d7685092"
     },
     "images/labels.png": {
       "source": "showcase/labels.png",
-      "bytes": 163232,
-      "sha256": "7d9cd22d3f89eaa76025fc38dc2f159921a7d73f8317793c62b9537dc575d2f7"
+      "bytes": 157017,
+      "sha256": "b8b2cf86c0f3252bae39abbc95884153a2b5271ebc8ac5a89fe7a5dccc3faa29"
     },
     "images/6-sliced.png": {
       "source": "showcase/6-sliced.png",

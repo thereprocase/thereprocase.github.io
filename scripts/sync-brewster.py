@@ -1,14 +1,16 @@
 """Sync public font assets: python scripts/sync-brewster.py <font-checkout>."""
 import hashlib
+import html
 import io
 import json
 import subprocess
 import sys
+import unicodedata
 import zipfile
 from pathlib import Path
 from fontTools.ttLib import TTFont
 
-SOURCE_REVISION = "57599a9"
+SOURCE_REVISION = "567c07d"
 source = Path(sys.argv[1]).resolve()
 root = Path(__file__).resolve().parents[1] / "public" / "brewster-technical"
 revision = subprocess.check_output(["git", "-C", str(source), "rev-parse", SOURCE_REVISION], text=True).strip()
@@ -34,6 +36,22 @@ for family, name in families.items():
     assert "SIL OPEN FONT LICENSE" in font["name"].getDebugName(13)
     coverage[family] = sorted(font.getBestCmap())
 (root / "coverage.json").write_text(json.dumps(coverage), encoding="utf-8")
+specimens = []
+for family, codepoints in coverage.items():
+    name = {"Brewster": "Brewster Technical", "BrewsterTab": "Brewster Technical Tab", "BrewsterMono": "Brewster Technical Mono"}[family]
+    cells = []
+    for point in codepoints:
+        char = chr(point)
+        label = f"U+{point:04X} {unicodedata.name(char, 'UNNAMED')}"
+        cells.append(f'<span title="{html.escape(label, quote=True)}">{html.escape(char)}</span>')
+    specimens.append(f'<div class="character-family"><h3>{name}</h3><p class="fine">{len(codepoints)} mapped characters</p><div class="character-sheet" style="font-family:{family}">{"".join(cells)}</div></div>')
+page = root / "index.html"
+markup = page.read_text(encoding="utf-8")
+start, end = "<!-- CHARACTER-SET:START -->", "<!-- CHARACTER-SET:END -->"
+assert markup.count(start) == markup.count(end) == 1, "Character specimen markers missing or duplicated"
+before, remaining = markup.split(start)
+_, after = remaining.split(end)
+page.write_text(before + start + "\n" + "\n".join(specimens) + "\n" + end + after, encoding="utf-8")
 install = """Brewster Technical 1.201 — by Repro
 
 Install the three TTF files with your operating system's font installer.
