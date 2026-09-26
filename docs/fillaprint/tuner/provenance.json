@@ -1,6 +1,6 @@
 {
   "source": "https://github.com/thereprocase/double-bead",
-  "revision": "c9061463c9d88182b5f81e34fc164b6b3213d945",
+  "revision": "d1d8c83515778ba49beaa09cbde12036ea31a87c",
   "tool": "python -m tuner.serve",
   "capture": "Headless Chromium screenshots of the running tuner; no retouching.",
   "demonstration_edit": "Base n, right stem x from 6 to 6.5 (two source coordinates in beadjoint/glyphs.py), validated in all three families. Not a proposed design change.",
