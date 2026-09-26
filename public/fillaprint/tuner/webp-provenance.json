@@ -1,0 +1,24 @@
+{
+  "note": "WebP siblings of the screenshots in provenance.json, generated in place with Pillow (quality 82). Purely a format conversion of the same pixels; it does not change the capture record above.",
+  "quality": 82,
+  "screenshots": {
+    "tuner-workspace.webp": {
+      "derived_from": "tuner-workspace.png",
+      "bytes": 57482,
+      "sha256": "a038c3dac6751f1b54e4d9f61169c4478ede0099b73a30ade3b82a2e01aad8e7",
+      "savings_pct": 49.0
+    },
+    "tuner-points.webp": {
+      "derived_from": "tuner-points.png",
+      "bytes": 18080,
+      "sha256": "4ea6e57528e5d617dc2aa8ffe0867a44840ff0aa596a5be7f8705e00883f4d3e",
+      "savings_pct": 51.3
+    },
+    "tuner-validation.webp": {
+      "derived_from": "tuner-validation.png",
+      "bytes": 25746,
+      "sha256": "c0d2328c0c9895b3936e003e80bb0fe5b87a1a6690f6f04101347bcf1704d50c",
+      "savings_pct": 30.6
+    }
+  }
+}

@@ -28,15 +28,30 @@
       "bytes": 121198,
       "sha256": "6ec2b87816a53398a0c68e0eddb62fd62b1dfbd6d95ba6b6c48152fa34e7705d"
     },
+    "images/two-bead-rule.webp": {
+      "bytes": 31114,
+      "sha256": "d53bc292b49d2127159beac68b4a8dc39f1c4c8775eeb66f49fd12138d98dfb7",
+      "savings_pct": 74.3
+    },
     "images/labels.png": {
       "source": "showcase/labels.png",
       "bytes": 156321,
       "sha256": "4fdee37082e07677c2460a13a09071023231aa585e3d45b4790ec083fe83fbcc"
     },
+    "images/labels.webp": {
+      "bytes": 45176,
+      "sha256": "39fac609481d58192edfbc262ae05e6a8ae67419a0ea3d8f868340bb2b3485f4",
+      "savings_pct": 71.1
+    },
     "images/6-sliced.png": {
       "source": "showcase/6-sliced.png",
       "bytes": 1023111,
       "sha256": "3ad3c457924c7bb29f55350f869ddae7ecdbf470fe24e6b59c487f18c1f464fd"
+    },
+    "images/6-sliced.webp": {
+      "bytes": 134952,
+      "sha256": "5dd457f8130034409be945f375c38e5d6ec9ca9e31bdd020a9a5d41ab3c4f1f3",
+      "savings_pct": 86.8
     },
     "images/2-all-glyphs.png": {
       "source": "showcase/2-all-glyphs.png",
