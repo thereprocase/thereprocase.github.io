@@ -1,31 +1,31 @@
 {
   "source": "https://github.com/thereprocase/double-bead",
-  "revision": "713ac9ef0a59bb2a9494a17c599fe368fbbf3f76",
+  "revision": "c9061463c9d88182b5f81e34fc164b6b3213d945",
   "tool": "python -m tuner.serve",
   "capture": "Headless Chromium screenshots of the running tuner; no retouching.",
-  "demonstration_edit": "Base n, right stem x from 6 to 6.5 (two source coordinates in beadjoint/glyphs.py). Not a proposed design change.",
+  "demonstration_edit": "Base n, right stem x from 6 to 6.5 (two source coordinates in beadjoint/glyphs.py), validated in all three families. Not a proposed design change.",
   "preview_text": "Hamburgefonts ñ ņ 0123",
   "screenshots": {
     "tuner-workspace.png": {
       "content": "Workspace at 1440 x 1000 CSS px, n selected, demonstration edit applied",
       "width": 1440,
       "height": 1000,
-      "bytes": 112696,
-      "sha256": "31b3dc174de0f10920ee0295a124c4f20f794f850de1b520267adabc0bba1003"
+      "bytes": 148142,
+      "sha256": "84af9a6ebff8d0005fe995060e810fac803578e6ed201f2c0a458905546e81e0"
     },
     "tuner-points.png": {
       "content": "Outline / construction pane at 2x device pixel ratio",
       "width": 1688,
       "height": 952,
-      "bytes": 37121,
-      "sha256": "808206b6fbf9b46222a4d57741a977af939eabbc3bed31109d4dd47584fd0e2b"
+      "bytes": 73666,
+      "sha256": "af35e6822f86c151cca77096e28113615b9193edda9ae004c3f1cab5b69b39c9"
     },
     "tuner-validation.png": {
-      "content": "Validation panel at 2x device pixel ratio after all-family validation",
+      "content": "Validation panel at 2x device pixel ratio after all-family validation, with its summary",
       "width": 1768,
-      "height": 326,
-      "bytes": 37076,
-      "sha256": "a7673f21aa574f3f5f1b0c47e58b8792257169e66e72a945357d0d1cb908dc72"
+      "height": 470,
+      "bytes": 58472,
+      "sha256": "6fdd4d4b636a9d77c50a19dfabb5bde52122f1b7d601b0139856a616b3e358a2"
     }
   }
 }

@@ -4,21 +4,21 @@
   "screenshots": {
     "tuner-workspace.webp": {
       "derived_from": "tuner-workspace.png",
-      "bytes": 57482,
-      "sha256": "a038c3dac6751f1b54e4d9f61169c4478ede0099b73a30ade3b82a2e01aad8e7",
-      "savings_pct": 49.0
+      "bytes": 74424,
+      "sha256": "db8e95ab8e8b445a8ead4169118462582e716866935f80e859b6bed4deb5dd3c",
+      "savings_pct": 49.8
     },
     "tuner-points.webp": {
       "derived_from": "tuner-points.png",
-      "bytes": 18080,
-      "sha256": "4ea6e57528e5d617dc2aa8ffe0867a44840ff0aa596a5be7f8705e00883f4d3e",
-      "savings_pct": 51.3
+      "bytes": 36994,
+      "sha256": "64b1c65ab3666d80878349a2802125298dfd7adfd4df77933ee032662a258fad",
+      "savings_pct": 49.8
     },
     "tuner-validation.webp": {
       "derived_from": "tuner-validation.png",
-      "bytes": 25746,
-      "sha256": "c0d2328c0c9895b3936e003e80bb0fe5b87a1a6690f6f04101347bcf1704d50c",
-      "savings_pct": 30.6
+      "bytes": 38970,
+      "sha256": "9585e004383e2f988ebd907ac79b7d5f78e1180e2b37668fe62de151df4d43e0",
+      "savings_pct": 33.4
     }
   }
 }

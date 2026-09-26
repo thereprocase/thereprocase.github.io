@@ -1,7 +1,13 @@
 {
-  "font_version": "0.100",
+  "font_version": "0.101",
+  "release": "0.1.1 beta",
+  "build_date": "2026-09-26T00:00:00+00:00",
   "source": "https://github.com/thereprocase/double-bead",
-  "revision": "bbcb05d78a27a1f9152e228cf18146133eaaae94",
+  "revision": "c9061463c9d88182b5f81e34fc164b6b3213d945",
+  "tools": {
+    "python": "3.12.13",
+    "fonttools": "4.66.0"
+  },
   "assets": {
     "OFL.txt": {
       "source": "OFL.txt",
@@ -15,77 +21,84 @@
     },
     "PRINTING.md": {
       "source": "docs/PRINTING.md",
-      "bytes": 2257,
-      "sha256": "2222f9ce2711672680d02e3ba93e349a04f8e27970c05bdf80b65b46cdfec23b"
+      "bytes": 3082,
+      "sha256": "2e1e58b977e011823e8ae1de6bec70e9da8e20ffcbc418e537791b8088426e3a"
     },
     "images/hero.png": {
       "source": "showcase/hero.png",
-      "bytes": 122406,
-      "sha256": "1b209387740c4848337fdc25953f816cb11968414f525ee59f76c13aeeed44b6"
+      "bytes": 125520,
+      "sha256": "1ff5861321a77245fca12353b1847418a9fd36dade61973e31910e98ed05d66f"
     },
     "images/two-bead-rule.png": {
       "source": "showcase/two-bead-rule.png",
       "bytes": 121198,
       "sha256": "6ec2b87816a53398a0c68e0eddb62fd62b1dfbd6d95ba6b6c48152fa34e7705d"
     },
-    "images/two-bead-rule.webp": {
-      "bytes": 31114,
-      "sha256": "d53bc292b49d2127159beac68b4a8dc39f1c4c8775eeb66f49fd12138d98dfb7",
-      "savings_pct": 74.3
-    },
     "images/labels.png": {
       "source": "showcase/labels.png",
-      "bytes": 156321,
-      "sha256": "4fdee37082e07677c2460a13a09071023231aa585e3d45b4790ec083fe83fbcc"
-    },
-    "images/labels.webp": {
-      "bytes": 45176,
-      "sha256": "39fac609481d58192edfbc262ae05e6a8ae67419a0ea3d8f868340bb2b3485f4",
-      "savings_pct": 71.1
+      "bytes": 154975,
+      "sha256": "8e767d61c2234a2c1dfad4a63e39b818afcd9183267529474b637baeb5ea339c"
     },
     "images/6-sliced.png": {
       "source": "showcase/6-sliced.png",
       "bytes": 1023111,
       "sha256": "3ad3c457924c7bb29f55350f869ddae7ecdbf470fe24e6b59c487f18c1f464fd"
     },
+    "images/2-all-glyphs.png": {
+      "source": "showcase/2-all-glyphs.png",
+      "bytes": 492982,
+      "sha256": "3a31ddfb7990c393109efe9e45421b971c525652d994d94d66a7d936def8b653"
+    },
+    "images/3-languages.png": {
+      "source": "showcase/3-languages.png",
+      "bytes": 488934,
+      "sha256": "d123ce33a6d6412544a33216ed13548a1fce79c20f2e6c84a18bfb033843a803"
+    },
+    "images/5-families.png": {
+      "source": "showcase/5-families.png",
+      "bytes": 121127,
+      "sha256": "b5e97ecfab03591ebc755bacea86e79e1c112f8d6be9250104e44f94ee6ba737"
+    },
+    "fonts/Fillaprint-Regular.ttf": {
+      "source": "fonts/Fillaprint-Regular.ttf",
+      "bytes": 317880,
+      "sha256": "4f76598f88f57a68a1fc55e58635074e7690ce036fc6d8995f71a24032f767ea"
+    },
+    "fonts/FillaprintTab-Regular.ttf": {
+      "source": "fonts/FillaprintTab-Regular.ttf",
+      "bytes": 318188,
+      "sha256": "cbb0262eb4ef3403905697c7bd232b6576ec9e86b53f296941381563ce406fcc"
+    },
+    "fonts/FillaprintMono-Regular.ttf": {
+      "source": "fonts/FillaprintMono-Regular.ttf",
+      "bytes": 139796,
+      "sha256": "10a503b81a355701d482ff56b41414b040f30b31f7df1707b837fc4b0b1cfcbd"
+    },
+    "images/two-bead-rule.webp": {
+      "bytes": 31114,
+      "sha256": "d53bc292b49d2127159beac68b4a8dc39f1c4c8775eeb66f49fd12138d98dfb7",
+      "savings_pct": 74.3
+    },
+    "images/labels.webp": {
+      "bytes": 45034,
+      "sha256": "941e3201b82fac11590a43afdea6acdf44efadbce44b58077abf175fdb190b3b",
+      "savings_pct": 70.9
+    },
     "images/6-sliced.webp": {
       "bytes": 134952,
       "sha256": "5dd457f8130034409be945f375c38e5d6ec9ca9e31bdd020a9a5d41ab3c4f1f3",
       "savings_pct": 86.8
     },
-    "images/2-all-glyphs.png": {
-      "source": "showcase/2-all-glyphs.png",
-      "bytes": 490907,
-      "sha256": "b692f4f993e16d4aa602e46d4b453e6dad116a64502eae6c53a2dd47d0590ed6"
-    },
-    "images/3-languages.png": {
-      "source": "showcase/3-languages.png",
-      "bytes": 476583,
-      "sha256": "047c704f57c2b278e237b829323e5afb179eb46473a27d526b1ecdffef39ca04"
-    },
-    "images/5-families.png": {
-      "source": "showcase/5-families.png",
-      "bytes": 118742,
-      "sha256": "08643803beed2786949f7ad82eed6d6d5e6dc76d8ac18d96c3bb6b699b2128e7"
-    },
-    "fonts/Fillaprint-Regular.ttf": {
-      "source": "fonts/Fillaprint-Regular.ttf",
-      "bytes": 309272,
-      "sha256": "afe88d138d5842726a7c0eecedeb5fd8e17047e27a976c6878c77c88794c4c07"
-    },
-    "fonts/FillaprintTab-Regular.ttf": {
-      "source": "fonts/FillaprintTab-Regular.ttf",
-      "bytes": 309580,
-      "sha256": "8e41ffda107e26fef0010a06b0c94e756ae56ca8c36c7a5019e3075cbb0830ac"
-    },
-    "fonts/FillaprintMono-Regular.ttf": {
-      "source": "fonts/FillaprintMono-Regular.ttf",
-      "bytes": 139776,
-      "sha256": "c1d819795bdf40a0078e48d5a22b4dca8abd5ede04e6860c38ad2bc60019f84e"
-    },
-    "downloads/Fillaprint-0.1.0-beta.zip": {
-      "bytes": 245861,
-      "sha256": "efa39284fd1a389737474354653e1702d949c763ac4786a0b5a786ffeefb0dd8"
+    "downloads/Fillaprint-0.1.1-beta.zip": {
+      "bytes": 782001,
+      "sha256": "473d94b15a439caf6f1f81173bf4d0dff970118c339b4c983a6a2aea5ac84593",
+      "members": {
+        "Fillaprint-0.1.1-beta/Fillaprint-Regular.ttf": "4f76598f88f57a68a1fc55e58635074e7690ce036fc6d8995f71a24032f767ea",
+        "Fillaprint-0.1.1-beta/FillaprintMono-Regular.ttf": "10a503b81a355701d482ff56b41414b040f30b31f7df1707b837fc4b0b1cfcbd",
+        "Fillaprint-0.1.1-beta/FillaprintTab-Regular.ttf": "cbb0262eb4ef3403905697c7bd232b6576ec9e86b53f296941381563ce406fcc",
+        "Fillaprint-0.1.1-beta/INSTALL.txt": "2390f25809f854f23d186cfa635c3fe3c7e65d5ba528dd25c28f7bde994d1fc6",
+        "Fillaprint-0.1.1-beta/OFL.txt": "af12c54e5d4a4d6dd43d1c052dff5e5e8896b316544a6b10574699ad8ce61fcc"
+      }
     }
   }
 }
