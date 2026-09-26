@@ -198,10 +198,17 @@ def build_release_zip(source, revision, slug, staging):
             tar.extractall(checkout, filter="data")
         out_dir = tmp / "out"
         out_dir.mkdir()
-        result = subprocess.run(
-            [sys.executable, str(checkout / "tools" / "package_release.py"), "--out", str(out_dir)],
-            capture_output=True, text=True, check=True,
-        )
+        package_release = checkout / "tools" / "package_release.py"
+        try:
+            result = subprocess.run(
+                [sys.executable, str(package_release), "--out", str(out_dir)],
+                capture_output=True, text=True, check=True,
+            )
+        except FileNotFoundError:
+            raise SystemExit(f"tools/package_release.py is missing at revision {revision}")
+        except subprocess.CalledProcessError as exc:
+            tail = " | ".join(exc.stderr.strip().splitlines()[-3:]) if exc.stderr else "(no stderr output)"
+            raise SystemExit(f"tools/package_release.py failed at revision {revision}: {tail}")
         produced = sorted(out_dir.glob("Fillaprint-*.zip"))
         if len(produced) != 1:
             raise SystemExit(f"Expected package_release.py to write one Fillaprint-*.zip to {out_dir}, found {produced}")
