@@ -18,7 +18,7 @@ from fontTools.ttLib import TTFont
 
 from _webp import make_webp
 
-SOURCE_REVISION = "bbcb05d78a27a1f9152e228cf18146133eaaae94"
+SOURCE_REVISION = "c9061463c9d88182b5f81e34fc164b6b3213d945"
 ROOT = Path(__file__).resolve().parents[1] / "public" / "fillaprint"
 FAMILIES = {"Fillaprint": "Fillaprint", "FillaprintTab": "FillaprintTab", "FillaprintMono": "FillaprintMono"}
 
@@ -239,18 +239,16 @@ def commit_staging(staging, root):
     render_index_html and build_release_zip have all already succeeded, so a run
     that aborts partway through never touches root at all - the caller only reaches
     this function once the whole sync is known-good.
+
+    This only adds or replaces files; it never deletes anything in root. In
+    particular, an older release's downloads/Fillaprint-*.zip that isn't the
+    current release is left alone - AGENTS.md says to preserve downloads, and
+    outside links point at old release URLs directly.
     """
     for path in sorted(staging.rglob("*")):
         if path.is_dir():
             continue
         atomic_write_bytes(root / path.relative_to(staging), path.read_bytes())
-    # Drop any release zip left over from a previous sync at a different version.
-    keep = {p.name for p in (staging / "downloads").glob("Fillaprint-*.zip")}
-    downloads = root / "downloads"
-    if downloads.is_dir():
-        for stale in downloads.glob("Fillaprint-*.zip"):
-            if stale.name not in keep:
-                stale.unlink()
 
 
 def main():

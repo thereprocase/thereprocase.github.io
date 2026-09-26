@@ -79,8 +79,14 @@ hand-typed. Every check (font/release version match, the release ZIP's hash,
 the marker counts in `index.html`) runs against a scratch staging directory
 before anything is written to `public/fillaprint/`, so a failed sync — a bad
 revision, a version mismatch, a bad ZIP — leaves it untouched rather than
-half-updated. Advance the source pin when updating fonts or specimens, then
-build and export `docs/` with the rest of the site.
+half-updated. The sync only adds or replaces files; it never deletes an
+older release's `downloads/Fillaprint-*.zip`, since outside links point at
+past release URLs directly and AGENTS.md says to preserve downloads.
+`provenance.json`'s asset list only ever names the *current* release's ZIP
+(the one this run built) - older archives stay on disk, unlisted there, until
+a maintainer decides to remove one on purpose. Advance the source pin when
+updating fonts or specimens, then build and export `docs/` with the rest of
+the site.
 
 Artwork is built with `python scripts/build-fillaprint.py` from the released fonts.
 The launch page includes wordmarks, label applications, and licensed font downloads.
