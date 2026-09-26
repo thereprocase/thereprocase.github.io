@@ -70,12 +70,23 @@ not measured sound reductions; preserve the clearance and material qualification
 
 `public/fillaprint/` contains the FDM font showcase, live type tester,
 print-size calculator and downloads. `python scripts/sync-fillaprint.py <font-checkout>`
-copies assets from the pinned public font commit and creates the reproducible ZIP
-and provenance record. Advance the source pin when updating fonts or specimens,
-then build and export `docs/` with the rest of the site.
+copies assets from the pinned public font commit, reads the release version and
+label from the fonts' name table and `beadjoint/release.py`, rebuilds the release
+ZIP by running the font repo's own `tools/package_release.py` against an export
+of the pinned revision, and writes the provenance record. It also updates the
+version markers and download links in `index.html`, so those strings are never
+hand-typed. Advance the source pin when updating fonts or specimens, then build
+and export `docs/` with the rest of the site.
 
 Artwork is built with `python scripts/build-fillaprint.py` from the released fonts.
 The launch page includes wordmarks, label applications, and licensed font downloads.
+
+Both scripts' dependencies are pinned in `scripts/requirements-fillaprint.txt`
+(the same `fonttools`/`pillow` versions as the font repo, plus `uharfbuzz` for
+shaping). Install with the frozen, script-less form so a dependency's install
+hooks never run:
+
+    python -m pip install --only-binary=:all: -r scripts/requirements-fillaprint.txt
 
 Section 11 walks contributors through the font repository's local glyph tuner.
 Its screenshots live in `public/fillaprint/tuner/` with a source record of the
