@@ -15,7 +15,8 @@ from pathlib import Path
 
 import fontTools
 from fontTools.ttLib import TTFont
-from PIL import Image
+
+from _webp import make_webp
 
 SOURCE_REVISION = "bbcb05d78a27a1f9152e228cf18146133eaaae94"
 ROOT = Path(__file__).resolve().parents[1] / "public" / "fillaprint"
@@ -23,11 +24,9 @@ FAMILIES = {"Fillaprint": "Fillaprint", "FillaprintTab": "FillaprintTab", "Filla
 
 # Photographic showcase images compress much better as WebP than PNG; the type tester and
 # license/artwork screenshots don't (flat UI colour, little to gain), so only these get a
-# <picture>+WebP fallback in index.html. WEBP_MIN_SAVINGS guards that assumption: if a future
-# asset stops clearing it, fail loudly instead of quietly shipping a fallback that isn't one.
+# <picture>+WebP fallback from this script. (The tuner screenshots get the same treatment
+# from scripts/webp-tuner-screenshots.py, since this script never touches tuner/.)
 WEBP_TARGETS = ["two-bead-rule.png", "labels.png", "6-sliced.png"]
-WEBP_QUALITY = 82
-WEBP_MIN_SAVINGS = 0.30
 
 
 def usage():
@@ -39,8 +38,21 @@ def git_show(source, revision, path):
     return subprocess.check_output(["git", "-C", str(source), "show", f"{revision}:{path}"])
 
 
-def copy_assets(source, revision):
-    """Copy licensed/showcase/font assets byte-for-byte and record their hashes."""
+def atomic_write_bytes(dest, data):
+    """Write data to dest without ever leaving a partially-written file at that path."""
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dest.with_name(dest.name + ".tmp")
+    tmp.write_bytes(data)
+    tmp.replace(dest)
+
+
+def copy_assets_to(staging, source, revision):
+    """Copy licensed/showcase/font assets byte-for-byte into staging and record their hashes.
+
+    Writes into the staging directory, never into ROOT: a bad revision or a later
+    validation failure (version mismatch, a bad zip hash, ...) must never leave
+    ROOT with some files updated and others stale.
+    """
     assets = {}
     mapping = {"OFL.txt": "OFL.txt", "LICENSE.md": "docs/LICENSING.md", "PRINTING.md": "docs/PRINTING.md"}
     for name in ["hero.png", "two-bead-rule.png", "labels.png", "6-sliced.png", "2-all-glyphs.png", "3-languages.png", "5-families.png"]:
@@ -51,37 +63,26 @@ def copy_assets(source, revision):
         data = git_show(source, revision, original)
         if target == "LICENSE.md":
             data = data.replace(b"(../OFL.txt)", b"(OFL.txt)")
-        dest = ROOT / target
+        dest = staging / target
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(data)
         assets[target] = {"source": original, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
     for name in WEBP_TARGETS:
         target = f"images/{Path(name).stem}.webp"
-        assets[target] = make_webp(ROOT / f"images/{name}")
+        assets[target] = make_webp(staging / f"images/{name}", staging / target)
     return assets
 
 
-def make_webp(png_path):
-    """Write a WebP sibling next to png_path and record its size, hash and savings."""
-    webp_path = png_path.with_suffix(".webp")
-    Image.open(png_path).convert("RGB").save(webp_path, "WEBP", quality=WEBP_QUALITY, method=6)
-    original = png_path.stat().st_size
-    data = webp_path.read_bytes()
-    savings = 1 - len(data) / original
-    if savings < WEBP_MIN_SAVINGS:
-        raise SystemExit(
-            f"{png_path.name}: WebP only saves {savings:.0%}, below the {WEBP_MIN_SAVINGS:.0%} "
-            f"threshold index.html's <picture> fallback assumes"
-        )
-    return {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "savings_pct": round(savings * 100, 1)}
+def read_font_version_and_coverage(staging):
+    """Read the version from each family's name table (ID 5) and its cmap for the specimen page.
 
-
-def read_font_version_and_coverage():
-    """Read the version from each family's name table (ID 5) and its cmap for the specimen page."""
+    Reads the fonts that were just staged (not whatever is currently in ROOT), so a
+    mismatch here is caught before anything is written to the real output tree.
+    """
     coverage = {}
     font_version = None
     for family, name in FAMILIES.items():
-        font = TTFont(ROOT / f"fonts/{name}-Regular.ttf")
+        font = TTFont(staging / f"fonts/{name}-Regular.ttf")
         version_name = font["name"].getDebugName(5) or ""
         match = re.fullmatch(r"Version ([\d.]+)", version_name)
         if not match:
@@ -94,7 +95,6 @@ def read_font_version_and_coverage():
         if "SIL OPEN FONT LICENSE" not in license_name:
             raise SystemExit(f"{name}: name table ID 13 does not mention the SIL Open Font License")
         coverage[family] = sorted(font.getBestCmap())
-    (ROOT / "coverage.json").write_text(json.dumps(coverage), encoding="utf-8")
     return font_version, coverage
 
 
@@ -154,9 +154,12 @@ def replace_attribute_pattern(markup, pattern, replacement, expected_count):
     return markup
 
 
-def update_index_html(coverage, release_label):
-    page = ROOT / "index.html"
-    markup = page.read_text(encoding="utf-8")
+def render_index_html(coverage, release_label):
+    """Return the new index.html text and the release slug. Reads ROOT's current index.html
+    as a template (read-only) but writes nothing; the caller stages the result and only
+    commits it to ROOT once every other check has also passed.
+    """
+    markup = (ROOT / "index.html").read_text(encoding="utf-8")
 
     markup = replace_marked_region(markup, "CHARACTER-SET", "\n" + build_character_specimens(coverage) + "\n")
 
@@ -173,17 +176,17 @@ def update_index_html(coverage, release_label):
         markup, r'releases/tag/v[\d.]+', f"releases/tag/v{version_number}", expected_count=1
     )
 
-    page.write_text(markup, encoding="utf-8")
-    return slug
+    return markup, slug
 
 
-def build_release_zip(source, revision, slug):
+def build_release_zip(source, revision, slug, staging):
     """Run the font repo's own package_release.py against an exported copy of the pinned revision.
 
     package_release.py is deterministic (fixed dates, ZIP_STORED, sorted members), so it doesn't
     matter which Python runs it or whether it comes from a worktree or a plain export; the bytes
     it produces are the same either way. A plain `git archive` export is the cheaper of the two
-    options the contract allows, so that's what this uses.
+    options the contract allows, so that's what this uses. The validated zip is written into
+    staging/downloads/, not ROOT/downloads/ - it isn't committed until the whole sync passes.
     """
     with tempfile.TemporaryDirectory(prefix="fillaprint-release-") as tmp:
         tmp = Path(tmp)
@@ -213,16 +216,34 @@ def build_release_zip(source, revision, slug):
         if not zip_path.name.startswith(f"Fillaprint-{slug}"):
             raise SystemExit(f"Release zip {zip_path.name} does not match the release label {slug!r} from beadjoint/release.py")
 
-        downloads = ROOT / "downloads"
-        downloads.mkdir(exist_ok=True)
-        for stale in downloads.glob("Fillaprint-*.zip"):
-            stale.unlink()
-        dest = downloads / zip_path.name
-        dest.write_bytes(zip_path.read_bytes())
-
-        with zipfile.ZipFile(dest) as zf:
+        with zipfile.ZipFile(zip_path) as zf:
             members = {name: hashlib.sha256(zf.read(name)).hexdigest() for name in zf.namelist()}
-        return dest, members
+
+        dest = staging / "downloads" / zip_path.name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(zip_path.read_bytes())
+        return dest, zip_path.name, members
+
+
+def commit_staging(staging, root):
+    """Apply every staged file onto root, each one atomically.
+
+    Nothing here runs until copy_assets_to, the font/release version cross-check,
+    render_index_html and build_release_zip have all already succeeded, so a run
+    that aborts partway through never touches root at all - the caller only reaches
+    this function once the whole sync is known-good.
+    """
+    for path in sorted(staging.rglob("*")):
+        if path.is_dir():
+            continue
+        atomic_write_bytes(root / path.relative_to(staging), path.read_bytes())
+    # Drop any release zip left over from a previous sync at a different version.
+    keep = {p.name for p in (staging / "downloads").glob("Fillaprint-*.zip")}
+    downloads = root / "downloads"
+    if downloads.is_dir():
+        for stale in downloads.glob("Fillaprint-*.zip"):
+            if stale.name not in keep:
+                stale.unlink()
 
 
 def main():
@@ -231,33 +252,43 @@ def main():
     source = Path(sys.argv[1]).resolve()
     revision = subprocess.check_output(["git", "-C", str(source), "rev-parse", SOURCE_REVISION], text=True).strip()
 
-    assets = copy_assets(source, revision)
-    font_version, coverage = read_font_version_and_coverage()
-    release = parse_release_constants(source, revision)
-    if release["VERSION"] != font_version:
-        raise SystemExit(f"beadjoint/release.py VERSION is {release['VERSION']!r}, but the fonts report {font_version!r}")
+    with tempfile.TemporaryDirectory(prefix="fillaprint-sync-") as staging_dir:
+        staging = Path(staging_dir)
 
-    slug = update_index_html(coverage, release["RELEASE"])
-    zip_path, members = build_release_zip(source, revision, slug)
-    assets[f"downloads/{zip_path.name}"] = {
-        "bytes": zip_path.stat().st_size,
-        "sha256": hashlib.sha256(zip_path.read_bytes()).hexdigest(),
-        "members": members,
-    }
+        assets = copy_assets_to(staging, source, revision)
+        font_version, coverage = read_font_version_and_coverage(staging)
+        (staging / "coverage.json").write_text(json.dumps(coverage), encoding="utf-8")
 
-    provenance = {
-        "font_version": font_version,
-        "release": release["RELEASE"],
-        "build_date": release["BUILD_DATE"],
-        "source": "https://github.com/thereprocase/double-bead",
-        "revision": revision,
-        "tools": {
-            "python": platform.python_version(),
-            "fonttools": fontTools.__version__,
-        },
-        "assets": assets,
-    }
-    (ROOT / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
+        release = parse_release_constants(source, revision)
+        if release["VERSION"] != font_version:
+            raise SystemExit(f"beadjoint/release.py VERSION is {release['VERSION']!r}, but the fonts report {font_version!r}")
+
+        new_index_html, slug = render_index_html(coverage, release["RELEASE"])
+        zip_path, zip_name, members = build_release_zip(source, revision, slug, staging)
+        assets[f"downloads/{zip_name}"] = {
+            "bytes": zip_path.stat().st_size,
+            "sha256": hashlib.sha256(zip_path.read_bytes()).hexdigest(),
+            "members": members,
+        }
+
+        provenance = {
+            "font_version": font_version,
+            "release": release["RELEASE"],
+            "build_date": release["BUILD_DATE"],
+            "source": "https://github.com/thereprocase/double-bead",
+            "revision": revision,
+            "tools": {
+                "python": platform.python_version(),
+                "fonttools": fontTools.__version__,
+            },
+            "assets": assets,
+        }
+        (staging / "index.html").write_text(new_index_html, encoding="utf-8")
+        (staging / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
+
+        # Every check above has passed - only now does anything in ROOT actually change.
+        commit_staging(staging, ROOT)
+
     print(f"Synced {len(assets)} assets and release {release['RELEASE']} from {revision}")
 
 
