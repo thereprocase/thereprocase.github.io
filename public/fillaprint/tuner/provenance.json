@@ -1,0 +1,31 @@
+{
+  "source": "https://github.com/thereprocase/double-bead",
+  "revision": "713ac9ef0a59bb2a9494a17c599fe368fbbf3f76",
+  "tool": "python -m tuner.serve",
+  "capture": "Headless Chromium screenshots of the running tuner; no retouching.",
+  "demonstration_edit": "Base n, right stem x from 6 to 6.5 (two source coordinates in beadjoint/glyphs.py). Not a proposed design change.",
+  "preview_text": "Hamburgefonts ñ ņ 0123",
+  "screenshots": {
+    "tuner-workspace.png": {
+      "content": "Workspace at 1440 x 1000 CSS px, n selected, demonstration edit applied",
+      "width": 1440,
+      "height": 1000,
+      "bytes": 112696,
+      "sha256": "31b3dc174de0f10920ee0295a124c4f20f794f850de1b520267adabc0bba1003"
+    },
+    "tuner-points.png": {
+      "content": "Outline / construction pane at 2x device pixel ratio",
+      "width": 1688,
+      "height": 952,
+      "bytes": 37121,
+      "sha256": "808206b6fbf9b46222a4d57741a977af939eabbc3bed31109d4dd47584fd0e2b"
+    },
+    "tuner-validation.png": {
+      "content": "Validation panel at 2x device pixel ratio after all-family validation",
+      "width": 1768,
+      "height": 326,
+      "bytes": 37076,
+      "sha256": "a7673f21aa574f3f5f1b0c47e58b8792257169e66e72a945357d0d1cb908dc72"
+    }
+  }
+}

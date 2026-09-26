@@ -76,3 +76,8 @@ then build and export `docs/` with the rest of the site.
 
 Artwork is built with `python scripts/build-fillaprint.py` from the released fonts.
 The launch page includes wordmarks, label applications, and licensed font downloads.
+
+Section 11 walks contributors through the font repository's local glyph tuner.
+Its screenshots live in `public/fillaprint/tuner/` with a source record of the
+tuner revision, the demonstration edit and file hashes. The font sync does not
+touch that directory; recapture the screenshots when the tuner interface changes.
