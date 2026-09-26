@@ -4,6 +4,8 @@ import hashlib
 import json
 import html
 import argparse
+import platform
+from importlib.metadata import version as pkg_version
 import uharfbuzz as hb
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
@@ -14,7 +16,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('candidate', nargs='?', default='Fillaprint', choices=['Fillaprint'])
 candidate = parser.parse_args().candidate
 slug = candidate.lower()
-initials, study_number = {'Linepair': ('LP', '01'), 'Fillaprint': ('FP', '02')}[candidate]
+initials = 'FP'
 root = Path(__file__).resolve().parents[1]
 source = root / 'public/fillaprint/fonts/Fillaprint-Regular.ttf'
 dest = root / 'public' / slug / 'artwork'
@@ -77,5 +79,11 @@ im.save(dest / f'{slug}-study.png')
     'source':'/fillaprint/fonts/Fillaprint-Regular.ttf',
     'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
     'method':'HarfBuzz shaping and fontTools SVG glyph outlines; Pillow raster specimen',
+    'tools':{
+        'python':platform.python_version(),
+        'fonttools':pkg_version('fonttools'),
+        'uharfbuzz':pkg_version('uharfbuzz'),
+        'pillow':pkg_version('pillow'),
+    },
 }, indent=2)+'\n', encoding='utf-8')
 print('Built four outlined SVGs and one PNG from Fillaprint.')
