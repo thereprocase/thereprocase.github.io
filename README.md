@@ -75,8 +75,12 @@ label from the fonts' name table and `beadjoint/release.py`, rebuilds the releas
 ZIP by running the font repo's own `tools/package_release.py` against an export
 of the pinned revision, and writes the provenance record. It also updates the
 version markers and download links in `index.html`, so those strings are never
-hand-typed. Advance the source pin when updating fonts or specimens, then build
-and export `docs/` with the rest of the site.
+hand-typed. Every check (font/release version match, the release ZIP's hash,
+the marker counts in `index.html`) runs against a scratch staging directory
+before anything is written to `public/fillaprint/`, so a failed sync — a bad
+revision, a version mismatch, a bad ZIP — leaves it untouched rather than
+half-updated. Advance the source pin when updating fonts or specimens, then
+build and export `docs/` with the rest of the site.
 
 Artwork is built with `python scripts/build-fillaprint.py` from the released fonts.
 The launch page includes wordmarks, label applications, and licensed font downloads.
@@ -91,4 +95,7 @@ hooks never run:
 Section 11 walks contributors through the font repository's local glyph tuner.
 Its screenshots live in `public/fillaprint/tuner/` with a source record of the
 tuner revision, the demonstration edit and file hashes. The font sync does not
-touch that directory; recapture the screenshots when the tuner interface changes.
+touch that directory; recapture the screenshots when the tuner interface changes,
+then run `python scripts/webp-tuner-screenshots.py` to regenerate their WebP
+siblings and `tuner/webp-provenance.json` (same quality and savings floor as the
+showcase images; it never touches the PNGs or `tuner/provenance.json` itself).
