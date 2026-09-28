@@ -18,7 +18,7 @@ from fontTools.ttLib import TTFont
 
 from _webp import make_webp
 
-SOURCE_REVISION = "d1d8c83515778ba49beaa09cbde12036ea31a87c"
+SOURCE_REVISION = "d95f60858692fdaaa2cde08fa8763b0bec72020a"
 ROOT = Path(__file__).resolve().parents[1] / "public" / "fillaprint"
 FAMILIES = {"Fillaprint": "Fillaprint", "FillaprintTab": "FillaprintTab", "FillaprintMono": "FillaprintMono"}
 
@@ -117,21 +117,80 @@ def parse_release_constants(source, revision):
     return values
 
 
-def build_character_specimens(coverage):
-    display_names = {"Fillaprint": "Fillaprint", "FillaprintTab": "Fillaprint Tab", "FillaprintMono": "Fillaprint Mono"}
-    specimens = []
-    for family, codepoints in coverage.items():
-        cells = []
-        for point in codepoints:
-            char = chr(point)
-            label = f"U+{point:04X} {unicodedata.name(char, 'UNNAMED')}"
-            cells.append(f'<span title="{html.escape(label, quote=True)}">{html.escape(char)}</span>')
-        specimens.append(
-            f'<div class="character-family"><h3>{display_names[family]}</h3>'
-            f'<p class="fine">{len(codepoints)} mapped characters</p>'
-            f'<div class="character-sheet" style="font-family:{family}">{"".join(cells)}</div></div>'
-        )
-    return "\n".join(specimens)
+def glyph_shapes(font):
+    """{codepoint: (area, width, height, x variance, y variance, xy covariance)} of each outline.
+
+    Tab and Mono place glyphs at different offsets in their cells, and each family's curves are
+    fitted separately, so point lists differ even for the same shape. Area and second moments
+    about the centroid compare the shapes themselves."""
+    from fontTools.pens.statisticsPen import StatisticsPen
+    glyphs, cmap = font.getGlyphSet(), font.getBestCmap()
+    shapes = {}
+    for point, name in cmap.items():
+        pen = StatisticsPen(glyphset=glyphs)
+        glyphs[name].draw(pen)
+        g = font["glyf"][name]
+        size = (g.xMax - g.xMin, g.yMax - g.yMin) if hasattr(g, "xMax") else (0, 0)
+        shapes[point] = (abs(pen.area), *size, pen.varianceX, pen.varianceY, pen.covariance)
+    return shapes
+
+
+def redrawn_characters(staging):
+    """{family: codepoints whose outline differs from Fillaprint's}, for Tab and Mono."""
+    shapes = {family: glyph_shapes(TTFont(staging / f"fonts/{name}-Regular.ttf")) for family, name in FAMILIES.items()}
+    base = shapes["Fillaprint"]
+    return {family: sorted(p for p, shape in own.items() if not same_shape(base.get(p), shape))
+            for family, own in shapes.items() if family != "Fillaprint"}
+
+
+def same_shape(a, b):
+    """Within outline rounding: 2 font units (0.04w) of size, 1% of area and of each moment."""
+    if a is None:
+        return False
+    area, w, h, *moments = a
+    if abs(w - b[1]) > 2 or abs(h - b[2]) > 2 or abs(area - b[0]) > 0.01 * max(area, 1):
+        return False
+    scale = max(abs(moments[0]), abs(moments[1]), 1)      # covariance is ~0 for symmetric glyphs
+    return all(abs(m0 - m1) <= 0.01 * scale for m0, m1 in zip(moments, b[3:]))
+
+
+def character_cells(codepoints):
+    cells = []
+    for point in codepoints:
+        char = chr(point)
+        label = f"U+{point:04X} {unicodedata.name(char, 'UNNAMED')}"
+        cells.append(f'<span title="{html.escape(label, quote=True)}">{html.escape(char)}</span>')
+    return "".join(cells)
+
+
+def build_character_specimens(coverage, redrawn):
+    """One full sheet for Fillaprint. Tab and Mono show only what differs from it: Tab changes
+    spacing, not shapes; Mono redraws some characters to fit its fixed cell and leaves some out."""
+    base = coverage["Fillaprint"]
+    tab, mono = redrawn["FillaprintTab"], redrawn["FillaprintMono"]
+    missing = sorted(set(base) - set(coverage["FillaprintMono"]))
+    tab_note = ("Tab uses the same shapes as Fillaprint for all "
+                f"{len(coverage['FillaprintTab'])} characters; only spacing differs: every digit sits on the same 9w cell, "
+                "so numbers line up in columns." if not tab else
+                f"Tab has the same {len(coverage['FillaprintTab'])} characters; {len(tab)} are drawn differently (below), "
+                "and every digit sits on the same 9w cell.")
+    digits = "0123456789"
+    parts = [
+        f'<div class="character-family"><h3>Fillaprint</h3><p class="fine">{len(base)} mapped characters. '
+        'Fillaprint Tab and Fillaprint Mono use these shapes except where noted below.</p>'
+        f'<div class="character-sheet" style="font-family:Fillaprint">{character_cells(base)}</div></div>',
+        f'<div class="character-family"><h3>Fillaprint Tab</h3><p class="fine">{html.escape(tab_note)}</p>'
+        + (f'<div class="character-sheet" style="font-family:FillaprintTab">{character_cells(tab)}</div>' if tab else "")
+        + f'<div class="character-compare"><span style="font-family:Fillaprint">{digits}<br>1111 / 8888</span>'
+        f'<span style="font-family:FillaprintTab">{digits}<br>1111 / 8888</span></div>'
+        '<p class="fine">Fillaprint above left, Tab above right.</p></div>',
+        f'<div class="character-family"><h3>Fillaprint Mono</h3><p class="fine">{len(coverage["FillaprintMono"])} mapped characters on a '
+        f'fixed 12w cell. These {len(mono)} are redrawn for the cell: counters widened, and narrow letters such as i, l and r given '
+        f'bars.</p><div class="character-sheet" style="font-family:FillaprintMono">{character_cells(mono)}</div>'
+        f'<p class="fine">Mono leaves out {len(missing)} characters too wide for its cell: '
+        f'{html.escape(" ".join(chr(p) for p in missing))}</p></div>',
+    ]
+    return "\n".join(parts)
 
 
 def replace_marked_region(markup, name, replacement, expected_count=None):
@@ -154,14 +213,14 @@ def replace_attribute_pattern(markup, pattern, replacement, expected_count):
     return markup
 
 
-def render_index_html(coverage, release_label):
+def render_index_html(coverage, redrawn, release_label):
     """Return the new index.html text and the release slug. Reads ROOT's current index.html
     as a template (read-only) but writes nothing; the caller stages the result and only
     commits it to ROOT once every other check has also passed.
     """
     markup = (ROOT / "index.html").read_text(encoding="utf-8")
 
-    markup = replace_marked_region(markup, "CHARACTER-SET", "\n" + build_character_specimens(coverage) + "\n")
+    markup = replace_marked_region(markup, "CHARACTER-SET", "\n" + build_character_specimens(coverage, redrawn) + "\n")
 
     badge = f"V{release_label.upper()}"
     markup = replace_marked_region(markup, "RELEASE-BADGE", badge, expected_count=3)
@@ -268,7 +327,7 @@ def main():
         if release["VERSION"] != font_version:
             raise SystemExit(f"beadjoint/release.py VERSION is {release['VERSION']!r}, but the fonts report {font_version!r}")
 
-        new_index_html, slug = render_index_html(coverage, release["RELEASE"])
+        new_index_html, slug = render_index_html(coverage, redrawn_characters(staging), release["RELEASE"])
         zip_path, zip_name, members = build_release_zip(source, revision, slug, staging)
         assets[f"downloads/{zip_name}"] = {
             "bytes": zip_path.stat().st_size,
