@@ -1,9 +1,9 @@
 {
-  "font_version": "0.102",
-  "release": "0.1.2 beta",
+  "font_version": "0.103",
+  "release": "0.1.3 beta",
   "build_date": "2026-09-28T00:00:00+00:00",
   "source": "https://github.com/thereprocase/double-bead",
-  "revision": "d95f60858692fdaaa2cde08fa8763b0bec72020a",
+  "revision": "83ed094f45e4bde0ba400bd99f58a5c43681ab8e",
   "tools": {
     "python": "3.14.7",
     "fonttools": "4.66.0"
@@ -36,8 +36,8 @@
     },
     "images/labels.png": {
       "source": "showcase/labels.png",
-      "bytes": 155287,
-      "sha256": "3dd6559e51e4a2df8b3712f611c388ea29b4e19de6d70e46460b6ed214e08a99"
+      "bytes": 154805,
+      "sha256": "9f9801e4c4183dcb64867d0ce1efdf1c666a8f020c1b08fdb4285f46d880ff24"
     },
     "images/6-sliced.png": {
       "source": "showcase/6-sliced.png",
@@ -46,13 +46,13 @@
     },
     "images/2-all-glyphs.png": {
       "source": "showcase/2-all-glyphs.png",
-      "bytes": 492989,
-      "sha256": "b0ea4150893f79220d71f15aef3e2d3169ad655c563d45951f3a2680b76d77de"
+      "bytes": 493119,
+      "sha256": "c28cdc085250752c8a00226db8d9956289ec76d050050f9c88c30ce15fe49061"
     },
     "images/3-languages.png": {
       "source": "showcase/3-languages.png",
-      "bytes": 486334,
-      "sha256": "42afff64c445744f02f3e2bddd0f5f6e45d13dca9ca74f2f925073e2474c7a9a"
+      "bytes": 484897,
+      "sha256": "8260d3f46aeaca220930bc711196b5cac6ea651dc462b4e7a0b888db32c8a0fa"
     },
     "images/5-families.png": {
       "source": "showcase/5-families.png",
@@ -61,18 +61,18 @@
     },
     "fonts/Fillaprint-Regular.ttf": {
       "source": "fonts/Fillaprint-Regular.ttf",
-      "bytes": 319196,
-      "sha256": "5aa91bd3630979795baa3466056b21becc268364c449a303da9efdbe741007e1"
+      "bytes": 319260,
+      "sha256": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f"
     },
     "fonts/FillaprintTab-Regular.ttf": {
       "source": "fonts/FillaprintTab-Regular.ttf",
-      "bytes": 319520,
-      "sha256": "48907320e61bac656d3f7857a14859139aa476da69dc369b91e0dd8612a13f52"
+      "bytes": 319572,
+      "sha256": "7d1a08e5a113e99de4b397ab43ccef12605f5d59dd48178b518c58a95bcb7bf4"
     },
     "fonts/FillaprintMono-Regular.ttf": {
       "source": "fonts/FillaprintMono-Regular.ttf",
-      "bytes": 139240,
-      "sha256": "c2655d675f5670b47ea3d5ebceeb56ef0c182e95d394a6b4f0f176b0afd8afc0"
+      "bytes": 139268,
+      "sha256": "70dd1d41bdcdcbe21224e94e5d093178f932110ffa12ed44f99ae23cbddbf80f"
     },
     "images/two-bead-rule.webp": {
       "bytes": 31114,
@@ -80,24 +80,24 @@
       "savings_pct": 74.3
     },
     "images/labels.webp": {
-      "bytes": 45044,
-      "sha256": "b3317b98f065354045808ecc6a7bb8ccd0bab695586ef4aeef5723ec184feab2",
-      "savings_pct": 71.0
+      "bytes": 45040,
+      "sha256": "c1c44e0e3bf9f4e3ebadf30bd5f48ce06a157b80828de2899138450cd6318afc",
+      "savings_pct": 70.9
     },
     "images/6-sliced.webp": {
       "bytes": 134952,
       "sha256": "5dd457f8130034409be945f375c38e5d6ec9ca9e31bdd020a9a5d41ab3c4f1f3",
       "savings_pct": 86.8
     },
-    "downloads/Fillaprint-0.1.2-beta.zip": {
-      "bytes": 784093,
-      "sha256": "b759b712b88be8a852d3005561615afb9166c698ff7527e40f76184eef8af2ee",
+    "downloads/Fillaprint-0.1.3-beta.zip": {
+      "bytes": 784237,
+      "sha256": "3902c7dc3492cb3632d96e8fd0f72b48e6e1417743f41d0fce43523c3833221c",
       "members": {
-        "Fillaprint-0.1.2-beta/Fillaprint-Regular.ttf": "5aa91bd3630979795baa3466056b21becc268364c449a303da9efdbe741007e1",
-        "Fillaprint-0.1.2-beta/FillaprintMono-Regular.ttf": "c2655d675f5670b47ea3d5ebceeb56ef0c182e95d394a6b4f0f176b0afd8afc0",
-        "Fillaprint-0.1.2-beta/FillaprintTab-Regular.ttf": "48907320e61bac656d3f7857a14859139aa476da69dc369b91e0dd8612a13f52",
-        "Fillaprint-0.1.2-beta/INSTALL.txt": "ceac659add96ef0683cb7c3151528cddd3fb12ca2176f6b35f0c994362b7461a",
-        "Fillaprint-0.1.2-beta/OFL.txt": "af12c54e5d4a4d6dd43d1c052dff5e5e8896b316544a6b10574699ad8ce61fcc"
+        "Fillaprint-0.1.3-beta/Fillaprint-Regular.ttf": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
+        "Fillaprint-0.1.3-beta/FillaprintMono-Regular.ttf": "70dd1d41bdcdcbe21224e94e5d093178f932110ffa12ed44f99ae23cbddbf80f",
+        "Fillaprint-0.1.3-beta/FillaprintTab-Regular.ttf": "7d1a08e5a113e99de4b397ab43ccef12605f5d59dd48178b518c58a95bcb7bf4",
+        "Fillaprint-0.1.3-beta/INSTALL.txt": "eea4d37d39459963577a883a219fa9aff594d19ed3e2ce7f94de30a87120130b",
+        "Fillaprint-0.1.3-beta/OFL.txt": "af12c54e5d4a4d6dd43d1c052dff5e5e8896b316544a6b10574699ad8ce61fcc"
       }
     }
   }

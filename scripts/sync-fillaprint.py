@@ -18,7 +18,7 @@ from fontTools.ttLib import TTFont
 
 from _webp import make_webp
 
-SOURCE_REVISION = "d95f60858692fdaaa2cde08fa8763b0bec72020a"
+SOURCE_REVISION = "83ed094f45e4bde0ba400bd99f58a5c43681ab8e"
 ROOT = Path(__file__).resolve().parents[1] / "public" / "fillaprint"
 FAMILIES = {"Fillaprint": "Fillaprint", "FillaprintTab": "FillaprintTab", "FillaprintMono": "FillaprintMono"}
 
