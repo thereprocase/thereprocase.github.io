@@ -14,7 +14,7 @@
 <body><div class="gl-desktop bt-desktop">
 <a class="skip" href="#content">Skip to content</a>
 <header class="gl-titlebar"><a class="gl-brand" href="/">THEREPROCASE</a><span>FILLAPRINT</span><span class="gl-state"><!-- RELEASE-BADGE:START -->V0.1.2 BETA<!-- RELEASE-BADGE:END --></span></header>
-<nav class="gl-menu bt-nav" aria-label="Project navigation"><a href="/">← Projects</a><a href="#specimen">Type tester</a><a href="#design">The design</a><a href="#size">Print sizing</a><a href="#downloads">Downloads ↓</a><a href="#artwork">Artwork ↓</a><a href="#tuner">Glyph tuner ↓</a><a href="#vz-candidates">v / z candidates ↓</a></nav>
+<nav class="gl-menu bt-nav" aria-label="Project navigation"><a href="/">← Projects</a><a href="#specimen">Type tester</a><a href="#design">The design</a><a href="#size">Print sizing</a><a href="#downloads">Downloads ↓</a><a href="#artwork">Artwork ↓</a><a href="#tuner">Glyph tuner ↓</a><a href="#vz-candidates">v / z candidates ↓</a><a href="#vz-capital-candidates">V / Z candidates ↓</a></nav>
 <main id="content">
 <div class="note"><strong><!-- RELEASE-NOTE:START -->v0.1.2 beta<!-- RELEASE-NOTE:END --> — fine-tuning for release.</strong> Shapes, spacing, and print behavior may change before 1.0. We eventually aim to launch through Nerd Fonts; this beta is not an official Nerd Fonts release.</div>
 <section class="hero" aria-labelledby="title"><div class="hero-top"><p class="gl-kicker">FOR FDM 3D PRINTING</p><span class="gl-state">PERSONAL + COMMERCIAL USE / FREE</span></div>
@@ -227,5 +227,122 @@ git restore fonts specimen report.json</code></pre><p>Adjust the patch path if y
 </article>
 </div>
 <!-- VZ-CANDIDATES:END -->
+</div></section>
+<section class="gl-pane" id="vz-capital-candidates" aria-labelledby="vzc-title"><div class="gl-pane-title"><h2 id="vzc-title">13 / CAPITAL V AND Z CANDIDATES</h2><span>FOR REVIEW</span></div>
+<div class="pad prose vz-intro"><h3>A wider V and longer Z bars.</h3><p>Four widths for the capital V and four ways to lengthen the capital Z’s bars, with the v0.1.2 shapes (CV0, CZ0) for comparison. Nothing here is in the installable fonts yet; the chosen pair goes into the next release.</p>
+<p><strong>V.</strong> The round point stays; only the spread of the arms changes, in half-bead steps from 9w to 11w of ink. A wider V also gets less joint fill, because the angle opens. At 10w (CV2) the V is as wide as M and W, and that is the widest capital the Mono cell holds: with CV3 or CV4, Fillaprint Mono would get its own 10w V (CV2).</p>
+<p><strong>Z.</strong> Today’s mitred corners stick out 0.6w past the ends of the bars, so the bars stop short of the corner above or below them. CZ1 runs each bar out level with the opposite corner without making the Z any wider. CZ2 runs them 0.5w further. CZ3 and CZ4 also move the corners outwards, which flattens the diagonal (61° and 63°, from 65°). The notch under each bar stays below the fill tolerance, so the corners stay sharp.</p>
+<p>Every candidate is finished and checked by the font’s own code (thin ink, holes, fused pieces, the 4.85w thickness limit, Ź Ż Ž built from the new Z, and the spacing of the sample words) and was built into complete fonts with <code>build.py</code>. These are geometry checks, not print tests.</p>
+<ul class="vz-legend"><li><span class="swatch ink"></span>Ink as drawn</li><li><span class="swatch fill"></span>Ink added by finishing</li><li><span class="swatch ghost"></span>Current v0.1.2 outline</li><li>Grid lines every 2w; cap height and baseline in grey. Sample words are shown large and at small text size.</li></ul>
+<p class="fine">Measurements and sources: <a href="candidates/vz-caps/candidates.json">candidates.json</a>.</p></div>
+<div class="pad">
+<!-- VZ-CAPITAL-CANDIDATES:START -->
+<h3 class="vz-group">Capital V</h3>
+<div class="vz-grid">
+<article class="vz-card vz-current" id="vzc-cv0">
+<div class="vz-head"><h4>CV0</h4><span>Current V (v0.1.2)</span></div>
+<img src="candidates/vz-caps/CV0.svg" width="600" height="680" alt="Current V (v0.1.2): construction view of V on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CV0-sample.svg" alt="VIVID VAULT Vex set with CV0" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CV0-sample.svg" alt="" loading="lazy">
+<p>Round point, arm centres 1 to 8: 9w of ink, as wide as N and O.</p>
+<dl><div><dt>Finishing fill</dt><dd>2.17 w²</dd></div><div><dt>Max thickness</dt><dd>4.21 w</dd></div><div><dt>Ink width</dt><dd>9.00 w</dd></div><div><dt>Unfilled stroke</dt><dd>3.13 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (V)</p>
+<details><summary>Glyph source</summary><pre><code>g["V"] = solve(lambda vy: S((1, -3, B), (4.5, vy)) | S((4.5, vy), (8, -3, B)) | D((4.5, vy)), lo=5.0, hi=20)</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cv1">
+<div class="vz-head"><h4>CV1</h4><span>Half a bead wider</span></div>
+<img src="candidates/vz-caps/CV1.svg" width="600" height="680" alt="Half a bead wider: construction view of V on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CV1-sample.svg" alt="VIVID VAULT Vex set with CV1" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CV1-sample.svg" alt="" loading="lazy">
+<p>Arm centres 1 to 8.5: 9.5w of ink. The same spread as the lowercase v.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.98 w² (-9%)</dd></div><div><dt>Max thickness</dt><dd>4.13 w</dd></div><div><dt>Ink width</dt><dd>9.50 w</dd></div><div><dt>Unfilled stroke</dt><dd>3.10 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (V)</p>
+<details><summary>Glyph source</summary><pre><code>g["V"] = solve(lambda vy: S((1, -3, B), (4.75, vy)) | S((4.75, vy), (8.5, -3, B)) | D((4.75, vy)), lo=5.0, hi=20)</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cv2">
+<div class="vz-head"><h4>CV2</h4><span>One bead wider</span></div>
+<img src="candidates/vz-caps/CV2.svg" width="600" height="680" alt="One bead wider: construction view of V on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CV2-sample.svg" alt="VIVID VAULT Vex set with CV2" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CV2-sample.svg" alt="" loading="lazy">
+<p>Arm centres 1 to 9: 10w of ink, as wide as M and W, and the widest V the Mono cell holds.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.82 w² (-16%)</dd></div><div><dt>Max thickness</dt><dd>4.05 w</dd></div><div><dt>Ink width</dt><dd>10.00 w</dd></div><div><dt>Unfilled stroke</dt><dd>3.05 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (V)</p>
+<details><summary>Glyph source</summary><pre><code>g["V"] = solve(lambda vy: S((1, -3, B), (5.0, vy)) | S((5.0, vy), (9, -3, B)) | D((5.0, vy)), lo=5.0, hi=20)</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cv3">
+<div class="vz-head"><h4>CV3</h4><span>One and a half beads wider</span></div>
+<img src="candidates/vz-caps/CV3.svg" width="600" height="680" alt="One and a half beads wider: construction view of V on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CV3-sample.svg" alt="VIVID VAULT Vex set with CV3" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CV3-sample.svg" alt="" loading="lazy">
+<p>Arm centres 1 to 9.5: 10.5w of ink. Wider than the Mono cell allows, so Mono would use CV2.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.68 w² (-23%)</dd></div><div><dt>Max thickness</dt><dd>3.96 w</dd></div><div><dt>Ink width</dt><dd>10.50 w</dd></div><div><dt>Unfilled stroke</dt><dd>3.00 w</dd></div><div><dt>Fits the Mono cell</dt><dd>no (10w max)</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (V)</p>
+<details><summary>Glyph source</summary><pre><code>g["V"] = solve(lambda vy: S((1, -3, B), (5.25, vy)) | S((5.25, vy), (9.5, -3, B)) | D((5.25, vy)), lo=5.0, hi=20)</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cv4">
+<div class="vz-head"><h4>CV4</h4><span>Two beads wider</span></div>
+<img src="candidates/vz-caps/CV4.svg" width="600" height="680" alt="Two beads wider: construction view of V on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CV4-sample.svg" alt="VIVID VAULT Vex set with CV4" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CV4-sample.svg" alt="" loading="lazy">
+<p>Arm centres 1 to 10: 11w of ink. Mono would use CV2.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.55 w² (-29%)</dd></div><div><dt>Max thickness</dt><dd>3.89 w</dd></div><div><dt>Ink width</dt><dd>11.00 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.96 w</dd></div><div><dt>Fits the Mono cell</dt><dd>no (10w max)</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (V)</p>
+<details><summary>Glyph source</summary><pre><code>g["V"] = solve(lambda vy: S((1, -3, B), (5.5, vy)) | S((5.5, vy), (10, -3, B)) | D((5.5, vy)), lo=5.0, hi=20)</code></pre></details>
+</article>
+</div>
+<h3 class="vz-group">Capital Z</h3>
+<div class="vz-grid">
+<article class="vz-card vz-current" id="vzc-cz0">
+<div class="vz-head"><h4>CZ0</h4><span>Current Z (v0.1.2)</span></div>
+<img src="candidates/vz-caps/CZ0.svg" width="600" height="680" alt="Current Z (v0.1.2): construction view of Z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CZ0-sample.svg" alt="ZINC HAZE Zulu ŹŻŽ set with CZ0" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CZ0-sample.svg" alt="" loading="lazy">
+<p>Mitred corners, 65° diagonal. The corner tips stick out 0.6w past the bar ends.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.28 w²</dd></div><div><dt>Max thickness</dt><dd>2.90 w</dd></div><div><dt>Ink width</dt><dd>8.17 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.61 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (ZŹŻŽ)</p>
+<details><summary>Glyph source</summary><pre><code>g["Z"] = S((0, -3), (6.3, -3, 0), (0.7, 9, 0), (7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cz1">
+<div class="vz-head"><h4>CZ1</h4><span>Bars level with the corners</span></div>
+<img src="candidates/vz-caps/CZ1.svg" width="600" height="680" alt="Bars level with the corners: construction view of Z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CZ1-sample.svg" alt="ZINC HAZE Zulu ŹŻŽ set with CZ1" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CZ1-sample.svg" alt="" loading="lazy">
+<p>Same diagonal and corners; each bar runs 0.6w further, level with the opposite corner tip. The Z is no wider.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.28 w² (+0%)</dd></div><div><dt>Max thickness</dt><dd>2.90 w</dd></div><div><dt>Ink width</dt><dd>8.17 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.61 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (ZŹŻŽ)</p>
+<details><summary>Glyph source</summary><pre><code>g["Z"] = S((-0.585, -3), (6.3, -3, 0), (0.7, 9, 0), (7.585, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cz2">
+<div class="vz-head"><h4>CZ2</h4><span>Bars past the corners</span></div>
+<img src="candidates/vz-caps/CZ2.svg" width="600" height="680" alt="Bars past the corners: construction view of Z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CZ2-sample.svg" alt="ZINC HAZE Zulu ŹŻŽ set with CZ2" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CZ2-sample.svg" alt="" loading="lazy">
+<p>Same diagonal; each bar runs 1.1w further, 0.5w past the opposite corner. 1w wider.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.28 w² (+0%)</dd></div><div><dt>Max thickness</dt><dd>2.90 w</dd></div><div><dt>Ink width</dt><dd>9.17 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.61 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (ZŹŻŽ)</p>
+<details><summary>Glyph source</summary><pre><code>g["Z"] = S((-1.085, -3), (6.3, -3, 0), (0.7, 9, 0), (8.085, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cz3">
+<div class="vz-head"><h4>CZ3</h4><span>Wider Z, 61° diagonal</span></div>
+<img src="candidates/vz-caps/CZ3.svg" width="600" height="680" alt="Wider Z, 61° diagonal: construction view of Z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CZ3-sample.svg" alt="ZINC HAZE Zulu ŹŻŽ set with CZ3" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CZ3-sample.svg" alt="" loading="lazy">
+<p>Corners move out 0.5w each, to the lowercase z&#x27;s lean; bars level with the corner tips. 1.1w wider.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.33 w² (+18%)</dd></div><div><dt>Max thickness</dt><dd>2.98 w</dd></div><div><dt>Ink width</dt><dd>9.29 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.67 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (ZŹŻŽ)</p>
+<details><summary>Glyph source</summary><pre><code>g["Z"] = S((-1.146, -3), (6.8, -3, 0), (0.2, 9, 0), (8.146, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vzc-cz4">
+<div class="vz-head"><h4>CZ4</h4><span>Wider Z, bars past the corners</span></div>
+<img src="candidates/vz-caps/CZ4.svg" width="600" height="680" alt="Wider Z, bars past the corners: construction view of Z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz-caps/CZ4-sample.svg" alt="ZINC HAZE Zulu ŹŻŽ set with CZ4" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz-caps/CZ4-sample.svg" alt="" loading="lazy">
+<p>Corners move out 0.25w each (63°); bars run 0.5w past the corner tips. 1.6w wider.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.30 w² (+7%)</dd></div><div><dt>Max thickness</dt><dd>2.94 w</dd></div><div><dt>Ink width</dt><dd>9.73 w</dd></div><div><dt>Unfilled stroke</dt><dd>2.65 w</dd></div><div><dt>Fits the Mono cell</dt><dd>yes</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (ZŹŻŽ)</p>
+<details><summary>Glyph source</summary><pre><code>g["Z"] = S((-1.365, -3), (6.55, -3, 0), (0.45, 9, 0), (8.365, 9))</code></pre></details>
+</article>
+</div>
+<!-- VZ-CAPITAL-CANDIDATES:END -->
 </div></section>
 </main><footer class="gl-statusbar"><span>DESIGNED BY REPRO / FILLAPRINT</span><a href="/">Project directory ↗</a></footer></div><script src="app.js" defer></script></body></html>

@@ -1,0 +1,237 @@
+{
+  "purpose": "Capital V and Z candidates for review; not part of any released font.",
+  "font_repository": "https://github.com/thereprocase/double-bead",
+  "font_revision": "d95f60858692fdaaa2cde08fa8763b0bec72020a",
+  "font_sources_modified": false,
+  "platform": "Linux x86_64 glibc 2.44",
+  "python": "3.14.7",
+  "packages": {
+    "shapely": "2.1.2",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "fonttools": "4.66.0"
+  },
+  "units": "w = one extrusion line width; y points down; cap height at y=-4, x-height at y=0, baseline at y=10",
+  "candidates": [
+    {
+      "id": "CV0",
+      "char": "V",
+      "source": "solve(lambda vy: S((1, -3, B), (4.5, vy)) | S((4.5, vy), (8, -3, B)) | D((4.5, vy)), lo=5.0, hi=20)",
+      "added_by_finishing_w2": 2.17,
+      "max_thickness_w": 4.21,
+      "ink_width_w": 9.0,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "V",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 3.132,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "VIVID VAULT Vex",
+      "passes": true
+    },
+    {
+      "id": "CV1",
+      "char": "V",
+      "source": "solve(lambda vy: S((1, -3, B), (4.75, vy)) | S((4.75, vy), (8.5, -3, B)) | D((4.75, vy)), lo=5.0, hi=20)",
+      "added_by_finishing_w2": 1.98,
+      "max_thickness_w": 4.13,
+      "ink_width_w": 9.5,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "V",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 3.099,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "VIVID VAULT Vex",
+      "passes": true
+    },
+    {
+      "id": "CV2",
+      "char": "V",
+      "source": "solve(lambda vy: S((1, -3, B), (5.0, vy)) | S((5.0, vy), (9, -3, B)) | D((5.0, vy)), lo=5.0, hi=20)",
+      "added_by_finishing_w2": 1.82,
+      "max_thickness_w": 4.05,
+      "ink_width_w": 10.0,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "V",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 3.05,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "VIVID VAULT Vex",
+      "passes": true
+    },
+    {
+      "id": "CV3",
+      "char": "V",
+      "source": "solve(lambda vy: S((1, -3, B), (5.25, vy)) | S((5.25, vy), (9.5, -3, B)) | D((5.25, vy)), lo=5.0, hi=20)",
+      "added_by_finishing_w2": 1.68,
+      "max_thickness_w": 3.96,
+      "ink_width_w": 10.5,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "V",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 3.0,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": false,
+      "sample": "VIVID VAULT Vex",
+      "passes": true
+    },
+    {
+      "id": "CV4",
+      "char": "V",
+      "source": "solve(lambda vy: S((1, -3, B), (5.5, vy)) | S((5.5, vy), (10, -3, B)) | D((5.5, vy)), lo=5.0, hi=20)",
+      "added_by_finishing_w2": 1.55,
+      "max_thickness_w": 3.89,
+      "ink_width_w": 11.0,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "V",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.957,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": false,
+      "sample": "VIVID VAULT Vex",
+      "passes": true
+    },
+    {
+      "id": "CZ0",
+      "char": "Z",
+      "source": "S((0, -3), (6.3, -3, 0), (0.7, 9, 0), (7, 9))",
+      "added_by_finishing_w2": 0.28,
+      "max_thickness_w": 2.9,
+      "ink_width_w": 8.17,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "ZŹŻŽ",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.608,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "ZINC HAZE Zulu ŹŻŽ",
+      "passes": true
+    },
+    {
+      "id": "CZ1",
+      "char": "Z",
+      "source": "S((-0.585, -3), (6.3, -3, 0), (0.7, 9, 0), (7.585, 9))",
+      "added_by_finishing_w2": 0.28,
+      "max_thickness_w": 2.9,
+      "ink_width_w": 8.17,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "ZŹŻŽ",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.608,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "ZINC HAZE Zulu ŹŻŽ",
+      "passes": true
+    },
+    {
+      "id": "CZ2",
+      "char": "Z",
+      "source": "S((-1.085, -3), (6.3, -3, 0), (0.7, 9, 0), (8.085, 9))",
+      "added_by_finishing_w2": 0.28,
+      "max_thickness_w": 2.9,
+      "ink_width_w": 9.17,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "ZŹŻŽ",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.608,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "ZINC HAZE Zulu ŹŻŽ",
+      "passes": true
+    },
+    {
+      "id": "CZ3",
+      "char": "Z",
+      "source": "S((-1.146, -3), (6.8, -3, 0), (0.2, 9, 0), (8.146, 9))",
+      "added_by_finishing_w2": 0.33,
+      "max_thickness_w": 2.98,
+      "ink_width_w": 9.29,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "ZŹŻŽ",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.667,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "ZINC HAZE Zulu ŹŻŽ",
+      "passes": true
+    },
+    {
+      "id": "CZ4",
+      "char": "Z",
+      "source": "S((-1.365, -3), (6.55, -3, 0), (0.45, 9, 0), (8.365, 9))",
+      "added_by_finishing_w2": 0.3,
+      "max_thickness_w": 2.94,
+      "ink_width_w": 9.73,
+      "ink_top_bottom_w": [
+        -4.0,
+        10.0
+      ],
+      "glyphs_checked": "ZŹŻŽ",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.65,
+      "unfilled_stroke_limit_w": null,
+      "min_sample_gap_w": 2.018,
+      "fits_mono_cell": true,
+      "sample": "ZINC HAZE Zulu ŹŻŽ",
+      "passes": true
+    }
+  ]
+}
