@@ -1,0 +1,269 @@
+{
+  "purpose": "Lowercase v and z candidates for review; not part of any released font.",
+  "font_repository": "https://github.com/thereprocase/double-bead",
+  "font_revision": "be3c8722f8bee54d3e7ca96a7eb393501a26dbf4",
+  "font_sources_modified": false,
+  "platform": "Linux x86_64 glibc 2.44",
+  "python": "3.14.7",
+  "packages": {
+    "shapely": "2.1.2",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "fonttools": "4.66.0"
+  },
+  "units": "w = one extrusion line width; y points down; x-height at y=0, baseline at y=10",
+  "candidates": [
+    {
+      "id": "V0",
+      "char": "v",
+      "source": "solve(lambda vy: S((1, 1, B), (4, vy), (7, 1, B)))",
+      "added_by_finishing_w2": 2.17,
+      "max_thickness_w": 4.26,
+      "ink_width_w": 8.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.06,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "V1",
+      "char": "v",
+      "source": "solve(lambda vy: S((1, 1, B), (4, vy, 0.7), (7, 1, B)), lo=5.0)",
+      "added_by_finishing_w2": 1.86,
+      "max_thickness_w": 4.13,
+      "ink_width_w": 8.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.754,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "V2",
+      "char": "v",
+      "source": "S((1, 1, B), (4.5, 8.685, 0), (8, 1, B)).intersection(Rect(-5, -5, 20, 10))",
+      "added_by_finishing_w2": 1.0,
+      "max_thickness_w": 3.62,
+      "ink_width_w": 9.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.832,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "V3",
+      "char": "v",
+      "source": "S((1 - 0.4846 * 3, -2), (4.75, 8.739, 0), (8.5 + 0.4846 * 3, -2)).intersection(Rect(-5, 0, 20, 10))",
+      "added_by_finishing_w2": 0.89,
+      "max_thickness_w": 3.55,
+      "ink_width_w": 10.1,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.795,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "V4",
+      "char": "v",
+      "source": "solve(lambda vy: S((1, 1, B), (4.75, vy)) | S((4.75, vy), (8.5, 1, B)) | D((4.75, vy)), lo=5.0)",
+      "added_by_finishing_w2": 1.06,
+      "max_thickness_w": 3.58,
+      "ink_width_w": 9.5,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.8,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.017,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "V5",
+      "char": "v",
+      "source": "S((1, 1, B), (5, 8.444, 0), (9, 1, B))",
+      "added_by_finishing_w2": 0.85,
+      "max_thickness_w": 3.4,
+      "ink_width_w": 10.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "v",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.728,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "vivid valve vex",
+      "passes": true
+    },
+    {
+      "id": "Z0",
+      "char": "z",
+      "source": "S((0, 1), (6.3, 1, 0.8), (0.7, 9, 0.8), (7, 9))",
+      "added_by_finishing_w2": 1.57,
+      "max_thickness_w": 3.38,
+      "ink_width_w": 7.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.259,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.017,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    },
+    {
+      "id": "Z1",
+      "char": "z",
+      "source": "S((0, 1), (6.3, 1)) | S((6.3, 1), (0.7, 9)) | S((0.7, 9), (7, 9)) | D((6.3, 1)) | D((0.7, 9))",
+      "added_by_finishing_w2": 1.84,
+      "max_thickness_w": 3.45,
+      "ink_width_w": 7.6,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.75,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.019,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    },
+    {
+      "id": "Z2",
+      "char": "z",
+      "source": "S((0, 1), (6.0, 1, 0), (1.0, 9, 0), (7, 9))",
+      "added_by_finishing_w2": 1.73,
+      "max_thickness_w": 3.4,
+      "ink_width_w": 7.81,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.704,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    },
+    {
+      "id": "Z3",
+      "char": "z",
+      "source": "S((0, 1), (5.7, 1, 0), (1.3, 9, 0), (7, 9))",
+      "added_by_finishing_w2": 0.33,
+      "max_thickness_w": 2.98,
+      "ink_width_w": 7.09,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.667,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    },
+    {
+      "id": "Z4",
+      "char": "z",
+      "source": "S((0, 1), (5.4, 1, 0), (1.6, 9, 0), (7, 9))",
+      "added_by_finishing_w2": 0.29,
+      "max_thickness_w": 2.91,
+      "ink_width_w": 7.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.616,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.018,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    },
+    {
+      "id": "Z5",
+      "char": "z",
+      "source": "S((0, 1), (7, 1)) | S((0, 9), (7, 9)) | diagonal(5.2, 1, 1.8, 9, clip=(0, 10))",
+      "added_by_finishing_w2": 0.28,
+      "max_thickness_w": 2.9,
+      "ink_width_w": 7.0,
+      "ink_top_bottom_w": [
+        0.0,
+        10.0
+      ],
+      "glyphs_checked": "zźżž",
+      "thin_or_island_failures": [],
+      "fused": [],
+      "thickness_limit_w": 4.85,
+      "unfilled_stroke_w": 2.608,
+      "unfilled_stroke_limit_w": 2.85,
+      "min_sample_gap_w": 2.019,
+      "sample": "lazy zinc fizz źżž",
+      "passes": true
+    }
+  ]
+}

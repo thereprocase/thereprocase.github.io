@@ -7,14 +7,14 @@
 <link rel="canonical" href="https://thereprocase.github.io/fillaprint/">
 <meta property="og:title" content="Fillaprint"><meta property="og:description" content="For FDM 3D printing. Matched minimum widths for strokes and gaps.">
 <meta property="og:type" content="website"><meta property="og:image" content="https://thereprocase.github.io/fillaprint/images/hero.png">
-<link rel="stylesheet" href="/gridline/gridline.css"><link rel="stylesheet" href="/gridline/responsive.css"><link rel="stylesheet" href="style.css?v=20260926-tuner">
+<link rel="stylesheet" href="/gridline/gridline.css"><link rel="stylesheet" href="/gridline/responsive.css"><link rel="stylesheet" href="style.css?v=20260928-vz">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico">
 <link rel="preload" href="fonts/Fillaprint-Regular.ttf" as="font" type="font/ttf" crossorigin>
 </head>
 <body><div class="gl-desktop bt-desktop">
 <a class="skip" href="#content">Skip to content</a>
 <header class="gl-titlebar"><a class="gl-brand" href="/">THEREPROCASE</a><span>FILLAPRINT</span><span class="gl-state"><!-- RELEASE-BADGE:START -->V0.1.1 BETA<!-- RELEASE-BADGE:END --></span></header>
-<nav class="gl-menu bt-nav" aria-label="Project navigation"><a href="/">← Projects</a><a href="#specimen">Type tester</a><a href="#design">The design</a><a href="#size">Print sizing</a><a href="#downloads">Downloads ↓</a><a href="#artwork">Artwork ↓</a><a href="#tuner">Glyph tuner ↓</a></nav>
+<nav class="gl-menu bt-nav" aria-label="Project navigation"><a href="/">← Projects</a><a href="#specimen">Type tester</a><a href="#design">The design</a><a href="#size">Print sizing</a><a href="#downloads">Downloads ↓</a><a href="#artwork">Artwork ↓</a><a href="#tuner">Glyph tuner ↓</a><a href="#vz-candidates">v / z candidates ↓</a></nav>
 <main id="content">
 <div class="note"><strong><!-- RELEASE-NOTE:START -->v0.1.1 beta<!-- RELEASE-NOTE:END --> — fine-tuning for release.</strong> Shapes, spacing, and print behavior may change before 1.0. We eventually aim to launch through Nerd Fonts; this beta is not an official Nerd Fonts release.</div>
 <section class="hero" aria-labelledby="title"><div class="hero-top"><p class="gl-kicker">FOR FDM 3D PRINTING</p><span class="gl-state">PERSONAL + COMMERCIAL USE / FREE</span></div>
@@ -92,4 +92,140 @@ git restore fonts specimen report.json</code></pre><p>Adjust the patch path if y
 </ol>
 <div class="note"><strong>Geometry checks, not print results.</strong> A passing preview does not cover every letter pair, TTF rounding, or sliced toolpath; the full build, the tests, and a slicer coupon remain the acceptance checks. The tuner changes existing numbers only. New strokes, endpoint types, or characters still require editing the Python source.</div>
 <p class="tuner-links fine"><a href="#">Back to top ↑</a> <a href="https://github.com/thereprocase/double-bead/blob/main/docs/TUNER.md">Tuner documentation →</a> <a href="tuner/provenance.json">Screenshot source record →</a></p></section>
+<section class="gl-pane" id="vz-candidates" aria-labelledby="vz-title"><div class="gl-pane-title"><h2 id="vz-title">12 / V AND Z CANDIDATES</h2><span>FOR REVIEW / NOT IN THE RELEASED FONTS</span></div>
+<div class="pad prose vz-intro"><h3>Sharper joints for v and z, within the 2w rule.</h3><p>Five candidates for each letter, with the current v0.1.1 shapes (V0, Z0) for comparison. The finishing step that fills the joints is unchanged; the candidates change the joint geometry, which decides how much fill it adds.</p>
+<p>Three limits set how sharp a joint can be. Inside the joint, finishing fills any negative space narrower than 1.96w, so the notch always ends in a round about 2w across; a wider angle makes that fill shallower. At the point, ink narrower than 2w may cover at most 0.5 w²: fully mitred corners on today’s 55° z fail that check. And before any filling, where two arms meet the stroke may be at most 2.85w across (two beads): at today’s v angle, any point tighter than a 0.7w fillet breaks that rule, so a sharper v needs a wider angle. The outside rounding (R0.5w) is left as it is: it is about the radius a bead draws at a corner, and halving it would move these outlines by 0.1w at most.</p>
+<p>Every candidate below is finished and checked by the font’s own code: thin ink, enclosed holes, fused pieces, the 4.85w thickness limit, the accented letters built from it (ź ż ž), the two-bead stroke rule, and the spacing of the sample words, computed for the new shape. V2, V5 and all five z candidates were also built into complete fonts with <code>build.py</code> and passed its checks. These are geometry checks, not print tests.</p>
+<ul class="vz-legend"><li><span class="swatch ink"></span>Ink as drawn</li><li><span class="swatch fill"></span>Ink added by finishing</li><li><span class="swatch ghost"></span>Current v0.1.1 outline</li><li>Grid lines every 2w; x-height and baseline in grey. Sample words are shown large and at small text size.</li></ul>
+<p class="fine">Capitals follow whichever direction is chosen. For reference, the capital Z already gets no fill, because its diagonal is steep (65°); the capital V gets 3.98 w², the most of these four letters. Measurements and sources: <a href="candidates/vz/candidates.json">candidates.json</a>.</p></div>
+<div class="pad">
+<!-- VZ-CANDIDATES:START -->
+<h3 class="vz-group">Lowercase v</h3>
+<div class="vz-grid">
+<article class="vz-card vz-current" id="vz-v0">
+<div class="vz-head"><h4>V0</h4><span>Current v (v0.1.1)</span></div>
+<img src="candidates/vz/V0.svg" width="600" height="520" alt="Current v (v0.1.1): construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V0-sample.svg" alt="vivid valve vex set with V0" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V0-sample.svg" alt="" loading="lazy">
+<p>Arms meet in a 1w centreline fillet, so the point is a 2w-radius curve.</p>
+<dl><div><dt>Finishing fill</dt><dd>2.17 w²</dd></div><div><dt>Max thickness</dt><dd>4.26 w</dd></div><div><dt>Ink width</dt><dd>8.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.06 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = solve(lambda vy: S((1, 1, B), (4, vy), (7, 1, B)))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-v1">
+<div class="vz-head"><h4>V1</h4><span>Tighter curve, same width</span></div>
+<img src="candidates/vz/V1.svg" width="600" height="520" alt="Tighter curve, same width: construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V1-sample.svg" alt="vivid valve vex set with V1" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V1-sample.svg" alt="" loading="lazy">
+<p>Fillet 0.7w: the tightest that keeps the unfilled stroke within two beads (2.85w) at today&#x27;s angle.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.86 w² (-14%)</dd></div><div><dt>Max thickness</dt><dd>4.13 w</dd></div><div><dt>Ink width</dt><dd>8.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.75 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = solve(lambda vy: S((1, 1, B), (4, vy, 0.7), (7, 1, B)), lo=5.0)</code></pre></details>
+</article>
+<article class="vz-card" id="vz-v2">
+<div class="vz-head"><h4>V2</h4><span>Cut point, 8w spread</span></div>
+<img src="candidates/vz/V2.svg" width="600" height="520" alt="Cut point, 8w spread: construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V2-sample.svg" alt="vivid valve vex set with V2" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V2-sample.svg" alt="" loading="lazy">
+<p>A mitred point cut flat on the baseline, 1.0w wide. 8w between arm centres is the narrowest spread where a cut point stays within two beads.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.00 w² (-54%)</dd></div><div><dt>Max thickness</dt><dd>3.62 w</dd></div><div><dt>Ink width</dt><dd>9.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.83 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = S((1, 1, B), (4.5, 8.685, 0), (8, 1, B)).intersection(Rect(-5, -5, 20, 10))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-v3">
+<div class="vz-head"><h4>V3</h4><span>Cut point, cut tops</span></div>
+<img src="candidates/vz/V3.svg" width="600" height="520" alt="Cut point, cut tops: construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V3-sample.svg" alt="vivid valve vex set with V3" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V3-sample.svg" alt="" loading="lazy">
+<p>Cut 1.0w point at an 8.5w spread, with the arm ends cut flat on the x-height like the capitals&#x27; diagonals.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.89 w² (-59%)</dd></div><div><dt>Max thickness</dt><dd>3.55 w</dd></div><div><dt>Ink width</dt><dd>10.10 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.79 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = S((1 - 0.4846 * 3, -2), (4.75, 8.739, 0), (8.5 + 0.4846 * 3, -2)).intersection(Rect(-5, 0, 20, 10))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-v4">
+<div class="vz-head"><h4>V4</h4><span>Round point, 8.5w spread</span></div>
+<img src="candidates/vz/V4.svg" width="600" height="520" alt="Round point, 8.5w spread: construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V4-sample.svg" alt="vivid valve vex set with V4" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V4-sample.svg" alt="" loading="lazy">
+<p>Arms meet in a plain round join (the stroke&#x27;s own 1w radius). At a narrower spread this join is thicker than two beads.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.06 w² (-51%)</dd></div><div><dt>Max thickness</dt><dd>3.58 w</dd></div><div><dt>Ink width</dt><dd>9.50 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.80 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = solve(lambda vy: S((1, 1, B), (4.75, vy)) | S((4.75, vy), (8.5, 1, B)) | D((4.75, vy)), lo=5.0)</code></pre></details>
+</article>
+<article class="vz-card" id="vz-v5">
+<div class="vz-head"><h4>V5</h4><span>Knife point</span></div>
+<img src="candidates/vz/V5.svg" width="600" height="520" alt="Knife point: construction view of v on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/V5-sample.svg" alt="vivid valve vex set with V5" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/V5-sample.svg" alt="" loading="lazy">
+<p>A true mitred point. It passes only at this width (10w ink, as wide as m); narrower, the tip is thin ink.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.85 w² (-61%)</dd></div><div><dt>Max thickness</dt><dd>3.40 w</dd></div><div><dt>Ink width</dt><dd>10.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.73 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (v)</p>
+<details><summary>Glyph source</summary><pre><code>g["v"] = S((1, 1, B), (5, 8.444, 0), (9, 1, B))</code></pre></details>
+</article>
+</div>
+<h3 class="vz-group">Lowercase z</h3>
+<div class="vz-grid">
+<article class="vz-card vz-current" id="vz-z0">
+<div class="vz-head"><h4>Z0</h4><span>Current z (v0.1.1)</span></div>
+<img src="candidates/vz/Z0.svg" width="600" height="520" alt="Current z (v0.1.1): construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z0-sample.svg" alt="lazy zinc fizz źżž set with Z0" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z0-sample.svg" alt="" loading="lazy">
+<p>Diagonal at 55°. Corners filleted 0.8w on the centreline (1.8w outside radius).</p>
+<dl><div><dt>Finishing fill</dt><dd>1.57 w²</dd></div><div><dt>Max thickness</dt><dd>3.38 w</dd></div><div><dt>Ink width</dt><dd>7.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.26 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (6.3, 1, 0.8), (0.7, 9, 0.8), (7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-z1">
+<div class="vz-head"><h4>Z1</h4><span>Round corners, same lean</span></div>
+<img src="candidates/vz/Z1.svg" width="600" height="520" alt="Round corners, same lean: construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z1-sample.svg" alt="lazy zinc fizz źżž set with Z1" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z1-sample.svg" alt="" loading="lazy">
+<p>Same 55° diagonal. Corners are the stroke&#x27;s own 1w radius. Sharper corners, but slightly more fill in the notches.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.84 w² (+17%)</dd></div><div><dt>Max thickness</dt><dd>3.45 w</dd></div><div><dt>Ink width</dt><dd>7.60 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.75 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (6.3, 1)) | S((6.3, 1), (0.7, 9)) | S((0.7, 9), (7, 9)) | D((6.3, 1)) | D((0.7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-z2">
+<div class="vz-head"><h4>Z2</h4><span>Mitred corners, 58°</span></div>
+<img src="candidates/vz/Z2.svg" width="600" height="520" alt="Mitred corners, 58°: construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z2-sample.svg" alt="lazy zinc fizz źżž set with Z2" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z2-sample.svg" alt="" loading="lazy">
+<p>Sharp mitred corners. At 55° they fail the thin-ink check; 58° is the first lean that passes.</p>
+<dl><div><dt>Finishing fill</dt><dd>1.73 w² (+10%)</dd></div><div><dt>Max thickness</dt><dd>3.40 w</dd></div><div><dt>Ink width</dt><dd>7.81 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.70 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (6.0, 1, 0), (1.0, 9, 0), (7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-z3">
+<div class="vz-head"><h4>Z3</h4><span>Mitred corners, 61°</span></div>
+<img src="candidates/vz/Z3.svg" width="600" height="520" alt="Mitred corners, 61°: construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z3-sample.svg" alt="lazy zinc fizz źżž set with Z3" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z3-sample.svg" alt="" loading="lazy">
+<p>Steeper diagonal. The notch under each bar falls below the 0.5 w² fill tolerance, so finishing leaves it open.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.33 w² (-79%)</dd></div><div><dt>Max thickness</dt><dd>2.98 w</dd></div><div><dt>Ink width</dt><dd>7.09 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.67 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (5.7, 1, 0), (1.3, 9, 0), (7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-z4">
+<div class="vz-head"><h4>Z4</h4><span>Mitred corners, 65°</span></div>
+<img src="candidates/vz/Z4.svg" width="600" height="520" alt="Mitred corners, 65°: construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z4-sample.svg" alt="lazy zinc fizz źżž set with Z4" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z4-sample.svg" alt="" loading="lazy">
+<p>The capital Z&#x27;s lean. Corners land inside the bar ends.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.29 w² (-82%)</dd></div><div><dt>Max thickness</dt><dd>2.91 w</dd></div><div><dt>Ink width</dt><dd>7.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.62 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (5.4, 1, 0), (1.6, 9, 0), (7, 9))</code></pre></details>
+</article>
+<article class="vz-card" id="vz-z5">
+<div class="vz-head"><h4>Z5</h4><span>Square bar ends, 67°</span></div>
+<img src="candidates/vz/Z5.svg" width="600" height="520" alt="Square bar ends, 67°: construction view of z on a 2w grid" loading="lazy">
+<img class="vz-sample" src="candidates/vz/Z5-sample.svg" alt="lazy zinc fizz źżž set with Z5" loading="lazy">
+<img class="vz-sample vz-small" src="candidates/vz/Z5-sample.svg" alt="" loading="lazy">
+<p>Full-width bars with square ends; the diagonal is cut flat on the bars&#x27; outer edges, like N.</p>
+<dl><div><dt>Finishing fill</dt><dd>0.28 w² (-82%)</dd></div><div><dt>Max thickness</dt><dd>2.90 w</dd></div><div><dt>Ink width</dt><dd>7.00 w</dd></div><div><dt>Unfilled stroke (max 2.85)</dt><dd>2.61 w</dd></div><div><dt>Closest pair in sample</dt><dd>2.02 w</dd></div></dl>
+<p class="vz-status">Passes the build's glyph checks (zźżž)</p>
+<details><summary>Glyph source</summary><pre><code>g["z"] = S((0, 1), (7, 1)) | S((0, 9), (7, 9)) | diagonal(5.2, 1, 1.8, 9, clip=(0, 10))</code></pre></details>
+</article>
+</div>
+<!-- VZ-CANDIDATES:END -->
+</div></section>
 </main><footer class="gl-statusbar"><span>DESIGNED BY REPRO / FILLAPRINT</span><a href="/">Project directory ↗</a></footer></div><script src="app.js" defer></script></body></html>
