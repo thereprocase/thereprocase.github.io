@@ -11,6 +11,7 @@ const allCategories = [
   { id: 'cad-tools', name: 'Fonts & CAD tools', description: 'Typefaces and tools for 3D-print design.' },
   { id: 'developer-tools', name: 'Developer tools', description: 'Terminal utilities for Claude Code.' },
   { id: 'home-automation', name: 'Home automation', description: 'Local integrations for 3D printers and home devices.' },
+  { id: 'self-hosted-models', name: 'Self-hosted models', description: 'Guides and tooling for serving open-weight models on local hardware.' },
   { id: 'upstream-work', name: 'Forks & upstream work', description: 'Separate working copies of open-source projects. Original projects are credited on each page.' },
 ];
 
@@ -135,6 +136,16 @@ export const projects: Project[] = [
     status: 'AGPL source release · mock-tested; current firmware acceptance remains',
     highlights: ['Browser dashboard and 3D print-progress viewer.', 'HTTP and WebSocket API with Home Assistant integration and add-on source.', 'LAN and Developer Mode requirements, source access, and validation records.'],
     links: [{ label: 'Explore Bambu Bridge', href: '/bambu-bridge/' }, { label: 'Install & configure', href: '/bambu-bridge/#setup' }, { label: 'LAN compatibility & access', href: 'https://github.com/thereprocase/bambu-bridge/blob/main/docs/LAN-COMPATIBILITY.md' }],
+  },
+  {
+    slug: 'deepseek-spark', name: 'DeepSeek V4.1 Flash on DGX Spark', category: 'self-hosted-models', sitePath: '/deepseek-spark/',
+    summary: 'Serving DeepSeek V4.1 Flash from DGX Spark-class machines to Open WebUI through LiteLLM, with measurements of its long planning loops.',
+    description: 'A field guide to the stack, a reproducible way to measure the model\'s commitment-deferral loop, which settings change it, and a LiteLLM hook that restores earlier reasoning between tool calls. Recommendations are grouped as must, should, consider and avoid.',
+    status: 'Field guide · October 2026 · one deployment, small samples',
+    highlights: ['Replay and one-token exit-probe measurements with charts and tables.', 'Recommendations grouped as must, should, consider and avoid.', 'The loopguard LiteLLM callback, its tests and the measurement scripts.'],
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/deepseek-spark',
+    image: { src: '/deepseek-spark/assets/interventions.png', alt: 'Bar charts comparing how often each setting drafted code inside the thinking and how often it started the tool call' },
+    links: [{ label: 'Read the guide', href: '/deepseek-spark/' }, { label: 'Recommendations', href: '/deepseek-spark/#recommendations' }, { label: 'Hook and tools', href: '/deepseek-spark/#files' }],
   },
 ];
 

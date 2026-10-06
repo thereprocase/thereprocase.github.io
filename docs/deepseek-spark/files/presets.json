@@ -1,0 +1,43 @@
+{
+  "server-default": {
+    "note": "No sampling params: server defaults.",
+    "params": {}
+  },
+  "effort-75": {
+    "note": "Reference encoder's 'high' (this server maps high to 50; sglang#39909 says reference is 75).",
+    "params": {
+      "chat_template_kwargs": {
+        "reasoning_effort": 75
+      }
+    }
+  },
+  "effort-25": {
+    "note": "Template effort dial; equals reasoning_effort=low.",
+    "params": {
+      "chat_template_kwargs": {
+        "reasoning_effort": 25
+      }
+    }
+  },
+  "sys-act": {
+    "note": "Prompt-level: name the loop and tell it where drafting belongs.",
+    "params": {},
+    "system_addendum": "Reasoning discipline: think until you know what to do, then do it. The moment you decide to write, call a tool, or answer, end your thinking and start that output immediately. Draft code and documents in the output itself, never inside your thinking. If you notice you have already said you are about to start, stop planning and start."
+  },
+  "tail-reminder": {
+    "note": "Mid-conversation system message just before the assistant turn (V4.1 encoding allows it; latest_reminder role is rejected by vLLM).",
+    "params": {},
+    "tail_system": "Keep your thinking to a short plan: what you will produce and in what order. Do not draft code or document text in your thinking. Write it directly in the tool call or the reply."
+  },
+  "recommended": {
+    "note": "Recommended settings: effort 75, temperature 1.0, top_p 0.95, trailing reminder.",
+    "params": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "chat_template_kwargs": {
+        "reasoning_effort": 75
+      }
+    },
+    "tail_system": "Keep your thinking to a short plan: what you will produce and in what order. Do not draft code or document text in your thinking. Write it directly in the tool call or the reply."
+  }
+}

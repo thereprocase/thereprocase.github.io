@@ -1,0 +1,22 @@
+# LiteLLM proxy config for DeepSeek V4.1 Flash on a vLLM server.
+# Replace SPARK_HOST with your server's address. Model names are what clients see.
+model_list:
+  - model_name: deepseek-v4.1-flash
+    litellm_params:
+      # hosted_vllm keeps reasoning_content on assistant messages in v1.99.x;
+      # v1.100.0 through v1.104.0 strip it (BerriAI/litellm#41392).
+      model: hosted_vllm/deepseek-v4.1-flash
+      api_base: http://SPARK_HOST:8000/v1
+      api_key: "none"
+      temperature: 1.0   # model card
+      top_p: 0.95        # model card
+      extra_body:
+        chat_template_kwargs:
+          reasoning_effort: 75   # DeepSeek's reference default; integer 1-100
+
+litellm_settings:
+  callbacks: loopguard.proxy_handler_instance
+  drop_params: false
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeepSeek V4.1 Flash on DGX Spark · thereprocase</title><meta name="description" content="Serving DeepSeek V4.1 Flash on DGX Spark-class machines behind Open WebUI and LiteLLM, with measurements of its long planning loops and the settings that shorten them."><meta name="theme-color" content="#0000A8">
+<link rel="canonical" href="https://thereprocase.github.io/deepseek-spark/"><meta property="og:title" content="DeepSeek V4.1 Flash on DGX Spark"><meta property="og:description" content="Serving DeepSeek V4.1 Flash on DGX Spark-class machines behind Open WebUI and LiteLLM, with measurements of its long planning loops and the settings that shorten them."><meta property="og:type" content="article"><meta property="og:url" content="https://thereprocase.github.io/deepseek-spark/"><meta property="og:image" content="https://thereprocase.github.io/deepseek-spark/assets/interventions.png">
+<link rel="icon" type="image/svg+xml" href="/gridline/logo.svg">
+<link rel="stylesheet" href="/gridline/gridline.css"><link rel="stylesheet" href="/gridline/themes.css"><link rel="stylesheet" href="/gridline/project.css"><link rel="stylesheet" href="style.css">
+<script defer src="site.js"></script></head>
+<body class="project-site" data-project="deepseek-spark"><a class="gl-skip" href="#content">Skip to content</a><div class="ps-frame">
+<header class="ps-network"><a href="https://thereprocase.github.io/">thereprocase / All projects</a><span>SELF-HOSTED MODELS</span><a href="https://github.com/thereprocase/thereprocase.github.io/tree/main/public/deepseek-spark">Source on GitHub ↗</a></header>
+<div class="ps-layout"><aside class="ps-sidebar"><nav class="ps-nav" aria-label="Guide navigation"><button type="button" class="ps-nav-toggle" aria-expanded="false" aria-controls="guide-links">DeepSeek on Spark / Contents</button><div class="ps-nav-label">DEEPSEEK ON SPARK<br>GUIDE CONTENTS</div><div class="ps-nav-links" id="guide-links"><a href="#overview">Overview ↓</a><a href="#setup">The stack ↓</a><a href="#loop">The planning loop ↓</a><a href="#method">How it was measured ↓</a><a href="#results">Results ↓</a><a href="#recommendations">Recommendations ↓</a><a href="#configuration">Configuration ↓</a><a href="#limits">Limits ↓</a><a href="#files">Files &amp; sources ↓</a><a class="ps-directory-link" href="https://thereprocase.github.io/#self-hosted-models">Open project group ↗</a><a href="https://thereprocase.github.io/projects/deepseek-spark/">Directory record ↗</a></div></nav></aside>
+<main class="ps-main" id="content">
+
+<section class="ps-hero" id="overview" aria-label="Guide overview"><div class="ps-hero-copy"><p class="ps-eyebrow">SELF-HOSTED MODELS / FIELD GUIDE / OCTOBER 2026</p><h1>DeepSeek V4.1 Flash on DGX Spark with Open WebUI.</h1>
+<p class="ps-lead">A working setup for serving DeepSeek V4.1 Flash from DGX Spark-class machines to Open WebUI through a LiteLLM proxy, and measurements of the long planning loops the model falls into during tool-using chats.</p>
+<p>The guide covers the stack, a reproducible way to measure the loop, which settings change it and which leave it alone, and a small proxy hook that restores the model's earlier reasoning between tool calls. Recommendations are grouped as <b>must</b>, <b>should</b>, <b>consider</b> and <b>avoid</b>.</p>
+<div class="ps-actions"><a class="ps-button primary" href="#recommendations">Read the recommendations <span aria-hidden="true">↓</span></a><a class="ps-button" href="#files">Download the hook and tools <span aria-hidden="true">↓</span></a></div>
+<p class="ps-note">Field report from one deployment, measured with small samples (3 to 16 runs per setting) on one prompt family. Re-measure on your own stack before relying on the numbers. Screenshots marked <span class="ds-sim">SIMULATED</span> are illustrations with invented conversations; charts use the recorded measurements.</p></div>
+<dl class="ps-data-strip"><div><dt>REPLAYS THAT LOOPED AT SERVER DEFAULTS</dt><dd>3 of 3</dd></div><div><dt>FULL REPLAYS THAT REACHED THE TOOL CALL WITH RECOMMENDED SETTINGS</dt><dd>6 of 6</dd></div><div><dt>SHORT REPLAYS WITHOUT IN-THINKING CODE, REMINDER ON (OFF: 5 OF 16)</dt><dd>13 of 16</dd></div></dl></section>
+
+<section class="ps-section" id="setup"><h2>01 / The stack</h2><div class="ps-body">
+<div class="ds-pipeline" role="list" aria-label="Request path"><div class="ds-stage" role="listitem"><strong>Browser</strong><span>Chat in Open WebUI.</span></div><div class="ds-stage" role="listitem"><strong>Open WebUI</strong><span>Native function calling; one OpenAI-compatible connection to the proxy.</span></div><div class="ds-stage ds-hook" role="listitem"><strong>LiteLLM + loopguard</strong><span>Per-model defaults, reasoning replay, trailing reminder, loop metrics. Bound to localhost.</span></div><div class="ds-stage" role="listitem"><strong>vLLM on Spark</strong><span>DeepSeek V4.1 Flash, OpenAI-compatible API on port 8000.</span></div></div>
+<dl class="ps-register">
+<div><dt>Hardware</dt><dd>DGX Spark-class GB10 machines, one model per machine. The front end and proxy run on a separate small server and reach the Sparks over a private network (Tailscale in the measured deployment).</dd></div>
+<div><dt>Serving</dt><dd>vLLM nightly (September–October 2026) with the DeepSeek V4.1 tokenizer, reasoning and tool-call parsers from the vLLM recipe. Speculative decoding with 3 draft tokens; about 65% of drafts accepted.</dd></div>
+<div><dt>Observed throughput</dt><dd>About 22 output tokens per second per stream, with two sequences running at once. A long tool-using turn of 10,000–20,000 tokens therefore takes 8–15 minutes on one stream.</dd></div>
+<div><dt>Proxy</dt><dd>LiteLLM Proxy <code>v1.99.4</code>, non-root image pinned by digest, config-file mode with no database. The loopguard callback is one Python file mounted read-only.</dd></div>
+<div><dt>Front end</dt><dd>Open WebUI with native function calling and its built-in tools (notes, memory, chat search, knowledge bases).</dd></div>
+</dl></div></section>
+
+<section class="ps-section" id="loop"><h2>02 / The planning loop</h2><div class="ps-body">
+<p>When a turn ends in one large deliverable — for example, “write a full project scaffold into a note” — the model's thinking fills with commitments to act (“Let me write it.”, “Writing now.”, “Now write.”) followed by more planning. In the measured deployment, three of three replays of such a conversation looped: 23–29 commitment phrases and 5,000–11,000 reasoning tokens before the first tool call, and one replay was still thinking when stopped at 15 minutes.</p>
+<figure class="ds-figure"><a href="assets/sim-loop.png"><img src="assets/sim-loop.png" width="2400" height="1080" alt="Simulated chat: a thinking panel running for over seven minutes, with highlighted phrases such as Let me write it and Writing now between planning paragraphs and code fragments" loading="lazy"></a><figcaption><span class="ds-sim">SIMULATED SCREENSHOT</span> · Invented conversation. The highlighted phrases and in-thinking code fragments follow the pattern recorded in real traces.</figcaption></figure>
+<p>Two features make the loop hard to catch. The text never repeats verbatim, so n-gram repetition detectors stay silent; and each commitment phrase is followed by new, plausible planning. In the recorded traces, 22–44% of the thinking text was code drafted inside the reasoning, against none in healthy thinking blocks from the same chat. The model also returns repeatedly to the length of the output it is about to write.</p>
+<p>The model sometimes describes itself as Claude in these conversations. Other users report the same identity claim for the V4 Flash family; an identity line in the system prompt made no measurable difference to the loop here.</p>
+</div></section>
+
+<section class="ps-section" id="method"><h2>03 / How it was measured</h2><div class="ps-body">
+<h3>Replays</h3>
+<p>The conversation state just before a looping turn was exported from Open WebUI — messages, tool calls and tool results — and replayed directly against vLLM with each setting under test. A scorer counts commitment phrases, words of thinking after the first one, and code blocks inside the thinking. Short replays stop after about 1,200 tokens; full replays stop shortly after the first tool call.</p>
+<h3>One-token exit probes</h3>
+<p>To measure the loop without long generations, a recorded trace is cut at each commitment phrase and sent to <code>/v1/completions</code> with the chat template's own rendering of the prompt, asking for one token and its top log-probabilities. The probability of the end-of-thinking token at that point is the model's propensity to stop planning there. Each probe costs one to three single-token requests, and the result is independent of sampling.</p>
+<figure class="ds-figure"><a href="assets/exit-curve.png"><img src="assets/exit-curve.png" width="1600" height="720" alt="Line chart: probability of ending the thinking stays near zero for the first 21 commitment points, then rises to between 0.2 and 0.37 after about 2,400 words" loading="lazy"></a><figcaption>Exit probability at each of the 26 commitment points in one recorded looping trace. The trace ended its thinking at the last point. Values are listed in the table below.</figcaption></figure>
+<p>At 21 of the 26 points the model was almost certain to keep planning; the most likely next step was a paragraph break or another “I'll…” sentence. Willingness to stop appeared only after about 2,400 words, once much of the deliverable had been drafted in the thinking. Probing the same trace under different effort levels and system prompts moved these values by no more than the probe's own run-to-run variation (±0.005).</p>
+<div class="ps-table-wrap"><table class="ps-table"><caption class="ds-visually-hidden">Exit probability at each commitment point</caption><thead><tr><th>Words into thinking</th><th>P(end thinking)</th><th>Words into thinking</th><th>P(end thinking)</th></tr></thead><tbody><tr><td>1,210</td><td>0.000</td><td>2,263</td><td>0.000</td></tr><tr><td>1,231</td><td>0.000</td><td>2,265</td><td>0.000</td></tr><tr><td>1,294</td><td>0.000</td><td>2,280</td><td>0.000</td></tr><tr><td>1,387</td><td>0.000</td><td>2,302</td><td>0.000</td></tr><tr><td>1,416</td><td>0.000</td><td>2,321</td><td>0.001</td></tr><tr><td>2,038</td><td>0.000</td><td>2,402</td><td>0.041</td></tr><tr><td>2,076</td><td>0.000</td><td>2,412</td><td>0.002</td></tr><tr><td>2,101</td><td>0.000</td><td>2,426</td><td>0.000</td></tr><tr><td>2,130</td><td>0.000</td><td>2,458</td><td>0.302</td></tr><tr><td>2,136</td><td>0.000</td><td>2,471</td><td>0.197</td></tr><tr><td>2,160</td><td>0.000</td><td>2,562</td><td>0.000</td></tr><tr><td>2,226</td><td>0.000</td><td>2,566</td><td>0.008</td></tr><tr><td>2,243</td><td>0.000</td><td>2,619</td><td>0.372</td></tr></tbody></table></div>
+<p class="ps-note"><b>Tokenizer trap.</b> DeepSeek V4.1 encodes “.”, “.\n” and “.\n\n” as separate tokens, and the choice among them carries the decision: after a bare “.” the model ends its thinking with probability above 0.99, after “.\n\n” almost never. Cut traces just before the final punctuation and sum over the punctuation branches. A first version of this probe cut after the period, which silently selected the exit branch and reported exit probabilities near 1.0 at points the live run had passed.</p>
+</div></section>
+
+<section class="ps-section" id="results"><h2>04 / Results</h2><div class="ps-body">
+<h3>Short replays: first ~1,200 tokens</h3>
+<figure class="ds-figure"><a href="assets/interventions.png"><img src="assets/interventions.png" width="1900" height="680" alt="Two bar charts. Drafted code inside the thinking: server default 11 of 16, effort 75 6 of 16, section tools 6 of 8, trailing reminder 2 of 8, reminder plus section tools 1 of 8. Started the tool call within about 600 words: 1 of 16, 1 of 16, 0 of 8, 3 of 8, 3 of 8" loading="lazy"></a><figcaption>Share of short replays that drafted code inside the thinking, and share that started the tool call within about 600 words of thinking.</figcaption></figure>
+<div class="ps-table-wrap"><table class="ps-table"><thead><tr><th>Setting</th><th>Runs</th><th>Drafted code in thinking</th><th>Started the tool call</th><th>Commitment phrases per 1,000 words</th></tr></thead><tbody>
+<tr><td>Server default (effort 50)</td><td>16</td><td>11</td><td>1</td><td>6.9</td></tr>
+<tr><td>Effort 75</td><td>16</td><td>6</td><td>1</td><td>6.1</td></tr>
+<tr><td>Section-by-section note tools</td><td>8</td><td>6</td><td>0</td><td>6.5</td></tr>
+<tr><td>Trailing reminder</td><td>8</td><td>2</td><td>3</td><td>11.3</td></tr>
+<tr><td>Reminder + section tools</td><td>8</td><td>1</td><td>3</td><td>6.4</td></tr>
+</tbody></table></div>
+<p>The trailing reminder is the one setting that changed the mechanism. With both reminder arms pooled against the default, 13 of 16 replays skipped in-thinking code drafts against 5 of 16 (Fisher one-sided p = 0.006), and 6 of 16 started the tool call within about 600 words against 1 of 16 (p = 0.04). The same instruction at the top of the system prompt had no measurable effect. Effort 75 against 50 showed a weaker signal on code drafting (6 of 16 against 11 of 16, p ≈ 0.08) and no change in commitment phrases. Section-by-section tools changed nothing; in the first 600 words only two of eight traces mentioned them, because drafting starts before the model plans delivery.</p>
+<p>The reminder raises the count of commitment phrases while the drafting drops, so that count stops being a useful loop measure once the reminder is on. Measure code blocks in the thinking and words before the first tool call instead.</p>
+<h3>Full replays</h3>
+<figure class="ds-figure"><a href="assets/full-runs.png"><img src="assets/full-runs.png" width="1600" height="520" alt="Dot plot of thinking words before the first tool call. Server defaults: 2,619 and 4,906, plus one run still thinking at 2,230 words when stopped. Recommended settings: 354, 652, 1,509, 2,130, 2,447 and 2,563" loading="lazy"></a><figcaption>Words of thinking before the first tool call in full replays. The hollow marker is a run stopped at 15 minutes before any tool call, so its true length is longer.</figcaption></figure>
+<p>With the recommended settings (effort 75, temperature 1.0, top_p 0.95 and the trailing reminder), all six full replays reached the tool call, with a median of about 1,800 words of thinking against about 2,600 at defaults (Mann–Whitney one-sided p ≈ 0.05). The runs split into two groups: three acted after 350–1,500 words with little or no drafting, and three still drafted 7–17 code blocks before acting, in fewer words than at defaults.</p>
+</div></section>
+
+<section class="ps-section" id="recommendations"><h2>05 / Recommendations</h2><div class="ps-body">
+<p>Each item notes whether it was measured in this deployment or comes from other sources.</p></div>
+<div class="ds-tiers">
+<div class="ds-tier ds-must"><h3>Must</h3><ol>
+<li><b>Return the model's earlier reasoning on tool-calling turns.</b> With tools present, the V4.1 chat encoding keeps every earlier turn's reasoning and renders an empty think block where it is missing. Open WebUI's Default and LiteLLM provider modes leave it out. Restore it in the proxy (the loopguard hook below) or switch the connection's provider to llama.cpp, which sends <code>reasoning_content</code>. <i>Encoding behavior and Open WebUI behavior verified; effect on loops reported elsewhere.</i></li>
+<li><b>Run a LiteLLM release that keeps <code>reasoning_content</code> for <code>hosted_vllm</code>.</b> Versions 1.100.0 through 1.104.0 remove it from assistant messages before they reach vLLM. v1.99.4 keeps it (verified by prompt-token counts through the proxy); the fix is in 1.105.0-rc.1.</li>
+<li><b>Pin the proxy image by digest and inspect it before first start.</b> LiteLLM's PyPI releases 1.82.7 and 1.82.8 were compromised in March 2026. Check for the published indicators, run non-root with a read-only filesystem, and bind the proxy to localhost.</li>
+<li><b>Serve with the DeepSeek V4.1 parsers.</b> Use the <code>deepseek_v41</code> tokenizer mode, reasoning parser and tool-call parser from the vLLM recipe. The V4 tool parser misreads V4.1's tool tags. <i>From the recipe and other reports; tool calls parsed correctly in this deployment.</i></li>
+</ol></div>
+<div class="ds-tier ds-should"><h3>Should</h3><ol>
+<li><b>Add a trailing system message right before the assistant turn.</b> The text used here: “Keep your thinking to a short plan: what you will produce and in what order. Do not draft code or document text in your thinking. Write it directly in the tool call or the reply.” <i>Measured: the largest effect of any setting.</i></li>
+<li><b>Set reasoning effort explicitly.</b> Pass an integer from 1 to 100 in <code>chat_template_kwargs.reasoning_effort</code>. Some vLLM builds carry a pre-release effort table in which the default of 50 equals DeepSeek's “low”; DeepSeek's reference default is 75.</li>
+<li><b>Use temperature 1.0 and top_p 0.95.</b> These are the model card's values.</li>
+<li><b>Log loop metrics for every response.</b> Record words of thinking, code blocks in the thinking, commitment phrases and tool calls. Real traffic shows the loop rate better than replays.</li>
+<li><b>On shared Sparks, run experiments one request at a time.</b> Check <code>vllm:num_requests_running</code> on <code>/metrics</code> before each batch.</li>
+</ol></div>
+<div class="ds-tier ds-consider"><h3>Consider</h3><ol>
+<li><b>Turn thinking off for the step that writes a large deliverable.</b> Send <code>chat_template_kwargs: {"thinking": false}</code> on that request and keep thinking on for planning. Other harnesses report fewer loops this way. <i>Untested here.</i></li>
+<li><b>Leave flagged reasoning out of the replay.</b> A looped thinking block in history can act as an example that sustains the loop (reported elsewhere); loopguard replays only blocks below its loop thresholds.</li>
+<li><b>Compare settings with one-token exit probes.</b> Each probe costs one to three single-token requests, which keeps experiments light on a shared machine.</li>
+<li><b>Use a mid-conversation system message as the reminder slot.</b> The V4.1 encoding defines a <code>latest_reminder</code> role; vLLM rejected it in the measured build, and a trailing system message renders in the same position.</li>
+</ol></div>
+<div class="ds-tier ds-avoid"><h3>Avoid</h3><ol>
+<li><b><code>thinking_token_budget</code> on builds where it truncates.</b> It forces a bare end-of-thinking token, and several vLLM issues about it remain open.</li>
+<li><b>Relying on vLLM's <code>repetition_detection</code> for this loop.</b> It matches exact repeated token patterns, and this loop never repeats verbatim.</li>
+<li><b>Placing the anti-drafting rule only at the top of the system prompt.</b> No measurable effect here; position next to the decision matters.</li>
+<li><b>Cutting probe traces after punctuation.</b> The tokenizer merges punctuation with line breaks, so the cut selects a branch for the model.</li>
+<li><b>Upgrading the proxy to the newest release without checking reasoning passthrough.</b> Repeat the prompt-token check below after every upgrade.</li>
+</ol></div>
+</div></section>
+
+<section class="ps-section" id="configuration"><h2>06 / Configuration</h2><div class="ps-body">
+<h3>LiteLLM model entry</h3>
+<div class="ps-code"><div class="ps-code-bar"><span>config.yaml</span><button type="button" data-copy="cfg">Copy</button></div><pre><code id="cfg">model_list:
+  - model_name: deepseek-v4.1-flash
+    litellm_params:
+      model: hosted_vllm/deepseek-v4.1-flash
+      api_base: http://SPARK_HOST:8000/v1
+      api_key: "none"
+      temperature: 1.0
+      top_p: 0.95
+      extra_body:
+        chat_template_kwargs:
+          reasoning_effort: 75
+
+litellm_settings:
+  callbacks: loopguard.proxy_handler_instance
+  drop_params: false
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY</code></pre></div>
+<h3>Container</h3>
+<div class="ps-code"><div class="ps-code-bar"><span>docker run</span><button type="button" data-copy="run">Copy</button></div><pre><code id="run">docker run -d --name litellm --restart unless-stopped --network host \
+  --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges \
+  --env-file /opt/litellm/litellm.env --env-file /opt/litellm/loopguard.env \
+  -e LITELLM_LOCAL_MODEL_COST_MAP=True \
+  -v /opt/litellm/config.yaml:/app/config.yaml:ro \
+  -v /opt/litellm/loopguard.py:/app/loopguard.py:ro \
+  -v /opt/litellm/data:/data \
+  ghcr.io/berriai/litellm-non_root@sha256:63dfaf8232b7b524bc2ebca12bd77e997baec0179719c340443c74f14fd8822e \
+  --config /app/config.yaml --host 127.0.0.1 --port 4000</code></pre></div>
+<p>The digest is <code>litellm-non_root:v1.99.4</code> as of October 2026; re-resolve it from the registry before use. <code>litellm.env</code> holds only the master key (mode 600). <code>loopguard.env</code> sets the reminder text and the log path. Host networking with a localhost bind keeps the proxy reachable only from the front-end machine; Open WebUI then uses <code>http://127.0.0.1:4000/v1</code> with the master key and the Default provider.</p>
+<h3>What loopguard does</h3>
+<ul><li>Caches each streamed response's reasoning, keyed by tool-call ID and a hash of the visible reply, and re-attaches it to the matching assistant message on later requests.</li><li>Leaves out any reasoning block that crosses its loop thresholds (six or more commitment phrases, or 800 or more words after the first one).</li><li>Appends the trailing reminder as a system message when <code>LOOPGUARD_TAIL_REMINDER</code> is set.</li><li>Writes one JSON line of loop metrics per response for the configured models, and passes every chunk through unchanged.</li></ul>
+<div class="ps-split"><figure class="ds-figure"><a href="assets/sim-fixed.png"><img src="assets/sim-fixed.png" width="2400" height="704" alt="Simulated chat: thinking finished after 19 seconds with a one-paragraph plan, a one-line visible plan, and a write_note tool card" loading="lazy"></a><figcaption><span class="ds-sim">SIMULATED SCREENSHOT</span> · The same invented request with the recommended settings: a short plan, then the tool call.</figcaption></figure>
+<figure class="ds-figure"><a href="assets/sim-telemetry.png"><img src="assets/sim-telemetry.png" width="2400" height="500" alt="Simulated terminal: six JSON lines of loop metrics, one flagged, and a count of flagged responses" loading="lazy"></a><figcaption><span class="ds-sim">SIMULATED SCREENSHOT · INVENTED VALUES</span> · Reading the loop log with jq.</figcaption></figure></div>
+<h3>Checks after install</h3>
+<ol><li><b>Reasoning passthrough.</b> Send the same tool-call conversation twice with <code>max_tokens: 1</code>, once with <code>reasoning_content</code> on the assistant turn and once without, directly to vLLM and through the proxy. The prompt-token difference must match (17 tokens in the measured setup).</li><li><b>Replay.</b> Let the model make a real tool call through the proxy, then send the follow-up without reasoning; the proxied request should carry more prompt tokens than the direct one.</li><li><b>Defaults.</b> Start a throwaway instance with <code>--detailed_debug</code> on another port, send one request, and confirm <code>chat_template_kwargs</code>, temperature and top_p in the logged upstream request. Remove the instance afterwards; its log contains prompt text.</li><li><b>Reminder.</b> A one-word prompt costs more prompt tokens through the proxy than directly (31 against 71 here).</li></ol>
+</div></section>
+
+<section class="ps-section" id="limits"><h2>07 / Limits</h2><div class="ps-body">
+<ul><li>One prompt family (a large code scaffold written into a note through a tool) and one deployment. Other deliverables and other serving stacks may behave differently.</li><li>Small samples: 3 to 16 runs per setting. The p-values are one-sided and uncorrected for the number of settings tried.</li><li>Answer quality was read in samples and was not scored.</li><li>Exit probes on a recorded trace are off-policy: they measure the propensity to stop given that history, which is the quantity compared across settings.</li><li>The thinking-off writing step, speculative decoding settings and the proxy's behavior on aborted streams were not tested.</li></ul>
+</div></section>
+
+<section class="ps-section linked" id="files"><h2>08 / Files &amp; sources</h2><div class="ps-body">
+<h3>Files</h3>
+<ul><li><a href="files/loopguard.py">loopguard.py</a> — the LiteLLM callback (standard library only) · <a href="files/test_loopguard.py">test_loopguard.py</a> — its unit tests with fake stream chunks</li><li><a href="files/config.example.yaml">config.example.yaml</a> · <a href="files/loopguard.env.example">loopguard.env.example</a></li><li><a href="files/loopscan.py">loopscan.py</a> — trace scorer · <a href="files/rig.py">rig.py</a> — replay runner (one request at a time; waits for a free server slot) · <a href="files/exitprobe.py">exitprobe.py</a> — one-token exit probes · <a href="files/presets.json">presets.json</a> — the settings compared above</li></ul>
+<p>The replay cases themselves are private conversations and are not published; <code>rig.py</code> takes any case file of the form <code>{"name", "messages", "tools"}</code>.</p>
+<h3>Sources</h3>
+<ul>
+<li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash">DeepSeek-V4.1-Flash model card</a> and <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/encoding/README.md">encoding notes</a></li>
+<li><a href="https://api-docs.deepseek.com/guides/thinking_mode">DeepSeek API: thinking mode and tool calls</a></li>
+<li><a href="https://recipes.vllm.ai/deepseek-ai/DeepSeek-V4.1-Flash">vLLM recipe for DeepSeek-V4.1-Flash</a> · <a href="https://docs.vllm.ai/en/latest/features/reasoning_outputs/">vLLM reasoning outputs</a></li>
+<li><a href="https://github.com/sgl-project/sglang/issues/39909">Pre-release reasoning-effort table (SGLang #39909)</a></li>
+<li><a href="https://github.com/BerriAI/litellm/issues/41392">LiteLLM: reasoning_content stripped for hosted_vllm (#41392)</a> · <a href="https://docs.litellm.ai/blog/security-update-march-2026">LiteLLM security update, March 2026</a></li>
+<li><a href="https://docs.openwebui.com/features/chat-conversations/chat-features/reasoning-models/">Open WebUI: reasoning models</a></li>
+<li><a href="https://github.com/jundot/omlx/issues/3758">“Let me write” loop report (omlx #3758)</a> · <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/discussions/39">Empty think blocks in history (V4-Flash discussion #39)</a> · <a href="https://github.com/NousResearch/hermes-agent/issues/78807">Thinking-off report (hermes-agent #78807)</a></li>
+</ul></div></section>
+
+</main></div>
+<footer class="ps-footer"><span>DEEPSEEK ON SPARK / GRIDLINE</span><a href="https://github.com/thereprocase/thereprocase.github.io/tree/main/public/deepseek-spark">Page source and files ↗</a><a href="https://thereprocase.github.io/">Project directory ↗</a></footer></div></body></html>
