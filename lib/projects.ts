@@ -1,7 +1,7 @@
 export type Project = {
   slug: string; name: string; category: string; summary: string; description: string;
   status: string; highlights: string[]; links: { label: string; href: string }[];
-  sourceHref?: string; image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
+  sourceHref?: string; sitePath?: string; image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
 };
 
 const allCategories = [
@@ -81,6 +81,14 @@ export const projects: Project[] = [
     links: [{ label: 'Explore the conformal anchor', href: '/peg/' }, { label: 'Current CAD downloads', href: '/peg/#downloads' }, { label: 'Host integration & movement envelope', href: '/peg/#interface' }],
   },
   {
+    slug: 'lord-of-the-code', name: 'Lord of the Code', category: 'agent-collaboration', spotlight: true, sitePath: '/projects/lord-of-the-code/',
+    summary: 'A Claude Code skill that runs code reviews with named reviewer agents, each on a set model tier.',
+    description: 'Nine Middle-earth characters each cover one area: correctness, architecture, user experience, security, performance, builds, tests, adversarial bug hunting and style. Deploy them individually or as formations, or use Scribe-Merge to take a branch from review through fixes to a pull request.',
+    status: 'Claude Code skill · MIT',
+    highlights: ['Nine agent definitions across the Opus, Sonnet and Haiku tiers.', 'Four review formations plus the Scribe-Merge review, fix and pull-request workflow.', 'An install script that adds the skill, the agents and the /lotc shorthand.'],
+    links: [{ label: 'Install & usage', href: 'https://github.com/thereprocase/lord-of-the-code#installation' }, { label: 'Review formations', href: 'https://github.com/thereprocase/lord-of-the-code#council-formations' }],
+  },
+  {
     slug: 'claude-statusline', name: 'Claude Code status line', category: 'developer-tools',
     summary: 'Context, rate limits, and workspace information in a compact, themeable terminal status line.',
     description: 'Keep useful session details visible while you work. Choose from fourteen themes and monitor context and rate limits.',
@@ -104,4 +112,5 @@ export const categories = allCategories.filter(category => projects.some(project
 
 export const featuredProjects = projects.filter(project => !project.fork);
 export const sourceUrl = (project: Project) => project.sourceHref ?? `https://github.com/thereprocase/${project.slug}`;
-export const projectUrl = (project: Project) => project.fork ? `/projects/${project.slug}/` : `/${project.slug}/`;
+// sitePath points at the index's own generated page for projects without a Pages site of their own.
+export const projectUrl = (project: Project) => project.sitePath ?? (project.fork ? `/projects/${project.slug}/` : `/${project.slug}/`);
