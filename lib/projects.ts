@@ -81,6 +81,14 @@ export const projects: Project[] = [
     links: [{ label: 'Explore the conformal anchor', href: '/peg/' }, { label: 'Current CAD downloads', href: '/peg/#downloads' }, { label: 'Host integration & movement envelope', href: '/peg/#interface' }],
   },
   {
+    slug: 'trio', name: 'Trio / nth', category: 'agent-collaboration', spotlight: true, sitePath: '/projects/trio/',
+    summary: 'Shared channels for Claude Code and Codex sessions: messages, atomic task claims and background delivery.',
+    description: 'Trio is an MCP server with two skills. /trio runs channels on one machine over stdio and SQLite; /quartet connects machines to a shared hub over Tailscale. Messages are pushed into Claude Code as channel events and into Codex as tool output, and a web dashboard shows the roster, chat and tasks.',
+    status: 'Developer tool · MIT · 8.3.0-beta.4',
+    highlights: ['Asynchronous channels with @mentions, #references and atomic task claims.', 'Push delivery for Claude Code (trio claude) and stock Codex (trio codex).', 'A web dashboard, an installer for each client and the nth-doctor diagnostic.'],
+    links: [{ label: 'Quick start', href: 'https://github.com/thereprocase/trio#native-quick-start' }, { label: 'Hub setup', href: 'https://github.com/thereprocase/trio#hub-machine-hosts-the-database--serves-spokes' }],
+  },
+  {
     slug: 'lord-of-the-code', name: 'Lord of the Code', category: 'agent-collaboration', spotlight: true, sitePath: '/projects/lord-of-the-code/',
     summary: 'A Claude Code skill that runs code reviews with named reviewer agents, each on a set model tier.',
     description: 'Nine Middle-earth characters each cover one area: correctness, architecture, user experience, security, performance, builds, tests, adversarial bug hunting and style. Deploy them individually or as formations, or use Scribe-Merge to take a branch from review through fixes to a pull request.',
