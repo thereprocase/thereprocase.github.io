@@ -2,6 +2,7 @@ export type Project = {
   slug: string; name: string; category: string; summary: string; description: string;
   status: string; highlights: string[]; links: { label: string; href: string }[];
   sourceHref?: string; sitePath?: string; image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
+  details?: string[]; gallery?: { src: string; alt: string; caption: string; width: number; height: number }[];
 };
 
 const allCategories = [
@@ -86,6 +87,18 @@ export const projects: Project[] = [
     description: 'Trio is an MCP server with two skills. /trio runs channels on one machine over stdio and SQLite; /quartet connects machines to a shared hub over Tailscale. Messages are pushed into Claude Code as channel events and into Codex as tool output, and a web dashboard shows the roster, chat and tasks.',
     status: 'Developer tool · MIT · 8.3.0-beta.4',
     highlights: ['Asynchronous channels with @mentions, #references and atomic task claims.', 'Push delivery for Claude Code (trio claude) and stock Codex (trio codex).', 'A web dashboard, an installer for each client and the nth-doctor diagnostic.'],
+    image: { src: '/media/trio/channel-midnight.png', alt: 'Trio dashboard showing a release-prep channel where four agents trade messages with @mentions, #references and task updates' },
+    details: [
+      'Each session joins a channel with a name and a one-line summary. Messages carry three sigils: @name pings a member, #name references one in the background, and !name always gets through. Members pick a listening mode (all, about or at), so each one wakes for the traffic it needs.',
+      'Work goes up as tasks. Claims are atomic, so each task has exactly one owner, and blocked_by links a task to the one it waits on. Claims, completions and unblocks appear inline in the channel.',
+      'The web dashboard serves channels to a browser: roster, chat with @-autocomplete, a task board, desktop notifications, dictation and 20 themes. On a hub it serves https on the machine\'s Tailscale name; access control comes from the network, through a Tailscale ACL or host firewall.',
+      'nth-doctor checks registration, the database, hub reachability and version drift in one command.',
+    ],
+    gallery: [
+      { src: '/media/trio/channel-sagebrush.png', alt: 'The release-prep channel in the Sagebrush light theme', caption: 'The same channel in the Sagebrush light theme. Screens come from a demo channel with invented members and tasks.', width: 1440, height: 900 },
+      { src: '/media/trio/tasks-midnight.png', alt: 'Task board listing open tasks with counts for claimed, blocked and done', caption: 'The task board across every channel, with open, claimed, blocked and done counts.', width: 1440, height: 900 },
+      { src: '/media/trio/channel-mobile.png', alt: 'The release-prep channel on a phone-sized screen in the Midnight theme', caption: 'The dashboard on a phone, in the Midnight theme.', width: 780, height: 1688 },
+    ],
     links: [{ label: 'Quick start', href: 'https://github.com/thereprocase/trio#native-quick-start' }, { label: 'Hub setup', href: 'https://github.com/thereprocase/trio#hub-machine-hosts-the-database--serves-spokes' }],
   },
   {
@@ -94,6 +107,16 @@ export const projects: Project[] = [
     description: 'Nine Middle-earth characters each cover one area: correctness, architecture, user experience, security, performance, builds, tests, adversarial bug hunting and style. Deploy them individually or as formations, or use Scribe-Merge to take a branch from review through fixes to a pull request.',
     status: 'Claude Code skill · MIT',
     highlights: ['Nine agent definitions across the Opus, Sonnet and Haiku tiers.', 'Four review formations plus the Scribe-Merge review, fix and pull-request workflow.', 'An install script that adds the skill, the agents and the /lotc shorthand.'],
+    image: { src: '/media/lord-of-the-code/lotc-running.png', alt: 'Claude Code running /lotc three-seers with Sauron, Gandalf and Frodo launched as parallel review agents on ratelimit.py' },
+    details: [
+      '/lotc with no arguments asks an Ent to read the code and recommend reviewers. A formation name runs a set team: the Three Seers for correctness, architecture and user experience; the Horde for waves of adversarial bug hunting until three come back clean; the Council of Elrond for design review before implementation; and the War Council for a full pre-release audit.',
+      'Reviewers run as parallel subagents, each on its own model tier: Opus for Sauron, Gandalf and Frodo, Sonnet for the specialists, and Haiku for Gollum and the Uruk-Hai swarm. Each reviewer tests its claims where it can and reports findings with file and line references.',
+      'The main session merges the reports into one list sorted by severity, removes duplicates, labels each finding verified or likely, and lists where the reviewers disagreed. Scribe-Merge carries that report through fixes to a pull request.',
+    ],
+    gallery: [
+      { src: '/media/lord-of-the-code/lotc-reporting.png', alt: 'Gandalf and Frodo reporting their findings back to the main Claude Code session', caption: 'Reviewers report back as they finish, and the session summarizes each report. This is a real run against a 34-line demo file with planted bugs.', width: 1320, height: 754 },
+      { src: '/media/lord-of-the-code/lotc-report.png', alt: 'The merged Three Seers report: three critical issues, six warnings and three notes with fixes', caption: 'The merged report: 3 critical issues, 6 warnings and 3 notes, each with a fix, followed by where the reviewers disagreed.', width: 1320, height: 1485 },
+    ],
     links: [{ label: 'Install & usage', href: 'https://github.com/thereprocase/lord-of-the-code#installation' }, { label: 'Review formations', href: 'https://github.com/thereprocase/lord-of-the-code#council-formations' }],
   },
   {

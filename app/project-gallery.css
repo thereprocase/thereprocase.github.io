@@ -1,0 +1,7 @@
+/* Screenshot gallery on generated project pages. Spans the full detail grid so it
+   sits below the lead image and the project record on wide layouts. */
+.gl-project-detail>.gl-gallery{grid-column:1/-1}
+.gl-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:var(--gl-gap);padding:16px;align-items:start}
+.gl-gallery-grid figure{margin:0}
+.gl-gallery-grid img{display:block;width:auto;max-width:100%;height:auto;max-height:760px;border:1px solid currentColor}
+.gl-gallery-grid figcaption{margin-top:8px;font-size:14px;line-height:1.45}
