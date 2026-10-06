@@ -15,7 +15,7 @@ visual cues. See
 
 | Category | Featured projects |
 | --- | --- |
-| Hardware & mechanisms | [Spool wall rack / E13](https://thereprocase.github.io/spool-wall-rack/), [TPU paver feet](https://thereprocase.github.io/paver-feet/), [P1S squash-ball cradles](https://thereprocase.github.io/p1s-feet/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
+| Hardware & mechanisms | [Precision 5680 desk dock](https://thereprocase.github.io/5680-dock/), [Laptop wall mount](https://thereprocase.github.io/dell-5560-wall-mount/), [Spool wall rack / E13](https://thereprocase.github.io/spool-wall-rack/), [TPU paver feet](https://thereprocase.github.io/paver-feet/), [P1S squash-ball cradles](https://thereprocase.github.io/p1s-feet/), [Conformal pegboard anchor](https://thereprocase.github.io/peg/) |
 | CAD tools | [Fillaprint](https://thereprocase.github.io/fillaprint/) |
 | Developer tools | [Claude Code status line](https://thereprocase.github.io/claude-statusline/) |
 | Home automation | [Bambu Bridge](https://thereprocase.github.io/bambu-bridge/) |

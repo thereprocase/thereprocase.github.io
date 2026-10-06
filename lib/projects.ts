@@ -15,6 +15,24 @@ const allCategories = [
 
 export const projects: Project[] = [
   {
+    slug: '5680-dock', name: 'Precision 5680 desk dock', category: 'hardware',
+    summary: 'D9 P5: a printable laptop cradle with ducted cooling and an adjustable USB-C plug positioner.',
+    description: 'The current D9 P5 CAD uses bonded plenum shells, standard wire fan guards, removable H contact cassettes and a polar plug positioner. Inspect the assembly and verification records; the earlier P5 print kit is archived test history.',
+    status: 'D9 P5 engineering prototype · physical fit, loads and cooling remain to be qualified',
+    highlights: ['Interactive assembly viewer with current CAD and source.', 'Bonded scalloped plenum joints and serviceable fans.', 'Adjustable plug reach with a face clamp and cam support.'],
+    image: { src: '/5680-dock/assets/clamp-pivot/01-assembled-port-1.png', alt: 'Actual D9 P5 desk dock CAD with the plug positioner at the laptop port' },
+    links: [{ label: 'Explore D9 P5', href: '/5680-dock/' }, { label: 'Current assembly viewer', href: '/5680-dock/desk-dock-p5.html' }, { label: 'Prototype print history', href: '/5680-dock/prints/' }],
+  },
+  {
+    slug: 'dell-5560-wall-mount', name: 'Laptop wall mount', category: 'hardware',
+    summary: 'Minimalist M1 and ducted Rev H: two approaches to mounting and cooling a closed laptop.',
+    description: 'Download the models and inspect the assembly, retention and cable-routing guides. The current Rev H D4 update repairs the fan-cover sockets. CFD startup evidence includes methods and limitations alongside the flow videos.',
+    status: 'Engineering prototypes · physical fit, retention and cooling qualification remain',
+    highlights: ['Minimalist and ducted designs with downloadable CAD.', 'Print orientation, fit allowances, cable routing and assembly details.', 'CFD videos and probe histories with explicit model limitations.'],
+    image: { src: '/dell-5560-wall-mount/assets/revh-duct-d4-D4-current-assembly.png', alt: 'Actual Rev H laptop wall mount CAD with the D4 duct socket correction' },
+    links: [{ label: 'Explore the designs', href: '/dell-5560-wall-mount/' }, { label: 'Print & assembly guide', href: '/dell-5560-wall-mount/minimalist-guide.html' }, { label: 'CFD startup evidence', href: '/dell-5560-wall-mount/simulation/revh-transient/' }],
+  },
+  {
     slug: 'fillaprint', name: 'Fillaprint', category: 'cad-tools',
     summary: 'Nominal strokes and minimum clear gaps are both two extrusion widths.',
     description: 'Three TrueType families designed around extrusion width. Try your own lettering, calculate a reference print size, and download proportional, tabular-figure, and monospace fonts.',

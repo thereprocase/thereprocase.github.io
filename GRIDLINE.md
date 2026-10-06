@@ -109,3 +109,11 @@ directory, together with their landing pages, renders, the flow-video section
 and their `themes.css`/`project.css` rules. GitHub Pages was re-enabled
 for Peg, Claude Code status line and Bambu Bridge. The verification records
 above describe the network as it was when each check ran.
+
+## 5 October 2026: laptop hardware restored
+
+The Precision 5680 desk dock and Dell 5560 wall mount return to the directory
+after a privacy scrub of repository history and packaged assets. Their dedicated
+Pages sites serve `docs/` from `main`. The directory now exports nine project
+landings, with the dock entry reflecting current D9 P5 CAD and the wall-mount
+entry pointing to the Rev H D4 correction and existing M1 assembly guide.
