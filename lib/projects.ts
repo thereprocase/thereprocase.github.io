@@ -11,7 +11,6 @@ const allCategories = [
   { id: 'cad-tools', name: 'Fonts & CAD tools', description: 'Typefaces and tools for 3D-print design.' },
   { id: 'developer-tools', name: 'Developer tools', description: 'Terminal utilities for Claude Code.' },
   { id: 'home-automation', name: 'Home automation', description: 'Local integrations for 3D printers and home devices.' },
-  { id: 'music-tools', name: 'Music & practice', description: 'Pitch, timing, and tools for deliberate practice.' },
   { id: 'self-hosted-models', name: 'Self-hosted models', description: 'Guides and tooling for serving open-weight models on local hardware.' },
   { id: 'upstream-work', name: 'Forks & upstream work', description: 'Separate working copies of open-source projects. Original projects are credited on each page.' },
 ];
@@ -149,15 +148,6 @@ export const projects: Project[] = [
     status: 'AGPL source release · mock-tested; current firmware acceptance remains',
     highlights: ['Browser dashboard and 3D print-progress viewer.', 'HTTP and WebSocket API with Home Assistant integration and add-on source.', 'LAN and Developer Mode requirements, source access, and validation records.'],
     links: [{ label: 'Explore Bambu Bridge', href: '/bambu-bridge/' }, { label: 'Install & configure', href: '/bambu-bridge/#setup' }, { label: 'LAN compatibility & access', href: 'https://github.com/thereprocase/bambu-bridge/blob/main/docs/LAN-COMPATIBILITY.md' }],
-  },
-  {
-    slug: 'saxophone-intonation-android', name: 'BellCurve', category: 'music-tools',
-    summary: 'An Android practice workspace with intonation analysis, metronome, drone, pitch pipes and a recording deck.',
-    description: 'Pitch feedback and practice tools in one app. Microphone audio is processed on the device, and recordings stay local until you share them. The source release uses its own application identifier and keeps the third-party audio and font licenses.',
-    status: 'Public source · Android / Expo 56',
-    highlights: ['Transposition-aware tuner and per-note statistics.', 'Configurable metronome, drone and pitch pipes.', 'Local recording deck and explicit sharing.'],
-    image: { src: '/saxophone-intonation-android/assets/bellcurve.png', alt: 'BellCurve application icon' },
-    links: [{ label: 'Open BellCurve', href: '/saxophone-intonation-android/' }, { label: 'Development setup', href: '/saxophone-intonation-android/#setup' }],
   },
   {
     slug: 'deepseek-spark', name: 'DeepSeek V4.1 Flash on DGX Spark', category: 'self-hosted-models', sitePath: '/deepseek-spark/',
