@@ -106,3 +106,7 @@ touch that directory; recapture the screenshots when the tuner interface changes
 then run `python scripts/webp-tuner-screenshots.py` to regenerate their WebP
 siblings and `tuner/webp-provenance.json` (same quality and savings floor as the
 showcase images; it never touches the PNGs or `tuner/provenance.json` itself).
+
+## Kraken AMS remix
+
+`public/kraken/` contains the dated ASA print and assembly guide, actual accepted-CAD illustrations and final-plate toolpath previews. The project registry links to `/kraken/`; GitHub Release assets remain in `thereprocase/kraken-remix-ogAMS`. Keep the release tag, download hashes, settings and physical acceptance limits synchronized with the checked print package. Build and export `docs/` with the rest of the site.

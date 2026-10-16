@@ -1,0 +1,29 @@
+{
+  "tag": "asa-print-2026-10-16",
+  "assets": [
+    {
+      "file": "kraken-asa-print-package-2026-10-16.zip",
+      "sha256": "de1adbad0597c4acefc18197a327471e2187207cb89d5c62e2ab9f9457b65bca",
+      "bytes": 23234847,
+      "url": "https://github.com/thereprocase/kraken-remix-ogAMS/releases/download/asa-print-2026-10-16/kraken-asa-print-package-2026-10-16.zip"
+    },
+    {
+      "file": "kraken-left-asa.3mf",
+      "sha256": "b97bc427648612c8a9fe470b19d32a6fc8db34904a80f9caa7f7201f9007df42",
+      "bytes": 8635950,
+      "url": "https://github.com/thereprocase/kraken-remix-ogAMS/releases/download/asa-print-2026-10-16/kraken-left-asa.3mf"
+    },
+    {
+      "file": "kraken-right-asa.3mf",
+      "sha256": "218d3b9852c3030e2cfeb0030532ece1c65afcc3ec422d63766903e9b30acb54",
+      "bytes": 9502701,
+      "url": "https://github.com/thereprocase/kraken-remix-ogAMS/releases/download/asa-print-2026-10-16/kraken-right-asa.3mf"
+    },
+    {
+      "file": "kraken-asa-alignment-check.3mf",
+      "sha256": "ecf94adf7b368873710fb82d34b5adefa384d4ab063600b99cf8f41cef36362d",
+      "bytes": 359348,
+      "url": "https://github.com/thereprocase/kraken-remix-ogAMS/releases/download/asa-print-2026-10-16/kraken-asa-alignment-check.3mf"
+    }
+  ]
+}

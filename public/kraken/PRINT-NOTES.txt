@@ -1,0 +1,117 @@
+Kraken ASA bodies and front bars — 2026-10-16
+
+RECOMMENDATION
+Ready for a first full-size ASA print and fitting. Use the supplied left and
+right plates, each containing its body and matching front bar. The isolated v4
+underside revision removes the problematic long unsupported ledges; accepted
+mechanical interfaces and the original accepted release are preserved.
+No body or coupon job has been sent. Confirm the loaded ASA slot and clear plate
+with the operator before submission. The saved filament color is only a swatch.
+
+FILES AND ESTIMATES
+left/kraken-left-asa.3mf: 12h44m12s, 281.63 g.
+right/kraken-right-asa.3mf: 12h47m14s, 280.78 g.
+fit-check/kraken-asa-alignment-check.3mf: 51m44s, four 84 mm pitch coupons.
+Times and masses are Orca estimates, not measured print results.
+Projects contain sliced G-code plus editable body modifiers. Print the supplied
+slice; if changing or reslicing it, repeat the relevant checks. Open the two body
+projects separately. Their 244.9 mm height requires the supplied upright pose.
+
+RECIPE
+Printer: Bambu P1S, 0.4 mm hardened steel, Standard nozzle designation.
+Slicer: local native OrcaSlicer 2.5.0-dev with retraction-frequency protection.
+Material: Polymaker ASA, flow ratio 0.95, maximum volumetric flow 12 mm3/s.
+Nozzle 260 C; textured plate 95 C; startup includes a 10 minute heat soak.
+First layer and subsequent layers: 0.20 mm.
+Bodies: 2 walls, 15% rectilinear; dense root masks 4 walls/100%; wall-path
+masks 4 walls/15%. Dense masks have precedence over overlapping wall masks.
+Front bars: uniform 4 walls/30% rectilinear; no modifiers.
+Five top layers, four bottom layers; monotonic top surfaces; scarf disabled.
+Body brim: outer only, 8 mm, 0.15 mm separation. Bars: no brim.
+Supports and prime tower disabled; single material, no in-print color change.
+Print/travel acceleration cap 5000 mm/s2; first layer 500; top surfaces 2000.
+Normal ASA retraction 0.8 mm. Guard: soft count 3 per 1 mm fresh filament;
+hard minimum 0.3 mm fresh extrusion between normal cycles. Startup/unload/end
+routines are retained. The 0.3 mm threshold is not the retract distance.
+Normal part cooling 0–20%, overhang cooling 30%; aux and chamber exhaust off
+during deposition. Chamber exhaust at 30% in the end routine.
+XY shrink 100%, hole compensation 0, contour compensation 0. No global scaling
+was inferred from a single hole fit. Exact editable profiles accompany the jobs.
+The recipe has been reopened with CLI guard defaults disabled: stored values
+remain intact. Orca duplicates four hotend metadata vectors with identical
+values on reopen; the comparison records those differences explicitly.
+
+STRUCTURE AND COMPATIBILITY
+The independent net-section screen covers two spools up to 2 kg per half, 2g
+gravity allowance and a 75/25 end-load bias. Peak nominal demands were 1.20 MPa
+for shaft strips and 2.16 MPa for roller strips. This supports targeted dense
+roots rather than blanket solid fill. Those native load strips and all four
+reinforcement masks remain unchanged in v4.
+Whole-body FEA was unconverged. Its relative stiffness results are not physical
+predictions or a safety factor. This recommendation is for ordinary indoor,
+unheated AMS use. Long-term creep, screw preload and full-box fit are untested.
+Front bars use the simpler 4-wall/30% reference recipe selected by the structural
+review. Detailed assumptions and limits are in evidence/engineering.
+Native hardware-contact checks pass 109/109 right and 101/101 left at the 0.05 mm
+scope. RFID no-addition, installation, routing, cut5 joints, locating surfaces,
+export integrity and mask containment checks pass. The source-matched 0.65 mm
+roller blind stop is retained. Sampled ordinary continuous walls exceed 1 mm.
+The original accepted bodies/bars and manifests were verified unchanged.
+
+PRINTABILITY EVIDENCE
+Both final plate projects preserve oriented mesh triangles, modifier placement,
+object settings, shared transforms and X-axis key pitch after reopening.
+Both fit inside the bed without rotating the bodies or bars. First-layer checks
+show no flagged small contact islands or exclusion-zone conflicts. Preview
+images show the body brims and separated front bars.
+The final straight bridge screens contain 2091 left / 2081 right segments.
+Largest geometric free interval is 5.95 mm, with material at both endpoints.
+Nine right bridge arcs are excluded from that straight-span calculation; arcs
+are included in the separate void/centerline check. Short single-ended segments
+up to about 2.45 mm are inside earlier same-layer wall paths. Their surrounding
+wall paths span the opening; layer/order evidence is included. This is an
+engineering acceptance for a first print, not measured ASA bridge performance.
+Full-height geometry has no new floating starts relative to the accepted bodies.
+Remaining tiny starts belong to existing board-retainer/post details.
+The combined-plate gross-void screen checks 1,711,071 left and 1,755,417 right
+points, including arc samples: zero outside the nominal section plus 0.05 mm
+centerline allowance. Horizontal-plane numerical boundaries were resolved with
+an explicitly recorded +/-0.0001 mm section neighborhood. This does not test
+the entire bead envelope or certify printed clearance.
+Guard verification: 24,082 left / 23,861 right normal cycle intervals; minimum
+fresh extrusion 0.30003 / 0.30013 mm. Coupon minimum 0.34043 mm. No violations.
+Actual deposition temperature, cooling, acceleration and flow checks pass.
+Raw flow ratios on extremely short serialized moves include rounding error;
+the long-move and quantization-bound checks are recorded separately.
+
+ASA ADHESION AND WARP
+Use the established enclosed ASA setup, clean textured plate, heat soak and
+stable surroundings. Avoid drafts. Let the complete plate cool naturally in
+the enclosure before removal. The 8 mm brim helps adhesion but cannot guarantee
+that a 245 mm tall body or its locating lands stay straight.
+Do not use screws to pull a bowed part into shape. Do not boil or anneal these
+dimension-sensitive parts as an uncalibrated repair. Inspect cooled flatness
+and fit first; any corrective shrink or geometry change needs new measurements.
+
+PHYSICAL ACCEPTANCE
+1. Print the small 84 mm paired-key coupon plate in the intended ASA/profile
+   first where practical. Both keys must enter together and both zero-gap tapers
+   must seat by hand with shoulders flush. Keys have 4 walls/100%; sockets 4/30.
+   Pitch is along X, matching the final bodies and bars. The coupons do not
+   reproduce full-height warping, full-box retention, or every layer phase.
+2. Fully cool the bodies and bars. Inspect for lifting, cracks, displaced feet,
+   distorted seating lands, rough socket mouths and sagged roofs. Clear loose
+   strings only; do not force hardware through the thin roller blind stops.
+3. Dry-fit halves, hardware and routed cables with bars absent. Set the assembly
+   loosely into the box, seat both bars fully, then engage tabs and fasteners.
+   Screws must start normally and shoulders must meet without forced bending.
+4. Confirm cable slack, connector access and PTFE routing. Actual flexible cable
+   bundle dimensions and a complete AMS box solid were unavailable; test these
+   physically before final tightening.
+5. Add the intended spools progressively. Rotate and feed in every bay; verify
+   no rubbing, seat movement, cable trapping or incomplete bar capture. Recheck
+   seating and permanent movement after 24 hours under intended service load.
+   Carry a loaded tub by its supported body, not front bars, keys or feeders.
+
+NATIVE 0.05 mm acceptance does not promise 0.05 mm printed accuracy. The above
+checks define acceptance of the first print; they are not a lifetime rating.

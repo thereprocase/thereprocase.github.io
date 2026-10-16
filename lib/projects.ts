@@ -17,6 +17,16 @@ const allCategories = [
 
 export const projects: Project[] = [
   {
+    slug: 'kraken', name: 'Kraken AMS remix', category: 'hardware',
+    summary: 'Locally reinforced ASA bodies and removable front bars: about 562 g for both print plates.',
+    description: 'A remix of humebeam’s Kraken for the original Bambu Lab AMS, with gear-clearance pockets, removable front bars and printable underside ramps. Download P1S ASA projects with editable reinforcement, fit coupons and assembly instructions.',
+    status: 'Ready for first ASA print and fitting · full-size warp and physical fit remain to be checked',
+    sourceHref: 'https://github.com/thereprocase/kraken-remix-ogAMS', sitePath: '/kraken/',
+    image: { src: '/kraken/body-overview.png', alt: 'Accepted Kraken assembly with teal bodies and lifted orange front bars' },
+    highlights: ['2 walls / 15% body infill, with dense seat, fastener and key roots.', 'Separate left and right body/bar plates; about 12h45m each.', 'Fit coupons, full assembly checklist and geometry/toolpath evidence.'],
+    links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
+  },
+  {
     slug: 'thermal-field', name: 'Thermal Field', category: 'hardware',
     summary: 'An independent open-source Android thermal viewer with lossless radiometry and a Gridline interface.',
     description: 'A native arm64 Android app for the USB 0bda:5830 thermal device used by the P2 Pro. Capture runs through UsbManager, libusb and libuvc; the app renders the original radiometric plane with its own GPU palettes. No proprietary camera SDK is included.',
