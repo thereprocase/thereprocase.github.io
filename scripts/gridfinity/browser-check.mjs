@@ -1,0 +1,49 @@
+// Self-contained capture with installed Node (native WebSocket), Python3, Chromium.
+import {spawn} from 'node:child_process';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import readline from 'node:readline';
+const [folder,output]=process.argv.slice(2);
+if(!folder||!output)throw Error('Usage: node capture.mjs prepared-folder output.png');
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+const temp=await fs.mkdtemp(path.join(os.tmpdir(),'cel-render-'));
+let server,browser,ws;
+try{
+ server=spawn('python3',['-u','-c','import http.server,functools,sys; s=http.server.ThreadingHTTPServer(("127.0.0.1",0),functools.partial(http.server.SimpleHTTPRequestHandler,directory=sys.argv[1])); print(s.server_port,flush=True); s.serve_forever()',path.resolve(folder)],{stdio:['ignore','pipe','ignore']});
+ const lines=readline.createInterface({input:server.stdout});
+ const port=await new Promise((resolve,reject)=>{lines.once('line',resolve);server.once('error',reject);server.once('exit',c=>reject(Error('Server exited '+c)));});lines.close();
+ browser=spawn(process.env.CHROMIUM||'chromium',['--headless','--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1','--user-data-dir='+temp,'about:blank'],{stdio:'ignore'});
+ let failure;browser.on('error',e=>failure=e);let debugPort;
+ for(let i=0;i<200;i++){if(failure)throw failure;try{debugPort=(await fs.readFile(path.join(temp,'DevToolsActivePort'),'utf8')).split('\n')[0];break;}catch{}await pause(100);}
+ if(!debugPort)throw Error('Chromium did not expose DevTools');
+ const tab=await(await fetch(`http://127.0.0.1:${debugPort}/json/new?about:blank`,{method:'PUT'})).json();
+ ws=new WebSocket(tab.webSocketDebuggerUrl);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});let id=0;const waiting=new Map();
+ ws.onmessage=e=>{const d=JSON.parse(e.data);if(waiting.has(d.id)){const [r,j]=waiting.get(d.id);waiting.delete(d.id);d.error?j(Error(JSON.stringify(d.error))):r(d.result);}};
+ const call=(method,params={})=>new Promise((r,j)=>{const n=++id;waiting.set(n,[r,j]);ws.send(JSON.stringify({id:n,method,params}));});
+ await call('Emulation.setDeviceMetricsOverride',{width:1600,height:1000,deviceScaleFactor:1,mobile:false});
+ await call('Page.navigate',{url:`http://127.0.0.1:${port}/gridfinity-shelves/`});const evaluate=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+ const ready=async()=>{for(let i=0;i<1800;i++){await pause(100);const s=await evaluate("document.getElementById('status')?.textContent");if(s?.startsWith('Generation failed')||s?.includes('could not load'))throw Error(s);if(s?.startsWith('Geometry ready'))return;}throw Error('Geometry timeout');};
+ await ready();
+ const results={default:await evaluate("document.getElementById('dimensions').innerText")};
+ await evaluate("document.getElementById('installed').click()");
+ results.installed=await evaluate("document.getElementById('installed').getAttribute('aria-pressed')==='true'");
+ await evaluate("document.querySelector('[name=angle]').value=-30;document.querySelector('[name=angle]').dispatchEvent(new Event('input',{bubbles:true}))");
+ results.invalidates=await evaluate("document.getElementById('stl').disabled&&document.getElementById('recipe').disabled");
+ await evaluate("document.getElementById('generate').click();document.getElementById('cancel').click()");
+ results.cancel=await evaluate("document.getElementById('status').textContent.includes('cancelled')&&!document.getElementById('generate').disabled");
+ await evaluate("document.getElementById('generate').click()");await ready();
+ results.down=await evaluate("document.getElementById('dimensions').innerText");
+ await call('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:path.dirname(path.resolve(output))});
+ await evaluate("document.getElementById('stl').click();document.getElementById('recipe').click()");await pause(1500);
+ for(const width of [390,320]){await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:true});await pause(300);results['overflow'+width]=await evaluate('document.documentElement.scrollWidth>innerWidth');}
+ const canvas=await evaluate("(()=>{const r=document.querySelector('canvas').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
+ const before=(await call('Page.captureScreenshot',{format:'png'})).data;
+ await call('Input.dispatchMouseEvent',{type:'mousePressed',x:canvas.x,y:canvas.y,button:'left',clickCount:1});
+ await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:canvas.x+60,y:canvas.y+25,button:'left',buttons:1});
+ await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:canvas.x+60,y:canvas.y+25,button:'left',clickCount:1});await pause(500);
+ results.orbit=(await call('Page.captureScreenshot',{format:'png'})).data!==before;
+  await fs.writeFile(output+'.json',JSON.stringify(results,null,2));
+ if(!results.orbit||!results.installed||!results.invalidates||!results.cancel||results.overflow320||results.overflow390)throw Error(JSON.stringify(results));
+ const shot=await call('Page.captureScreenshot',{format:'png'});await fs.writeFile(output,Buffer.from(shot.data,'base64'));console.log(path.resolve(output));
+}finally{ws?.close();browser?.kill();server?.kill();await pause(200);await fs.rm(temp,{recursive:true,force:true,maxRetries:4,retryDelay:100});}

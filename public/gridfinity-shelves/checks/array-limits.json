@@ -1,0 +1,37 @@
+[
+  {
+    "p": {
+      "columns": 12,
+      "rows": 1,
+      "angle": 5
+    },
+    "seconds": 38.559,
+    "volume": 80068.67563576165,
+    "triangles": 99106,
+    "footOverlap": 0.004881943050267217,
+    "pegDelta": 1.6393501858807724e-07
+  },
+  {
+    "p": {
+      "columns": 1,
+      "rows": 12,
+      "angle": -30
+    },
+    "seconds": 17.036,
+    "volume": 57586.68662344737,
+    "triangles": 38312,
+    "footOverlap": 0.005320114334761533,
+    "pegDelta": 3.431005832067892e-08
+  },
+  {
+    "p": {
+      "columns": 8,
+      "rows": 8
+    },
+    "seconds": 44.456,
+    "volume": 198097.3673787519,
+    "triangles": 144526,
+    "footOverlap": 0.038865469510466266,
+    "pegDelta": 1.1737354504844035e-07
+  }
+]

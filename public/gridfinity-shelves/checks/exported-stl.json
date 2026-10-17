@@ -1,0 +1,82 @@
+{
+  "down.stl": {
+    "triangles": 26184,
+    "edges": 39276,
+    "connected_surfaces": 1,
+    "volume_mm3": 20013.72792453704,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "0e785295ec14b21b534f620ee8bfc7ced4c7b3b2ee9167b6f81bdcbd1cd7c731"
+  },
+  "up.stl": {
+    "triangles": 26262,
+    "edges": 39393,
+    "connected_surfaces": 1,
+    "volume_mm3": 23089.786259321565,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "c1962d6832fa0856f2e82982acead03e588cf09d2a1292187d5bd76bef6b31c7"
+  },
+  "tight.stl": {
+    "triangles": 22256,
+    "edges": 33384,
+    "connected_surfaces": 1,
+    "volume_mm3": 16714.140167987556,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "5182d582ed94553c2388e9e32ee3e855d87be0d253b43e9d9f7dd44b2f682516"
+  },
+  "41.stl": {
+    "triangles": 36594,
+    "edges": 54891,
+    "connected_surfaces": 1,
+    "volume_mm3": 27052.341120787547,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "6af72d28a8d65a411ce288aea9c25e709182295518fb77feffa751a1e8598a34"
+  },
+  "22.stl": {
+    "triangles": 26238,
+    "edges": 39357,
+    "connected_surfaces": 1,
+    "volume_mm3": 22246.540497310485,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "f347620f5c71ff700d26b014e1a11aa4b6fded302482da1231d7e3ccc8c85c36"
+  },
+  "21.stl": {
+    "triangles": 23570,
+    "edges": 35355,
+    "connected_surfaces": 1,
+    "volume_mm3": 15845.904308284484,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "9cc2ca999754be673453d61b2f3c00b505750a38a3e25800c0f03005a35c96cc"
+  },
+  "11.stl": {
+    "triangles": 22306,
+    "edges": 33459,
+    "connected_surfaces": 1,
+    "volume_mm3": 11108.022992862843,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "e5dc2fb5efd37856f096969c32a4814317b361a5e17f705a4c7c3325bda62adc"
+  },
+  "browser-download.stl": {
+    "triangles": 23532,
+    "edges": 35298,
+    "connected_surfaces": 1,
+    "volume_mm3": 14204.819467231573,
+    "minimum_z_mm": 0.0,
+    "closed": true,
+    "consistent_winding": true,
+    "sha256": "bfc623f402d658f656bebc841b96ad7dbc495abf015478fac67f22026f8c4652"
+  }
+}

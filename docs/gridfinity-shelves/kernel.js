@@ -1,0 +1,105 @@
+/** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0};
+export function parameters(input) {
+ const p={...defaults,...input};
+ for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
+ for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
+ if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
+ for(const [k,lo,hi] of [['clearance',-.1,.2],['web',2.4,6],['beam',5,20],['angle',-30,5]]) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k}: use ${lo} to ${hi} ${k==='angle'?'degrees':'mm'}`);
+ const lanes=Math.ceil((42*p.columns+6)/25.4), holes=[];
+ for(let i=0;i<lanes;i+=3) holes.push(i);
+ if(holes.at(-1)!==lanes-1) holes.push(lanes-1);
+ return {...p,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
+}
+function rounded(cx,cy,w,r,z) {
+ const a=[];
+ for(const [x,y,start] of [[cx+w/2-r,cy-w/2+r,-90],[cx+w/2-r,cy+w/2-r,0],[cx-w/2+r,cy+w/2-r,90],[cx-w/2+r,cy-w/2+r,180]])
+  for(let j=0;j<=24;j++){const t=(start+j*90/24)*Math.PI/180;a.push([x+r*Math.cos(t),y+r*Math.sin(t),z]);}
+ return a;
+}
+export function build(module, inputs, input) {
+ const p=parameters(input), {Manifold:M,Mesh}=module, allocated=[];
+ const keep=o=>{allocated.push(o);return o;};
+ const moved=(o,v)=>keep(o.translate(v));
+ const box=(size,pos)=>moved(keep(M.cube(size)),pos);
+ function mesh(vertices,triangles) {return keep(new M(new Mesh({numProp:3,vertProperties:new Float32Array(vertices.flat()),triVerts:new Uint32Array(triangles.flat())})));}
+ function loft(x,y,sections) {
+  const rings=sections.map(([z,w,r])=>rounded(x,y,w,r,z)),v=rings.flat(),n=rings[0].length,t=[];
+  const bottom=v.length;v.push([x,y,sections[0][0]]); const top=v.length;v.push([x,y,sections.at(-1)[0]]);
+  for(let i=0;i<n;i++){const j=(i+1)%n;t.push([bottom,j,i],[top,(rings.length-1)*n+i,(rings.length-1)*n+j]);}
+  for(let k=0;k<rings.length-1;k++)for(let i=0;i<n;i++){const j=(i+1)%n,a=k*n+i,b=k*n+j,c=(k+1)*n+j,d=(k+1)*n+i;t.push([a,b,c],[a,c,d]);}
+  return mesh(v,t);
+ }
+ function prism(poly,x0,x1) {
+  // Convex YZ polygon; triangle fan and side quads, then orient by signed volume.
+  const v=[...poly.map(([y,z])=>[x0,y,z]),...poly.map(([y,z])=>[x1,y,z])],n=poly.length,t=[];
+  for(let i=1;i<n-1;i++)t.push([0,i+1,i],[n,n+i,n+i+1]);
+  for(let i=0;i<n;i++){const j=(i+1)%n;t.push([i,j,n+j],[i,n+j,n+i]);}
+  let vol=0;for(const [i,j,k] of t){const a=v[i],b=v[j],c=v[k];vol+=a[0]*(b[1]*c[2]-b[2]*c[1])+a[1]*(b[2]*c[0]-b[0]*c[2])+a[2]*(b[0]*c[1]-b[1]*c[0]);}
+  if(vol<0)t.forEach(a=>a.reverse());return mesh(v,t);
+ }
+ try {
+  const pieces=[],pockets=[],pegs=[],feet=[],c=p.clearance,angle=p.angle*Math.PI/180,tangent=Math.tan(angle);
+  const ys=inputs.upper.vertices.map(v=>v[1]),zs=inputs.upper.vertices.map(v=>v[2]);
+  const hinge=Math.max(5.72,3.48-tangent*5.4+.25,Math.max(...zs)-tangent*((tangent>=0?Math.min(...ys):Math.max(...ys))-.15)+.275);
+  const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
+  const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
+  for(let j=0;j<p.rows;j++)for(let i=0;i<p.columns;i++){
+   const x=(i-(p.columns-1)/2)*42,y=28.55+42*j;
+   pieces.push(tilt(loft(x,y,[[.72,46,5],[5.72,46,5]])));
+   pockets.push(tilt(loft(x,y,[[-1,36.5,1.25],[1.42,36.5,1.25],[2.12,37.9,1.95],[3.92,37.9,1.95],[6.07,42.2,4.1],[7.6,42.2,4.1]].map(([z,w,r])=>[z,w+2*c,r+c]))));
+   pockets.push(tilt(loft(x,y,[[5.52,41.1+2*c,3.55+c],[5.72,41.9+2*c,3.95+c],[6.72,41.9+2*c,3.95+c]])));
+   feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
+  }
+  pieces.push(box([p.width,5.4,hinge+1-.72],[-p.width/2,.15,.72]));
+  if(p.columns>1||p.beam>5)pieces.push(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])));
+  const upper=mesh(inputs.upper.vertices,inputs.upper.triangles),lower=mesh(inputs.lower.vertices,inputs.lower.triangles);
+  for(const x of p.mounts){
+   pieces.push(box([10,5.4,hinge+1+29.68],[x-5,.15,-29.68]));
+   pieces.push(prism([[5,-27.5],point(p.front-1.55,.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2));
+   for(const [peg,z] of [[upper,0],[lower,-25.4]]){const copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);}
+  }
+  let shape=keep(M.union(pieces));
+  const extent=p.width/2+20,below=prism([[-60,-1000],[1000,-1000],[1000,hinge+tangent*(1000-.15)],[-60,hinge+tangent*(-60-.15)]],-extent,extent);
+  shape=keep(shape.intersect(below));shape=keep(shape.subtract(keep(M.union(pockets))));
+  // Match the float32 envelope plane exactly; a double .15 leaves a nanometer cut separating pegs.
+  const reach=p.width/2+20,allowed=prism(inputs.envelope,-reach,reach),forbidden=keep(box([2*reach,60,150],[-reach,Math.fround(.15),-50]).subtract(allowed));
+  shape=keep(shape.subtract(forbidden));
+  // Remove boolean slivers below float32 export resolution before validation.
+  shape=keep(shape.simplify(0.00001));
+  if(shape.status()!=='NoError'||shape.volume()<=0)throw Error(`Geometry failed: ${shape.status()}`);
+  const parts=shape.decompose();parts.forEach(keep);if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
+  const clip=box([2*reach,60.15,150],[-reach,-60,-75]);
+  const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
+  const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
+  if(pegDelta>.01)throw Error('Connector preservation check failed.');
+  for(const x of p.mounts)for(const [z,d] of [[.12,6.72],[-25.28,7.62]]){const root=box([d,5.4,d],[x-d/2,.15,z-d/2]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  const overlaps=feet.map(foot=>keep(shape.intersect(foot)).volume()),footOverlap=overlaps.reduce((a,b)=>a+b,0),maxFootOverlap=Math.max(...overlaps);
+  if(c>=0&&maxFootOverlap>.002)throw Error('Reference bin-foot clearance check failed.');
+  const source=shape.getMesh(),v=source.vertProperties,t=source.triVerts,n=source.numProp;
+  const vertices=new Float32Array(v.length/n*3);
+  const rotation=Math.PI-angle,cos=Math.cos(rotation),sin=Math.sin(rotation);let minZ=Infinity;
+  for(let i=0;i<v.length/n;i++){vertices[3*i]=v[n*i];vertices[3*i+1]=cos*v[n*i+1]-sin*v[n*i+2];vertices[3*i+2]=sin*v[n*i+1]+cos*v[n*i+2];minZ=Math.min(minZ,vertices[3*i+2]);}
+  for(let i=2;i<vertices.length;i+=3)vertices[i]-=minZ;
+  // Re-enter the kernel at the actual float32 print coordinates. This collapses
+  // sub-resolution boolean slivers before emitting STL, rather than asking a slicer to repair it.
+  const printMesh=new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(t)});
+  const final=keep(keep(new M(printMesh)).simplify(.0001));
+  if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export changed geometry.');
+  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
+  validateExport(result);
+  return result;
+ } finally {for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
+}
+export function validateExport({vertices:v,triangles:t}) {
+ const keys=[];for(let i=0;i<v.length;i+=3){if(!Number.isFinite(v[i]+v[i+1]+v[i+2])||v[i+2]<-.00001)throw Error('Invalid export coordinates.');keys.push(`${v[i]},${v[i+1]},${v[i+2]}`);}
+ const edges=new Map();for(let i=0;i<t.length;i+=3)for(let j=0;j<3;j++){const a=keys[t[i+j]],b=keys[t[i+(j+1)%3]];if(a===b)throw Error('Collapsed STL edge.');const k=a<b?a+'|'+b:b+'|'+a,old=edges.get(k)||[0,0];edges.set(k,[old[0]+1,old[1]+(a<b?1:-1)]);}
+ if([...edges.values()].some(([n,w])=>n!==2||w!==0))throw Error('STL closure or winding check failed.');
+}
+export function binarySTL(result) {
+ const {vertices:v,triangles:t}=result,b=new ArrayBuffer(84+t.length/3*50),d=new DataView(b);
+ new Uint8Array(b).set(new TextEncoder().encode('Gridfinity shelf generator v1; millimeters; inverted print pose'));
+ d.setUint32(80,t.length/3,true);
+ for(let i=0;i<t.length;i+=3){const o=84+i/3*50;for(let j=0;j<3;j++)for(let k=0;k<3;k++)d.setFloat32(o+12+j*12+k*4,v[t[i+j]*3+k],true);}
+ return b;
+}

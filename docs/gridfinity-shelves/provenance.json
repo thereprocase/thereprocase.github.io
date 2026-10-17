@@ -1,0 +1,33 @@
+{
+  "native_source": "https://github.com/thereprocase/peg/tree/26138c9/bench/source/gridfinity_generator_v1",
+  "dependency": {
+    "name": "manifold-3d",
+    "version": "3.2.1",
+    "license": "Apache-2.0",
+    "archive": "https://registry.npmjs.org/manifold-3d/-/manifold-3d-3.2.1.tgz",
+    "integrity": "sha512-yC+zpML+IZPCtOTzowfIDCc3s31Qr8oCmfMIDnOVOhwjuzh89F+hlQ74BmU6cGHnySH+M6Ry5FnoEfW94Um2vQ==",
+    "install_scripts_executed": false
+  },
+  "qualification": "Digital geometry checks only; physical fit, retention, loads and tilted print quality require testing",
+  "assets": {
+    "kernel.js": "89b3524b15655204f691a024f139f6d0c12f53a7f07867b88e777101377e5db3",
+    "inputs.json": "0661914b4c7acde8c0d7b724c5ba1224eabfaf861e620dbdf565be4411df42d3",
+    "shelves.png": "c67c6663d2dda9b01ff2b90fb76dc1cb988878abf342ee99174362ff40ba896d",
+    "front-underside.png": "3f111d6ed2c8c4c9a06cdb2bd00d9cac15ef32a6e1a1f109138c56b64cb9006d",
+    "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
+    "index.html": "89a283a684aaad6ea16816548dd5b3f5c2a354af18580730fe528ddbe140ad63",
+    "style.css": "19c6e254769cb3a11b6881360aa9a254ef68dd3218df2f539bd3fa0d4e761273",
+    "worker.js": "d4ba4527cfbc347affaa7056811b12a532c60bd75364e0a33c289694c8c148ce",
+    "app.js": "f3a4e7251809b918a48121edaf8904aabab77ec8f7076e58b374c05b07a9809c",
+    "generator-angles.png": "21629b5de5fac9159cd15f1653fcacfa4721edeea4a594d531f9e7eade4b8dde",
+    "README.md": "b8c1c6cfd34676031f2f1c3c86d8baf3f92dedac83b52a6ddb9274456d4fdbed",
+    "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
+    "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
+    "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
+    "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "checks/native-comparison.json": "80130f80682df633fc81f0253cb0d6a43e736f8b0ceb48d05b98ad1a1a980c74",
+    "checks/browser.json": "21106481dd80083c77f1a660e66fbea64f02aec92ed154ffda129fd5c013c9d4",
+    "checks/exported-stl.json": "62d63942c2216967e09881a9530ffec848d70656f04f96ab360889d201f88fb3",
+    "checks/array-limits.json": "b1b216c57860f2e2afdb70a712b23e3c8efc62437464a2a65527a36b8656f24f"
+  }
+}

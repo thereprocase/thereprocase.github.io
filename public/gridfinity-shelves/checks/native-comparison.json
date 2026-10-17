@@ -1,0 +1,97 @@
+[
+  {
+    "name": "11",
+    "parameters": {
+      "columns": 1,
+      "beam": 5
+    },
+    "nativeVolume": 11108.493793412219,
+    "browserVolume": 11108.022992862827,
+    "relativeVolumeError": 0.00004238203289732722,
+    "pegDifference": 4.671403801206036e-8,
+    "footOverlap": 0.00006843446806151212,
+    "triangles": 22306,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "21",
+    "parameters": {},
+    "nativeVolume": 15846.31437583762,
+    "browserVolume": 15845.904308284462,
+    "relativeVolumeError": 0.00002587778731591322,
+    "pegDifference": 4.6714053852437664e-8,
+    "footOverlap": 0.0001842630105401941,
+    "triangles": 23570,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "22",
+    "parameters": {
+      "rows": 2
+    },
+    "nativeVolume": 22246.94917208197,
+    "browserVolume": 22246.54049731039,
+    "relativeVolumeError": 0.000018369924272306186,
+    "pegDifference": 4.6714053852437664e-8,
+    "footOverlap": 0.0005058211648411753,
+    "triangles": 26238,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "41",
+    "parameters": {
+      "columns": 4
+    },
+    "nativeVolume": 27052.873862119202,
+    "browserVolume": 27052.34112078768,
+    "relativeVolumeError": 0.000019692596588297475,
+    "pegDifference": 4.670940200967849e-8,
+    "footOverlap": 0.0005935835051286398,
+    "triangles": 36594,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "tight",
+    "parameters": {
+      "columns": 1,
+      "clearance": -0.1,
+      "web": 6,
+      "beam": 20
+    },
+    "nativeVolume": 16714.55900656621,
+    "browserVolume": 16714.14016798754,
+    "relativeVolumeError": 0.000025058308658020817,
+    "pegDifference": 4.671403801206036e-8,
+    "footOverlap": 32.511492129403905,
+    "triangles": 22256,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "up",
+    "parameters": {
+      "rows": 2,
+      "angle": 5
+    },
+    "nativeVolume": 23090.29247693433,
+    "browserVolume": 23089.78625932179,
+    "relativeVolumeError": 0.00002192339542883697,
+    "pegDifference": 2.3366335710672676e-8,
+    "footOverlap": 0.0005027905961333944,
+    "triangles": 26262,
+    "pairedEdgesAndWinding": true
+  },
+  {
+    "name": "down",
+    "parameters": {
+      "rows": 2,
+      "angle": -30
+    },
+    "nativeVolume": 20014.02103925417,
+    "browserVolume": 20013.72792453705,
+    "relativeVolumeError": 0.000014645468621582055,
+    "pegDifference": 2.3366332157958998e-8,
+    "footOverlap": 0.0005025894673110969,
+    "triangles": 26184,
+    "pairedEdgesAndWinding": true
+  }
+]
