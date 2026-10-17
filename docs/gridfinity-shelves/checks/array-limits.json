@@ -5,11 +5,11 @@
       "rows": 1,
       "angle": 5
     },
-    "seconds": 38.559,
-    "volume": 80068.67563576165,
-    "triangles": 99106,
-    "footOverlap": 0.004881943050267217,
-    "pegDelta": 1.6393501858807724e-07
+    "seconds": 32.022,
+    "volume": 77765.3371378152,
+    "triangles": 99406,
+    "footOverlap": 0.004881943049650403,
+    "pegDelta": 1.1598348256614972e-07
   },
   {
     "p": {
@@ -17,21 +17,21 @@
       "rows": 12,
       "angle": -30
     },
-    "seconds": 17.036,
-    "volume": 57586.68662344737,
-    "triangles": 38312,
-    "footOverlap": 0.005320114334761533,
-    "pegDelta": 3.431005832067892e-08
+    "seconds": 13.297,
+    "volume": 63317.09710595571,
+    "triangles": 47798,
+    "footOverlap": 0.005320114334741966,
+    "pegDelta": 3.430999970090322e-08
   },
   {
     "p": {
       "columns": 8,
       "rows": 8
     },
-    "seconds": 44.456,
-    "volume": 198097.3673787519,
-    "triangles": 144526,
-    "footOverlap": 0.038865469510466266,
-    "pegDelta": 1.1737354504844035e-07
+    "seconds": 40.002,
+    "volume": 194622.51795905948,
+    "triangles": 165862,
+    "footOverlap": 0.03886457139885738,
+    "pegDelta": 1.172321029041036e-07
   }
 ]

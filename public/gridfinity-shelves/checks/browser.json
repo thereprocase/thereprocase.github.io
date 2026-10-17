@@ -1,9 +1,9 @@
 {
-  "default": "Array\n2 × 1\nPrint footprint\n99.6 × 62.3 mm\nShelf tilt\n0°\nMount columns\n2\nSolid volume\n15.85 cm³\nMesh triangles\n23,570\nPose\nFrame face on bed",
+  "default": "Array\n2 × 1\nPrint footprint\n88.0 × 62.3 mm\nShelf tilt\n0°\nMount columns\n2\nSolid volume\n16.14 cm³\nMesh triangles\n24,856\nPose\nFrame face on bed",
   "installed": true,
   "invalidates": true,
   "cancel": true,
-  "down": "Array\n2 × 1\nPrint footprint\n99.6 × 58.3 mm\nShelf tilt\n-30°\nMount columns\n2\nSolid volume\n14.20 cm³\nMesh triangles\n23,532\nPose\nFrame face on bed",
+  "down": "Array\n2 × 1\nPrint footprint\n88.0 × 58.3 mm\nShelf tilt\n-30°\nMount columns\n2\nSolid volume\n14.31 cm³\nMesh triangles\n25,098\nPose\nFrame face on bed",
   "overflow390": false,
   "overflow320": false,
   "orbit": true

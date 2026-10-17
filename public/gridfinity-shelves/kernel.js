@@ -6,10 +6,9 @@ export function parameters(input) {
  for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
  for(const [k,lo,hi] of [['clearance',-.1,.2],['web',2.4,6],['beam',5,20],['angle',-30,5]]) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k}: use ${lo} to ${hi} ${k==='angle'?'degrees':'mm'}`);
- const lanes=Math.ceil((42*p.columns+6)/25.4), holes=[];
- for(let i=0;i<lanes;i+=3) holes.push(i);
- if(holes.at(-1)!==lanes-1) holes.push(lanes-1);
- return {...p,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
+ const lanes=Math.ceil((42*p.columns+6)/25.4),frameWidth=42*p.columns+4,available=Array.from({length:lanes},(_,i)=>i).filter(i=>Math.abs((i-(lanes-1)/2)*25.4)+5<=frameWidth/2+1e-8),holes=available.filter((_,i)=>i%3===0);
+ if(holes.at(-1)!==available.at(-1))holes.push(available.at(-1));
+ return {...p,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
 }
 function rounded(cx,cy,w,r,z) {
  const a=[];
@@ -51,12 +50,12 @@ export function build(module, inputs, input) {
    pockets.push(tilt(loft(x,y,[[5.52,41.1+2*c,3.55+c],[5.72,41.9+2*c,3.95+c],[6.72,41.9+2*c,3.95+c]])));
    feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
   }
-  pieces.push(box([p.width,5.4,hinge+1-.72],[-p.width/2,.15,.72]));
+  pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
   if(p.columns>1||p.beam>5)pieces.push(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])));
   const upper=mesh(inputs.upper.vertices,inputs.upper.triangles),lower=mesh(inputs.lower.vertices,inputs.lower.triangles);
   for(const x of p.mounts){
    pieces.push(box([10,5.4,hinge+1+29.68],[x-5,.15,-29.68]));
-   pieces.push(prism([[5,-27.5],point(p.front-1.55,.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2));
+   pieces.push(prism([[5,-27.5],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2));
    for(const [peg,z] of [[upper,0],[lower,-25.4]]){const copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);}
   }
   let shape=keep(M.union(pieces));
@@ -84,8 +83,8 @@ export function build(module, inputs, input) {
   // Re-enter the kernel at the actual float32 print coordinates. This collapses
   // sub-resolution boolean slivers before emitting STL, rather than asking a slicer to repair it.
   const printMesh=new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(t)});
-  const final=keep(keep(new M(printMesh)).simplify(.0001));
-  if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export changed geometry.');
+  const final=keep(new M(printMesh));
+  if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export failed: '+final.status()+'; volume '+final.volume()+' vs '+shape.volume());
   const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
   validateExport(result);
   return result;

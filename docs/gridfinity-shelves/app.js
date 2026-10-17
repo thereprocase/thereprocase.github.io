@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
-import {defaults,parameters,binarySTL} from './kernel.js';
+import {defaults,parameters,binarySTL} from './kernel.js?v=rail-web-2';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false;
 let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true});}catch(e){$('viewer-note').textContent='3D rendering is unavailable in this browser. Use the native CAD generator linked below.';$('status').textContent='WebGL is required for this interactive preview.';$('generate').disabled=true;throw e;}renderer.setPixelRatio(Math.min(devicePixelRatio,2));host.append(renderer.domElement);
@@ -26,7 +26,7 @@ function show(r){result=r;viewResult=r;if(mesh){scene.remove(mesh);mesh.geometry
 }
 function setBusy(b){$('generate').disabled=b;$('cancel').disabled=!b;}
 function generate(){if(!form.reportValidity())return;let p;try{p=values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
- worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent='Generating and checking geometry…';worker=new Worker('./worker.js',{type:'module'});
+ worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent='Generating and checking geometry…';worker=new Worker('./worker.js?v=rail-web-2',{type:'module'});
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage(p);
 }
