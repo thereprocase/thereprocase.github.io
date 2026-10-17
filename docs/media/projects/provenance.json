@@ -1,0 +1,22 @@
+[
+  {
+    "file": "dock.png",
+    "source": "https://thereprocase.github.io/5680-dock/assets/clamp-pivot/01-assembled-port-1.png",
+    "sha256": "e0ffa470cc7937f6d86ee9fe43f4f96cec4cf68e9103651d23d20a7616c43742"
+  },
+  {
+    "file": "wall-mount.png",
+    "source": "https://thereprocase.github.io/dell-5560-wall-mount/assets/revh-duct-d4-D4-current-assembly.png",
+    "sha256": "6cc342182a49587e20ba839a592c2f3a1a4de293bb13774a80b8f339217044ff"
+  },
+  {
+    "file": "peg.png",
+    "source": "https://raw.githubusercontent.com/thereprocase/peg/main/visuals/conformal-hero.png",
+    "sha256": "8b6b9d3c2960905160185959cb05cb42fadf7797d0947738f3b372b2cc8ce3cd"
+  },
+  {
+    "file": "statusline.svg",
+    "source": "https://raw.githubusercontent.com/thereprocase/claude-statusline/main/images/statusline-clean.svg",
+    "sha256": "56427306a296f9ca0cd7e1ac413a4b3600591ec510564cec7ca8105fbb3a83a6"
+  }
+]

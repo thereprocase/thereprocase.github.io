@@ -27,7 +27,7 @@ export const projects: Project[] = [
     links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
   },
   {
-    slug: 'thermal-field', name: 'Thermal Field', category: 'hardware',
+    slug: 'thermal-field', name: 'Thermal Field', category: 'hardware', sitePath: '/projects/thermal-field/',
     summary: 'An independent open-source Android thermal viewer with lossless radiometry and a Gridline interface.',
     description: 'A native arm64 Android app for the USB 0bda:5830 thermal device used by the P2 Pro. Capture runs through UsbManager, libusb and libuvc; the app renders the original radiometric plane with its own GPU palettes. No proprietary camera SDK is included.',
     status: '0.1.3-rc1 · experimental release candidate; physical lifecycle/baseline/bath gates remain open',

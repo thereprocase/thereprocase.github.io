@@ -117,3 +117,17 @@ after a privacy scrub of repository history and packaged assets. Their dedicated
 Pages sites serve `docs/` from `main`. The directory now exports nine project
 landings, with the dock entry reflecting current D9 P5 CAD and the wall-mount
 entry pointing to the Rev H D4 correction and existing M1 assembly guide.
+
+## 16 October 2026: illustrated workshop
+
+The homepage now leads with actual Kraken CAD, a render gallery, the engineering
+studies and image cards for all 14 projects. The globally installed `render`
+skill generated the new Kraken, spoke gear and E13 rack PNGs. Input mesh hashes,
+camera settings and display transforms are in `public/media/render/provenance.json`.
+No source geometry was changed. Original FEA figures, color scales and limitations
+are retained; they open at full resolution. Bambu Bridge and Thermal Field
+demonstrations remain explicitly labeled as synthetic data. Copies of public
+project previews carry source URLs and hashes under `public/media/projects/`.
+
+Homepage styles live in `app/workshop.css`; shared viewer implementations and
+downloads are unchanged. The Analysis navigation link opens the homepage gallery.

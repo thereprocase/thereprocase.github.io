@@ -1,0 +1,460 @@
+{
+  "renderer": "render skill / deterministic WebGL2 cel shading",
+  "geometry": "Unchanged source meshes; presentation transforms only",
+  "sources": [
+    "https://github.com/thereprocase/kraken-remix-ogAMS",
+    "https://github.com/thereprocase/spool-wall-rack/tree/5e95cbf5544b205bdf2b73611d24ce3f826e837d"
+  ],
+  "renders": [
+    {
+      "image": "kraken.png",
+      "sha256": "9cac16b153add5d879b6d35f88bd4c5d4347fbab1c199f1189e5809284928c7b",
+      "scene": {
+        "title": "KRAKEN / open mechanics",
+        "subtitle": "Original AMS remix \u00b7 split bodies + removable front bars",
+        "caption": "Actual CAD \u00b7 bars lifted for clarity \u00b7 original design by Humebeam",
+        "camera": {
+          "yaw": -1.05,
+          "pitch": 0.87,
+          "zoom": 0.68
+        },
+        "parts": [
+          {
+            "mesh": "right_M5_gear_edit_cut5_display.npz",
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "mesh": "right_M5_gear_edit_insert_cut5_display.npz",
+            "color": [
+              0.98,
+              0.63,
+              0.28
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                16
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "mesh": "left_M5_gear_edit_cut5_display.npz",
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                167.36
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "mesh": "left_M5_gear_edit_insert_cut5_display.npz",
+            "color": [
+              0.98,
+              0.63,
+              0.28
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                167.36
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                16
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "right_M5_gear_edit_cut5_display.npz",
+          "sha256": "75e2c7d9be8ceb2c39b5fde6dd5e49a1555e768b2168ce699640254e099fa9a8",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 89741,
+          "triangles": 180002
+        },
+        {
+          "mesh": "right_M5_gear_edit_insert_cut5_display.npz",
+          "sha256": "56ca79a031a7cc8be6f54809fffdb5684e502d602d73b5139377f5cedcc308e3",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              16.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 1767,
+          "triangles": 3530
+        },
+        {
+          "mesh": "left_M5_gear_edit_cut5_display.npz",
+          "sha256": "ee3ef514cae6efffd205442c085ba0e4e8a769f0c0bf3e92931cd379cb4a5938",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              167.36
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 77464,
+          "triangles": 155440
+        },
+        {
+          "mesh": "left_M5_gear_edit_insert_cut5_display.npz",
+          "sha256": "cf70fc3bfa0824b9d88d3eb6b87d8fc3617fff333b2e7a966ea572b81f550e16",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              167.36
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              16.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 1180,
+          "triangles": 2356
+        }
+      ]
+    },
+    {
+      "image": "gear.png",
+      "sha256": "9e54f22ef6946a727d2d0cb988be4f2ca87c38b118e4e8b4df53ba876c922ef0",
+      "scene": {
+        "title": "KRAKEN / spoke gear",
+        "subtitle": "Original teeth, hub and bearing seats \u00b7 redesigned disc",
+        "caption": "Actual model geometry \u00b7 illustrative view, not physical qualification",
+        "camera": {
+          "yaw": -1.05,
+          "pitch": 0.87,
+          "zoom": 0.68
+        },
+        "parts": [
+          {
+            "mesh": "gear-spokes.stl",
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "gear-spokes.stl",
+          "sha256": "55412d03377e811d511f42ba6c5f10633756244d8f84644e89e8a15b82b46835",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 37967,
+          "triangles": 75966
+        }
+      ]
+    },
+    {
+      "image": "rack.png",
+      "sha256": "0504890ffedb8349944aaf8df1a9375e2b910eb241fedd25181d23218348bd87",
+      "scene": {
+        "title": "E13 / spool wall rack",
+        "subtitle": "Two rod seats \u00b7 angular reinforcement \u00b7 retained flexible fingers",
+        "caption": "Actual model geometry \u00b7 illustrative view, not physical qualification",
+        "camera": {
+          "yaw": -1.05,
+          "pitch": 0.87,
+          "zoom": 0.75
+        },
+        "parts": [
+          {
+            "mesh": "body-only.stl",
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "body-only.stl",
+          "sha256": "13efd0718c46972dcd884e1d79a4b8c093bb4fc04ac85b0a2ce8bcf39950bec8",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 6464,
+          "triangles": 12932
+        }
+      ]
+    }
+  ]
+}
