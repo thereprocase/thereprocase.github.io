@@ -4,9 +4,9 @@ Static browser application, served at `/gridfinity-shelves/`. Geometry runs in a
 terminable module worker with locally vendored Manifold 3.2.1. Three.js and
 OrbitControls are shared with `/p1s-feet/vendor/`. No CAD server or upload is used.
 
-`kernel.js` mirrors the native generator at peg commit `bff6ad1`:
+`kernel.js` mirrors the native generator at the linked peg branch revision:
 `bench/source/gridfinity_generator_v1`. `inputs.json` retains the native exported
-PF02 #9 and upright PF07 #5 connector meshes and the allowed host envelope.
+PF02 #9, upright PF07 #5 and intermediate bearing-locator meshes and the allowed host envelope.
 Native STEP exports remain available through the linked FreeCAD generator.
 
 The browser approximates circular surfaces with 24 segments per quarter. It
@@ -19,7 +19,7 @@ load, retention or creep ratings. New arrays/angles need slicer and physical tes
 
 ## Checks and publication
 
-- `node scripts/gridfinity/check-kernel.mjs /tmp/grid-checks`: nine native-volume
+- `GRIDFINITY_NATIVE=/path/to/native-cases node scripts/gridfinity/check-kernel.mjs /tmp/grid-checks`: nine native-volume
   comparisons, paired mesh edges/winding, bed pose and invalid parameter checks.
 - `node scripts/gridfinity/browser-check.mjs public /tmp/grid-browser/mobile.png`:
   real Chromium worker generation, pose controls, stale-download invalidation,
@@ -32,7 +32,7 @@ Dependency: npm `manifold-3d@3.2.1`, Apache-2.0. Only `manifold.js`,
 `manifold.wasm`, and `LICENSE` are copied from the verified upstream archive.
 No package installation scripts run. See `provenance.json` for integrity and hashes.
 
-## Rail and web revision
+## Previous rail and web revision
 
 The rear rail now ends at the frame (42 × columns + 4 mm). Mounting posts stay inside that width, moving inward by complete board pitches when required. The side webs extend to the front beam with a vertical end connection. Earlier sliced shelf packages retain the previous geometry; re-slice generated STLs.
 
@@ -50,3 +50,11 @@ ULP at the core coordinate magnitude for rounding and Boolean simplification. Th
 (missing volume ≤0.000001 mm³), and total missing volume cannot exceed that
 skin volume. Raw and inset missing volumes are retained in the test evidence.
 Native solid checks retain their original 0.000001 mm³ containment threshold.
+
+## Solid backplate and mounting height
+
+Default parameters now include `mount_rows: 2` and `backplate: true`. A 5.4 mm continuous backplate connects 25.4 mm peg columns to 42 mm Gridfinity cell-boundary gussets. Height 1 is hook-only with 12.7 mm of backplate below the hook centers. Heights 2–4 retain top hooks and bottom hoops; 3–4 use exact native bearing locators between. Gussets extend to the selected backplate bottom. The open-back option retains continuous top/bottom ties and posts at both grids. STL and JSON outputs retain the selected settings.
+
+The default 2×1 solid CAD volume rises from 16.18 to 29.44 cm³ with the solid backplate and third gusset. Printed mass depends on the actual walls and infill. Physical snap retention, installation and loading remain unqualified; a taller plate alone is not a load rating.
+
+For a static-only generator update, copy this complete directory to `dist/client/gridfinity-shelves` and `docs/gridfinity-shelves` after checks. Keep their hashes equal; no framework rebuild is needed when other pages are unchanged.

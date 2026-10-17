@@ -1,14 +1,17 @@
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0};
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true};
 export function parameters(input) {
  const p={...defaults,...input};
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
  for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
  for(const [k,lo,hi] of [['clearance',-.1,.2],['web',2.4,6],['beam',5,20],['angle',-30,5]]) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k}: use ${lo} to ${hi} ${k==='angle'?'degrees':'mm'}`);
+ if(!Number.isInteger(p.mount_rows)||p.mount_rows<1||p.mount_rows>4)throw Error('Mount height: use one to four peg rows.');
+ if(typeof p.backplate!=='boolean')throw Error('Backplate must be true or false.');
+ const mountZ=Array.from({length:p.mount_rows},(_,i)=>-25.4*i),backBottom=p.mount_rows===1?-12.7:mountZ.at(-1)-4.28,webColumns=Array.from({length:p.columns+1},(_,i)=>(i-p.columns/2)*42);
  const lanes=Math.ceil((42*p.columns+6)/25.4),frameWidth=42*p.columns+4,available=Array.from({length:lanes},(_,i)=>i).filter(i=>Math.abs((i-(lanes-1)/2)*25.4)+5<=frameWidth/2+1e-8),holes=available.filter((_,i)=>i%3===0);
  if(holes.at(-1)!==available.at(-1))holes.push(available.at(-1));
- return {...p,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
+ return {...p,mountZ,backBottom,webColumns,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
 }
 function rounded(cx,cy,w,r,z) {
  const a=[];
@@ -60,26 +63,33 @@ export function build(module, inputs, input) {
   pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
   if(p.columns>1||p.beam>5)pieces.push(keep(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])).intersect(frontMask)));
   const upper=mesh(inputs.upper.vertices,inputs.upper.triangles),lower=mesh(inputs.lower.vertices,inputs.lower.triangles);
-  for(const x of p.mounts){
-   pieces.push(box([10,5.4,hinge+1+29.68],[x-5,.15,-29.68]));
-   pieces.push(keep(prism([[5,-27.5],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
-   for(const [peg,z] of [[upper,0],[lower,-25.4]]){const copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);}
+  const locator=p.mount_rows>2?mesh(inputs.locator.vertices,inputs.locator.triangles):null;
+  const bottom=p.backBottom;
+  if(p.backplate)pieces.push(box([p.frameWidth,5.4,hinge+1-bottom],[-p.frameWidth/2,.15,bottom]));
+  else {
+   pieces.push(box([p.frameWidth,5.4,4.28],[-p.frameWidth/2,.15,bottom]));
+   for(const x of p.mounts)pieces.push(box([10,5.4,hinge+1-bottom],[x-5,.15,bottom]));
+   for(const x of p.webColumns)pieces.push(box([p.web,5.4,hinge+1-bottom],[x-p.web/2,.15,bottom]));
+  }
+  for(const x of p.webColumns)pieces.push(keep(prism([[5,bottom+2.18],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
+  for(const x of p.mounts)for(let i=0;i<p.mount_rows;i++){
+   const peg=i===0?upper:i===p.mount_rows-1?lower:locator,copy=moved(peg,[x,0,p.mountZ[i]]);pieces.push(copy);pegs.push(copy);
   }
   let shape=keep(M.union(pieces));
   const extent=p.width/2+20,below=prism([[-60,-1000],[1000,-1000],[1000,hinge+tangent*(1000-.15)],[-60,hinge+tangent*(-60-.15)]],-extent,extent);
   shape=keep(shape.intersect(below));shape=keep(shape.subtract(keep(M.union(pockets))));
   // Match the float32 envelope plane exactly; a double .15 leaves a nanometer cut separating pegs.
-  const reach=p.width/2+20,allowed=prism(inputs.envelope,-reach,reach),forbidden=keep(box([2*reach,60,150],[-reach,Math.fround(.15),-50]).subtract(allowed));
+  const reach=p.width/2+20,allowed=prism(inputs.envelope.map(([y,z],i,a)=>[y,i===0||i===a.length-1?-200:z]),-reach,reach),forbidden=keep(box([2*reach,60,400],[-reach,Math.fround(.15),-200]).subtract(allowed));
   shape=keep(shape.subtract(forbidden));
   // Remove boolean slivers below float32 export resolution before validation.
   shape=keep(shape.simplify(0.00001));
   if(shape.status()!=='NoError'||shape.volume()<=0)throw Error(`Geometry failed: ${shape.status()}`);
   const parts=shape.decompose();parts.forEach(keep);if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
-  const clip=box([2*reach,60.15,150],[-reach,-60,-75]);
+  const clip=box([2*reach,60.15,400],[-reach,-60,-200]);
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
   if(pegDelta>.01)throw Error('Connector preservation check failed.');
-  for(const x of p.mounts)for(const [z,d] of [[.12,6.72],[-25.28,7.62]]){const root=box([d,5.4,d],[x-d/2,.15,z-d/2]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  for(const x of p.mounts)for(let i=0;i<p.mount_rows;i++){const z=p.mountZ[i]+.12,d=i===0?6.72:7.62;const root=box([d,5.4,d],[x-d/2,.15,z-d/2]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
   const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
   const coreMissing=keep(core.subtract(shape)).volume();
   // At large spans, micron-scale boundary rounding accumulates measurable volume.

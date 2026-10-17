@@ -26,7 +26,14 @@ try{
  const ready=async()=>{for(let i=0;i<1800;i++){await pause(100);const s=await evaluate("document.getElementById('status')?.textContent");if(s?.startsWith('Generation failed')||s?.includes('could not load'))throw Error(s);if(s?.startsWith('Geometry ready'))return;}throw Error('Geometry timeout');};
  await ready();
  const results={default:await evaluate("document.getElementById('dimensions').innerText")};
+ results.defaultControls=await evaluate("document.querySelector('[name=mount_rows]').value==='2'&&document.querySelector('[name=backplate]').checked");
+ await evaluate("document.querySelector('[name=mount_rows]').value='1';document.querySelector('[name=mount_rows]').dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('generate').click()");await ready();
+ results.mini=await evaluate("document.getElementById('dimensions').innerText.includes('1 peg row')&&document.getElementById('fit-note').textContent.includes('Hook-only')");
+ await evaluate("document.querySelector('[name=mount_rows]').value='4';document.querySelector('[name=backplate]').checked=false;document.querySelector('[name=backplate]').dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('generate').click()");await ready();
+ results.tallOpen=await evaluate("document.getElementById('dimensions').innerText.includes('4 peg rows')&&document.getElementById('dimensions').innerText.includes('Open with cross-ties')");
+ await evaluate("document.querySelector('[name=backplate]').checked=true;document.querySelector('[name=mount_rows]').value='2';document.querySelector('[name=backplate]').dispatchEvent(new Event('input',{bubbles:true}));document.getElementById('generate').click()");await ready();
  await evaluate("document.getElementById('installed').click()");
+ const desktop=await call('Page.captureScreenshot',{format:'png'});await fs.writeFile(output+'.desktop.png',Buffer.from(desktop.data,'base64'));
  results.installed=await evaluate("document.getElementById('installed').getAttribute('aria-pressed')==='true'");
  await evaluate("document.querySelector('[name=angle]').value=-30;document.querySelector('[name=angle]').dispatchEvent(new Event('input',{bubbles:true}))");
  results.invalidates=await evaluate("document.getElementById('stl').disabled&&document.getElementById('recipe').disabled");
@@ -44,6 +51,6 @@ try{
  await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:canvas.x+60,y:canvas.y+25,button:'left',clickCount:1});await pause(500);
  results.orbit=(await call('Page.captureScreenshot',{format:'png'})).data!==before;
   await fs.writeFile(output+'.json',JSON.stringify(results,null,2));
- if(!results.orbit||!results.installed||!results.invalidates||!results.cancel||results.overflow320||results.overflow390)throw Error(JSON.stringify(results));
+ if(!results.defaultControls||!results.mini||!results.tallOpen||!results.orbit||!results.installed||!results.invalidates||!results.cancel||results.overflow320||results.overflow390)throw Error(JSON.stringify(results));
  const shot=await call('Page.captureScreenshot',{format:'png'});await fs.writeFile(output,Buffer.from(shot.data,'base64'));console.log(path.resolve(output));
 }finally{ws?.close();browser?.kill();server?.kill();await pause(200);await fs.rm(temp,{recursive:true,force:true,maxRetries:4,retryDelay:100});}

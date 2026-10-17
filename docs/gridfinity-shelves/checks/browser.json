@@ -1,9 +1,12 @@
 {
-  "default": "Array\n2 × 1\nPrint footprint\n88.0 × 62.3 mm\nShelf tilt\n0°\nMount columns\n2\nSolid volume\n16.18 cm³\nMesh triangles\n24,934\nPose\nFrame face on bed",
+  "default": "Array\n2 × 1\nPrint footprint\n88.0 × 62.3 mm\nShelf tilt\n0°\nMount columns\n2\nMount height\n2 peg rows\nBackplate\nSolid\nGussets\n3 · Gridfinity boundaries\nSolid volume\n29.44 cm³\nMesh triangles\n24,910\nPose\nFrame face on bed",
+  "defaultControls": true,
+  "mini": true,
+  "tallOpen": true,
   "installed": true,
   "invalidates": true,
   "cancel": true,
-  "down": "Array\n2 × 1\nPrint footprint\n88.0 × 58.3 mm\nShelf tilt\n-30°\nMount columns\n2\nSolid volume\n14.31 cm³\nMesh triangles\n24,710\nPose\nFrame face on bed",
+  "down": "Array\n2 × 1\nPrint footprint\n88.0 × 58.3 mm\nShelf tilt\n-30°\nMount columns\n2\nMount height\n2 peg rows\nBackplate\nSolid\nGussets\n3 · Gridfinity boundaries\nSolid volume\n26.66 cm³\nMesh triangles\n24,754\nPose\nFrame face on bed",
   "overflow390": false,
   "overflow320": false,
   "orbit": true
