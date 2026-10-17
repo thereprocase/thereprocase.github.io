@@ -4,7 +4,7 @@ Static browser application, served at `/gridfinity-shelves/`. Geometry runs in a
 terminable module worker with locally vendored Manifold 3.2.1. Three.js and
 OrbitControls are shared with `/p1s-feet/vendor/`. No CAD server or upload is used.
 
-`kernel.js` mirrors the native generator at peg commit `1ea8f73`:
+`kernel.js` mirrors the native generator at peg commit `bff6ad1`:
 `bench/source/gridfinity_generator_v1`. `inputs.json` retains the native exported
 PF02 #9 and upright PF07 #5 connector meshes and the allowed host envelope.
 Native STEP exports remain available through the linked FreeCAD generator.
@@ -19,7 +19,7 @@ load, retention or creep ratings. New arrays/angles need slicer and physical tes
 
 ## Checks and publication
 
-- `node scripts/gridfinity/check-kernel.mjs /tmp/grid-checks`: eight native-volume
+- `node scripts/gridfinity/check-kernel.mjs /tmp/grid-checks`: nine native-volume
   comparisons, paired mesh edges/winding, bed pose and invalid parameter checks.
 - `node scripts/gridfinity/browser-check.mjs public /tmp/grid-browser/mobile.png`:
   real Chromium worker generation, pose controls, stale-download invalidation,
@@ -35,3 +35,18 @@ No package installation scripts run. See `provenance.json` for integrity and has
 ## Rail and web revision
 
 The rear rail now ends at the frame (42 × columns + 4 mm). Mounting posts stay inside that width, moving inward by complete board pitches when required. The side webs extend to the front beam with a vertical end connection. Earlier sliced shelf packages retain the previous geometry; re-slice generated STLs.
+
+## Continuous outer frame revision
+
+The exterior is one frame with straight rear/side joins and tangent R5 front
+corners. Beam and web solids share that trim. Cell profiles and internal ribs
+are unchanged. Native evidence includes 13 lift positions per cell for
+nonnegative clearance; both kernels check the full front core between outer
+peg columns. At maximum clearance the checked thickness is 1.85 mm rather than
+1.9 mm, matching the remaining rim. Earlier sliced packages are not this CAD.
+
+Browser front-core checks allow a boundary skin of 0.00001 mm plus one float32
+ULP at the core coordinate magnitude for rounding and Boolean simplification. The entire inset core must remain contained
+(missing volume ≤0.000001 mm³), and total missing volume cannot exceed that
+skin volume. Raw and inset missing volumes are retained in the test evidence.
+Native solid checks retain their original 0.000001 mm³ containment threshold.

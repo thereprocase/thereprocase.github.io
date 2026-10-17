@@ -5,11 +5,14 @@
       "rows": 1,
       "angle": 5
     },
-    "seconds": 32.022,
-    "volume": 77765.3371378152,
-    "triangles": 99406,
-    "footOverlap": 0.004881943049650403,
-    "pegDelta": 1.1598348256614972e-07
+    "seconds": 21.559,
+    "volume": 77902.58306900633,
+    "triangles": 93582,
+    "frontCoreMissing": 0.003849048464392763,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 2.52587890625e-05,
+    "footOverlap": 0.004882585329184554,
+    "pegDelta": 1.0783092452054102e-07
   },
   {
     "p": {
@@ -17,21 +20,27 @@
       "rows": 12,
       "angle": -30
     },
-    "seconds": 13.297,
-    "volume": 63317.09710595571,
-    "triangles": 47798,
-    "footOverlap": 0.005320114334741966,
-    "pegDelta": 3.430999970090322e-08
+    "seconds": 10.585,
+    "volume": 63534.87531529103,
+    "triangles": 41338,
+    "frontCoreMissing": 0.00025849543008493275,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 4.0517578125e-05,
+    "footOverlap": 0.005319481949713495,
+    "pegDelta": 3.4426906837652273e-08
   },
   {
     "p": {
       "columns": 8,
       "rows": 8
     },
-    "seconds": 40.002,
-    "volume": 194622.51795905948,
-    "triangles": 165862,
-    "footOverlap": 0.03886457139885738,
-    "pegDelta": 1.172321029041036e-07
+    "seconds": 32.014,
+    "volume": 194859.09712688252,
+    "triangles": 169132,
+    "frontCoreMissing": 0.009265631114661554,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 4.0517578125e-05,
+    "footOverlap": 0.03885823191110876,
+    "pegDelta": 8.62080957139427e-08
   }
 ]

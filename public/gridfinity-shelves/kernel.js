@@ -16,6 +16,12 @@ function rounded(cx,cy,w,r,z) {
   for(let j=0;j<=24;j++){const t=(start+j*90/24)*Math.PI/180;a.push([x+r*Math.cos(t),y+r*Math.sin(t),z]);}
  return a;
 }
+function framePolygon(width,back,front) {
+ const x=width/2,r=5,a=[[-x,back],[x,back],[x,front-r]];
+ for(let j=1;j<=24;j++){const t=j*Math.PI/48;a.push([x-r+r*Math.cos(t),front-r+r*Math.sin(t)]);}
+ a.push([-x+r,front]);for(let j=1;j<=24;j++){const t=Math.PI/2+j*Math.PI/48;a.push([-x+r+r*Math.cos(t),front-r+r*Math.sin(t)]);}
+ return a;
+}
 export function build(module, inputs, input) {
  const p=parameters(input), {Manifold:M,Mesh}=module, allocated=[];
  const keep=o=>{allocated.push(o);return o;};
@@ -43,19 +49,20 @@ export function build(module, inputs, input) {
   const hinge=Math.max(5.72,3.48-tangent*5.4+.25,Math.max(...zs)-tangent*((tangent>=0?Math.min(...ys):Math.max(...ys))-.15)+.275);
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
   const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
+  const frame=(back,z,height)=>tilt(moved(keep(M.extrude([framePolygon(p.frameWidth,back,p.front)],height)),[0,0,z]));
+  pieces.push(frame(5.55,.72,5));const frontMask=frame(-1000,-1000,2000);
   for(let j=0;j<p.rows;j++)for(let i=0;i<p.columns;i++){
    const x=(i-(p.columns-1)/2)*42,y=28.55+42*j;
-   pieces.push(tilt(loft(x,y,[[.72,46,5],[5.72,46,5]])));
    pockets.push(tilt(loft(x,y,[[-1,36.5,1.25],[1.42,36.5,1.25],[2.12,37.9,1.95],[3.92,37.9,1.95],[6.07,42.2,4.1],[7.6,42.2,4.1]].map(([z,w,r])=>[z,w+2*c,r+c]))));
    pockets.push(tilt(loft(x,y,[[5.52,41.1+2*c,3.55+c],[5.72,41.9+2*c,3.95+c],[6.72,41.9+2*c,3.95+c]])));
    feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
   }
   pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
-  if(p.columns>1||p.beam>5)pieces.push(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])));
+  if(p.columns>1||p.beam>5)pieces.push(keep(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])).intersect(frontMask)));
   const upper=mesh(inputs.upper.vertices,inputs.upper.triangles),lower=mesh(inputs.lower.vertices,inputs.lower.triangles);
   for(const x of p.mounts){
    pieces.push(box([10,5.4,hinge+1+29.68],[x-5,.15,-29.68]));
-   pieces.push(prism([[5,-27.5],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2));
+   pieces.push(keep(prism([[5,-27.5],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
    for(const [peg,z] of [[upper,0],[lower,-25.4]]){const copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);}
   }
   let shape=keep(M.union(pieces));
@@ -73,6 +80,16 @@ export function build(module, inputs, input) {
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
   if(pegDelta>.01)throw Error('Connector preservation check failed.');
   for(const x of p.mounts)for(const [z,d] of [[.12,6.72],[-25.28,7.62]]){const root=box([d,5.4,d],[x-d/2,.15,z-d/2]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
+  const coreMissing=keep(core.subtract(shape)).volume();
+  // At large spans, micron-scale boundary rounding accumulates measurable volume.
+  // Bound the skin by the simplify tolerance plus one float32 ULP at these coordinates.
+  const coreBounds=core.boundingBox(),coreMagnitude=Math.max(1,...coreBounds.min.map(Math.abs),...coreBounds.max.map(Math.abs));
+  const coreTolerance=.00001+2**(Math.floor(Math.log2(coreMagnitude))-23),span=p.mounts.at(-1)-p.mounts[0];
+  const insetCore=tilt(box([span-2*coreTolerance,coreDepth-2*coreTolerance,p.beam-2*coreTolerance],[p.mounts[0]+coreTolerance,p.front-coreDepth+coreTolerance,5.72-p.beam+coreTolerance]));
+  const coreInteriorMissing=keep(insetCore.subtract(shape)).volume();
+  const coreSkinVolume=span*coreDepth*p.beam-(span-2*coreTolerance)*(coreDepth-2*coreTolerance)*(p.beam-2*coreTolerance);
+  if(coreInteriorMissing>1e-6||coreMissing>coreSkinVolume+1e-6)throw Error('Front beam continuity check failed: '+coreMissing+' mm3 boundary, '+coreInteriorMissing+' mm3 interior.');
   const overlaps=feet.map(foot=>keep(shape.intersect(foot)).volume()),footOverlap=overlaps.reduce((a,b)=>a+b,0),maxFootOverlap=Math.max(...overlaps);
   if(c>=0&&maxFootOverlap>.002)throw Error('Reference bin-foot clearance check failed.');
   const source=shape.getMesh(),v=source.vertProperties,t=source.triVerts,n=source.numProp;
@@ -85,7 +102,7 @@ export function build(module, inputs, input) {
   const printMesh=new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(t)});
   const final=keep(new M(printMesh));
   if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export failed: '+final.status()+'; volume '+final.volume()+' vs '+shape.volume());
-  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
+  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
   validateExport(result);
   return result;
  } finally {for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}

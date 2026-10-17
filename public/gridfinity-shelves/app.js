@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
-import {defaults,parameters,binarySTL} from './kernel.js?v=rail-web-2';
+import {defaults,parameters,binarySTL} from './kernel.js?v=frame-3';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false;
 let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true});}catch(e){$('viewer-note').textContent='3D rendering is unavailable in this browser. Use the native CAD generator linked below.';$('status').textContent='WebGL is required for this interactive preview.';$('generate').disabled=true;throw e;}renderer.setPixelRatio(Math.min(devicePixelRatio,2));host.append(renderer.domElement);
@@ -21,12 +21,12 @@ function show(r){result=r;viewResult=r;if(mesh){scene.remove(mesh);mesh.geometry
  const p=r.parameters;g.computeBoundingBox();const span=g.boundingBox.getSize(new THREE.Vector3()),width=span.x,depth=span.y;
  const lines=[['Array',`${p.columns} × ${p.rows}`],['Print footprint',`${width.toFixed(1)} × ${depth.toFixed(1)} mm`],['Shelf tilt',`${p.angle}°`],['Mount columns',String(p.mounts.length)],['Solid volume',`${(r.volume/1000).toFixed(2)} cm³`],['Mesh triangles',r.trianglesCount.toLocaleString()],['Pose','Frame face on bed']];
  $('dimensions').replaceChildren(...lines.flatMap(([a,b])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=a;dd.textContent=b;return [dt,dd];}));
- const notes=['Generated variant: inspect toolpaths and test bin release before loading.'];if(width>256||depth>256)notes.push('Exceeds a 256 × 256 mm P1S bed.');else notes.push('Bounding box fits 256 × 256 mm; plate exclusions and purge space still need checking.');if(p.rows>1)notes.push('Multiple depth rows increase cantilever leverage.');if(p.clearance<0)notes.push('Negative clearance can hold bins above their nominal seated height.');
+ const notes=['Generated variant: inspect toolpaths and test bin release before loading.'];if(width>256||depth>256)notes.push('Exceeds a 256 × 256 mm P1S bed.');else notes.push('Bounding box fits 256 × 256 mm; plate exclusions and purge space still need checking.');if(p.rows>2)notes.push('More than two rows deep: unqualified long cantilever. Geometry checks do not establish a safe load; test peg retention and deflection before use.');else if(p.rows>1)notes.push('Multiple depth rows increase cantilever leverage.');if(p.clearance<0)notes.push('Negative clearance can hold bins above their nominal seated height.');
  $('fit-note').textContent=notes.join(' ');$('status').textContent='Geometry ready · one connected solid · peg preservation passed';$('stl').disabled=false;$('recipe').disabled=false;$('viewer-note').hidden=true;
 }
 function setBusy(b){$('generate').disabled=b;$('cancel').disabled=!b;}
 function generate(){if(!form.reportValidity())return;let p;try{p=values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
- worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent='Generating and checking geometry…';worker=new Worker('./worker.js?v=rail-web-2',{type:'module'});
+ worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent='Generating and checking geometry…';worker=new Worker('./worker.js?v=frame-3',{type:'module'});
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage(p);
 }

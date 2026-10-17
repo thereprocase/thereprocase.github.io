@@ -1,92 +1,92 @@
 {
-  "down.stl": {
-    "triangles": 29800,
-    "edges": 44700,
+  "11": {
+    "triangles": 23026,
+    "edges": 34539,
     "connected_surfaces": 1,
-    "volume_mm3": 20615.5952346498,
+    "volume_mm3": 11191.26601367656,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "7ea710386266d0e4b02367af38bf13b7e8f73c475e84b4632008b2bc2c3b51e6"
+    "sha256": "60d10cfa3f08f3a55ffb51ac78001278c3acc1c7d0124a86c60b386ea1a8572f"
   },
-  "up.stl": {
-    "triangles": 29814,
-    "edges": 44721,
+  "21": {
+    "triangles": 24934,
+    "edges": 37401,
     "connected_surfaces": 1,
-    "volume_mm3": 23857.942654279286,
+    "volume_mm3": 16184.209559691253,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "dfd8df394753f5f5790889b7d4d64ef08ffba0e2a96924737c49626a35556f02"
+    "sha256": "d536cf21c878704f48c073f2e078e2c634791b4da72f6ecbdcff09083a334a49"
   },
-  "tight.stl": {
-    "triangles": 23012,
-    "edges": 34518,
+  "22": {
+    "triangles": 28564,
+    "edges": 42846,
     "connected_surfaces": 1,
-    "volume_mm3": 20660.670717798035,
+    "volume_mm3": 23104.63616142022,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "066f409471789bb0b57e19cba3c6bfc2b10b05963132390b72cfcd7d00ec5c1a"
+    "sha256": "42434dbfeea006f35b52c899dcef48b668f0ff4204a1bf473ec9fadc9478af63"
   },
-  "41.stl": {
-    "triangles": 38912,
-    "edges": 58368,
+  "31": {
+    "triangles": 26616,
+    "edges": 39924,
     "connected_surfaces": 1,
-    "volume_mm3": 27860.44033762369,
+    "volume_mm3": 20164.672843286327,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "99462042c48172ad0c0fd5d7f926bf0f3565f92f46d80f720764293b3d89194b"
+    "sha256": "e756db654d97e5c7fcaf4857709d912141d966ea2b0ee288f139b503ad1e90ce"
   },
-  "31.stl": {
-    "triangles": 26512,
-    "edges": 39768,
+  "41": {
+    "triangles": 39028,
+    "edges": 58542,
     "connected_surfaces": 1,
-    "volume_mm3": 20110.881911231114,
+    "volume_mm3": 27920.930698626496,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "5498d7c7e4028c2c859389f03da493a5e08b301d5000d545bc05be5efd4a24c8"
+    "sha256": "95446a2c0ae392892425d0f151803115d80d3398fe798d77175e85e362709e10"
   },
-  "22.stl": {
-    "triangles": 28510,
-    "edges": 42765,
+  "down": {
+    "triangles": 27808,
+    "edges": 41712,
     "connected_surfaces": 1,
-    "volume_mm3": 23041.230542960675,
+    "volume_mm3": 20636.071762989483,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "4f85f5b9cb8b56431b6bddfbab20e53b68c9f6a729e6c1814e7f44979b95228f"
+    "sha256": "f24bda298fe85f7259fdebea7ee4264f4e8cd62a00f225ef709ec99482673967"
   },
-  "21.stl": {
-    "triangles": 24856,
-    "edges": 37284,
+  "loose": {
+    "triangles": 28530,
+    "edges": 42795,
     "connected_surfaces": 1,
-    "volume_mm3": 16140.044638435224,
+    "volume_mm3": 22486.521679345253,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "edfa9db5fad857944436c38574c73b85fea2544ffcc9167c3265f5783c6c9b85"
+    "sha256": "af2adf0c0e97492122b53bf19f2c8c6655ca3ba19025450b8575e189318d0a18"
   },
-  "11.stl": {
-    "triangles": 23038,
-    "edges": 34557,
+  "tight": {
+    "triangles": 23074,
+    "edges": 34611,
     "connected_surfaces": 1,
-    "volume_mm3": 11137.475236836412,
+    "volume_mm3": 20675.98025673537,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "8cdd76a225da41226249c3c4b9664ea795df809add619b8f34866f6e5d375562"
+    "sha256": "8a7d54d55da120a45dd621a89c01d20b02ceec1ccdd70df4225289d5d9830f43"
   },
-  "browser-download.stl": {
-    "triangles": 25098,
-    "edges": 37647,
+  "up": {
+    "triangles": 27878,
+    "edges": 41817,
     "connected_surfaces": 1,
-    "volume_mm3": 14306.721059741049,
+    "volume_mm3": 23921.312624528233,
     "minimum_z_mm": 0.0,
     "closed": true,
     "consistent_winding": true,
-    "sha256": "072222eeb8a0ccc3e94b930aeae8b880151431c2c8260081ee9ecdf9f4bad92b"
+    "sha256": "4541e694f4f11993d823b6a3bbbb03bb80fde6fa5530e4e2a46d801d5922d594"
   }
 }

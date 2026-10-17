@@ -1,5 +1,5 @@
 {
-  "native_source": "https://github.com/thereprocase/peg/tree/1ea8f73/bench/source/gridfinity_generator_v1",
+  "native_source": "https://github.com/thereprocase/peg/tree/bff6ad1/bench/source/gridfinity_generator_v1",
   "dependency": {
     "name": "manifold-3d",
     "version": "3.2.1",
@@ -30,5 +30,5 @@
     "checks/exported-stl.json": "f7921aa8647d81e21f1596668f9d331d467b9c2c318aeb5feed3a6b0f7358a9d",
     "checks/array-limits.json": "c31b825f0d983b9b20c1c66e1d38e71a5b92f7f9d49f77d49e7fc363f4c756d4"
   },
-  "revision": "rail-web-2"
+  "revision": "frame-3"
 }
