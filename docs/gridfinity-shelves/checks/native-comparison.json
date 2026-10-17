@@ -15,6 +15,8 @@
     "pegDifference": 3.4426906837652273e-8,
     "footOverlap": 0.00006844138742351355,
     "frontCoreMissing": 0.000048635899561446645,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.000013814697265625,
     "triangles": 23026,
     "pairedEdgesAndWinding": true
   },
@@ -34,6 +36,8 @@
     "pegDifference": 3.454708179558532e-8,
     "footOverlap": 0.00018426946508499773,
     "frontCoreMissing": 0.0000789494267852143,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.000013814697265625,
     "triangles": 24934,
     "pairedEdgesAndWinding": true
   },
@@ -53,6 +57,8 @@
     "pegDifference": 3.454708179558532e-8,
     "footOverlap": 0.000505833025275271,
     "frontCoreMissing": 0.0000015139578941614216,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.00001762939453125,
     "triangles": 28564,
     "pairedEdgesAndWinding": true
   },
@@ -72,6 +78,8 @@
     "pegDifference": 3.4446587215748677e-8,
     "footOverlap": 0.00023289188462708875,
     "frontCoreMissing": 0.0001720631403752846,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.000013814697265625,
     "triangles": 26616,
     "pairedEdgesAndWinding": true
   },
@@ -91,6 +99,8 @@
     "pegDifference": 3.4250618189821107e-8,
     "footOverlap": 0.0005935941456409503,
     "frontCoreMissing": 0.0003625923372870602,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.00001762939453125,
     "triangles": 39028,
     "pairedEdgesAndWinding": true
   },
@@ -110,6 +120,8 @@
     "pegDifference": 3.4426906837652273e-8,
     "footOverlap": 32.51149212940387,
     "frontCoreMissing": 0.00019976100034545388,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.000013814697265625,
     "triangles": 23074,
     "pairedEdgesAndWinding": true
   },
@@ -129,6 +141,8 @@
     "pegDifference": 3.454708179558532e-8,
     "footOverlap": 0.0005028542995206757,
     "frontCoreMissing": 0.00043654064481013185,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.00001762939453125,
     "triangles": 27878,
     "pairedEdgesAndWinding": true
   },
@@ -148,6 +162,8 @@
     "pegDifference": 3.454708179558532e-8,
     "footOverlap": 0.0005024896289382685,
     "frontCoreMissing": 0.00036568055978640935,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.00001762939453125,
     "triangles": 27808,
     "pairedEdgesAndWinding": true
   },
@@ -167,6 +183,8 @@
     "pegDifference": 3.454708179558532e-8,
     "footOverlap": 0,
     "frontCoreMissing": 0.0000015139578941614216,
+    "frontCoreInteriorMissing": 0,
+    "coreBoundaryTolerance": 0.00001762939453125,
     "triangles": 28530,
     "pairedEdgesAndWinding": true
   }

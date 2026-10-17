@@ -83,8 +83,9 @@ export function build(module, inputs, input) {
   const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
   const coreMissing=keep(core.subtract(shape)).volume();
   // At large spans, micron-scale boundary rounding accumulates measurable volume.
-  // Prove any missing material stays within a 0.00001 mm skin, not inside the beam.
-  const coreTolerance=.00001,span=p.mounts.at(-1)-p.mounts[0];
+  // Bound the skin by the simplify tolerance plus one float32 ULP at these coordinates.
+  const coreBounds=core.boundingBox(),coreMagnitude=Math.max(1,...coreBounds.min.map(Math.abs),...coreBounds.max.map(Math.abs));
+  const coreTolerance=.00001+2**(Math.floor(Math.log2(coreMagnitude))-23),span=p.mounts.at(-1)-p.mounts[0];
   const insetCore=tilt(box([span-2*coreTolerance,coreDepth-2*coreTolerance,p.beam-2*coreTolerance],[p.mounts[0]+coreTolerance,p.front-coreDepth+coreTolerance,5.72-p.beam+coreTolerance]));
   const coreInteriorMissing=keep(insetCore.subtract(shape)).volume();
   const coreSkinVolume=span*coreDepth*p.beam-(span-2*coreTolerance)*(coreDepth-2*coreTolerance)*(p.beam-2*coreTolerance);

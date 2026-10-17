@@ -45,8 +45,8 @@ nonnegative clearance; both kernels check the full front core between outer
 peg columns. At maximum clearance the checked thickness is 1.85 mm rather than
 1.9 mm, matching the remaining rim. Earlier sliced packages are not this CAD.
 
-Browser front-core checks allow a 0.00001 mm boundary skin for float rounding
-and Boolean simplification. The entire inset core must remain contained
+Browser front-core checks allow a boundary skin of 0.00001 mm plus one float32
+ULP at the core coordinate magnitude for rounding and Boolean simplification. The entire inset core must remain contained
 (missing volume ≤0.000001 mm³), and total missing volume cannot exceed that
 skin volume. Raw and inset missing volumes are retained in the test evidence.
 Native solid checks retain their original 0.000001 mm³ containment threshold.
