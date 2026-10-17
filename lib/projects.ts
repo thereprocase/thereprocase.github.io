@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description: 'A remix of humebeam’s Kraken for the original Bambu Lab AMS, with gear-clearance pockets, removable front bars and printable underside ramps. Download P1S ASA projects with editable reinforcement, fit coupons and assembly instructions.',
     status: 'Ready for first ASA print and fitting · full-size warp and physical fit remain to be checked',
     sourceHref: 'https://github.com/thereprocase/kraken-remix-ogAMS', sitePath: '/kraken/',
-    image: { src: '/kraken/body-overview.png', alt: 'Accepted Kraken assembly with teal bodies and lifted orange front bars' },
+    image: { src: '/media/render/kraken.png', alt: 'Kraken split-body assembly with teal bodies and lifted orange front bars; actual CAD' },
     highlights: ['2 walls / 15% body infill, with dense seat, fastener and key roots.', 'Separate left and right body/bar plates; about 12h45m each.', 'Fit coupons, full assembly checklist and geometry/toolpath evidence.'],
     links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
   },
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     description: 'The current D9 P5 CAD uses bonded plenum shells, standard wire fan guards, removable H contact cassettes and a polar plug positioner. Inspect the assembly and verification records; the earlier P5 print kit is archived test history.',
     status: 'D9 P5 engineering prototype · physical fit, loads and cooling remain to be qualified',
     highlights: ['Interactive assembly viewer with current CAD and source.', 'Bonded scalloped plenum joints and serviceable fans.', 'Adjustable plug reach with a face clamp and cam support.'],
-    image: { src: '/5680-dock/assets/clamp-pivot/01-assembled-port-1.png', alt: 'Actual D9 P5 desk dock CAD with the plug positioner at the laptop port' },
+    image: { src: '/media/projects/dock.png', alt: 'Actual D9 P5 desk dock CAD with the plug positioner at the laptop port' },
     links: [{ label: 'Explore D9 P5', href: '/5680-dock/' }, { label: 'Current assembly viewer', href: '/5680-dock/desk-dock-p5.html' }, { label: 'Prototype print history', href: '/5680-dock/prints/' }],
   },
   {
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     description: 'Download the models and inspect the assembly, retention and cable-routing guides. The current Rev H D4 update repairs the fan-cover sockets. CFD startup evidence includes methods and limitations alongside the flow videos.',
     status: 'Engineering prototypes · physical fit, retention and cooling qualification remain',
     highlights: ['Minimalist and ducted designs with downloadable CAD.', 'Print orientation, fit allowances, cable routing and assembly details.', 'CFD videos and probe histories with explicit model limitations.'],
-    image: { src: '/dell-5560-wall-mount/assets/revh-duct-d4-D4-current-assembly.png', alt: 'Actual Rev H laptop wall mount CAD with the D4 duct socket correction' },
+    image: { src: '/media/projects/wall-mount.png', alt: 'Actual Rev H laptop wall mount CAD with the D4 duct socket correction' },
     links: [{ label: 'Explore the designs', href: '/dell-5560-wall-mount/' }, { label: 'Print & assembly guide', href: '/dell-5560-wall-mount/minimalist-guide.html' }, { label: 'CFD startup evidence', href: '/dell-5560-wall-mount/simulation/revh-transient/' }],
   },
   {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     status: 'C01 engineering prototype · physical load and vibration testing remain',
     highlights: ['Interactive CAD viewer and printable STL / STEP downloads.', 'Load and clearance estimates with explicit material assumptions.', 'Transmission analysis distinguishes modeled forces from audible noise.'],
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/paver-feet',
-    image: { src: '/paver-feet/featured.png', alt: 'Actual C01 TPU isolation foot CAD geometry' },
+    image: { src: '/media/render/paver.png', alt: 'C01 TPU isolation foot components separated horizontally for inspection; actual CAD' },
     links: [{ label: 'Explore C01', href: '/paver-feet/' }, { label: 'Load and clearance calculation', href: '/paver-feet/#calculation' }],
   },
   {
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     status: 'P02 engineering prototype · physical load and vibration testing remain',
     highlights: ['Interactive CAD viewer and printable STL / STEP downloads.', 'Load and clearance estimates with explicit material assumptions.', 'Transmission analysis distinguishes modeled forces from audible noise.'],
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-feet',
-    image: { src: '/p1s-feet/p02/print-layout.png', alt: 'Actual P02 TPU isolation foot CAD geometry' },
+    image: { src: '/media/render/cradle.png', alt: 'P02 squash-ball cradle and base separated horizontally for inspection; actual CAD' },
     links: [{ label: 'Explore P02', href: '/p1s-feet/' }, { label: 'Load and deflection calculation', href: '/p1s-feet/#calculation' }],
   },
   {
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     description: 'E13 combines an 11 mm angular reinforcement with preserved snap fingers and mirrored 50° chamfers. Explore the geometry, refined three-dimensional stress fields, actual slicer paths and downloadable print geometry.',
     status: 'E13 engineering prototype · physical fit, hot-load and lifetime testing remain',
     highlights: ['STEP with aligned infill helpers, plus an STL fallback.', 'Three global mesh levels and matched E12 stress comparisons.', 'Verified geometry and OrcaSlicer paths, with physical checks clearly identified.'],
-    image: { src: '/spool-wall-rack/assets/progress-exterior.png', alt: 'Finished E13 spool rack bracket with two rod seats and a straight tapered reinforcement' },
+    image: { src: '/media/render/rack.png', alt: 'Finished E13 spool rack bracket with two rod seats and a straight tapered reinforcement' },
     links: [{ label: 'Explore E13', href: '/spool-wall-rack/' }, { label: 'CAD downloads & print setup', href: '/spool-wall-rack/#downloads' }],
   },
   {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     description: 'The anchor follows the lower curve of standard quarter-inch pegboard holes. Download the functional anchor and a reference volume for attached holders, bins, and brackets. Movement checks are documented separately from physical testing.',
     status: 'Geometry-checked prototype · printed fit and load testing remain',
     highlights: ['Functional STEP geometry for integration into your designs.', 'An allowed host volume to preserve insertion and removal clearance.', 'Movement analysis and explicit print-preparation limitations.'],
-    image: { src: 'https://raw.githubusercontent.com/thereprocase/peg/main/visuals/conformal-hero.png', alt: 'Rendered conformal pegboard anchor and its curved bearing surfaces' },
+    image: { src: '/media/projects/peg.png', alt: 'Rendered conformal pegboard anchor and its curved bearing surfaces' },
     links: [{ label: 'Explore the conformal anchor', href: '/peg/' }, { label: 'Current CAD downloads', href: '/peg/#downloads' }, { label: 'Host integration & movement envelope', href: '/peg/#interface' }],
   },
   {
@@ -148,10 +148,11 @@ export const projects: Project[] = [
     description: 'Keep useful session details visible while you work. Choose from fourteen themes and monitor context and rate limits.',
     status: 'Terminal utility · Bash required',
     highlights: ['Fourteen themes, from monochrome to retro terminals.', 'Context and rate-limit indicators alongside workspace details.', 'Install, theme-switching, and uninstall instructions.'],
-    image: { src: 'https://raw.githubusercontent.com/thereprocase/claude-statusline/main/images/statusline-clean.svg', alt: 'Claude Code status line showing session and context indicators' },
+    image: { src: '/media/projects/statusline.svg', alt: 'Claude Code status line showing session and context indicators' },
     links: [{ label: 'Explore the fourteen themes', href: '/claude-statusline/' }, { label: 'Install & configure', href: '/claude-statusline/#install' }],
   },
   {
+    image: { src: '/media/bambu-bridge/dashboard.webp', alt: 'Earlier Bambu Bridge browser dashboard with synthetic demonstration data' },
     slug: 'bambu-bridge', name: 'Bambu Bridge', category: 'home-automation',
     summary: 'A local P1S printer bridge with a browser dashboard, 3D print-progress viewer, and Home Assistant integration.',
     description: 'Connect to your own printer over the LAN with its access code. The bridge shares MQTT, file-transfer, and camera connections among browser and API clients. The AGPL source release includes installation instructions, upstream notices, and firmware compatibility limits.',

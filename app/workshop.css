@@ -49,3 +49,6 @@
 @media(max-width:1150px){.io-hero-layout{grid-template-columns:1fr}.io-hero-copy{gap:18px}.io-hero-copy h1{max-width:18ch}.io-hero-figure{border-left:0;border-top:1px solid #bcbcaf}.io-hero-figure img{max-height:530px;object-fit:contain}.io-illustrations{grid-template-columns:1fr 1fr}.io-illustration:last-child{grid-column:1/-1}.io-illustration:last-child img{max-height:350px}}
 @media(max-width:650px){.io-section-heading{display:block}.io-section-heading>p{margin-top:20px}.io-illustrations,.io-study-grid{grid-template-columns:1fr}.io-illustration:last-child{grid-column:auto}.io-analysis>.io-section-heading{padding:22px}.io-hero-copy h1{font-size:42px}.io-study img{height:auto;max-height:500px}.io-hero-figure figcaption{padding:14px}.io-project-image img{height:240px}}
 @media(prefers-reduced-motion:reduce){.io-project-image img{transition:none}.io-project-image:hover img{transform:none}}
+.io-method{margin-bottom:clamp(32px,4vw,72px)!important}
+.io-method .io-project-copy{padding:clamp(22px,2.5vw,38px)}
+.io-hero-copy h1{font-size:clamp(34px,3.5vw,60px)!important;max-width:18ch}

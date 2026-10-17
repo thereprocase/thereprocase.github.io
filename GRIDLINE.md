@@ -131,3 +131,11 @@ project previews carry source URLs and hashes under `public/media/projects/`.
 
 Homepage styles live in `app/workshop.css`; shared viewer implementations and
 downloads are unchanged. The Analysis navigation link opens the homepage gallery.
+
+The network-wide polish layer is `public/gridline/polish.css`. It is copied to
+each public Pages repository and linked after page-specific styles. Legacy
+gallery pages opt into `gl-polished gl-legacy`; current Gridline pages opt into
+`gl-polished`. Model viewers, scientific figures and download bytes are preserved.
+New isolation-foot and current Peg connector illustrations use the installed
+render skill. Peg shares its connector illustration from this root site's
+`/media/render/pegs.png` to stay within its existing Pages size budget.

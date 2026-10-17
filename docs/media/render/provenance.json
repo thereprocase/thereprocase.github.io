@@ -455,6 +455,394 @@
           "triangles": 12932
         }
       ]
+    },
+    {
+      "image": "paver.png",
+      "sha256": "8c44c188686042dbcea915b7446b86a7da8d499443b07797a12715ec4fd27e1a",
+      "scene": {
+        "title": "TPU / paver isolation",
+        "subtitle": "Actual CAD \u00b7 components separated horizontally for inspection",
+        "caption": "Engineering prototype \u00b7 physical fit, loading and attenuation require testing",
+        "camera": {
+          "yaw": -0.7,
+          "pitch": 0.7,
+          "zoom": 0.72
+        },
+        "parts": [
+          {
+            "mesh": "floating-pad.stl",
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "mesh": "base.stl",
+            "color": [
+              0.98,
+              0.63,
+              0.28
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                100
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "floating-pad.stl",
+          "sha256": "be5f57707bb5193d23e566ecb32e7746ed850db7d005784bd600688c20191d4f",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 1452,
+          "triangles": 2916
+        },
+        {
+          "mesh": "base.stl",
+          "sha256": "4938683ae6ded883b6bdfdab95a2b22db69c230c671c235646042b8a1e3444dd",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              100.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 676,
+          "triangles": 1364
+        }
+      ]
+    },
+    {
+      "image": "cradle.png",
+      "sha256": "1359181a333a6e3f2af1bf4d63b6fc1ae040706e087763ee54f4e3f3ddaa8d01",
+      "scene": {
+        "title": "P02 / squash-ball cradle",
+        "subtitle": "Actual CAD \u00b7 components separated horizontally for inspection",
+        "caption": "Engineering prototype \u00b7 physical fit, loading and attenuation require testing",
+        "camera": {
+          "yaw": -0.7,
+          "pitch": 0.7,
+          "zoom": 0.72
+        },
+        "parts": [
+          {
+            "mesh": "cradle.stl",
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "mesh": "base.stl",
+            "color": [
+              0.98,
+              0.63,
+              0.28
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                100
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "cradle.stl",
+          "sha256": "5301d3794ef3a32d46ffd6d6befa8bac4662db188e769a96817271c4a3965fa0",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 4941,
+          "triangles": 9902
+        },
+        {
+          "mesh": "base.stl",
+          "sha256": "b8e08ce4174a8a6215fe3b034d238b2c6b62e6fac22fe2092107eb7aabbb3670",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              100.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 1279,
+          "triangles": 2566
+        }
+      ]
+    },
+    {
+      "image": "pegs.png",
+      "source": {
+        "source": "https://github.com/thereprocase/peg/blob/main/docs/pegs/pair-upright.glb",
+        "sha256": "6f5e5883fe6aef6e25b995be1058ab9de513e0cd3b01cf44c325512b2f5431e8"
+      },
+      "sha256": "165ad51d3b855e8d8e5c3c625a1367e092b1018b08aebbd27653fcc190dcc3a1",
+      "scene": {
+        "title": "PEG / current-fit connectors",
+        "subtitle": "Hook + upright hoop \u00b7 joining nubs retained",
+        "caption": "Actual published display geometry \u00b7 physical fit and loading require testing",
+        "camera": {
+          "yaw": -0.85,
+          "pitch": 0.5,
+          "zoom": 0.75
+        },
+        "parts": [
+          {
+            "mesh": "part-0.npz",
+            "color": [
+              0.36,
+              0.64,
+              0.69
+            ],
+            "transform": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "mesh": "part-0.npz",
+          "sha256": "e6ee653b53ed9c1fbef1d39f23071bed0c54802f86b09a16fc3f4a66ac4aa340",
+          "transform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 15160,
+          "triangles": 30316
+        }
+      ]
     }
   ]
 }
