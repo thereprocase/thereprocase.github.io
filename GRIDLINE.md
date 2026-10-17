@@ -120,8 +120,9 @@ entry pointing to the Rev H D4 correction and existing M1 assembly guide.
 
 ## 16 October 2026: illustrated workshop
 
-The homepage now leads with actual Kraken CAD, a render gallery, the engineering
-studies and image cards for all 14 projects. The globally installed `render`
+The homepage leads with FDM helper bodies and local reinforcement, followed by
+STL reconstruction, FEA/toolpath comparisons, a render gallery and image cards
+for all 14 projects. The detailed method is at `/fdm-reinforcement/`. The globally installed `render`
 skill generated the new Kraken, spoke gear and E13 rack PNGs. Input mesh hashes,
 camera settings and display transforms are in `public/media/render/provenance.json`.
 No source geometry was changed. Original FEA figures, color scales and limitations
@@ -139,3 +140,7 @@ gallery pages opt into `gl-polished gl-legacy`; current Gridline pages opt into
 New isolation-foot and current Peg connector illustrations use the installed
 render skill. Peg shares its connector illustration from this root site's
 `/media/render/pegs.png` to stay within its existing Pages size budget.
+
+Editorial rule: **no slogans**. Use descriptive headings and concrete geometry,
+workflow, results and evidence. Give STL reconstruction and local infill helpers
+prominence; explain their practical novelty without unsupported priority claims.
