@@ -60,7 +60,7 @@ export const projects: Project[] = [
     slug: 'fillaprint', name: 'Fillaprint', category: 'cad-tools',
     summary: 'Nominal strokes and minimum clear gaps are both two extrusion widths.',
     description: 'Three TrueType families designed around extrusion width. Try your own lettering, calculate a reference print size, and download proportional, tabular-figure, and monospace fonts.',
-    status: 'v0.1.0 beta · SIL Open Font License 1.1 · commercial use welcome',
+    status: 'v0.1.3 beta · SIL Open Font License 1.1 · commercial use welcome',
     highlights: ['A live type tester using the actual font files.', 'Print-size calculator based on extrusion line width.', 'Three downloadable font families with broad Latin coverage.'],
     sourceHref: 'https://github.com/thereprocase/double-bead',
     image: { src: '/fillaprint/images/hero.png', alt: 'Fillaprint letterforms and measurement symbols rendered from the font' },

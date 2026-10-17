@@ -144,3 +144,6 @@ render skill. Peg shares its connector illustration from this root site's
 Editorial rule: **no slogans**. Use descriptive headings and concrete geometry,
 workflow, results and evidence. Give STL reconstruction and local infill helpers
 prominence; explain their practical novelty without unsupported priority claims.
+
+Fillaprint has a dedicated front-page feature immediately after the lead, with
+actual font specimens, the two-extrusion-width design rule, type tester and downloads.
