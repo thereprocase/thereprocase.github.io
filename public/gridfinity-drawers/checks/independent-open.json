@@ -1,0 +1,47 @@
+[
+  {
+    "file": "tile-1-1.stl",
+    "triangles": 384,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-1-2.stl",
+    "triangles": 784,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-1-3.stl",
+    "triangles": 406,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-2-1.stl",
+    "triangles": 784,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-2-2.stl",
+    "triangles": 1524,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-2-3.stl",
+    "triangles": 802,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-3-1.stl",
+    "triangles": 408,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-3-2.stl",
+    "triangles": 802,
+    "closed_oriented": true
+  },
+  {
+    "file": "tile-3-3.stl",
+    "triangles": 410,
+    "closed_oriented": true
+  }
+]

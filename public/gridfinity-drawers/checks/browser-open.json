@@ -1,0 +1,12 @@
+{
+  "closedDefault": true,
+  "openVolumeLess": true,
+  "closedVolume": 20954.770302714736,
+  "openVolume": 16741.45802399182,
+  "modeInvalidatesDownloads": true,
+  "openZIP": true,
+  "openRecipeReload": true,
+  "legacyRecipeClosed": true,
+  "mobile320and390NoOverflow": true,
+  "errors": []
+}

@@ -15,17 +15,30 @@ Independent X/Y anchors accept centered placement, signed center offsets,
 near/far edge padding, or edge snaps. Snaps retain a 2 mm minimum rim outside
 the nominal grid boundary. Padding is not measured to the curved pocket edge.
 
-Default: 300 × 400 mm, 6 × 8 cells, 1.2 mm continuous floor and 5 mm seats.
+Default: 300 × 400 mm, 6 × 8 cells, 1.2 mm floor thickness and 5 mm seats. Closed is the default.
 The profile follows the reviewed pegboard generator; reference foot checks
 allow only 0.003 mm³ numerical intersection. Additional seat clearance is
 separate from drawer padding and joint adjustments.
+
+## Bottom styles
+
+Choose **Closed** for a continuous floor or **Open** for rounded 32.5 mm windows
+through each cell floor. Open retains a 2 mm ledge around the lower seat and at
+least 2.4 mm of floor on either side of the shaped glue faces. The seat tapers,
+outer frame, overall height and 42 mm pitch stay the same. Cuts through a cell
+may divide its window with solid seam strips. Drawer-edge padding remains solid.
+The drawer supports the tiles; test physical seating and glued seams before use.
+Every tile must remain one connected, watertight solid in either mode.
+
+Recipes save the selection. Existing recipes without a bottom field load Closed.
+STL downloads are watertight solids even when the floor has open windows.
 
 ## Tiling and CA joints
 
 Automatic tiling fits the specified usable print area in the displayed X/Y
 orientation. Exclude purge lines, brim and bed exclusions yourself. Manual
 cuts are distances from the left/front, separated by at least 12 mm. Cuts may
-cross seats: the continuous floor connects each tile. Oversized manual tiles
+cross seats: closed floors or solid floor strips at glue faces keep tiles connected. Oversized manual tiles
 are marked. Limits: 256 cells and 64 tiles per generation.
 
 Internal mating faces form a shallow V through Z: zero lateral excursion at
@@ -69,3 +82,5 @@ from actual default generator output, with tiles separated for visibility.
 The project uses the existing locally vendored Manifold and Three.js assets
 and their license files from the shelf and P1S-foot pages. Gridfinity reference:
 https://github.com/kennetek/gridfinity-rebuilt-openscad .
+
+Open-bottom geometry checks: `node scripts/check-drawer-open-bottoms.mjs /tmp/drawer-open-checks`. [Open-bottom evidence](checks/open-bottoms.json).

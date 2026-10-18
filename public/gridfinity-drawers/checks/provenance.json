@@ -9,19 +9,24 @@
   "sources": [
     {
       "path": "app.js",
-      "sha256": "3fa6043e2dfe3712e05947d779263aaea1580d765f665213e4f7b845f327c743"
+      "sha256": "fdc4fbd671d2fbdec4b14469571896df01a3156a8c07357541b01ebdee7f36f5"
     },
     {
       "path": "kernel.js",
-      "sha256": "1638c4c7680fc4bc20c71ddc3e84fe4086a5867fa7b149ecbff8db2fdb6f2d39"
+      "sha256": "d4be2b7deadda601539512d93e48d58244e933b5a1a6d446408c2414e5ef169d"
     },
     {
       "path": "worker.js",
-      "sha256": "e6ed1afe3335739ce69c645dd810007c7b375c4c8364adc04f4fdaae345c0f9d"
+      "sha256": "caaabbfb7b88ca852c7a0966208429060cd4d2b214d64557e7c935247d8eb80b"
     },
     {
       "path": "zip.js",
       "sha256": "7347c352349e55076b21eefcd305daf53243ec326acdc8855908e26feab63ed8"
     }
-  ]
+  ],
+  "revision": "Open/Closed bottom options",
+  "bottom_comparison": "bottom-options.png, actual generated 90x90 mm center-cut tiles",
+  "open_checks": "open-bottoms.json",
+  "open_browser_checks": "browser-open.json",
+  "closed_preservation": "closed-preservation.json"
 }

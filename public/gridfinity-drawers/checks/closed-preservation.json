@@ -1,0 +1,32 @@
+[
+  {
+    "tile": "tile-1-1",
+    "byteIdentical": true,
+    "sha256": "fed8c827e79e5529ed220c83069a9c61d79b017fd90232b33d4bc420406e559a"
+  },
+  {
+    "tile": "tile-1-2",
+    "byteIdentical": true,
+    "sha256": "0e871b00c17a6423d85cc7aa704d03ad6212e2c47b9edac3a873d8ac8257ee0b"
+  },
+  {
+    "tile": "tile-1-3",
+    "byteIdentical": true,
+    "sha256": "7088055b1d0052c9861c058d66fa80f79022c76a432797f8aed0343ca9dbb763"
+  },
+  {
+    "tile": "tile-2-1",
+    "byteIdentical": true,
+    "sha256": "9bf36bb50128311152c3dbe44ce30145e5ee8947c820c149a8dcf0c4b4eed52a"
+  },
+  {
+    "tile": "tile-2-2",
+    "byteIdentical": true,
+    "sha256": "821c71e4f55261be5616d6eaa9b9f39e58ac0d56aa4d4305d4b561c5235948fb"
+  },
+  {
+    "tile": "tile-2-3",
+    "byteIdentical": true,
+    "sha256": "9a68b90fc3e75708f246925b1d75482069b3307e294254fe2fa49d9c8fd7c919"
+  }
+]

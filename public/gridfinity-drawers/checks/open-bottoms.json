@@ -1,0 +1,72 @@
+{
+  "cases": [
+    {
+      "name": "single",
+      "tiles": 1,
+      "openVolume": 4545.777066714298,
+      "closedVolume": 5811.658145747305,
+      "savedPercent": 21.78175397256149,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0,
+      "footOverlap": 0.000054449200983989996,
+      "pass": true
+    },
+    {
+      "name": "cross-cell",
+      "tiles": 9,
+      "openVolume": 17478.652859956394,
+      "closedVolume": 20919.729107993404,
+      "savedPercent": 16.448952231997016,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0,
+      "footOverlap": 0.0002588765373260958,
+      "pass": true
+    },
+    {
+      "name": "minimum",
+      "tiles": 9,
+      "openVolume": 14879.869210614816,
+      "closedVolume": 16989.119982637603,
+      "savedPercent": 12.415303289272083,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0.000001001494519847999,
+      "footOverlap": 0,
+      "pass": true
+    },
+    {
+      "name": "asymmetric",
+      "tiles": 6,
+      "openVolume": 88778.73075389347,
+      "closedVolume": 94895.89315902785,
+      "savedPercent": 6.446182444253045,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0,
+      "footOverlap": 0.00036765691157385167,
+      "pass": true
+    },
+    {
+      "name": "automatic",
+      "tiles": 6,
+      "openVolume": 54039.57569609635,
+      "closedVolume": 68340.9486144117,
+      "savedPercent": 20.926506301522842,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0,
+      "footOverlap": 0.0008823686955819975,
+      "pass": true
+    },
+    {
+      "name": "default",
+      "tiles": 4,
+      "openVolume": 332041.7118691095,
+      "closedVolume": 392804.0035943942,
+      "savedPercent": 15.468857539453007,
+      "maxSeamLandMissing": 0,
+      "seatMaterialRemovedAboveFloor": 0,
+      "footOverlap": 0.0010215900724612423,
+      "pass": true
+    }
+  ],
+  "closedDefault": true,
+  "scope": "Open/closed volume, connected closed meshes, automatic bed fit, shaped seam lands, original seat preservation and reference foot; physical fit/glue untested"
+}
