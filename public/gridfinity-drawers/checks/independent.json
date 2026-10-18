@@ -1,0 +1,26 @@
+{
+  "tile-1-1.stl": {
+    "triangles": 2474,
+    "closed_oriented_edges": true
+  },
+  "tile-1-2.stl": {
+    "triangles": 1794,
+    "closed_oriented_edges": true
+  },
+  "tile-1-3.stl": {
+    "triangles": 2700,
+    "closed_oriented_edges": true
+  },
+  "tile-2-1.stl": {
+    "triangles": 2614,
+    "closed_oriented_edges": true
+  },
+  "tile-2-2.stl": {
+    "triangles": 1818,
+    "closed_oriented_edges": true
+  },
+  "tile-2-3.stl": {
+    "triangles": 2724,
+    "closed_oriented_edges": true
+  }
+}

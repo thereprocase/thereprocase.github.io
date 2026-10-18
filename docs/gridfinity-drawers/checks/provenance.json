@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-18",
+  "illustration": "overview.png",
+  "method": "Render of actual default generator STL tiles; display-only 14 mm separation. No AI geometry.",
+  "geometry_checks": "geometry.json",
+  "independent_stl_checks": "independent.json",
+  "physical_fit": "untested",
+  "ca_gap": "provisional 0.10 mm horizontal",
+  "sources": [
+    {
+      "path": "app.js",
+      "sha256": "3fa6043e2dfe3712e05947d779263aaea1580d765f665213e4f7b845f327c743"
+    },
+    {
+      "path": "kernel.js",
+      "sha256": "1638c4c7680fc4bc20c71ddc3e84fe4086a5867fa7b149ecbff8db2fdb6f2d39"
+    },
+    {
+      "path": "worker.js",
+      "sha256": "e6ed1afe3335739ce69c645dd810007c7b375c4c8364adc04f4fdaae345c0f9d"
+    },
+    {
+      "path": "zip.js",
+      "sha256": "7347c352349e55076b21eefcd305daf53243ec326acdc8855908e26feab63ed8"
+    }
+  ]
+}

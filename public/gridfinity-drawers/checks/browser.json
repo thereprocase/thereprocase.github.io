@@ -1,0 +1,20 @@
+{
+  "default": "Outline\n300 \u00d7 400 mm\nGrid\n6 \u00d7 8 \u00b7 42 mm pitch\nHeight\n6.20 mm\nTiles\n4 \u00b7 2 across \u00d7 2 deep\nX cuts\n150.00\nY cuts\n200.00\nSolid volume\n392.8 cm\u00b3\nReference-foot overlap\n1.02e-3 mm\u00b3",
+  "zip_entries": [
+    "drawer-tile-1-1.stl",
+    "drawer-tile-1-2.stl",
+    "drawer-tile-2-1.stl",
+    "drawer-tile-2-2.stl",
+    "recipe.json",
+    "ASSEMBLY.txt"
+  ],
+  "orbit_changed": true,
+  "snap_left": true,
+  "manual_offset": "Outline\n200 \u00d7 140 mm\nGrid\n4 \u00d7 3 \u00b7 42 mm pitch\nHeight\n6.20 mm\nTiles\n6 \u00b7 3 across \u00d7 2 deep\nX cuts\n80.00, 140.00\nY cuts\n70.00\nSolid volume\n85.8 cm\u00b3\nReference-foot overlap\n6.50e-4 mm\u00b3",
+  "recipe_roundtrip": true,
+  "invalid_geometry_blocked": true,
+  "cancel": true,
+  "overflow_390": false,
+  "overflow_320": false,
+  "errors": []
+}

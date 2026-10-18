@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "name": "small",
+      "tiles": 1,
+      "footOverlap": 0.0002588765373260958,
+      "triangles": 4220,
+      "milliseconds": 725,
+      "pass": true
+    },
+    {
+      "name": "default",
+      "tiles": 4,
+      "footOverlap": 0.0010215900724612423,
+      "triangles": 53760,
+      "milliseconds": 10263,
+      "pass": true
+    },
+    {
+      "name": "manual",
+      "tiles": 6,
+      "footOverlap": 0.0008823686955819975,
+      "triangles": 14124,
+      "milliseconds": 2114,
+      "pass": true
+    },
+    {
+      "name": "X-positive-stock",
+      "tiles": 2,
+      "footOverlap": 0.0002588765373260958,
+      "triangles": 4348,
+      "milliseconds": 646,
+      "pass": true
+    },
+    {
+      "name": "Y-negative-stock",
+      "tiles": 2,
+      "footOverlap": 0.0002588765373260958,
+      "triangles": 4390,
+      "milliseconds": 620,
+      "pass": true
+    },
+    {
+      "name": "offset",
+      "tiles": 1,
+      "footOverlap": 0.00036765690713682134,
+      "triangles": 6278,
+      "milliseconds": 984,
+      "pass": true
+    },
+    {
+      "name": "far-edge",
+      "tiles": 1,
+      "footOverlap": 0.0007396059280886048,
+      "triangles": 9604,
+      "milliseconds": 1483,
+      "pass": true
+    },
+    {
+      "name": "minimum-floor",
+      "tiles": 4,
+      "footOverlap": 0,
+      "triangles": 4492,
+      "milliseconds": 548,
+      "pass": true
+    },
+    {
+      "name": "single-cell",
+      "tiles": 1,
+      "footOverlap": 0.00005444920098404508,
+      "triangles": 1064,
+      "milliseconds": 149,
+      "pass": true
+    },
+    {
+      "name": "automatic-small-bed",
+      "tiles": 6,
+      "footOverlap": 0.0008823686955819975,
+      "triangles": 13742,
+      "milliseconds": 2170,
+      "pass": true
+    },
+    {
+      "name": "manual-oversize",
+      "tiles": 2,
+      "footOverlap": 0.0006384487321155672,
+      "triangles": 13344,
+      "milliseconds": 2155,
+      "pass": true
+    }
+  ],
+  "assemblyCheck": {
+    "extraVolume": 0.00007128337700134273,
+    "designedSeamVoidVolume": 111.53672614816338,
+    "onePieceVolume": 20989.83422238541
+  },
+  "parameterRejections": 8,
+  "scope": "Manifold closed-connected output, independent mesh re-entry, reference-foot collision gate, automatic bed fit, deliberate manual oversize, nominal reassembly containment and designed seam void; no physical fit or glue-strength claim"
+}

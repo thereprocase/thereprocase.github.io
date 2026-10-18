@@ -1,0 +1,12 @@
+{
+  "schema": "gridfinity-drawer-1",
+  "parameters": {
+    "width": 90,
+    "depth": 46,
+    "columns": 2,
+    "rows": 1,
+    "tiling": "manual",
+    "cutsX": "45",
+    "cutsY": ""
+  }
+}
