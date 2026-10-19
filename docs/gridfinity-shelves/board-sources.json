@@ -1,5 +1,5 @@
 {
-  "revision": "boards-2",
+  "revision": "boards-3",
   "gridfinity_pitch_mm": 42,
   "systems": {
     "original": {
@@ -11,7 +11,7 @@
       ]
     },
     "skadis": {
-      "description": "IKEA SKÅDIS staggered-slot interface",
+      "description": "IKEA SK\u00c5DIS staggered-slot interface",
       "status": "Modeled from reference dimensions; not print tested",
       "reference": "https://github.com/jmylchreest/openscad-models/tree/edeea813c1f7941eea1e2d8fe9e1f844de0a227b/libraries/ikea-skadis",
       "author": "John Mylchreest",
@@ -221,7 +221,9 @@
         "https://multibuild.io/",
         "https://thangs.com/designer/MultiBuild/3d-model/Drop-In%20Nut%20Snap%20-%20M3-1030686"
       ],
-      "external_connector_license": "Creator license applies to the separately downloaded insert: https://multibuild.io/license"
+      "external_connector_license": "Creator license applies to the separately downloaded insert: https://multibuild.io/license",
+      "forward_head_access_mm": 10,
+      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel."
     },
     "hsw": {
       "description": "Honeycomb Storage Wall M3 insert mounts",
@@ -241,8 +243,10 @@
       "check_scope": "Our screw clearance, bearing material, board-grid positions, closed connected exports and browser operation. External insert snap fit is not tested.",
       "grid_reference": "https://github.com/geru/3d-scad-hsw-customizable/blob/b606f2e8427e7648748fdc9833f6621884e78d2e/custom-honeycomb-wall-v2.3.scad",
       "grid_reference_credit": "Xander, EdwinEesting and geru; CC BY 4.0",
-      "grid_derivation": "20 mm inner flats + 2 × 1.8 mm walls = 23.6 mm vertical pitch. Alternate hex columns are 23.6 × sqrt(3) mm apart horizontally.",
-      "external_connector_reference": "https://github.com/elentok/honeycomb-wall/tree/main/originals (insert-m3.stl; reference only, not redistributed)"
+      "grid_derivation": "20 mm inner flats + 2 \u00d7 1.8 mm walls = 23.6 mm vertical pitch. Alternate hex columns are 23.6 \u00d7 sqrt(3) mm apart horizontally.",
+      "external_connector_reference": "https://github.com/elentok/honeycomb-wall/tree/main/originals (insert-m3.stl; reference only, not redistributed)",
+      "forward_head_access_mm": 10,
+      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel."
     }
   },
   "export_checks": {

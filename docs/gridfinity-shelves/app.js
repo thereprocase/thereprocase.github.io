@@ -1,7 +1,7 @@
-import {boards,boardDefaults,boardSettings} from './boards.js?v=boards-2';
+import {boards,boardDefaults,boardSettings} from './boards.js?v=boards-3';
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
-import {defaults,parameters,binarySTL} from './kernel.js?v=boards-2';
+import {defaults,parameters,binarySTL} from './kernel.js?v=boards-3';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false;
 let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true});}catch(e){$('viewer-note').textContent='3D rendering is unavailable in this browser. Use the native CAD generator linked below.';$('status').textContent='WebGL is required for this interactive preview.';$('generate').disabled=true;$('generate-preview').disabled=true;throw e;}renderer.setPixelRatio(Math.min(devicePixelRatio,2));host.append(renderer.domElement);
@@ -28,7 +28,7 @@ function show(r){result=r;viewResult=r;if(mesh){scene.remove(mesh);mesh.geometry
 }
 function setBusy(b){form.elements.board_system.disabled=b;$('coupon').disabled=b;$('generate-preview').disabled=b;$('generate-preview').textContent=b?'Generating…':'Generate preview';$('generate').disabled=b;$('cancel').disabled=!b;}
 function generate(kind='shelf'){if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
- worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent='Generating model…';$('viewer-note').hidden=!!mesh;worker=new Worker('./worker.js?v=boards-2',{type:'module'});
+ worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent='Generating model…';$('viewer-note').hidden=!!mesh;worker=new Worker('./worker.js?v=boards-3',{type:'module'});
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('viewer-note').textContent='No new model generated. See the error below.';$('viewer-note').hidden=!!mesh;$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('viewer-note').textContent='Geometry engine failed to load.';$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage({parameters:p,kind});
 }
@@ -51,7 +51,7 @@ function updateBoardUI(){
  $('board-status').textContent=original?'PF02 upper hooks and PF07 lower hoops from the peg repository.':'Modeled from reference dimensions; not print tested. '+(bolted?'Uses the original board’s M3 inserts, connected with screws.':skadis?'Adapted from John Mylchreest’s MIT-licensed connector library.':'L-hook and locating pin adapted from Eugene Vasenev’s MIT-licensed model.');
  $('mount-hint').textContent=original?'Two rows is the default. Taller mounts add lower hoops and bearing pegs between.':skadis?'Hooks follow the staggered SKÅDIS slots: 40 mm across a row, 20 mm between alternating rows. Narrow shelves skip rows that cannot fit a hook inside the backplate.':`Mounts use ${Number(b.pitchX.toFixed(4))} mm across and ${b.pitchZ} mm down. `+(bolted?'M3 screws attach the backplate to the board inserts. ':'An upper L-hook retains the shelf; the lower pins locate it. ')+(id==='wall_control'?'This preset uses the round holes, not the proprietary slots. Default panel thickness is a provisional 0.9 mm; measure yours.':id==='bott_perfo'?'Rounded pins fit the square perforations. These are our hooks, not the Perfo locking-clip interface. The 0.9 mm panel thickness is provisional; measure yours.':'');
  $('coupon-hint').textContent=original?'The coupon uses two holes one inch apart.':skadis?'The coupon uses two slots, offset 20 mm horizontally and vertically. Both have drop-in retaining tails.':bolted?`The coupon has two M3 screw mounts ${b.pitchZ} mm apart.`:`The coupon uses an L-hook and lower pin in two holes ${b.pitchZ} mm apart.`;
- $('adapter-note').textContent=id==='multiboard'?'Print the official Drop-In Nut Snap — M3, add an M3 nut to each snap, then fasten through this backplate. Seat the backplate on the snap faces and choose screw length for full nut engagement.':id==='hsw'?'Use the original HSW insert-m3 with its M3 hardware. The backplate seats on the insert faces. Mount columns use every other hex column; vertical holes remain 23.6 mm apart. Choose screw length for your inserts.':'';$('adapter-link').href=b.insert??'https://multibuild.io/parts';
+ $('adapter-note').textContent=id==='multiboard'?'Print the official Drop-In Nut Snap — M3, add an M3 nut to each snap, then fasten through this backplate. Seat the backplate on the snap faces and choose screw length for full nut engagement. Use a short L-shaped Allen key in the screw-access pockets.':id==='hsw'?'Use the original HSW insert-m3 with its M3 hardware. The backplate seats on the insert faces. Mount columns use every other hex column; vertical holes remain 23.6 mm apart. Choose screw length for your inserts. Use a short L-shaped Allen key in the screw-access pockets.':'';$('adapter-link').href=b.insert??'https://multibuild.io/parts';
  $('native-source-note').hidden=!original;$('board-source-note').hidden=original;
 }
 form.elements.board_system.addEventListener('change',updateBoardUI);updateBoardUI();
@@ -59,10 +59,10 @@ function feedback(){
  let p;try{p=result?.parameters??values();}catch{p={board_system:form.elements.board_system.value};}
  const recipe=Object.fromEntries(Object.keys(defaults).map(k=>[k,p[k]]));
  const part=result?(result.kind==='coupon'?'Fit coupon':'Shelf'):'Settings only';
- const text=`Board: ${boards[p.board_system]?.name??p.board_system}\nPart: ${part}\nModel revision: boards-2\n\nFit / print observations:\n${$('feedback-notes').value}\n\nMeasured board dimensions (mm):\n${$('feedback-measurements').value}\n\nParameters:\n\`\`\`json\n${JSON.stringify(recipe,null,2)}\n\`\`\`\n`;
+ const text=`Board: ${boards[p.board_system]?.name??p.board_system}\nPart: ${part}\nModel revision: boards-3\n\nFit / print observations:\n${$('feedback-notes').value}\n\nMeasured board dimensions (mm):\n${$('feedback-measurements').value}\n\nParameters:\n\`\`\`json\n${JSON.stringify(recipe,null,2)}\n\`\`\`\n`;
  return {recipe,text,part};
 }
 $('feedback-open').onclick=()=>{const {text}=feedback();const url=new URL('https://github.com/thereprocase/thereprocase.github.io/issues/new');url.searchParams.set('title','Gridfinity board fit: '+boards[form.elements.board_system.value].name);url.searchParams.set('body',text);window.open(url.href,'_blank','noopener');};
-$('feedback-save').onclick=()=>{const {recipe,text,part}=feedback();download(JSON.stringify({date:new Date().toISOString(),revision:'boards-2',part,parameters:recipe,feedback:text},null,2)+'\n','application/json','gridfinity-board-feedback.json');};
+$('feedback-save').onclick=()=>{const {recipe,text,part}=feedback();download(JSON.stringify({date:new Date().toISOString(),revision:'boards-3',part,parameters:recipe,feedback:text},null,2)+'\n','application/json','gridfinity-board-feedback.json');};
 new ResizeObserver(()=>{renderer.setSize(host.clientWidth,host.clientHeight);camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();}).observe(host);
 renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});reset();generate();

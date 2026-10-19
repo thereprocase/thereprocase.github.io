@@ -74,5 +74,11 @@
     }
   ],
   "originalNativeRecipe": true,
-  "errors": []
+  "errors": [],
+  "additionalChecks": {
+    "invalidArrayDoesNotBlockCoupon": true,
+    "editsDisableStaleDownloads": true,
+    "cancelAndRegenerate": true,
+    "selectedBoardFitReset": true
+  }
 }

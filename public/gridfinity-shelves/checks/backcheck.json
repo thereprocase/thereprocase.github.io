@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-19",
+  "revision": "boards-3",
+  "scope": "Gridfinity shelf generator and all nine board-system presets",
+  "finding": {
+    "issue": "Gussets could obstruct local screw-head/Allen-key access on bolted systems",
+    "fix": "Extend each head recess forward by 10 mm through crossing gussets",
+    "regression": "Every bolted mount checks the 10 mm screw-head approach volume, fastener intrusion and remaining bearing material",
+    "limit": "Local pocket for a short L-shaped Allen key; not a full-length driver channel or a physical assembly test"
+  },
+  "unchanged": [
+    "42 mm Gridfinity grid",
+    "original PF02/PF07 geometry",
+    "round-hole and SKADIS connectors"
+  ],
+  "browserChecks": "board-browser.json",
+  "boltedChecks": "bolted-boards.json",
+  "sourceManifestChecked": true,
+  "publishedBaselineAssetsVerified": 46
+}

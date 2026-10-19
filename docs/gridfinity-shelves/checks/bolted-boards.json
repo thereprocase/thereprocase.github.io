@@ -7,11 +7,12 @@
       "config": {
         "columns": 1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00006844138736079428
+      "maxFootOverlap": 0.00006716608579894606
     },
     {
       "board_system": "multiboard",
@@ -19,11 +20,12 @@
       "config": {
         "columns": 2
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917636624
+      "maxFootOverlap": 0.00009163698881155778
     },
     {
       "board_system": "multiboard",
@@ -34,6 +36,7 @@
         "angle": 5,
         "mount_rows": 4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 5.986481577957431e-8,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
@@ -48,11 +51,12 @@
         "angle": -30,
         "mount_rows": 3
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.000010934056843540245,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009140462708758086
+      "maxFootOverlap": 0.00008953149474097046
     },
     {
       "board_system": "multiboard",
@@ -62,11 +66,12 @@
         "mount_rows": 1,
         "backplate": false
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.0000684413873884561
+      "maxFootOverlap": 0.00006716608582639115
     },
     {
       "board_system": "multiboard",
@@ -77,11 +82,12 @@
         "head_clearance": 0.1,
         "counterbore_depth": 3.1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 6.546621205303347e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.3000000000000003,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917636624
+      "maxFootOverlap": 0.00009167201745997338
     },
     {
       "board_system": "multiboard",
@@ -92,16 +98,18 @@
         "head_clearance": 0.5,
         "counterbore_depth": 3.4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.0000011083966760174536,
       "missingBearing": 0,
       "remainingBackplate": 2.0000000000000004,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917636624
+      "maxFootOverlap": 0.00009161661223662896
     },
     {
       "board_system": "multiboard",
       "kind": "coupon",
       "fit": {},
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2
@@ -114,6 +122,7 @@
         "head_clearance": 0.1,
         "counterbore_depth": 3.1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 6.546621565907572e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.3000000000000003
@@ -126,6 +135,7 @@
         "head_clearance": 0.5,
         "counterbore_depth": 3.4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.0000011083967570848622,
       "missingBearing": 0,
       "remainingBackplate": 2.0000000000000004
@@ -138,11 +148,12 @@
         "angle": 5,
         "mount_rows": 4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 2.998201056374726e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.0007008851778057609
+      "maxFootOverlap": 0.0006998960370704599
     },
     {
       "board_system": "hsw",
@@ -150,11 +161,12 @@
       "config": {
         "columns": 1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.0000684413873608597
+      "maxFootOverlap": 0.00006782074368560752
     },
     {
       "board_system": "hsw",
@@ -162,11 +174,12 @@
       "config": {
         "columns": 2
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917630482
+      "maxFootOverlap": 0.00009159171550177873
     },
     {
       "board_system": "hsw",
@@ -177,6 +190,7 @@
         "angle": 5,
         "mount_rows": 4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 1.2711400345802049e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
@@ -191,11 +205,12 @@
         "angle": -30,
         "mount_rows": 3
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.000012412392420969447,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009140462708742963
+      "maxFootOverlap": 0.00008936525085802363
     },
     {
       "board_system": "hsw",
@@ -205,11 +220,12 @@
         "mount_rows": 1,
         "backplate": false
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2,
       "pegDelta": 0,
-      "maxFootOverlap": 0.0000684413873884561
+      "maxFootOverlap": 0.00006782074371298188
     },
     {
       "board_system": "hsw",
@@ -220,11 +236,12 @@
         "head_clearance": 0.1,
         "counterbore_depth": 3.1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 6.546621853944707e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.3000000000000003,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917630482
+      "maxFootOverlap": 0.00009166177285491645
     },
     {
       "board_system": "hsw",
@@ -235,16 +252,18 @@
         "head_clearance": 0.5,
         "counterbore_depth": 3.4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.0000011083968325207353,
       "missingBearing": 0,
       "remainingBackplate": 2.0000000000000004,
       "pegDelta": 0,
-      "maxFootOverlap": 0.00009221235917630482
+      "maxFootOverlap": 0.0000915509624622794
     },
     {
       "board_system": "hsw",
       "kind": "coupon",
       "fit": {},
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0,
       "missingBearing": 0,
       "remainingBackplate": 2.2
@@ -257,6 +276,7 @@
         "head_clearance": 0.1,
         "counterbore_depth": 3.1
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 6.546621687420234e-7,
       "missingBearing": 0,
       "remainingBackplate": 2.3000000000000003
@@ -269,6 +289,7 @@
         "head_clearance": 0.5,
         "counterbore_depth": 3.4
       },
+      "approachIntrusion": 0,
       "fastenerIntrusion": 0.0000011083967937378751,
       "missingBearing": 0,
       "remainingBackplate": 2.0000000000000004

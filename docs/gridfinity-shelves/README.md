@@ -185,3 +185,7 @@ board exports can simplify that fan in the solid kernel using a tolerance tied
 to coordinate precision. Symmetric material change is limited to 0.001%, the
 part must remain one solid, and the same strict edge check runs again. The
 original system's export path is unchanged.
+
+### Screw access
+
+Multiboard and HSW mounts have a 10 mm forward clearance pocket at each screw head, including where a gusset crosses the screw position. Use a short L-shaped Allen key; these pockets do not provide a straight screwdriver path through the entire shelf.
