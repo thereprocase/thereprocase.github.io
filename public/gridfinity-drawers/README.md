@@ -83,3 +83,13 @@ and their license files from the shelf and P1S-foot pages. Gridfinity reference:
 https://github.com/kennetek/gridfinity-rebuilt-openscad .
 
 Open-bottom geometry checks: `node scripts/check-drawer-open-bottoms.mjs /tmp/drawer-open-checks`. [Open-bottom evidence](checks/open-bottoms.json).
+
+## Preview and exports
+
+Bed presets and custom usable dimensions drive automatic tiling and the selected-tile preview. The bed choice is shared with the pegboard generator on this browser. Manual cuts remain fixed when the bed changes. In print view, the selected tile is centered on the bed and portions outside it appear red; STL and STEP remain in the original tile-local coordinates with the flat underside at Z=0.
+
+Changed, computing, cancelled and failed generations keep the previous geometry visibly labelled until a new model succeeds. Geometry and rendering run in the browser.
+
+Seat clearance ranges from -0.10 to +0.20 mm per side. Negative values tighten the seat and can lift the bin slightly on its taper; the reference-fit check accounts for that seating lift. The 42 mm grid pitch stays fixed.
+
+Selected tiles can be downloaded as STL or faceted-solid STEP. Download names describe the drawer size, cell count, bottom style, placement and joint settings. Save the parameter recipe to reproduce the exact cuts.

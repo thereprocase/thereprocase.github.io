@@ -6,3 +6,5 @@ select{min-width:0;width:100%;padding:9px;font:inherit;border:1px solid #555;bac
 /* Allow long cut lists and generated tile labels to shrink inside the layout. */
 .layout>div{min-width:0}dt,dd{min-width:0;overflow-wrap:anywhere}
 fieldset,.file{min-width:0}.file{max-width:100%}#viewer canvas{max-width:100%}@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr)}}
+
+#viewer-note{top:8px;left:8px;right:8px;margin:0;padding:10px 12px;background:rgba(255,255,255,.95);border:1px solid #9b6300;border-left:5px solid #9b6300;pointer-events:none}[hidden]{display:none!important}.viewer-legend{position:absolute;bottom:8px;left:8px;right:8px;display:flex;flex-wrap:wrap;gap:6px 14px;background:rgba(255,255,255,.94);border:1px solid #273c40;padding:7px 9px;font-size:.8rem;pointer-events:none}.viewer-legend span{display:flex;align-items:center;gap:6px}.legend-swatch{display:inline-block;width:15px;height:15px;background:#f21009;border:1px solid #273c40}

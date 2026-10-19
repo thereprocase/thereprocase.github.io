@@ -3,7 +3,7 @@ const enc=new TextEncoder();
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const real=x=>{const s=num(x);return /[.e]/i.test(s)?s.replace(/e/i,'E').replace(/^(\-?\d+)E/,'$1.E'):s+'.';};
 const num=x=>{if(!Number.isFinite(x))throw Error('Invalid geometry coordinate.');return Object.is(x,-0)?'0':String(x);};
-function parts(r){if(!r.helpers?.length)throw Error('Generate reinforcement bodies first.');return [{name:'Body_PRINT',vertices:r.vertices,triangles:r.triangles},...r.helpers];}
+function parts(r){if(r.parts?.length)return r.parts;if(!r.helpers?.length)throw Error('Generate reinforcement bodies first.');return [{name:'Body_PRINT',vertices:r.vertices,triangles:r.triangles},...r.helpers];}
 
 // Join coplanar triangle patches into planar faces. This preserves the boundary
 // while avoiding thousands of internal triangle seams in the CAD solid.
@@ -53,7 +53,7 @@ export function facetedSTEP(r,module){
   const shell=add(`CLOSED_SHELL('',(${faces.join(',')}))`),brep=add(`FACETED_BREP('${name}',${shell})`),rep=add(`FACETED_BREP_SHAPE_REPRESENTATION('${name}',(${brep}),${geom})`);
   const pc=add(`PRODUCT_CONTEXT('',${ctx},'mechanical')`),product=add(`PRODUCT('${name}','${name}','',(${pc}))`),formation=add(`PRODUCT_DEFINITION_FORMATION('','',${product})`),dc=add(`PRODUCT_DEFINITION_CONTEXT('part definition',${ctx},'design')`),definition=add(`PRODUCT_DEFINITION('design','',${formation},${dc})`),shape=add(`PRODUCT_DEFINITION_SHAPE('','',${definition})`);add(`SHAPE_DEFINITION_REPRESENTATION(${shape},${rep})`);
  }
- return `ISO-10303-21;\nHEADER;\nFILE_DESCRIPTION(('Faceted Gridfinity body and separate 100 percent infill helpers; margin 3.5 mm'),'2;1');\nFILE_NAME('gridfinity.step','${new Date().toISOString().slice(0,19)}',('thereprocase'),(''),'Gridfinity browser generator','Gridfinity','');\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN'));\nENDSEC;\nDATA;\n${lines.join('\n')}\nENDSEC;\nEND-ISO-10303-21;\n`;
+ return `ISO-10303-21;\nHEADER;\nFILE_DESCRIPTION(('${r.parts?'Faceted Gridfinity drawer tile':'Faceted Gridfinity body and separate 100 percent infill helpers; margin 3.5 mm'}'),'2;1');\nFILE_NAME('gridfinity.step','${new Date().toISOString().slice(0,19)}',('thereprocase'),(''),'Gridfinity browser generator','Gridfinity','');\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN'));\nENDSEC;\nDATA;\n${lines.join('\n')}\nENDSEC;\nEND-ISO-10303-21;\n`;
 }
 
 const crcTable=Array.from({length:256},(_,n)=>{for(let i=0;i<8;i++)n=n&1?0xedb88320^(n>>>1):n>>>1;return n>>>0;});
