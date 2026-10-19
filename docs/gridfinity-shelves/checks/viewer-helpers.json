@@ -1,0 +1,14 @@
+{
+  "defaultPrintHelpersVisible": true,
+  "transparentOverlayChangesCanvas": true,
+  "installedDefaultHidden": true,
+  "independentPoseVisibility": true,
+  "legendUpdates": true,
+  "regeneratedCoupon": true,
+  "responsive": [
+    320,
+    390,
+    1600
+  ],
+  "errors": []
+}

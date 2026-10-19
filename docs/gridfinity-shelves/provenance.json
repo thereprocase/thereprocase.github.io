@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "0d02ff75100c08d527aa4030a5ea608d71a64c145c7cc1fd5acb01a21f5f640e",
-    "app.js": "f0ea155ed04213f53dd3c00066f8afd862d3db303869143863728f4e4ea423ac",
+    "README.md": "94278a0ae73aee4276bb54033d97811a516fcdcd5d1a9e19974c4767270da7a9",
+    "app.js": "efb58f657f5481daa98d9c2e102e1087e0d4b0e786005ba3f7f30f8ebffa90c8",
     "backplate-angles.png": "6837b5cfaf8b565709f4b0110a1b678352861972334796f89d93ba7ef5d623c9",
     "backplate-default.png": "f27e6beb947044b8b0b6208be49f5635da3e2e684e7eeb62d392397b1038eedc",
     "backplate-heights.png": "3d28522fe19ad686882cfcd2396c86b43170f8b16322e0919fff953ab9cdbb7b",
@@ -36,6 +36,7 @@
     "checks/reinforcement.json": "e3a9f3fe792afefe20b1e7fe7e474076dbb4005fc939e520422bb48a0d38a877",
     "checks/round-boards.json": "6754a9d9c345e9bde9dd7941bbb2ca478e3fa47b2e233a358a4ee9c21fb929ba",
     "checks/step-readback.json": "572990e74a776fbcf77cc161ac06bbfe892866ed0cbfa95d5ed84f6b321c65ba",
+    "checks/viewer-helpers.json": "68f6a9359d952143fc0d69227c4353b2bade9d9ae8f8065eee313bf20a29ed04",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
     "export-worker.js": "b096177522360157fa474a4f77ec475dbbf7929d0869fc401611b90219a275a1",
@@ -43,7 +44,7 @@
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "31df91c79814039405f7659a9f035e1724c2c1691492a4095e54635f1111aaa8",
+    "index.html": "e096fbacf01c0e5151a72b0ea35d9d32c98d8b95dff29d4bd3b033a95a5044ac",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
     "kernel.js": "506003afa2f34900818da8be417cf4071d86303ac97a84bdaf820966c0b01f35",
     "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
@@ -60,13 +61,13 @@
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
     "sources/skadis/ikea-skadis.scad": "f2a76b33adc69f701a73fa4090886b39b2fed13906f22d9701549a36410f54d6",
-    "style.css": "a9a42333308cffbd3bc7add9650e68efc4c333b13fac8f3c4bc057f39a3c88ce",
+    "style.css": "21169ae363bf5b1473bba1f4d6e5cf3b64e23b4c692ebcc64c85d3eb2cf275c6",
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
     "worker.js": "c0b652b3d644296705defa6efd500f63b59ef2c638fbd6047cde0cba253c7852"
   },
-  "revision": "reinforce-1",
+  "revision": "viewer-1",
   "peg_fit_source": "downloads/peg-fit-source.zip",
   "peg_fit_checks": [
     "checks/peg-fit.json",

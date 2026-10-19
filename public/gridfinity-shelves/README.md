@@ -194,7 +194,7 @@ Multiboard and HSW mounts have a 10 mm forward clearance pocket at each screw he
 
 Every shelf and fit coupon, on all nine board systems, offers a faceted STEP and an Orca-compatible 3MF with separate reinforcement bodies. The main printable mesh is unchanged by reinforcement. These helpers occupy existing material; they are not additional parts.
 
-Helpers span the complete peg and backplate thickness. Each peg/root envelope gets a 3.5 mm margin and a continuous full-thickness column up into the adjacent shelf frame, including lower pegs. Regions are clipped to the part, so bin seats, screw holes and mounting clearance remain open. Overlapping regions merge. Show reinforcement displays the regions in orange.
+Helpers span the complete peg and backplate thickness. Each peg/root envelope gets a 3.5 mm margin and a continuous full-thickness column up into the adjacent shelf frame, including lower pegs. Regions are clipped to the part, so bin seats, screw holes and mounting clearance remain open. Overlapping regions merge. Print pose shows the regions by default as transparent yellow volumes, visible through the body, with a viewer legend. Installed pose defaults to hidden helpers. The reinforcement toggle remembers visibility separately for each pose.
 
 The 3MF stores one normal body and parameter modifiers with `sparse_infill_density=100%`. It supplies geometry and local infill overrides, not a machine, filament or global process profile. Retain your own printer/material settings when opening it.
 

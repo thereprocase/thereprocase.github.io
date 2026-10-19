@@ -3,3 +3,5 @@
 select{min-width:0;width:100%;padding:9px;font:inherit;border:1px solid #555;background:white}input[type=checkbox]{width:24px;height:24px;justify-self:end}select:focus-visible{outline:3px solid #005fff;outline-offset:3px}
 
 [hidden]{display:none!important}textarea{width:100%;min-width:0;box-sizing:border-box;font:inherit;padding:8px;border:1px solid #555;resize:vertical}label:has(textarea){display:block}label:has(textarea) textarea{display:block;margin-top:8px}label:has(select[name=board_system]){display:block}select[name=board_system]{margin-top:8px}
+
+.viewer-legend{position:absolute;bottom:8px;left:8px;z-index:2;max-width:calc(100% - 16px);display:flex;flex-wrap:wrap;gap:6px 14px;padding:7px 9px;border:1px solid #273c40;background:rgba(255,255,255,.94);font-size:.8rem;line-height:1.4;pointer-events:none}.viewer-legend>span{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.legend-swatch{display:inline-block;width:15px;height:15px;border:1px solid #273c40;flex:none}.legend-body{background:#5da3ad}.legend-helper{background:rgba(255,214,0,.5)}
