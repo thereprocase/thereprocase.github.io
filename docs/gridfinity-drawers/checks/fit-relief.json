@@ -1,0 +1,45 @@
+{
+  "scope": "Independent 0.15 mm V-strip subtraction from the finished grid versus exported tiles reassembled at their original coordinates; no tile translation and no added stock.",
+  "cases": [
+    {
+      "axis": "X",
+      "bottom": "open",
+      "relief": 0.15,
+      "stockX": 0,
+      "stockY": 0,
+      "addedComparedToCut": 0,
+      "missingComparedToCut": 0,
+      "pass": true
+    },
+    {
+      "axis": "X",
+      "bottom": "closed",
+      "relief": 0.15,
+      "stockX": 0,
+      "stockY": 0,
+      "addedComparedToCut": 0,
+      "missingComparedToCut": 0,
+      "pass": true
+    },
+    {
+      "axis": "Y",
+      "bottom": "open",
+      "relief": 0.15,
+      "stockX": 0,
+      "stockY": 0,
+      "addedComparedToCut": 0,
+      "missingComparedToCut": 0,
+      "pass": true
+    },
+    {
+      "axis": "Y",
+      "bottom": "closed",
+      "relief": 0.15,
+      "stockX": 0,
+      "stockY": 0,
+      "addedComparedToCut": 0,
+      "missingComparedToCut": 0,
+      "pass": true
+    }
+  ]
+}

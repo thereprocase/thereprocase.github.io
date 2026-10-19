@@ -44,22 +44,17 @@ are marked. Limits: 256 cells and 64 tiles per generation.
 Internal mating faces form a shallow V through Z: zero lateral excursion at
 bottom/top, 0.8 mm at mid-height by default. Each tile prints flat underneath.
 These are glued registration faces, without positive engagement or latches.
-The assumed horizontal CA bondline is **0.10 mm**, a starting point for FDM prints. Dry fit a small pair first.
+The default removes a **0.15 mm thick V-shaped strip** from the finished model at each seam: 0.075 mm off each opposing face. This is a printing-fit allowance, not a deliberately open adhesive joint. Tiles retain their original registration; no translation or added material closes the relief in CAD. The 42 mm grid and finished outline are unchanged before the seam strip is removed.
 
-Independent X/Y face-stock corrections add half their value to each opposing
-face. Positive stock increases cross-seam pitch at a fixed bondline; negative
-stock decreases it. Within-tile pitch remains 42 mm. Ignoring print error:
+Dry-press the printed faces snugly together and check a bin across the seam. Remove the bin, apply a small amount of CA, and press the joint home while curing. The bin is a fit check, not an assembly spacer.
 
-    cross-seam pitch error = stock correction + actual bondline − assumed bondline
+Independent X/Y face-stock corrections add half their value to each opposing face. Positive stock increases the snugly assembled cross-seam pitch; negative stock decreases it. Start at zero and use a trial to correct measured printing error. Within-tile pitch remains 42 mm. In terms of the opposing faces' combined printing growth:
 
-Corrections accumulate across seams. The assembled preview shows nominal
-registration; it does not simulate squeezing the gap shut. Align a 42 mm
-reference across seams while curing. Keep adhesive off the reference bin.
-Follow the adhesive manufacturer's handling instructions.
+    seated seam pitch error = combined face growth + stock correction - modeled fit relief + residual bondline
 
-For a trial, generate a 2 × 1 insert with a center X cut; repeat in Y if needed.
-Check bin seating and cross-seam pitch in the actual material before a full
-insert.
+The working assumption is that the fit relief is largely consumed by the printed fit, leaving near-zero pitch change when pressed snug. The 0.15 mm default is a starting allowance, not a calibrated guarantee for every printer. Do not translate the CAD tiles to close the relief: that would deliberately shorten the nominal grid. The preview and ZIP origins preserve the original registration.
+
+For a trial, load seam-trial.json or generate a 2 × 1 insert with a center X cut; repeat in Y if needed. Check cross-seam bin fit in your material before a full insert.
 
 ## Downloads and checks
 
@@ -93,3 +88,5 @@ Changed, computing, cancelled and failed generations keep the previous geometry 
 Seat clearance ranges from -0.10 to +0.20 mm per side. Negative values tighten the seat and can lift the bin slightly on its taper; the reference-fit check accounts for that seating lift. The 42 mm grid pitch stays fixed.
 
 Selected tiles can be downloaded as STL or faceted-solid STEP. Download names describe the drawer size, cell count, bottom style, placement and joint settings. Save the parameter recipe to reproduce the exact cuts.
+
+[Fit-relief subtraction check](checks/fit-relief.json): exported X/Y tiles at their original assembly coordinates exactly match the finished insert minus the independently constructed 0.15 mm V strip, in both bottom modes. Repeat with `node scripts/check-drawer-fit-relief.mjs`.

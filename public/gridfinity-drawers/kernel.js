@@ -1,6 +1,6 @@
 /** Drawer coordinates: X left→right, Y front→back, Z up; millimeters. */
 import {validateExport,binarySTL as shelfSTL} from '../gridfinity-shelves/kernel.js';
-export const defaults={width:300,depth:400,columns:6,rows:8,xMode:'center',yMode:'center',xValue:0,yValue:0,floor:1.2,bottom:'closed',clearance:0,tiling:'auto',bedX:256,bedY:256,cutsX:'',cutsY:'',jointDepth:0.8,glueGap:0.10,stockX:0,stockY:0};
+export const defaults={width:300,depth:400,columns:6,rows:8,xMode:'center',yMode:'center',xValue:0,yValue:0,floor:1.2,bottom:'closed',clearance:0,tiling:'auto',bedX:256,bedY:256,cutsX:'',cutsY:'',jointDepth:0.8,glueGap:0.15,stockX:0,stockY:0};
 const rim=2,pitch=42;
 function placement(size,count,mode,value){const span=count*pitch,free=size-span;if(free<2*rim-1e-8)throw Error(`The ${count}-cell grid needs at least ${(span+2*rim).toFixed(1)} mm including the outer rims.`);let start=mode==='center'?free/2:mode==='near'?value:mode==='far'?free-value:free/2+value;if(start<rim-1e-7||free-start<rim-1e-7)throw Error('Grid placement leaves less than 2 mm at an outer edge. Reduce the grid, padding or offset.');return start;}
 function userCuts(text,size){if(!text.trim())return [];const a=text.split(/[;,\s]+/).filter(Boolean).map(Number).sort((a,b)=>a-b);if(a.some(x=>!Number.isFinite(x)||x<12||x>size-12)||a.some((x,i)=>i&&x-a[i-1]<12))throw Error('Tile cuts must be at least 12 mm from the outer edges and from one another. Enter millimeters from the left/front.');return a;}
