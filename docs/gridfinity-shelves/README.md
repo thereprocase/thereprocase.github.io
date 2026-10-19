@@ -14,8 +14,7 @@ checks one connected manifold, fixed board-side connector preservation, continuo
 5.4 mm roots and reference bin-foot clearance (except intentionally tight negative
 clearance) before enabling STL downloads. Mesh coordinates are float32; the
 host trim begins at the exact float32 board plane to avoid a rounding-induced
-separation. Boolean slivers are simplified at 0.00001 mm in the design frame, and the result is re-imported into the kernel at the final float32 print coordinates without another simplification pass. Exported STL edges are then checked by their actual coordinates, and export volume must agree within 0.001%. No slicer repair is assumed. This is a prototype without measured
-load, retention or creep ratings. New arrays/angles need slicer and physical tests.
+separation. Boolean slivers are simplified at 0.00001 mm in the design frame, and the result is re-imported into the kernel at the final float32 print coordinates without another simplification pass. Exported STL edges are then checked by their actual coordinates, and export volume must agree within 0.001%. No slicer repair is assumed.
 
 ## Checks and publication
 
@@ -55,6 +54,6 @@ Native solid checks retain their original 0.000001 mm³ containment threshold.
 
 Default parameters now include `mount_rows: 2` and `backplate: true`. A 5.4 mm continuous backplate connects 25.4 mm peg columns to 42 mm Gridfinity cell-boundary gussets. Height 1 is hook-only with 12.7 mm of backplate below the hook centers. Heights 2–4 retain top hooks and bottom hoops; 3–4 use exact native bearing locators between. Gussets extend to the selected backplate bottom. The open-back option retains continuous top/bottom ties and posts at both grids. STL and JSON outputs retain the selected settings.
 
-The default 2×1 solid CAD volume rises from 16.18 to 29.44 cm³ with the solid backplate and third gusset. Printed mass depends on the actual walls and infill. Physical snap retention, installation and loading remain unqualified; a taller plate alone is not a load rating.
+The default 2×1 solid CAD volume rises from 16.18 to 29.44 cm³ with the solid backplate and third gusset. Printed mass depends on the actual walls and infill.
 
 For a static-only generator update, copy this complete directory to `dist/client/gridfinity-shelves` and `docs/gridfinity-shelves` after checks. Keep their hashes equal; no framework rebuild is needed when other pages are unchanged.

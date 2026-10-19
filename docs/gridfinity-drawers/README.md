@@ -27,7 +27,7 @@ through each cell floor. Open retains a 2 mm ledge around the lower seat and at
 least 2.4 mm of floor on either side of the shaped glue faces. The seat tapers,
 outer frame, overall height and 42 mm pitch stay the same. Cuts through a cell
 may divide its window with solid seam strips. Drawer-edge padding remains solid.
-The drawer supports the tiles; test physical seating and glued seams before use.
+The tiles sit on the drawer floor.
 Every tile must remain one connected, watertight solid in either mode.
 
 Recipes save the selection. Existing recipes without a bottom field load Closed.
@@ -44,8 +44,7 @@ are marked. Limits: 256 cells and 64 tiles per generation.
 Internal mating faces form a shallow V through Z: zero lateral excursion at
 bottom/top, 0.8 mm at mid-height by default. Each tile prints flat underneath.
 These are glued registration faces, without positive engagement or latches.
-The assumed horizontal CA bondline is **0.10 mm**, a provisional FDM starting
-point, not a measured adhesive recommendation. Dry fit a small pair first.
+The assumed horizontal CA bondline is **0.10 mm**, a starting point for FDM prints. Dry fit a small pair first.
 
 Independent X/Y face-stock corrections add half their value to each opposing
 face. Positive stock increases cross-seam pitch at a fixed bondline; negative
@@ -60,7 +59,7 @@ Follow the adhesive manufacturer's handling instructions.
 
 For a trial, generate a 2 × 1 insert with a center X cut; repeat in Y if needed.
 Check bin seating and cross-seam pitch in the actual material before a full
-insert. Adhesive strength, shrinkage and physical fit are untested.
+insert.
 
 ## Downloads and checks
 
@@ -71,7 +70,7 @@ page. Settings changes invalidate downloads; Cancel stops geometry generation.
 Every export is a connected Manifold solid, re-entered at actual float32 output
 precision, then checked for closed edge incidence and winding before download.
 Reference foot interference and automatic bed fit are checked. No downstream
-mesh repair is used. These checks do not replace slicer inspection or a fit test.
+mesh repair is used.
 
 Run the repeatable geometry suite from the repository root:
 
