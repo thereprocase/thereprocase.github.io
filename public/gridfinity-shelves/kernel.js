@@ -1,9 +1,9 @@
-import {boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=boards-1';
+import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=boards-2';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
 export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults,...boardDefaults};
 export function parameters(input) {
- const p={...defaults,...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
+ const p={...defaults,...boardSettings(input.board_system??'original'),...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
  for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
@@ -49,7 +49,7 @@ export function build(module, inputs, input) {
   if(vol<0)t.forEach(a=>a.reverse());return mesh(v,t);
  }
  try {
-  const pieces=[],pockets=[],pegs=[],feet=[],c=p.clearance,angle=p.angle*Math.PI/180,tangent=Math.tan(angle);
+  const pieces=[],pockets=[],pegs=[],feet=[],mountCuts=[],c=p.clearance,angle=p.angle*Math.PI/180,tangent=Math.tan(angle);
   const pegSet=p.board_system==='original'?makePegs(module,inputs,p,keep):makeBoardPegs(module,p,keep),upperMesh=pegSet.upper.getMesh(),ys=[],zs=[];if(p.board_system==='original'&&p.peg_clearance===0&&p.hook_grip===0){for(const v of inputs.upper.vertices){ys.push(v[1]);zs.push(v[2]);}}else for(let i=0;i<upperMesh.vertProperties.length;i+=3){ys.push(upperMesh.vertProperties[i+1]);zs.push(upperMesh.vertProperties[i+2]);}
   const hinge=Math.max(5.72,3.48-tangent*5.4+.25,Math.max(...zs)-tangent*((tangent>=0?Math.min(...ys):Math.max(...ys))-.15)+.275);
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
@@ -72,11 +72,12 @@ export function build(module, inputs, input) {
    for(const x of p.mounts)pieces.push(box([10,5.4,hinge+1-bottom],[x-5,.15,bottom]));
    for(const x of p.webColumns)pieces.push(box([p.web,5.4,hinge+1-bottom],[x-p.web/2,.15,bottom]));
   }
-  for(const x of p.webColumns)pieces.push(keep(prism([[5,bottom+2.18],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
+  // Screw mounts need a continuous gusset strip beneath the lower counterbore.
+  for(const x of p.webColumns)pieces.push(keep(prism([[5,bottom+(pegSet.mode==='bolted'?0:2.18)],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
   for(const {x,z,row:i} of p.mountSites){
-   const peg=i===0?upper:i===p.mount_rows-1?lower:locator,copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);
+   const peg=i===0?upper:i===p.mount_rows-1?lower:locator,copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);if(pegSet.cuts)mountCuts.push(...pegSet.cuts(x,z));
   }
-  let shape=keep(M.union(pieces));
+  let shape=keep(M.union(pieces));if(mountCuts.length)shape=keep(shape.subtract(keep(M.union(mountCuts))));
   const extent=p.width/2+20,below=prism([[-60,-1000],[1000,-1000],[1000,hinge+tangent*(1000-.15)],[-60,hinge+tangent*(-60-.15)]],-extent,extent);
   shape=keep(shape.intersect(below));shape=keep(shape.subtract(keep(M.union(pockets))));
   // Match the float32 envelope plane exactly; a double .15 leaves a nanometer cut separating pegs.
@@ -90,7 +91,7 @@ export function build(module, inputs, input) {
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
   if(pegDelta>.01)throw Error('Connector preservation check failed.');
-  for(const {x,z,row:i} of p.mountSites){const d=i===0?6.72:7.62;const root=p.board_system==='original'?box([d,5.4,d],[x-d/2,.15,z+.12-d/2]):box([pegSet.root.width,5.4,pegSet.root.height],[x-pegSet.root.width/2,.15,z+pegSet.root.bottom]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  for(const {x,z,row:i} of p.mountSites){const d=i===0?6.72:7.62;const root=p.board_system==='original'?box([d,5.4,d],[x-d/2,.15,z+.12-d/2]):box([pegSet.root.width,5.4,pegSet.root.height],[x-pegSet.root.width/2,.15,z+pegSet.root.bottom]);const rootMaterial=mountCuts.length?keep(root.subtract(keep(M.union(mountCuts)))):root;if(keep(rootMaterial.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
   const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
   const coreMissing=keep(core.subtract(shape)).volume();
   // At large spans, micron-scale boundary rounding accumulates measurable volume.
@@ -114,9 +115,21 @@ export function build(module, inputs, input) {
   const final=keep(new M(printMesh));
   if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export failed: '+final.status()+'; volume '+final.volume()+' vs '+shape.volume());
   const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
-  validateExport(result);
+  validateFloatExport(final,result,keep,p.board_system!=='original');
   return result;
  } finally {for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
+}
+// Large float32 coordinates can flatten a micron-scale fan into collinear
+// triangles. Normalize that fan in the solid kernel, then retain the same strict
+// edge check. Original exports are untouched; no slicer repair is involved.
+function validateFloatExport(solid,result,keep,enabled){
+ try{validateExport(result);return;}catch(error){if(!enabled||!['STL closure or winding check failed.','Collapsed STL edge.'].includes(error.message))throw error;}
+ const bounds=solid.boundingBox(),magnitude=Math.max(1,...bounds.min.map(Math.abs),...bounds.max.map(Math.abs)),tolerance=.00001+2*2**(Math.floor(Math.log2(magnitude))-23),clean=keep(solid.simplify(tolerance));
+ if(clean.status()!=='NoError')throw Error('Float export normalization failed.');
+ const difference=keep(solid.subtract(clean)).volume()+keep(clean.subtract(solid)).volume();
+ if(difference>1e-5*solid.volume())throw Error('Float export normalization changed too much material.');
+ const parts=clean.decompose();parts.forEach(keep);if(parts.length!==1)throw Error('Float export normalization split the part.');
+ const mesh=clean.getMesh();result.vertices=new Float32Array(mesh.vertProperties);result.triangles=new Uint32Array(mesh.triVerts);result.trianglesCount=mesh.triVerts.length/3;result.volume=clean.volume();result.exportNormalization={tolerance,symmetricDifferenceMM3:difference};validateExport(result);
 }
 export function validateExport({vertices:v,triangles:t}) {
  const keys=[];for(let i=0;i<v.length;i+=3){if(!Number.isFinite(v[i]+v[i+1]+v[i+2])||v[i+2]<-.00001)throw Error('Invalid export coordinates.');keys.push(`${v[i]},${v[i+1]},${v[i+2]}`);}
@@ -125,7 +138,7 @@ export function validateExport({vertices:v,triangles:t}) {
 }
 export function binarySTL(result) {
  const {vertices:v,triangles:t}=result,b=new ArrayBuffer(84+t.length/3*50),d=new DataView(b);
- new Uint8Array(b).set(new TextEncoder().encode('Gridfinity shelf generator v1; millimeters; inverted print pose'));
+ new Uint8Array(b).set(new TextEncoder().encode(result.parameters?.board_system&&result.parameters.board_system!=='original'?`Gridfinity ${result.parameters.board_system}; NOT PRINT TESTED; mm; frame-down`:'Gridfinity shelf generator v1; millimeters; inverted print pose'));
  d.setUint32(80,t.length/3,true);
  for(let i=0;i<t.length;i+=3){const o=84+i/3*50;for(let j=0;j<3;j++)for(let k=0;k<3;k++)d.setFloat32(o+12+j*12+k*4,v[t[i+j]*3+k],true);}
  return b;
@@ -148,22 +161,22 @@ export function buildCoupon(module,inputs,input={}){
   const final=keep(new M(new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(source.triVerts)})));
   if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
   const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,columns:1,rows:1,mount_rows:2,mounts:[0],webColumns:[],angle:0,backplate:true},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};
-  validateExport(result);return result;
+  validateFloatExport(final,result,keep,p.board_system!=='original');return result;
  }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
 }
 
 function boardCoupon(module,input){
  const p=parameters({...Object.fromEntries(Object.keys(defaults).map(k=>[k,input[k]])),columns:2,rows:1,mount_rows:2,angle:0,backplate:true}),{Manifold:M,Mesh}=module,allocated=[],keep=o=>(allocated.push(o),o);
  try{
-  const set=makeBoardPegs(module,p,keep),sites=[{x:-10,z:0,row:0},{x:10,z:-20,row:1}],bottom=-20+set.root.bottom;
-  const plate=keep(keep(M.cube([30,5.4,5.72-bottom])).translate([-15,Math.fround(.15),bottom]));
-  const pegs=sites.map(({x,z})=>keep(set.upper.translate([x,0,z]))),shape=keep(keep(M.union([plate,...pegs])).simplify(.00001));
+  const set=makeBoardPegs(module,p,keep),sites=p.board_system==='skadis'?[{x:-10,z:0,row:0},{x:10,z:-20,row:1}]:[{x:0,z:0,row:0},{x:0,z:-boards[p.board_system].pitchZ,row:1}],bottom=sites[1].z+set.root.bottom;
+  const plate=keep(keep(M.cube([30,5.4,Math.max(5.72,set.upper.boundingBox().max[2]+.3)-bottom])).translate([-15,Math.fround(.15),bottom]));
+  const pegs=sites.map(({x,z,row})=>keep((row?set.lower:set.upper).translate([x,0,z])));let shape=keep(M.union([plate,...pegs]));if(set.cuts)shape=keep(shape.subtract(keep(M.union(sites.flatMap(({x,z})=>set.cuts(x,z))))));shape=keep(shape.simplify(.00001));
   const components=shape.decompose();components.forEach(keep);if(components.length!==1||shape.status()!=='NoError')throw Error('Coupon must be one connected solid.');
   const clip=keep(keep(M.cube([60,60.15,120])).translate([-30,-60,-70])),expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip)),pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();if(pegDelta>.01)throw Error('Coupon connector changed at the backplate.');
   const source=shape.getMesh(),v=source.vertProperties,vertices=new Float32Array(v.length);let minZ=Infinity;
   for(let i=0;i<v.length;i+=3){vertices[i]=v[i];vertices[i+1]=-v[i+1];vertices[i+2]=-v[i+2];minZ=Math.min(minZ,vertices[i+2]);}
   for(let i=2;i<vertices.length;i+=3)vertices[i]-=minZ;
   const final=keep(new M(new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(source.triVerts)})));if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
-  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,mountSites:sites,mounts:[-10,10],mountZ:[0,-20],webColumns:[]},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};validateExport(result);return result;
+  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,mountSites:sites,mounts:p.board_system==='skadis'?[-10,10]:[0],mountZ:sites.map(s=>s.z),webColumns:[]},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};validateFloatExport(final,result,keep,p.board_system!=='original');return result;
  }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
 }

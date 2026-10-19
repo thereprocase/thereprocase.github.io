@@ -1,0 +1,768 @@
+{
+  "gridfinityPitch": 42,
+  "tests": [
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.26515657364171147
+      },
+      "pegDelta": -1.1113965303621853e-10,
+      "maxFootOverlap": 0.00006850731768881642,
+      "triangles": 4626,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 2
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.38815200668349265
+      },
+      "pegDelta": 7.684519687245484e-11,
+      "maxFootOverlap": 0.00009215710315746994,
+      "triangles": 6306,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "mount_rows": 4,
+        "angle": 5
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.00007101631566185524,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 0.9574422458891696
+      },
+      "pegDelta": 3.292927176790382e-10,
+      "maxFootOverlap": 0.00016036410566210024,
+      "triangles": 11436,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 2,
+        "mount_rows": 3,
+        "angle": -30
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.00045891801464251154,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.5222229087713941
+      },
+      "pegDelta": 7.683890616870394e-11,
+      "maxFootOverlap": 0.00009140480541477245,
+      "triangles": 7440,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 1,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.20733922093505858
+      },
+      "pegDelta": 7.685929670486757e-11,
+      "maxFootOverlap": 0.00006850731768951087,
+      "triangles": 4024,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 2,
+        "board_thickness": 0.5,
+        "hole_diameter": 4,
+        "slot_clearance": 0.1,
+        "lower_clearance": 0.1,
+        "board_gap": 0.1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.3633554702430591
+      },
+      "pegDelta": 3.8687275605298055e-10,
+      "maxFootOverlap": 0.00009215720758851365,
+      "triangles": 6236,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "config": {
+        "columns": 2,
+        "board_thickness": 8,
+        "hole_diameter": 10,
+        "slot_clearance": 0.5,
+        "lower_clearance": 0.5,
+        "board_gap": 0.6
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4527157961462438
+      },
+      "pegDelta": 2.674092385042779e-10,
+      "maxFootOverlap": 0.00009215689539804029,
+      "triangles": 6502,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_small",
+      "kind": "coupon",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.000013814697265625,
+        "skinBound": 0.30256894139255286
+      },
+      "pegDelta": 3.829262323895577e-10,
+      "triangles": 1346
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.28923186838531495
+      },
+      "pegDelta": 3.972037960434219e-10,
+      "maxFootOverlap": 0.00006850740009499007,
+      "triangles": 4772,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 2
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.41739646479034426
+      },
+      "pegDelta": 3.971772833463083e-10,
+      "maxFootOverlap": 0.00009215689525971256,
+      "triangles": 6454,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "mount_rows": 4,
+        "angle": 5
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.0000760385542455265,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 1.0187518203514976
+      },
+      "pegDelta": 8.272621751580076e-10,
+      "maxFootOverlap": 0.00016036410538507116,
+      "triangles": 11390,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 2,
+        "mount_rows": 3,
+        "angle": -30
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.00025702770081163166,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.5571719738986475
+      },
+      "pegDelta": 4.934800908320079e-10,
+      "maxFootOverlap": 0.00009136966396972536,
+      "triangles": 7580,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 1,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.22658713466172853
+      },
+      "pegDelta": 7.212685607005696e-11,
+      "maxFootOverlap": 0.00006850740006701814,
+      "triangles": 4138,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 2,
+        "board_thickness": 0.5,
+        "hole_diameter": 4,
+        "slot_clearance": 0.1,
+        "lower_clearance": 0.1,
+        "board_gap": 0.1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.3633554702430591
+      },
+      "pegDelta": 3.8687275605298055e-10,
+      "maxFootOverlap": 0.00009215720758851365,
+      "triangles": 6236,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "config": {
+        "columns": 2,
+        "board_thickness": 8,
+        "hole_diameter": 10,
+        "slot_clearance": 0.5,
+        "lower_clearance": 0.5,
+        "board_gap": 0.6
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4527157961462438
+      },
+      "pegDelta": 2.674092385042779e-10,
+      "maxFootOverlap": 0.00009215689539804029,
+      "triangles": 6502,
+      "exportNormalization": null
+    },
+    {
+      "system": "us_large",
+      "kind": "coupon",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.000013814697265625,
+        "skinBound": 0.3228289745346438
+      },
+      "pegDelta": 5.634553287092402e-10,
+      "triangles": 1418
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.2514517610473461
+      },
+      "pegDelta": 2.8073068171866613e-9,
+      "maxFootOverlap": 0.0000685074000708457,
+      "triangles": 4676,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 2
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.37221664172494184
+      },
+      "pegDelta": 2.8073046151612684e-9,
+      "maxFootOverlap": 0.0000921568952800572,
+      "triangles": 6360,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "mount_rows": 4,
+        "angle": 5
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.000813155073173217,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 0.9234279993185086
+      },
+      "pegDelta": 8.329211876182576e-9,
+      "maxFootOverlap": 0.00016036410545168506,
+      "triangles": 11336,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 2,
+        "mount_rows": 3,
+        "angle": -30
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.0004337951824058339,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.5026315007792992
+      },
+      "pegDelta": 5.566832140377914e-9,
+      "maxFootOverlap": 0.00009141177281466947,
+      "triangles": 7124,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 1,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.19641314157103631
+      },
+      "pegDelta": 8.93061587581482e-11,
+      "maxFootOverlap": 0.0000685074000715114,
+      "triangles": 4072,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 2,
+        "board_thickness": 0.5,
+        "hole_diameter": 4,
+        "slot_clearance": 0.1,
+        "lower_clearance": 0.1,
+        "board_gap": 0.1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.3633554702430591
+      },
+      "pegDelta": 3.8687275605298055e-10,
+      "maxFootOverlap": 0.00009215720758851365,
+      "triangles": 6236,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "config": {
+        "columns": 2,
+        "board_thickness": 8,
+        "hole_diameter": 10,
+        "slot_clearance": 0.5,
+        "lower_clearance": 0.5,
+        "board_gap": 0.6
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4527157961462438
+      },
+      "pegDelta": 2.674092385042779e-10,
+      "maxFootOverlap": 0.00009215689539804029,
+      "triangles": 6502,
+      "exportNormalization": null
+    },
+    {
+      "system": "wall_control",
+      "kind": "coupon",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.000013814697265625,
+        "skinBound": 0.2911327924427575
+      },
+      "pegDelta": 5.551115123125783e-16,
+      "triangles": 1370
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.2805480167301558
+      },
+      "pegDelta": -4.68296238450409e-10,
+      "maxFootOverlap": 0.00006850731760812052,
+      "triangles": 4676,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 2
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.40653295999864114
+      },
+      "pegDelta": 2.5710544454026147e-10,
+      "maxFootOverlap": 0.00009215707108444185,
+      "triangles": 6358,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "mount_rows": 4,
+        "angle": 5
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.0002398478106076287,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 0.9915746937582
+      },
+      "pegDelta": 2.570894093145178e-10,
+      "maxFootOverlap": 0.00016037710727440484,
+      "triangles": 11156,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 2,
+        "mount_rows": 3,
+        "angle": -30
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.0004124275518567528,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.5426196399118685
+      },
+      "pegDelta": 2.571000316664971e-10,
+      "maxFootOverlap": 0.00009144691373433286,
+      "triangles": 7192,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 1,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.2208090467496682
+      },
+      "pegDelta": -4.682980306636568e-10,
+      "maxFootOverlap": 0.00006850731760838995,
+      "triangles": 4074,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 2,
+        "board_thickness": 0.5,
+        "hole_diameter": 4,
+        "slot_clearance": 0.1,
+        "lower_clearance": 0.1,
+        "board_gap": 0.1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.36154317885532045
+      },
+      "pegDelta": 3.8687630876665935e-10,
+      "maxFootOverlap": 0.00009215720758851365,
+      "triangles": 6232,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "config": {
+        "columns": 2,
+        "board_thickness": 8,
+        "hole_diameter": 10,
+        "slot_clearance": 0.5,
+        "lower_clearance": 0.5,
+        "board_gap": 0.6
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.45079772899657483
+      },
+      "pegDelta": 2.6738245514205776e-10,
+      "maxFootOverlap": 0.00009215689539804029,
+      "triangles": 6502,
+      "exportNormalization": null
+    },
+    {
+      "system": "metric25",
+      "kind": "coupon",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.000013814697265625,
+        "skinBound": 0.315342562996354
+      },
+      "pegDelta": 2.5336843734180547e-11,
+      "triangles": 1370
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 12,
+        "angle": 5,
+        "mount_rows": 4
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.0035816456142256244,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.000040517578125,
+        "skinBound": 7.925699231629192
+      },
+      "pegDelta": 1.560814747823699e-8,
+      "maxFootOverlap": 0.0007008876168377225,
+      "triangles": 32514,
+      "exportNormalization": {
+        "tolerance": 0.000040517578125,
+        "symmetricDifferenceMM3": 0.04776532958535429
+      }
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.294286329986598
+      },
+      "pegDelta": 1.2703689574825363e-9,
+      "maxFootOverlap": 0.00006850740021088337,
+      "triangles": 3360,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 2
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4371362527202044
+      },
+      "pegDelta": 2.4867921178428075e-9,
+      "maxFootOverlap": 0.00009215689543048845,
+      "triangles": 6500,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "mount_rows": 4,
+        "angle": 5
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.00038399832518547455,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 1.184500503350357
+      },
+      "pegDelta": 7.305783474090658e-9,
+      "maxFootOverlap": 0.00016036496956749863,
+      "triangles": 11360,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 2,
+        "mount_rows": 3,
+        "angle": -30
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0.00010257427911728542,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.0000252587890625,
+        "skinBound": 0.896384815877195
+      },
+      "pegDelta": 5.241274175884853e-9,
+      "maxFootOverlap": 0.00009140472254000376,
+      "triangles": 7708,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 1,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.2005571928588867
+      },
+      "pegDelta": -5.556283385477059e-12,
+      "maxFootOverlap": 0.00006850740021094484,
+      "triangles": 3068,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 2,
+        "board_thickness": 0.5,
+        "hole_diameter": 4,
+        "slot_clearance": 0.1,
+        "lower_clearance": 0.1,
+        "board_gap": 0.1
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4208960545102972
+      },
+      "pegDelta": 3.8685854519826535e-10,
+      "maxFootOverlap": 0.00009215703185638516,
+      "triangles": 6236,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "config": {
+        "columns": 2,
+        "board_thickness": 8,
+        "hole_diameter": 10,
+        "slot_clearance": 0.5,
+        "lower_clearance": 0.5,
+        "board_gap": 0.6
+      },
+      "kind": "shelf",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.5136147802734374
+      },
+      "pegDelta": 2.6736147121968105e-10,
+      "maxFootOverlap": 0.00009215689539902495,
+      "triangles": 6500,
+      "exportNormalization": null
+    },
+    {
+      "system": "bott_perfo",
+      "kind": "coupon",
+      "boardIntrusion": {
+        "rawIntersection": 0,
+        "interiorIntersection": 0,
+        "float32Tolerance": 0.00001762939453125,
+        "skinBound": 0.4360821100091111
+      },
+      "pegDelta": 8.881784197001252e-16,
+      "triangles": 1442
+    }
+  ],
+  "scope": "Connected and closed geometry, board-hole placement and static panel clearance; no physical test or installation sweep claim."
+}

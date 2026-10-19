@@ -21,7 +21,7 @@
       "pegDelta": 6.411537967210279e-15,
       "binFootOverlap": 0.00006843846451838612,
       "triangles": 2002,
-      "seconds": 0.359
+      "seconds": 0.38
     },
     {
       "parameters": {
@@ -47,7 +47,7 @@
       "pegDelta": 1.509903313490213e-14,
       "binFootOverlap": 0.00009223203777083065,
       "triangles": 3732,
-      "seconds": 0.506
+      "seconds": 0.555
     },
     {
       "parameters": {
@@ -74,7 +74,7 @@
       "pegDelta": 1.509903313490213e-14,
       "binFootOverlap": 0.0001608189264052992,
       "triangles": 6960,
-      "seconds": 0.942
+      "seconds": 1.012
     },
     {
       "parameters": {
@@ -91,7 +91,7 @@
       "pegDelta": 0,
       "binFootOverlap": 0.00006843846454675097,
       "triangles": 1946,
-      "seconds": 0.237
+      "seconds": 0.248
     },
     {
       "parameters": {
@@ -134,7 +134,7 @@
       "pegDelta": 1.509903313490213e-14,
       "binFootOverlap": 0.00009132852786590994,
       "triangles": 4304,
-      "seconds": 0.661
+      "seconds": 0.702
     },
     {
       "parameters": {
@@ -172,7 +172,7 @@
       "pegDelta": 1.509903313490213e-14,
       "binFootOverlap": 0.00009140472172952869,
       "triangles": 4496,
-      "seconds": 0.835
+      "seconds": 0.878
     },
     {
       "parameters": {
@@ -194,7 +194,7 @@
       "pegDelta": 6.411537967210279e-15,
       "binFootOverlap": 0.00006843846451838612,
       "triangles": 2120,
-      "seconds": 0.262
+      "seconds": 0.297
     },
     {
       "parameters": {
@@ -224,7 +224,7 @@
       "pegDelta": 4.768650355384774e-10,
       "binFootOverlap": 0.00009221228792224336,
       "triangles": 3744,
-      "seconds": 0.478
+      "seconds": 0.525
     },
     {
       "parameters": {
@@ -254,7 +254,7 @@
       "pegDelta": 0,
       "binFootOverlap": 0.00009221228792129637,
       "triangles": 3708,
-      "seconds": 0.478
+      "seconds": 0.511
     },
     {
       "couponFit": {

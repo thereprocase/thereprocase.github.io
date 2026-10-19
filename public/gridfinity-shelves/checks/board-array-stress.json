@@ -1,0 +1,197 @@
+[
+  {
+    "board_system": "skadis",
+    "parameters": {
+      "columns": 12,
+      "angle": 5,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 22834,
+    "pegDelta": 7.235878562994458e-14,
+    "footOverlap": 0.0007008853039994718,
+    "seconds": 4.605
+  },
+  {
+    "board_system": "skadis",
+    "parameters": {
+      "columns": 8,
+      "rows": 8,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 108084,
+    "pegDelta": 1.304512053934559e-15,
+    "footOverlap": 0.0012542027441251923,
+    "seconds": 32.431
+  },
+  {
+    "board_system": "skadis",
+    "parameters": {
+      "columns": 1,
+      "rows": 12
+    },
+    "pass": true,
+    "triangles": 19784,
+    "pegDelta": 6.411537967210279e-15,
+    "footOverlap": 0.0006312323095986683,
+    "seconds": 2.807
+  },
+  {
+    "board_system": "wall_control",
+    "parameters": {
+      "columns": 12,
+      "angle": 5,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 37556,
+    "pegDelta": 3.429170587210268e-8,
+    "footOverlap": 0.0007008851748982658,
+    "seconds": 7.934
+  },
+  {
+    "board_system": "wall_control",
+    "parameters": {
+      "columns": 8,
+      "rows": 8,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 113932,
+    "pegDelta": 2.091568067766329e-8,
+    "footOverlap": 0.0012542027485627101,
+    "seconds": 33.217
+  },
+  {
+    "board_system": "wall_control",
+    "parameters": {
+      "columns": 1,
+      "rows": 12
+    },
+    "pass": true,
+    "triangles": 22434,
+    "pegDelta": 2.8073068171866613e-9,
+    "footOverlap": 0.0006308477103509118,
+    "seconds": 2.983
+  },
+  {
+    "board_system": "bott_perfo",
+    "parameters": {
+      "columns": 12,
+      "angle": 5,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 32514,
+    "pegDelta": 1.560814747823699e-8,
+    "footOverlap": 0.0007008876168377225,
+    "seconds": 14.964
+  },
+  {
+    "board_system": "bott_perfo",
+    "parameters": {
+      "columns": 8,
+      "rows": 8,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 115180,
+    "pegDelta": 1.0399729053172626e-8,
+    "footOverlap": 0.0012542027459505477,
+    "seconds": 28.815
+  },
+  {
+    "board_system": "bott_perfo",
+    "parameters": {
+      "columns": 1,
+      "rows": 12
+    },
+    "pass": true,
+    "triangles": 21118,
+    "pegDelta": 1.2703689574825363e-9,
+    "footOverlap": 0.0006308477109041946,
+    "seconds": 2.764
+  },
+  {
+    "board_system": "multiboard",
+    "parameters": {
+      "columns": 12,
+      "angle": 5,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 39230,
+    "pegDelta": 0,
+    "footOverlap": 0.0007008851778098344,
+    "seconds": 18.748
+  },
+  {
+    "board_system": "multiboard",
+    "parameters": {
+      "columns": 8,
+      "rows": 8,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 121394,
+    "pegDelta": 0,
+    "footOverlap": 0.001254202745907005,
+    "seconds": 43.947
+  },
+  {
+    "board_system": "multiboard",
+    "parameters": {
+      "columns": 1,
+      "rows": 12
+    },
+    "pass": true,
+    "triangles": 22030,
+    "pegDelta": 0,
+    "footOverlap": 0.0006312323096022006,
+    "seconds": 3.161
+  },
+  {
+    "board_system": "hsw",
+    "parameters": {
+      "columns": 12,
+      "angle": 5,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 52602,
+    "pegDelta": 0,
+    "footOverlap": 0.0007008851778057609,
+    "seconds": 40.464
+  },
+  {
+    "board_system": "hsw",
+    "parameters": {
+      "columns": 8,
+      "rows": 8,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "pass": true,
+    "triangles": 130546,
+    "pegDelta": 0,
+    "footOverlap": 0.001254202745907005,
+    "seconds": 51.153
+  },
+  {
+    "board_system": "hsw",
+    "parameters": {
+      "columns": 1,
+      "rows": 12
+    },
+    "pass": true,
+    "triangles": 20862,
+    "pegDelta": 0,
+    "footOverlap": 0.0006312323096022184,
+    "seconds": 2.747
+  }
+]

@@ -119,3 +119,69 @@ notes, or save that information as local JSON. No feedback is sent automatically
 
 Run `node scripts/gridfinity/check-board-systems.mjs /tmp/board-checks` for the
 new interface checks. `check-peg-fit.mjs` retains the original connector checks.
+
+
+## Round-hole variants and industrial panels
+
+| Preset | Hole opening | Mount pitch | Initial panel thickness |
+| --- | --- | --- | --- |
+| US small | 4.7625 mm round (3/16 in) | 25.4 mm | 3.2 mm |
+| US large | 7.14375 mm round (9/32 in) | 25.4 mm | 5.5 mm |
+| Wall Control | 6.35 mm round | 25.4 mm | 0.9 mm, provisional |
+| Metric | 6 mm round | 25 mm | 5 mm |
+| Bott Perfo | 9.2 mm square | 38.1 mm | 0.9 mm, provisional |
+
+These are reference-based models, not print tested. Use measured hole openings
+and panel thickness for your board. The 25 mm preset is a specific pattern, not
+a claim that all metric panels use it. Wall Control uses its round holes here.
+The Bott preset uses our rounded L-pins in the square openings, not Bott's
+locking-clip attachment.
+
+Upper L-hooks and lower locating pins are adapted from Eugene Vasenev's
+MIT-licensed model, included with its license under `sources/round/`. Upper and
+lower clearances are separate; no snap barb is used. Hook ledges need supports
+in the supplied frame-down pose. Panel references and exact defaults are in
+`board-sources.json`. Digital checks cover static board clearance, pitch,
+connected solids and closed STL; they do not establish an insertion path or
+physical fit. Print the selected coupon before a shelf.
+
+## Multiboard and HSW screw inserts
+
+These presets reuse separate M3 board inserts rather than embedding a copy of
+their snap geometry. Get the inserts from the creator links shown in the form:
+Multiboard **Drop-In Nut Snap — M3**, or HSW **insert-m3** with its M3 hardware.
+Use one insert and screw per generated mount. The backplate seats against the
+insert faces; choose screw length for the insert and nut engagement.
+
+Multiboard mounts follow a 25 mm grid. HSW uses a 23.6 mm vertical pitch and
+40.8763990586 mm horizontal mounting step (every other hex column). The HSW
+pitch follows Xander/EdwinEesting/geru's CC BY 4.0 panel reference, linked in
+`board-sources.json`. The original board inserts are not redistributed or
+modified in this project.
+
+The original screw interface defaults to 3.4 mm clearance holes and 6.2 mm head
+recesses, 3.2 mm deep. Recess depth is limited to 3.1–3.4 mm so a 3 mm socket
+head clears the adjacent frame while leaving at least 2 mm of backplate under
+it. The coupon uses the same bores and pitch as the shelf. These models are
+not print tested; the digital checks verify our fastener clearance and bearing
+material, not the external inserts' snap retention.
+
+Additional checks:
+
+- `node scripts/gridfinity/check-round-boards.mjs /tmp/round-board-checks`
+- `node scripts/gridfinity/check-bolted-boards.mjs /tmp/screw-board-checks`
+
+STLs for new board systems include `NOT PRINT TESTED` in their header. The
+original system's STL bytes and native-compatible parameter format are retained.
+
+
+For screw-mounted shelves, the gussets reach the bottom of the backplate. This
+keeps a continuous strip below the lowest head recess, including when a bore
+aligns with a gusset. The strict connected-solid check remains in force.
+
+The final STL check still requires exactly two oppositely directed uses of every
+geometric edge. If float32 conversion flattens a microscopic triangle fan, new
+board exports can simplify that fan in the solid kernel using a tolerance tied
+to coordinate precision. Symmetric material change is limited to 0.001%, the
+part must remain one solid, and the same strict edge check runs again. The
+original system's export path is unchanged.

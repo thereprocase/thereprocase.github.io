@@ -1,11 +1,14 @@
 {
-  "revision": "boards-1",
+  "revision": "boards-2",
   "gridfinity_pitch_mm": 42,
   "systems": {
     "original": {
       "description": "Existing PF02 #9 and PF07 #5 native connector geometry; unchanged at zero fit adjustment",
       "source": "/peg/",
-      "pitch_mm": [25.4, 25.4]
+      "pitch_mm": [
+        25.4,
+        25.4
+      ]
     },
     "skadis": {
       "description": "IKEA SKÅDIS staggered-slot interface",
@@ -15,8 +18,14 @@
       "license": "MIT",
       "license_file": "sources/skadis/LICENSE",
       "reference_source": "sources/skadis/ikea-skadis.scad",
-      "slot_mm": [5, 15],
-      "pitch_mm": [40, 20],
+      "slot_mm": [
+        5,
+        15
+      ],
+      "pitch_mm": [
+        40,
+        20
+      ],
       "alternate_row_offset_mm": 20,
       "reference_board_thickness_mm": 5.5,
       "default_clearance_per_side_mm": 0.2,
@@ -30,7 +39,216 @@
         "Positive-volume tail/tab overlap for reliable solid union",
         "Two-slot coupon shares the same connector construction as the shelf"
       ],
-      "check_scope": "Digital solid, board collision, export and browser checks. No physical print or board fit test."
+      "check_scope": "Digital solids, board collision, export and browser checks; no physical print or board fit test."
+    },
+    "us_small": {
+      "status": "Modeled from reference dimensions; not print tested",
+      "connector_reference": "https://mrvarity.com/apps/openscad/g/pegboard-hook/",
+      "connector_author": "Eugene Vasenev / mrvarity.com",
+      "connector_reference_file": "sources/round/pegboard-hook.scad",
+      "connector_reference_sha256": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
+      "license": "MIT",
+      "license_file": "sources/round/LICENSE",
+      "changes": [
+        "Ported L-pin hull and flat-sided locating pin to browser manifold geometry",
+        "Separate upper-hook and lower-pin clearances; actual hole size and panel thickness are independent",
+        "Preserved 5.4 mm backplate root material and 42 mm Gridfinity pitch",
+        "Positive-volume overlap between lower pin and tapered nose",
+        "No snap barb in this version"
+      ],
+      "check_scope": "Static panel clearance, fixed board pitch, closed connected exports and browser operation; installation motion and physical fit are not tested.",
+      "description": "US small round-hole pegboard",
+      "pitch_mm": [
+        25.4,
+        25.4
+      ],
+      "hole_shape": "round",
+      "hole_size_mm": 4.7625,
+      "default_panel_thickness_mm": 3.2,
+      "default_upper_clearance_per_side_mm": 0.2,
+      "default_lower_clearance_per_side_mm": 0.2,
+      "default_behind_board_gap_mm": 0.2,
+      "dimension_references": [
+        "https://www.panel.com/products/pegboard/",
+        "https://www.panel.com/wp-content/uploads/2025/03/Pegboard-Flier-2025.pdf"
+      ]
+    },
+    "us_large": {
+      "status": "Modeled from reference dimensions; not print tested",
+      "connector_reference": "https://mrvarity.com/apps/openscad/g/pegboard-hook/",
+      "connector_author": "Eugene Vasenev / mrvarity.com",
+      "connector_reference_file": "sources/round/pegboard-hook.scad",
+      "connector_reference_sha256": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
+      "license": "MIT",
+      "license_file": "sources/round/LICENSE",
+      "changes": [
+        "Ported L-pin hull and flat-sided locating pin to browser manifold geometry",
+        "Separate upper-hook and lower-pin clearances; actual hole size and panel thickness are independent",
+        "Preserved 5.4 mm backplate root material and 42 mm Gridfinity pitch",
+        "Positive-volume overlap between lower pin and tapered nose",
+        "No snap barb in this version"
+      ],
+      "check_scope": "Static panel clearance, fixed board pitch, closed connected exports and browser operation; installation motion and physical fit are not tested.",
+      "description": "US large round-hole pegboard",
+      "pitch_mm": [
+        25.4,
+        25.4
+      ],
+      "hole_shape": "round",
+      "hole_size_mm": 7.14375,
+      "default_panel_thickness_mm": 5.5,
+      "default_upper_clearance_per_side_mm": 0.2,
+      "default_lower_clearance_per_side_mm": 0.2,
+      "default_behind_board_gap_mm": 0.2,
+      "dimension_references": [
+        "https://www.panel.com/products/pegboard/",
+        "https://www.panel.com/wp-content/uploads/2025/03/Pegboard-Flier-2025.pdf"
+      ]
+    },
+    "wall_control": {
+      "status": "Modeled from reference dimensions; not print tested",
+      "connector_reference": "https://mrvarity.com/apps/openscad/g/pegboard-hook/",
+      "connector_author": "Eugene Vasenev / mrvarity.com",
+      "connector_reference_file": "sources/round/pegboard-hook.scad",
+      "connector_reference_sha256": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
+      "license": "MIT",
+      "license_file": "sources/round/LICENSE",
+      "changes": [
+        "Ported L-pin hull and flat-sided locating pin to browser manifold geometry",
+        "Separate upper-hook and lower-pin clearances; actual hole size and panel thickness are independent",
+        "Preserved 5.4 mm backplate root material and 42 mm Gridfinity pitch",
+        "Positive-volume overlap between lower pin and tapered nose",
+        "No snap barb in this version"
+      ],
+      "check_scope": "Static panel clearance, fixed board pitch, closed connected exports and browser operation; installation motion and physical fit are not tested.",
+      "description": "Wall Control round holes",
+      "pitch_mm": [
+        25.4,
+        25.4
+      ],
+      "hole_shape": "round",
+      "hole_size_mm": 6.35,
+      "default_panel_thickness_mm": 0.9,
+      "default_upper_clearance_per_side_mm": 0.2,
+      "default_lower_clearance_per_side_mm": 0.2,
+      "default_behind_board_gap_mm": 0.2,
+      "dimension_references": [
+        "https://blog.wallcontrol.info/2012/09/pegboard-product-feature-horizontally.html",
+        "https://www.wallcontrol.com/content/6thcatalog.pdf"
+      ],
+      "panel_thickness_note": "0.9 mm is a provisional default based on the cited 20-gauge panel; measure the finished panel. Uses round holes, not proprietary slots."
+    },
+    "metric25": {
+      "status": "Modeled from reference dimensions; not print tested",
+      "connector_reference": "https://mrvarity.com/apps/openscad/g/pegboard-hook/",
+      "connector_author": "Eugene Vasenev / mrvarity.com",
+      "connector_reference_file": "sources/round/pegboard-hook.scad",
+      "connector_reference_sha256": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
+      "license": "MIT",
+      "license_file": "sources/round/LICENSE",
+      "changes": [
+        "Ported L-pin hull and flat-sided locating pin to browser manifold geometry",
+        "Separate upper-hook and lower-pin clearances; actual hole size and panel thickness are independent",
+        "Preserved 5.4 mm backplate root material and 42 mm Gridfinity pitch",
+        "Positive-volume overlap between lower pin and tapered nose",
+        "No snap barb in this version"
+      ],
+      "check_scope": "Static panel clearance, fixed board pitch, closed connected exports and browser operation; installation motion and physical fit are not tested.",
+      "description": "Metric round holes on 25 mm grid",
+      "pitch_mm": [
+        25,
+        25
+      ],
+      "hole_shape": "round",
+      "hole_size_mm": 6,
+      "default_panel_thickness_mm": 5,
+      "default_upper_clearance_per_side_mm": 0.2,
+      "default_lower_clearance_per_side_mm": 0.2,
+      "default_behind_board_gap_mm": 0.2,
+      "dimension_references": [
+        "https://mrvarity.com/apps/openscad/g/pegboard-hook/"
+      ]
+    },
+    "bott_perfo": {
+      "status": "Modeled from reference dimensions; not print tested",
+      "connector_reference": "https://mrvarity.com/apps/openscad/g/pegboard-hook/",
+      "connector_author": "Eugene Vasenev / mrvarity.com",
+      "connector_reference_file": "sources/round/pegboard-hook.scad",
+      "connector_reference_sha256": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
+      "license": "MIT",
+      "license_file": "sources/round/LICENSE",
+      "changes": [
+        "Ported L-pin hull and flat-sided locating pin to browser manifold geometry",
+        "Separate upper-hook and lower-pin clearances; actual hole size and panel thickness are independent",
+        "Preserved 5.4 mm backplate root material and 42 mm Gridfinity pitch",
+        "Positive-volume overlap between lower pin and tapered nose",
+        "No snap barb in this version"
+      ],
+      "check_scope": "Static panel clearance, fixed board pitch, closed connected exports and browser operation; installation motion and physical fit are not tested.",
+      "description": "Bott Perfo square perforations",
+      "pitch_mm": [
+        38.1,
+        38.1
+      ],
+      "hole_shape": "square",
+      "hole_size_mm": 9.2,
+      "default_panel_thickness_mm": 0.9,
+      "default_upper_clearance_per_side_mm": 0.2,
+      "default_lower_clearance_per_side_mm": 0.2,
+      "default_behind_board_gap_mm": 0.2,
+      "dimension_references": [
+        "https://www.bott.de/en/content/download/1596/file/EN_2023_Fiat_low.pdf"
+      ],
+      "panel_thickness_note": "Hole size and pitch follow the manufacturer. 0.9 mm panel thickness is provisional and adjustable. Uses our L-hook, not the Perfo locking-clip interface."
+    },
+    "multiboard": {
+      "description": "Multiboard M3 nut snap mounts",
+      "status": "Modeled from reference dimensions; not print tested",
+      "mount_type": "M3 socket-head screws into separate board inserts",
+      "insert_reference": "https://thangs.com/designer/MultiBuild/3d-model/Drop-In%20Nut%20Snap%20-%20M3-1030686",
+      "external_connector_included": false,
+      "geometry_code": "Original screw-hole and counterbore geometry; no external connector mesh or thread is copied",
+      "pitch_mm": [
+        25,
+        25
+      ],
+      "screw_hole_diameter_mm": 3.4,
+      "counterbore_diameter_mm": 6.2,
+      "default_counterbore_depth_mm": 3.2,
+      "minimum_remaining_backplate_mm": 2,
+      "check_scope": "Our screw clearance, bearing material, board-grid positions, closed connected exports and browser operation. External insert snap fit is not tested.",
+      "dimension_references": [
+        "https://multibuild.io/",
+        "https://thangs.com/designer/MultiBuild/3d-model/Drop-In%20Nut%20Snap%20-%20M3-1030686"
+      ],
+      "external_connector_license": "Creator license applies to the separately downloaded insert: https://multibuild.io/license"
+    },
+    "hsw": {
+      "description": "Honeycomb Storage Wall M3 insert mounts",
+      "status": "Modeled from reference dimensions; not print tested",
+      "mount_type": "M3 socket-head screws into separate board inserts",
+      "insert_reference": "https://www.printables.com/model/152592-honeycomb-storage-wall",
+      "external_connector_included": false,
+      "geometry_code": "Original screw-hole and counterbore geometry; no external connector mesh or thread is copied",
+      "pitch_mm": [
+        40.8763990586255,
+        23.6
+      ],
+      "screw_hole_diameter_mm": 3.4,
+      "counterbore_diameter_mm": 6.2,
+      "default_counterbore_depth_mm": 3.2,
+      "minimum_remaining_backplate_mm": 2,
+      "check_scope": "Our screw clearance, bearing material, board-grid positions, closed connected exports and browser operation. External insert snap fit is not tested.",
+      "grid_reference": "https://github.com/geru/3d-scad-hsw-customizable/blob/b606f2e8427e7648748fdc9833f6621884e78d2e/custom-honeycomb-wall-v2.3.scad",
+      "grid_reference_credit": "Xander, EdwinEesting and geru; CC BY 4.0",
+      "grid_derivation": "20 mm inner flats + 2 × 1.8 mm walls = 23.6 mm vertical pitch. Alternate hex columns are 23.6 × sqrt(3) mm apart horizontally.",
+      "external_connector_reference": "https://github.com/elentok/honeycomb-wall/tree/main/originals (insert-m3.stl; reference only, not redistributed)"
     }
+  },
+  "export_checks": {
+    "edge_incidence": 2,
+    "winding": "opposite directions",
+    "float32_normalization": "Only after a closure failure on a new board export; coordinate-precision tolerance, one-solid check and symmetric-difference guard, followed by strict revalidation",
+    "maximum_symmetric_volume_fraction": 1e-05
   }
 }

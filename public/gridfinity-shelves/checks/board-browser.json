@@ -1,12 +1,78 @@
 {
-  "boardSelector": true,
-  "systemSpecificFit": true,
-  "couponSTLReadback": true,
-  "recipeBoardAndFit": true,
-  "presetPreservesBoard": true,
-  "feedbackDraftAndJSON": true,
-  "mobile320and390": true,
-  "desktop1600": true,
-  "originalStillGenerates": true,
+  "tests": [
+    {
+      "system": "skadis",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "us_small",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "us_large",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "wall_control",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "metric25",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "bott_perfo",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "multiboard",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    },
+    {
+      "system": "hsw",
+      "couponDownload": true,
+      "shelfDownload": true,
+      "boardDefaults": true,
+      "recipe": true,
+      "feedbackJSON": true,
+      "responsive": true
+    }
+  ],
+  "originalNativeRecipe": true,
   "errors": []
 }
