@@ -1,3 +1,4 @@
+import {spacingForBed} from './neighbor-spacing.js?v=spacing-1';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
@@ -16,7 +17,17 @@ const bedPresets={'180':[180,180],'220':[220,220],'250x210':[250,210],'256':[256
 let bedWidth=256,bedDepth=256,bedPreset='256',bed;
 const validBed=(w,d)=>Number.isFinite(w)&&Number.isFinite(d)&&w>=25&&w<=2000&&d>=25&&d<=2000;
 try{const saved=JSON.parse(localStorage.getItem(bedKey));if(saved&&validBed(saved.width,saved.depth)){bedWidth=saved.width;bedDepth=saved.depth;bedPreset=Object.keys(bedPresets).find(k=>bedPresets[k][0]===bedWidth&&bedPresets[k][1]===bedDepth)??'custom';}}catch{}
-function bedSummary(){
+function updateSpacingTable(){
+ const selected=form.elements.board_system.value,fmt=v=>Number(v.toFixed(2)).toString();
+ $('spacing-bed').textContent=`Shelf widths up to your ${bedWidth} mm bed width (maximum 12 cells). Aligned, same-height neighbors; 42 mm Gridfinity pitch is unchanged. Empty holes are counted between the nearest mounts on the same horizontal row. Staggered layouts keep their row phase.`;
+ $('spacing-tables').replaceChildren(...Object.entries(boards).map(([id,b])=>{
+ const details=document.createElement('details');details.open=id===selected;const summary=document.createElement('summary');summary.textContent=b.name+(id===selected?' · selected':'');details.append(summary);
+ const wrap=document.createElement('div');wrap.className='spacing-scroll';const table=document.createElement('table');const caption=document.createElement('caption');caption.textContent=`${Number(b.pitchX.toFixed(2))} mm between hole columns`;
+ table.append(caption);const head=document.createElement('thead');head.innerHTML='<tr><th scope="col">Cells wide</th><th scope="col">Width mm</th><th scope="col">Repeat mm</th><th scope="col">Edge gap mm</th><th scope="col">Empty holes</th></tr>';table.append(head);
+ const body=document.createElement('tbody');for(const r of spacingForBed(id,bedWidth)){const tr=document.createElement('tr');if(Number(form.elements.columns.value)===r.columns&&id===selected)tr.className='spacing-current';for(const v of [r.columns,fmt(r.width),fmt(r.spacing),fmt(r.gap),r.emptyHoles]){const td=document.createElement('td');td.textContent=v;tr.append(td);}body.append(tr);}table.append(body);wrap.append(table);details.append(wrap);return details;
+ }));
+}
+function bedSummary(){updateSpacingTable();
  let text=`${bedWidth} × ${bedDepth} mm · 10 mm grid`;$('bed-status').dataset.overflow='false';
  if(mesh){if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();const size=mesh.geometry.boundingBox.getSize(new THREE.Vector3()),over=size.x>bedWidth+.001||size.y>bedDepth+.001;$('bed-status').dataset.overflow=String(over);if(over)text+=' · Footprint exceeds the bed in this orientation.';}
  $('bed-status').textContent=text;$('bed-legend-size').textContent=`${bedWidth} × ${bedDepth} mm bed · 10 mm grid`;
@@ -76,7 +87,7 @@ function generate(kind='shelf'){if(kind==='shelf'&&!form.reportValidity())return
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('viewer-note').textContent='No new model generated. See the error below.';$('viewer-note').hidden=!!mesh;$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('viewer-note').textContent='Geometry engine failed to load.';$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage({parameters:p,kind});
 }
-form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
+form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{updateSpacingTable();worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
 $('coupon').onclick=()=>generate('coupon');$('reset-fit').onclick=()=>{for(const k of ['peg_clearance','hook_grip','hoop_firmness',...Object.keys(boardDefaults).filter(k=>k!=='board_system')])form.elements[k].value=boardSettings(form.elements.board_system.value)[k]??defaults[k];form.oninput();};
 $('cancel').onclick=()=>{worker?.terminate();setBusy(false);$('status').textContent='Generation cancelled. Adjust settings or generate again.';$('viewer-note').textContent='Generation cancelled · select Generate preview';$('viewer-note').hidden=false;};
 for(const button of document.querySelectorAll('[data-preset]'))button.onclick=()=>{const [x,y]=button.dataset.preset.split('').map(Number),p={...defaults,columns:x,rows:y,beam:x===1?5:10,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))};for(const [k,v] of Object.entries(p)){if(typeof v==='boolean')form.elements[k].checked=v;else form.elements[k].value=v;}generate();};
@@ -88,6 +99,7 @@ $('step').onclick=()=>exportSolids('step');$('three-mf').onclick=()=>exportSolid
 $('recipe').onclick=()=>{if(result)download(JSON.stringify(Object.fromEntries(Object.keys(defaults).filter(k=>result.parameters.board_system!=='original'||!(k in boardDefaults)).map(k=>[k,result.parameters[k]])),null,2)+'\n','application/json',fileStem(result)+'-parameters.json');};
 let previousBoard='original';
 function updateBoardUI(){
+ updateSpacingTable();
  const id=form.elements.board_system.value,original=id==='original',skadis=id==='skadis',b=boards[id],bolted=b.mode==='bolted';
  if(id!==previousBoard){for(const [k,v] of Object.entries(boardSettings(id)))if(k!=='board_system')form.elements[k].value=v;previousBoard=id;}
  for(const [field,show] of [['original-fit',original],['slot-fit',!original&&!bolted],['bolt-fit',bolted]]){const f=$(field);f.hidden=!show;for(const e of f.querySelectorAll('input'))e.disabled=!show;}
