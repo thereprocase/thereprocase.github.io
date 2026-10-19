@@ -1,0 +1,11 @@
+{
+  "couponGeneration": true,
+  "couponIgnoresInvalidShelfArray": true,
+  "STLReadback": true,
+  "recipePreservesFits": true,
+  "presetKeepsFitValues": true,
+  "resetFit": true,
+  "bothPoses": true,
+  "mobile320and390": true,
+  "errors": []
+}

@@ -57,3 +57,35 @@ Default parameters now include `mount_rows: 2` and `backplate: true`. A 5.4 mm c
 The default 2×1 solid CAD volume rises from 16.18 to 29.44 cm³ with the solid backplate and third gusset. Printed mass depends on the actual walls and infill.
 
 For a static-only generator update, copy this complete directory to `dist/client/gridfinity-shelves` and `docs/gridfinity-shelves` after checks. Keep their hashes equal; no framework rebuild is needed when other pages are unchanged.
+
+## Peg fit and coupon
+
+The three fit controls are offsets from the existing pegs, in 0.05 mm steps:
+
+- `peg_clearance`: -0.15 to +0.15 mm per side. Positive narrows the crush ribs
+  for an easier fit in the holes; negative makes them tighter. Bearing surfaces
+  and the rear hook/hoop shapes stay in place.
+- `hook_grip`: -0.20 to +0.20 mm. Positive adds upper-hook clamp against the board;
+  negative gives it more room.
+- `hoop_firmness`: -0.15 to +0.20 mm. Positive adds to the 0.80 mm flexing wall;
+  negative makes the lower hoop easier to flex. Its outside catch stays the same.
+
+Zero keeps the original connectors. Peg pitch remains 25.4 mm, Gridfinity pitch
+42 mm, and the joining roots keep their dimensions. The fit library contains
+native FreeCAD cores at each setting; the browser constructs the crush ribs.
+No whole-peg scaling or interpolation is used. The library loads only when a
+nonzero fit is selected.
+
+Generate peg-pair coupon creates a 20 mm wide small backplate with the same
+hook and hoop settings. It always uses two holes one inch apart, regardless
+of the shelf array. Its STL is already in the print pose. Fit settings carry
+through the size presets and saved recipes; Reset peg fit returns them to zero.
+
+[FreeCAD source ZIP](downloads/peg-fit-source.zip) includes the controls and coupon:
+run `bench/source/gridfinity_generator_v1/generate.py output --config recipe.json`
+in FreeCAD Python; add `--coupon` for the peg pair. This source bundle extends
+the original shelf source linked in the provenance record.
+
+Run `node scripts/gridfinity/check-peg-fit.mjs /tmp/peg-fit-checks` for the
+coupon, adjustment-independence, rib-width and parameter checks. Test outputs
+are in [checks/peg-fit.json](checks/peg-fit.json).

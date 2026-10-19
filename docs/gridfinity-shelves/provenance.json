@@ -8,10 +8,9 @@
     "integrity": "sha512-yC+zpML+IZPCtOTzowfIDCc3s31Qr8oCmfMIDnOVOhwjuzh89F+hlQ74BmU6cGHnySH+M6Ry5FnoEfW94Um2vQ==",
     "install_scripts_executed": false
   },
-  "qualification": "Digital geometry checks only; physical fit, retention, loads and tilted print quality require testing",
   "assets": {
-    "README.md": "750a4808f4440071e7638c1a488146194bb80c03cec8c55e4c254bd4adcf3607",
-    "app.js": "fb2a0344c8d31148e6a861c23c87f23a8fa30ee6014faa5efd34fdd95d7db1dc",
+    "README.md": "b61f4868201dd61b0a9dc172c1c1ab58872dd220b99765b0335cce04c58d7d10",
+    "app.js": "e41bfd37b80791645a6aae37910900d20ee6aa408708deeefd3b8395b91c9b41",
     "backplate-angles.png": "6837b5cfaf8b565709f4b0110a1b678352861972334796f89d93ba7ef5d623c9",
     "backplate-default.png": "f27e6beb947044b8b0b6208be49f5635da3e2e684e7eeb62d392397b1038eedc",
     "backplate-heights.png": "3d28522fe19ad686882cfcd2396c86b43170f8b16322e0919fff953ab9cdbb7b",
@@ -19,20 +18,35 @@
     "checks/browser.json": "a4883e91af16eb4840fae38d8d00dbc97db172b7297cf1eda75b38259bd7e3a3",
     "checks/exported-stl.json": "fe9f06897ba0be8394054f20a82ceca3b28e18370b9ee26b4c07ed477733293f",
     "checks/native-comparison.json": "71c59da4dcca6e706f6f2191e6890925482b2fd9d2502af8bcb7f9a634433393",
+    "checks/peg-fit-browser.json": "1f35d2f3d52a25515eb1716ca9449d133db5fb3e22ea241e9d95a94b0ce3ea6a",
+    "checks/peg-fit-native.json": "cc5240236152e13dc8dbb474bd5692f08c9ccc480bf7e988b8eeb601bba5ffcb",
+    "checks/peg-fit-nominal.json": "ac1f0e1c02d825cfa762e45da402bf87846b4e0bfdb083320232d41404ceae80",
+    "checks/peg-fit.json": "5e25286990e21a27cdade5341b85928223c130d2bb813ac7434c1d4545c9c18e",
+    "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
+    "fit-inputs.json": "7b55fdbea9d77a0bc809bbaaab180626f93a1af945594d984e2eb0350d79e0db",
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "4b2ed7cbaf63af6dc52651f06b6ad6e9adf3f92990bb26bc14d605b00bcb3be6",
+    "index.html": "ef161f60270c614cb41a9dc852c8eac748227af6e23eaecbcd466ffddbca172d",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
-    "kernel.js": "65b97f8f9dcdfdcb15c0bafde63980191a564ef546e42722477123ff51ec8bac",
+    "kernel.js": "244110a6087ddb3e3ad6177d4579a4dbce6a4f72a48fd03f26ba809ca1c241d1",
+    "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
+    "peg-fit.js": "a8c3cbf1ce418f15f6da940ef615fe678e30d51083ec0f16e19a33e7d66e27d5",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "style.css": "1aee41abb24ec90ba14d3c36f41114204d46ced82ed1f2e233a60d874ab27b9a",
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
-    "worker.js": "505dcb041ee6efa81efd2df3fda8ef93d483f4dc19462a3de1dc09a676efcf0a"
+    "worker.js": "7d15b93a2dcb16b7bcf91984fda23fcfe7c6b7cb1748dd15b234b8df14dc41fa"
   },
-  "revision": "backplate-4"
+  "revision": "fit-7",
+  "peg_fit_source": "downloads/peg-fit-source.zip",
+  "peg_fit_checks": [
+    "checks/peg-fit.json",
+    "checks/peg-fit-native.json",
+    "checks/peg-fit-browser.json",
+    "checks/peg-fit-nominal.json"
+  ]
 }

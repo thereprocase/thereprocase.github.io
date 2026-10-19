@@ -1,0 +1,115 @@
+{
+  "couponCases": [
+    {
+      "parameters": {},
+      "volume": 4146.037478770892,
+      "pegDifference": 2.6399486767366514e-8,
+      "triangles": 10472,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "peg_clearance": 0.15
+      },
+      "volume": 4143.24505893412,
+      "pegDifference": 3.026781699843467e-9,
+      "triangles": 10566,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "peg_clearance": -0.15
+      },
+      "volume": 4148.911888730247,
+      "pegDifference": 3.0267820598471753e-9,
+      "triangles": 10558,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "hook_grip": 0.2
+      },
+      "volume": 4140.541905540347,
+      "pegDifference": 3.0434344124872255e-9,
+      "triangles": 10544,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "hook_grip": -0.2
+      },
+      "volume": 4151.532059450204,
+      "pegDifference": 3.04363106479416e-9,
+      "triangles": 10544,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "hoop_firmness": 0.2
+      },
+      "volume": 4154.061623871315,
+      "pegDifference": 2.6382834290124132e-8,
+      "triangles": 10548,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "hoop_firmness": -0.15
+      },
+      "volume": 4139.93294032227,
+      "pegDifference": 2.6382834290124132e-8,
+      "triangles": 10478,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "peg_clearance": 0.15,
+        "hook_grip": 0.2,
+        "hoop_firmness": -0.15
+      },
+      "volume": 4131.758843720841,
+      "pegDifference": 3.0267817060250594e-9,
+      "triangles": 10554,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "peg_clearance": -0.15,
+        "hook_grip": -0.2,
+        "hoop_firmness": 0.2
+      },
+      "volume": 4162.546566574226,
+      "pegDifference": 3.026781699843467e-9,
+      "triangles": 10616,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "peg_clearance": 0.05,
+        "hook_grip": 0.05,
+        "hoop_firmness": 0.05
+      },
+      "volume": 4145.750309665752,
+      "pegDifference": 4.97185526215625e-7,
+      "triangles": 10556,
+      "pass": true
+    }
+  ],
+  "measuredCrushRibWidths": [
+    {
+      "label": "zero",
+      "upper": 6.849999904632568,
+      "lower": 6.650000095367432
+    },
+    {
+      "label": "looser",
+      "upper": 6.650000095367432,
+      "lower": 6.449999809265137
+    }
+  ],
+  "upperGripLeavesLowerUnchanged": true,
+  "lowerFirmnessLeavesUpperUnchanged": true,
+  "holeClearanceLeavesRearHooksAndHoopsUnchanged": true,
+  "pitch": 25.4,
+  "invalidCases": 5
+}

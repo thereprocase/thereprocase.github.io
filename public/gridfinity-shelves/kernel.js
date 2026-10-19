@@ -1,7 +1,8 @@
+import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true};
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults};
 export function parameters(input) {
- const p={...defaults,...input};
+ const p={...defaults,...input};checkPegFit(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
  for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
@@ -48,7 +49,7 @@ export function build(module, inputs, input) {
  }
  try {
   const pieces=[],pockets=[],pegs=[],feet=[],c=p.clearance,angle=p.angle*Math.PI/180,tangent=Math.tan(angle);
-  const ys=inputs.upper.vertices.map(v=>v[1]),zs=inputs.upper.vertices.map(v=>v[2]);
+  const pegSet=makePegs(module,inputs,p,keep),upperMesh=pegSet.upper.getMesh(),ys=[],zs=[];if(p.peg_clearance===0&&p.hook_grip===0){for(const v of inputs.upper.vertices){ys.push(v[1]);zs.push(v[2]);}}else for(let i=0;i<upperMesh.vertProperties.length;i+=3){ys.push(upperMesh.vertProperties[i+1]);zs.push(upperMesh.vertProperties[i+2]);}
   const hinge=Math.max(5.72,3.48-tangent*5.4+.25,Math.max(...zs)-tangent*((tangent>=0?Math.min(...ys):Math.max(...ys))-.15)+.275);
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
   const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
@@ -62,8 +63,7 @@ export function build(module, inputs, input) {
   }
   pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
   if(p.columns>1||p.beam>5)pieces.push(keep(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])).intersect(frontMask)));
-  const upper=mesh(inputs.upper.vertices,inputs.upper.triangles),lower=mesh(inputs.lower.vertices,inputs.lower.triangles);
-  const locator=p.mount_rows>2?mesh(inputs.locator.vertices,inputs.locator.triangles):null;
+  const {upper,lower,locator}=pegSet;
   const bottom=p.backBottom;
   if(p.backplate)pieces.push(box([p.frameWidth,5.4,hinge+1-bottom],[-p.frameWidth/2,.15,bottom]));
   else {
@@ -128,4 +128,25 @@ export function binarySTL(result) {
  d.setUint32(80,t.length/3,true);
  for(let i=0;i<t.length;i+=3){const o=84+i/3*50;for(let j=0;j<3;j++)for(let k=0;k<3;k++)d.setFloat32(o+12+j*12+k*4,v[t[i+j]*3+k],true);}
  return b;
+}
+
+/** Small paired connector coupon, printed with its top face on the bed. */
+export function buildCoupon(module,inputs,input={}){
+ const p=parameters(input),{Manifold:M,Mesh}=module,allocated=[],keep=o=>(allocated.push(o),o);
+ try{
+  const pegs=makePegs(module,inputs,p,keep),lower=keep(pegs.lower.translate([0,0,-25.4]));
+  const plate=keep(keep(M.cube([20,5.4,35.28])).translate([-10,Math.fround(.15),-29.56]));
+  const shape=keep(keep(M.union([plate,pegs.upper,lower])).simplify(.00001));
+  const components=shape.decompose();components.forEach(keep);if(shape.status()!=='NoError'||components.length!==1)throw Error('Coupon must be one connected solid.');
+  const region=keep(keep(M.cube([40,60.15,100])).translate([-20,-60,-50]));
+  const expected=keep(keep(M.union([pegs.upper,lower])).intersect(region)),actual=keep(shape.intersect(region));
+  const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();if(pegDelta>.01)throw Error('Coupon peg fit changed at the backplate.');
+  const source=shape.getMesh(),v=source.vertProperties,vertices=new Float32Array(v.length);let minZ=Infinity;
+  for(let i=0;i<v.length;i+=3){vertices[i]=v[i];vertices[i+1]=-v[i+1];vertices[i+2]=-v[i+2];minZ=Math.min(minZ,vertices[i+2]);}
+  for(let i=2;i<vertices.length;i+=3)vertices[i]-=minZ;
+  const final=keep(new M(new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(source.triVerts)})));
+  if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
+  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,columns:1,rows:1,mount_rows:2,mounts:[0],webColumns:[],angle:0,backplate:true},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};
+  validateExport(result);return result;
+ }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
 }

@@ -1,0 +1,12 @@
+/** Independent fit adjustments, using native hook/hoop cores and analytic crush ribs. */
+export const pegFitDefaults={peg_clearance:0,hook_grip:0,hoop_firmness:0};
+export function checkPegFit(p){for(const [key,low,high] of [['peg_clearance',-.15,.15],['hook_grip',-.2,.2],['hoop_firmness',-.15,.2]]){const n=p[key];if(!Number.isFinite(n)||n<low-1e-8||n>high+1e-8||Math.abs(n/.05-Math.round(n/.05))>1e-7)throw Error(`${key}: use ${low} to ${high} mm in 0.05 mm steps.`);}}
+export function makePegs(module,inputs,p,keep){
+ const {Manifold:M,Mesh}=module,make=data=>keep(new M(new Mesh({numProp:3,vertProperties:new Float32Array(data.vertices.flat()),triVerts:new Uint32Array(data.triangles.flat())})));
+ function prism(poly,axis,a,b){const point=(u,v,w)=>axis==='y'?[u,w,v]:[u,v,w],v=[...poly.map(([x,z])=>point(x,z,a)),...poly.map(([x,z])=>point(x,z,b))],n=poly.length,t=[];for(let i=1;i<n-1;i++)t.push([0,i+1,i],[n,n+i,n+i+1]);for(let i=0;i<n;i++){const j=(i+1)%n;t.push([i,j,n+j],[i,n+j,n+i]);}let volume=0;for(const [i,j,k] of t){const a=v[i],b=v[j],c=v[k];volume+=a[0]*(b[1]*c[2]-b[2]*c[1])+a[1]*(b[2]*c[0]-b[0]*c[2])+a[2]*(b[0]*c[1]-b[1]*c[0]);}if(volume<0)t.forEach(x=>x.reverse());return make({vertices:v,triangles:t});}
+ function ribs(diametral,rear,lead){const crest=3.175+diametral/2,out=[];for(const sign of [1,-1]){const body=prism([[2.2,-1.48],[crest,-.28],[crest,.52],[2.2,1.72]].map(([x,z])=>[sign*x,z]),'y',rear,Math.fround(.15));const plan=prism([[0,rear],[sign*2.5,rear],[sign*(crest+.01),rear+lead],[sign*(crest+.01),1.15],[0,1.15]],'z',-5,5);out.push(keep(body.intersect(plan)));}return out;}
+ function adjusted(kind,delta,diametral,lead){const lib=inputs.fitLibrary;if(!lib)throw Error('Peg-fit geometry is not loaded. Please generate again.');const data=lib[kind][delta.toFixed(2)];if(!data)throw Error('Unsupported peg fit. Use the 0.05 mm steps.');const core=make(data),rear=kind==='upper'?data.ribRearY:lib.rib.lowerRearY;const solid=keep(M.union([core,...ribs(diametral-2*p.peg_clearance,rear,lead)]));if(solid.status()!=='NoError')throw Error('Peg fit could not be generated.');return solid;}
+ const upper=p.peg_clearance===0&&p.hook_grip===0?make(inputs.upper):adjusted('upper',p.hook_grip,.5,.8);
+ const lower=p.peg_clearance===0&&p.hoop_firmness===0?make(inputs.lower):adjusted('lower',p.hoop_firmness,.3,1);
+ return {upper,lower,locator:inputs.locator?make(inputs.locator):null};
+}

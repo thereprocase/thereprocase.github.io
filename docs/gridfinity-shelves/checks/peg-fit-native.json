@@ -1,0 +1,16 @@
+[
+  {
+    "kind": "coupon",
+    "browserVolume": 4145.750309665752,
+    "nativeVolume": 4145.874439619464,
+    "relativeDifference": 0.00002994059649421517,
+    "nativeRoundtripDifference": 0
+  },
+  {
+    "kind": "shelf",
+    "browserVolume": 16763.644994689697,
+    "nativeVolume": 16764.070272079407,
+    "relativeDifference": 0.000025368385052522922,
+    "nativeRoundtripDifference": 0
+  }
+]

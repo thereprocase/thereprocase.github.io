@@ -1,0 +1,30 @@
+[
+  {
+    "parameters": {
+      "columns": 1
+    },
+    "byteIdentical": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "angle": 5
+    },
+    "byteIdentical": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "angle": -30,
+      "mount_rows": 4
+    },
+    "byteIdentical": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "mount_rows": 1
+    },
+    "byteIdentical": true
+  }
+]
