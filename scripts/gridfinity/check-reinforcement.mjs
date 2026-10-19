@@ -1,0 +1,16 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import Module from '../../public/gridfinity-shelves/vendor/manifold.js';import {build,buildCoupon,binarySTL} from '../../public/gridfinity-shelves/kernel.js';import {reinforce,reinforcementMargin} from '../../public/gridfinity-shelves/reinforcement.js';import {facetedSTEP,modifier3MF} from '../../public/gridfinity-shelves/solid-exports.js';import {makePegs} from '../../public/gridfinity-shelves/peg-fit.js';import {boards,makeBoardPegs} from '../../public/gridfinity-shelves/boards.js';
+const out=process.argv[2]??'/tmp/gridfinity-reinforcement';fs.mkdirSync(out,{recursive:true});const m=await Module();m.setup();const input=JSON.parse(fs.readFileSync(new URL('../../public/gridfinity-shelves/inputs.json',import.meta.url))),records=[];assert.equal(reinforcementMargin,3.5);
+const hash=r=>crypto.createHash('sha256').update(new Uint8Array(binarySTL(r))).digest('hex');
+for(const system of Object.keys(boards))for(const kind of ['coupon','shelf']){
+ const r=(kind==='coupon'?buildCoupon:build)(m,input,{board_system:system,columns:2}),before=hash(r);r.helpers=reinforce(m,input,r);assert.equal(hash(r),before,'Main geometry changed');
+ const all=[],keep=o=>(all.push(o),o);try{
+  const solid=r=>keep(new m.Manifold(new m.Mesh({numProp:3,vertProperties:r.vertices,triVerts:r.triangles}))),body=solid(r),helpers=r.helpers.map(solid),union=keep(m.Manifold.union(helpers)),outside=keep(union.subtract(body)).volume();assert(outside<.01,`helper outside body ${outside}`);
+  const installed=o=>keep(keep(o.translate([0,0,-r.printZShift])).rotate([-r.printRotation*180/Math.PI,0,0])),b=installed(body),h=installed(union),p=r.parameters,set=system==='original'?makePegs(m,input,p,keep):makeBoardPegs(m,p,keep),sites=kind==='coupon'&&system==='original'?[{x:0,z:0,row:0},{x:0,z:-25.4,row:1}]:p.mountSites;let missingPeg=0,missingLoadPath=0;
+  for(const site of sites){const peg=site.row===0?set.upper:site.row===p.mount_rows-1?set.lower:set.locator,part=keep(peg.translate([site.x,0,site.z]));missingPeg=Math.max(missingPeg,keep(keep(part.intersect(b)).subtract(h)).volume());
+   const bb=part.boundingBox(),zmax=b.boundingBox().max[2],region=keep(keep(m.Manifold.cube([bb.max[0]-bb.min[0]+7,bb.max[1]-bb.min[1]+7,zmax-bb.min[2]+7])).translate([bb.min[0]-3.5,bb.min[1]-3.5,bb.min[2]-3.5]));missingLoadPath=Math.max(missingLoadPath,keep(keep(region.intersect(b)).subtract(h)).volume());}
+  assert(missingPeg<.01,`peg not solid ${missingPeg}`);assert(missingLoadPath<.01,`3.5 mm full-thickness load path missing ${missingLoadPath}`);
+  for(const a of helpers)assert.equal(a.status(),'NoError');const name=system+'-'+kind;fs.writeFileSync(out+'/'+name+'.step',facetedSTEP(r,m));fs.writeFileSync(out+'/'+name+'.3mf',modifier3MF(r));records.push({stepNormalization:r.stepNormalization,system,kind,bodySHA256:before,bodyVolume:r.volume,helpers:r.helpers.map(h=>({name:h.name,volume:h.volume})),outside,missingPeg,missingLoadPath,marginMM:3.5});console.log(name,'PASS',r.helpers.length,'helpers');
+ }finally{for(let i=all.length-1;i>=0;i--)all[i].delete();}
+}
+fs.writeFileSync(out+'/reinforcement.json',JSON.stringify({marginMM:3.5,tests:records},null,2)+'\n');

@@ -1,0 +1,18 @@
+{
+  "revision": "reinforce-1",
+  "marginMM": 3.5,
+  "fullThickness": true,
+  "continuousPegToFrameLoadPaths": true,
+  "recessChamferMM": 0.3,
+  "step": "Separate named faceted solids; CAD-only 0.001 mm cleanup; assign helper infill manually",
+  "threeMF": "One normal body plus 100% infill parameter modifiers; no machine or filament profile",
+  "checks": {
+    "bodyAndHelperCombinations": 18,
+    "freeCADValidClosedReadbacks": 18,
+    "orcaModifierReadbacks": 18,
+    "browserBoardSystems": 9,
+    "boltedCases": 21,
+    "largeBoltedArraysWithHelpers": 6
+  },
+  "stlAnd3mfBodyUnchangedByReinforcement": true
+}

@@ -1,5 +1,5 @@
 {
-  "revision": "boards-3",
+  "revision": "reinforce-1",
   "gridfinity_pitch_mm": 42,
   "systems": {
     "original": {
@@ -223,7 +223,8 @@
       ],
       "external_connector_license": "Creator license applies to the separately downloaded insert: https://multibuild.io/license",
       "forward_head_access_mm": 10,
-      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel."
+      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel.",
+      "recess_mouth_chamfer_mm": 0.3
     },
     "hsw": {
       "description": "Honeycomb Storage Wall M3 insert mounts",
@@ -246,7 +247,8 @@
       "grid_derivation": "20 mm inner flats + 2 \u00d7 1.8 mm walls = 23.6 mm vertical pitch. Alternate hex columns are 23.6 \u00d7 sqrt(3) mm apart horizontally.",
       "external_connector_reference": "https://github.com/elentok/honeycomb-wall/tree/main/originals (insert-m3.stl; reference only, not redistributed)",
       "forward_head_access_mm": 10,
-      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel."
+      "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel.",
+      "recess_mouth_chamfer_mm": 0.3
     }
   },
   "export_checks": {

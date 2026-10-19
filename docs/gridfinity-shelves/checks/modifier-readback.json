@@ -1,0 +1,128 @@
+[
+  {
+    "model": "original-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "original-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "skadis-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "skadis-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 3,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "us_small-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "us_small-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "us_large-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "us_large-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "wall_control-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "wall_control-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "metric25-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "metric25-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "bott_perfo-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "bott_perfo-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "multiboard-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "multiboard-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "hsw-coupon",
+    "onePrintableBody": true,
+    "modifierCount": 1,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  },
+  {
+    "model": "hsw-shelf",
+    "onePrintableBody": true,
+    "modifierCount": 2,
+    "infill": "100%",
+    "realOrcaRoundtrip": true
+  }
+]

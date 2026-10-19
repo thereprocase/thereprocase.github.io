@@ -1,4 +1,4 @@
-import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=boards-3';
+import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=reinforce-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
 export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults,...boardDefaults};
@@ -91,7 +91,7 @@ export function build(module, inputs, input) {
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
   if(pegDelta>.01)throw Error('Connector preservation check failed.');
-  for(const {x,z,row:i} of p.mountSites){const d=i===0?6.72:7.62;const root=p.board_system==='original'?box([d,5.4,d],[x-d/2,.15,z+.12-d/2]):box([pegSet.root.width,5.4,pegSet.root.height],[x-pegSet.root.width/2,.15,z+pegSet.root.bottom]);const rootMaterial=mountCuts.length?keep(root.subtract(keep(M.union(mountCuts)))):root;if(keep(rootMaterial.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  for(const {x,z,row:i} of p.mountSites){const d=i===0?6.72:7.62;const root=p.board_system==='original'?box([d,5.4,d],[x-d/2,.15,z+.12-d/2]):box([pegSet.root.width,5.4,pegSet.root.height],[x-pegSet.root.width/2,.15,z+pegSet.root.bottom]);const rootMaterial=mountCuts.length?keep(root.subtract(keep(M.union(mountCuts)))):root;const missing=keep(rootMaterial.subtract(shape)).volume();if(missing>.01)throw Error('Continuous root-wall check failed: '+missing+' mm3 at '+JSON.stringify({x,z,row:i})+'.');}
   const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
   const coreMissing=keep(core.subtract(shape)).volume();
   // At large spans, micron-scale boundary rounding accumulates measurable volume.

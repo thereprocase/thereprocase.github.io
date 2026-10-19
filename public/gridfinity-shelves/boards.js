@@ -90,8 +90,10 @@ function makeBoltedPegs(module,p,keep){
   const cyl=(r,h,y)=>keep(keep(keep(M.cylinder(h,r,r,64)).rotate([90,0,0])).translate([x,y,z]));
   // Keep the screw head and short Allen-key approach clear through gussets.
   const approach=10;
-  return [cyl(1.5+p.screw_clearance,7,face+6),cyl(2.75+p.head_clearance,p.counterbore_depth+.01+approach,face+5.41+approach)];
+  const mouth=y=>keep(keep(keep(M.cylinder(.3,3.05+p.head_clearance,2.75+p.head_clearance,64)).rotate([90,0,0])).translate([x,y,z]));
+  return [cyl(1.5+p.screw_clearance,7,face+6),cyl(2.75+p.head_clearance,p.counterbore_depth+.01+approach,face+5.41+approach),mouth(face+5.4),mouth(face+5.41+approach)];
  }
- const root=keep(box.subtract(keep(M.union(cuts()))));
+ // Cut once after all roots/backplate/gussets are fused; avoid coincident precut faces.
+ const root=box;
  return {upper:root,lower:root,locator:root,root:{width:10,height:10,bottom:-5},cuts,mode:'bolted'};
 }

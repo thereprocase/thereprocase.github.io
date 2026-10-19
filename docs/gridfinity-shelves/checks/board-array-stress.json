@@ -117,6 +117,7 @@
     "seconds": 2.764
   },
   {
+    "helpers": 8,
     "board_system": "multiboard",
     "parameters": {
       "columns": 12,
@@ -124,12 +125,13 @@
       "mount_rows": 4
     },
     "pass": true,
-    "triangles": 39084,
+    "triangles": 44042,
     "pegDelta": 0,
     "footOverlap": 0.0007004551778217227,
-    "seconds": 15.631
+    "seconds": 17.146
   },
   {
+    "helpers": 6,
     "board_system": "multiboard",
     "parameters": {
       "columns": 8,
@@ -138,24 +140,26 @@
       "mount_rows": 4
     },
     "pass": true,
-    "triangles": 120222,
+    "triangles": 124470,
     "pegDelta": 0,
     "footOverlap": 0.001254202745907005,
-    "seconds": 62.59
+    "seconds": 25.385
   },
   {
+    "helpers": 2,
     "board_system": "multiboard",
     "parameters": {
       "columns": 1,
       "rows": 12
     },
     "pass": true,
-    "triangles": 21832,
+    "triangles": 22552,
     "pegDelta": 0,
     "footOverlap": 0.0006312323096022006,
-    "seconds": 2.368
+    "seconds": 1.305
   },
   {
+    "helpers": 13,
     "board_system": "hsw",
     "parameters": {
       "columns": 12,
@@ -163,12 +167,13 @@
       "mount_rows": 4
     },
     "pass": true,
-    "triangles": 50400,
+    "triangles": 60518,
     "pegDelta": 0,
-    "footOverlap": 0.0006998960370704599,
-    "seconds": 25.942
+    "footOverlap": 0.000699857981349846,
+    "seconds": 37.676
   },
   {
+    "helpers": 9,
     "board_system": "hsw",
     "parameters": {
       "columns": 8,
@@ -177,21 +182,22 @@
       "mount_rows": 4
     },
     "pass": true,
-    "triangles": 126382,
+    "triangles": 135656,
     "pegDelta": 0,
     "footOverlap": 0.001254202745907005,
-    "seconds": 60.658
+    "seconds": 36.118
   },
   {
+    "helpers": 1,
     "board_system": "hsw",
     "parameters": {
       "columns": 1,
       "rows": 12
     },
     "pass": true,
-    "triangles": 20764,
+    "triangles": 21128,
     "pegDelta": 0,
     "footOverlap": 0.0006312323096022184,
-    "seconds": 2.808
+    "seconds": 1.16
   }
 ]

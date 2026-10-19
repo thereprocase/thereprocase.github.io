@@ -1,0 +1,22 @@
+{
+  "systems": [
+    "original",
+    "skadis",
+    "us_small",
+    "us_large",
+    "wall_control",
+    "metric25",
+    "bott_perfo",
+    "multiboard",
+    "hsw"
+  ],
+  "newExports": true,
+  "overlayToggle": true,
+  "responsive": [
+    320,
+    390,
+    1600
+  ],
+  "staleExportsDisabled": true,
+  "errors": []
+}

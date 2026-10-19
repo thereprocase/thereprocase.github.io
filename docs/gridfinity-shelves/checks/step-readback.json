@@ -1,0 +1,135 @@
+{
+  "models": [
+    {
+      "model": "original-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 7267.03239000809,
+      "expectedVolume": 7267.032390026953
+    },
+    {
+      "model": "original-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 36061.44856151526,
+      "expectedVolume": 36061.448561426165
+    },
+    {
+      "model": "skadis-coupon",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 12720.605117952935,
+      "expectedVolume": 12720.605117952935
+    },
+    {
+      "model": "skadis-shelf",
+      "valid": true,
+      "closedSolids": 4,
+      "volume": 45141.86028835898,
+      "expectedVolume": 45141.86028826467
+    },
+    {
+      "model": "us_small-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 10653.742128516951,
+      "expectedVolume": 10653.742128516937
+    },
+    {
+      "model": "us_small-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 39891.7715399286,
+      "expectedVolume": 39891.771539684
+    },
+    {
+      "model": "us_large-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 12197.620488977005,
+      "expectedVolume": 12197.620488976623
+    },
+    {
+      "model": "us_large-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 43339.87826059194,
+      "expectedVolume": 43339.87826035147
+    },
+    {
+      "model": "wall_control-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 11175.645595812222,
+      "expectedVolume": 11175.64559581222
+    },
+    {
+      "model": "wall_control-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 41175.81362666241,
+      "expectedVolume": 41175.81362642437
+    },
+    {
+      "model": "metric25-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 11292.67851320553,
+      "expectedVolume": 11292.678513205534
+    },
+    {
+      "model": "metric25-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 41515.578950846,
+      "expectedVolume": 41515.578950586496
+    },
+    {
+      "model": "bott_perfo-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 16089.034405172813,
+      "expectedVolume": 16089.03440517273
+    },
+    {
+      "model": "bott_perfo-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 55277.59175200261,
+      "expectedVolume": 55277.59175176705
+    },
+    {
+      "model": "multiboard-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 8596.533953469363,
+      "expectedVolume": 8596.533953466482
+    },
+    {
+      "model": "multiboard-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 34998.45637369568,
+      "expectedVolume": 34998.45637352903
+    },
+    {
+      "model": "hsw-coupon",
+      "valid": true,
+      "closedSolids": 2,
+      "volume": 8241.213608431064,
+      "expectedVolume": 8241.213608428332
+    },
+    {
+      "model": "hsw-shelf",
+      "valid": true,
+      "closedSolids": 3,
+      "volume": 34197.1750930167,
+      "expectedVolume": 34197.175092570345
+    }
+  ],
+  "separateProductNames": [
+    "Body_PRINT",
+    "Reinforcement_100pct_3p5mm_1"
+  ],
+  "reader": "FreeCAD 1.1.3 / Open CASCADE"
+}

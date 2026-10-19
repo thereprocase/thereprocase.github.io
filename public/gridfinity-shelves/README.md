@@ -189,3 +189,15 @@ original system's export path is unchanged.
 ### Screw access
 
 Multiboard and HSW mounts have a 10 mm forward clearance pocket at each screw head, including where a gusset crosses the screw position. Use a short L-shaped Allen key; these pockets do not provide a straight screwdriver path through the entire shelf.
+
+## Reinforcement downloads
+
+Every shelf and fit coupon, on all nine board systems, offers a faceted STEP and an Orca-compatible 3MF with separate reinforcement bodies. The main printable mesh is unchanged by reinforcement. These helpers occupy existing material; they are not additional parts.
+
+Helpers span the complete peg and backplate thickness. Each peg/root envelope gets a 3.5 mm margin and a continuous full-thickness column up into the adjacent shelf frame, including lower pegs. Regions are clipped to the part, so bin seats, screw holes and mounting clearance remain open. Overlapping regions merge. Show reinforcement displays the regions in orange.
+
+The 3MF stores one normal body and parameter modifiers with `sparse_infill_density=100%`. It supplies geometry and local infill overrides, not a machine, filament or global process profile. Retain your own printer/material settings when opening it.
+
+The STEP contains separate named closed faceted solids: `Body_PRINT` and `Reinforcement_100pct_3p5mm_*`. STEP has no slicer infill metadata: import the helpers as modifiers and set them to 100% infill yourself, or use the 3MF. Faceted STEP preserves the browser mesh geometry and is not the analytic native FreeCAD model. The STEP-only conversion simplifies sub-micron mesh details at a 0.001 mm tolerance, with a 0.01% symmetric-volume guard; STL and 3MF main geometry stay unchanged. Large arrays can produce large STEP files.
+
+Screw recess mouths have a 0.3 mm chamfer. The recess floor remains flat and the minimum 2 mm bearing thickness is preserved.
