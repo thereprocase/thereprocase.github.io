@@ -12,7 +12,7 @@ function check(r){const all=[],keep=o=>(all.push(o),o),M=m.Manifold,p=r.paramete
   const ring=keep(cyl(2.75,bearing-face-.04,bearing-.02,x,z).subtract(cyl(1.5+p.screw_clearance+.02,8,face+6,x,z)));missingBearing=Math.max(missingBearing,keep(ring.subtract(solid)).volume());
  }
  assert(chamferIntrusion<.001,`recess chamfer intrusion ${chamferIntrusion}`);assert(approachIntrusion<.001,`screw-head approach intrusion ${approachIntrusion}`);assert(intrusion<.001,`fastener intrusion ${intrusion}`);assert(missingBearing<.001,`missing screw bearing ${missingBearing}`);assert(5.4-p.counterbore_depth>=2-1e-8);
- for(const a of p.mountSites)for(const b of p.mountSites){const px=boards[p.board_system].pitchX,pz=boards[p.board_system].pitchZ;assert(Math.abs((a.x-b.x)/px-Math.round((a.x-b.x)/px))<1e-7);assert(Math.abs((a.z-b.z)/pz-Math.round((a.z-b.z)/pz))<1e-7);}
+ for(const a of p.mountSites)for(const b of p.mountSites){const px=boards[p.board_system].pitchX,pz=boards[p.board_system].pitchZ;assert(Math.abs((a.x-b.x)/px-Math.round((a.x-b.x)/px))<1e-7);const offset=p.board_system==='hsw'?Math.round((a.x-b.x)/px)*pz/2:0;assert(Math.abs((a.z-b.z+offset)/pz-Math.round((a.z-b.z+offset)/pz))<1e-7);}
  return {chamferIntrusion,approachIntrusion,fastenerIntrusion:intrusion,missingBearing,remainingBackplate:5.4-p.counterbore_depth};
  }finally{for(let i=all.length-1;i>=0;i--)all[i].delete();}}
 for(const board_system of ['multiboard','hsw']){

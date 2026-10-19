@@ -1,0 +1,33 @@
+{
+  "currentGeometryRevision": "dense-1",
+  "currentChecks": [
+    "checks/placement.json",
+    "checks/bed-viewer.json",
+    "checks/bolted-boards.json",
+    "checks/six-3mf-placement.json",
+    "checks/six-step-readback.json"
+  ],
+  "historicalBeforeDenseMountLayout": [
+    "checks/array-limits.json",
+    "checks/backcheck.json",
+    "checks/board-array-stress.json",
+    "checks/board-browser.json",
+    "checks/board-original-nominal.json",
+    "checks/board-systems.json",
+    "checks/browser.json",
+    "checks/exported-stl.json",
+    "checks/modifier-readback.json",
+    "checks/native-comparison.json",
+    "checks/peg-fit-browser.json",
+    "checks/peg-fit-native.json",
+    "checks/peg-fit-nominal.json",
+    "checks/peg-fit.json",
+    "checks/reinforcement-audit.json",
+    "checks/reinforcement-browser.json",
+    "checks/reinforcement.json",
+    "checks/round-boards.json",
+    "checks/step-readback.json",
+    "checks/viewer-helpers.json"
+  ],
+  "scope": "Every usable board hole across width and selected mounting height; bed preview bounds and 3MF placement; existing per-peg interface geometry retained."
+}

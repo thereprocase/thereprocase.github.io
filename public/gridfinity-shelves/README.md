@@ -4,10 +4,10 @@ Static browser application, served at `/gridfinity-shelves/`. Geometry runs in a
 terminable module worker with locally vendored Manifold 3.2.1. Three.js and
 OrbitControls are shared with `/p1s-feet/vendor/`. No CAD server or upload is used.
 
-`kernel.js` mirrors the native generator at the linked peg branch revision:
+`kernel.js` builds on the native generator at the linked peg branch revision:
 `bench/source/gridfinity_generator_v1`. `inputs.json` retains the native exported
 PF02 #9, upright PF07 #5 and intermediate bearing-locator meshes and the allowed host envelope.
-Native STEP exports remain available through the linked FreeCAD generator.
+Native STEP exports remain available through the linked original FreeCAD generator. Its historical sparse mounting layout differs from the browser’s current all-hole placement. The native-volume comparison command below applies to that historical layout; use `check-placement.mjs` for the current layout.
 
 The browser approximates circular surfaces with 24 segments per quarter. It
 checks one connected manifold, fixed board-side connector preservation, continuous
@@ -54,7 +54,7 @@ Native solid checks retain their original 0.000001 mm³ containment threshold.
 
 Default parameters now include `mount_rows: 2` and `backplate: true`. A 5.4 mm continuous backplate connects 25.4 mm peg columns to 42 mm Gridfinity cell-boundary gussets. Height 1 is hook-only with 12.7 mm of backplate below the hook centers. Heights 2–4 retain top hooks and bottom hoops; 3–4 use exact native bearing locators between. Gussets extend to the selected backplate bottom. The open-back option retains continuous top/bottom ties and posts at both grids. STL and JSON outputs retain the selected settings.
 
-The default 2×1 solid CAD volume rises from 16.18 to 29.44 cm³ with the solid backplate and third gusset. Printed mass depends on the actual walls and infill.
+The displayed solid volume includes the selected board’s complete mount pattern. Printed mass depends on the actual walls and infill.
 
 For a static-only generator update, copy this complete directory to `dist/client/gridfinity-shelves` and `docs/gridfinity-shelves` after checks. Keep their hashes equal; no framework rebuild is needed when other pages are unchanged.
 
@@ -154,7 +154,7 @@ Use one insert and screw per generated mount. The backplate seats against the
 insert faces; choose screw length for the insert and nut engagement.
 
 Multiboard mounts follow a 25 mm grid. HSW uses a 23.6 mm vertical pitch and
-40.8763990586 mm horizontal mounting step (every other hex column). The HSW
+20.4381995293 mm horizontal mounting step, with adjacent columns offset vertically by 11.8 mm. Every usable hex column is populated. The HSW
 pitch follows Xander/EdwinEesting/geru's CC BY 4.0 panel reference, linked in
 `board-sources.json`. The original board inserts are not redistributed or
 modified in this project.
@@ -201,3 +201,15 @@ The 3MF stores one normal body and parameter modifiers with `sparse_infill_densi
 The STEP contains separate named closed faceted solids: `Body_PRINT` and `Reinforcement_100pct_3p5mm_*`. STEP has no slicer infill metadata: import the helpers as modifiers and set them to 100% infill yourself, or use the 3MF. Faceted STEP preserves the browser mesh geometry and is not the analytic native FreeCAD model. The STEP-only conversion simplifies sub-micron mesh details at a 0.001 mm tolerance, with a 0.01% symmetric-volume guard; STL and 3MF main geometry stay unchanged. Large arrays can produce large STEP files.
 
 Screw recess mouths have a 0.3 mm chamfer. The recess floor remains flat and the minimum 2 mm bearing thickness is preserved.
+
+## Preview bed
+
+Choose a rectangular bed preset or enter custom X/Y dimensions (25–2000 mm). The viewer draws that actual bed in millimetres, with 10 mm grid spacing and 50 mm major lines, from a front-left origin. The print-pose preview centers the part on the selected bed without changing its geometry. STL/STEP coordinates stay unchanged; the 3MF build-item transform places the whole assembly at the selected bed center. Reset view fits both the part and bed. Installed pose hides the bed. Bed changes leave generated geometry valid; each new 3MF download uses the current bed placement; the selected size is remembered in this browser. Select the corresponding printer bed in your slicer.
+
+## Full-width mounting layout
+
+All usable mounting holes are populated across the selected width and mounting height. Columns are evenly spaced on the selected board grid; no columns are skipped and no extra end mount introduces a short final gap. Columns are centered as a complete lattice, maximizing the count while keeping a 5 mm root margin at each side. SKÅDIS retains its alternating-slot rows; HSW uses every hex column with its 11.8 mm vertical stagger. A 6 × 2 shelf for 25.4 mm round-hole pegboard has ten mounting columns (20 mounts at the default two-row height). The Gridfinity grid stays 42 mm.
+
+`node scripts/gridfinity/check-placement.mjs /tmp/grid-placement` checks every width 1–12 and mounting height 1–4 for all nine systems, and builds each system at 6 × 2 to check connected exports, connector preservation, bin clearance and reinforcement.
+
+The current placement/bed checks are listed in `checks/layout-revisions.json`; older receipts retain the geometry revision they originally tested.

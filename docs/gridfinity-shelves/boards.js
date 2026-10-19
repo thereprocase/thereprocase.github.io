@@ -11,7 +11,7 @@ export const boards={
  metric25:{name:'Metric round-hole · 25 mm grid',pitchX:25,pitchZ:25,mode:'round',hole:6,thickness:5},
  bott_perfo:{name:'Bott Perfo · 9.2 mm square holes',pitchX:38.1,pitchZ:38.1,mode:'square',hole:9.2,thickness:.9},
  multiboard:{name:'Multiboard · M3 nut snaps',pitchX:25,pitchZ:25,mode:'bolted',insert:'https://thangs.com/designer/MultiBuild/3d-model/Drop-In%20Nut%20Snap%20-%20M3-1030686'},
- hsw:{name:'Honeycomb Storage Wall · M3 inserts',pitchX:23.6*Math.sqrt(3),pitchZ:23.6,mode:'bolted',insert:'https://www.printables.com/model/152592-honeycomb-storage-wall'}
+ hsw:{name:'Honeycomb Storage Wall · M3 inserts',pitchX:23.6*Math.sqrt(3)/2,pitchZ:23.6,staggerZ:11.8,mode:'bolted',insert:'https://www.printables.com/model/152592-honeycomb-storage-wall'}
 };
 export function boardSettings(id){const b=boards[id];return {...boardDefaults,board_system:id,...(b?.hole?{hole_diameter:b.hole,board_thickness:b.thickness}:{})};}
 export function checkBoard(p){
@@ -20,14 +20,14 @@ export function checkBoard(p){
 }
 export function boardLayout(p){
  if(p.board_system==='original')return null;
- if(p.board_system!=='skadis'){const b=boards[p.board_system],w=42*p.columns+4,count=Math.floor((w-10)/b.pitchX)+1,all=Array.from({length:count},(_,i)=>(i-(count-1)/2)*b.pitchX),every=Math.max(1,Math.floor(80/b.pitchX)),xs=all.filter((_,i)=>i%every===0);if(xs.at(-1)!==all.at(-1))xs.push(all.at(-1));const zs=Array.from({length:p.mount_rows},(_,i)=>-b.pitchZ*i);return {mountSites:xs.flatMap(x=>zs.map((z,row)=>({x,z,row}))),mountZ:zs,mounts:xs,width:w,backBottom:p.mount_rows===1?-12.7:zs.at(-1)-5,boardPitchX:b.pitchX,boardPitchZ:b.pitchZ};}
+ if(p.board_system!=='skadis'){const b=boards[p.board_system],w=42*p.columns+4,count=Math.floor((w-10)/b.pitchX)+1,xs=Array.from({length:count},(_,i)=>(i-(count-1)/2)*b.pitchX),sites=xs.flatMap((x,column)=>Array.from({length:p.mount_rows},(_,row)=>({x,z:-b.pitchZ*row-(column%2)*(b.staggerZ??0),row}))),zs=[...new Set(sites.map(s=>s.z))].sort((a,b)=>b-a);return {mountSites:sites,mountZ:zs,mounts:xs,width:w,backBottom:zs.at(-1)-(p.mount_rows===1?12.7:5),boardPitchX:b.pitchX,boardPitchZ:b.pitchZ};}
  const w=42*p.columns+4,limit=w/2-5,baseCount=Math.floor(2*limit/40)+1,phase=(baseCount-1)*20%40;
  const sites=[],rowZ=[];let row=0;
  for(let j=0;j<p.mount_rows;j++){
   let xs;
   do{const offset=(phase+20*(row%2))%40;xs=[];for(let n=-20;n<=20;n++){const x=40*n+offset;if(Math.abs(x)<=limit+1e-8)xs.push(x);}if(!xs.length)row++;}while(!xs.length);
-  // At most 80 mm between columns, always retain both outside mounts.
-  const selected=xs.filter((_,i)=>i%2===0);if(selected.at(-1)!==xs.at(-1))selected.push(xs.at(-1));
+  // Populate every slot whose root fits inside the backplate.
+  const selected=xs;
   for(const x of selected)sites.push({x,z:-20*row,row:j});rowZ.push(-20*row);row++;
  }
  const xs=[...new Set(sites.map(s=>s.x))].sort((a,b)=>a-b);

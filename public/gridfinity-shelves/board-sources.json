@@ -1,5 +1,5 @@
 {
-  "revision": "reinforce-1",
+  "revision": "dense-1",
   "gridfinity_pitch_mm": 42,
   "systems": {
     "original": {
@@ -234,7 +234,7 @@
       "external_connector_included": false,
       "geometry_code": "Original screw-hole and counterbore geometry; no external connector mesh or thread is copied",
       "pitch_mm": [
-        40.8763990586255,
+        20.43819952931275,
         23.6
       ],
       "screw_hole_diameter_mm": 3.4,
@@ -244,11 +244,12 @@
       "check_scope": "Our screw clearance, bearing material, board-grid positions, closed connected exports and browser operation. External insert snap fit is not tested.",
       "grid_reference": "https://github.com/geru/3d-scad-hsw-customizable/blob/b606f2e8427e7648748fdc9833f6621884e78d2e/custom-honeycomb-wall-v2.3.scad",
       "grid_reference_credit": "Xander, EdwinEesting and geru; CC BY 4.0",
-      "grid_derivation": "20 mm inner flats + 2 \u00d7 1.8 mm walls = 23.6 mm vertical pitch. Alternate hex columns are 23.6 \u00d7 sqrt(3) mm apart horizontally.",
+      "grid_derivation": "20 mm inner flats + 2 \u00d7 1.8 mm walls = 23.6 mm vertical pitch. Adjacent hex columns are 23.6 \u00d7 sqrt(3) / 2 mm apart horizontally, with alternating columns shifted down 11.8 mm.",
       "external_connector_reference": "https://github.com/elentok/honeycomb-wall/tree/main/originals (insert-m3.stl; reference only, not redistributed)",
       "forward_head_access_mm": 10,
       "tool_note": "Local clearance for a short L-shaped Allen key; not a full-length straight driver channel.",
-      "recess_mouth_chamfer_mm": 0.3
+      "recess_mouth_chamfer_mm": 0.3,
+      "alternate_column_vertical_offset_mm": 11.8
     }
   },
   "export_checks": {
@@ -256,5 +257,6 @@
     "winding": "opposite directions",
     "float32_normalization": "Only after a closure failure on a new board export; coordinate-precision tolerance, one-solid check and symmetric-difference guard, followed by strict revalidation",
     "maximum_symmetric_volume_fraction": 1e-05
-  }
+  },
+  "mount_layout": "Every usable hole across the selected width and mounting height; roots remain inside the frame."
 }

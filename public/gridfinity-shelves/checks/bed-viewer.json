@@ -1,0 +1,31 @@
+{
+  "bedPresets": 6,
+  "customRectangular": true,
+  "actualWorldBedBounds": true,
+  "bedGridWithinActualRectangle": true,
+  "partCenteredOnBed": true,
+  "unchangedSTL": true,
+  "threeMFBuildMatchesSelectedBed": true,
+  "invalidInputKeepsPreviousBed": true,
+  "persistentDimensions": true,
+  "installedBedHidden": true,
+  "sixByTwoColumns": [
+    -114.3,
+    -88.89999999999999,
+    -63.5,
+    -38.099999999999994,
+    -12.7,
+    12.7,
+    38.099999999999994,
+    63.5,
+    88.89999999999999,
+    114.3
+  ],
+  "sixByTwoMountCount": 20,
+  "responsive": [
+    320,
+    390,
+    1600
+  ],
+  "errors": []
+}

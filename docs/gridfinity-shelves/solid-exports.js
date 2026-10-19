@@ -1,4 +1,4 @@
-import {validateExport} from './kernel.js?v=reinforce-1';
+import {validateExport} from './kernel.js?v=dense-1';
 const enc=new TextEncoder();
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const real=x=>{const s=num(x);return /[.e]/i.test(s)?s.replace(/e/i,'E').replace(/^(\-?\d+)E/,'$1.E'):s+'.';};
@@ -67,16 +67,18 @@ function zip(files){
 }
 
 /** One model object, normal body plus parameter-modifier volumes. No printer settings. */
-export function modifier3MF(r){
+export function modifier3MF(r,bed){
+ let placement='';
+ if(bed){if(!Number.isFinite(bed.width)||!Number.isFinite(bed.depth)||bed.width<25||bed.depth<25||bed.width>2000||bed.depth>2000)throw Error('Invalid bed dimensions.');const v=r.vertices;let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(let i=0;i<v.length;i+=3){minX=Math.min(minX,v[i]);maxX=Math.max(maxX,v[i]);minY=Math.min(minY,v[i+1]);maxY=Math.max(maxY,v[i+1]);}const x=bed.width/2-(minX+maxX)/2,y=bed.depth/2-(minY+maxY)/2;placement=` transform="1 0 0 0 1 0 0 0 1 ${num(x)} ${num(y)} 0"`;}
  const all=parts(r),parent=all.length+1,resources=all.map((part,i)=>{
   const v=part.vertices,t=part.triangles,vs=[],ts=[];for(let j=0;j<v.length;j+=3)vs.push(`<vertex x="${num(v[j])}" y="${num(v[j+1])}" z="${num(v[j+2])}"/>`);for(let j=0;j<t.length;j+=3)ts.push(`<triangle v1="${t[j]}" v2="${t[j+1]}" v3="${t[j+2]}"/>`);
   return `<object id="${i+1}" type="model" name="${xml(part.name)}"><mesh><vertices>${vs.join('')}</vertices><triangles>${ts.join('')}</triangles></mesh></object>`;
  }).join('');
- const model=`<?xml version="1.0" encoding="UTF-8"?><model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02"><metadata name="Application">OrcaSlicer-2.5.0</metadata><metadata name="Generator">Gridfinity browser generator · Orca-compatible modifier package</metadata><metadata name="BambuStudio:3mfVersion">1</metadata><resources>${resources}<object id="${parent}" type="model"><components>${all.map((_,i)=>`<component objectid="${i+1}"/>`).join('')}</components></object></resources><build><item objectid="${parent}"/></build></model>`;
+ const model=`<?xml version="1.0" encoding="UTF-8"?><model unit="millimeter" xml:lang="en-US" xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02"><metadata name="Application">OrcaSlicer-2.5.0</metadata><metadata name="Generator">Gridfinity browser generator · Orca-compatible modifier package</metadata><metadata name="BambuStudio:3mfVersion">1</metadata><resources>${resources}<object id="${parent}" type="model"><components>${all.map((_,i)=>`<component objectid="${i+1}"/>`).join('')}</components></object></resources><build><item objectid="${parent}"${placement}/></build></model>`;
  const config=`<?xml version="1.0" encoding="UTF-8"?><config><object id="${parent}"><metadata key="name" value="Gridfinity ${xml(r.parameters.board_system)} ${r.kind==='coupon'?'coupon':'shelf'}"/>${all.map((part,i)=>`<part id="${i+1}" subtype="${i?'modifier_part':'normal_part'}"><metadata key="name" value="${xml(part.name)}"/>${i?'<metadata key="sparse_infill_density" value="100%"/>':''}</part>`).join('')}</object></config>`;
  return zip([
   ['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="model" ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/><Default Extension="config" ContentType="application/xml"/><Default Extension="json" ContentType="application/json"/></Types>'],
   ['_rels/.rels','<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Target="/3D/3dmodel.model" Id="rel0" Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel"/></Relationships>'],
-  ['3D/3dmodel.model',model],['Metadata/model_settings.config',config],['Metadata/gridfinity.json',JSON.stringify({revision:'reinforce-1',parameters:Object.fromEntries(Object.entries(r.parameters).filter(([k])=>!['mountSites','mounts','mountZ','webColumns'].includes(k))),marginMM:3.5,helpers:'100% infill parameter modifiers; not extra printable parts'})]
+  ['3D/3dmodel.model',model],['Metadata/model_settings.config',config],['Metadata/gridfinity.json',JSON.stringify({revision:'dense-1',previewBedMM:bed??null,parameters:Object.fromEntries(Object.entries(r.parameters).filter(([k])=>!['mountSites','mounts','mountZ','webColumns'].includes(k))),marginMM:3.5,helpers:'100% infill parameter modifiers; not extra printable parts'})]
  ]);
 }

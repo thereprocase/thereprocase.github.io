@@ -1,4 +1,4 @@
-import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=reinforce-1';
+import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=dense-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
 export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults,...boardDefaults};
@@ -11,9 +11,8 @@ export function parameters(input) {
  if(!Number.isInteger(p.mount_rows)||p.mount_rows<1||p.mount_rows>4)throw Error('Mount height: use one to four peg rows.');
  if(typeof p.backplate!=='boolean')throw Error('Backplate must be true or false.');
  const mountZ=Array.from({length:p.mount_rows},(_,i)=>-25.4*i),backBottom=p.mount_rows===1?-12.7:mountZ.at(-1)-4.28,webColumns=Array.from({length:p.columns+1},(_,i)=>(i-p.columns/2)*42);
- const lanes=Math.ceil((42*p.columns+6)/25.4),frameWidth=42*p.columns+4,available=Array.from({length:lanes},(_,i)=>i).filter(i=>Math.abs((i-(lanes-1)/2)*25.4)+5<=frameWidth/2+1e-8),holes=available.filter((_,i)=>i%3===0);
- if(holes.at(-1)!==available.at(-1))holes.push(available.at(-1));
- const original={...p,mountZ,backBottom,webColumns,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};const layout=boardLayout(p);return {...original,...layout,mountSites:layout?.mountSites??original.mounts.flatMap(x=>mountZ.map((z,row)=>({x,z,row})))};
+ const frameWidth=42*p.columns+4,count=Math.floor((frameWidth-10)/25.4)+1;
+ const original={...p,mountZ,backBottom,webColumns,frameWidth,width:frameWidth,mounts:Array.from({length:count},(_,i)=>(i-(count-1)/2)*25.4),front:51.55+42*(p.rows-1)};const layout=boardLayout(p);return {...original,...layout,mountSites:layout?.mountSites??original.mounts.flatMap(x=>mountZ.map((z,row)=>({x,z,row})))};
 }
 function rounded(cx,cy,w,r,z) {
  const a=[];
@@ -160,7 +159,7 @@ export function buildCoupon(module,inputs,input={}){
   for(let i=2;i<vertices.length;i+=3)vertices[i]-=minZ;
   const final=keep(new M(new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(source.triVerts)})));
   if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
-  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,columns:1,rows:1,mount_rows:2,mounts:[0],webColumns:[],angle:0,backplate:true},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};
+  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,columns:1,rows:1,mount_rows:2,mounts:[0],mountZ:[0,-25.4],mountSites:[{x:0,z:0,row:0},{x:0,z:-25.4,row:1}],webColumns:[],angle:0,backplate:true},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};
   validateFloatExport(final,result,keep,p.board_system!=='original');return result;
  }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
 }

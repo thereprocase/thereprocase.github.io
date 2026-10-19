@@ -1,0 +1,2806 @@
+{
+  "layoutCases": 432,
+  "allWidthsAndMountHeights": true,
+  "cases": [
+    {
+      "board_system": "original",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "original",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "original",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "original",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "original",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "original",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "original",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "original",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "original",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "original",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "original",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "original",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "original",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "original",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "original",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "original",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "original",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "original",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "original",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "original",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "original",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "original",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "original",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "original",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "original",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "original",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "original",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "original",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "original",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "original",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 26
+    },
+    {
+      "board_system": "original",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 39
+    },
+    {
+      "board_system": "original",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 52
+    },
+    {
+      "board_system": "original",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "original",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "original",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "original",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "original",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "original",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "original",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "original",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "original",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 18
+    },
+    {
+      "board_system": "original",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 36
+    },
+    {
+      "board_system": "original",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 54
+    },
+    {
+      "board_system": "original",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 72
+    },
+    {
+      "board_system": "original",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "original",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "original",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "original",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "us_small",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "us_small",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "us_small",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "us_small",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "us_small",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "us_small",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "us_small",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "us_small",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "us_small",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "us_small",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "us_small",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "us_small",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "us_small",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "us_small",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "us_small",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "us_small",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "us_small",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "us_small",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "us_small",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "us_small",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "us_small",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "us_small",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "us_small",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "us_small",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "us_small",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "us_small",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "us_small",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "us_small",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "us_small",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "us_small",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 26
+    },
+    {
+      "board_system": "us_small",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 39
+    },
+    {
+      "board_system": "us_small",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 52
+    },
+    {
+      "board_system": "us_small",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "us_small",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "us_small",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "us_small",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "us_small",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "us_small",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "us_small",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "us_small",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "us_small",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 18
+    },
+    {
+      "board_system": "us_small",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 36
+    },
+    {
+      "board_system": "us_small",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 54
+    },
+    {
+      "board_system": "us_small",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 72
+    },
+    {
+      "board_system": "us_small",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "us_small",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "us_small",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "us_small",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "us_large",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "us_large",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "us_large",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "us_large",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "us_large",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "us_large",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "us_large",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "us_large",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "us_large",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "us_large",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "us_large",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "us_large",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "us_large",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "us_large",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "us_large",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "us_large",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "us_large",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "us_large",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "us_large",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "us_large",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "us_large",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "us_large",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "us_large",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "us_large",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "us_large",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "us_large",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "us_large",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "us_large",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "us_large",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "us_large",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 26
+    },
+    {
+      "board_system": "us_large",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 39
+    },
+    {
+      "board_system": "us_large",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 52
+    },
+    {
+      "board_system": "us_large",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "us_large",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "us_large",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "us_large",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "us_large",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "us_large",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "us_large",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "us_large",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "us_large",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 18
+    },
+    {
+      "board_system": "us_large",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 36
+    },
+    {
+      "board_system": "us_large",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 54
+    },
+    {
+      "board_system": "us_large",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 72
+    },
+    {
+      "board_system": "us_large",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "us_large",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "us_large",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "us_large",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 26
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 39
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 52
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 18
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 36
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 54
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 72
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "wall_control",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "metric25",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "metric25",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "metric25",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "metric25",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "metric25",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "metric25",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "metric25",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "metric25",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "metric25",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "metric25",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "metric25",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "metric25",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "metric25",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "metric25",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "metric25",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "metric25",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "metric25",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "metric25",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "metric25",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "metric25",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "metric25",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "metric25",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "metric25",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "metric25",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "metric25",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "metric25",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "metric25",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "metric25",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "metric25",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 14
+    },
+    {
+      "board_system": "metric25",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 28
+    },
+    {
+      "board_system": "metric25",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 42
+    },
+    {
+      "board_system": "metric25",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 56
+    },
+    {
+      "board_system": "metric25",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "metric25",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "metric25",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "metric25",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "metric25",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "metric25",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "metric25",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "metric25",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "metric25",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 19
+    },
+    {
+      "board_system": "metric25",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 38
+    },
+    {
+      "board_system": "metric25",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 57
+    },
+    {
+      "board_system": "metric25",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 76
+    },
+    {
+      "board_system": "metric25",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "metric25",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "metric25",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "metric25",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 1
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 2
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 3
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 4
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 3
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 6
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 9
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 12
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 6
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 12
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 18
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 24
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 8
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 16
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 24
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 32
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 11
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 22
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 33
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 44
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 14
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 28
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 42
+    },
+    {
+      "board_system": "bott_perfo",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 56
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 10
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 15
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 20
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 14
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 21
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 28
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 18
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 27
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 36
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 24
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 36
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 48
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 14
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 28
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 42
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 56
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 19
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 38
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 57
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 76
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 20
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 40
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 60
+    },
+    {
+      "board_system": "multiboard",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 80
+    },
+    {
+      "board_system": "hsw",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "hsw",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 4
+    },
+    {
+      "board_system": "hsw",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 6
+    },
+    {
+      "board_system": "hsw",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 8
+    },
+    {
+      "board_system": "hsw",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "hsw",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 8
+    },
+    {
+      "board_system": "hsw",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 12
+    },
+    {
+      "board_system": "hsw",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 16
+    },
+    {
+      "board_system": "hsw",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 6
+    },
+    {
+      "board_system": "hsw",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 12
+    },
+    {
+      "board_system": "hsw",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 18
+    },
+    {
+      "board_system": "hsw",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 24
+    },
+    {
+      "board_system": "hsw",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 8
+    },
+    {
+      "board_system": "hsw",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 16
+    },
+    {
+      "board_system": "hsw",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 24
+    },
+    {
+      "board_system": "hsw",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 32
+    },
+    {
+      "board_system": "hsw",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "hsw",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 20
+    },
+    {
+      "board_system": "hsw",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 30
+    },
+    {
+      "board_system": "hsw",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 40
+    },
+    {
+      "board_system": "hsw",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "hsw",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 26
+    },
+    {
+      "board_system": "hsw",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 39
+    },
+    {
+      "board_system": "hsw",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 52
+    },
+    {
+      "board_system": "hsw",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 15
+    },
+    {
+      "board_system": "hsw",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 30
+    },
+    {
+      "board_system": "hsw",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 45
+    },
+    {
+      "board_system": "hsw",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 60
+    },
+    {
+      "board_system": "hsw",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 17
+    },
+    {
+      "board_system": "hsw",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 34
+    },
+    {
+      "board_system": "hsw",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 51
+    },
+    {
+      "board_system": "hsw",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 68
+    },
+    {
+      "board_system": "hsw",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 19
+    },
+    {
+      "board_system": "hsw",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 38
+    },
+    {
+      "board_system": "hsw",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 57
+    },
+    {
+      "board_system": "hsw",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 76
+    },
+    {
+      "board_system": "hsw",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 21
+    },
+    {
+      "board_system": "hsw",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 42
+    },
+    {
+      "board_system": "hsw",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 63
+    },
+    {
+      "board_system": "hsw",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 84
+    },
+    {
+      "board_system": "hsw",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 23
+    },
+    {
+      "board_system": "hsw",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 46
+    },
+    {
+      "board_system": "hsw",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 69
+    },
+    {
+      "board_system": "hsw",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 92
+    },
+    {
+      "board_system": "hsw",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 25
+    },
+    {
+      "board_system": "hsw",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 50
+    },
+    {
+      "board_system": "hsw",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 75
+    },
+    {
+      "board_system": "hsw",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 100
+    },
+    {
+      "board_system": "skadis",
+      "columns": 1,
+      "mount_rows": 1,
+      "sites": 1
+    },
+    {
+      "board_system": "skadis",
+      "columns": 1,
+      "mount_rows": 2,
+      "sites": 2
+    },
+    {
+      "board_system": "skadis",
+      "columns": 1,
+      "mount_rows": 3,
+      "sites": 3
+    },
+    {
+      "board_system": "skadis",
+      "columns": 1,
+      "mount_rows": 4,
+      "sites": 4
+    },
+    {
+      "board_system": "skadis",
+      "columns": 2,
+      "mount_rows": 1,
+      "sites": 2
+    },
+    {
+      "board_system": "skadis",
+      "columns": 2,
+      "mount_rows": 2,
+      "sites": 3
+    },
+    {
+      "board_system": "skadis",
+      "columns": 2,
+      "mount_rows": 3,
+      "sites": 5
+    },
+    {
+      "board_system": "skadis",
+      "columns": 2,
+      "mount_rows": 4,
+      "sites": 6
+    },
+    {
+      "board_system": "skadis",
+      "columns": 3,
+      "mount_rows": 1,
+      "sites": 4
+    },
+    {
+      "board_system": "skadis",
+      "columns": 3,
+      "mount_rows": 2,
+      "sites": 7
+    },
+    {
+      "board_system": "skadis",
+      "columns": 3,
+      "mount_rows": 3,
+      "sites": 11
+    },
+    {
+      "board_system": "skadis",
+      "columns": 3,
+      "mount_rows": 4,
+      "sites": 14
+    },
+    {
+      "board_system": "skadis",
+      "columns": 4,
+      "mount_rows": 1,
+      "sites": 5
+    },
+    {
+      "board_system": "skadis",
+      "columns": 4,
+      "mount_rows": 2,
+      "sites": 9
+    },
+    {
+      "board_system": "skadis",
+      "columns": 4,
+      "mount_rows": 3,
+      "sites": 14
+    },
+    {
+      "board_system": "skadis",
+      "columns": 4,
+      "mount_rows": 4,
+      "sites": 18
+    },
+    {
+      "board_system": "skadis",
+      "columns": 5,
+      "mount_rows": 1,
+      "sites": 6
+    },
+    {
+      "board_system": "skadis",
+      "columns": 5,
+      "mount_rows": 2,
+      "sites": 11
+    },
+    {
+      "board_system": "skadis",
+      "columns": 5,
+      "mount_rows": 3,
+      "sites": 17
+    },
+    {
+      "board_system": "skadis",
+      "columns": 5,
+      "mount_rows": 4,
+      "sites": 22
+    },
+    {
+      "board_system": "skadis",
+      "columns": 6,
+      "mount_rows": 1,
+      "sites": 7
+    },
+    {
+      "board_system": "skadis",
+      "columns": 6,
+      "mount_rows": 2,
+      "sites": 13
+    },
+    {
+      "board_system": "skadis",
+      "columns": 6,
+      "mount_rows": 3,
+      "sites": 20
+    },
+    {
+      "board_system": "skadis",
+      "columns": 6,
+      "mount_rows": 4,
+      "sites": 26
+    },
+    {
+      "board_system": "skadis",
+      "columns": 7,
+      "mount_rows": 1,
+      "sites": 8
+    },
+    {
+      "board_system": "skadis",
+      "columns": 7,
+      "mount_rows": 2,
+      "sites": 15
+    },
+    {
+      "board_system": "skadis",
+      "columns": 7,
+      "mount_rows": 3,
+      "sites": 23
+    },
+    {
+      "board_system": "skadis",
+      "columns": 7,
+      "mount_rows": 4,
+      "sites": 30
+    },
+    {
+      "board_system": "skadis",
+      "columns": 8,
+      "mount_rows": 1,
+      "sites": 9
+    },
+    {
+      "board_system": "skadis",
+      "columns": 8,
+      "mount_rows": 2,
+      "sites": 17
+    },
+    {
+      "board_system": "skadis",
+      "columns": 8,
+      "mount_rows": 3,
+      "sites": 26
+    },
+    {
+      "board_system": "skadis",
+      "columns": 8,
+      "mount_rows": 4,
+      "sites": 34
+    },
+    {
+      "board_system": "skadis",
+      "columns": 9,
+      "mount_rows": 1,
+      "sites": 10
+    },
+    {
+      "board_system": "skadis",
+      "columns": 9,
+      "mount_rows": 2,
+      "sites": 19
+    },
+    {
+      "board_system": "skadis",
+      "columns": 9,
+      "mount_rows": 3,
+      "sites": 29
+    },
+    {
+      "board_system": "skadis",
+      "columns": 9,
+      "mount_rows": 4,
+      "sites": 38
+    },
+    {
+      "board_system": "skadis",
+      "columns": 10,
+      "mount_rows": 1,
+      "sites": 11
+    },
+    {
+      "board_system": "skadis",
+      "columns": 10,
+      "mount_rows": 2,
+      "sites": 21
+    },
+    {
+      "board_system": "skadis",
+      "columns": 10,
+      "mount_rows": 3,
+      "sites": 32
+    },
+    {
+      "board_system": "skadis",
+      "columns": 10,
+      "mount_rows": 4,
+      "sites": 42
+    },
+    {
+      "board_system": "skadis",
+      "columns": 11,
+      "mount_rows": 1,
+      "sites": 12
+    },
+    {
+      "board_system": "skadis",
+      "columns": 11,
+      "mount_rows": 2,
+      "sites": 23
+    },
+    {
+      "board_system": "skadis",
+      "columns": 11,
+      "mount_rows": 3,
+      "sites": 35
+    },
+    {
+      "board_system": "skadis",
+      "columns": 11,
+      "mount_rows": 4,
+      "sites": 46
+    },
+    {
+      "board_system": "skadis",
+      "columns": 12,
+      "mount_rows": 1,
+      "sites": 13
+    },
+    {
+      "board_system": "skadis",
+      "columns": 12,
+      "mount_rows": 2,
+      "sites": 25
+    },
+    {
+      "board_system": "skadis",
+      "columns": 12,
+      "mount_rows": 3,
+      "sites": 38
+    },
+    {
+      "board_system": "skadis",
+      "columns": 12,
+      "mount_rows": 4,
+      "sites": 50
+    }
+  ],
+  "geometry": [
+    {
+      "board_system": "original",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 1.722625544627109e-7,
+      "binOverlap": 0.0003809351995126642,
+      "triangles": 126792,
+      "helpers": 10,
+      "volume": 104453.0587029782
+    },
+    {
+      "board_system": "us_small",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 3.8424713672659306e-10,
+      "binOverlap": 0.00038050214670002003,
+      "triangles": 33226,
+      "helpers": 10,
+      "volume": 113196.34169399217
+    },
+    {
+      "board_system": "us_large",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 1.985938493499571e-9,
+      "binOverlap": 0.0003805020142228899,
+      "triangles": 33956,
+      "helpers": 10,
+      "volume": 121925.34358089087
+    },
+    {
+      "board_system": "wall_control",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 1.3265488767179217e-8,
+      "binOverlap": 0.0003805259390734195,
+      "triangles": 33472,
+      "helpers": 10,
+      "volume": 116478.95242319
+    },
+    {
+      "board_system": "metric25",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 6.385884813791993e-9,
+      "binOverlap": 0.0003805021455201851,
+      "triangles": 33498,
+      "helpers": 10,
+      "volume": 116576.52106590026
+    },
+    {
+      "board_system": "bott_perfo",
+      "mountColumns": 7,
+      "mountSites": 14,
+      "pegDelta": 8.140453422338546e-9,
+      "binOverlap": 0.0003805021450674166,
+      "triangles": 29844,
+      "helpers": 7,
+      "volume": 149752.2132376549
+    },
+    {
+      "board_system": "multiboard",
+      "mountColumns": 10,
+      "mountSites": 20,
+      "pegDelta": 0,
+      "binOverlap": 0.00038079829190219464,
+      "triangles": 34282,
+      "helpers": 10,
+      "volume": 100436.79061799924
+    },
+    {
+      "board_system": "hsw",
+      "mountColumns": 13,
+      "mountSites": 26,
+      "pegDelta": 0,
+      "binOverlap": 0.00038079829190207956,
+      "triangles": 38992,
+      "helpers": 13,
+      "volume": 120702.30006336934
+    },
+    {
+      "board_system": "skadis",
+      "mountColumns": 13,
+      "mountSites": 13,
+      "pegDelta": -2.6229018956769323e-14,
+      "binOverlap": 0.0003807951787117083,
+      "triangles": 20442,
+      "helpers": 13,
+      "volume": 121214.73380100107
+    }
+  ],
+  "sixByTwo": {
+    "columns": [
+      -114.3,
+      -88.89999999999999,
+      -63.5,
+      -38.099999999999994,
+      -12.7,
+      12.7,
+      38.099999999999994,
+      63.5,
+      88.89999999999999,
+      114.3
+    ],
+    "sites": [
+      {
+        "x": -114.3,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -114.3,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": -88.89999999999999,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -88.89999999999999,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": -63.5,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -63.5,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": -38.099999999999994,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -38.099999999999994,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": -12.7,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -12.7,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 12.7,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 12.7,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 38.099999999999994,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 38.099999999999994,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 63.5,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 63.5,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 88.89999999999999,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 88.89999999999999,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 114.3,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 114.3,
+        "z": -25.4,
+        "row": 1
+      }
+    ]
+  }
+}
