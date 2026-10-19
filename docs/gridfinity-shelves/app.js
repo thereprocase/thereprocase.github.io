@@ -62,7 +62,7 @@ function updateGhosts(){
  ghosts=new THREE.Group();for(const [x,z] of [[-dx,0],[dx,0],[0,-dz],[0,dz]]){
  const g=new THREE.Mesh(mesh.geometry,new THREE.MeshBasicMaterial({color:0x5270cc,transparent:true,opacity:.18,depthWrite:false}));g.rotation.copy(mesh.rotation);g.position.copy(mesh.position).add(new THREE.Vector3(x,0,z));ghosts.add(g);
  }scene.add(ghosts);
- const sites=viewResult.parameters.mountSites,xs=sites.filter(s=>Math.abs(s.z-sites[0].z)<1e-4).map(s=>s.x),span=Math.max(...xs)-Math.min(...xs),steps=Math.round((dx-span)/b.pitchX),empty=Math.max(0,steps-1);
+ const sites=viewResult.parameters.mountSites,xs=sites.filter(s=>Math.abs(s.z-sites[0].z)<1e-4).map(s=>s.x),span=Math.max(...xs)-Math.min(...xs),steps=Math.round((dx-span)/(b.pitchX*(viewResult.parameters.board_system==='hsw'?2:1))),empty=Math.max(0,steps-1);
  $('neighbor-note').textContent=`Blue ghosts: aligned copies on board holes. Side by side: move ${dx.toFixed(2)} mm (${Math.round(dx/b.pitchX)} columns); ${empty} empty hole${empty===1?'':'s'} between mounting columns, ${Math.max(0,dx-size.x).toFixed(2)} mm between edges. Stacked: move ${dz.toFixed(2)} mm (${Math.round(dz/b.pitchZ)} rows). Copies use the nearest aligned holes that clear the model envelope. Downloads contain only your model.`;
 }
 $('neighbors').onclick=()=>{ghostsEnabled=!ghostsEnabled;if(ghostsEnabled)installed=true;updatePose();reset();};
