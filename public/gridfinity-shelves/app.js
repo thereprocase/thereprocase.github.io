@@ -12,6 +12,15 @@ const camera=new THREE.PerspectiveCamera(38,1,.1,5000);camera.up.set(0,0,1);
 const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;
 const bands=new THREE.DataTexture(new Uint8Array([90,155,220,255]),4,1,THREE.RedFormat);bands.needsUpdate=true;bands.magFilter=THREE.NearestFilter;bands.minFilter=THREE.NearestFilter;
 const material=new THREE.MeshToonMaterial({color:0x5da3ad,gradientMap:bands});
+const bedTint={enabled:{value:1},size:{value:new THREE.Vector2(256,256)}};
+material.onBeforeCompile=shader=>{
+ shader.uniforms.bedTintEnabled=bedTint.enabled;shader.uniforms.bedTintSize=bedTint.size;
+ shader.vertexShader='varying vec2 bedWorldXY;\n'+shader.vertexShader;
+ shader.vertexShader=shader.vertexShader.replace('#include <project_vertex>','#include <project_vertex>\nbedWorldXY=(modelMatrix*vec4(transformed,1.0)).xy;');
+ shader.fragmentShader='uniform float bedTintEnabled; uniform vec2 bedTintSize; varying vec2 bedWorldXY;\n'+shader.fragmentShader;
+ shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>','#include <color_fragment>\nif(bedTintEnabled>0.5 && (bedWorldXY.x<0.0 || bedWorldXY.y<0.0 || bedWorldXY.x>bedTintSize.x || bedWorldXY.y>bedTintSize.y)) diffuseColor.rgb=vec3(0.95,0.06,0.035);');
+};
+
 scene.add(new THREE.HemisphereLight(0xffffff,0x555566,2));const light=new THREE.DirectionalLight(0xffffff,2.5);light.position.set(100,-160,250);scene.add(light);
 const bedPresets={'180':[180,180],'220':[220,220],'250x210':[250,210],'256':[256,256],'300':[300,300],'350':[350,350]},bedKey='gridfinity-shelf-bed-v1';
 let bedWidth=256,bedDepth=256,bedPreset='256',bed;
@@ -67,7 +76,7 @@ function updateGhosts(){
 }
 $('neighbors').onclick=()=>{ghostsEnabled=!ghostsEnabled;if(ghostsEnabled)installed=true;updatePose();reset();};
 function fileStem(r){const p=r.parameters,n=v=>String(Number(Number(v).toFixed(3))).replace('-','minus').replace('.','p');return `${p.board_system}-${r.kind??'shelf'}-${p.columns}x${p.rows}-${p.mount_rows}peg-${p.backplate?'solid':'open'}-tilt${n(p.angle)}-seat${n(p.clearance)}-web${n(p.gusset??p.web??2.4)}-beam${n(p.beam)}-${p.board_system==='original'?`peg${n(p.peg_clearance)}-grip${n(p.hook_grip)}-hoop${n(p.hoop_firmness)}`:boards[p.board_system].mode==='bolted'?`screw${n(p.screw_clearance)}-head${n(p.head_clearance)}-recess${n(p.counterbore_depth)}`:`fit${n(p.slot_clearance)}-lower${n(p.lower_clearance)}-panel${n(p.board_thickness)}-gap${n(p.board_gap)}`}`;}
-function updatePose(){bed.visible=!installed;$('bed-legend').hidden=installed;if(!mesh)return;mesh.rotation.x=installed?-viewResult.printRotation:0;if(installed)mesh.position.set(0,-Math.sin(viewResult.printRotation)*viewResult.printZShift,-Math.cos(viewResult.printRotation)*viewResult.printZShift);else{if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();const center=mesh.geometry.boundingBox.getCenter(new THREE.Vector3());mesh.position.set(bedWidth/2-center.x,bedDepth/2-center.y,0);}$('print-pose').setAttribute('aria-pressed',String(!installed));$('installed').setAttribute('aria-pressed',String(installed));updateHelpers();updateGhosts();}
+function updatePose(){bedTint.enabled.value=installed?0:1;bedTint.size.value.set(bedWidth,bedDepth);$('overhang-legend').hidden=installed;bed.visible=!installed;$('bed-legend').hidden=installed;if(!mesh)return;mesh.rotation.x=installed?-viewResult.printRotation:0;if(installed)mesh.position.set(0,-Math.sin(viewResult.printRotation)*viewResult.printZShift,-Math.cos(viewResult.printRotation)*viewResult.printZShift);else{if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();const center=mesh.geometry.boundingBox.getCenter(new THREE.Vector3());mesh.position.set(bedWidth/2-center.x,bedDepth/2-center.y,0);}$('print-pose').setAttribute('aria-pressed',String(!installed));$('installed').setAttribute('aria-pressed',String(installed));updateHelpers();updateGhosts();}
 function reset(){const box=mesh?new THREE.Box3().setFromObject(mesh):new THREE.Box3(new THREE.Vector3(0,0,0),new THREE.Vector3(bedWidth,bedDepth,35));if(installed&&ghosts)box.union(new THREE.Box3().setFromObject(ghosts));if(!installed)box.union(new THREE.Box3(new THREE.Vector3(0,0,-.18),new THREE.Vector3(bedWidth,bedDepth,0)));const center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3()),d=Math.max(size.x,size.y,size.z)*1.8;controls.target.copy(center);camera.position.copy(center).add(new THREE.Vector3(d,-d,d*.85));camera.near=.1;camera.far=Math.max(5000,d*10);camera.updateProjectionMatrix();controls.update();}
 function show(r){clearGhosts();result=r;viewResult=r;if(mesh){scene.remove(mesh);mesh.geometry.dispose();for(const child of mesh.children){child.geometry.dispose();child.material.dispose();}}
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(r.vertices,3));g.setIndex(new THREE.BufferAttribute(r.triangles,1));g.computeVertexNormals();
