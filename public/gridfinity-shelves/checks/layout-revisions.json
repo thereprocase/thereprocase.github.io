@@ -5,7 +5,10 @@
     "checks/bed-viewer.json",
     "checks/bolted-boards.json",
     "checks/six-3mf-placement.json",
-    "checks/six-step-readback.json"
+    "checks/six-step-readback.json",
+    "checks/diagonal-placement.json",
+    "checks/diagonal-3mf.json",
+    "checks/diagonal-browser.json"
   ],
   "historicalBeforeDenseMountLayout": [
     "checks/array-limits.json",
@@ -29,5 +32,6 @@
     "checks/step-readback.json",
     "checks/viewer-helpers.json"
   ],
-  "scope": "Every usable board hole across width and selected mounting height; bed preview bounds and 3MF placement; existing per-peg interface geometry retained."
+  "scope": "Every usable board hole across width and selected mounting height; bed preview bounds and 3MF placement; existing per-peg interface geometry retained.",
+  "currentPlacementRevision": "diagonal-1"
 }

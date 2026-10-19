@@ -204,12 +204,18 @@ Screw recess mouths have a 0.3 mm chamfer. The recess floor remains flat and the
 
 ## Preview bed
 
-Choose a rectangular bed preset or enter custom X/Y dimensions (25–2000 mm). The viewer draws that actual bed in millimetres, with 10 mm grid spacing and 50 mm major lines, from a front-left origin. The print-pose preview centers the part on the selected bed without changing its geometry. STL/STEP coordinates stay unchanged; the 3MF build-item transform places the whole assembly at the selected bed center. Reset view fits both the part and bed. Installed pose hides the bed. Bed changes leave generated geometry valid; each new 3MF download uses the current bed placement; the selected size is remembered in this browser. Select the corresponding printer bed in your slicer.
+Choose a rectangular bed preset or enter custom X/Y dimensions (25–2000 mm). The viewer draws that actual bed in millimetres, with 10 mm grid spacing and 50 mm major lines, from a front-left origin. The print-pose preview centers the part on the selected bed without changing its geometry. Choose Straight on bed or Fit to bed. Fit to bed searches the actual mesh footprint over XY rotations, minimizes the largest bed-relative extent, and retains the best-angle view even when it exceeds the bed. Portions beyond the bed remain red. The choice persists across regeneration, pose changes and reloads. STL/STEP coordinates stay unchanged; the 3MF build-item transform applies the shown rotation and centers the whole assembly. Reset view fits both the part and bed. Installed pose hides the bed. Bed changes leave generated geometry valid; each new 3MF download uses the current bed placement; the selected size is remembered in this browser. Select the corresponding printer bed in your slicer.
 
 ## Full-width mounting layout
 
 All usable mounting holes are populated across the selected width and mounting height. Columns are evenly spaced on the selected board grid; no columns are skipped and no extra end mount introduces a short final gap. Columns are centered as a complete lattice, maximizing the count while keeping a 5 mm root margin at each side. SKÅDIS retains its alternating-slot rows; HSW uses every hex column with its 11.8 mm vertical stagger. A 6 × 2 shelf for 25.4 mm round-hole pegboard has ten mounting columns (20 mounts at the default two-row height). The Gridfinity grid stays 42 mm.
 
-`node scripts/gridfinity/check-placement.mjs /tmp/grid-placement` checks every width 1–12 and mounting height 1–4 for all nine systems, and builds each system at 6 × 2 to check connected exports, connector preservation, bin clearance and reinforcement.
+`node scripts/gridfinity/check-placement.mjs /tmp/grid-placement` checks every width 1–32 and mounting height 1–4 for all nine systems, and builds each system at 6 × 2 to check connected exports, connector preservation, bin clearance and reinforcement.
 
 The current placement/bed checks are listed in `checks/layout-revisions.json`; older receipts retain the geometry revision they originally tested.
+
+## Diagonal placement and long arrays
+
+The browser accepts 1–32 cells per direction with the existing 64-cell total limit. Long arrays can be inspected and downloaded even when too large for the selected bed. Fit to bed does not enlarge the bed or scale the mesh. STL and STEP retain the original frame-down local geometry; 3MF applies one rigid placement to both the printable body and its modifiers.
+
+`node scripts/gridfinity/check-bed-placement.mjs /tmp/grid-diagonal` checks actual 7×1 and 15×1 geometry, independent all-vertex bounds, unchanged Z, reinforcement preservation, rectangular beds and long-array limits. The 7×1 original-board default occupies 247.57 × 247.57 mm at 45°; 15×1 occupies 483.10 × 483.10 mm at 45°. [Geometry/placement evidence](checks/diagonal-placement.json) · [Orca 3MF placement readback](checks/diagonal-3mf.json).

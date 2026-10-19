@@ -5,7 +5,7 @@ export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle
 export function parameters(input) {
  const p={...defaults,...boardSettings(input.board_system??'original'),...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
- for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
+ for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>32) throw Error(`${k}: use a whole number from 1 to 32`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
  for(const [k,lo,hi] of [['clearance',-.1,.2],['web',2.4,6],['beam',5,20],['angle',-30,5]]) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k}: use ${lo} to ${hi} ${k==='angle'?'degrees':'mm'}`);
  if(!Number.isInteger(p.mount_rows)||p.mount_rows<1||p.mount_rows>4)throw Error('Mount height: use one to four peg rows.');

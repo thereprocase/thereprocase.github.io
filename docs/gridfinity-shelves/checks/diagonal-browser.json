@@ -1,0 +1,11 @@
+{
+  "site": "http://127.0.0.1:8793",
+  "sevenFitsAt45": true,
+  "fifteenKeeps45AndOverflows": true,
+  "STLUnchanged": true,
+  "3MFRotation": true,
+  "poseSwitches": true,
+  "persistedChoice": true,
+  "responsive": true,
+  "errors": []
+}
