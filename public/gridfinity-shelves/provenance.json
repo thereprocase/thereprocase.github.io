@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "6c37027dc9a441872627e4163ad3230a1cf3ac65e348e963a1d692944f1785e0",
-    "app.js": "d7f829a73f067b01aec5dbb63488632a3eb6e967b692528abc09d592cb4117da",
+    "README.md": "74b4a5943ce2d3348c87638b4f52b845f19df976d01f3c5b7f7ada9de90e2bf8",
+    "app.js": "24912539c137b4c039518e7a9658a63c3fd68d0bf48fbfe859e6d22a50b0f016",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -42,10 +42,12 @@
     "checks/reinforcement-browser.json": "edda3bb62020e5d11d8e9bc05ecab0d98723b3b543e1361e94978a07581384f7",
     "checks/reinforcement.json": "e3a9f3fe792afefe20b1e7fe7e474076dbb4005fc939e520422bb48a0d38a877",
     "checks/round-boards.json": "6754a9d9c345e9bde9dd7941bbb2ca478e3fa47b2e233a358a4ee9c21fb929ba",
+    "checks/settings-browser.json": "3b53120c32cfc9f63908161c9e2a3e5aecd0eea9dc7a7860622eaa84e827eebd",
     "checks/six-3mf-placement.json": "310269b2ffb0492f3b74739d513ae992add32c7eb344b87c16b7d5ebfc91c18f",
     "checks/six-step-readback.json": "b240a74ddca8ac886134716d20110d022dfba2d57e189481f8350112ea4e4669",
     "checks/step-readback.json": "572990e74a776fbcf77cc161ac06bbfe892866ed0cbfa95d5ed84f6b321c65ba",
     "checks/viewer-helpers.json": "68f6a9359d952143fc0d69227c4353b2bade9d9ae8f8065eee313bf20a29ed04",
+    "checks/width-search-controls.json": "ee23a14d784772e73539c8816a720a5bc4e28793b86f79333d75904af81a0bd8",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
     "export-worker.js": "50c91b0269c4f65b1f030c9481bb90205978fdca314edeaea32247c5941014e7",
@@ -53,7 +55,7 @@
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "8dbcdf6955671330037db0b28c9fed8a71ce62d877bead47e30a9e8a533cdb80",
+    "index.html": "f9e64bb7f5b0ef8710ff03cbe22072800b3935e6e76cec3e97b99e256a64b2de",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
     "kernel.js": "eeba24094de399b5a563686f54823839424935c6360ef9dd2886e3376b94b31c",
     "neighbor-spacing.js": "445c78ab3db06d739e17dfd4651206e8ed4e3c810ccb5e17dc45cc805a743a31",
@@ -63,6 +65,7 @@
     "reinforcement.png": "28231eb8cf49e034fc6d7dd2ff7ac3c8112a43ec78eeca40a3b68e2234641e04",
     "round-board-coupons.png": "a1a518a7564c8f58b31acf95e4ebf04204e47db0b8c2e3cfd4118c0938a87256",
     "screw-board-mounts.png": "f28c53b8fc6698cbb1ac48e05c4c8d5f51f9488adbe6d29630b7abce7cdb0e27",
+    "search-width-worker.js": "6cadde06cc3958ea216965d8e83ced2f7f92dc1b87efbe202174fa734b6fb04f",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "skadis-shelf.png": "b4f1112ce8ea537e5668c00aa05239e3e5740ba3d28050e19ca17ce956196839",
@@ -71,7 +74,7 @@
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
     "sources/skadis/ikea-skadis.scad": "f2a76b33adc69f701a73fa4090886b39b2fed13906f22d9701549a36410f54d6",
-    "style.css": "2a0fa78d194aeaea9d32333a1ab060ee176805b65fa760942064d54121f560b3",
+    "style.css": "8bd94d9402bc6cd4c13edacf5e9c2658a454b76256a4dfa4391fb540efe9e31c",
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
@@ -87,5 +90,8 @@
   ],
   "board_sources": "board-sources.json",
   "current_checks": "checks/layout-revisions.json",
-  "mount_layout": "all usable holes across width and mounting height"
+  "mount_layout": "all usable holes across width and mounting height",
+  "sharedAssets": {
+    "/gridfinity-common/settings-link.js": "b72eecb434694f63afe3b979a20f21166f0cabd5f8ff8bc6fa12f6b331925496"
+  }
 }

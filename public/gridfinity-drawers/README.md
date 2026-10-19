@@ -90,3 +90,9 @@ Seat clearance ranges from -0.10 to +0.20 mm per side. Negative values tighten t
 Selected tiles can be downloaded as STL or faceted-solid STEP. Download names describe the drawer size, cell count, bottom style, placement and joint settings. Save the parameter recipe to reproduce the exact cuts.
 
 [Fit-relief subtraction check](checks/fit-relief.json): exported X/Y tiles at their original assembly coordinates exactly match the finished insert minus the independently constructed 0.15 mm V strip, in both bottom modes. Repeat with `node scripts/check-drawer-fit-relief.mjs`.
+
+## Tile preview labels and settings links
+
+Preview IDs use the exact `tile-row-column` suffix from each download filename. Row 1 is at the drawer front (Y=0). The placement diagram and 3D preview show the IDs; click a 3D label to select that tile. Labels can be hidden, and crowded 3D labels appear as you zoom in. They are display overlays and do not change the exported geometry.
+
+Copy settings link saves the current form inputs, usable bed dimensions, assembly/print view, selected tile, separation slider and label visibility in the URL fragment. Opening it restores the inputs and generates the tiles. Selected tile indices are clamped if the layout has fewer tiles. If clipboard access is blocked, a selectable URL is shown. Parameter files remain available for saving recipes.

@@ -219,3 +219,13 @@ The current placement/bed checks are listed in `checks/layout-revisions.json`; o
 The browser accepts 1–32 cells per direction with the existing 64-cell total limit. Long arrays can be inspected and downloaded even when too large for the selected bed. Fit to bed does not enlarge the bed or scale the mesh. STL and STEP retain the original frame-down local geometry; 3MF applies one rigid placement to both the printable body and its modifiers.
 
 `node scripts/gridfinity/check-bed-placement.mjs /tmp/grid-diagonal` checks actual 7×1 and 15×1 geometry, independent all-vertex bounds, unchanged Z, reinforcement preservation, rectangular beds and long-array limits. The 7×1 original-board default occupies 247.57 × 247.57 mm at 45°; 15×1 occupies 483.10 × 483.10 mm at 45°. [Geometry/placement evidence](checks/diagonal-placement.json) · [Orca 3MF placement readback](checks/diagonal-3mf.json).
+
+## Largest supported width
+
+Find largest width checks the current depth, board interface and bed, including diagonal placement. It generates actual candidate meshes in a separate cancellable worker, starting at the upper bound imposed by the bed diagonal and the existing 32-per-direction/64-total cell limits. The first fitting width in descending order is the largest supported result. Use the result to set the width and generate it in Fit to bed mode. Changing geometry settings or the bed clears the result; checking does not replace the current preview.
+
+## Settings links
+
+Copy settings link captures the current form inputs and the bed, placement, pose, neighbor-ghost and helper visibility choices. Opening a link restores those values and generates the model, including a fit coupon when shared from that preview. Settings live in the URL fragment and are validated before application. If clipboard access is unavailable, the page shows a selectable link. Invalid or incompatible links leave the current configuration unchanged and show an error.
+
+Settings-link validation: `node scripts/gridfinity/check-settings-links.mjs`. Browser workflow regression: `python scripts/gridfinity/check-qol-browser.py` with Python Playwright and Chromium available; `SITE` overrides the local default URL and `GRIDFINITY_BROWSER_OUT` chooses the evidence directory. [Combined browser evidence](checks/settings-browser.json) · [Width-search controls](checks/width-search-controls.json).

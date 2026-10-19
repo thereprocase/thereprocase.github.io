@@ -13,3 +13,5 @@ select{min-width:0;width:100%;padding:9px;font:inherit;border:1px solid #555;bac
 .spacing-panel{margin:16px 0}.spacing-panel h3{font-size:1rem}.spacing-panel details{border:1px solid #777;margin:6px 0}.spacing-panel summary{padding:10px;cursor:pointer;font-weight:600;min-height:44px}.spacing-scroll{overflow-x:auto}.spacing-panel table{border-collapse:collapse;width:100%;font-size:.85rem;font-family:'IBM Plex Mono',monospace}.spacing-panel caption{text-align:left;padding:8px;font-family:'IBM Plex Sans',sans-serif}.spacing-panel th,.spacing-panel td{padding:8px;text-align:right;border:1px solid #ccc}.spacing-panel th{background:#eee;white-space:normal}.spacing-panel .spacing-current{background:#e4edff}
 
 #viewer-note{top:8px;left:8px;right:8px;margin:0;padding:10px 12px;background:rgba(255,255,255,.95);border:1px solid #9b6300;border-left:5px solid #9b6300;pointer-events:none}
+
+#share-status,#width-result{overflow-wrap:anywhere}

@@ -1,3 +1,4 @@
+import {readSettingsLink,settingsURL,copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
 import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=diagonal-1';
 import {spacingForBed} from './neighbor-spacing.js?v=diagonal-1';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
@@ -6,7 +7,7 @@ import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
 import {defaults,parameters,binarySTL} from './kernel.js?v=diagonal-1';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false,helperObjects=[],helpersVisible=true,installedHelpersVisible=false;
-let ghosts,ghostsEnabled=false,viewHull,fitToBed=false;try{fitToBed=localStorage.getItem('gridfinity-shelf-placement-v1')==='fit';}catch{}
+let widthWorker,widthResult,sharedKind='shelf',busy=false;let ghosts,ghostsEnabled=false,viewHull,fitToBed=false;try{fitToBed=localStorage.getItem('gridfinity-shelf-placement-v1')==='fit';}catch{}
 let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true});}catch(e){$('viewer-note').textContent='3D rendering is unavailable in this browser. Use the native CAD generator linked below.';$('status').textContent='WebGL is required for this interactive preview.';$('generate').disabled=true;$('generate-preview').disabled=true;throw e;}renderer.setPixelRatio(Math.min(devicePixelRatio,2));host.append(renderer.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#eee9dc');
 const camera=new THREE.PerspectiveCamera(38,1,.1,5000);camera.up.set(0,0,1);
@@ -52,6 +53,7 @@ function rebuildBed(syncControls=true){
  $('bed-preset').value=bedPreset;if(syncControls){$('bed-width').value=bedWidth;$('bed-depth').value=bedDepth;}bedSummary();
 }
 function applyBed(w,d,preset,syncControls=true){
+ cancelWidthSearch();
  if(!validBed(w,d)){$('bed-status').textContent='Enter bed dimensions from 25 to 2000 mm. The previous bed is still shown.';$('bed-status').dataset.overflow='true';return;}
  bedWidth=w;bedDepth=d;bedPreset=preset;rebuildBed(syncControls);updatePose();if(!installed)reset();try{localStorage.setItem(bedKey,JSON.stringify({width:w,depth:d}));}catch{}
 }
@@ -93,16 +95,16 @@ function show(r){clearGhosts();result=r;viewResult=r;viewHull=footprintHull(r.ve
  const notes=[];if(r.kind==='coupon')notes.push('Try this pair on your board, then keep these peg-fit settings for the shelf.');if(p.board_system!=='original'&&boards[p.board_system].mode!=='bolted')notes.push('Support the hook ledges in the supplied frame-down pose.');if(p.board_system==='original'&&p.mount_rows===1)notes.push('Mini mount: hooks only, without lower locking hoops.');if(p.rows>1)notes.push('For deeper shelves, the mounting-height and gusset controls add support underneath.');if(p.clearance<0)notes.push('A tighter seat can make bins sit slightly higher.');
  if(r.reinforcementError)notes.push('Reinforcement export unavailable: '+r.reinforcementError);$('fit-note').textContent=notes.join(' ');$('status').textContent='Geometry ready · download your STL below';$('stl').disabled=false;$('recipe').disabled=false;$('viewer-note').hidden=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=!r.helpers?.length;$('stl').textContent=r.kind==='coupon'?(boards[p.board_system].mode==='bolted'?'Download screw-fit STL':'Download peg-pair STL'):'Download STL';
 }
-function setBusy(b){for(const id of ['step','three-mf','helpers'])$(id).disabled=b||!result?.helpers?.length;form.elements.board_system.disabled=b;$('coupon').disabled=b;$('generate-preview').disabled=b;$('generate-preview').textContent=b?'Generating…':'Generate preview';$('generate').disabled=b;$('cancel').disabled=!b;}
-function generate(kind='shelf'){if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
+function setBusy(b){busy=b;$('use-width').disabled=b;$('find-width').disabled=b||!!widthWorker;for(const id of ['step','three-mf','helpers'])$(id).disabled=b||!result?.helpers?.length;form.elements.board_system.disabled=b;$('coupon').disabled=b;$('generate-preview').disabled=b;$('generate-preview').textContent=b?'Generating…':'Generate preview';$('generate').disabled=b;$('cancel').disabled=!b;}
+function generate(kind='shelf'){if(widthWorker)cancelWidthSearch();if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
  worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent=mesh?'Previous model · computing new geometry…':'Computing geometry in your browser…';$('viewer-note').hidden=false;worker=new Worker('./worker.js?v=diagonal-1',{type:'module'});
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('viewer-note').textContent=mesh?'Previous model · generation failed':'No new model generated. See the error below.';$('viewer-note').hidden=false;$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('viewer-note').textContent=mesh?'Previous model · geometry engine failed to load':'Geometry engine failed to load.';$('viewer-note').hidden=false;$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage({parameters:p,kind});
 }
-form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{updateSpacingTable();worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
+form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{cancelWidthSearch();updateSpacingTable();worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
 $('coupon').onclick=()=>generate('coupon');$('reset-fit').onclick=()=>{for(const k of ['peg_clearance','hook_grip','hoop_firmness',...Object.keys(boardDefaults).filter(k=>k!=='board_system')])form.elements[k].value=boardSettings(form.elements.board_system.value)[k]??defaults[k];form.oninput();};
 $('cancel').onclick=()=>{worker?.terminate();setBusy(false);$('status').textContent='Generation cancelled. Adjust settings or generate again.';$('viewer-note').textContent=mesh?'Previous model · generation cancelled':'Generation cancelled · select Generate preview';$('viewer-note').hidden=false;};
-for(const button of document.querySelectorAll('[data-preset]'))button.onclick=()=>{const [x,y]=button.dataset.preset.split('').map(Number),p={...defaults,columns:x,rows:y,beam:x===1?5:10,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))};for(const [k,v] of Object.entries(p)){if(typeof v==='boolean')form.elements[k].checked=v;else form.elements[k].value=v;}generate();};
+for(const button of document.querySelectorAll('[data-preset]'))button.onclick=()=>{cancelWidthSearch();const [x,y]=button.dataset.preset.split('').map(Number),p={...defaults,columns:x,rows:y,beam:x===1?5:10,...Object.fromEntries(['board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))};for(const [k,v] of Object.entries(p)){if(typeof v==='boolean')form.elements[k].checked=v;else form.elements[k].value=v;}generate();};
 for(const [id,fit] of [['fit-bed',true],['straight-bed',false]])$(id).onclick=()=>{fitToBed=fit;installed=false;try{localStorage.setItem('gridfinity-shelf-placement-v1',fit?'fit':'straight');}catch{}updatePose();reset();};
 $('print-pose').onclick=()=>{installed=false;updatePose();reset();};$('installed').onclick=()=>{installed=true;updatePose();reset();};$('reset-view').onclick=reset;
 $('stl').onclick=()=>{if(result)download(binarySTL(result),'model/stl',fileStem(result)+'-frame-down.stl');};
@@ -136,5 +138,39 @@ function feedback(){
 }
 $('feedback-open').onclick=()=>{const {text}=feedback();const url=new URL('https://github.com/thereprocase/thereprocase.github.io/issues/new');url.searchParams.set('title','Gridfinity board fit: '+boards[form.elements.board_system.value].name);url.searchParams.set('body',text);window.open(url.href,'_blank','noopener');};
 $('feedback-save').onclick=()=>{const {recipe,text,part}=feedback();download(JSON.stringify({date:new Date().toISOString(),revision:'dense-1',part,parameters:recipe,feedback:text},null,2)+'\n','application/json','gridfinity-board-feedback.json');};
+function cancelWidthSearch(message='Settings changed · find the largest width again.'){
+ if(widthWorker||widthResult){widthWorker?.terminate();widthWorker=null;widthResult=null;$('width-result').textContent=message;}
+ $('find-width').disabled=busy;$('cancel-width').disabled=true;$('use-width').hidden=true;
+}
+$('find-width').onclick=()=>{
+ let input;try{if(!form.reportValidity())return;input=values();parameters({...input,columns:1});}catch(e){$('width-result').textContent=e.message;return;}
+ cancelWidthSearch();widthResult=null;$('find-width').disabled=true;$('cancel-width').disabled=false;$('width-result').textContent='Checking supported widths in your browser…';
+ const search=widthWorker=new Worker('./search-width-worker.js?v=share-1',{type:'module'});
+ const finish=()=>{widthWorker?.terminate();widthWorker=null;$('find-width').disabled=busy;$('cancel-width').disabled=true;};
+ widthWorker.onmessage=({data})=>{if(widthWorker!==search)return;if(data.progress){$('width-result').textContent=`Checking ${data.progress.columns} × ${data.progress.rows}, including diagonal placement…`;return;}
+ finish();if(data.error){$('width-result').textContent='Width check failed: '+data.error;return;}
+ widthResult=data.result;if(!widthResult.columns){$('width-result').textContent=`No supported width fits this bed at ${widthResult.rows} cells deep, including diagonally.`;return;}
+ const r=widthResult;$('width-result').textContent=`Largest supported width at this depth: ${r.columns} × ${r.rows} · ${r.placement.angle.toFixed(2)}° · ${r.placement.width.toFixed(1)} × ${r.placement.depth.toFixed(1)} mm footprint.`;$('use-width').textContent=`Use ${r.columns} × ${r.rows}`;$('use-width').hidden=false;
+ };
+ widthWorker.onerror=()=>{if(widthWorker!==search)return;finish();$('width-result').textContent='Width check could not complete. Retry.';};widthWorker.postMessage({parameters:input,bed:{width:bedWidth,depth:bedDepth}});
+};
+$('cancel-width').onclick=()=>cancelWidthSearch('Width check cancelled.');
+$('use-width').onclick=()=>{if(!widthResult?.columns)return;const columns=widthResult.columns;form.elements.columns.value=columns;fitToBed=true;installed=false;updatePose();reset();try{localStorage.setItem('gridfinity-shelf-placement-v1','fit');}catch{}generate();};
+$('share-settings').onclick=async()=>{
+ try{if(!form.reportValidity())return;const input=values();parameters(input);const url=settingsURL(location.href,'shelves',input,{bed:{width:bedWidth,depth:bedDepth},fitToBed,installed,ghosts:ghostsEnabled,helpersVisible,installedHelpersVisible,kind:result?.kind==='coupon'?'coupon':'shelf'});$('share-url').value=url;$('share-url').hidden=false;$('share-status').textContent='Copying settings link…';const copied=await copySettingsLink(url);$('share-url').hidden=copied;$('share-status').textContent=copied?'Settings link copied.':'Copy the settings link below.';if(!copied){$('share-url').focus();$('share-url').select();}}
+ catch(e){$('share-status').textContent='Could not make settings link: '+e.message;}
+};
+function restoreSharedSettings(){
+ try{const linked=readSettingsLink(location.href,'shelves',defaults);if(!linked)return false;parameters(linked.parameters);const v=linked.view;
+ if(v.kind!==undefined&&!['shelf','coupon'].includes(v.kind))throw Error('Invalid linked part.');
+ if(v.bed&&!validBed(v.bed.width,v.bed.depth))throw Error('Invalid linked bed size.');
+ for(const k of ['fitToBed','installed','ghosts','helpersVisible','installedHelpersVisible'])if(v[k]!==undefined&&typeof v[k]!=='boolean')throw Error('Invalid linked view setting.');
+ sharedKind=v.kind??'shelf';cancelWidthSearch();for(const [k,value] of Object.entries(linked.parameters)){const field=form.elements[k];if(typeof value==='boolean')field.checked=value;else field.value=value;}
+ previousBoard=form.elements.board_system.value;updateBoardUI();if(v.fitToBed!==undefined)fitToBed=v.fitToBed;if(v.installed!==undefined)installed=v.installed;if(v.ghosts!==undefined)ghostsEnabled=v.ghosts;if(v.helpersVisible!==undefined)helpersVisible=v.helpersVisible;if(v.installedHelpersVisible!==undefined)installedHelpersVisible=v.installedHelpersVisible;
+ if(v.bed)applyBed(v.bed.width,v.bed.depth,Object.keys(bedPresets).find(k=>bedPresets[k][0]===v.bed.width&&bedPresets[k][1]===v.bed.depth)??'custom');
+ $('share-status').textContent='Settings restored from link.';return true;
+ }catch(e){$('share-status').textContent='Could not load settings link: '+e.message;return false;}
+}
+addEventListener('hashchange',()=>{if(restoreSharedSettings())generate(sharedKind);});
 new ResizeObserver(()=>{renderer.setSize(host.clientWidth,host.clientHeight);camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();}).observe(host);
-renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});reset();generate();
+renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});restoreSharedSettings();reset();generate(sharedKind);

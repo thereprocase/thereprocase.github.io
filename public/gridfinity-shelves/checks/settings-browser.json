@@ -1,0 +1,14 @@
+{
+  "site": "http://127.0.0.1:8793",
+  "largestWidth7x1": true,
+  "searchApplyAndCancel": true,
+  "shelfLinkExact": true,
+  "drawerLinkExact": true,
+  "labelsMatchFiles": true,
+  "labelSelection": true,
+  "clipboardFallback": true,
+  "malformedLinkHandled": true,
+  "hashNavigationRestores": true,
+  "responsive": true,
+  "errors": []
+}
