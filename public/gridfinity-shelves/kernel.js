@@ -1,8 +1,9 @@
+import {boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=boards-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults};
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults,...boardDefaults};
 export function parameters(input) {
- const p={...defaults,...input};checkPegFit(p);
+ const p={...defaults,...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
  for(const k of ['columns','rows']) if(!Number.isInteger(p[k])||p[k]<1||p[k]>12) throw Error(`${k}: use a whole number from 1 to 12`);
  if(p.columns*p.rows>64) throw Error('Use at most 64 cells per shelf.');
@@ -12,7 +13,7 @@ export function parameters(input) {
  const mountZ=Array.from({length:p.mount_rows},(_,i)=>-25.4*i),backBottom=p.mount_rows===1?-12.7:mountZ.at(-1)-4.28,webColumns=Array.from({length:p.columns+1},(_,i)=>(i-p.columns/2)*42);
  const lanes=Math.ceil((42*p.columns+6)/25.4),frameWidth=42*p.columns+4,available=Array.from({length:lanes},(_,i)=>i).filter(i=>Math.abs((i-(lanes-1)/2)*25.4)+5<=frameWidth/2+1e-8),holes=available.filter((_,i)=>i%3===0);
  if(holes.at(-1)!==available.at(-1))holes.push(available.at(-1));
- return {...p,mountZ,backBottom,webColumns,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};
+ const original={...p,mountZ,backBottom,webColumns,frameWidth,width:lanes*25.4-2,mounts:holes.map(i=>(i-(lanes-1)/2)*25.4),front:51.55+42*(p.rows-1)};const layout=boardLayout(p);return {...original,...layout,mountSites:layout?.mountSites??original.mounts.flatMap(x=>mountZ.map((z,row)=>({x,z,row})))};
 }
 function rounded(cx,cy,w,r,z) {
  const a=[];
@@ -49,7 +50,7 @@ export function build(module, inputs, input) {
  }
  try {
   const pieces=[],pockets=[],pegs=[],feet=[],c=p.clearance,angle=p.angle*Math.PI/180,tangent=Math.tan(angle);
-  const pegSet=makePegs(module,inputs,p,keep),upperMesh=pegSet.upper.getMesh(),ys=[],zs=[];if(p.peg_clearance===0&&p.hook_grip===0){for(const v of inputs.upper.vertices){ys.push(v[1]);zs.push(v[2]);}}else for(let i=0;i<upperMesh.vertProperties.length;i+=3){ys.push(upperMesh.vertProperties[i+1]);zs.push(upperMesh.vertProperties[i+2]);}
+  const pegSet=p.board_system==='original'?makePegs(module,inputs,p,keep):makeBoardPegs(module,p,keep),upperMesh=pegSet.upper.getMesh(),ys=[],zs=[];if(p.board_system==='original'&&p.peg_clearance===0&&p.hook_grip===0){for(const v of inputs.upper.vertices){ys.push(v[1]);zs.push(v[2]);}}else for(let i=0;i<upperMesh.vertProperties.length;i+=3){ys.push(upperMesh.vertProperties[i+1]);zs.push(upperMesh.vertProperties[i+2]);}
   const hinge=Math.max(5.72,3.48-tangent*5.4+.25,Math.max(...zs)-tangent*((tangent>=0?Math.min(...ys):Math.max(...ys))-.15)+.275);
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
   const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
@@ -72,15 +73,15 @@ export function build(module, inputs, input) {
    for(const x of p.webColumns)pieces.push(box([p.web,5.4,hinge+1-bottom],[x-p.web/2,.15,bottom]));
   }
   for(const x of p.webColumns)pieces.push(keep(prism([[5,bottom+2.18],point(p.front,5.72-p.beam),point(p.front,4.72),[5,hinge+tangent*4.85-3.12]],x-p.web/2,x+p.web/2).intersect(frontMask)));
-  for(const x of p.mounts)for(let i=0;i<p.mount_rows;i++){
-   const peg=i===0?upper:i===p.mount_rows-1?lower:locator,copy=moved(peg,[x,0,p.mountZ[i]]);pieces.push(copy);pegs.push(copy);
+  for(const {x,z,row:i} of p.mountSites){
+   const peg=i===0?upper:i===p.mount_rows-1?lower:locator,copy=moved(peg,[x,0,z]);pieces.push(copy);pegs.push(copy);
   }
   let shape=keep(M.union(pieces));
   const extent=p.width/2+20,below=prism([[-60,-1000],[1000,-1000],[1000,hinge+tangent*(1000-.15)],[-60,hinge+tangent*(-60-.15)]],-extent,extent);
   shape=keep(shape.intersect(below));shape=keep(shape.subtract(keep(M.union(pockets))));
   // Match the float32 envelope plane exactly; a double .15 leaves a nanometer cut separating pegs.
   const reach=p.width/2+20,allowed=prism(inputs.envelope.map(([y,z],i,a)=>[y,i===0||i===a.length-1?-200:z]),-reach,reach),forbidden=keep(box([2*reach,60,400],[-reach,Math.fround(.15),-200]).subtract(allowed));
-  shape=keep(shape.subtract(forbidden));
+  if(p.board_system==='original')shape=keep(shape.subtract(forbidden));
   // Remove boolean slivers below float32 export resolution before validation.
   shape=keep(shape.simplify(0.00001));
   if(shape.status()!=='NoError'||shape.volume()<=0)throw Error(`Geometry failed: ${shape.status()}`);
@@ -89,16 +90,16 @@ export function build(module, inputs, input) {
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
   if(pegDelta>.01)throw Error('Connector preservation check failed.');
-  for(const x of p.mounts)for(let i=0;i<p.mount_rows;i++){const z=p.mountZ[i]+.12,d=i===0?6.72:7.62;const root=box([d,5.4,d],[x-d/2,.15,z-d/2]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
+  for(const {x,z,row:i} of p.mountSites){const d=i===0?6.72:7.62;const root=p.board_system==='original'?box([d,5.4,d],[x-d/2,.15,z+.12-d/2]):box([pegSet.root.width,5.4,pegSet.root.height],[x-pegSet.root.width/2,.15,z+pegSet.root.bottom]);if(keep(root.subtract(shape)).volume()>.01)throw Error('Continuous root-wall check failed.');}
   const coreDepth=Math.min(1.9,2.05-c),core=tilt(box([p.mounts.at(-1)-p.mounts[0],coreDepth,p.beam],[p.mounts[0],p.front-coreDepth,5.72-p.beam]));
   const coreMissing=keep(core.subtract(shape)).volume();
   // At large spans, micron-scale boundary rounding accumulates measurable volume.
   // Bound the skin by the simplify tolerance plus one float32 ULP at these coordinates.
   const coreBounds=core.boundingBox(),coreMagnitude=Math.max(1,...coreBounds.min.map(Math.abs),...coreBounds.max.map(Math.abs));
   const coreTolerance=.00001+2**(Math.floor(Math.log2(coreMagnitude))-23),span=p.mounts.at(-1)-p.mounts[0];
-  const insetCore=tilt(box([span-2*coreTolerance,coreDepth-2*coreTolerance,p.beam-2*coreTolerance],[p.mounts[0]+coreTolerance,p.front-coreDepth+coreTolerance,5.72-p.beam+coreTolerance]));
-  const coreInteriorMissing=keep(insetCore.subtract(shape)).volume();
-  const coreSkinVolume=span*coreDepth*p.beam-(span-2*coreTolerance)*(coreDepth-2*coreTolerance)*(p.beam-2*coreTolerance);
+  const insetCore=span>2*coreTolerance?tilt(box([span-2*coreTolerance,coreDepth-2*coreTolerance,p.beam-2*coreTolerance],[p.mounts[0]+coreTolerance,p.front-coreDepth+coreTolerance,5.72-p.beam+coreTolerance])):null;
+  const coreInteriorMissing=insetCore?keep(insetCore.subtract(shape)).volume():0;
+  const coreSkinVolume=Math.max(0,span*coreDepth*p.beam-(span-2*coreTolerance)*(coreDepth-2*coreTolerance)*(p.beam-2*coreTolerance));
   if(coreInteriorMissing>1e-6||coreMissing>coreSkinVolume+1e-6)throw Error('Front beam continuity check failed: '+coreMissing+' mm3 boundary, '+coreInteriorMissing+' mm3 interior.');
   const overlaps=feet.map(foot=>keep(shape.intersect(foot)).volume()),footOverlap=overlaps.reduce((a,b)=>a+b,0),maxFootOverlap=Math.max(...overlaps);
   if(c>=0&&maxFootOverlap>.002)throw Error('Reference bin-foot clearance check failed.');
@@ -132,7 +133,7 @@ export function binarySTL(result) {
 
 /** Small paired connector coupon, printed with its top face on the bed. */
 export function buildCoupon(module,inputs,input={}){
- const p=parameters(input),{Manifold:M,Mesh}=module,allocated=[],keep=o=>(allocated.push(o),o);
+ const p=parameters(input);if(p.board_system!=='original')return boardCoupon(module,p);const {Manifold:M,Mesh}=module,allocated=[],keep=o=>(allocated.push(o),o);
  try{
   const pegs=makePegs(module,inputs,p,keep),lower=keep(pegs.lower.translate([0,0,-25.4]));
   const plate=keep(keep(M.cube([20,5.4,35.28])).translate([-10,Math.fround(.15),-29.56]));
@@ -148,5 +149,21 @@ export function buildCoupon(module,inputs,input={}){
   if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
   const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,columns:1,rows:1,mount_rows:2,mounts:[0],webColumns:[],angle:0,backplate:true},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};
   validateExport(result);return result;
+ }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
+}
+
+function boardCoupon(module,input){
+ const p=parameters({...Object.fromEntries(Object.keys(defaults).map(k=>[k,input[k]])),columns:2,rows:1,mount_rows:2,angle:0,backplate:true}),{Manifold:M,Mesh}=module,allocated=[],keep=o=>(allocated.push(o),o);
+ try{
+  const set=makeBoardPegs(module,p,keep),sites=[{x:-10,z:0,row:0},{x:10,z:-20,row:1}],bottom=-20+set.root.bottom;
+  const plate=keep(keep(M.cube([30,5.4,5.72-bottom])).translate([-15,Math.fround(.15),bottom]));
+  const pegs=sites.map(({x,z})=>keep(set.upper.translate([x,0,z]))),shape=keep(keep(M.union([plate,...pegs])).simplify(.00001));
+  const components=shape.decompose();components.forEach(keep);if(components.length!==1||shape.status()!=='NoError')throw Error('Coupon must be one connected solid.');
+  const clip=keep(keep(M.cube([60,60.15,120])).translate([-30,-60,-70])),expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip)),pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();if(pegDelta>.01)throw Error('Coupon connector changed at the backplate.');
+  const source=shape.getMesh(),v=source.vertProperties,vertices=new Float32Array(v.length);let minZ=Infinity;
+  for(let i=0;i<v.length;i+=3){vertices[i]=v[i];vertices[i+1]=-v[i+1];vertices[i+2]=-v[i+2];minZ=Math.min(minZ,vertices[i+2]);}
+  for(let i=2;i<vertices.length;i+=3)vertices[i]-=minZ;
+  const final=keep(new M(new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(source.triVerts)})));if(final.status()!=='NoError')throw Error('Coupon export failed.');const mesh=final.getMesh();
+  const result={kind:'coupon',vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts),parameters:{...p,mountSites:sites,mounts:[-10,10],mountZ:[0,-20],webColumns:[]},volume:final.volume(),printRotation:Math.PI,printZShift:-minZ,pegDelta,trianglesCount:mesh.triVerts.length/3};validateExport(result);return result;
  }finally{for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}
 }

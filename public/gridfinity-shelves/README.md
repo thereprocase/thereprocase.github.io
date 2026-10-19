@@ -89,3 +89,33 @@ the original shelf source linked in the provenance record.
 Run `node scripts/gridfinity/check-peg-fit.mjs /tmp/peg-fit-checks` for the
 coupon, adjustment-independence, rib-width and parameter checks. Test outputs
 are in [checks/peg-fit.json](checks/peg-fit.json).
+
+
+## Board systems
+
+The selector keeps the original round-hole PF02/PF07 mounts and adds IKEA
+SKÅDIS drop-in retaining tails on a staggered 40 × 20 mm slot layout. The bin
+seats remain on a 42 mm grid. A narrow shelf skips a slot row when its shifted
+mounts cannot fit inside the backplate. One to four usable mounting rows can be
+selected. The SKÅDIS coupon has two hooks offset 20 mm across and down.
+
+SKÅDIS is modeled from reference dimensions, not print tested. The defaults are
+5 × 15 mm rounded slots, 5.5 mm board thickness, 0.2 mm side clearance,
+0.2 mm behind-board gap and a 3 mm deep retaining tail. These dimensions and the
+source are in `board-sources.json`. The hook geometry is adapted from John
+Mylchreest's MIT-licensed library; the original source and license are bundled
+under `sources/skadis/`. The port raises the tab to account for the rounded slot
+ends, derives its insertion travel from the actual tail envelope, and adds a
+positive-volume tab/tail union.
+
+SKÅDIS hook ledges need supports in the supplied frame-down pose. The digital
+checks cover solids, connector preservation, bin-foot clearance, closed STL,
+and insertion/removal through a modeled board; they do not represent a print.
+The FreeCAD source download continues to support the original round-hole
+system. `boards.js` is the editable browser CAD source for SKÅDIS.
+
+The feedback section can open a GitHub issue draft with board, recipe and fit
+notes, or save that information as local JSON. No feedback is sent automatically.
+
+Run `node scripts/gridfinity/check-board-systems.mjs /tmp/board-checks` for the
+new interface checks. `check-peg-fit.mjs` retains the original connector checks.

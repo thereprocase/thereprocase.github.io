@@ -1,0 +1,36 @@
+{
+  "revision": "boards-1",
+  "gridfinity_pitch_mm": 42,
+  "systems": {
+    "original": {
+      "description": "Existing PF02 #9 and PF07 #5 native connector geometry; unchanged at zero fit adjustment",
+      "source": "/peg/",
+      "pitch_mm": [25.4, 25.4]
+    },
+    "skadis": {
+      "description": "IKEA SKÅDIS staggered-slot interface",
+      "status": "Modeled from reference dimensions; not print tested",
+      "reference": "https://github.com/jmylchreest/openscad-models/tree/edeea813c1f7941eea1e2d8fe9e1f844de0a227b/libraries/ikea-skadis",
+      "author": "John Mylchreest",
+      "license": "MIT",
+      "license_file": "sources/skadis/LICENSE",
+      "reference_source": "sources/skadis/ikea-skadis.scad",
+      "slot_mm": [5, 15],
+      "pitch_mm": [40, 20],
+      "alternate_row_offset_mm": 20,
+      "reference_board_thickness_mm": 5.5,
+      "default_clearance_per_side_mm": 0.2,
+      "default_board_gap_mm": 0.2,
+      "default_retainer_depth_mm": 3,
+      "changes": [
+        "Ported connector solids to the browser manifold kernel; board-facing Y axis reversed",
+        "Independent backplate roots and staggered slot allocation inside shelf width",
+        "Tab raised from the rectangular-slot reference to clear the R2.5 slot ends at its selected width",
+        "Insertion lift derived from actual tail envelope rather than fixed 10 mm",
+        "Positive-volume tail/tab overlap for reliable solid union",
+        "Two-slot coupon shares the same connector construction as the shelf"
+      ],
+      "check_scope": "Digital solid, board collision, export and browser checks. No physical print or board fit test."
+    }
+  }
+}

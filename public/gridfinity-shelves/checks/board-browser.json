@@ -1,0 +1,12 @@
+{
+  "boardSelector": true,
+  "systemSpecificFit": true,
+  "couponSTLReadback": true,
+  "recipeBoardAndFit": true,
+  "presetPreservesBoard": true,
+  "feedbackDraftAndJSON": true,
+  "mobile320and390": true,
+  "desktop1600": true,
+  "originalStillGenerates": true,
+  "errors": []
+}
