@@ -1,13 +1,18 @@
-import { convertNative } from './native-cad.js?v=cad-progress-1';
+import { convertNative } from './native-cad.js?v=cad-roof-1';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
 import { importSolid, meshData, checkMesh } from './kernel.js?v=step-audit-1';
 self.onmessage = async ({ data }) => {
+  let stage = 'Starting native CAD conversion';
   try {
     const result = await convertNative({
         ...data,
-        onProgress: (progress) => self.postMessage({ progress }),
+        onProgress: (progress) => {
+          stage = progress;
+          self.postMessage({ progress });
+        },
       }),
       m = await Module();
+    stage = 'Checking the CAD display mesh';
     m.setup();
     const { bodies } = importSolid(m, result.geometry);
     if (bodies.length !== 1) throw Error('CAD display mesh is disconnected.');
@@ -31,6 +36,11 @@ self.onmessage = async ({ data }) => {
       if (bytes) transfers.add(bytes);
     self.postMessage({ result }, [...transfers]);
   } catch (e) {
-    self.postMessage({ error: e.message ?? String(e) });
+    self.postMessage({
+      error: e.message ?? String(e),
+      stage,
+      stack: e.stack,
+      errorName: e.name,
+    });
   }
 };

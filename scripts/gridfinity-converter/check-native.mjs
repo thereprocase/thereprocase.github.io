@@ -259,6 +259,20 @@ assert.equal(hn.report.nativeValid, true);
 assert.ok(hn.report.outsideChange < 0.001);
 checks.push({ ...hn.report, test: 'hollow-perimeter-contact' });
 console.log('Native hollow bin PASS');
+// The bounded roof check must still reject a cylinder that enters the cavity.
+// Call CAD directly so mesh-side depth fitting cannot hide a native regression.
+await assert.rejects(
+  () =>
+    convertNative({
+      buffer: new TextEncoder().encode(hollow.serialize()),
+      format: 'brep',
+      detection: hd,
+      options: { ...hr.report, screwDepth: 6 },
+    }),
+  /hole would break through its solid roof/,
+);
+checks.push({ test: 'native-hole-roof-breakthrough', exportBlocked: true });
+console.log('Native hole roof breakthrough blocked');
 const sealed = source.cut(cad.makeBox([-28, -2, 10], [-24, 2, 14])),
   sm = sealed.mesh({ tolerance: 0.025, angularTolerance: 0.15 }),
   sb = importSolid(m, {

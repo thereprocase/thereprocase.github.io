@@ -1,4 +1,4 @@
-import { previewNative } from './native-cad.js?v=cad-progress-1';
+import { previewNative } from './native-cad.js?v=cad-roof-1';
 self.onmessage = async ({ data }) => {
   try {
     const payload = await previewNative({

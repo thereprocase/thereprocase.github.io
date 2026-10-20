@@ -11,7 +11,7 @@ import {
   importFile,
   extensions,
   export3MF,
-} from './importers.js?v=cad-progress-1';
+} from './importers.js?v=cad-roof-1';
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
@@ -842,7 +842,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=cad-progress-1', {
+    const w = new Worker('./native-worker.js?v=cad-roof-1', {
       type: 'module',
     });
     nativeWorker = w;
@@ -854,7 +854,14 @@ function nativeConversion(options) {
       }
       w.terminate();
       if (nativeWorker === w) nativeWorker = null;
-      if (data.error) reject(Error(data.error));
+      if (data.error)
+        reject(
+          Error(
+            data.stage
+              ? `${data.stage.replace(/…$/, '')}: ${data.error}`
+              : data.error,
+          ),
+        );
       else resolve(data.result);
     };
     w.onerror = () => {

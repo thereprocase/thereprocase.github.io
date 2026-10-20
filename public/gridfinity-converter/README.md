@@ -79,6 +79,11 @@ Unchanged CAD shapes reuse their measured volume, including rigid orientation ch
 
 If neither STEP representation passes, native BREP serialization is attempted for both coordinate poses. It must pass the same exact validity, single-solid, bounds and volume checks after reopening. A rejected STEP is never offered as a download. The report distinguishes `stepRoundTripValid` from `brepRoundTripValid` and retains the STEP failure reason. The regression deliberately substitutes a different solid during STEP serialization and checks that the correct BREP fallback is preserved.
 
+
+Native booleans now configure an empty operation and build once. OCCT's two-shape constructor already builds; following it with `Build()` repeated the operation. The requested 0.00001 mm tolerance is set before the single build. Native validity and preservation checks remain in place.
+
+Native booleans preserve their input topology with non-destructive mode. Hardware roof checks intersect the converted body with an exact CAD box enclosing every roof cylinder, then test the cylinders against that local solid. Since each cylinder is contained in the box, the missing-material test is unchanged. This avoids repeated whole-body operations on decorative surfaces. Roof checks report their current count, and the native regression includes a cavity-breakthrough rejection. Worker failures retain the operation stage and original stack.
+
 ## Drawing cost
 
 The viewer renders on demand: camera movement and damping, model changes, foot selection, section controls and resizing request frames. Static views stop drawing, and hidden tabs suspend drawing until visible again. Browser tests count WebGL draw calls to verify idle behavior and redraws after camera and section changes. This changes neither detection geometry nor native replacement/export geometry. Complex CAD repair, booleans and export validation can still take several minutes.

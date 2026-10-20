@@ -131,13 +131,28 @@ function volume(s) {
   return measured;
 }
 function boolean(kind, a, b) {
-  const op = new OC['BRepAlgoAPI_' + kind](a.wrapped, b.wrapped);
+  // The two-shape constructor already builds. Configure an empty operation
+  // first so the requested tolerance applies to one, and only one, build.
+  const op = new OC['BRepAlgoAPI_' + kind]();
+  const argumentsList = new OC.NCollection_List_TopoDS_Shape();
+  const toolsList = new OC.NCollection_List_TopoDS_Shape();
   try {
+    argumentsList.Append(a.wrapped);
+    toolsList.Append(b.wrapped);
+    op.SetArguments(argumentsList);
+    op.SetTools(toolsList);
+    // Inputs are reused for later hole and preservation checks. OCCT must
+    // copy topology it needs to modify instead of changing those inputs.
+    op.SetNonDestructive(true);
     op.SetFuzzyValue(0.00001);
     op.Build();
+    if (!op.IsDone())
+      throw Error(`Native CAD ${kind} operation did not finish.`);
     return cad.cast(op.Shape());
   } finally {
     op.delete();
+    argumentsList.delete();
+    toolsList.delete();
   }
 }
 const cut = (a, b) => boolean('Cut', a, b),
@@ -413,6 +428,36 @@ export async function convertNative({
   }
   onProgress('Replacing native CAD feet…');
   let result = fuse(cut(source, union(cuts)), union(newFeet));
+  let roofBody = null;
+  if (holes.length) {
+    onProgress('Preparing local CAD region for hole roof checks…');
+    const deepestHole = Math.max(
+      ['magnets', 'both'].includes(style) ? magnetDepth : 0,
+      ['screws', 'both'].includes(style) ? screwDepth : 0,
+    );
+    const radius = Math.max(magnetDiameter, screwDiameter) / 2;
+    // Every roof cylinder lies strictly inside this box. Therefore
+    // cover \ result equals cover \ (result intersect box), without
+    // asking each small hole check to process the entire detailed body.
+    const roofBox = cad.makeBox(
+      [
+        Math.min(...feet.map((f) => f.x)) - 13 - radius - 0.1,
+        Math.min(...feet.map((f) => f.y)) - 13 - radius - 0.1,
+        bottom - 0.1,
+      ],
+      [
+        Math.max(...feet.map((f) => f.x)) + 13 + radius + 0.1,
+        Math.max(...feet.map((f) => f.y)) + 13 + radius + 0.1,
+        bottom + deepestHole + roof + 0.1,
+      ],
+    );
+    try {
+      roofBody = intersect(result, roofBox);
+    } finally {
+      roofBox.delete();
+    }
+  }
+  let roofIndex = 0;
   for (const f of feet)
     for (const dx of [-13, 13])
       for (const dy of [-13, 13]) {
@@ -422,17 +467,26 @@ export async function convertNative({
         if (['screws', 'both'].includes(style))
           dims.push([screwDiameter / 2, screwDepth]);
         for (const [radius, depth] of dims) {
+          onProgress(`Checking hole roof ${++roofIndex} of ${holes.length}…`);
           const cover = cad.makeCylinder(radius, roof, [
             f.x + dx,
             f.y + dy,
             bottom + depth,
           ]);
-          if (
-            volume(cut(cover, result)) > Math.max(0.001, volume(cover) * 0.001)
-          )
-            throw Error('Native CAD hole would break through its solid roof.');
+          let missing;
+          try {
+            missing = cut(cover, roofBody);
+            if (volume(missing) > Math.max(0.001, volume(cover) * 0.001))
+              throw Error(
+                'Native CAD hole would break through its solid roof.',
+              );
+          } finally {
+            missing?.delete();
+            cover.delete();
+          }
         }
       }
+  roofBody?.delete();
   onProgress('Checking native CAD holes and solid validity…');
   if (holes.length) result = cut(result, union(holes));
   if (!valid(oc, result) || result.solids.length !== 1 || volume(result) <= 0)

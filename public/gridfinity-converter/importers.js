@@ -371,7 +371,7 @@ export async function importFile(
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
     const worker = ['iges', 'igs'].includes(ext)
       ? new Worker('./cad-worker.js?v=cad-preview-1')
-      : new Worker('./native-preview-worker.js?v=cad-progress-1', {
+      : new Worker('./native-preview-worker.js?v=cad-roof-1', {
           type: 'module',
         });
     onCADWorker(worker);
