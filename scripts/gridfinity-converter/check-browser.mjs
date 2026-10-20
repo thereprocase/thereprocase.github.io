@@ -152,6 +152,14 @@ try {
   results.stale = await evaluate(
     "document.getElementById('stl').disabled&&!document.getElementById('confirm').checked",
   );
+  results.workflow = await evaluate(
+    "document.querySelector('[aria-current=step]').dataset.stage==='2' && document.getElementById('step').hidden && document.getElementById('selection-count').textContent==='2 selected'",
+  );
+  await evaluate("document.getElementById('select-none').click()");
+  results.emptySelectionHelp = await evaluate(
+    "document.getElementById('convert').disabled && document.getElementById('convert-help').textContent.includes('Select at least one')",
+  );
+  await evaluate("document.getElementById('select-all').click()");
   for (const width of [320, 390, 768, 1600]) {
     await call('Emulation.setDeviceMetricsOverride', {
       width,
@@ -163,8 +171,50 @@ try {
     results['layout' + width] = await evaluate(
       'document.documentElement.scrollWidth<=innerWidth',
     );
+    await evaluate(
+      'document.querySelector(\'[href="#selection-panel"]\').click()',
+    );
+    results['anchor' + width] = await evaluate(
+      "document.getElementById('selection-panel').getBoundingClientRect().top>=document.getElementById('workflow').getBoundingClientRect().bottom",
+    );
+    if (width === 390) {
+      await evaluate(
+        "document.getElementById('preview-panel').scrollIntoView({block:'start'});document.getElementById('underside').click()",
+      );
+      await pause(200);
+      const mobile = await call('Page.captureScreenshot', { format: 'png' });
+      await fs.writeFile(
+        output + '.mobile.png',
+        Buffer.from(mobile.data, 'base64'),
+      );
+    }
+    await evaluate('scrollTo(0,0)');
   }
 
+  await call('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 1,
+    mobile: true,
+  });
+  await evaluate(
+    "document.getElementById('replacement-panel').scrollIntoView();document.getElementById('confirm').checked=true;document.getElementById('confirm').dispatchEvent(new Event('change'));document.getElementById('convert').click()",
+  );
+  await ready();
+  results.mobilePreview = await evaluate(
+    "document.getElementById('preview-panel').getBoundingClientRect().top>=document.getElementById('workflow').getBoundingClientRect().bottom && document.getElementById('preview-panel').getBoundingClientRect().top<250 && !document.getElementById('export-shortcut').hidden && document.body.dataset.view==='converted'",
+  );
+  const completed = await call('Page.captureScreenshot', { format: 'png' });
+  await fs.writeFile(
+    output + '.mobile-result.png',
+    Buffer.from(completed.data, 'base64'),
+  );
+  await call('Emulation.setDeviceMetricsOverride', {
+    width: 1600,
+    height: 1000,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
   if (process.env.CHECK_IMPORTS) {
     results.imports = await evaluate(`(async()=>{
    const {importFile,export3MF}=await import('./importers.js');

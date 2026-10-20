@@ -106,6 +106,11 @@ function modelMesh(data, color = 0x5da3ad, opacity = 1) {
   return mesh;
 }
 function draw() {
+  document.body.dataset.view = view;
+  $('legend-selected').textContent =
+    view === 'changes' ? 'Added material' : 'Selected foot';
+  $('legend-unselected').textContent =
+    view === 'changes' ? 'Removed material' : 'Unselected foot';
   clearGroup(root);
   const data = view === 'original' || !result ? original : result.geometry;
   if (data) {
@@ -129,7 +134,7 @@ function draw() {
 }
 function drawMarkers() {
   clearGroup(markers);
-  if (!detection || view === 'changes') return;
+  if (!detection || view !== 'original') return;
   const bottom = Number($('bottom').value),
     height = Number($('height').value);
   for (const p of feet) {
@@ -163,14 +168,22 @@ function resetView(under = false) {
   const box = new THREE.Box3().setFromObject(root),
     center = box.getCenter(new THREE.Vector3()),
     size = box.getSize(new THREE.Vector3()),
-    d = Math.max(size.x, size.y, size.z, 25) * 1.85;
+    d =
+      (Math.max(size.length() / 2, 12) /
+        Math.sin(
+          Math.atan(
+            Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) *
+              Math.min(1, camera.aspect),
+          ),
+        )) *
+      1.15;
   orbit.target.copy(center);
   camera.position
     .copy(center)
     .add(
       under
-        ? new THREE.Vector3(d * 0.65, -d * 0.8, -d)
-        : new THREE.Vector3(d, -d, d * 0.85),
+        ? new THREE.Vector3(0.65, -0.8, -1).normalize().multiplyScalar(d)
+        : new THREE.Vector3(1, -1, 0.85).normalize().multiplyScalar(d),
     );
   camera.near = Math.max(0.01, d / 10000);
   camera.far = d * 50;
@@ -240,6 +253,46 @@ function controls() {
   ])
     $(id).disabled = busy || !result;
   $('step').disabled = busy || !result?.step;
+  $('step').hidden = !raw?.nativeBuffer;
+  $('export-shortcut').hidden = !result || busy;
+  $('selection-count').textContent = `${selection.size} selected`;
+  const native = Boolean(raw?.nativeBuffer);
+  $('representation').textContent = native
+    ? 'Native CAD · surfaces preserved · STEP export'
+    : isDemo
+      ? 'Example · mesh model'
+      : 'Mesh conversion · STL / 3MF export';
+  $('export-format').textContent = native
+    ? 'Native STEP · STL / 3MF mesh exports also available'
+    : 'STL / 3MF mesh output · STEP requires a STEP or BREP source';
+  $('convert-help').textContent = busy
+    ? 'Processing locally. You can cancel above.'
+    : !detection
+      ? 'Load a model and detect its feet first.'
+      : !selection.size
+        ? 'Select at least one foot in step 2.'
+        : !$('confirm').checked
+          ? 'Check the dimensions and selected feet, then confirm above.'
+          : 'Ready to generate a validated preview.';
+  const stage = result
+    ? '4'
+    : $('confirm').checked && selection.size
+      ? '3'
+      : detection
+        ? '2'
+        : '1';
+  for (const link of document.querySelectorAll('[data-stage]')) {
+    if (link.dataset.stage === stage) link.setAttribute('aria-current', 'step');
+    else link.removeAttribute('aria-current');
+  }
+  const cells = feet.filter((p) => p.gridMatch || p.manual);
+  const span = cells.length
+    ? `${Math.max(...cells.map((p) => p.column)) - Math.min(...cells.map((p) => p.column)) + 1} × ${Math.max(...cells.map((p) => p.row)) - Math.min(...cells.map((p) => p.row)) + 1} grid · `
+    : '';
+  $('viewer-summary').textContent = detection
+    ? `${span}${selection.size} of ${feet.length} feet selected · 42 mm pitch`
+    : 'Load a model to detect its male feet';
+  $('section-z').disabled = !$('section').checked;
 }
 function setBusy(value, message) {
   busy = value;
@@ -421,6 +474,7 @@ async function loadFiles(files) {
     });
     if (turn !== epoch) return;
     raw = imported;
+    $('units-settings').open = Boolean(raw.requiresUnits);
     $('unit-note').textContent = raw.unitNote;
     original = {
       ...raw,
@@ -479,6 +533,8 @@ async function runDetection() {
     selection = new Set(feet.filter((p) => p.gridMatch).map((p) => p.id));
     $('grid-x').value = r.grid.x.toFixed(4);
     $('grid-y').value = r.grid.y.toFixed(4);
+    $('detection-note').dataset.matched = String(r.grid.matched > 0);
+    $('orientation-settings').open = r.grid.matched === 0;
     $('detection-note').textContent = feet.length
       ? `${r.grid.matched} of ${feet.length} profile matches on one 42 mm grid. ` +
         (r.grid.matched === 1
@@ -501,7 +557,7 @@ async function runDetection() {
     sizeInfo(original);
     renderFeet();
     draw();
-    resetView();
+    resetView(true);
   } catch (e) {
     if (turn !== epoch) return;
     setBusy(false);
@@ -517,14 +573,20 @@ function renderFeet() {
       check.type = 'checkbox';
       check.checked = selection.has(p.id);
       check.disabled = busy;
-      check.setAttribute('aria-label', 'Select foot ' + p.id);
+      check.setAttribute(
+        'aria-label',
+        `Select foot at column ${p.column}, row ${p.row}`,
+      );
       check.onchange = () => {
         if (check.checked) selection.add(p.id);
         else selection.delete(p.id);
         invalidate();
         renderFeet();
       };
-      cell.append(check);
+      const target = document.createElement('label');
+      target.className = 'foot-check';
+      target.append(check);
+      cell.append(target);
       const id = document.createElement('td');
       id.textContent = `${p.column}, ${p.row}`;
       const pos = document.createElement('td');
@@ -590,6 +652,8 @@ async function runConversion() {
           ? 'Native CAD, closed mesh and preservation checks passed.'
           : 'Closed mesh and preservation checks passed.'),
     );
+    if (matchMedia('(max-width: 700px)').matches)
+      $('preview-panel').scrollIntoView({ block: 'start' });
     $('conversion-note').textContent =
       `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.`;
     metrics($('conversion-metrics'), [
@@ -789,7 +853,10 @@ function section() {
       if (m.clippingPlanes === clips) m.needsUpdate = true;
   });
 }
-$('section').onchange = section;
+$('section').onchange = () => {
+  section();
+  controls();
+};
 $('section-z').oninput = section;
 function download(bytes, type, name) {
   const url = URL.createObjectURL(new Blob([bytes], { type })),
@@ -798,6 +865,7 @@ function download(bytes, type, name) {
   a.download = name;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 5000);
+  status('Download requested: ' + name);
 }
 function exported() {
   const data = $('source-pose').checked
@@ -860,4 +928,10 @@ $('report').onclick = () => {
       filename('json'),
     );
 };
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty(
+    '--workflow-height',
+    $('workflow').offsetHeight + 'px',
+  );
+}).observe($('workflow'));
 void loadDemo();

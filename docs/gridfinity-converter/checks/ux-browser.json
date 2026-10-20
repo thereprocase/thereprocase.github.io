@@ -1,0 +1,18 @@
+{
+  "demo": true,
+  "fixedPitch": true,
+  "converted": true,
+  "downloads": true,
+  "stale": true,
+  "workflow": true,
+  "emptySelectionHelp": true,
+  "layout320": true,
+  "anchor320": true,
+  "layout390": true,
+  "anchor390": true,
+  "layout768": true,
+  "anchor768": true,
+  "layout1600": true,
+  "anchor1600": true,
+  "mobilePreview": true
+}
