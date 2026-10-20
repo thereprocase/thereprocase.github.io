@@ -236,6 +236,7 @@ function controls() {
     '.controls input,.controls select,.controls button',
   ))
     el.disabled = busy;
+  $('demo').disabled = busy;
   $('detect').disabled = busy || !loaded;
   $('confirm').disabled = busy || !detection;
   $('convert').disabled = !canConvert();
