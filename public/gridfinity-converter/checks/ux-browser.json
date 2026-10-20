@@ -3,6 +3,7 @@
   "demo": true,
   "fixedPitch": true,
   "examplePicker": true,
+  "frictionAdjustment": true,
   "directAction": true,
   "converted": true,
   "downloads": true,

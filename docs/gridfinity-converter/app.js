@@ -750,6 +750,23 @@ function nativeConversion(options) {
   });
 }
 $('choose-file').onclick = () => $('files').click();
+function adjustFit(direction) {
+  const input = $('fit');
+  const current = Number.isFinite(input.valueAsNumber)
+    ? input.valueAsNumber
+    : 0;
+  const hundredths = Math.round(current * 100) + direction * 5;
+  input.value = (Math.max(-15, Math.min(15, hundredths)) / 100).toFixed(2);
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+}
+$('fit-down').onclick = () => adjustFit(-1);
+$('fit-up').onclick = () => adjustFit(1);
+$('fit').addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+    event.preventDefault();
+    adjustFit(event.key === 'ArrowUp' ? 1 : -1);
+  }
+});
 $('files').onchange = (e) => {
   const files = Array.from(e.target.files);
   e.target.value = '';

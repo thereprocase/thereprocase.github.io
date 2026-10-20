@@ -132,6 +132,21 @@ try {
   results.examplePicker = await evaluate(
     "document.getElementById('file-state').textContent==='Built-in example' && document.getElementById('choose-file').textContent==='Choose your model…' && getComputedStyle(document.getElementById('files')).display==='none'",
   );
+  results.frictionAdjustment = await evaluate(`(() => {
+    const field = document.getElementById('fit');
+    field.value = '0.02';
+    const typed = field.checkValidity();
+    document.getElementById('fit-up').click();
+    const up = field.value === '0.07';
+    field.dispatchEvent(new KeyboardEvent('keydown', {key:'ArrowDown', bubbles:true}));
+    const down = field.value === '0.02';
+    document.getElementById('fit-down').click();
+    const negative = field.value === '-0.03';
+    field.value = '0.14'; document.getElementById('fit-up').click();
+    const clamped = field.value === '0.15';
+    field.value = '0.02'; field.dispatchEvent(new Event('input'));
+    return typed && up && down && negative && clamped;
+  })()`);
   results.directAction = await evaluate(
     "!document.getElementById('confirm')&&!document.getElementById('workflow-action').disabled",
   );

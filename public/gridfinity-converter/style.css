@@ -17,3 +17,5 @@ button.primary:disabled,#workflow-action:disabled{background:#ddd;color:#555;bor
 
 /* Keep the file action separate from the model currently in the viewer. */
 .dropzone #choose-file{width:100%;min-height:48px;background:#fff;color:#000099;font-weight:600}.dropzone #choose-file:disabled{color:#666;background:#ddd}.dropzone #files[hidden]{display:none}.file-state{font-weight:600;margin:18px 0 4px}.file-state + .file-info{margin-top:0;overflow-wrap:anywhere}
+
+.fit-control{display:flex;gap:4px;align-items:stretch}.fit-control #fit{min-width:0;flex:1;appearance:textfield;-moz-appearance:textfield}.fit-control #fit::-webkit-inner-spin-button,.fit-control #fit::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.fit-control button{min-width:44px;min-height:44px;padding:4px;font-size:1.25rem}
