@@ -158,12 +158,15 @@ export async function convertNative({
     cuts.push(cut);
     newFeet.push(foot);
     regions.push(cut, foot);
-    const contact = cad.makeBox(
-      [f.x - 17.5, f.y - 17.5, bottom + height + 0.02],
-      [f.x + 17.5, f.y + 17.5, bottom + height + 0.04],
+    const seamSlice = cad.makeBox(
+      [f.x - 21, f.y - 21, bottom + height],
+      [f.x + 21, f.y + 21, bottom + height + 0.02],
     );
-    if (volume(intersect(source, contact)) < volume(contact) * 0.2)
-      throw Error('Native CAD foot has insufficient connection at the seam.');
+    const contact = intersect(intersect(source, foot), seamSlice);
+    if (volume(contact) < 0.02)
+      throw Error(
+        'Native CAD foot has no substantial contact with the part at the seam.',
+      );
     for (const dx of [-13, 13])
       for (const dy of [-13, 13]) {
         const dims = [];

@@ -94,6 +94,34 @@ for (const format of ['step', 'brep']) {
   checks.push({ ...n.report, test: 'rotated-' + format });
   console.log('Native rotated', format, 'PASS');
 }
+const hollowFoot = await nativeFoot(),
+  hollowTop = cad.makeBox([-20.75, -20.75, 4.75], [20.75, 20.75, 25]),
+  cavity = cad.makeBox([-17.75, -17.75, 1], [17.75, 17.75, 26]),
+  hollow = hollowTop.fuse(hollowFoot).cut(cavity);
+const hm = hollow.mesh({ tolerance: 0.025, angularTolerance: 0.15 }),
+  hb = importSolid(m, {
+    vertices: new Float32Array(hm.vertices),
+    triangles: new Uint32Array(hm.triangles),
+  }).bodies[0],
+  hd = detect(m, hb),
+  ha = align(m, hb, hd);
+assert.equal(hd.grid.matched, 1);
+const hr = convert(m, ha, {
+  feet: hd.feet,
+  style: 'both',
+  fitScrewDepth: true,
+});
+assert.equal(hr.report.screwDepth, 3.9);
+const hn = await convertNative({
+  buffer: await hollow.blobSTEP().arrayBuffer(),
+  format: 'step',
+  detection: hd,
+  options: hr.report,
+});
+assert.equal(hn.report.nativeValid, true);
+assert.ok(hn.report.outsideChange < 0.001);
+checks.push({ ...hn.report, test: 'hollow-perimeter-contact' });
+console.log('Native hollow bin PASS');
 fs.writeFileSync(
   '/tmp/gridfinity-converter-checks/native.json',
   JSON.stringify(checks, null, 2),

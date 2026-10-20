@@ -6,7 +6,7 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=converter-1';
+} from './kernel.js?v=hollow-1';
 import {
   importFile,
   extensions,
@@ -328,7 +328,7 @@ function terminate() {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=converter-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=hollow-1', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -618,6 +618,7 @@ function inputOptions() {
     ].map((k) => [k, Number($(k).value)]),
   );
   o.style = $('style').value;
+  o.fitScrewDepth = $('screw-depth-mode').value === 'fit';
   o.feet = feet.filter((p) => selection.has(p.id));
   return o;
 }
@@ -671,7 +672,10 @@ async function runConversion() {
     if (matchMedia('(max-width: 700px)').matches)
       $('preview-panel').scrollIntoView({ block: 'start' });
     $('conversion-note').textContent =
-      `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.`;
+      `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.` +
+      (['screws', 'both'].includes(r.report.style)
+        ? ` Screw depth: ${r.report.screwDepth} mm${r.report.screwDepth < r.report.requestedScrewDepth ? `, fitted from ${r.report.requestedScrewDepth} mm to retain the solid roof` : ''}.`
+        : '');
     metrics($('conversion-metrics'), [
       ['Volume before', (r.report.originalVolume / 1000).toFixed(3) + ' cm³'],
       ['Volume after', (r.report.convertedVolume / 1000).toFixed(3) + ' cm³'],
@@ -696,7 +700,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js', { type: 'module' });
+    const w = new Worker('./native-worker.js?v=hollow-1', { type: 'module' });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
       w.terminate();
@@ -766,6 +770,7 @@ for (const id of [
   'magnetDepth',
   'screwDiameter',
   'screwDepth',
+  'screw-depth-mode',
   'roof',
 ])
   $(id).oninput = () => invalidate();

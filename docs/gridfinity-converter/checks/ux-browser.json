@@ -19,5 +19,6 @@
   "unappliedGridIgnored": true,
   "visibleValidation": true,
   "customDetected": true,
+  "fittedDepthShown": true,
   "customConverted": true
 }

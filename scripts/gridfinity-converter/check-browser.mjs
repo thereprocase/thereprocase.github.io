@@ -245,10 +245,16 @@ try {
     });
     await ready();
     results.customDetected = await evaluate(
-      "document.querySelectorAll('#feet tr').length===2 && !document.getElementById('workflow-action').disabled",
+      `document.querySelectorAll('#feet tr').length===${Number(process.env.CUSTOM_FEET || 2)} && !document.getElementById('workflow-action').disabled`,
     );
-    await evaluate("document.getElementById('workflow-action').click()");
+    await evaluate(
+      "document.getElementById('style').value='both';document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('workflow-action').click()",
+    );
     await ready();
+    if (process.env.CUSTOM_FEET === '1')
+      results.fittedDepthShown = await evaluate(
+        "document.getElementById('conversion-note').textContent.includes('3.9 mm')",
+      );
     results.customConverted = await evaluate(
       "!document.getElementById('stl').disabled && document.getElementById('status').textContent.startsWith('Conversion ready')",
     );

@@ -562,8 +562,9 @@ export function convert(module, original, input) {
       magnetDiameter = Number(input.magnetDiameter ?? 6.5),
       magnetDepth = Number(input.magnetDepth ?? 2.4),
       screwDiameter = Number(input.screwDiameter ?? 3),
-      screwDepth = Number(input.screwDepth ?? 6),
+      requestedScrewDepth = Number(input.screwDepth ?? 6),
       roof = Number(input.roof ?? 0.8);
+    let screwDepth = requestedScrewDepth;
     if (!Object.hasOwn(STYLES, style))
       throw Error('Choose a supported foot style.');
     for (const [name, value, lo, hi] of [
@@ -629,16 +630,54 @@ export function convert(module, original, input) {
       const top = keep(foot(module, p.x, p.y, bottom, height + 0.02, fit));
       additions.push(top);
       regions.push(top);
-      const contact = box(
-          [35, 35, 0.02],
-          [p.x - 17.5, p.y - 17.5, bottom + height + 0.02],
-        ),
-        attached =
-          keep(original.intersect(contact)).volume() / contact.volume();
-      if (attached < 0.2)
+      // Hollow bins attach through their perimeter walls, not their empty center.
+      // Measure actual overlap with the replacement's full rounded profile.
+      const seamSlice = box(
+        [42, 42, 0.02],
+        [p.x - 21, p.y - 21, bottom + height],
+      );
+      const contact = keep(keep(original.intersect(top)).intersect(seamSlice));
+      if (contact.volume() < 0.02)
         throw Error(
-          `Foot ${i + 1} has too little material at the replacement seam. Check its center and seam height.`,
+          `Foot ${i + 1} has no substantial material contact with the part at the replacement seam. Check its center and seam height.`,
         );
+    }
+    let result = keep(
+      keep(original.subtract(keep(M.union(cuts)))).add(
+        keep(M.union(additions)),
+      ),
+    );
+    if (input.fitScrewDepth && ['screws', 'both'].includes(style)) {
+      const fits = (depth) =>
+        feet.every((p) =>
+          [-13, 13].every((dx) =>
+            [-13, 13].every((dy) => {
+              const cover = bore(
+                p.x + dx,
+                p.y + dy,
+                screwDiameter / 2,
+                bottom + depth,
+                roof,
+              );
+              return (
+                keep(cover.subtract(result)).volume() <=
+                Math.max(0.001, cover.volume() * 0.001)
+              );
+            }),
+          ),
+        );
+      if (!fits(screwDepth)) {
+        let candidate = Math.floor((screwDepth - 0.001) * 10) / 10;
+        while (candidate >= 2 && !fits(candidate))
+          candidate = Math.round((candidate - 0.1) * 10) / 10;
+        if (candidate < 2)
+          throw Error(
+            'No screw depth of at least 2 mm fits with the requested solid roof. Choose plain feet or magnets.',
+          );
+        screwDepth = candidate;
+      }
+    }
+    for (const p of feet) {
       for (const dx of [-13, 13])
         for (const dy of [-13, 13]) {
           const x = p.x + dx,
@@ -667,11 +706,6 @@ export function convert(module, original, input) {
           }
         }
     }
-    let result = keep(
-      keep(original.subtract(keep(M.union(cuts)))).add(
-        keep(M.union(additions)),
-      ),
-    );
     for (const [i, p] of feet.entries())
       for (const dx of [-13, 13])
         for (const dy of [-13, 13]) {
@@ -780,6 +814,8 @@ export function convert(module, original, input) {
         magnetDepth,
         screwDiameter,
         screwDepth,
+        requestedScrewDepth,
+        fitScrewDepth: Boolean(input.fitScrewDepth),
         minimumRoof: roof,
         originalVolume: original.volume(),
         convertedVolume: result.volume(),
