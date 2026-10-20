@@ -27,6 +27,11 @@ const body = importSolid(m, { vertices, triangles }).bodies[0],
   d = detect(m, body),
   source = align(m, body, d);
 assert.equal(d.grid.matched, 1);
+assert.equal(
+  d.feet[0].screwCount,
+  0,
+  'Hollow interior mislabeled as screw holes',
+);
 const evidence = [];
 fs.mkdirSync(out, { recursive: true });
 for (const style of ['plain', 'magnets', 'screws', 'both']) {

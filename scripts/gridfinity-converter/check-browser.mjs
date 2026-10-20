@@ -259,10 +259,31 @@ try {
       "!document.getElementById('stl').disabled && document.getElementById('status').textContent.startsWith('Conversion ready')",
     );
   }
+  if (process.env.CUSTOM_MODEL && results.customConverted) {
+    const doc = await call('DOM.getDocument'),
+      input = await call('DOM.querySelector', {
+        nodeId: doc.root.nodeId,
+        selector: '#files',
+      });
+    await call('DOM.setFileInputFiles', {
+      nodeId: input.nodeId,
+      files: [path.resolve(process.env.CUSTOM_MODEL)],
+    });
+    await ready();
+    results.sameFileReload = await evaluate(
+      "document.getElementById('stl').disabled && document.getElementById('status').textContent.includes('Feet detected')",
+    );
+  }
   if (results.customConverted === false)
     throw Error(
       await evaluate("document.getElementById('status').textContent"),
     );
+  await evaluate(
+    "document.getElementById('grid-x').value=String(Number(document.getElementById('grid-x').value)+.25);document.getElementById('column').value='10';document.getElementById('add-cell').click()",
+  );
+  results.pendingGridEdit = await evaluate(
+    "document.getElementById('status').textContent==='Apply the grid origin before adding a cell.'",
+  );
   if (process.env.CHECK_IMPORTS) {
     results.imports = await evaluate(`(async()=>{
    const {importFile,export3MF}=await import('./importers.js');

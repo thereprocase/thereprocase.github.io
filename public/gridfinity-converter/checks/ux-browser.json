@@ -20,5 +20,7 @@
   "visibleValidation": true,
   "customDetected": true,
   "fittedDepthShown": true,
-  "customConverted": true
+  "customConverted": true,
+  "sameFileReload": true,
+  "pendingGridEdit": true
 }

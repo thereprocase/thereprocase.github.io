@@ -60,15 +60,15 @@
     "checks/ux-browser.json"
   ],
   "sha256": {
-    "README.md": "1729bc23eb368025d6fc8539e3bded0bea1ed52f42182817995a9a9aeff51e39",
-    "app.js": "dbe36686f1a2463368231acd13a1b8894cb9ea7dcded5f79bf9eacd5f70fdacd",
+    "README.md": "8b5fab5bde847278a96359e5f43ac4772868c8ed2596803b2183a1e9bba4e8bf",
+    "app.js": "162fa8fcc4b4c82d093032d4d969b6f73184da3b23c0dd839f4e6675ff9e6790",
     "cad-worker.js": "c60be9a643b3c33a6db35e2413a3452db0d9db281432541d7d5f569ac1a0f8b8",
     "demo.js": "86cdbb8b79440fc2f4b71740314ff4c6b25e707ffbce599dfd492109396c34e4",
     "importers.js": "e60cc7919303ee11e21c316d3f2f9bed7f3b08eda7aab36534c220b211e8512c",
-    "index.html": "b1b30a7a9861e797218ef3a3026f9b2ec826bd2b41ef202116e6c71340d3af81",
-    "kernel.js": "a56edb9f524410966b363fa7558370ec0f7329f7e1afa88cd1a5b34eaca6a490",
+    "index.html": "cdcb887e7848bba0d71eb189ea199ab906dc34cf16330c8370a865291620af83",
+    "kernel.js": "39979b9908577447f938ed3f234495d257a6ead10139a56f8ab815f24c76b754",
     "native-cad.js": "130d4e6b150721805215ef17346c69513150a3189886e50001f8e4945adf0bc2",
-    "native-worker.js": "f874838cb16bdcca83b862aee16b3fb3f13b538ba2880dd642d1ef85fe290615",
+    "native-worker.js": "3dd7baaa5bbae8a3fc6bc1ca317cea193277ce57113849df7e861f814d24a1af",
     "style.css": "6ca829d8844ae94a74fcc7875d2848f61ab2d645f91614a1587c11ab68315cae",
     "vendor/dependencies.json": "c5870f3282426b7f1c73991e9f5984c49f3135397b0bcdedde6c73b0471e6a30",
     "vendor/occt/license.occt-import-js.txt": "7ffe1954587c77dfba1cf8eb9b2ea743671fa6e63f9e7a2f258119d42e14eefe",
@@ -103,6 +103,6 @@
     "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
     "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
     "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
-    "worker.js": "0ce73c81b312a3ad91b68eafeffbf4504e88a63217ec5681fd3096e664e3c2b4"
+    "worker.js": "a31e272e297c67f1737a710f248d9ad21940bd90e4d4cca810902de87d579023"
   }
 }

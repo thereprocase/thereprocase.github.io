@@ -122,6 +122,31 @@ assert.equal(hn.report.nativeValid, true);
 assert.ok(hn.report.outsideChange < 0.001);
 checks.push({ ...hn.report, test: 'hollow-perimeter-contact' });
 console.log('Native hollow bin PASS');
+const sealed = source.cut(cad.makeBox([-28, -2, 10], [-24, 2, 14])),
+  sm = sealed.mesh({ tolerance: 0.025, angularTolerance: 0.15 }),
+  sb = importSolid(m, {
+    vertices: new Float32Array(sm.vertices),
+    triangles: new Uint32Array(sm.triangles),
+  });
+assert.equal(sb.bodies.length, 1);
+const probe = m.Manifold.cube([3, 3, 3]).translate([-27.5, -1.5, 10.5]);
+assert.ok(
+  sb.bodies[0].intersect(probe).volume() < 1e-5,
+  'CAD cavity filled on mesh import',
+);
+const sd = detect(m, sb.bodies[0]),
+  sa = align(m, sb.bodies[0], sd),
+  sr = convert(m, sa, { feet: sd.feet, style: 'plain' }),
+  sn = await convertNative({
+    buffer: await sealed.blobSTEP().arrayBuffer(),
+    format: 'step',
+    detection: sd,
+    options: sr.report,
+  });
+assert.ok(sn.report.outsideChange < 0.001);
+assert.equal(importSolid(m, sn.geometry).bodies.length, 1);
+checks.push({ ...sn.report, test: 'enclosed-cavity' });
+console.log('Native enclosed cavity PASS');
 fs.writeFileSync(
   '/tmp/gridfinity-converter-checks/native.json',
   JSON.stringify(checks, null, 2),

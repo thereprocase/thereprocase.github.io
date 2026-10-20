@@ -156,6 +156,51 @@ assert.throws(
   () => convert(m, thin, { feet: [{ x: 0, y: 0 }], style: 'screws' }),
   /roof/,
 );
+// Enclosed cavities are void boundaries, not separate material bodies.
+const outer = m.Manifold.cube([20, 20, 20]),
+  voidTool = m.Manifold.cube([10, 10, 10]).translate([5, 5, 5]),
+  hollowSolid = outer.subtract(voidTool);
+let imported = importSolid(m, meshData(hollowSolid));
+assert.equal(imported.bodies.length, 1);
+assert.ok(Math.abs(imported.bodies[0].volume() - 7000) < 1e-6);
+assert.ok(imported.bodies[0].intersect(voidTool).volume() < 1e-6);
+imported.bodies.forEach((b) => b.delete());
+const island = m.Manifold.cube([2, 2, 2]).translate([9, 9, 9]),
+  nested = hollowSolid.add(island);
+imported = importSolid(m, meshData(nested));
+assert.equal(imported.bodies.length, 2);
+assert.ok(
+  Math.abs(imported.bodies.reduce((v, b) => v + b.volume(), 0) - 7008) < 1e-6,
+);
+imported.bodies.forEach((b) => b.delete());
+const second = hollowSolid.translate([30, 0, 0]),
+  pair = hollowSolid.add(second);
+imported = importSolid(m, meshData(pair));
+assert.equal(imported.bodies.length, 2);
+assert.ok(imported.bodies.every((b) => Math.abs(b.volume() - 7000) < 1e-6));
+imported.bodies.forEach((b) => b.delete());
+const withHoles = convert(m, s, { feet: d.feet, style: 'both' }),
+  reimport = importSolid(m, withHoles.geometry),
+  again = convert(m, reimport.bodies[0], { feet: d.feet, style: 'plain' }),
+  againImported = importSolid(m, again.geometry);
+assert.equal(againImported.bodies.length, 1);
+assert.ok(
+  Math.abs(againImported.bodies[0].volume() - again.report.convertedVolume) <
+    0.001,
+);
+checkMesh(again.geometry);
+[
+  ...reimport.bodies,
+  ...againImported.bodies,
+  outer,
+  voidTool,
+  hollowSolid,
+  island,
+  nested,
+  second,
+  pair,
+].forEach((s) => s.delete());
+console.log('Cavities, nested islands and reconversion PASS');
 fs.writeFileSync(
   out + '/checks.json',
   JSON.stringify(
@@ -174,6 +219,12 @@ fs.writeFileSync(
         'thin-roof',
       ],
       fixedPitch: 42,
+      cavityChecks: [
+        'single enclosed cavity',
+        'island inside cavity',
+        'two hollow bodies',
+        'both-to-plain reconversion',
+      ],
     },
     null,
     2,

@@ -275,5 +275,46 @@
     "nativeValid": true,
     "tessellationDeflectionMM": 0.01,
     "test": "hollow-perimeter-contact"
+  },
+  {
+    "style": "plain",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": -21,
+        "y": 0,
+        "sourceX": -20.999999552965164,
+        "sourceY": 0
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "sourceX": 20.999999552965164,
+        "sourceY": 0
+      }
+    ],
+    "bottom": 0,
+    "height": 4.75,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 6,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 64097.4665463735,
+    "convertedVolume": 64097.46654637373,
+    "addedVolume": 0,
+    "removedVolume": 0,
+    "outsideChange": 0,
+    "normalizationMM": 0,
+    "closedMesh": true,
+    "connectedSolids": 1,
+    "representation": "native-brep",
+    "nativeBooleanToleranceMM": 0.00001,
+    "nativeValid": true,
+    "tessellationDeflectionMM": 0.01,
+    "test": "enclosed-cavity"
   }
 ]

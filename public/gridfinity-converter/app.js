@@ -6,7 +6,7 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=hollow-1';
+} from './kernel.js?v=audit-1';
 import {
   importFile,
   extensions,
@@ -328,7 +328,7 @@ function terminate() {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=hollow-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=audit-1', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -700,7 +700,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=hollow-1', { type: 'module' });
+    const w = new Worker('./native-worker.js?v=audit-1', { type: 'module' });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
       w.terminate();
@@ -722,7 +722,11 @@ function nativeConversion(options) {
     });
   });
 }
-$('files').onchange = (e) => loadFiles(e.target.files);
+$('files').onchange = (e) => {
+  const files = Array.from(e.target.files);
+  e.target.value = '';
+  void loadFiles(files);
+};
 const drop = $('dropzone');
 for (const event of ['dragenter', 'dragover'])
   drop.addEventListener(event, (e) => {
@@ -799,6 +803,13 @@ $('move-grid').onclick = () => {
     p.y = y + p.row * 42;
     p.gridMatch = true;
   }
+  detection.grid = {
+    ...detection.grid,
+    x,
+    y,
+    matched: feet.length,
+    total: feet.length,
+  };
   invalidate(
     'Grid origin changed. Verify the foot positions before converting.',
   );
@@ -806,10 +817,17 @@ $('move-grid').onclick = () => {
 };
 $('add-cell').onclick = () => {
   if (!detection) return;
-  const x = Number($('grid-x').value),
-    y = Number($('grid-y').value),
+  const x = detection.grid.x,
+    y = detection.grid.y,
     column = Number($('column').value),
     row = Number($('row').value);
+  if (
+    Math.abs(Number($('grid-x').value) - x) > 0.0001 ||
+    Math.abs(Number($('grid-y').value) - y) > 0.0001
+  ) {
+    status('Apply the grid origin before adding a cell.', true);
+    return;
+  }
   if (
     !Number.isFinite(x + y) ||
     !Number.isInteger(column) ||

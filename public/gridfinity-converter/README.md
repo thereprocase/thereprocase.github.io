@@ -40,8 +40,12 @@ References: [Gridfinity dimensions](https://github.com/Stu142/Gridfinity-Documen
 
 The review reduced the initial settings shown, added persistent workflow navigation and status, exposed selection counts and CAD/mesh output types, and separated foot selection overlays from the converted preview. Mobile conversion returns to the preview and offers an export shortcut. The persistent Convert feet action becomes Export files after successful conversion. Keyboard-visible focus styles and 44 px foot-selection targets are retained. Browser checks cover step anchor clearance, disabled-action guidance, stale previews, downloads and widths of 320, 390, 768 and 1600 px; see `checks/ux-browser.json`.
 
-Conversion validates only the active replacement settings. Unapplied manual grid corrections do not block it. Invalid values open their settings group and show a status error. The upload regression covers a separate STL fixture; reconversion of the rotated/both export to plain still triggers the connected-solid guard and is rejected, rather than exported.
+Conversion validates only the active replacement settings. Unapplied manual grid corrections do not block it. Invalid values open their settings group and show a status error. The upload regression covers a separate STL fixture; reconversion from hardware feet to plain feet is covered by the cavity-preservation regression.
 
 ## Hollow-bin regression
 
 The attachment probe uses the actual replacement profile across a 0.02 mm seam band, with at least 1 mm² equivalent contact area, followed by the connected-solid check. It no longer assumes the center of a bin is solid. `check-hollow-bin.mjs input.stl` validates all four styles on the privately supplied thin-floor fixture; no uploaded geometry is included in the published site. Native CAD tests include a generated hollow bin. Browser evidence confirms upload, detection, conversion and reporting of fitted 3.9 mm screw depth with a 0.8 mm roof.
+
+## Import and state audit · 2026-10-20
+
+Boundary shells are grouped into material bodies before union: inward-facing enclosed cavity walls remain voids, rather than being unioned as independent parts. Containment is checked geometrically; uncontained inward shells are rejected. Tests cover cavities, material islands inside cavities, separate hollow bodies, reconversion and native STEP cavity preservation. Hardware labels require material around the hole, so a hollow interior is not labeled as screw holes. The file picker can reload the same file; newly added cells use the applied grid origin, and pending origin edits must be applied first. Regenerate older conversions whose inputs contained enclosed cavities. These regressions do not establish correctness for every damaged or nonstandard model.

@@ -6,7 +6,7 @@ import {
   detect,
   align,
   convert,
-} from './kernel.js?v=hollow-1';
+} from './kernel.js?v=audit-1';
 const ready = Module().then((m) => {
   m.setup();
   return m;

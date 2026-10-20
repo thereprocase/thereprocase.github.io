@@ -115,6 +115,53 @@ export function checkMesh({ vertices: v, triangles: t }, closed = true) {
       'Mesh is not closed with consistent face winding. Repair the source mesh before converting.',
     );
 }
+// decompose() splits boundary shells, including inward-facing cavity walls.
+// Group cavities with their enclosing positive shell before any boolean union.
+function materialBodies(module, shape) {
+  return scope((keep) => {
+    const shells = shape.decompose();
+    shells.forEach(keep);
+    const positive = shells.filter((s) => s.volume() > 0);
+    const groups = new Map(positive.map((s) => [s, [s]]));
+    for (const shell of shells.filter((s) => s.volume() <= 0)) {
+      const mesh = shell.getMesh(),
+        tri = new Uint32Array(mesh.triVerts);
+      for (let i = 0; i < tri.length; i += 3)
+        [tri[i + 1], tri[i + 2]] = [tri[i + 2], tri[i + 1]];
+      const inverted = new module.Mesh({
+        numProp: 3,
+        vertProperties: mesh.vertProperties,
+        triVerts: tri,
+      });
+      inverted.merge();
+      const cavity = keep(new module.Manifold(inverted));
+      if (cavity.volume() <= 0)
+        throw Error('A boundary shell has no valid enclosed volume.');
+      const cb = cavity.boundingBox();
+      const containers = positive
+        .filter((s) => {
+          const b = s.boundingBox();
+          return b.min.every(
+            (v, k) => v <= cb.min[k] + 1e-5 && b.max[k] >= cb.max[k] - 1e-5,
+          );
+        })
+        .sort((a, b) => a.volume() - b.volume());
+      const owner = containers.find(
+        (s) =>
+          Math.abs(keep(cavity.subtract(s)).volume()) <=
+          Math.max(1e-6, cavity.volume() * 1e-8),
+      );
+      if (!owner)
+        throw Error(
+          'An inward-facing shell is not enclosed by a solid. Repair the source winding.',
+        );
+      groups.get(owner).push(shell);
+    }
+    return [...groups.values()].map((shells) =>
+      module.Manifold.compose(shells),
+    );
+  });
+}
 export function importSolid(module, data, scale = 1) {
   checkMesh(data, false);
   if (!Number.isFinite(scale) || scale <= 0 || scale > 1000)
@@ -173,7 +220,7 @@ export function importSolid(module, data, scale = 1) {
   const shifted = s.translate(center);
   s.delete();
   s = shifted;
-  const parts = s.decompose();
+  const parts = materialBodies(module, s);
   s.delete();
   // Union touching/overlapping shells, then offer each disconnected part separately.
   let union;
@@ -188,7 +235,7 @@ export function importSolid(module, data, scale = 1) {
       'Intersecting shells could not be combined. Repair the source model.',
     );
   }
-  const bodies = union.decompose();
+  const bodies = materialBodies(module, union);
   union.delete();
   bodies.sort((a, b) => b.volume() - a.volume());
   if (bodies.length > 64) {
@@ -375,11 +422,19 @@ function inspect(shape, module, bottom, keep) {
           );
         const broad = disc(2.8),
           small = disc(1.1);
-        if (keep(p.shape.intersect(broad)).area() < broad.area() * 0.1)
+        const magnetWall = keep(disc(3.7).subtract(disc(3.5)));
+        if (
+          keep(p.shape.intersect(broad)).area() < broad.area() * 0.1 &&
+          keep(p.shape.intersect(magnetWall)).area() > magnetWall.area() * 0.85
+        )
           magnets++;
         if (keep(mid.shape.intersect(small)).area() < small.area() * 0.1) {
           const slice = keep(shape.slice(bottom + 3.5));
-          if (keep(slice.intersect(small)).area() < small.area() * 0.1)
+          const screwWall = keep(disc(2.3).subtract(disc(1.9)));
+          if (
+            keep(slice.intersect(small)).area() < small.area() * 0.1 &&
+            keep(slice.intersect(screwWall)).area() > screwWall.area() * 0.85
+          )
             screws++;
         }
       }
@@ -776,7 +831,7 @@ export function convert(module, original, input) {
     }
     const components = result.decompose();
     components.forEach(keep);
-    if (components.length !== 1)
+    if (components.filter((s) => s.volume() > 0).length !== 1)
       throw Error(
         'Replacement would split the part or leave a disconnected foot. Check the selected regions.',
       );
