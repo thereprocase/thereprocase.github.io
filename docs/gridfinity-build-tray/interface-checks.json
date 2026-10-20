@@ -1,0 +1,322 @@
+[
+  {
+    "test": "bin-1x1-open feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-1x1-open stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-1x2-open feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-1x2-open stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x2-open feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x2-open stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-open feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-open stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-two feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-two stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-four feet and magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "bin-2x4-four stacking receiver",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier standard feet and underside magnets",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier complete 4x4 receiver region",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-76, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-50, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-34, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (-8, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (8, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (34, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, -76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, -50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, -34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, -8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, 8)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, 34)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (50, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, 50)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier receiver magnet (76, 76)",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "carrier upper wall and stacking lip",
+    "changed_volume_mm3": 0.0
+  },
+  {
+    "test": "lid full 4x4 receiver and magnets",
+    "changed_volume_mm3": 0.0
+  }
+]

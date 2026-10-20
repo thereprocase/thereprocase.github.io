@@ -1,0 +1,108 @@
+{
+  "slicer": "OrcaSlicer 2.5.0-dev local native build",
+  "profile_sha256": {
+    "machine": "4727ae6681a157f3c4e0352cf4237549677049707557afa883c45c440e2311a7",
+    "process": "e5d3f699a92daf2c89dd576fac4ae11af5955cd165aa458e8ac6f7ae6db725fd",
+    "filament": "fe5f0db3133f5a84ade9e1b564219ba9436177b3736add364ec0e812ffbe38c8"
+  },
+  "results": [
+    {
+      "version": "v5",
+      "name": "carrier-grid-deck",
+      "weight_g": 125.784,
+      "time_s": 19500.0,
+      "features": [
+        "Bottom surface",
+        "Bridge",
+        "Custom",
+        "Inner wall",
+        "Internal Bridge",
+        "Internal solid infill",
+        "Outer wall",
+        "Overhang wall",
+        "Sparse infill",
+        "Top surface"
+      ],
+      "first_layer_flags": [],
+      "source_stl_sha256": "d95ec901f2bb369edf3c9124e0a615aef824b7ba5437a12b0cab9e4044edb270",
+      "sliced_input_matches_export": true
+    },
+    {
+      "version": "v5",
+      "name": "carrier-wall",
+      "weight_g": 75.348,
+      "time_s": 6622.0,
+      "features": [
+        "Custom",
+        "Inner wall",
+        "Internal solid infill",
+        "Outer wall",
+        "Sparse infill",
+        "Top surface"
+      ],
+      "first_layer_flags": [],
+      "source_stl_sha256": "d22af3f3c7bdbc7dbbd0146982964daad857d328a8a3fa5f2cd311dbb6c572cf",
+      "sliced_input_matches_export": true
+    },
+    {
+      "version": "v5",
+      "name": "bin-2x4-four",
+      "weight_g": 87.272,
+      "time_s": 10799.0,
+      "features": [
+        "Bottom surface",
+        "Bridge",
+        "Custom",
+        "Inner wall",
+        "Internal Bridge",
+        "Internal solid infill",
+        "Outer wall",
+        "Overhang wall",
+        "Sparse infill",
+        "Top surface"
+      ],
+      "first_layer_flags": [],
+      "source_stl_sha256": "3065641d963e4afbd00961f7daa33c7312832d029078bace1abf27e0243902fb",
+      "sliced_input_matches_export": true
+    },
+    {
+      "version": "v5",
+      "name": "lid-receiver-frame",
+      "weight_g": 38.154,
+      "time_s": 4001.0,
+      "features": [
+        "Bottom surface",
+        "Custom",
+        "Inner wall",
+        "Internal Bridge",
+        "Internal solid infill",
+        "Outer wall",
+        "Sparse infill",
+        "Top surface"
+      ],
+      "first_layer_flags": [],
+      "source_stl_sha256": "752f9329dafce457e23aabcf29fde0c9378e5cd7838f1dac7c4840c8440bce4c",
+      "sliced_input_matches_export": true
+    },
+    {
+      "version": "v5",
+      "name": "lid-recessed-deck",
+      "weight_g": 86.67,
+      "time_s": 12456.0,
+      "features": [
+        "Bottom surface",
+        "Custom",
+        "Inner wall",
+        "Internal Bridge",
+        "Internal solid infill",
+        "Outer wall",
+        "Sparse infill",
+        "Top surface"
+      ],
+      "first_layer_flags": [],
+      "source_stl_sha256": "52bc09865e5336267f71ac3ff507d75fb4a6f3dd7422fc5c73231080fe27cc5f",
+      "sliced_input_matches_export": true
+    }
+  ],
+  "physical_print_validation": "pending"
+}

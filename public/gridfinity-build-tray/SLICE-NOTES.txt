@@ -1,0 +1,15 @@
+V5 support-disabled comparison slices
+
+OrcaSlicer 2.5.0-dev local native build. Same saved Polymaker PETG profiles as V4: 0.4 mm nozzle, 0.20 mm layers, 3 walls, 15% gyroid; 250 C, flow 0.95, 12 mm3/s cap, material fan 20–60%, auxiliary fan 0%. Supports, brim, prime tower and retraction guard disabled. These are geometry/material estimates, not submitted or physically qualified jobs. No G-code is included in the download.
+
+carrier-grid-deck: 125.784 g; estimated 5h 25m. No first-layer flags. Sliced input matches the released STL.
+carrier-wall: 75.348 g; estimated 1h 50m. No first-layer flags. Sliced input matches the released STL.
+bin-2x4-four: 87.272 g; estimated 2h 59m. No first-layer flags. Sliced input matches the released STL.
+lid-receiver-frame: 38.154 g; estimated 1h 6m. No first-layer flags. Sliced input matches the released STL.
+lid-recessed-deck: 86.670 g; estimated 3h 27m. No first-layer flags. Sliced input matches the released STL.
+
+Two-part carrier: 201.132 g versus V4 198.074 g (+3.058 g). Excludes optional alignment gauges and adhesive.
+Receiver lid: 124.824 g versus V4 124.341 g (+0.483 g).
+One representative divided 2x4 bin was resliced. Other bin sizes share the audited shoulder geometry; the slim lid CAD is unchanged from V4.
+
+The redesigned carrier wall and lid parts have no elevated horizontal downward faces. Standard magnet-pocket bridges and between-foot bridges remain on the bins/grid deck. CAD/export validation and slicing do not establish physical bridge quality or bonded-joint strength.

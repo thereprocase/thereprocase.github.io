@@ -1,0 +1,479 @@
+{
+  "models": [
+    {
+      "name": "bin-1x1-open",
+      "kind": "magnetic bin",
+      "cells": [
+        1,
+        1
+      ],
+      "dimensions_mm": [
+        41.5,
+        41.5,
+        33.0
+      ],
+      "volume_mm3": 17762.81678834698,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 4
+    },
+    {
+      "name": "bin-1x2-open",
+      "kind": "magnetic bin",
+      "cells": [
+        1,
+        2
+      ],
+      "dimensions_mm": [
+        41.5,
+        83.5,
+        33.0
+      ],
+      "volume_mm3": 31890.297878384918,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 8
+    },
+    {
+      "name": "bin-2x2-open",
+      "kind": "magnetic bin",
+      "cells": [
+        2,
+        2
+      ],
+      "dimensions_mm": [
+        83.5,
+        83.5,
+        33.0
+      ],
+      "volume_mm3": 55677.930058461025,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 16
+    },
+    {
+      "name": "bin-2x4-open",
+      "kind": "magnetic bin",
+      "cells": [
+        2,
+        4
+      ],
+      "dimensions_mm": [
+        83.5,
+        167.5,
+        33.0
+      ],
+      "volume_mm3": 103253.19441861346,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 32
+    },
+    {
+      "name": "bin-2x4-two",
+      "kind": "magnetic bin",
+      "cells": [
+        2,
+        4
+      ],
+      "dimensions_mm": [
+        83.5,
+        167.5,
+        33.0
+      ],
+      "volume_mm3": 106221.39124214217,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 32
+    },
+    {
+      "name": "bin-2x4-four",
+      "kind": "magnetic bin",
+      "cells": [
+        2,
+        4
+      ],
+      "dimensions_mm": [
+        83.5,
+        167.5,
+        33.0
+      ],
+      "volume_mm3": 112157.78488920168,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 32
+    },
+    {
+      "name": "carrier-grid-deck",
+      "kind": "carrier component",
+      "cells": [
+        4,
+        4
+      ],
+      "dimensions_mm": [
+        168.4,
+        168.4,
+        12.25
+      ],
+      "volume_mm3": 200001.63681208465,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 64
+    },
+    {
+      "name": "carrier-wall",
+      "kind": "carrier component",
+      "cells": [
+        4,
+        4
+      ],
+      "dimensions_mm": [
+        176.0,
+        176.0,
+        44.0
+      ],
+      "volume_mm3": 67805.72801219905,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "underside_magnet_pockets": 0
+    },
+    {
+      "name": "lid-slim",
+      "dimensions_mm": [
+        180.6,
+        180.6,
+        18.500000000000057
+      ],
+      "volume_mm3": 87490.13997628607,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "receiver_magnet_pockets": 0
+    },
+    {
+      "name": "lid-receiver-frame",
+      "dimensions_mm": [
+        180.6,
+        180.6,
+        18.900000000000055
+      ],
+      "volume_mm3": 35015.02797175839,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "receiver_magnet_pockets": 0
+    },
+    {
+      "name": "lid-recessed-deck",
+      "dimensions_mm": [
+        172.0,
+        172.0,
+        7.750000000000007
+      ],
+      "volume_mm3": 102900.85212442727,
+      "valid_single_solid": true,
+      "closed_mesh": true,
+      "step_readback_valid": true,
+      "receiver_magnet_pockets": 64
+    }
+  ],
+  "checks": [
+    {
+      "test": "bin-1x1-open carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-1x1-open under bin-1x1-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-1x2-open carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-1x2-open under bin-1x2-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x2-open carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-2x2-open under bin-2x2-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-open carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-2x4-open under bin-2x4-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-open under bin-2x4-two",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-open under bin-2x4-four",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-two carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-2x4-two under bin-2x4-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-two under bin-2x4-two",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-two under bin-2x4-four",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-four carrier fit",
+      "overlap_mm3": 0.0
+    },
+    {
+      "test": "bin-2x4-four under bin-2x4-open",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-four under bin-2x4-two",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "bin-2x4-four under bin-2x4-four",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0
+    },
+    {
+      "test": "carrier on carrier",
+      "overlap_mm3": 0.0,
+      "support_distance_mm": 0.0,
+      "stack_pitch_mm": 42,
+      "lip_vertical_clearance_mm": 0.25
+    },
+    {
+      "test": "full 16-cell mixed layout and loaded carrier stack",
+      "overlap_mm3": 0,
+      "minimum_vertical_clearance_mm": 1.5
+    }
+  ],
+  "layout": [
+    [
+      "bin-2x4-four",
+      -42,
+      0
+    ],
+    [
+      "bin-1x2-open",
+      21,
+      -42
+    ],
+    [
+      "bin-1x1-open",
+      63,
+      -63
+    ],
+    [
+      "bin-1x1-open",
+      63,
+      -21
+    ],
+    [
+      "bin-2x2-open",
+      42,
+      42
+    ]
+  ],
+  "grid_pitch_mm": 42,
+  "bin_stack_pitch_mm": 29.4,
+  "carrier_stack_pitch_mm": 42,
+  "carrier_footprint_mm": 176,
+  "bin_pocket_mm": [
+    6.2,
+    2.4
+  ],
+  "physical_validation": "pending; CAD checks only",
+  "footprint_area_reduction_percent": 29.423960902478342,
+  "lid_checks": [
+    {
+      "test": "lid-slim carrier",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-slim bearing",
+      "contact_area_mm2": 1075.009287364358
+    },
+    {
+      "test": "lid-slim lower bin 0",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-slim lower bin 1",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-slim lower bin 2",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-slim lower bin 3",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-slim lower bin 4",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame carrier",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame bearing",
+      "contact_area_mm2": 1075.009287364358
+    },
+    {
+      "test": "lid-receiver-frame lower bin 0",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame lower bin 1",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame lower bin 2",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame lower bin 3",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-receiver-frame lower bin 4",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck carrier",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck lower bin 0",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck lower bin 1",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck lower bin 2",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck lower bin 3",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "lid-recessed-deck lower bin 4",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "deck frame seating",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "45 degree deck frame bearing",
+      "contact_area_mm2": 1616.4592361090831
+    },
+    {
+      "test": "receiver bin-1x1-open",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver bin-1x2-open",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver bin-2x2-open",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver bin-2x4-open",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver bin-2x4-two",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver bin-2x4-four",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver upper carrier",
+      "interference_mm3": 0.0
+    },
+    {
+      "test": "receiver upper feet",
+      "contact_area_mm2": 18079.405492926817
+    },
+    {
+      "test": "receiver upper carrier rim",
+      "contact_area_mm2": 1170.2092873643596
+    },
+    {
+      "test": "clearance and DFM dimensions",
+      "bare_stack_headroom_mm": 1.5,
+      "recessed_lid_headroom_mm": 3.15,
+      "bin_floor_mm": 1.75,
+      "carrier_midwall_mm": 2,
+      "slim_roof_mm": 1.6,
+      "deck_center_floor_mm": 3.0,
+      "deck_magnet_floor_mm": 0.6,
+      "flange_print_overhang_mm": 0.0,
+      "magnet_pocket_roof_span_mm": 6.2
+    }
+  ],
+  "lids": {
+    "slim_added_height_mm": 2.25,
+    "receiver_added_height_mm": 2.65,
+    "receiver_seat_z_mm": 46.65,
+    "carrier_skirt_clearance_per_side_mm": 0.3,
+    "notch_overlap_mm": 0.5,
+    "deck_to_bin_clearance_mm": 3.15,
+    "physical_validation": "pending"
+  },
+  "revision": "V5",
+  "carrier_assembly": {
+    "parts": [
+      "carrier-grid-deck",
+      "carrier-wall"
+    ],
+    "wall_installed_z_mm": 4.75,
+    "assembly": "bonded perimeter joint; four optional alignment gauges",
+    "physical_bond_test": "pending"
+  }
+}

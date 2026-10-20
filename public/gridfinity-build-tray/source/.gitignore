@@ -1,0 +1,11 @@
+models/
+accessories/
+*.step
+*.stl
+*.FCStd*
+*.mesh.json
+validation.json
+section-parts.json
+overhang-audit.json
+interface-checks.json
+__pycache__/

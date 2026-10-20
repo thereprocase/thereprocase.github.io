@@ -1,0 +1,427 @@
+{
+  "bin-1x1-open": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 120.665
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.207,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.207,
+    "below_44_5_degrees_area_mm2": 0.9133,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.01566885408623058,
+        "z": 0.733
+      }
+    ]
+  },
+  "bin-1x2-open": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 241.329,
+      "4.75": 32.856
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 1.8265,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.01566902021077171,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.01566902021077171,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.01566902021077171,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.01566902021077171,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.015668856636648666,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.015668856636648666,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.015668914277053407,
+        "z": 0.733
+      },
+      {
+        "angle": 44.207,
+        "area": 0.015668820314623667,
+        "z": 0.733
+      }
+    ]
+  },
+  "bin-2x2-open": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 482.659,
+      "4.75": 119.567
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 3.6531,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      }
+    ]
+  },
+  "bin-2x4-four": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 965.318,
+      "4.75": 292.99
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 7.3061,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      }
+    ]
+  },
+  "bin-2x4-open": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 965.318,
+      "4.75": 292.99
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 7.3061,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      }
+    ]
+  },
+  "bin-2x4-two": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 965.318,
+      "4.75": 292.99
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 7.3061,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      }
+    ]
+  },
+  "carrier-grid-deck": {
+    "horizontal_downfaces_by_z_mm": {
+      "2.4": 1930.636,
+      "4.75": 681.835
+    },
+    "minimum_downward_slope_degrees_from_horizontal": 44.206,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.206,
+    "below_44_5_degrees_area_mm2": 14.6123,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015668986438334545,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      },
+      {
+        "angle": 44.206,
+        "area": 0.015669022758610436,
+        "z": 0.733
+      }
+    ]
+  },
+  "carrier-wall": {
+    "horizontal_downfaces_by_z_mm": {},
+    "minimum_downward_slope_degrees_from_horizontal": 23.982,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.337,
+    "below_44_5_degrees_area_mm2": 0.9124,
+    "below_44_5_degrees_examples": [
+      {
+        "angle": 23.982,
+        "area": 0.00011535680362792695,
+        "z": 7.5
+      },
+      {
+        "angle": 23.982,
+        "area": 0.00011535680362792695,
+        "z": 7.5
+      },
+      {
+        "angle": 23.982,
+        "area": 0.00011535680362792695,
+        "z": 7.5
+      },
+      {
+        "angle": 23.982,
+        "area": 0.00011535680362792695,
+        "z": 7.5
+      },
+      {
+        "angle": 44.337,
+        "area": 0.11398665779283841,
+        "z": 36.694
+      },
+      {
+        "angle": 44.337,
+        "area": 0.11398665779283841,
+        "z": 36.694
+      },
+      {
+        "angle": 44.337,
+        "area": 0.11398665779283841,
+        "z": 36.694
+      },
+      {
+        "angle": 44.337,
+        "area": 0.11398665779283841,
+        "z": 36.694
+      }
+    ]
+  },
+  "lid-receiver-frame": {
+    "horizontal_downfaces_by_z_mm": {},
+    "minimum_downward_slope_degrees_from_horizontal": 44.579,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.579,
+    "below_44_5_degrees_area_mm2": 0,
+    "below_44_5_degrees_examples": []
+  },
+  "lid-recessed-deck": {
+    "horizontal_downfaces_by_z_mm": {},
+    "minimum_downward_slope_degrees_from_horizontal": 44.647,
+    "minimum_slope_for_facets_at_least_0_01_mm2": 44.647,
+    "below_44_5_degrees_area_mm2": 0,
+    "below_44_5_degrees_examples": []
+  },
+  "lid-slim": {
+    "horizontal_downfaces_by_z_mm": {},
+    "minimum_downward_slope_degrees_from_horizontal": null,
+    "minimum_slope_for_facets_at_least_0_01_mm2": null,
+    "below_44_5_degrees_area_mm2": 0,
+    "below_44_5_degrees_examples": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "revision": "V5",
+  "date": "2026-10-20",
+  "source": "Polymorphic Build Tray remix; native FreeCAD generation",
+  "geometry_changed_by_repository_import": false,
+  "physical_validation": "pending",
+  "assets": [
+    {
+      "path": "gridfinity-lids-v5.zip",
+      "bytes": 2547851,
+      "sha256": "144775049be704660077830915c7981fa1963747d6d3e2f9c13c08e47b712070"
+    },
+    {
+      "path": "gridfinity-workspace-v5.zip",
+      "bytes": 9672073,
+      "sha256": "18f71ce099de62be3ba32306abf84bb1fd014cda8cc00eaccee617752a8274f1"
+    },
+    {
+      "path": "source/audit_overhangs.py",
+      "bytes": 1911,
+      "sha256": "9633db505815231e55778f13e469c824edafabc3c5c16f67b88ccf4f3ce2d4f0"
+    },
+    {
+      "path": "source/build.py",
+      "bytes": 7400,
+      "sha256": "1eaa78b8746a357d38f812c2d6dce707927ea3379f1483fca554edb246e57177"
+    },
+    {
+      "path": "source/build_lids.py",
+      "bytes": 7037,
+      "sha256": "35844afb15cb87739d528fac940986ff2c4193acacc4216ac12a850a52588843"
+    },
+    {
+      "path": "source/check_interfaces.py",
+      "bytes": 1633,
+      "sha256": "4216fa7cdc8da39b333f1a7f51600ce08f1e9dd941af06e45ff603bf6b4df170"
+    },
+    {
+      "path": "source/profile_helpers.py",
+      "bytes": 599,
+      "sha256": "8a9e5235ff09743097de4560494b9b78921860d4cc40dc5cd741df10efc80d11"
+    }
+  ]
+}

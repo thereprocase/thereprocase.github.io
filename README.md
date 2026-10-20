@@ -110,3 +110,13 @@ showcase images; it never touches the PNGs or `tuner/provenance.json` itself).
 ## Kraken AMS remix
 
 `public/kraken/` contains the dated ASA print and assembly guide, actual accepted-CAD illustrations and final-plate toolpath previews. The project registry links to `/kraken/`; GitHub Release assets remain in `thereprocase/kraken-remix-ogAMS`. Keep the release tag, download hashes, settings and physical acceptance limits synchronized with the checked print package. Build and export `docs/` with the rest of the site.
+
+## Gridfinity build tray
+
+[Gridfinity build tray](https://thereprocase.github.io/gridfinity-build-tray/) is a
+portable 4×4 carrier with magnetic bins, stacking, and slim or recessed receiver
+lids. V5 CAD sources, STL/STEP downloads, assembly instructions and validation
+evidence live in [`public/gridfinity-build-tray/`](public/gridfinity-build-tray/),
+mirrored in `docs/gridfinity-build-tray/`. The carrier uses two bonded prints;
+physical fit and joint strength remain untested. Keep both static copies and
+the release provenance synchronized.

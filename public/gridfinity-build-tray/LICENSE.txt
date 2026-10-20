@@ -1,0 +1,10 @@
+Gridfinity build tray remix
+
+This project is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Original: Build Tray: Modular organizer for assembly, disassembly and maintenance, by Polymorphic.
+Source: https://www.printables.com/model/1758185-build-tray-modular-organizer-for-assembly-disassem
+Remix: thereprocase, 2026. Changed grid layout, geometry, stacking, magnet bases, lids and print-oriented part separation.
+See README.md and README.txt for changes and qualification limits. Shared site assets retain their existing terms.
