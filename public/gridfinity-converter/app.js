@@ -229,7 +229,7 @@ function status(text, error = false) {
   $('status').classList.toggle('error', error);
 }
 function canConvert() {
-  return !busy && detection && selection.size > 0 && $('confirm').checked;
+  return !busy && detection && selection.size > 0;
 }
 function controls() {
   for (const el of document.querySelectorAll(
@@ -238,7 +238,6 @@ function controls() {
     el.disabled = busy;
   $('demo').disabled = busy;
   $('detect').disabled = busy || !loaded;
-  $('confirm').disabled = busy || !detection;
   $('convert').disabled = !canConvert();
   $('cancel').disabled = !busy;
   $('magnet-controls').disabled = !['magnets', 'both'].includes(
@@ -272,16 +271,14 @@ function controls() {
       ? 'Load a model and detect its feet first.'
       : !selection.size
         ? 'Select at least one foot in step 2.'
-        : !$('confirm').checked
-          ? 'Check the dimensions and selected feet, then confirm above.'
-          : 'Ready to generate a validated preview.';
-  const stage = result
-    ? '4'
-    : $('confirm').checked && selection.size
-      ? '3'
-      : detection
-        ? '2'
-        : '1';
+        : `${selection.size} selected feet · ${STYLES[$('style').value]}. Click Convert feet to apply.`;
+  $('workflow-action').disabled = busy || (!result && !canConvert());
+  $('workflow-action').textContent = result
+    ? 'Export files →'
+    : busy
+      ? 'Converting…'
+      : 'Convert feet';
+  const stage = result ? '4' : detection ? '2' : '1';
   for (const link of document.querySelectorAll('[data-stage]')) {
     if (link.dataset.stage === stage) link.setAttribute('aria-current', 'step');
     else link.removeAttribute('aria-current');
@@ -309,7 +306,6 @@ function invalidate(
   message = 'Settings changed. Review the selection and generate a new preview.',
 ) {
   result = null;
-  $('confirm').checked = false;
   view = 'original';
   $('conversion-note').textContent =
     'No current conversion. Review the selected cells and generate a preview.';
@@ -552,7 +548,7 @@ async function runDetection() {
     setBusy(false);
     status(
       feet.length
-        ? 'Detection ready. Review the highlighted feet.'
+        ? 'Feet detected. Choose a style or click Convert feet.'
         : 'No automatic matches. Review orientation or place cells manually.',
     );
     sizeInfo(original);
@@ -721,7 +717,11 @@ document.addEventListener('drop', (e) => e.preventDefault());
 $('demo').onclick = loadDemo;
 $('detect').onclick = runDetection;
 $('convert').onclick = runConversion;
-$('confirm').onchange = controls;
+$('workflow-action').onclick = () => {
+  if (result) $('export-panel').scrollIntoView({ block: 'start' });
+  else void runConversion();
+};
+
 $('units').onchange = async () => {
   epoch++;
   terminate();

@@ -1,6 +1,7 @@
 {
   "demo": true,
   "fixedPitch": true,
+  "directAction": true,
   "converted": true,
   "downloads": true,
   "stale": true,

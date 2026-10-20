@@ -123,9 +123,10 @@ try {
       "document.getElementById('detection-note').textContent.includes('42 mm grid')",
     ),
   };
-  await evaluate(
-    "document.getElementById('confirm').checked=true;document.getElementById('confirm').dispatchEvent(new Event('change'));document.getElementById('convert').click()",
+  results.directAction = await evaluate(
+    "!document.getElementById('confirm')&&!document.getElementById('workflow-action').disabled",
   );
+  await evaluate("document.getElementById('workflow-action').click()");
   await ready();
   results.converted = await evaluate(
     "!document.getElementById('stl').disabled&&document.getElementById('status').textContent.startsWith('Conversion ready')",
@@ -150,7 +151,7 @@ try {
     "document.getElementById('style').value='plain';document.getElementById('style').dispatchEvent(new Event('input'))",
   );
   results.stale = await evaluate(
-    "document.getElementById('stl').disabled&&!document.getElementById('confirm').checked",
+    "document.getElementById('stl').disabled&&!document.getElementById('workflow-action').disabled",
   );
   results.workflow = await evaluate(
     "document.querySelector('[aria-current=step]').dataset.stage==='2' && document.getElementById('step').hidden && document.getElementById('selection-count').textContent==='2 selected'",
@@ -198,7 +199,7 @@ try {
     mobile: true,
   });
   await evaluate(
-    "document.getElementById('replacement-panel').scrollIntoView();document.getElementById('confirm').checked=true;document.getElementById('confirm').dispatchEvent(new Event('change'));document.getElementById('convert').click()",
+    "document.getElementById('replacement-panel').scrollIntoView();document.getElementById('convert').click()",
   );
   await ready();
   results.mobilePreview = await evaluate(
@@ -241,7 +242,7 @@ try {
       "document.querySelectorAll('#feet tr').length===2",
     );
     await evaluate(
-      "document.getElementById('style').value='both';document.getElementById('confirm').checked=true;document.getElementById('confirm').dispatchEvent(new Event('change'));document.getElementById('convert').click()",
+      "document.getElementById('style').value='both';document.getElementById('convert').click()",
     );
     await ready();
     results.nativeConversion = await evaluate(
