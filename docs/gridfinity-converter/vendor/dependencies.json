@@ -1,0 +1,32 @@
+[
+  {
+    "package": "three",
+    "version": "0.164.1",
+    "integrity": "sha512-iC/hUBbl1vzFny7f5GtqzVXYjMJKaTPxiCxXfrvVdBi1Sf+jhd1CAkitiFwC7mIBFCo3MrDLJG97yisoaWig0w==",
+    "tarball": "https://registry.npmjs.org/three/-/three-0.164.1.tgz"
+  },
+  {
+    "package": "occt-import-js",
+    "version": "0.0.23",
+    "integrity": "sha512-RFfYQXYFX5C1mB1Aywm0ShcUKzXOr/VzTnlzhBSDJOR6YCAPt1HYCzeXWg1vwwjn/cUxwqRNhhtf1dlewoZYCQ==",
+    "tarball": "https://registry.npmjs.org/occt-import-js/-/occt-import-js-0.0.23.tgz"
+  },
+  {
+    "package": "manifold-3d",
+    "version": "3.2.1",
+    "integrity": "sha512-yC+zpML+IZPCtOTzowfIDCc3s31Qr8oCmfMIDnOVOhwjuzh89F+hlQ74BmU6cGHnySH+M6Ry5FnoEfW94Um2vQ==",
+    "tarball": "https://registry.npmjs.org/manifold-3d/-/manifold-3d-3.2.1.tgz"
+  },
+  {
+    "package": "replicad",
+    "version": "1.1.0",
+    "integrity": "sha512-TJw32OTe6+HASPpfrLEjYUI66VvSmYC2F/za4iDFWIWo4RVYbiA62dmUbXUp8ZEqkIS//jK6TqrxnmFqX6cbkA==",
+    "tarball": "https://registry.npmjs.org/replicad/-/replicad-1.1.0.tgz"
+  },
+  {
+    "package": "replicad-opencascadejs",
+    "version": "1.1.0",
+    "integrity": "sha512-s0KHR5V+ivsOE4nZXfuoW70lW0/rldkb3ZDY34LpXOQRFLQN5qVydQm3BRo7boZPdFkkAZBERJ+NzB0DYxrivw==",
+    "tarball": "https://registry.npmjs.org/replicad-opencascadejs/-/replicad-opencascadejs-1.1.0.tgz"
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-20",
+  "scope": "Male Gridfinity feet; local browser conversion",
+  "pitchMM": 42,
+  "representations": {
+    "step": "Native OpenCascade boundary representation, STEP export",
+    "brep": "Native OpenCascade boundary representation, STEP export",
+    "mesh": "Manifold boolean mesh conversion",
+    "iges": "Tessellated mesh conversion"
+  },
+  "references": [
+    "https://github.com/Stu142/Gridfinity-Documentation",
+    "https://github.com/kennetek/gridfinity-rebuilt-openscad"
+  ],
+  "dependencies": [
+    {
+      "package": "three",
+      "version": "0.164.1",
+      "integrity": "sha512-iC/hUBbl1vzFny7f5GtqzVXYjMJKaTPxiCxXfrvVdBi1Sf+jhd1CAkitiFwC7mIBFCo3MrDLJG97yisoaWig0w==",
+      "tarball": "https://registry.npmjs.org/three/-/three-0.164.1.tgz"
+    },
+    {
+      "package": "occt-import-js",
+      "version": "0.0.23",
+      "integrity": "sha512-RFfYQXYFX5C1mB1Aywm0ShcUKzXOr/VzTnlzhBSDJOR6YCAPt1HYCzeXWg1vwwjn/cUxwqRNhhtf1dlewoZYCQ==",
+      "tarball": "https://registry.npmjs.org/occt-import-js/-/occt-import-js-0.0.23.tgz"
+    },
+    {
+      "package": "manifold-3d",
+      "version": "3.2.1",
+      "integrity": "sha512-yC+zpML+IZPCtOTzowfIDCc3s31Qr8oCmfMIDnOVOhwjuzh89F+hlQ74BmU6cGHnySH+M6Ry5FnoEfW94Um2vQ==",
+      "tarball": "https://registry.npmjs.org/manifold-3d/-/manifold-3d-3.2.1.tgz"
+    },
+    {
+      "package": "replicad",
+      "version": "1.1.0",
+      "integrity": "sha512-TJw32OTe6+HASPpfrLEjYUI66VvSmYC2F/za4iDFWIWo4RVYbiA62dmUbXUp8ZEqkIS//jK6TqrxnmFqX6cbkA==",
+      "tarball": "https://registry.npmjs.org/replicad/-/replicad-1.1.0.tgz"
+    },
+    {
+      "package": "replicad-opencascadejs",
+      "version": "1.1.0",
+      "integrity": "sha512-s0KHR5V+ivsOE4nZXfuoW70lW0/rldkb3ZDY34LpXOQRFLQN5qVydQm3BRo7boZPdFkkAZBERJ+NzB0DYxrivw==",
+      "tarball": "https://registry.npmjs.org/replicad-opencascadejs/-/replicad-opencascadejs-1.1.0.tgz"
+    }
+  ],
+  "upstreamSources": {
+    "replicad": "https://github.com/sgenoud/replicad/tree/e4b05f67dc4e2393a876ce8c5064a9c93db05bf1",
+    "opencascadeBuild": "https://github.com/sgenoud/replicad/tree/e4b05f67dc4e2393a876ce8c5064a9c93db05bf1/packages/replicad-opencascadejs",
+    "occtImport": "https://github.com/kovacsv/occt-import-js",
+    "three": "https://github.com/mrdoob/three.js/tree/r164",
+    "manifold": "https://github.com/elalish/manifold/tree/v3.2.1"
+  },
+  "qualification": "Digital solid/mesh checks only; no physical fit or strength qualification. FBX, COLLADA and compressed glTF are supported by loaders but not covered by current format fixtures.",
+  "evidence": [
+    "checks/kernel.json",
+    "checks/native-cad.json",
+    "checks/independent-cad.json",
+    "checks/browser.json"
+  ],
+  "sha256": {
+    "README.md": "445f33ad53d6fc7475be2dca524975c4200f48ccaf1735d47a7086c5ad497a24",
+    "app.js": "728e9a7702e65d7f5b21aca01739fa86109cf868d4847f28a2db670b8b3ec015",
+    "cad-worker.js": "c60be9a643b3c33a6db35e2413a3452db0d9db281432541d7d5f569ac1a0f8b8",
+    "demo.js": "86cdbb8b79440fc2f4b71740314ff4c6b25e707ffbce599dfd492109396c34e4",
+    "importers.js": "e60cc7919303ee11e21c316d3f2f9bed7f3b08eda7aab36534c220b211e8512c",
+    "index.html": "f94cca283422c74becb1096c00bd1841f871ecefe6229afbf95cdcae5186722a",
+    "kernel.js": "b99a06c74cd8f8d6b483fbbed2eb4a9ee32a6003ba97ea3838300fd9ed2d0cb8",
+    "native-cad.js": "34572005725a988d920fb4a3a56ff7e3a2df97755d29354de816fe85c63c1fa0",
+    "native-worker.js": "1b88e7858f4c28db69490ae6317d8e739cafdb630fbd31d4b764df69ae3d1af6",
+    "style.css": "31ffb54f0cc04aa144b76a4319957afdec34110fcce7942c79d68f5306482b43",
+    "vendor/dependencies.json": "c5870f3282426b7f1c73991e9f5984c49f3135397b0bcdedde6c73b0471e6a30",
+    "vendor/occt/license.occt-import-js.txt": "7ffe1954587c77dfba1cf8eb9b2ea743671fa6e63f9e7a2f258119d42e14eefe",
+    "vendor/occt/license.occt.txt": "090f8eb6ba63e72887c1f89b009fb1656cfda02d83b6e9805b20468520a5d77f",
+    "vendor/occt/occt-import-js.js": "3fb44ce11d00611f9b3f3c5775d520ebab48930c1f08279b7b1316f05f0d3379",
+    "vendor/occt/occt-import-js.wasm": "33391fc9d94ea5c869a6718488bf0a9a464222bac9bdc764dfe1690cef281952",
+    "vendor/replicad/LICENSE": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+    "vendor/replicad/LICENSE-flatbush": "08a9d45b1300baf1925a966bcbec26cf9bd4137883d96b79089cba2c72d872bc",
+    "vendor/replicad/LICENSE-flatqueue": "dda6815257c8b5dd1c557507e0f49b592001a515fe4e9f152a2e7683f9d3a3b5",
+    "vendor/replicad/LICENSE-opentype": "a5b87c9bc191e7f9c06b07bd7cbbed3ed846dfdb50e859484b2c245aa1ab2e61",
+    "vendor/replicad/LICENSE-replicad": "7a3c098c1cf5d8de05efa0b930e7c8398c221da2a59032b617057fb7f122cf70",
+    "vendor/replicad/casting-rs4QjB74.js": "5edbdf7436c52a984947dce9bed5b5c671adbc6ac79ee79b7c9869022c1bcb70",
+    "vendor/replicad/replicad.js": "9692db9461fd9f598df2c7f4da33849b8ddd03df9163d8d70e0b9270117c3a6d",
+    "vendor/replicad/replicad_single.js": "018e57538fcb773f0124eae60aee4de693d3aae01c55b2b883a874911ab121c3",
+    "vendor/replicad/replicad_single.wasm": "4c9f22e9f3828dca6f3c95405934cdbe624e593c35266f47f392ab337478dbde",
+    "vendor/three/LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+    "vendor/three/curves/NURBSCurve.js": "34dee297704432358680934a8d5acae35f05c71aa59ce7a8e97decb0ac38e452",
+    "vendor/three/curves/NURBSUtils.js": "0abeeab213f423c6ea7170abe045e6d27d63c0a1164e67de1da881e0e5c7480f",
+    "vendor/three/libs/LICENSE-draco": "d3709b0fb4b8a94bbb1d02b8a2e484f258b0d9c5c5a01f940391f3fe662cd1a4",
+    "vendor/three/libs/LICENSE-meshoptimizer": "063805e3b8e24ceab4c5dea358b03245ee41c31be87cf65c61d836636cb494bb",
+    "vendor/three/libs/draco/gltf/draco_decoder.wasm": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac",
+    "vendor/three/libs/draco/gltf/draco_wasm_wrapper.js": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6",
+    "vendor/three/libs/fflate.module.js": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a",
+    "vendor/three/libs/meshopt_decoder.module.js": "01f48524f4bac6141eaba07e94cc36e7ee56f311796fa6117c159842941b0468",
+    "vendor/three/loaders/AMFLoader.js": "d42cb6c70cf28f51ca8517a6f340205b16d92f124b574d5ac613ebdec799aad5",
+    "vendor/three/loaders/ColladaLoader.js": "f188ae4f2891b9c689ab9b7c5ece2722e149f5d69b8ec6d43a474e510b3c88b1",
+    "vendor/three/loaders/DRACOLoader.js": "65c114ecb7b349cdc59c75b2c92d19cca672a138060dba0f60f64262fa40408c",
+    "vendor/three/loaders/FBXLoader.js": "a3d0eb238e9d67964aae83265312b630940b357706918c37974136ccdb3102ce",
+    "vendor/three/loaders/GLTFLoader.js": "4e7c3ad7d8fb4c388169e0692b0782e427fba5f54ff424436f6fe0ccefdbbeef",
+    "vendor/three/loaders/OBJLoader.js": "022e0334f837c60506276e136faf3e54b21b20aea672eed4a0c50651d4fc0a5d",
+    "vendor/three/loaders/PLYLoader.js": "5b1f81016923481f66e3cd70cbbdfbe6742e60ae51839bccd8e4a8f7d616db9d",
+    "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
+    "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
+    "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
+    "worker.js": "f5e59aebd8cf31293251e76bf9f17e3f60ed314d2dfed94b1b6a5958ceb074a1"
+  }
+}

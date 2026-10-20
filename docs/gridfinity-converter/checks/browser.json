@@ -1,0 +1,76 @@
+{
+  "demo": true,
+  "fixedPitch": true,
+  "converted": true,
+  "downloads": true,
+  "stale": true,
+  "layout320": true,
+  "layout390": true,
+  "layout768": true,
+  "layout1600": true,
+  "imports": [
+    {
+      "file": "part.stl",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.obj",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.off",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.ply",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.amf",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.gltf",
+      "feet": 2,
+      "outsideChange": -6.38378239159465e-16
+    },
+    {
+      "file": "part.glb",
+      "feet": 2,
+      "outsideChange": -6.38378239159465e-16
+    },
+    {
+      "file": "part.step",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.iges",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.brep",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "part.3mf",
+      "feet": 2,
+      "outsideChange": 0
+    },
+    {
+      "file": "inch-assembly.3mf",
+      "feet": 2,
+      "outsideChange": 0
+    }
+  ],
+  "nativeDetection": true,
+  "nativeConversion": true,
+  "nativeDownload": true
+}

@@ -1,0 +1,569 @@
+{
+  "cases": [
+    {
+      "name": "demo",
+      "style": "plain",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "plain",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 29148.73737507676,
+        "addedVolume": 318.04604227115584,
+        "removedVolume": 0,
+        "outsideChange": 0,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "demo",
+      "style": "magnets",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "magnets",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28512.645341194042,
+        "addedVolume": 0.00004863008263491154,
+        "removedVolume": 318.0460425190443,
+        "outsideChange": 0,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "demo",
+      "style": "screws",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "screws",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28809.990138097797,
+        "addedVolume": 250.29659218324238,
+        "removedVolume": 270.997786891048,
+        "outsideChange": 4.996003610813204e-16,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "demo",
+      "style": "both",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "both",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28309.396999006665,
+        "addedVolume": 0.00004659154699096785,
+        "removedVolume": 521.2943820143,
+        "outsideChange": 4.440892098500626e-16,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "rotated",
+      "style": "plain",
+      "grid": {
+        "pitch": 42,
+        "x": -0.000004421919584274292,
+        "y": -21.000000216066837,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "plain",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -0.000004421919584274292,
+            "y": -21.000000216066837,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": -20.999999769032
+          },
+          {
+            "x": -0.000004421919584274292,
+            "y": 20.999999783933163,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": 20.999999336898327
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.69117306929,
+        "convertedVolume": 29148.80364033445,
+        "addedVolume": 318.1149318084327,
+        "removedVolume": 0.002462853212721777,
+        "outsideChange": 0.000009469235125615464,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "rotated",
+      "style": "magnets",
+      "grid": {
+        "pitch": 42,
+        "x": -0.000004421919584274292,
+        "y": -21.000000216066837,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "magnets",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -0.000004421919584274292,
+            "y": -21.000000216066837,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": -20.999999769032
+          },
+          {
+            "x": -0.000004421919584274292,
+            "y": 20.999999783933163,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": 20.999999336898327
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.69117306929,
+        "convertedVolume": 28512.71158173354,
+        "addedVolume": 0.06722402165204427,
+        "removedVolume": 318.04680531207106,
+        "outsideChange": 0.000009469235125615464,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "rotated",
+      "style": "screws",
+      "grid": {
+        "pitch": 42,
+        "x": -0.000004421919584274292,
+        "y": -21.000000216066837,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "screws",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -0.000004421919584274292,
+            "y": -21.000000216066837,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": -20.999999769032
+          },
+          {
+            "x": -0.000004421919584274292,
+            "y": 20.999999783933163,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": 20.999999336898327
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.69117306929,
+        "convertedVolume": 28810.05638398883,
+        "addedVolume": 250.36437540696716,
+        "removedVolume": 270.9991627913773,
+        "outsideChange": 0.00002834432216508475,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "rotated",
+      "style": "both",
+      "grid": {
+        "pitch": 42,
+        "x": -0.000004421919584274292,
+        "y": -21.000000216066837,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "both",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -0.000004421919584274292,
+            "y": -21.000000216066837,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": -20.999999769032
+          },
+          {
+            "x": -0.000004421919584274292,
+            "y": 20.999999783933163,
+            "sourceX": -0.000004421919584274292,
+            "sourceY": 20.999999336898327
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.69117306929,
+        "convertedVolume": 28309.463233310413,
+        "addedVolume": 0.06670115534466106,
+        "removedVolume": 521.2946308628793,
+        "outsideChange": 0.00002834432216513972,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "sideways",
+      "style": "plain",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "plain",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 29148.73737507676,
+        "addedVolume": 318.04604227115584,
+        "removedVolume": 0,
+        "outsideChange": 0,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "sideways",
+      "style": "magnets",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "magnets",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28512.645341194042,
+        "addedVolume": 0.00004863008263491154,
+        "removedVolume": 318.0460425190443,
+        "outsideChange": 0,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "sideways",
+      "style": "screws",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "screws",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28809.990138097797,
+        "addedVolume": 250.29659218324238,
+        "removedVolume": 270.997786891048,
+        "outsideChange": 4.996003610813204e-16,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    },
+    {
+      "name": "sideways",
+      "style": "both",
+      "grid": {
+        "pitch": 42,
+        "x": 21,
+        "y": 0,
+        "matched": 2,
+        "total": 2,
+        "maxResidual": 4.470348358154297e-7
+      },
+      "report": {
+        "style": "both",
+        "pitch": 42,
+        "feet": [
+          {
+            "x": -21,
+            "y": 0,
+            "sourceX": -20.999999552965164,
+            "sourceY": 0
+          },
+          {
+            "x": 21,
+            "y": 0,
+            "sourceX": 20.999999552965164,
+            "sourceY": 0
+          }
+        ],
+        "bottom": 0,
+        "height": 4.75,
+        "fit": 0,
+        "magnetDiameter": 6.5,
+        "magnetDepth": 2.4,
+        "screwDiameter": 3,
+        "screwDepth": 6,
+        "minimumRoof": 0.8,
+        "originalVolume": 28830.6913328056,
+        "convertedVolume": 28309.396999006665,
+        "addedVolume": 0.00004659154699096785,
+        "removedVolume": 521.2943820143,
+        "outsideChange": 4.440892098500626e-16,
+        "normalizationMM": 0,
+        "closedMesh": true,
+        "connectedSolids": 1
+      }
+    }
+  ],
+  "negativeTests": [
+    "off-grid",
+    "too-deep-holes",
+    "no-attachment",
+    "empty-selection",
+    "unknown-style",
+    "flat-block",
+    "female-frame",
+    "grid-outlier",
+    "open-mesh",
+    "thin-roof"
+  ],
+  "fixedPitch": 42
+}

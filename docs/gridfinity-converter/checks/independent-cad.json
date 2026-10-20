@@ -1,0 +1,22 @@
+[
+  {
+    "style": "plain",
+    "valid": true,
+    "analyticCylindricalFaces": 9
+  },
+  {
+    "style": "magnets",
+    "valid": true,
+    "analyticCylindricalFaces": 17
+  },
+  {
+    "style": "screws",
+    "valid": true,
+    "analyticCylindricalFaces": 17
+  },
+  {
+    "style": "both",
+    "valid": true,
+    "analyticCylindricalFaces": 25
+  }
+]
