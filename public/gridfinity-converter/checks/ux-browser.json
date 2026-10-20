@@ -1,4 +1,5 @@
 {
+  "startsWithModel": true,
   "demo": true,
   "fixedPitch": true,
   "examplePicker": true,

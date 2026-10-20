@@ -30,8 +30,8 @@ let worker,
   sourceName = 'example-bin',
   sourceFormat = 'demo',
   view = 'original',
-  isDemo = true;
-let fileState = 'example';
+  isDemo = false;
+let fileState = 'empty';
 const pending = new Map();
 let renderer;
 try {
@@ -238,12 +238,14 @@ function controls() {
   ))
     el.disabled = busy;
   $('demo').disabled = busy;
-  $('choose-file').textContent = isDemo
-    ? 'Choose your model…'
-    : loaded
-      ? 'Replace model…'
-      : 'Choose another model…';
+  $('choose-file').textContent =
+    isDemo || fileState === 'empty'
+      ? 'Choose your model…'
+      : loaded
+        ? 'Replace model…'
+        : 'Choose another model…';
   $('file-state').textContent = {
+    empty: 'No model selected',
     example: 'Built-in example',
     opening: 'Opening model…',
     loaded: 'Current model',
@@ -287,12 +289,16 @@ function controls() {
       : !selection.size
         ? 'Select at least one foot in step 2.'
         : `${selection.size} selected feet · ${STYLES[$('style').value]}. Click Convert feet to apply.`;
-  $('workflow-action').disabled = busy || (!result && !canConvert());
-  $('workflow-action').textContent = result
-    ? 'Export files →'
-    : busy
-      ? 'Working…'
-      : 'Convert feet';
+  $('workflow-action').disabled =
+    busy || (fileState !== 'empty' && !result && !canConvert());
+  $('workflow-action').textContent =
+    fileState === 'empty'
+      ? 'Choose your model…'
+      : result
+        ? 'Export files →'
+        : busy
+          ? 'Working…'
+          : 'Convert feet';
   const stage = result ? '4' : detection ? '2' : '1';
   for (const link of document.querySelectorAll('[data-stage]')) {
     if (link.dataset.stage === stage) link.setAttribute('aria-current', 'step');
@@ -767,7 +773,8 @@ $('demo').onclick = loadDemo;
 $('detect').onclick = runDetection;
 $('convert').onclick = runConversion;
 $('workflow-action').onclick = () => {
-  if (result) $('export-panel').scrollIntoView({ block: 'start' });
+  if (fileState === 'empty') $('files').click();
+  else if (result) $('export-panel').scrollIntoView({ block: 'start' });
   else void runConversion();
 };
 
@@ -1000,4 +1007,7 @@ new ResizeObserver(() => {
     $('workflow').offsetHeight + 'px',
   );
 }).observe($('workflow'));
-void loadDemo();
+setBusy(false);
+status('Choose your model or try the example bin to begin.');
+$('viewer-message').textContent = 'Choose a model to preview it here.';
+$('viewer-message').hidden = false;

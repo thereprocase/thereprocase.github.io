@@ -117,7 +117,13 @@ try {
     throw Error('Timeout');
   };
   await ready();
+  const startsWithModel = await evaluate(
+    "document.querySelector('[aria-current=step]').dataset.stage==='1' && document.getElementById('file-state').textContent==='No model selected' && document.querySelectorAll('#feet tr').length===0 && document.getElementById('convert').disabled && document.getElementById('workflow-action').textContent==='Choose your model…'",
+  );
+  await evaluate("document.getElementById('demo').click()");
+  await ready();
   const results = {
+    startsWithModel,
     demo: await evaluate("document.querySelectorAll('#feet tr').length===2"),
     fixedPitch: await evaluate(
       "document.getElementById('detection-note').textContent.includes('42 mm grid')",
