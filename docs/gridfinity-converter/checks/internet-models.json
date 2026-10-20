@@ -1,0 +1,4451 @@
+{
+  "date": "2026-10-20",
+  "sampling": {
+    "randomSeed": 20261020,
+    "method": "Five randomly selected standard tool holders from benjiao; other samples selected for format and geometry coverage. Not a statistical sample."
+  },
+  "summary": {
+    "models": 15,
+    "modelsConverted": 10,
+    "noAutomaticMatches": 3,
+    "sourceCADRejected": 2,
+    "successfulConversions": 40,
+    "independentSTLChecksPassed": 40,
+    "independentExportedSTEPChecksPassed": 4
+  },
+  "fix": "Native STEP export omits optional pcurves and validates actual exported files by strict re-import in both coordinate frames. CAD surfaces and 3D curves are retained.",
+  "remainingLimitations": [
+    "Two public STEP source files pass standard but fail exact BRep checks, independently reproduced with OpenCascade.",
+    "Rotated STEP/BREP regression fixtures still fail exact STEP export re-import and are now explicitly blocked."
+  ],
+  "models": [
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/remote-jjc-rm-dslr2.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/remote-jjc-rm-dslr2.stl",
+      "sha256": "86d5632626f3831ea4b72925867c1ffadd0bfd36ffb417ff95d422001e836b88",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "0-remote-jjc-rm-dslr2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 27848.45172282514,
+              "convertedVolume": 28182.984397629385,
+              "addedVolume": 334.87815347398146,
+              "removedVolume": 0.345477246562249,
+              "outsideChange": 7.345876764396858e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "0-remote-jjc-rm-dslr2.stl.plain.0.stl",
+          "exportSHA256": "cea4b5b8c8488529285ebe8463231ef744435f4b8ead942bf4a7492d8491af8c"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "0-remote-jjc-rm-dslr2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 5.2,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 27848.45172282514,
+              "convertedVolume": 27785.89735872627,
+              "addedVolume": 17.40961989044025,
+              "removedVolume": 79.96397381078796,
+              "outsideChange": 7.345876764674416e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "0-remote-jjc-rm-dslr2.stl.both.0.stl",
+          "exportSHA256": "701ef1266ff10d19b373e1f443cd78cf3ebeb74759071619074748ec6ac846e8"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "0-remote-jjc-rm-dslr2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 27848.45172282514,
+              "convertedVolume": 27833.58353189557,
+              "addedVolume": 317.5233673148959,
+              "removedVolume": 332.3916021993243,
+              "outsideChange": 6.023882069515212e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "0-remote-jjc-rm-dslr2.stl.plain.-0.5.stl",
+          "exportSHA256": "039613e0cdbdbac715a0a38e1b3846dce7d00edbe7c4f29eae983844d5d852ba"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "0-remote-jjc-rm-dslr2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 27848.45172282514,
+              "convertedVolume": 28541.402928920736,
+              "addedVolume": 692.9512088412739,
+              "removedVolume": 1.308985548677602e-07,
+              "outsideChange": 2.451033645903589e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "0-remote-jjc-rm-dslr2.stl.plain.0.5.stl",
+          "exportSHA256": "d0819544eb3798a4edcb64600f2c41ff4964ba9bd5c5ef4aebffcd2466abfe96"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "1 of 1 profile matches on one 42 mm grid. Single foot: pitch cannot be measured independently.",
+        "feet": 1,
+        "selected": "1 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z41.50 \u00d7 41.50 \u00d7 24.55 mmTriangles3,164Solid volume27.85 cm\u00b3"
+      },
+      "file": "0-remote-jjc-rm-dslr2.stl"
+    },
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/lens-sigma-dc-dn-sony.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/lens-sigma-dc-dn-sony.stl",
+      "sha256": "79b2f17f9442b538165eb5d65e055748df409ed2cd91832a150746701557fa2a",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "1-lens-sigma-dc-dn-sony",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": -21,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": -21,
+                  "sourceX": -21,
+                  "sourceY": -21
+                },
+                {
+                  "x": 21,
+                  "y": -21,
+                  "sourceX": 21,
+                  "sourceY": -21
+                },
+                {
+                  "x": -21,
+                  "y": 21,
+                  "sourceX": -21,
+                  "sourceY": 21
+                },
+                {
+                  "x": 21,
+                  "y": 21,
+                  "sourceX": 21,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 121600.35733376793,
+              "convertedVolume": 122938.44138410014,
+              "addedVolume": 1339.508877086048,
+              "removedVolume": 1.424782896642732,
+              "outsideChange": 2.7200622794105133e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "1-lens-sigma-dc-dn-sony.stl.plain.0.stl",
+          "exportSHA256": "e2334c2d2204826b4f0cc0b80c4a9c6749593e67a370fe9077f346d234ed6b0d"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "1-lens-sigma-dc-dn-sony",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": -21,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": -21,
+                  "sourceX": -21,
+                  "sourceY": -21
+                },
+                {
+                  "x": 21,
+                  "y": -21,
+                  "sourceX": 21,
+                  "sourceY": -21
+                },
+                {
+                  "x": -21,
+                  "y": 21,
+                  "sourceX": -21,
+                  "sourceY": 21
+                },
+                {
+                  "x": 21,
+                  "y": 21,
+                  "sourceX": 21,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 5.2,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 121600.35733376793,
+              "convertedVolume": 121350.09322848766,
+              "addedVolume": 69.6347996255846,
+              "removedVolume": 319.8988260274778,
+              "outsideChange": 2.7200622788918395e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "1-lens-sigma-dc-dn-sony.stl.both.0.stl",
+          "exportSHA256": "0bc1f7bf07cdd01cfd53885e0fc7475084d5fa634214d4e4452d9cdcff497f7b"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "1-lens-sigma-dc-dn-sony",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": -21,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": -21,
+                  "sourceX": -21,
+                  "sourceY": -21
+                },
+                {
+                  "x": 21,
+                  "y": -21,
+                  "sourceX": 21,
+                  "sourceY": -21
+                },
+                {
+                  "x": -21,
+                  "y": 21,
+                  "sourceX": -21,
+                  "sourceY": 21
+                },
+                {
+                  "x": 21,
+                  "y": 21,
+                  "sourceX": 21,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 121600.35733376793,
+              "convertedVolume": 121540.83960497557,
+              "addedVolume": 1270.0934041471733,
+              "removedVolume": 1329.6111335868165,
+              "outsideChange": 1.3639829161728179e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "1-lens-sigma-dc-dn-sony.stl.plain.-0.5.stl",
+          "exportSHA256": "cc6b67f51f2fa9ce9f2cc092fabe0c3cbde9d18340ea54f93f545a81517a494b"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "1-lens-sigma-dc-dn-sony",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": -21,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": -21,
+                  "sourceX": -21,
+                  "sourceY": -21
+                },
+                {
+                  "x": 21,
+                  "y": -21,
+                  "sourceX": 21,
+                  "sourceY": -21
+                },
+                {
+                  "x": -21,
+                  "y": 21,
+                  "sourceX": -21,
+                  "sourceY": 21
+                },
+                {
+                  "x": 21,
+                  "y": 21,
+                  "sourceX": 21,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 121600.35733376793,
+              "convertedVolume": 124361.75896589231,
+              "addedVolume": 2761.4016788786935,
+              "removedVolume": -1.1275702593849246e-15,
+              "outsideChange": 1.2180147030431732e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "1-lens-sigma-dc-dn-sony.stl.plain.0.5.stl",
+          "exportSHA256": "93a66982ae370a111bb9466a8db29282f1d23e699db3f55a64f3f1a1cd5d682b"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "4 of 4 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 4,
+        "selected": "4 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z83.50 \u00d7 83.50 \u00d7 31.55 mmTriangles6,368Solid volume121.60 cm\u00b3"
+      },
+      "file": "1-lens-sigma-dc-dn-sony.stl"
+    },
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/charger-wasabi-power-lch-dc.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/charger-wasabi-power-lch-dc.stl",
+      "sha256": "a2cbecd0103d7207e2b071eba8ea639a63ecbf7b5ee8e9cb38da6fbe6abb4081",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "2-charger-wasabi-power-lch-dc",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 42664.04884176766,
+              "convertedVolume": 43333.09876656535,
+              "addedVolume": 669.755219235174,
+              "removedVolume": 0.7052471510802587,
+              "outsideChange": 1.5479135205106338e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "2-charger-wasabi-power-lch-dc.stl.plain.0.stl",
+          "exportSHA256": "38d38cdbc45b7c905aba36048f219b3ba685a0eec5f1e344f9cf9f2096e1c647"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "2-charger-wasabi-power-lch-dc",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 5.2,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 42664.04884176766,
+              "convertedVolume": 42538.92468875912,
+              "addedVolume": 34.81816628649617,
+              "removedVolume": 159.94225449796642,
+              "outsideChange": 1.54791352036631e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "2-charger-wasabi-power-lch-dc.stl.both.0.stl",
+          "exportSHA256": "75674de882497db746c65d71bdff79b60ff3667151c204ec9375653722ced958"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "2-charger-wasabi-power-lch-dc",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 42664.04884176766,
+              "convertedVolume": 42634.29759945152,
+              "addedVolume": 635.0467183081705,
+              "removedVolume": 664.7979837536484,
+              "outsideChange": 1.0921391032805265e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "2-charger-wasabi-power-lch-dc.stl.plain.-0.5.stl",
+          "exportSHA256": "5ba3ddce042335374706bdaa6b06124d03db4a264efc4b945c9b6c420190fc83"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "2-charger-wasabi-power-lch-dc",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 42664.04884176766,
+              "convertedVolume": 44047.342454519814,
+              "addedVolume": 1383.2936634800456,
+              "removedVolume": 1.1891265212825644e-07,
+              "outsideChange": 7.179773013628257e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "2-charger-wasabi-power-lch-dc.stl.plain.0.5.stl",
+          "exportSHA256": "177365cb16c09ef7a098869607159103313b3b7a2871ee6ce892b7911253394d"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "2 of 2 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 2,
+        "selected": "2 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z41.50 \u00d7 83.50 \u00d7 24.55 mmTriangles4,252Solid volume42.66 cm\u00b3"
+      },
+      "file": "2-charger-wasabi-power-lch-dc.stl"
+    },
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/remote-yn608.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/remote-yn608.stl",
+      "sha256": "e5c5823eb73e6244ba3b3070231ec2c2b462bbcd11bb63f22c9b555f1a9052a9",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "3-remote-yn608",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 25418.448358151873,
+              "convertedVolume": 25752.981032956122,
+              "addedVolume": 334.87815347398146,
+              "removedVolume": 0.345477246562249,
+              "outsideChange": 7.345876764396858e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "3-remote-yn608.stl.plain.0.stl",
+          "exportSHA256": "6579a9db71b56cb4b6bf26c1f30bceccad0cb2045393a80668822f6515dd83e4"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "3-remote-yn608",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 5.2,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 25418.448358151873,
+              "convertedVolume": 25355.893994053007,
+              "addedVolume": 17.40961989044025,
+              "removedVolume": 79.96397381078796,
+              "outsideChange": 7.345876764674416e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "3-remote-yn608.stl.both.0.stl",
+          "exportSHA256": "9dd18de3623231cf91855ca04329e0a375c43b6bacb1ddccad9ad9448ca478b1"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "3-remote-yn608",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 25418.448358151873,
+              "convertedVolume": 25403.580167222306,
+              "addedVolume": 317.5233673148959,
+              "removedVolume": 332.3916021993243,
+              "outsideChange": 6.023882069515212e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "3-remote-yn608.stl.plain.-0.5.stl",
+          "exportSHA256": "0d9de450738c6dc60d25cbcd5d2c483cbb524f4959cd1076e5c662eb1a3fe0dd"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "3-remote-yn608",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 25418.448358151873,
+              "convertedVolume": 26111.399564247473,
+              "addedVolume": 692.9512088412739,
+              "removedVolume": 1.308985548677602e-07,
+              "outsideChange": 2.451033645903589e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "3-remote-yn608.stl.plain.0.5.stl",
+          "exportSHA256": "81b9710534f0991c8eeae8a217fd5c95765658448dbf3faeb806eb35e4328cb7"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "1 of 1 profile matches on one 42 mm grid. Single foot: pitch cannot be measured independently.",
+        "feet": 1,
+        "selected": "1 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z41.50 \u00d7 41.50 \u00d7 24.55 mmTriangles3,180Solid volume25.42 cm\u00b3"
+      },
+      "file": "3-remote-yn608.stl"
+    },
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/batteries-9v.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/batteries-9v.stl",
+      "sha256": "36c493f9e1f0369f954be4956f1192a9a78fe3ed0ba4c3b40fcda9ee9703c44a",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "4-batteries-9v",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 41981.09325744649,
+              "convertedVolume": 42650.14318224418,
+              "addedVolume": 669.755219235174,
+              "removedVolume": 0.7052471510802587,
+              "outsideChange": 1.5479135205106338e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "4-batteries-9v.stl.plain.0.stl",
+          "exportSHA256": "bb0fb0f83bb6f6f09a6c6e625706ef6eb044fdf2da5324cc23e75f27248f82e8"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "4-batteries-9v",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 5.2,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 41981.09325744649,
+              "convertedVolume": 41855.96910443795,
+              "addedVolume": 34.81816628649617,
+              "removedVolume": 159.94225449796642,
+              "outsideChange": 1.54791352036631e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "4-batteries-9v.stl.both.0.stl",
+          "exportSHA256": "9a1f3a1072e96d80811c0075d4d9ca25d652ccd4c1b7c239db742f0db767e367"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "4-batteries-9v",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 41981.09325744649,
+              "convertedVolume": 41951.34201513035,
+              "addedVolume": 635.0467183081705,
+              "removedVolume": 664.7979837536484,
+              "outsideChange": 1.0921391032805265e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "4-batteries-9v.stl.plain.-0.5.stl",
+          "exportSHA256": "2e10095896d97feb8bdec37ce1042f5715871cfe66ddc161f8e3f9602b53c541"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "4-batteries-9v",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": -21,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": -21,
+                  "sourceX": 0,
+                  "sourceY": -21
+                },
+                {
+                  "x": 0,
+                  "y": 21,
+                  "sourceX": 0,
+                  "sourceY": 21
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 41981.09325744649,
+              "convertedVolume": 43364.38687019864,
+              "addedVolume": 1383.2936634800456,
+              "removedVolume": 1.1891265212825644e-07,
+              "outsideChange": 7.179773013628257e-07,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "4-batteries-9v.stl.plain.0.5.stl",
+          "exportSHA256": "1942d8bfcc05324286698548dddec96c52c7881df0596e2e77756229e6ebde26"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "2 of 2 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 2,
+        "selected": "2 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z41.50 \u00d7 83.50 \u00d7 24.55 mmTriangles4,828Solid volume41.98 cm\u00b3"
+      },
+      "file": "4-batteries-9v.stl"
+    },
+    {
+      "repo": "benjiao/gridfinity-custom-bins",
+      "source": "https://github.com/benjiao/gridfinity-custom-bins/blob/793920e92251db50a95b35ad5cdba7c2b6c71260/models/gridfinity-47mm/box-47mm-1x2x6.stl",
+      "url": "https://raw.githubusercontent.com/benjiao/gridfinity-custom-bins/793920e92251db50a95b35ad5cdba7c2b6c71260/models/gridfinity-47mm/box-47mm-1x2x6.stl",
+      "sha256": "64363c28c92a78663b3898ed43ebb397694a5019527bf2a65d6f4ce8db65cfb4",
+      "conversions": [],
+      "importStatus": "No automatic matches. Review orientation or place cells manually.",
+      "detection": {
+        "note": "No standard male feet detected. Check units and orientation, or place cells manually on the fixed grid. Baseplates and female sockets are not converted.",
+        "feet": 0,
+        "selected": "0 selected",
+        "enabled": false,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z45.74 \u00d7 93.50 \u00d7 46.49 mmTriangles3,434Solid volume36.31 cm\u00b3"
+      },
+      "file": "5-box-47mm-1x2x6.stl"
+    },
+    {
+      "repo": "vector76/gridfinity_openscad",
+      "source": "https://github.com/vector76/gridfinity_openscad/blob/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_1x1x3_nolip.stl",
+      "url": "https://raw.githubusercontent.com/vector76/gridfinity_openscad/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_1x1x3_nolip.stl",
+      "sha256": "8fe31ba18f56b66553d6087c0e179d0aa1dc40e7b69b218d7b5faaedf9531a51",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "6-basic_cup_1x1x3_nolip",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 5717.060942541752,
+              "convertedVolume": 10923.121289605824,
+              "addedVolume": 5206.060411614646,
+              "removedVolume": 5.05201247333787e-05,
+              "outsideChange": 4.342205253192817e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "6-basic_cup_1x1x3_nolip.stl.plain.0.stl",
+          "exportSHA256": "74660cffc47a707bc415af28a0de2ccc1019ba6dfc3943f4c293d3e9a06bbe9a"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "6-basic_cup_1x1x3_nolip",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 3.9,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 5717.060942541752,
+              "convertedVolume": 10562.731868042096,
+              "addedVolume": 4938.434386382787,
+              "removedVolume": 92.76344685199439,
+              "outsideChange": 4.342205253192817e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "6-basic_cup_1x1x3_nolip.stl.both.0.stl",
+          "exportSHA256": "3a53013ffaa1b38bf24000613a8ebc707d7c268f8e5643c5ff07952b88167c30"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "6-basic_cup_1x1x3_nolip",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 5717.060942541752,
+              "convertedVolume": 10573.758247442987,
+              "addedVolume": 5205.722441640821,
+              "removedVolume": 349.0251463447632,
+              "outsideChange": 3.919676870967059e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "6-basic_cup_1x1x3_nolip.stl.plain.-0.5.stl",
+          "exportSHA256": "68307db9c0670cc4ea35c02b4a6b81ebed20151f4235da48152606a50d1dc8e5"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "6-basic_cup_1x1x3_nolip",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 0,
+                "y": 0,
+                "matched": 1,
+                "total": 1,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 5717.060942541752,
+              "convertedVolume": 11281.540269737417,
+              "addedVolume": 5564.479352074597,
+              "removedVolume": 6.2858406683075074e-06,
+              "outsideChange": 8.339484610429169e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "6-basic_cup_1x1x3_nolip.stl.plain.0.5.stl",
+          "exportSHA256": "d646b627caa9d5912cdda19c23adcfa0a052a3ea8304a82d68ba8cbc2c245d00"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "1 of 1 profile matches on one 42 mm grid. Single foot: pitch cannot be measured independently.",
+        "feet": 1,
+        "selected": "1 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z41.50 \u00d7 41.50 \u00d7 31.75 mmTriangles892Solid volume5.72 cm\u00b3"
+      },
+      "file": "6-basic_cup_1x1x3_nolip.stl"
+    },
+    {
+      "repo": "vector76/gridfinity_openscad",
+      "source": "https://github.com/vector76/gridfinity_openscad/blob/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_2x1x2.stl",
+      "url": "https://raw.githubusercontent.com/vector76/gridfinity_openscad/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_2x1x2.stl",
+      "sha256": "cb294fa96ae098263e4a5aecc7cadf0e8dbc6ba70461de29d0d7d8a9084f8003",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "7-basic_cup_2x1x2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -21,
+                -1.7763568394002505e-15,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": 0,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": 0,
+                  "sourceX": -21,
+                  "sourceY": 0
+                },
+                {
+                  "x": 21,
+                  "y": 0,
+                  "sourceX": 21,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 23466.296188862696,
+              "convertedVolume": 23466.968459471143,
+              "addedVolume": 0.6724500555140063,
+              "removedVolume": 0.00014446097834448494,
+              "outsideChange": 7.694316115811827e-08,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "7-basic_cup_2x1x2.stl.plain.0.stl",
+          "exportSHA256": "805d40be9212aab44a7e8e5a44ef66e5e4fdce3d39525ffd87064b3a2aaa63aa"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "7-basic_cup_2x1x2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -21,
+                -1.7763568394002505e-15,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": 0,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": 0,
+                  "sourceX": -21,
+                  "sourceY": 0
+                },
+                {
+                  "x": 21,
+                  "y": 0,
+                  "sourceX": 21,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 4.9,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 23466.296188862696,
+              "convertedVolume": 22689.731688049425,
+              "addedVolume": 0.6724500555140074,
+              "removedVolume": 777.2369158826965,
+              "outsideChange": 6.1299173827743975e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "7-basic_cup_2x1x2.stl.both.0.stl",
+          "exportSHA256": "d1a18824de5830c07f96b27b847ea484c6a61d1d7ce2f179a03f251d0294d107"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "7-basic_cup_2x1x2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -21,
+                -1.7763568394002505e-15,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": 0,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": 0,
+                  "sourceX": -21,
+                  "sourceY": 0
+                },
+                {
+                  "x": 21,
+                  "y": 0,
+                  "sourceX": 21,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 23466.296188862696,
+              "convertedVolume": 22768.245375929033,
+              "addedVolume": 0,
+              "removedVolume": 698.0508129558864,
+              "outsideChange": -7.105427357601002e-15,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "7-basic_cup_2x1x2.stl.plain.-0.5.stl",
+          "exportSHA256": "c4a699dffae84b6d1b98b337271c3eca30005975566384b090ed35e0adf82b68"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "7-basic_cup_2x1x2",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -21,
+                -1.7763568394002505e-15,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 21,
+                "y": 0,
+                "matched": 2,
+                "total": 2,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21,
+                  "y": 0,
+                  "sourceX": -21,
+                  "sourceY": 0
+                },
+                {
+                  "x": 21,
+                  "y": 0,
+                  "sourceX": 21,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 23466.296188862696,
+              "convertedVolume": 24181.214749702205,
+              "addedVolume": 714.9186036271193,
+              "removedVolume": -1.4346472975098433e-15,
+              "outsideChange": -1.0147807090379384e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "7-basic_cup_2x1x2.stl.plain.0.5.stl",
+          "exportSHA256": "b89ff788d5e848243a012d1b73e0818504ddebe8ba3bb94ebfcd7580526fffd6"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "2 of 2 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 2,
+        "selected": "2 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z83.50 \u00d7 41.50 \u00d7 17.75 mmTriangles1,832Solid volume23.47 cm\u00b3"
+      },
+      "file": "7-basic_cup_2x1x2.stl"
+    },
+    {
+      "repo": "vector76/gridfinity_openscad",
+      "source": "https://github.com/vector76/gridfinity_openscad/blob/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_halfx2x4.stl",
+      "url": "https://raw.githubusercontent.com/vector76/gridfinity_openscad/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/basic_cup_halfx2x4.stl",
+      "sha256": "5cfa932dedbb76f316f9ffd03566a321537aece6d838e95a0c3276a0bcab4201",
+      "conversions": [],
+      "importStatus": "No automatic matches. Review orientation or place cells manually.",
+      "detection": {
+        "note": "No standard male feet detected. Check units and orientation, or place cells manually on the fixed grid. Baseplates and female sockets are not converted.",
+        "feet": 0,
+        "selected": "0 selected",
+        "enabled": false,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z31.75 \u00d7 83.50 \u00d7 20.50 mmTriangles2,044Solid volume15.50 cm\u00b3"
+      },
+      "file": "8-basic_cup_halfx2x4.stl"
+    },
+    {
+      "repo": "vector76/gridfinity_openscad",
+      "source": "https://github.com/vector76/gridfinity_openscad/blob/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/baseplate.stl",
+      "url": "https://raw.githubusercontent.com/vector76/gridfinity_openscad/0e7308cd8fc7fb4191aa69d81175a90d10de751c/Renders/baseplate.stl",
+      "sha256": "76094ce9b0ab720e19c93141385f2a027d2a873276cf42724dfd85ded91210b0",
+      "conversions": [],
+      "importStatus": "No automatic matches. Review orientation or place cells manually.",
+      "detection": {
+        "note": "No standard male feet detected. Check units and orientation, or place cells manually on the fixed grid. Baseplates and female sockets are not converted.",
+        "feet": 0,
+        "selected": "0 selected",
+        "enabled": false,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z210.00 \u00d7 126.00 \u00d7 5.00 mmTriangles5,944Solid volume19.31 cm\u00b3"
+      },
+      "file": "9-baseplate.stl"
+    },
+    {
+      "repo": "a-price/gridfinity_contours",
+      "source": "https://github.com/a-price/gridfinity_contours/blob/3b6e51915072836007a269e326979fa17e38e85c/test.stl",
+      "url": "https://raw.githubusercontent.com/a-price/gridfinity_contours/3b6e51915072836007a269e326979fa17e38e85c/test.stl",
+      "sha256": "141de7a2af7f4d6263b35a873f048d2d3e979708a66441853dcafd0bcd2c3fda",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "10-test",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42,
+                "y": 0,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -42,
+                  "y": 0,
+                  "sourceX": -42,
+                  "sourceY": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                },
+                {
+                  "x": 42,
+                  "y": 0,
+                  "sourceX": 42,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 87237.66726738348,
+              "convertedVolume": 87246.73304598629,
+              "addedVolume": 9.06825776861244,
+              "removedVolume": 0.002471728277291871,
+              "outsideChange": 4.434957112380891e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "10-test.stl.plain.0.stl",
+          "exportSHA256": "27852990dd34684385b370e52112206658df3df77c39951d7c02ffbf425f366c"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "10-test",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42,
+                "y": 0,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -42,
+                  "y": 0,
+                  "sourceX": -42,
+                  "sourceY": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                },
+                {
+                  "x": 42,
+                  "y": 0,
+                  "sourceX": 42,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 87237.66726738348,
+              "convertedVolume": 85987.72248188115,
+              "addedVolume": 9.06825776861244,
+              "removedVolume": 1259.0130358334172,
+              "outsideChange": 4.434957112380891e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "10-test.stl.both.0.stl",
+          "exportSHA256": "4e2ee9534fce8a97f37134e45305b13f107aca97fe33d9f4e1b413a0248b627c"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "10-test",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42,
+                "y": 0,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -42,
+                  "y": 0,
+                  "sourceX": -42,
+                  "sourceY": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                },
+                {
+                  "x": 42,
+                  "y": 0,
+                  "sourceX": 42,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 87237.66726738348,
+              "convertedVolume": 86198.61834104979,
+              "addedVolume": 0,
+              "removedVolume": 1039.0489263336851,
+              "outsideChange": 0,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "10-test.stl.plain.-0.5.stl",
+          "exportSHA256": "7c5ae492913921e703f0926d40be61e37b90e5af2277c3753364c08f2782e65e"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "10-test",
+              "format": "stl",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683836e-17,
+                0,
+                3.0616169978683836e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                0,
+                0,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42,
+                "y": 0,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 0
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -42,
+                  "y": 0,
+                  "sourceX": -42,
+                  "sourceY": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "sourceX": 0,
+                  "sourceY": 0
+                },
+                {
+                  "x": 42,
+                  "y": 0,
+                  "sourceX": 42,
+                  "sourceY": 0
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 87237.66726738348,
+              "convertedVolume": 88315.79985617749,
+              "addedVolume": 1078.1325961556913,
+              "removedVolume": 3.7770135922175763e-07,
+              "outsideChange": 4.996507737363497e-06,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "10-test.stl.plain.0.5.stl",
+          "exportSHA256": "b6d90abffae5113535a730be38e81325a0f51ea1bce6d4512d8b050708456591"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "3 of 3 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 3,
+        "selected": "3 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z125.50 \u00d7 41.50 \u00d7 24.55 mmTriangles11,744Solid volume87.24 cm\u00b3"
+      },
+      "file": "10-test.stl"
+    },
+    {
+      "repo": "baschwar/Gridfinity-Bin-Batcher",
+      "source": "https://github.com/baschwar/Gridfinity-Bin-Batcher/blob/797bdeb1533468c1c2850f6a977eb1b4f9f6ed29/templates/bambu/gridfinity_bin_template.3mf",
+      "url": "https://raw.githubusercontent.com/baschwar/Gridfinity-Bin-Batcher/797bdeb1533468c1c2850f6a977eb1b4f9f6ed29/templates/bambu/gridfinity_bin_template.3mf",
+      "sha256": "ac9ef8480efd9953c1ec086a1bfa0ed9467e5149f22264f5381a64d02bf6bd33",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "11-gridfinity_bin_template",
+              "format": "3mf",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.057281635479944e-17,
+                0,
+                3.057281635479944e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -128,
+                -25.00000095367432,
+                1.9616699376001634e-08
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42.000000953674316,
+                "y": -0.006061077117919922,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 1.9073486328125e-06
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -41.999999046325684,
+                  "y": -0.006061077117919922,
+                  "sourceX": -42,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 9.5367431640625e-07,
+                  "y": -0.006061077117919922,
+                  "sourceX": 2.86102294921875e-06,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 42.000000953674316,
+                  "y": -0.006061077117919922,
+                  "sourceX": 42,
+                  "sourceY": -0.006061077117919922
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 38980.92210332274,
+              "convertedVolume": 38988.12840795241,
+              "addedVolume": 11.182989331163109,
+              "removedVolume": 3.9765378292241618,
+              "outsideChange": 0.00014764531550601266,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "11-gridfinity_bin_template.3mf.plain.0.stl",
+          "exportSHA256": "61d211f9c3e4024f69cbc2a50e89743c2d0f89e574f0d3803c1052281075bea0"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "11-gridfinity_bin_template",
+              "format": "3mf",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.057281635479944e-17,
+                0,
+                3.057281635479944e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -128,
+                -25.00000095367432,
+                1.9616699376001634e-08
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42.000000953674316,
+                "y": -0.006061077117919922,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 1.9073486328125e-06
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -41.999999046325684,
+                  "y": -0.006061077117919922,
+                  "sourceX": -42,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 9.5367431640625e-07,
+                  "y": -0.006061077117919922,
+                  "sourceX": 2.86102294921875e-06,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 42.000000953674316,
+                  "y": -0.006061077117919922,
+                  "sourceX": 42,
+                  "sourceY": -0.006061077117919922
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 4.9,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 38980.92210332274,
+              "convertedVolume": 37822.27324510106,
+              "addedVolume": 11.182989331163077,
+              "removedVolume": 1169.8317006805776,
+              "outsideChange": 0.00015598642329255123,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "11-gridfinity_bin_template.3mf.both.0.stl",
+          "exportSHA256": "c43cbd92cdab22b9d5ebbac91d2887b4f0f41128af88945f56a7652ffc0fd051"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "11-gridfinity_bin_template",
+              "format": "3mf",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.057281635479944e-17,
+                0,
+                3.057281635479944e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -128,
+                -25.00000095367432,
+                1.9616699376001634e-08
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42.000000953674316,
+                "y": -0.006061077117919922,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 1.9073486328125e-06
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -41.999999046325684,
+                  "y": -0.006061077117919922,
+                  "sourceX": -42,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 9.5367431640625e-07,
+                  "y": -0.006061077117919922,
+                  "sourceX": 2.86102294921875e-06,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 42.000000953674316,
+                  "y": -0.006061077117919922,
+                  "sourceX": 42,
+                  "sourceY": -0.006061077117919922
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 38980.92210332274,
+              "convertedVolume": 37940.030351746354,
+              "addedVolume": 4.5274910462448313e-05,
+              "removedVolume": 1040.8918717636764,
+              "outsideChange": 7.486635397066422e-05,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "11-gridfinity_bin_template.3mf.plain.-0.5.stl",
+          "exportSHA256": "ea27f3e3e93bae4b2a03f335bc5724472001677c716f34da2c56a3437587f53e"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "11-gridfinity_bin_template",
+              "format": "3mf",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.057281635479944e-17,
+                0,
+                3.057281635479944e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                -128,
+                -25.00000095367432,
+                1.9616699376001634e-08
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 42.000000953674316,
+                "y": -0.006061077117919922,
+                "matched": 3,
+                "total": 3,
+                "maxResidual": 1.9073486328125e-06
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -41.999999046325684,
+                  "y": -0.006061077117919922,
+                  "sourceX": -42,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 9.5367431640625e-07,
+                  "y": -0.006061077117919922,
+                  "sourceX": 2.86102294921875e-06,
+                  "sourceY": -0.006061077117919922
+                },
+                {
+                  "x": 42.000000953674316,
+                  "y": -0.006061077117919922,
+                  "sourceX": 42,
+                  "sourceY": -0.006061077117919922
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 38980.92210332274,
+              "convertedVolume": 40058.18778387563,
+              "addedVolume": 1077.2659138944844,
+              "removedVolume": 4.751220442299375e-05,
+              "outsideChange": 0.00013023460022794836,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "11-gridfinity_bin_template.3mf.plain.0.5.stl",
+          "exportSHA256": "3e861b5845be125c38113e3742ea94c7c9395bc1149689f98c76079148558d07"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "3 of 3 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 3,
+        "selected": "3 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z125.50 \u00d7 41.49 \u00d7 45.74 mmTriangles3,712Solid volume38.98 cm\u00b3"
+      },
+      "file": "11-gridfinity_bin_template.3mf"
+    },
+    {
+      "repo": "andrewmzhang/tooltrace-inverter",
+      "source": "https://github.com/andrewmzhang/tooltrace-inverter/blob/92e8a2c849bc797b317b1f99284541ddbe33c916/gridfinity_bin.step",
+      "url": "https://raw.githubusercontent.com/andrewmzhang/tooltrace-inverter/92e8a2c849bc797b317b1f99284541ddbe33c916/gridfinity_bin.step",
+      "sha256": "c5e26fd0c221c859671402cac829e5b2ccc1b79cdb0b7544bf9e9eac6fbb5acd",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "8 of 8 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+        "feet": 8,
+        "selected": "8 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z83.50 \u00d7 167.50 \u00d7 31.40 mmTriangles25,396Solid volume241.36 cm\u00b3"
+      },
+      "file": "12-gridfinity_bin.step"
+    },
+    {
+      "repo": "Aahil78/Resolution-Design-Wk2",
+      "source": "https://github.com/Aahil78/Resolution-Design-Wk2/blob/f1194bc49294e71be45788a3939cbbc44e698271/Gridfinity%20Bins%20-%20Generic%20%20Bin.step",
+      "url": "https://raw.githubusercontent.com/Aahil78/Resolution-Design-Wk2/f1194bc49294e71be45788a3939cbbc44e698271/Gridfinity%20Bins%20-%20Generic%20%20Bin.step",
+      "sha256": "197e452751424f9e655c5867523b86a3fcbfc4904ac52b7ba548407c75f58289",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "13-Gridfinity Bins - Generic  Bin",
+              "format": "step",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                97.14999771118164,
+                20.750000000000004,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 20.91666603088379,
+                "y": 20.916666587193806,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0.4714045207912494
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21.08333396911621,
+                  "y": -21.083333412806194,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": -21.083333412806194,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": -21.08333396911621,
+                  "y": 20.916666587193806,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": 20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": 20.916666587193806,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": 20.74999976158142
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 72038.14632125985,
+              "convertedVolume": 71964.06596097533,
+              "addedVolume": 337.17637356210054,
+              "removedVolume": 411.2567338463373,
+              "outsideChange": 0,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1,
+              "representation": "native-brep",
+              "nativeBooleanToleranceMM": 1e-05,
+              "nativeValid": true,
+              "stepRoundTripValid": true,
+              "stepSurfaceCurves": "reconstructed-on-import",
+              "tessellationDeflectionMM": 0.01
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.0.stl",
+          "exportSHA256": "3e20c8dff5f822f506fafda187a0dfc7bd64344fb66dcc76d9efa0a0076157f9",
+          "stepExportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.0.step",
+          "stepExportSHA256": "e221b255214bdebd1d0344f3546d0f0fa45910fe393fb523cb990e820a78e31e"
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "13-Gridfinity Bins - Generic  Bin",
+              "format": "step",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                97.14999771118164,
+                20.750000000000004,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 20.91666603088379,
+                "y": 20.916666587193806,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0.4714045207912494
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "both",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21.08333396911621,
+                  "y": -21.083333412806194,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": -21.083333412806194,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": -21.08333396911621,
+                  "y": 20.916666587193806,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": 20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": 20.916666587193806,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": 20.74999976158142
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 72038.14632125985,
+              "convertedVolume": 70282.68557277399,
+              "addedVolume": 337.17637356210054,
+              "removedVolume": 2092.6371220462356,
+              "outsideChange": 0,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1,
+              "representation": "native-brep",
+              "nativeBooleanToleranceMM": 1e-05,
+              "nativeValid": true,
+              "stepRoundTripValid": true,
+              "stepSurfaceCurves": "reconstructed-on-import",
+              "tessellationDeflectionMM": 0.01
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "13-Gridfinity Bins - Generic  Bin.step.both.0.stl",
+          "exportSHA256": "2a87b66ffa4ee3a21033227870922f3195fbc1fb5578376f474be3b548a0d196",
+          "stepExportFile": "13-Gridfinity Bins - Generic  Bin.step.both.0.step",
+          "stepExportSHA256": "1ea74e05defee6aaafc68ab8bef3f64e77ece92c5f6fbce34761fa592beda0b8"
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "13-Gridfinity Bins - Generic  Bin",
+              "format": "step",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                97.14999771118164,
+                20.750000000000004,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 20.91666603088379,
+                "y": 20.916666587193806,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0.4714045207912494
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21.08333396911621,
+                  "y": -21.083333412806194,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": -21.083333412806194,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": -21.08333396911621,
+                  "y": 20.916666587193806,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": 20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": 20.916666587193806,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": 20.74999976158142
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": -0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 72038.14632125985,
+              "convertedVolume": 70565.02611822025,
+              "addedVolume": 0,
+              "removedVolume": 1473.1202030394995,
+              "outsideChange": 0,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1,
+              "representation": "native-brep",
+              "nativeBooleanToleranceMM": 1e-05,
+              "nativeValid": true,
+              "stepRoundTripValid": true,
+              "stepSurfaceCurves": "reconstructed-on-import",
+              "tessellationDeflectionMM": 0.01
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.-0.5.stl",
+          "exportSHA256": "73612d6bfc75f70aa73652b29e5ba7f221eb4d8387d6da1fb644171372e86d42",
+          "stepExportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.-0.5.step",
+          "stepExportSHA256": "585b6b0f2eab7c336a0cddb876d05b985663e3c4e47346a21b01cd32fcc28fe8"
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+          "success": true,
+          "report": {
+            "version": 1,
+            "source": {
+              "name": "13-Gridfinity Bins - Generic  Bin",
+              "format": "step",
+              "coordinateScale": 1,
+              "partIndex": 0
+            },
+            "orientation": {
+              "rotation": [
+                1,
+                -3.0616169978683824e-17,
+                0,
+                3.0616169978683824e-17,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              "translation": [
+                97.14999771118164,
+                20.750000000000004,
+                0
+              ],
+              "output": "base-down-mm"
+            },
+            "detection": {
+              "grid": {
+                "pitch": 42,
+                "x": 20.91666603088379,
+                "y": 20.916666587193806,
+                "matched": 4,
+                "total": 4,
+                "maxResidual": 0.4714045207912494
+              },
+              "normal": [
+                0,
+                0,
+                -1
+              ]
+            },
+            "conversion": {
+              "style": "plain",
+              "pitch": 42,
+              "feet": [
+                {
+                  "x": -21.08333396911621,
+                  "y": -21.083333412806194,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": -21.083333412806194,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": -20.74999976158142
+                },
+                {
+                  "x": -21.08333396911621,
+                  "y": 20.916666587193806,
+                  "sourceX": -20.750000953674316,
+                  "sourceY": 20.74999976158142
+                },
+                {
+                  "x": 20.91666603088379,
+                  "y": 20.916666587193806,
+                  "sourceX": 20.749999523162842,
+                  "sourceY": 20.74999976158142
+                }
+              ],
+              "bottom": 0,
+              "height": 4.75,
+              "fit": 0.5,
+              "magnetDiameter": 6.5,
+              "magnetDepth": 2.4,
+              "screwDiameter": 3,
+              "screwDepth": 6,
+              "requestedScrewDepth": 6,
+              "fitScrewDepth": true,
+              "minimumRoof": 0.8,
+              "originalVolume": 72038.14632125985,
+              "convertedVolume": 73385.6722939427,
+              "addedVolume": 1371.0514591894328,
+              "removedVolume": 23.5254861027346,
+              "outsideChange": 0,
+              "normalizationMM": 0,
+              "closedMesh": true,
+              "connectedSolids": 1,
+              "representation": "native-brep",
+              "nativeBooleanToleranceMM": 1e-05,
+              "nativeValid": true,
+              "stepRoundTripValid": true,
+              "stepSurfaceCurves": "reconstructed-on-import",
+              "tessellationDeflectionMM": 0.01
+            },
+            "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+          },
+          "exportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.0.5.stl",
+          "exportSHA256": "44bd7a55190c034a8d538ab040d844461ec2c05c2d909f47b1fecadb7091a093",
+          "stepExportFile": "13-Gridfinity Bins - Generic  Bin.step.plain.0.5.step",
+          "stepExportSHA256": "1eed4eff5eda5f193dda8f9830cd49423543f5bec3f1ddd04180162f0c9e9b30"
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "4 of 4 profile matches on one 42 mm grid. Maximum center residual 0.471 mm.",
+        "feet": 4,
+        "selected": "4 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z83.00 \u00d7 83.00 \u00d7 37.00 mmTriangles870Solid volume72.04 cm\u00b3"
+      },
+      "file": "13-Gridfinity Bins - Generic  Bin.step"
+    },
+    {
+      "repo": "Aahil78/Resolution-Design-Wk2",
+      "source": "https://github.com/Aahil78/Resolution-Design-Wk2/blob/f1194bc49294e71be45788a3939cbbc44e698271/Gridfinity%20Bins%20-%20Pinecil%20V2%20Holder.step",
+      "url": "https://raw.githubusercontent.com/Aahil78/Resolution-Design-Wk2/f1194bc49294e71be45788a3939cbbc44e698271/Gridfinity%20Bins%20-%20Pinecil%20V2%20Holder.step",
+      "sha256": "68814c4d74eaa0c2a7fae6ee80b6e631ca615871747ca1a41ea8cb071a862467",
+      "conversions": [
+        {
+          "style": "plain",
+          "fit": 0,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "both",
+          "fit": 0,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "plain",
+          "fit": -0.5,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        },
+        {
+          "style": "plain",
+          "fit": 0.5,
+          "status": "The source CAD boundary representation is invalid. Repair it in the source modeler.",
+          "success": false
+        }
+      ],
+      "importStatus": "Feet detected. Choose a style or click Convert feet.",
+      "detection": {
+        "note": "3 of 4 profile matches on one 42 mm grid. Maximum center residual 0.500 mm.",
+        "feet": 4,
+        "selected": "3 selected",
+        "enabled": true,
+        "dimensions": "Size X \u00d7 Y \u00d7 Z166.00 \u00d7 41.50 \u00d7 20.40 mmTriangles4,356Solid volume99.13 cm\u00b3"
+      },
+      "file": "14-Gridfinity Bins - Pinecil V2 Holder.step"
+    }
+  ],
+  "independentSTL": [
+    {
+      "file": "0-remote-jjc-rm-dslr2.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 27785.897363474305,
+      "triangles": 5142,
+      "pass": true
+    },
+    {
+      "file": "0-remote-jjc-rm-dslr2.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 27833.583532161818,
+      "triangles": 2656,
+      "pass": true
+    },
+    {
+      "file": "0-remote-jjc-rm-dslr2.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 28541.402928744214,
+      "triangles": 2742,
+      "pass": true
+    },
+    {
+      "file": "0-remote-jjc-rm-dslr2.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 28182.98439816663,
+      "triangles": 3094,
+      "pass": true
+    },
+    {
+      "file": "1-lens-sigma-dc-dn-sony.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 121350.09304690124,
+      "triangles": 14104,
+      "pass": true
+    },
+    {
+      "file": "1-lens-sigma-dc-dn-sony.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 121540.83960456074,
+      "triangles": 5224,
+      "pass": true
+    },
+    {
+      "file": "1-lens-sigma-dc-dn-sony.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 124361.75896009756,
+      "triangles": 5768,
+      "pass": true
+    },
+    {
+      "file": "1-lens-sigma-dc-dn-sony.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 122938.44137891002,
+      "triangles": 5912,
+      "pass": true
+    },
+    {
+      "file": "10-test.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 85987.72238335798,
+      "triangles": 19472,
+      "pass": true
+    },
+    {
+      "file": "10-test.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 86198.61834104979,
+      "triangles": 13086,
+      "pass": true
+    },
+    {
+      "file": "10-test.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 88315.799849272,
+      "triangles": 13302,
+      "pass": true
+    },
+    {
+      "file": "10-test.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 87246.73305809808,
+      "triangles": 13328,
+      "pass": true
+    },
+    {
+      "file": "2-charger-wasabi-power-lch-dc.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 42538.92464698069,
+      "triangles": 8156,
+      "pass": true
+    },
+    {
+      "file": "2-charger-wasabi-power-lch-dc.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 42634.297599486534,
+      "triangles": 3536,
+      "pass": true
+    },
+    {
+      "file": "2-charger-wasabi-power-lch-dc.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 44047.34245341908,
+      "triangles": 3776,
+      "pass": true
+    },
+    {
+      "file": "2-charger-wasabi-power-lch-dc.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 43333.09876467521,
+      "triangles": 4060,
+      "pass": true
+    },
+    {
+      "file": "3-remote-yn608.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 25355.89399880104,
+      "triangles": 5158,
+      "pass": true
+    },
+    {
+      "file": "3-remote-yn608.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 25403.580167488555,
+      "triangles": 2672,
+      "pass": true
+    },
+    {
+      "file": "3-remote-yn608.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 26111.399564070947,
+      "triangles": 2758,
+      "pass": true
+    },
+    {
+      "file": "3-remote-yn608.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 25752.981033493368,
+      "triangles": 3110,
+      "pass": true
+    },
+    {
+      "file": "4-batteries-9v.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 41855.969062659526,
+      "triangles": 8732,
+      "pass": true
+    },
+    {
+      "file": "4-batteries-9v.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 41951.34201516536,
+      "triangles": 4112,
+      "pass": true
+    },
+    {
+      "file": "4-batteries-9v.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 43364.386869097914,
+      "triangles": 4352,
+      "pass": true
+    },
+    {
+      "file": "4-batteries-9v.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 42650.14318035404,
+      "triangles": 4636,
+      "pass": true
+    },
+    {
+      "file": "6-basic_cup_1x1x3_nolip.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 10562.731844139844,
+      "triangles": 3300,
+      "pass": true
+    },
+    {
+      "file": "6-basic_cup_1x1x3_nolip.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 10573.75822940682,
+      "triangles": 1192,
+      "pass": true
+    },
+    {
+      "file": "6-basic_cup_1x1x3_nolip.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 11281.540251654771,
+      "triangles": 1304,
+      "pass": true
+    },
+    {
+      "file": "6-basic_cup_1x1x3_nolip.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 10923.121271532063,
+      "triangles": 1252,
+      "pass": true
+    },
+    {
+      "file": "7-basic_cup_2x1x2.stl.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 22689.73168804943,
+      "triangles": 6856,
+      "pass": true
+    },
+    {
+      "file": "7-basic_cup_2x1x2.stl.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 22768.245375787505,
+      "triangles": 2648,
+      "pass": true
+    },
+    {
+      "file": "7-basic_cup_2x1x2.stl.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 24181.214748639293,
+      "triangles": 2904,
+      "pass": true
+    },
+    {
+      "file": "7-basic_cup_2x1x2.stl.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 23466.96845947114,
+      "triangles": 2760,
+      "pass": true
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 70283.37916598705,
+      "triangles": 25080,
+      "pass": true
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 70565.12493656931,
+      "triangles": 10118,
+      "pass": true
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 73385.55748425263,
+      "triangles": 8588,
+      "pass": true
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 71964.06263822156,
+      "triangles": 8952,
+      "pass": true
+    },
+    {
+      "file": "11-gridfinity_bin_template.3mf.both.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 37822.273245101074,
+      "triangles": 11692,
+      "pass": true
+    },
+    {
+      "file": "11-gridfinity_bin_template.3mf.plain.-0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 37940.030368701446,
+      "triangles": 5510,
+      "pass": true
+    },
+    {
+      "file": "11-gridfinity_bin_template.3mf.plain.0.5.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 40058.18778387563,
+      "triangles": 5316,
+      "pass": true
+    },
+    {
+      "file": "11-gridfinity_bin_template.3mf.plain.0.stl",
+      "watertight": true,
+      "consistentWinding": true,
+      "positiveVolume": true,
+      "positiveShells": 1,
+      "negativeShells": 0,
+      "volume": 38988.12840795243,
+      "triangles": 5548,
+      "pass": true
+    }
+  ],
+  "independentCAD": [
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.0.5.step",
+      "valid": true,
+      "exactValid": true,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.-0.5.step",
+      "valid": true,
+      "exactValid": true,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.both.0.step",
+      "valid": true,
+      "exactValid": true,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step.plain.0.step",
+      "valid": true,
+      "exactValid": true,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "14-Gridfinity Bins - Pinecil V2 Holder.step",
+      "valid": true,
+      "exactValid": false,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "13-Gridfinity Bins - Generic  Bin.step",
+      "valid": true,
+      "exactValid": true,
+      "solidsValid": [
+        true
+      ]
+    },
+    {
+      "file": "12-gridfinity_bin.step",
+      "valid": true,
+      "exactValid": false,
+      "solidsValid": [
+        true
+      ]
+    }
+  ],
+  "independentTools": {
+    "trimesh": "5.1.1",
+    "cadquery-ocp": "8.0.1.1.0"
+  }
+}

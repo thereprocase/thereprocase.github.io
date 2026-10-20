@@ -225,9 +225,46 @@ export async function convertNative({
       volume: volume(s),
     };
   };
-  const step = await result.blobSTEP().arrayBuffer(),
+  // Validate the serialized file, not only the in-memory boolean result.
+  const checkedStep = async (shape) => {
+    // Keep native 3D curves/surfaces. Let the reader reconstruct optional
+    // pcurves; serialized pcurves can fail exact checks after STEP rounding.
+    const previousMode = oc.Interface_Static.IVal('write.surfacecurve.mode');
+    let blob;
+    try {
+      oc.Interface_Static.SetIVal('write.surfacecurve.mode', 0);
+      blob = await shape.blobSTEP();
+    } finally {
+      oc.Interface_Static.SetIVal('write.surfacecurve.mode', previousMode);
+    }
+    const reopened = await cad.importSTEP(blob);
+    try {
+      if (!valid(oc, reopened) || reopened.solids.length !== 1)
+        throw Error(
+          'The exported STEP fails strict CAD validation when reopened. Export blocked; this geometry is not currently supported for native export.',
+        );
+      const changed = Math.abs(volume(shape) - volume(reopened));
+      const expectedBox = shape.boundingBox;
+      const actualBox = reopened.boundingBox;
+      const boundsChanged = expectedBox.bounds.some((row, i) =>
+        row.some(
+          (value, j) => Math.abs(value - actualBox.bounds[i][j]) > 0.00001,
+        ),
+      );
+      expectedBox.delete();
+      actualBox.delete();
+      if (boundsChanged || changed > Math.max(0.001, volume(shape) * 1e-8))
+        throw Error(
+          'STEP export changed the solid geometry when reopened. Export blocked.',
+        );
+      return await blob.arrayBuffer();
+    } finally {
+      reopened.delete();
+    }
+  };
+  const step = await checkedStep(result),
     restored = transform(oc, result, detection, true),
-    sourceStep = await restored.blobSTEP().arrayBuffer();
+    sourceStep = await checkedStep(restored);
   return {
     geometry: mesh(result),
     added: mesh(added),
@@ -244,6 +281,8 @@ export async function convertNative({
       representation: 'native-brep',
       nativeBooleanToleranceMM: 0.00001,
       nativeValid: true,
+      stepRoundTripValid: true,
+      stepSurfaceCurves: 'reconstructed-on-import',
       connectedSolids: 1,
       tessellationDeflectionMM: 0.01,
     },

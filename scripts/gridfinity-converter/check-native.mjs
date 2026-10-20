@@ -45,6 +45,7 @@ for (const style of ['plain', 'magnets', 'screws', 'both']) {
     options: r.report,
   });
   assert.equal(native.report.nativeValid, true);
+  assert.equal(native.report.stepRoundTripValid, true);
   assert.ok(native.report.outsideChange < 0.001);
   const imported = importSolid(m, native.geometry);
   assert.equal(imported.bodies.length, 1);
@@ -80,19 +81,20 @@ for (const format of ['step', 'brep']) {
     d = detect(m, b),
     a = align(m, b, d),
     r = convert(m, a, { feet: d.feet, style: 'both' }),
-    n = await convertNative({
-      buffer,
-      format,
-      detection: d,
-      options: r.report,
-    });
-  assert.ok(n.report.outsideChange < 0.001);
-  const pose = await cad.importSTEP(new Blob([n.sourceStep]));
-  assert.ok(
-    Math.abs(cad.measureVolume(pose) - n.report.convertedVolume) < 0.001,
+    input = { buffer, format, detection: d, options: r.report };
+  // This rotated fixture produces invalid serialized STEP despite a valid
+  // in-memory BRep. It must be rejected until its export is supported.
+  await assert.rejects(
+    () => convertNative(input),
+    /exported STEP fails strict CAD validation/,
   );
-  checks.push({ ...n.report, test: 'rotated-' + format });
-  console.log('Native rotated', format, 'PASS');
+  checks.push({
+    test: 'rotated-' + format,
+    exportBlocked: true,
+    limitation:
+      'Strict STEP re-import validation fails; no invalid file offered.',
+  });
+  console.log('Known rotated STEP export rejection confirmed:', format);
 }
 const hollowFoot = await nativeFoot(),
   hollowTop = cad.makeBox([-20.75, -20.75, 4.75], [20.75, 20.75, 25]),

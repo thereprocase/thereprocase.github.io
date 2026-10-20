@@ -199,6 +199,8 @@ try {
     await evaluate(
       'document.querySelector(\'[href="#selection-panel"]\').click()',
     );
+    // Allow fragment scrolling and ResizeObserver-driven sticky offsets to settle.
+    await pause(200);
     results['anchor' + width] = await evaluate(
       "document.getElementById('selection-panel').getBoundingClientRect().top>=document.getElementById('workflow').getBoundingClientRect().bottom",
     );

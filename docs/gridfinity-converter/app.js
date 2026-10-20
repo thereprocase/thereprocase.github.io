@@ -6,7 +6,7 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=friction-2';
+} from './kernel.js?v=step-audit-1';
 import {
   importFile,
   extensions,
@@ -349,7 +349,7 @@ function terminate() {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=friction-2', { type: 'module' });
+    worker = new Worker('./worker.js?v=step-audit-1', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -727,7 +727,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=friction-2', { type: 'module' });
+    const w = new Worker('./native-worker.js?v=step-audit-1', { type: 'module' });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
       w.terminate();
