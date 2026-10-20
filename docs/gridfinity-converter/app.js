@@ -1068,6 +1068,14 @@ function syncWorkflowHeight() {
   );
 }
 new ResizeObserver(syncWorkflowHeight).observe($('workflow'));
+const viewerColumn = document.querySelector('.viewer-column');
+new ResizeObserver(() => {
+  viewerColumn.style.setProperty(
+    '--viewer-column-height',
+    viewerColumn.offsetHeight + 'px',
+  );
+}).observe(viewerColumn);
+
 for (const link of document.querySelectorAll('[data-stage]')) {
   link.addEventListener('click', () => {
     requestAnimationFrame(() => {

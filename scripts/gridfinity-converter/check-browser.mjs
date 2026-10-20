@@ -117,6 +117,7 @@ try {
     throw Error('Timeout');
   };
   await ready();
+  await evaluate('document.fonts.ready.then(() => true)');
   const startsWithModel = await evaluate(
     "document.querySelector('[aria-current=step]').dataset.stage==='1' && document.getElementById('file-state').textContent==='No model selected' && document.querySelectorAll('#feet tr').length===0 && document.getElementById('convert').disabled && document.getElementById('workflow-action').textContent==='Choose your model…'",
   );
@@ -185,10 +186,10 @@ try {
     "document.getElementById('convert').disabled && document.getElementById('convert-help').textContent.includes('Select at least one')",
   );
   await evaluate("document.getElementById('select-all').click()");
-  for (const width of [320, 390, 768, 1600]) {
+  for (const width of [320, 390, 768, 1024, 1600]) {
     await call('Emulation.setDeviceMetricsOverride', {
       width,
-      height: 1000,
+      height: width > 900 ? Number(process.env.DESKTOP_HEIGHT || 1000) : 1000,
       deviceScaleFactor: 1,
       mobile: width < 700,
     });
@@ -215,6 +216,20 @@ try {
         Buffer.from(mobile.data, 'base64'),
       );
     }
+    results['exportScroll' + width] = await evaluate(`(async () => {
+      const preview = document.getElementById('preview-panel');
+      const exports = document.getElementById('export-panel');
+      for (let y = 0; y < document.documentElement.scrollHeight - innerHeight; y += 200) {
+        scrollTo({top:y,behavior:'instant'});
+        await new Promise(requestAnimationFrame);
+        if (exports.getBoundingClientRect().top < preview.getBoundingClientRect().bottom) return false;
+      }
+      exports.scrollIntoView({block:'start',behavior:'instant'});
+      await new Promise(requestAnimationFrame);
+      const button = document.getElementById('stl');
+      const rect = button.getBoundingClientRect();
+      return document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2) === button;
+    })()`);
     await evaluate('scrollTo(0,0)');
   }
 
