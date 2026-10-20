@@ -276,7 +276,7 @@ function controls() {
   $('workflow-action').textContent = result
     ? 'Export files →'
     : busy
-      ? 'Converting…'
+      ? 'Working…'
       : 'Convert feet';
   const stage = result ? '4' : detection ? '2' : '1';
   for (const link of document.querySelectorAll('[data-stage]')) {
@@ -623,8 +623,27 @@ function inputOptions() {
 }
 async function runConversion() {
   if (!canConvert()) return;
-  for (const el of document.querySelectorAll('.controls input'))
-    if (!el.disabled && !el.reportValidity()) return;
+  const fields = ['bottom', 'height', 'fit', 'roof'];
+  const style = $('style').value;
+  if (['magnets', 'both'].includes(style))
+    fields.push('magnetDiameter', 'magnetDepth');
+  if (['screws', 'both'].includes(style))
+    fields.push('screwDiameter', 'screwDepth');
+  for (const id of fields) {
+    const el = $(id);
+    if (!el.value.trim() || !el.checkValidity()) {
+      const details = el.closest('details');
+      if (details) details.open = true;
+      const label = el.closest('label')?.firstChild?.textContent?.trim() || id;
+      status(
+        `Check ${label}: ${el.validationMessage || 'enter a number.'}`,
+        true,
+      );
+      el.focus();
+      el.reportValidity();
+      return;
+    }
+  }
   const turn = epoch;
   result = null;
   setBusy(true, 'Replacing selected feet and checking preserved geometry…');

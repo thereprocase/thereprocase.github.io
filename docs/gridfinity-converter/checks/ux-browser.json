@@ -15,5 +15,9 @@
   "anchor768": true,
   "layout1600": true,
   "anchor1600": true,
-  "mobilePreview": true
+  "mobilePreview": true,
+  "unappliedGridIgnored": true,
+  "visibleValidation": true,
+  "customDetected": true,
+  "customConverted": true
 }

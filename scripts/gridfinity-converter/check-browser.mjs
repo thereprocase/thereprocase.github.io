@@ -216,6 +216,47 @@ try {
     deviceScaleFactor: 1,
     mobile: false,
   });
+
+  await evaluate(
+    "document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('grid-x').value='0.1234';document.getElementById('grid-y').value='-0.5678';document.getElementById('column').value='0.5';document.getElementById('workflow-action').click()",
+  );
+  await ready();
+  results.unappliedGridIgnored = await evaluate(
+    "!document.getElementById('stl').disabled && document.getElementById('status').textContent.startsWith('Conversion ready')",
+  );
+  await evaluate(
+    "document.getElementById('height').value='2';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('workflow-action').click()",
+  );
+  results.visibleValidation = await evaluate(
+    "document.getElementById('status').classList.contains('error') && document.getElementById('status').textContent.includes('Replacement height')",
+  );
+  await evaluate(
+    "document.getElementById('height').value='4.75';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('column').value='0'",
+  );
+  if (process.env.CUSTOM_MODEL) {
+    const doc = await call('DOM.getDocument'),
+      input = await call('DOM.querySelector', {
+        nodeId: doc.root.nodeId,
+        selector: '#files',
+      });
+    await call('DOM.setFileInputFiles', {
+      nodeId: input.nodeId,
+      files: [path.resolve(process.env.CUSTOM_MODEL)],
+    });
+    await ready();
+    results.customDetected = await evaluate(
+      "document.querySelectorAll('#feet tr').length===2 && !document.getElementById('workflow-action').disabled",
+    );
+    await evaluate("document.getElementById('workflow-action').click()");
+    await ready();
+    results.customConverted = await evaluate(
+      "!document.getElementById('stl').disabled && document.getElementById('status').textContent.startsWith('Conversion ready')",
+    );
+  }
+  if (results.customConverted === false)
+    throw Error(
+      await evaluate("document.getElementById('status').textContent"),
+    );
   if (process.env.CHECK_IMPORTS) {
     results.imports = await evaluate(`(async()=>{
    const {importFile,export3MF}=await import('./importers.js');

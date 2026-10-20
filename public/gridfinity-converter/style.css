@@ -12,3 +12,5 @@
 
 .intro-tools{flex-shrink:0}.intro-tools .local-note{margin-top:0}.intro-tools #example-help{margin:6px 0 16px;font-size:.78rem}.intro-tools #demo{font-size:.85rem;background:white}@media(max-width:900px){.intro-tools{margin-bottom:16px}}
 .workflow-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}#workflow-action{background:#0000a8;color:#fff;font-weight:600;min-height:44px;white-space:nowrap}.workflow .status-row{gap:12px}@media(max-width:700px){.workflow .status-row{flex-wrap:wrap}.workflow-actions{width:100%}#workflow-action{flex:1}.workflow #status{margin:3px 0}.pane{scroll-margin-top:calc(var(--workflow-height,170px) + 16px)}}
+
+button.primary:disabled,#workflow-action:disabled{background:#ddd;color:#555;border-color:#aaa;opacity:1;cursor:not-allowed}
