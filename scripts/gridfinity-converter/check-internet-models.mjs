@@ -116,6 +116,8 @@ try {
       const state = await evaluate(
         "({busy:document.body.dataset.busy,status:document.getElementById('status')?.textContent})",
       );
+      if (process.env.AUDIT_PROGRESS && state.status !== lastStatus)
+        console.log(new Date().toISOString(), state.status);
       lastStatus = state.status;
       if (state.busy === 'false') return state.status;
     }
@@ -206,14 +208,14 @@ try {
             const encoded = await evaluate(
               `new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(window.auditBlobs.at(-1))})`,
             );
-            attempt.stepExportPath = attempt.exportPath.replace(
+            const format =
+              attempt.report.conversion.nativeExportFormat || 'step';
+            const exportPath = attempt.exportPath.replace(
               /\.stl$/,
-              '.step',
+              '.' + format,
             );
-            await fs.writeFile(
-              attempt.stepExportPath,
-              Buffer.from(encoded, 'base64'),
-            );
+            attempt[format + 'ExportPath'] = exportPath;
+            await fs.writeFile(exportPath, Buffer.from(encoded, 'base64'));
           }
           record.conversions.push(attempt);
           console.log(path.basename(item.path), style, fit, attempt.status);

@@ -137,6 +137,7 @@ function draw() {
   drawMarkers();
 }
 function drawMarkers() {
+  requestRender();
   clearGroup(markers);
   if (!detection || view !== 'original') return;
   const bottom = Number($('bottom').value),
@@ -193,16 +194,32 @@ function resetView(under = false) {
   camera.far = d * 50;
   camera.updateProjectionMatrix();
   orbit.update();
+  requestRender();
 }
+let renderFrame = null;
+function requestRender() {
+  if (renderFrame !== null || document.hidden) return;
+  renderFrame = requestAnimationFrame(() => {
+    renderFrame = null;
+    // Controls emit change events until damping settles, scheduling only
+    // the frames needed for interaction. Idle CAD views consume no frames.
+    orbit.update();
+    renderer.render(scene, camera);
+  });
+}
+orbit.addEventListener('change', requestRender);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    cancelAnimationFrame(renderFrame);
+    renderFrame = null;
+  } else requestRender();
+});
 new ResizeObserver(() => {
   renderer.setSize(host.clientWidth, host.clientHeight);
   camera.aspect = host.clientWidth / host.clientHeight;
   camera.updateProjectionMatrix();
+  requestRender();
 }).observe(host);
-renderer.setAnimationLoop(() => {
-  orbit.update();
-  renderer.render(scene, camera);
-});
 let down;
 renderer.domElement.addEventListener('pointerdown', (e) => {
   down = [e.clientX, e.clientY];
@@ -273,18 +290,21 @@ function controls() {
     'view-changes',
   ])
     $(id).disabled = busy || !result;
-  $('step').disabled = busy || !result?.step;
+  $('step').disabled = busy || !(result?.step || result?.brep);
+  $('step').textContent = result?.brep ? 'Download BREP' : 'Download STEP';
   $('step').hidden = !raw?.nativeBuffer;
   $('export-shortcut').hidden = !result || busy;
   $('selection-count').textContent = `${selection.size} selected`;
   const native = Boolean(raw?.nativeBuffer);
   $('representation').textContent = native
-    ? 'Native CAD · surfaces preserved · STEP export'
+    ? 'Native CAD · surfaces preserved'
     : isDemo
       ? 'Example · mesh model'
       : 'Mesh conversion · STL / 3MF export';
   $('export-format').textContent = native
-    ? 'Native STEP · STL / 3MF mesh exports also available'
+    ? result?.brep
+      ? 'Native BREP · STEP export did not pass validation'
+      : 'Native STEP · STL / 3MF mesh exports also available'
     : 'STL / 3MF mesh output · STEP requires a STEP or BREP source';
   $('convert-help').textContent = busy
     ? 'Processing locally. You can cancel above.'
@@ -732,11 +752,17 @@ async function runConversion() {
       $('preview-panel').scrollIntoView({ block: 'start' });
     $('conversion-note').textContent =
       `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.` +
+      (r.report.sourceCurveRepair
+        ? ' Imported CAD curve data was repaired before conversion.'
+        : '') +
+      (r.brep
+        ? ' STEP could not preserve a valid body on reopening. Download BREP for the validated native CAD body, or STL / 3MF for a mesh.'
+        : '') +
       (['screws', 'both'].includes(r.report.style)
         ? ` Screw depth: ${r.report.screwDepth} mm${r.report.screwDepth < r.report.requestedScrewDepth ? `, fitted from ${r.report.requestedScrewDepth} mm to retain the solid roof` : ''}.`
         : '') +
       (r.report.tessellationDeflectionMM > 0.01
-        ? ` STL/3MF mesh deviation: ${r.report.tessellationDeflectionMM} mm (automatically adapted). STEP retains native CAD surfaces.`
+        ? ` STL/3MF mesh deviation: ${r.report.tessellationDeflectionMM} mm (automatically adapted). Native CAD export retains the surfaces.`
         : '');
     metrics($('conversion-metrics'), [
       ['Volume before', (r.report.originalVolume / 1000).toFixed(3) + ' cm³'],
@@ -762,7 +788,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=cad-preview-1', {
+    const w = new Worker('./native-worker.js?v=cad-consistency-1', {
       type: 'module',
     });
     nativeWorker = w;
@@ -978,6 +1004,7 @@ for (const key of ['original', 'converted', 'changes'])
 $('underside').onclick = () => resetView(true);
 $('reset-view').onclick = () => resetView();
 function section() {
+  requestRender();
   plane.constant = Number($('section-z').value);
   $('section-value').value = plane.constant.toFixed(1);
   clips.splice(0, clips.length, ...($('section').checked ? [plane] : []));
@@ -1046,12 +1073,20 @@ $('three-mf').onclick = () => {
   }
 };
 $('step').onclick = () => {
-  if (result?.step)
+  if (result?.step || result?.brep) {
+    const brep = Boolean(result.brep);
     download(
-      $('source-pose').checked ? result.sourceStep : result.step,
-      'application/step',
-      filename('step'),
+      $('source-pose').checked
+        ? brep
+          ? result.sourceBrep
+          : result.sourceStep
+        : brep
+          ? result.brep
+          : result.step,
+      brep ? 'application/octet-stream' : 'application/step',
+      filename(brep ? 'brep' : 'step'),
     );
+  }
 };
 $('report').onclick = () => {
   if (result)

@@ -36,6 +36,35 @@ const mesh = source.mesh({ tolerance: 0.025, angularTolerance: 0.15 }),
   aligned = align(m, loaded.bodies[0], d);
 assert.equal(d.grid.matched, 2);
 const checks = [];
+// Curve repair must not turn an open shell into an accepted solid.
+{
+  const oc = cad.getOC(),
+    shell = new oc.TopoDS_Shell(),
+    builder = new oc.TopoDS_Builder();
+  const box = cad.makeBox([0, 0, 0], [40, 40, 20]);
+  builder.MakeShell(shell);
+  for (const face of box.faces.slice(0, -1)) builder.Add(shell, face.wrapped);
+  const maker = new oc.BRepBuilderAPI_MakeSolid();
+  maker.Add(shell);
+  const broken = cad.cast(maker.Solid());
+  await assert.rejects(
+    () =>
+      convertNative({
+        buffer: new TextEncoder().encode(broken.serialize()),
+        format: 'brep',
+        detection: {},
+        options: {},
+      }),
+    /after automatic curve repair/,
+  );
+  checks.push({ test: 'open-native-shell', exportBlocked: true });
+  broken.delete();
+  maker.delete();
+  builder.delete();
+  shell.delete();
+  box.delete();
+}
+
 for (const style of ['plain', 'magnets', 'screws', 'both']) {
   const r = convert(m, aligned, { feet: d.feet, style });
   const native = await convertNative({
@@ -64,6 +93,102 @@ for (const style of ['plain', 'magnets', 'screws', 'both']) {
   console.log('Native', style, 'PASS', native.report.outsideChange);
 }
 
+// A STEP serializer that changes geometry must not expose that file. The
+// native fallback must independently round-trip and preserve the body.
+{
+  const wrong = cad.makeBox([0, 0, 0], [1, 1, 1]);
+  const wrongStep = wrong.blobSTEP();
+  const originalWriter = Object.getOwnPropertyDescriptor(
+    cad.Shape.prototype,
+    'blobSTEP',
+  );
+  const originalSerializer = Object.getOwnPropertyDescriptor(
+    cad.Shape.prototype,
+    'serialize',
+  );
+  const wrongBrep = wrong.serialize();
+  const plan = convert(m, aligned, { feet: d.feet, style: 'plain' });
+  let converted;
+  try {
+    cad.Shape.prototype.blobSTEP = async () => wrongStep;
+    converted = await convertNative({
+      buffer,
+      format: 'step',
+      detection: d,
+      options: plan.report,
+    });
+    cad.Shape.prototype.serialize = () => wrongBrep;
+    await assert.rejects(
+      () =>
+        convertNative({
+          buffer,
+          format: 'step',
+          detection: d,
+          options: plan.report,
+        }),
+      /BREP export changed/,
+    );
+  } finally {
+    Object.defineProperty(cad.Shape.prototype, 'blobSTEP', originalWriter);
+    Object.defineProperty(cad.Shape.prototype, 'serialize', originalSerializer);
+    wrong.delete();
+  }
+  assert.equal(converted.step, undefined);
+  assert.equal(converted.report.stepRoundTripValid, false);
+  assert.equal(converted.report.brepRoundTripValid, true);
+  assert.match(converted.report.stepExportError, /changed/);
+  const oc = cad.getOC();
+  for (const bytes of [converted.brep, converted.sourceBrep]) {
+    const reopened = cad.cast(
+      oc.BRepToolsWrapper.Read(new TextDecoder().decode(bytes)),
+    );
+    const check = new oc.BRepCheck_Analyzer(
+      reopened.wrapped,
+      true,
+      false,
+      true,
+    );
+    assert.equal(check.IsValid(), true);
+    assert.equal(reopened.solids.length, 1);
+    assert.ok(
+      Math.abs(cad.measureVolume(reopened) - converted.report.convertedVolume) <
+        0.001,
+    );
+    check.delete();
+    reopened.delete();
+  }
+  checks.push({
+    test: 'invalid-step-native-brep-fallback',
+    invalidBrepBlocked: true,
+    ...converted.report,
+  });
+  console.log('Native BREP fallback PASS');
+}
+
+// BREP with user-selected inch units must retain the returned scaled shape.
+{
+  const inchSource = source.clone().scale(1 / 25.4);
+  const plan = convert(m, aligned, { feet: d.feet, style: 'plain' });
+  const converted = await convertNative({
+    buffer: new TextEncoder().encode(inchSource.serialize()),
+    format: 'brep',
+    scale: 25.4,
+    detection: d,
+    options: plan.report,
+  });
+  assert.equal(converted.report.stepRoundTripValid, true);
+  checkMesh(converted.geometry);
+  assert.ok(
+    Math.abs(converted.report.originalVolume - cad.measureVolume(source)) <
+      0.001,
+  );
+  checks.push({
+    test: 'inch-native-source',
+    nativeValid: true,
+    stepRoundTripValid: true,
+  });
+  inchSource.delete();
+}
 const rotated = source
   .clone()
   .rotate(37, [0, 0, 0], [1, 2, 3])
@@ -82,19 +207,29 @@ for (const format of ['step', 'brep']) {
     a = align(m, b, d),
     r = convert(m, a, { feet: d.feet, style: 'both' }),
     input = { buffer, format, detection: d, options: r.report };
-  // This rotated fixture produces invalid serialized STEP despite a valid
-  // in-memory BRep. It must be rejected until its export is supported.
-  await assert.rejects(
-    () => convertNative(input),
-    /exported STEP fails strict CAD validation/,
+  const converted = await convertNative(input);
+  assert.equal(converted.report.nativeValid, true);
+  assert.equal(converted.report.stepRoundTripValid, true);
+  assert.ok(converted.report.nativeCoordinateAdjustmentMM <= 0.0000051);
+  checkMesh(converted.geometry);
+  const reopened = await cad.importSTEP(new Blob([converted.sourceStep]));
+  assert.equal(reopened.solids.length, 1);
+  const before = rotated.boundingBox.bounds,
+    after = reopened.boundingBox.bounds;
+  for (let i = 0; i < 2; i++)
+    for (let j = 0; j < 3; j++)
+      assert.ok(Math.abs(before[i][j] - after[i][j]) < 0.0001);
+  fs.writeFileSync(
+    '/tmp/gridfinity-converter-checks/native-rotated-' + format + '.step',
+    Buffer.from(converted.sourceStep),
   );
   checks.push({
     test: 'rotated-' + format,
-    exportBlocked: true,
-    limitation:
-      'Strict STEP re-import validation fails; no invalid file offered.',
+    nativeValid: true,
+    stepRoundTripValid: true,
+    nativeCoordinateAdjustmentMM: converted.report.nativeCoordinateAdjustmentMM,
   });
-  console.log('Known rotated STEP export rejection confirmed:', format);
+  console.log('Native rotated export PASS:', format);
 }
 const hollowFoot = await nativeFoot(),
   hollowTop = cad.makeBox([-20.75, -20.75, 4.75], [20.75, 20.75, 25]),

@@ -2,6 +2,9 @@
   "startsWithModel": true,
   "demo": true,
   "fixedPitch": true,
+  "idleViewerStopsDrawing": true,
+  "cameraRedraws": true,
+  "sectionRedraws": true,
   "examplePicker": true,
   "frictionAdjustment": true,
   "directAction": true,
@@ -28,5 +31,8 @@
   "mobilePreview": true,
   "unappliedGridIgnored": true,
   "visibleValidation": true,
-  "pendingGridEdit": true
+  "pendingGridEdit": true,
+  "nativeDetection": true,
+  "nativeConversion": true,
+  "nativeDownload": true
 }

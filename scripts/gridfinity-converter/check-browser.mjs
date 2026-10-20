@@ -90,9 +90,23 @@ try {
     deviceScaleFactor: 1,
     mobile: false,
   });
+  await call('Page.enable');
+  await call('Page.addScriptToEvaluateOnNewDocument', {
+    source: `window.viewerDrawCalls = 0;
+      for (const context of [WebGLRenderingContext, WebGL2RenderingContext]) {
+        for (const name of ['drawElements', 'drawArrays']) {
+          const draw = context.prototype[name];
+          context.prototype[name] = function(...args) {
+            window.viewerDrawCalls++;
+            return draw.apply(this, args);
+          };
+        }
+      }`,
+  });
   await call('Page.navigate', {
     url: `http://127.0.0.1:${port}/gridfinity-converter/`,
   });
+  await call('Page.bringToFront');
   const evaluate = async (expression) => {
     const r = await call('Runtime.evaluate', {
       expression,
@@ -130,6 +144,22 @@ try {
       "document.getElementById('detection-note').textContent.includes('42 mm grid')",
     ),
   };
+  await pause(1500);
+  const idleDraws = await evaluate('window.viewerDrawCalls');
+  await pause(500);
+  results.idleViewerStopsDrawing =
+    idleDraws > 0 && (await evaluate('window.viewerDrawCalls')) === idleDraws;
+  await evaluate("document.getElementById('underside').click()");
+  await pause(300);
+  results.cameraRedraws =
+    (await evaluate('window.viewerDrawCalls')) > idleDraws;
+  await pause(1500);
+  const sectionDraws = await evaluate('window.viewerDrawCalls');
+  await evaluate("document.getElementById('section').click()");
+  await pause(300);
+  results.sectionRedraws =
+    (await evaluate('window.viewerDrawCalls')) > sectionDraws;
+  await evaluate("document.getElementById('section').click()");
   results.examplePicker = await evaluate(
     "document.getElementById('file-state').textContent==='Built-in example' && document.getElementById('choose-file').textContent==='Choose your model…' && getComputedStyle(document.getElementById('files')).display==='none'",
   );
@@ -340,6 +370,8 @@ try {
    const checks=[];try{for(const file of files.filter(f=>!f.name.endsWith('.bin'))){const raw=await importFile(file,files);const loaded=await rpc('load',{geometry:raw,scale:raw.unitScale}).catch(e=>{throw Error(file.name+': '+e.message);});if(loaded.bodies.length!==1)throw Error(file.name+' body count');const d=await rpc('detect',{options:{orientation:'auto'}});if(d.grid.matched!==2)throw Error(file.name+' detection '+d.grid.matched);const r=await rpc('convert',{options:{feet:d.feet,style:'both'}});if(r.report.connectedSolids!==1)throw Error(file.name+' conversion');checks.push({file:file.name,feet:d.grid.matched,outsideChange:r.report.outsideChange});}return checks;}finally{worker.terminate();}
   })()`);
     console.log(results.imports);
+  }
+  if (process.env.CHECK_IMPORTS || process.env.CHECK_NATIVE) {
     const doc = await call('DOM.getDocument'),
       input = await call('DOM.querySelector', {
         nodeId: doc.root.nodeId,

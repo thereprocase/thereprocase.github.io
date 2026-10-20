@@ -2,6 +2,7 @@
 import initOC from './vendor/replicad/replicad_single.js';
 import * as cad from './vendor/replicad/replicad.js';
 let ready, OC;
+const volumeCache = new WeakMap();
 async function kernel() {
   if (!ready)
     ready = initOC().then((oc) => {
@@ -12,7 +13,10 @@ async function kernel() {
   return ready;
 }
 function volume(s) {
-  return s.isNull ? 0 : Math.abs(cad.measureVolume(s));
+  if (volumeCache.has(s)) return volumeCache.get(s);
+  const measured = s.isNull ? 0 : Math.abs(cad.measureVolume(s));
+  volumeCache.set(s, measured);
+  return measured;
 }
 function boolean(kind, a, b) {
   const op = new OC['BRepAlgoAPI_' + kind](a.wrapped, b.wrapped);
@@ -59,6 +63,8 @@ function transform(oc, s, d, inverse = false) {
   const tf = new cad.Transformation(tr);
   if (inverse) tf.inverse();
   const out = cad.cast(tf.transform(s.wrapped));
+  // Orientation changes are rigid, so volume is invariant.
+  if (volumeCache.has(s)) volumeCache.set(out, volumeCache.get(s));
   tf.delete();
   return out;
 }
@@ -132,11 +138,64 @@ export async function convertNative({
   source = bodies[bodyIndex];
   // Conversion only uses the selected solid. Unrelated assembly parts must
   // not invalidate a sound selected part.
-  if (!valid(oc, source))
-    throw Error(
-      'The selected CAD solid fails strict boundary-representation validation. Repair it in the source modeler.',
+  onProgress('Checking imported CAD curve consistency…');
+  let sourceCurveRepair = null;
+  if (!valid(oc, source)) {
+    onProgress('Repairing imported CAD curve consistency…');
+    const beforeVolume = volume(source);
+    const beforeBox = source.boundingBox;
+    const beforeBounds = beforeBox.bounds;
+    beforeBox.delete();
+    const edgeKind = oc.TopAbs_ShapeEnum.TopAbs_EDGE;
+    const vertexKind = oc.TopAbs_ShapeEnum.TopAbs_VERTEX;
+    const maxTolerance = () =>
+      Math.max(
+        oc.BRep_Tool.MaxTolerance(source.wrapped, edgeKind),
+        oc.BRep_Tool.MaxTolerance(source.wrapped, vertexKind),
+      );
+    const beforeTolerance = maxTolerance();
+    // Recompute 2D edge parameter curves against the existing 3D curves and
+    // surfaces. This does not replace the source with a tessellation.
+    oc.BRepLib.SameParameter(source.wrapped, 0.00001, true);
+    volumeCache.delete(source);
+    const afterTolerance = maxTolerance();
+    const afterBox = source.boundingBox;
+    const afterBounds = afterBox.bounds;
+    afterBox.delete();
+    const boundsChanged = beforeBounds.some((row, i) =>
+      row.some((v, j) => Math.abs(v - afterBounds[i][j]) > 0.00001),
     );
-  if (scale !== 1) source.scale(scale);
+    const volumeChange = Math.abs(volume(source) - beforeVolume);
+    const repairFailure = boundsChanged
+      ? 'its bounds changed'
+      : volumeChange > Math.max(0.001, beforeVolume * 1e-8)
+        ? `its volume changed by ${volumeChange.toPrecision(4)} mm³`
+        : afterTolerance > Math.max(beforeTolerance, 0.00001) + 1e-7
+          ? 'it would require looser edge tolerances'
+          : null;
+    if (repairFailure)
+      throw Error(
+        `Automatic CAD curve repair was rejected because ${repairFailure}. Conversion stopped.`,
+      );
+    onProgress('Validating repaired CAD curve consistency…');
+    if (!valid(oc, source))
+      throw Error(
+        'The imported solid still fails strict CAD validation after automatic curve repair. Conversion stopped.',
+      );
+    sourceCurveRepair = {
+      method: 'same-parameter',
+      volumeChange,
+      beforeToleranceMM: beforeTolerance,
+      afterToleranceMM: afterTolerance,
+      strictValid: true,
+    };
+  }
+  if (scale !== 1) {
+    const previousVolume = volumeCache.get(source);
+    source = source.scale(scale);
+    if (previousVolume !== undefined)
+      volumeCache.set(source, previousVolume * Math.abs(scale ** 3));
+  }
   source = transform(oc, source, detection);
   const bounds = source.boundingBox,
     actual = bounds.bounds,
@@ -155,6 +214,25 @@ export async function convertNative({
     throw Error(
       'Native CAD part does not match the detected mesh part. Export the selected solid separately and retry.',
     );
+  // Mesh detection uses float32 coordinates. Remove sub-tolerance noise before
+  // native booleans so nominally coincident edges do not create sliver faces.
+  // Source CAD curves and surfaces are unchanged; preservation is checked below.
+  let nativeCoordinateAdjustmentMM = 0;
+  p = {
+    ...p,
+    feet: p.feet.map((foot) => {
+      const normalized = { ...foot };
+      for (const key of ['x', 'y', 'sourceX', 'sourceY']) {
+        if (foot[key] === undefined) continue;
+        normalized[key] = Math.round(foot[key] * 100000) / 100000;
+        nativeCoordinateAdjustmentMM = Math.max(
+          nativeCoordinateAdjustmentMM,
+          Math.abs(normalized[key] - foot[key]),
+        );
+      }
+      return normalized;
+    }),
+  };
   const {
     feet,
     style,
@@ -255,13 +333,12 @@ export async function convertNative({
       'Native CAD preservation check failed: ' + outsideChange + ' mm³.',
     );
   // Validate the serialized file, not only the in-memory boolean result.
-  const checkedStep = async (shape) => {
-    // Keep native 3D curves/surfaces. Let the reader reconstruct optional
-    // pcurves; serialized pcurves can fail exact checks after STEP rounding.
+  const serializeAndCheck = async (shape, mode) => {
+    // Validate both supported representations of optional surface curves.
     const previousMode = oc.Interface_Static.IVal('write.surfacecurve.mode');
     let blob;
     try {
-      oc.Interface_Static.SetIVal('write.surfacecurve.mode', 0);
+      oc.Interface_Static.SetIVal('write.surfacecurve.mode', mode);
       blob = await shape.blobSTEP();
     } finally {
       oc.Interface_Static.SetIVal('write.surfacecurve.mode', previousMode);
@@ -291,10 +368,70 @@ export async function convertNative({
       reopened.delete();
     }
   };
-  onProgress('Validating exported STEP files…');
-  const step = await checkedStep(result),
-    restored = transform(oc, result, detection, true),
-    sourceStep = await checkedStep(restored);
+  const checkedStep = async (shape, label) => {
+    // Repaired sources need their corrected pcurves retained when possible.
+    // Some other shapes serialize more reliably with reconstructed pcurves.
+    const modes = sourceCurveRepair ? [1, 0] : [0, 1];
+    let failure;
+    for (const mode of modes) {
+      const surfaceCurves = mode ? 'preserved' : 'reconstructed-on-import';
+      onProgress(`Validating ${label} STEP (${surfaceCurves} surface curves)…`);
+      try {
+        return { buffer: await serializeAndCheck(shape, mode), surfaceCurves };
+      } catch (error) {
+        if (
+          !/exported STEP fails strict|STEP export changed/.test(error.message)
+        )
+          throw error;
+        failure = error;
+      }
+    }
+    throw failure;
+  };
+  const restored = transform(oc, result, detection, true);
+  let stepExport, sourceExport, brep, sourceBrep, stepExportError;
+  try {
+    stepExport = await checkedStep(result, 'base-down');
+    sourceExport = await checkedStep(restored, 'original-pose');
+  } catch (error) {
+    if (!/exported STEP fails strict|STEP export changed/.test(error.message))
+      throw error;
+    stepExportError = error.message;
+    stepExport = sourceExport = null;
+    // BREP stores the kernel's native curves and topology without STEP
+    // translation. It must independently survive serialization and reopening.
+    const checkedBrep = (shape, label) => {
+      onProgress(`Validating ${label} native BREP export…`);
+      const text = shape.serialize();
+      const reopened = cad.cast(oc.BRepToolsWrapper.Read(text));
+      try {
+        if (!valid(oc, reopened) || reopened.solids.length !== 1)
+          throw Error('Native BREP export fails validation when reopened.');
+        const expectedBox = shape.boundingBox;
+        const actualBox = reopened.boundingBox;
+        const boundsChanged = expectedBox.bounds.some((row, i) =>
+          row.some(
+            (value, j) => Math.abs(value - actualBox.bounds[i][j]) > 0.00001,
+          ),
+        );
+        expectedBox.delete();
+        actualBox.delete();
+        if (
+          boundsChanged ||
+          Math.abs(volume(shape) - volume(reopened)) >
+            Math.max(0.001, volume(shape) * 1e-8)
+        )
+          throw Error(
+            'Native BREP export changed the solid geometry when reopened.',
+          );
+        return new TextEncoder().encode(text).buffer;
+      } finally {
+        reopened.delete();
+      }
+    };
+    brep = checkedBrep(result, 'base-down');
+    sourceBrep = checkedBrep(restored, 'original-pose');
+  }
   onProgress('Preparing CAD preview…');
   const geometry = await tessellateNative(result);
   const addedMesh = await tessellateNative(added);
@@ -303,8 +440,10 @@ export async function convertNative({
     geometry,
     added: addedMesh,
     removed: removedMesh,
-    step,
-    sourceStep,
+    step: stepExport?.buffer,
+    sourceStep: sourceExport?.buffer,
+    brep,
+    sourceBrep,
     report: {
       ...p,
       originalVolume: volume(source),
@@ -314,9 +453,16 @@ export async function convertNative({
       outsideChange,
       representation: 'native-brep',
       nativeBooleanToleranceMM: 0.00001,
+      sourceCurveRepair,
+      nativeCoordinateResolutionMM: 0.00001,
+      nativeCoordinateAdjustmentMM,
       nativeValid: true,
-      stepRoundTripValid: true,
-      stepSurfaceCurves: 'reconstructed-on-import',
+      nativeExportFormat: stepExport ? 'step' : 'brep',
+      stepRoundTripValid: Boolean(stepExport),
+      brepRoundTripValid: Boolean(brep),
+      stepExportError,
+      stepSurfaceCurves: stepExport?.surfaceCurves,
+      sourceStepSurfaceCurves: sourceExport?.surfaceCurves,
       connectedSolids: 1,
       tessellationDeflectionMM: Math.max(
         geometry.tessellationDeflectionMM,

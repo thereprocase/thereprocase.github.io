@@ -1,0 +1,639 @@
+[
+  {
+    "repo": "ultimatehecker/Personal-Desk-Orangizer",
+    "source": "https://github.com/ultimatehecker/Personal-Desk-Orangizer/blob/500e1f3913fc62bc7fb85349b4e7b49bcd88a139/step/Gridfinity-Sample-Size.step",
+    "url": "https://raw.githubusercontent.com/ultimatehecker/Personal-Desk-Orangizer/500e1f3913fc62bc7fb85349b4e7b49bcd88a139/step/Gridfinity-Sample-Size.step",
+    "path": "/tmp/gridfinity-internet-audit-2/16-Gridfinity-Sample-Size.step",
+    "sha256": "ae5f1e310592dc7ee7290df6288f0e92480aebf928aab801dfdf2a106dae8768",
+    "conversions": [
+      {
+        "style": "plain",
+        "fit": 0,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 27103,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "plain",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": 0,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 6,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 59011.66990396984,
+            "addedVolume": 0,
+            "removedVolume": 0,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.0.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.0.step"
+      },
+      {
+        "style": "magnets",
+        "fit": 0,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 33459,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "magnets",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": 0,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 6,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 58055.99741874539,
+            "addedVolume": 0,
+            "removedVolume": 955.672485222015,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.magnets.0.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.magnets.0.step"
+      },
+      {
+        "style": "screws",
+        "fit": 0,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 32792,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "screws",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": 0,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 5.2,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 58570.5902954037,
+            "addedVolume": 0,
+            "removedVolume": 441.07960856400683,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.screws.0.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.screws.0.step"
+      },
+      {
+        "style": "both",
+        "fit": 0,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 37556,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "both",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": 0,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 5.2,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 57818.49301413251,
+            "addedVolume": 0,
+            "removedVolume": 1193.1768898334042,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.both.0.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.both.0.step"
+      },
+      {
+        "style": "plain",
+        "fit": -0.5,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 14283,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "plain",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": -0.5,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 6,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 57963.46642618215,
+            "addedVolume": 0,
+            "removedVolume": 1048.2034777878184,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.-0.5.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.-0.5.step"
+      },
+      {
+        "style": "plain",
+        "fit": 0.5,
+        "status": "Conversion ready. Native CAD, closed mesh and preservation checks passed.",
+        "elapsedMS": 22379,
+        "success": true,
+        "report": {
+          "version": 1,
+          "source": {
+            "name": "16-Gridfinity-Sample-Size",
+            "format": "step",
+            "coordinateScale": 1,
+            "partIndex": 0
+          },
+          "orientation": {
+            "rotation": [
+              1,
+              -3.0616169978683824e-17,
+              0,
+              3.0616169978683824e-17,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "translation": [
+              -20.749999999999996,
+              -62.75,
+              5
+            ],
+            "output": "base-down-mm"
+          },
+          "detection": {
+            "grid": {
+              "pitch": 42,
+              "x": -2.384185791015625e-7,
+              "y": -41.99999952316284,
+              "matched": 3,
+              "total": 3,
+              "maxResidual": 9.5367431640625e-7
+            },
+            "normal": [
+              0,
+              0,
+              -1
+            ]
+          },
+          "conversion": {
+            "style": "plain",
+            "pitch": 42,
+            "feet": [
+              {
+                "x": 0,
+                "y": -42,
+                "sourceX": 0,
+                "sourceY": -42
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "sourceX": 0,
+                "sourceY": 0
+              },
+              {
+                "x": 0,
+                "y": 42,
+                "sourceX": 0,
+                "sourceY": 42
+              }
+            ],
+            "bottom": 0,
+            "height": 4.75,
+            "fit": 0.5,
+            "magnetDiameter": 6.5,
+            "magnetDepth": 2.4,
+            "screwDiameter": 3,
+            "screwDepth": 6,
+            "requestedScrewDepth": 6,
+            "fitScrewDepth": true,
+            "minimumRoof": 0.8,
+            "originalVolume": 59011.669903972754,
+            "convertedVolume": 60081.894890238174,
+            "addedVolume": 1070.2249862541812,
+            "removedVolume": 0,
+            "outsideChange": 0,
+            "normalizationMM": 0,
+            "closedMesh": true,
+            "connectedSolids": 1,
+            "representation": "native-brep",
+            "nativeBooleanToleranceMM": 0.00001,
+            "nativeCoordinateResolutionMM": 0.00001,
+            "nativeCoordinateAdjustmentMM": 0.000001430511474609375,
+            "nativeValid": true,
+            "stepRoundTripValid": true,
+            "stepSurfaceCurves": "reconstructed-on-import",
+            "tessellationDeflectionMM": 0.01
+          },
+          "qualification": "Digital geometry checks only. Physical fit, strength and printability require testing."
+        },
+        "exportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.0.5.stl",
+        "stepExportPath": "/tmp/16-Gridfinity-Sample-Size.step.plain.0.5.step"
+      }
+    ],
+    "importStatus": "Feet detected. Choose a style or click Convert feet.",
+    "detection": {
+      "note": "3 of 3 profile matches on one 42 mm grid. Maximum center residual 0.000 mm.",
+      "feet": 3,
+      "selected": "3 selected",
+      "enabled": true,
+      "dimensions": "Size X × Y × Z41.50 × 125.50 × 45.80 mmTriangles6,468Solid volume59.01 cm³",
+      "bodies": 1,
+      "bodyNote": "One connected part. Coincident seam vertices are welded; open surfaces are not filled."
+    }
+  }
+]

@@ -1,18 +1,22 @@
 [
   {
+    "test": "open-native-shell",
+    "exportBlocked": true
+  },
+  {
     "style": "plain",
     "pitch": 42,
     "feet": [
       {
         "x": -21,
         "y": 0,
-        "sourceX": -20.999999552965164,
+        "sourceX": -21,
         "sourceY": 0
       },
       {
         "x": 21,
         "y": 0,
-        "sourceX": 20.999999552965164,
+        "sourceX": 21,
         "sourceY": 0
       }
     ],
@@ -35,10 +39,16 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01
   },
   {
@@ -48,13 +58,13 @@
       {
         "x": -21,
         "y": 0,
-        "sourceX": -20.999999552965164,
+        "sourceX": -21,
         "sourceY": 0
       },
       {
         "x": 21,
         "y": 0,
-        "sourceX": 20.999999552965164,
+        "sourceX": 21,
         "sourceY": 0
       }
     ],
@@ -77,10 +87,16 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01
   },
   {
@@ -90,13 +106,13 @@
       {
         "x": -21,
         "y": 0,
-        "sourceX": -20.999999552965164,
+        "sourceX": -21,
         "sourceY": 0
       },
       {
         "x": 21,
         "y": 0,
-        "sourceX": 20.999999552965164,
+        "sourceX": 21,
         "sourceY": 0
       }
     ],
@@ -111,7 +127,7 @@
     "fitScrewDepth": false,
     "minimumRoof": 0.8,
     "originalVolume": 64161.466546373566,
-    "convertedVolume": 63822.174539786065,
+    "convertedVolume": 63822.17453978606,
     "addedVolume": 0,
     "removedVolume": 339.2920065876977,
     "outsideChange": 0,
@@ -119,10 +135,16 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01
   },
   {
@@ -132,13 +154,13 @@
       {
         "x": -21,
         "y": 0,
-        "sourceX": -20.999999552965164,
+        "sourceX": -21,
         "sourceY": 0
       },
       {
         "x": 21,
         "y": 0,
-        "sourceX": 20.999999552965164,
+        "sourceX": 21,
         "sourceY": 0
       }
     ],
@@ -161,21 +183,83 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01
   },
   {
+    "test": "invalid-step-native-brep-fallback",
+    "invalidBrepBlocked": true,
+    "style": "plain",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": -21,
+        "y": 0,
+        "sourceX": -21,
+        "sourceY": 0
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "sourceX": 21,
+        "sourceY": 0
+      }
+    ],
+    "bottom": 0,
+    "height": 4.75,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 6,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 64161.466546373566,
+    "convertedVolume": 64161.46654637377,
+    "addedVolume": 0,
+    "removedVolume": 0,
+    "outsideChange": 0,
+    "normalizationMM": 0,
+    "closedMesh": true,
+    "connectedSolids": 1,
+    "representation": "native-brep",
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportError": "STEP export changed the solid geometry when reopened. Export blocked.",
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "test": "inch-native-source",
+    "nativeValid": true,
+    "stepRoundTripValid": true
+  },
+  {
     "test": "rotated-step",
-    "exportBlocked": true,
-    "limitation": "Strict STEP re-import validation fails; no invalid file offered."
+    "nativeValid": true,
+    "stepRoundTripValid": true,
+    "nativeCoordinateAdjustmentMM": 2.1941959857940674e-06
   },
   {
     "test": "rotated-brep",
-    "exportBlocked": true,
-    "limitation": "Strict STEP re-import validation fails; no invalid file offered."
+    "nativeValid": true,
+    "stepRoundTripValid": true,
+    "nativeCoordinateAdjustmentMM": 2.1941959857940674e-06
   },
   {
     "style": "both",
@@ -207,10 +291,16 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 0,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01,
     "test": "hollow-perimeter-contact"
   },
@@ -221,13 +311,13 @@
       {
         "x": -21,
         "y": 0,
-        "sourceX": -20.999999552965164,
+        "sourceX": -21,
         "sourceY": 0
       },
       {
         "x": 21,
         "y": 0,
-        "sourceX": 20.999999552965164,
+        "sourceX": 21,
         "sourceY": 0
       }
     ],
@@ -250,10 +340,16 @@
     "closedMesh": true,
     "connectedSolids": 1,
     "representation": "native-brep",
-    "nativeBooleanToleranceMM": 0.00001,
+    "nativeBooleanToleranceMM": 1e-05,
+    "sourceCurveRepair": null,
+    "nativeCoordinateResolutionMM": 1e-05,
+    "nativeCoordinateAdjustmentMM": 4.470348358154297e-07,
     "nativeValid": true,
+    "nativeExportFormat": "step",
     "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
     "stepSurfaceCurves": "reconstructed-on-import",
+    "sourceStepSurfaceCurves": "reconstructed-on-import",
     "tessellationDeflectionMM": 0.01,
     "test": "enclosed-cavity"
   }

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "native-plain.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  },
+  {
+    "file": "native-rotated-step.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  },
+  {
+    "file": "native-rotated-brep.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  }
+]
