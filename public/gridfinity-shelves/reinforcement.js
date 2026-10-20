@@ -1,6 +1,6 @@
 import {boards,makeBoardPegs} from './boards.js?v=dense-1';
 import {makePegs} from './peg-fit.js?v=fit-7';
-import {validateExport} from './kernel.js?v=diagonal-1';
+import {validateExport} from './kernel.js?v=base-types-1';
 
 export const reinforcementMargin=3.5;
 /** Full-thickness load paths, clipped to the unchanged printable body. */
