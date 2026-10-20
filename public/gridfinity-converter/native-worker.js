@@ -1,4 +1,4 @@
-import { convertNative } from './native-cad.js?v=cad-consistency-1';
+import { convertNative } from './native-cad.js?v=cad-progress-1';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
 import { importSolid, meshData, checkMesh } from './kernel.js?v=step-audit-1';
 self.onmessage = async ({ data }) => {

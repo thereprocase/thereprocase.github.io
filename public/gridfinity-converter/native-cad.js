@@ -12,6 +12,118 @@ async function kernel() {
     });
   return ready;
 }
+export async function previewNative({
+  buffer,
+  format,
+  previewTriangleBudget = 1000000,
+  initialDeflection = 0.025,
+  onProgress = () => {},
+}) {
+  const started = performance.now();
+  onProgress('Loading the CAD engine…', { stage: 1, total: 5 });
+  const oc = await kernel();
+  const engineReadyMS = performance.now() - started;
+  onProgress('Reading native CAD…', { stage: 2, total: 5 });
+  const source =
+    format === 'brep'
+      ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
+      : await cad.importSTEP(new Blob([buffer]));
+  try {
+    const faces = source.faces;
+    const faceCount = faces.length;
+    faces.forEach((face) => face.delete());
+    const levels = [
+      [0.025, 0.15],
+      [0.05, 0.25],
+      [0.1, 0.35],
+      [0.2, 0.5],
+      [0.4, 0.65],
+      [0.8, 0.8],
+    ];
+    let nextDeflection = initialDeflection,
+      attempts = 0,
+      previousTriangles;
+    for (const [index, [deflection, angle]] of levels.entries()) {
+      if (deflection < nextDeflection) continue;
+      attempts++;
+      onProgress(
+        `Building preview from ${faceCount.toLocaleString()} CAD faces…`,
+        {
+          stage: 3,
+          total: 5,
+          detail:
+            `Preview attempt ${attempts} · ${deflection} mm` +
+            (previousTriangles
+              ? ` · Previous attempt: ${previousTriangles.toLocaleString()} triangles; limit ${previewTriangleBudget.toLocaleString()}`
+              : ''),
+        },
+      );
+      if (index) oc.BRepTools.Clean(source.wrapped, false);
+      // Mesh the same parsed CAD body on retries. Copy only the two buffers
+      // actually used by detection/viewing, and only once an attempt fits.
+      const raw = oc.ReplicadMeshExtractor.extract(
+        source.wrapped,
+        deflection,
+        angle,
+        false,
+      );
+      try {
+        const triangles = raw.getTrianglesSize() / 3;
+        if (triangles <= previewTriangleBudget) {
+          const vertices = new Float32Array(
+            oc.wasmMemory.buffer,
+            raw.getVerticesPtr(),
+            raw.getVerticesSize(),
+          ).slice();
+          const indices = new Uint32Array(
+            oc.wasmMemory.buffer,
+            raw.getTrianglesPtr(),
+            raw.getTrianglesSize(),
+          ).slice();
+          onProgress('CAD preview ready.', {
+            stage: 3,
+            total: 5,
+            detail: `${faceCount.toLocaleString()} faces · ${triangles.toLocaleString()} triangles · ${attempts} preview attempt${attempts === 1 ? '' : 's'}`,
+          });
+          return {
+            result: {
+              success: true,
+              meshes: [
+                {
+                  attributes: { position: { array: vertices } },
+                  index: { array: indices },
+                },
+              ],
+            },
+            preview: {
+              deflectionMM: deflection,
+              angularDeflection: angle,
+              triangles,
+              faces: faceCount,
+              attempts,
+              nativeReadCount: 1,
+              adapted: index > 0,
+              engineReadyMS,
+              readAndMeshMS: performance.now() - started - engineReadyMS,
+            },
+          };
+        }
+        previousTriangles = triangles;
+        nextDeflection = Math.min(
+          0.8,
+          (deflection * triangles) / previewTriangleBudget,
+        );
+      } finally {
+        raw.delete();
+      }
+    }
+    throw Error(
+      'This CAD file exceeds browser preview capacity. The original CAD has not been changed.',
+    );
+  } finally {
+    source.delete();
+  }
+}
 function volume(s) {
   if (volumeCache.has(s)) return volumeCache.get(s);
   const measured = s.isNull ? 0 : Math.abs(cad.measureVolume(s));
@@ -141,7 +253,7 @@ export async function convertNative({
   onProgress('Checking imported CAD curve consistency…');
   let sourceCurveRepair = null;
   if (!valid(oc, source)) {
-    onProgress('Repairing imported CAD curve consistency…');
+    onProgress('Curve repair 1 of 3: measuring the original body…');
     const beforeVolume = volume(source);
     const beforeBox = source.boundingBox;
     const beforeBounds = beforeBox.bounds;
@@ -156,6 +268,7 @@ export async function convertNative({
     const beforeTolerance = maxTolerance();
     // Recompute 2D edge parameter curves against the existing 3D curves and
     // surfaces. This does not replace the source with a tessellation.
+    onProgress('Curve repair 2 of 3: rebuilding edge parameters…');
     oc.BRepLib.SameParameter(source.wrapped, 0.00001, true);
     volumeCache.delete(source);
     const afterTolerance = maxTolerance();
@@ -165,6 +278,7 @@ export async function convertNative({
     const boundsChanged = beforeBounds.some((row, i) =>
       row.some((v, j) => Math.abs(v - afterBounds[i][j]) > 0.00001),
     );
+    onProgress('Curve repair 3 of 3: measuring the repaired body…');
     const volumeChange = Math.abs(volume(source) - beforeVolume);
     const repairFailure = boundsChanged
       ? 'its bounds changed'
@@ -323,11 +437,20 @@ export async function convertNative({
   if (holes.length) result = cut(result, union(holes));
   if (!valid(oc, result) || result.solids.length !== 1 || volume(result) <= 0)
     throw Error('Native CAD result is not one valid solid. Export blocked.');
-  onProgress('Checking preserved CAD geometry…');
-  const added = cut(result, source),
-    removed = cut(source, result),
-    allowed = union(regions),
-    outsideChange = volume(cut(added, allowed)) + volume(cut(removed, allowed));
+  onProgress('Preservation check 1 of 5: finding added material…');
+  const added = cut(result, source);
+  onProgress('Preservation check 2 of 5: finding removed material…');
+  const removed = cut(source, result);
+  onProgress('Preservation check 3 of 5: combining edit regions…');
+  const allowed = union(regions);
+  onProgress(
+    'Preservation check 4 of 5: measuring added material outside the edit…',
+  );
+  const outsideAdded = volume(cut(added, allowed));
+  onProgress(
+    'Preservation check 5 of 5: measuring removed material outside the edit…',
+  );
+  const outsideChange = outsideAdded + volume(cut(removed, allowed));
   if (outsideChange > Math.max(0.001, volume(source) * 1e-8))
     throw Error(
       'Native CAD preservation check failed: ' + outsideChange + ' mm³.',

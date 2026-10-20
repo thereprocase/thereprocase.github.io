@@ -11,7 +11,7 @@ import {
   importFile,
   extensions,
   export3MF,
-} from './importers.js?v=cad-preview-1';
+} from './importers.js?v=cad-progress-1';
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
@@ -35,6 +35,9 @@ let worker,
   view = 'original',
   isDemo = false;
 let fileState = 'empty';
+let busyInfo = null,
+  operationStarted = 0,
+  operationMessage = '';
 const pending = new Map();
 let renderer;
 try {
@@ -337,13 +340,40 @@ function controls() {
     : 'Load a model to detect its male feet';
   $('section-z').disabled = !$('section').checked;
 }
-function setBusy(value, message) {
+function setBusy(value, message, info) {
+  if (value && message && message !== operationMessage) {
+    operationStarted = performance.now();
+    operationMessage = message;
+  }
+  if (info) busyInfo = info;
+  if (!value) {
+    busyInfo = null;
+    operationMessage = '';
+  }
+  const progress = $('loading').querySelector('progress');
+  if (busyInfo?.total) {
+    progress.max = busyInfo.total;
+    progress.value = busyInfo.stage - 1;
+    progress.setAttribute('aria-label', 'Import stages completed');
+    $('loading-stage').textContent =
+      `Import stage ${busyInfo.stage} of ${busyInfo.total}` +
+      (busyInfo.detail ? ` · ${busyInfo.detail}` : '');
+  } else {
+    progress.removeAttribute('value');
+    progress.setAttribute('aria-label', 'Model processing');
+    $('loading-stage').textContent = '';
+  }
   if (value && !busy) {
     busyStarted = performance.now();
     const tick = () => {
       const seconds = Math.floor((performance.now() - busyStarted) / 1000);
+      const operationSeconds = Math.floor(
+        (performance.now() - operationStarted) / 1000,
+      );
+      const duration = (n) =>
+        `${Math.floor(n / 60)}:${String(n % 60).padStart(2, '0')}`;
       $('loading-elapsed').textContent =
-        `Elapsed ${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')} · Processing on this device`;
+        `Elapsed ${duration(seconds)} · Current operation ${duration(operationSeconds)} · Processing on this device`;
     };
     tick();
     busyTimer = setInterval(tick, 1000);
@@ -452,7 +482,17 @@ function unitScale() {
 }
 async function prepare(demo = false) {
   const turn = epoch;
-  setBusy(true, 'Checking closed solids…');
+  setBusy(
+    true,
+    'Checking closed solids…',
+    raw?.nativeBuffer
+      ? {
+          stage: 4,
+          total: 5,
+          detail: `${(raw.preview?.triangles ?? 0).toLocaleString()} preview triangles`,
+        }
+      : undefined,
+  );
   try {
     if (raw?.requiresUnits && $('units').value === 'auto')
       throw Error('Choose the FBX source units before detection.');
@@ -530,7 +570,17 @@ async function loadFiles(files) {
   $('yaw').value = '0';
   renderFeet();
   const turn = epoch;
-  setBusy(true, 'Reading ' + file.name + '…');
+  setBusy(
+    true,
+    'Reading ' + file.name + '…',
+    ['step', 'stp', 'brep', 'brp'].includes(sourceFormat)
+      ? {
+          stage: 1,
+          total: 5,
+          detail: `${(file.size / 1048576).toFixed(1)} MB file`,
+        }
+      : undefined,
+  );
   try {
     importAbort = new AbortController();
     const imported = await importFile(
@@ -539,8 +589,8 @@ async function loadFiles(files) {
       (w) => {
         if (turn === epoch) cadWorker = w;
       },
-      (message) => {
-        if (turn === epoch) setBusy(true, message);
+      (message, info) => {
+        if (turn === epoch) setBusy(true, message, info);
       },
       importAbort.signal,
     );
@@ -592,7 +642,11 @@ async function loadDemo() {
 async function runDetection() {
   const turn = epoch;
   invalidate();
-  setBusy(true, 'Matching foot profiles and the 42 mm grid…');
+  setBusy(
+    true,
+    'Matching foot profiles and the 42 mm grid…',
+    busyInfo ? { stage: 5, total: 5 } : undefined,
+  );
   try {
     const r = await rpc('detect', {
       bodyIndex: Number($('body').value || 0),
@@ -788,15 +842,14 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=cad-consistency-1', {
+    const w = new Worker('./native-worker.js?v=cad-progress-1', {
       type: 'module',
     });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
       if (nativeWorker !== w) return;
       if (data.progress) {
-        status(data.progress);
-        $('viewer-message').textContent = data.progress;
+        setBusy(true, data.progress);
         return;
       }
       w.terminate();

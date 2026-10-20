@@ -1,0 +1,92 @@
+{
+  "checks": {
+    "loadingVisible": true,
+    "loadingHidden": true,
+    "cancelHidesLoading": true,
+    "numberedProgress": true,
+    "allImportStages": true,
+    "currentOperationTime": true,
+    "adapted": true,
+    "parsedOnce": true,
+    "stages": true
+  },
+  "imported": {
+    "preview": {
+      "deflectionMM": 0.2,
+      "angularDeflection": 0.5,
+      "triangles": 1604,
+      "faces": 143,
+      "attempts": 3,
+      "nativeReadCount": 1,
+      "adapted": true,
+      "engineReadyMS": 345.80000019073486,
+      "readAndMeshMS": 818.5
+    },
+    "progress": [
+      {
+        "message": "Loading the CAD engine\u2026",
+        "stage": 1,
+        "total": 5
+      },
+      {
+        "message": "Reading native CAD\u2026",
+        "stage": 2,
+        "total": 5
+      },
+      {
+        "message": "Building preview from 143 CAD faces\u2026",
+        "stage": 3,
+        "total": 5,
+        "detail": "Preview attempt 1 \u00b7 0.025 mm"
+      },
+      {
+        "message": "Building preview from 143 CAD faces\u2026",
+        "stage": 3,
+        "total": 5,
+        "detail": "Preview attempt 2 \u00b7 0.1 mm \u00b7 Previous attempt: 5,668 triangles; limit 2,000"
+      },
+      {
+        "message": "Building preview from 143 CAD faces\u2026",
+        "stage": 3,
+        "total": 5,
+        "detail": "Preview attempt 3 \u00b7 0.2 mm \u00b7 Previous attempt: 2,236 triangles; limit 2,000"
+      },
+      {
+        "message": "CAD preview ready.",
+        "stage": 3,
+        "total": 5,
+        "detail": "143 faces \u00b7 1,604 triangles \u00b7 3 preview attempts"
+      }
+    ]
+  },
+  "uiStages": [
+    {
+      "text": "Import stage 1 of 5 \u00b7 0.2 MB file",
+      "ms": 17.59999990463257
+    },
+    {
+      "text": "Import stage 1 of 5",
+      "ms": 103.89999985694885
+    },
+    {
+      "text": "Import stage 2 of 5",
+      "ms": 461.7999999523163
+    },
+    {
+      "text": "Import stage 3 of 5 \u00b7 Preview attempt 1 \u00b7 0.025 mm",
+      "ms": 1489.5999999046326
+    },
+    {
+      "text": "Import stage 3 of 5 \u00b7 143 faces \u00b7 5,668 triangles \u00b7 1 preview attempt",
+      "ms": 1794.5
+    },
+    {
+      "text": "Import stage 4 of 5 \u00b7 5,668 preview triangles",
+      "ms": 1861.7000000476837
+    },
+    {
+      "text": "Import stage 5 of 5",
+      "ms": 2231.7000000476837
+    }
+  ]
+}

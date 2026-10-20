@@ -369,7 +369,11 @@ export async function importFile(
     unitNote =
       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
-    const worker = new Worker('./cad-worker.js?v=cad-preview-1');
+    const worker = ['iges', 'igs'].includes(ext)
+      ? new Worker('./cad-worker.js?v=cad-preview-1')
+      : new Worker('./native-preview-worker.js?v=cad-progress-1', {
+          type: 'module',
+        });
     onCADWorker(worker);
     const format = ['step', 'stp'].includes(ext)
       ? 'step'
@@ -399,7 +403,7 @@ export async function importFile(
       worker.onmessage = ({ data }) => {
         if (data.progress) {
           arm();
-          onProgress(data.progress);
+          onProgress(data.progress, data.progressInfo);
           return;
         }
         if (data.error) reject(Error(data.error));

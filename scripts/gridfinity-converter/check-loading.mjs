@@ -132,25 +132,63 @@ try {
   checks.cancelHidesLoading = await evaluate(
     "document.body.dataset.busy==='false' && document.getElementById('loading').hidden",
   );
-  const bytes = [...(await fs.readFile(process.env.CAD_TEST_FILE))];
-  const imported = await evaluate(`new Promise((resolve,reject)=>{
-    const w=new Worker('/gridfinity-converter/cad-worker.js?v=cad-preview-1');
+  const doc = await call('DOM.getDocument');
+  const input = await call('DOM.querySelector', {
+    nodeId: doc.root.nodeId,
+    selector: '#files',
+  });
+  await evaluate(`window.importStages=[]; window.importStarted=performance.now();
+    document.getElementById("files").addEventListener("change",e=>window.auditFile=e.target.files[0],{capture:true});
+    new MutationObserver(()=>{const text=document.getElementById('loading-stage').textContent;
+      if(text && window.importStages.at(-1)?.text!==text) window.importStages.push({text,ms:performance.now()-window.importStarted});
+    }).observe(document.getElementById('loading-stage'),{subtree:true,childList:true,characterData:true});`);
+  await call('DOM.setFileInputFiles', {
+    nodeId: input.nodeId,
+    files: [path.resolve(process.env.CAD_TEST_FILE)],
+  });
+  await pause(500);
+  checks.numberedProgress = await evaluate(
+    "document.getElementById('loading-stage').textContent.includes('of 5') && document.querySelector('#loading progress').max===5",
+  );
+  await ready();
+  const uiStages = await evaluate('window.importStages');
+  checks.allImportStages = [1, 2, 3, 4, 5].every((n) =>
+    uiStages.some((s) => s.text.startsWith('Import stage ' + n + ' of 5')),
+  );
+  checks.currentOperationTime = await evaluate(
+    "document.getElementById('loading-elapsed').textContent.includes('Current operation')",
+  );
+  const budget = Number(process.env.PREVIEW_BUDGET || 2000);
+  const imported = await evaluate(`new Promise(async(resolve,reject)=>{
+    const w=new Worker('/gridfinity-converter/native-preview-worker.js?v=cad-progress-1',{type:'module'});
     const progress=[];
-    const timer=setTimeout(()=>{w.terminate();reject(Error('CAD worker timeout'))},60000);
-    w.onmessage=({data})=>{if(data.progress){progress.push(data.progress);return;}clearTimeout(timer);w.terminate();data.error?reject(Error(data.error)):resolve({preview:data.preview,progress});};
+    const timer=setTimeout(()=>{w.terminate();reject(Error('CAD worker timeout'))},180000);
+    w.onmessage=({data})=>{if(data.progress){progress.push({message:data.progress,...data.progressInfo});return;}clearTimeout(timer);w.terminate();data.error?reject(Error(data.error)):resolve({preview:data.preview,progress});};
     w.onerror=e=>reject(Error(e.message));
-    w.postMessage({format:'step',buffer:new Uint8Array(${JSON.stringify(bytes)}).buffer,previewTriangleBudget:2000});
+    const buffer=await window.auditFile.arrayBuffer();
+    w.postMessage({format:'step',buffer,previewTriangleBudget:${budget}},[buffer]);
   })`);
   checks.adapted =
-    imported.preview.adapted && imported.preview.triangles <= 2000;
+    imported.preview.adapted && imported.preview.triangles <= budget;
+  checks.parsedOnce = imported.preview.nativeReadCount === 1;
   checks.stages = imported.progress.length >= 3;
+  let legacy;
+  if (process.env.COMPARE_LEGACY)
+    legacy = await evaluate(`new Promise(async(resolve,reject)=>{
+    const w=new Worker('/gridfinity-converter/cad-worker.js?v=cad-preview-1');
+    const timer=setTimeout(()=>{w.terminate();reject(Error('Legacy CAD worker timeout'))},180000);
+    w.onmessage=({data})=>{if(data.progress)return;clearTimeout(timer);w.terminate();data.error?reject(Error(data.error)):resolve(data.preview);};
+    w.onerror=e=>reject(Error(e.message));
+    const buffer=await window.auditFile.arrayBuffer();
+    w.postMessage({format:'step',buffer,previewTriangleBudget:${budget}},[buffer]);
+  })`);
   if (Object.values(checks).some((v) => !v))
     throw Error(JSON.stringify({ checks, imported }));
   await fs.writeFile(
     output + '.json',
-    JSON.stringify({ checks, imported }, null, 2) + '\n',
+    JSON.stringify({ checks, imported, uiStages, legacy }, null, 2) + '\n',
   );
-  console.log({ checks, imported });
+  console.log({ checks, imported, uiStages, legacy });
 } finally {
   ws?.close();
   browser?.kill();
