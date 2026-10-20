@@ -31,6 +31,7 @@ let worker,
   sourceFormat = 'demo',
   view = 'original',
   isDemo = true;
+let fileState = 'example';
 const pending = new Map();
 let renderer;
 try {
@@ -237,6 +238,20 @@ function controls() {
   ))
     el.disabled = busy;
   $('demo').disabled = busy;
+  $('choose-file').textContent = isDemo
+    ? 'Choose your model…'
+    : loaded
+      ? 'Replace model…'
+      : 'Choose another model…';
+  $('file-state').textContent = {
+    example: 'Built-in example',
+    opening: 'Opening model…',
+    loaded: 'Current model',
+    error: 'Selected file · needs attention',
+    cancelled: 'Cancelled · choose a model to continue',
+  }[fileState];
+  $('representation').hidden = !loaded;
+
   $('detect').disabled = busy || !loaded;
   $('convert').disabled = !canConvert();
   $('cancel').disabled = !busy;
@@ -400,6 +415,7 @@ async function prepare(demo = false) {
     );
     if (turn !== epoch) return;
     loaded = true;
+    fileState = isDemo ? 'example' : 'loaded';
     original = r.geometry;
     view = 'original';
     $('body').replaceChildren(
@@ -422,6 +438,8 @@ async function prepare(demo = false) {
   } catch (e) {
     if (turn !== epoch) return;
     setBusy(false);
+    fileState = 'error';
+    controls();
     if (e.name !== 'AbortError') status(e.message, true);
   }
 }
@@ -450,6 +468,7 @@ async function loadFiles(files) {
   view = 'original';
   draw();
   isDemo = false;
+  fileState = 'opening';
   sourceName = file.name.replace(/\.[^.]+$/, '');
   sourceFormat = file.name.split('.').at(-1).toLowerCase();
   $('part-badge').textContent = 'Uploaded part';
@@ -483,6 +502,7 @@ async function loadFiles(files) {
     await prepare();
   } catch (e) {
     if (turn !== epoch) return;
+    fileState = 'error';
     setBusy(false);
     status(e.message, true);
   }
@@ -493,6 +513,7 @@ async function loadDemo() {
   raw = null;
   loaded = false;
   isDemo = true;
+  fileState = 'example';
   sourceName = 'example-bin';
   sourceFormat = 'demo';
   detection = null;
@@ -722,6 +743,7 @@ function nativeConversion(options) {
     });
   });
 }
+$('choose-file').onclick = () => $('files').click();
 $('files').onchange = (e) => {
   const files = Array.from(e.target.files);
   e.target.value = '';
@@ -864,6 +886,7 @@ $('add-cell').onclick = () => {
   renderFeet();
 };
 $('cancel').onclick = () => {
+  fileState = 'cancelled';
   epoch++;
   terminate();
   setBusy(false);

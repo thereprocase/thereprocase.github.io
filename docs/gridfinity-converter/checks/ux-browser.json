@@ -1,6 +1,7 @@
 {
   "demo": true,
   "fixedPitch": true,
+  "examplePicker": true,
   "directAction": true,
   "converted": true,
   "downloads": true,
@@ -18,6 +19,7 @@
   "mobilePreview": true,
   "unappliedGridIgnored": true,
   "visibleValidation": true,
+  "uploadedPicker": true,
   "customDetected": true,
   "fittedDepthShown": true,
   "customConverted": true,

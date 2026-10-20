@@ -123,6 +123,9 @@ try {
       "document.getElementById('detection-note').textContent.includes('42 mm grid')",
     ),
   };
+  results.examplePicker = await evaluate(
+    "document.getElementById('file-state').textContent==='Built-in example' && document.getElementById('choose-file').textContent==='Choose your model…' && getComputedStyle(document.getElementById('files')).display==='none'",
+  );
   results.directAction = await evaluate(
     "!document.getElementById('confirm')&&!document.getElementById('workflow-action').disabled",
   );
@@ -244,6 +247,9 @@ try {
       files: [path.resolve(process.env.CUSTOM_MODEL)],
     });
     await ready();
+    results.uploadedPicker = await evaluate(
+      "document.getElementById('file-state').textContent==='Current model' && document.getElementById('choose-file').textContent==='Replace model…' && document.getElementById('file-info').textContent.endsWith('.stl')",
+    );
     results.customDetected = await evaluate(
       `document.querySelectorAll('#feet tr').length===${Number(process.env.CUSTOM_FEET || 2)} && !document.getElementById('workflow-action').disabled`,
     );

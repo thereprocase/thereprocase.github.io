@@ -14,3 +14,6 @@
 .workflow-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}#workflow-action{background:#0000a8;color:#fff;font-weight:600;min-height:44px;white-space:nowrap}.workflow .status-row{gap:12px}@media(max-width:700px){.workflow .status-row{flex-wrap:wrap}.workflow-actions{width:100%}#workflow-action{flex:1}.workflow #status{margin:3px 0}.pane{scroll-margin-top:calc(var(--workflow-height,170px) + 16px)}}
 
 button.primary:disabled,#workflow-action:disabled{background:#ddd;color:#555;border-color:#aaa;opacity:1;cursor:not-allowed}
+
+/* Keep the file action separate from the model currently in the viewer. */
+.dropzone #choose-file{width:100%;min-height:48px;background:#fff;color:#000099;font-weight:600}.dropzone #choose-file:disabled{color:#666;background:#ddd}.dropzone #files[hidden]{display:none}.file-state{font-weight:600;margin:18px 0 4px}.file-state + .file-info{margin-top:0;overflow-wrap:anywhere}
