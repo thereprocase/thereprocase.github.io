@@ -349,6 +349,8 @@ export async function importFile(
   file,
   companions = [],
   onCADWorker = () => {},
+  onProgress = () => {},
+  signal,
 ) {
   if (file.size > LIMITS.fileBytes) throw Error('Maximum file size is 50 MB.');
   const ext = file.name.split('.').at(-1).toLowerCase();
@@ -362,31 +364,69 @@ export async function importFile(
       : null,
     text = () => new TextDecoder().decode(buffer);
   let data,
+    preview = null,
     unitScale = 1,
     unitNote =
       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
-    const worker = new Worker('./cad-worker.js?v=converter-1');
+    const worker = new Worker('./cad-worker.js?v=cad-preview-1');
     onCADWorker(worker);
     const format = ['step', 'stp'].includes(ext)
       ? 'step'
       : ['iges', 'igs'].includes(ext)
         ? 'iges'
         : 'brep';
-    const imported = await new Promise((resolve, reject) => {
-      worker.onmessage = ({ data }) =>
-        data.error ? reject(Error(data.error)) : resolve(data.result);
+    let timer;
+    let abort;
+    const payload = await new Promise((resolve, reject) => {
+      const fail = (message) => reject(Error(message));
+      const arm = () => {
+        clearTimeout(timer);
+        timer = setTimeout(
+          () =>
+            fail(
+              'CAD import did not finish this stage within three minutes. Cancelled to keep the page responsive; you can choose the file again.',
+            ),
+          180000,
+        );
+      };
+      abort = () => reject(new DOMException('Cancelled', 'AbortError'));
+      if (signal?.aborted) {
+        abort();
+        return;
+      }
+      signal?.addEventListener('abort', abort, { once: true });
+      worker.onmessage = ({ data }) => {
+        if (data.progress) {
+          arm();
+          onProgress(data.progress);
+          return;
+        }
+        if (data.error) reject(Error(data.error));
+        else if (data.result) resolve(data);
+        else fail('The CAD importer returned an incomplete response.');
+      };
       worker.onerror = () =>
-        reject(Error('CAD importer could not load. Retry or export STL.'));
+        fail(
+          'The CAD engine could not start or ran out of memory. Reload this page and try the file again.',
+        );
+      worker.onmessageerror = () =>
+        fail('The browser could not receive the CAD preview.');
+      arm();
+      onProgress('Starting the CAD importer…');
       worker.postMessage({ format, buffer }, [buffer]);
     }).finally(() => {
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', abort);
       worker.terminate();
       onCADWorker(null);
     });
+    const imported = payload.result;
+    preview = payload.preview;
     data = combine(
       imported.meshes.map((m) => ({
-        vertices: new Float32Array(m.attributes.position.array),
-        triangles: new Uint32Array(m.index.array),
+        vertices: m.attributes.position.array,
+        triangles: m.index.array,
       })),
     );
     unitNote =
@@ -394,7 +434,11 @@ export async function importFile(
         ? 'Native BREP; assumed millimetres. STEP export preserves CAD geometry.'
         : format === 'step'
           ? 'Native STEP; file units converted to millimetres. STEP export preserves CAD geometry.'
-          : 'IGES mesh conversion at 0.025 mm deflection. Use STEP to preserve native CAD surfaces.';
+          : 'IGES uses mesh conversion. Use STEP to preserve native CAD surfaces.';
+    unitNote += ` Preview deviation: ${payload.preview.deflectionMM} mm${payload.preview.adapted ? ' (automatically adapted)' : ''}.`;
+    if (nativeBuffer)
+      unitNote +=
+        ' Original CAD geometry retained for native conversion and STEP export.';
   } else if (ext === '3mf') {
     data = parse3MF(buffer);
     unitNote =
@@ -489,6 +533,7 @@ export async function importFile(
     unitScale,
     unitNote,
     nativeBuffer,
+    preview,
     requiresUnits: ext === 'fbx',
   };
 }

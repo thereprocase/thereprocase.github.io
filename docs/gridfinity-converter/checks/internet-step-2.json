@@ -1,0 +1,34 @@
+[
+  {
+    "file": "16-Gridfinity-Sample-Size.step.plain.-0.5.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  },
+  {
+    "file": "16-Gridfinity-Sample-Size.step.plain.0.5.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  },
+  {
+    "file": "23-Gridfinity Profile - Parametric Design.step.plain.0.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  },
+  {
+    "file": "regression-selected-bin-unrelated-invalid-lid.step.plain.0.step",
+    "valid": true,
+    "exactValid": true,
+    "solidsValid": [
+      true
+    ]
+  }
+]

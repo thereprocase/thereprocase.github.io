@@ -11,15 +11,18 @@ import {
   importFile,
   extensions,
   export3MF,
-} from './importers.js?v=converter-1';
+} from './importers.js?v=cad-preview-1';
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
   cadWorker,
   nativeWorker,
+  importAbort,
   sequence = 0,
   epoch = 0,
   busy = false,
+  busyStarted = 0,
+  busyTimer,
   raw = null,
   loaded = false,
   detection = null,
@@ -228,6 +231,7 @@ renderer.domElement.addEventListener('pointerup', (e) => {
 function status(text, error = false) {
   $('status').textContent = text;
   $('status').classList.toggle('error', error);
+  syncWorkflowHeight();
 }
 function canConvert() {
   return !busy && detection && selection.size > 0;
@@ -314,6 +318,20 @@ function controls() {
   $('section-z').disabled = !$('section').checked;
 }
 function setBusy(value, message) {
+  if (value && !busy) {
+    busyStarted = performance.now();
+    const tick = () => {
+      const seconds = Math.floor((performance.now() - busyStarted) / 1000);
+      $('loading-elapsed').textContent =
+        `Elapsed ${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')} · Processing on this device`;
+    };
+    tick();
+    busyTimer = setInterval(tick, 1000);
+  } else if (!value) {
+    clearInterval(busyTimer);
+    busyTimer = null;
+  }
+  $('loading').hidden = !value;
   busy = value;
   document.body.dataset.busy = String(value);
   $('viewer-message').hidden = !value;
@@ -322,6 +340,7 @@ function setBusy(value, message) {
     status(message);
   }
   controls();
+  syncWorkflowHeight();
 }
 function invalidate(
   message = 'Settings changed. Review the selection and generate a new preview.',
@@ -336,6 +355,8 @@ function invalidate(
   draw();
 }
 function terminate() {
+  importAbort?.abort();
+  importAbort = null;
   worker?.terminate();
   worker = null;
   cadWorker?.terminate();
@@ -491,12 +512,23 @@ async function loadFiles(files) {
   const turn = epoch;
   setBusy(true, 'Reading ' + file.name + '…');
   try {
-    const imported = await importFile(file, Array.from(files), (w) => {
-      cadWorker = w;
-    });
+    importAbort = new AbortController();
+    const imported = await importFile(
+      file,
+      Array.from(files),
+      (w) => {
+        if (turn === epoch) cadWorker = w;
+      },
+      (message) => {
+        if (turn === epoch) setBusy(true, message);
+      },
+      importAbort.signal,
+    );
     if (turn !== epoch) return;
     raw = imported;
-    $('units-settings').open = Boolean(raw.requiresUnits);
+    $('units-settings').open = Boolean(
+      raw.requiresUnits || raw.preview?.adapted,
+    );
     $('unit-note').textContent = raw.unitNote;
     original = {
       ...raw,
@@ -702,6 +734,9 @@ async function runConversion() {
       `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.` +
       (['screws', 'both'].includes(r.report.style)
         ? ` Screw depth: ${r.report.screwDepth} mm${r.report.screwDepth < r.report.requestedScrewDepth ? `, fitted from ${r.report.requestedScrewDepth} mm to retain the solid roof` : ''}.`
+        : '') +
+      (r.report.tessellationDeflectionMM > 0.01
+        ? ` STL/3MF mesh deviation: ${r.report.tessellationDeflectionMM} mm (automatically adapted). STEP retains native CAD surfaces.`
         : '');
     metrics($('conversion-metrics'), [
       ['Volume before', (r.report.originalVolume / 1000).toFixed(3) + ' cm³'],
@@ -727,9 +762,17 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=step-audit-1', { type: 'module' });
+    const w = new Worker('./native-worker.js?v=cad-preview-1', {
+      type: 'module',
+    });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
+      if (nativeWorker !== w) return;
+      if (data.progress) {
+        status(data.progress);
+        $('viewer-message').textContent = data.progress;
+        return;
+      }
       w.terminate();
       if (nativeWorker === w) nativeWorker = null;
       if (data.error) reject(Error(data.error));
@@ -1018,12 +1061,23 @@ $('report').onclick = () => {
       filename('json'),
     );
 };
-new ResizeObserver(() => {
+function syncWorkflowHeight() {
   document.documentElement.style.setProperty(
     '--workflow-height',
     $('workflow').offsetHeight + 'px',
   );
-}).observe($('workflow'));
+}
+new ResizeObserver(syncWorkflowHeight).observe($('workflow'));
+for (const link of document.querySelectorAll('[data-stage]')) {
+  link.addEventListener('click', () => {
+    requestAnimationFrame(() => {
+      syncWorkflowHeight();
+      document
+        .querySelector(link.getAttribute('href'))
+        .scrollIntoView({ block: 'start', behavior: 'instant' });
+    });
+  });
+}
 setBusy(false);
 status('Choose your model or try the example bin to begin.');
 $('viewer-message').textContent = 'Choose a model to preview it here.';

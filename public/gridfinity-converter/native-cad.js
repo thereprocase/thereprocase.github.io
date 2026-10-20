@@ -84,6 +84,33 @@ export async function nativeFoot(
   );
   return sketches[0].loftWith(sketches.slice(1), { ruled: true });
 }
+export async function tessellateNative(shape, triangleBudget = 1000000) {
+  const oc = await kernel();
+  const levels = [
+    [0.01, 0.1],
+    [0.025, 0.15],
+    [0.05, 0.25],
+    [0.1, 0.35],
+    [0.2, 0.5],
+    [0.4, 0.65],
+    [0.8, 0.8],
+  ];
+  for (const [index, [tolerance, angularTolerance]] of levels.entries()) {
+    // Discard only cached triangles, never CAD curves or surfaces.
+    if (index) oc.BRepTools.Clean(shape.wrapped, false);
+    const mesh = shape.mesh({ tolerance, angularTolerance });
+    if (mesh.triangles.length / 3 <= triangleBudget)
+      return {
+        vertices: new Float32Array(mesh.vertices),
+        triangles: new Uint32Array(mesh.triangles),
+        volume: volume(shape),
+        tessellationDeflectionMM: tolerance,
+      };
+  }
+  throw Error(
+    'The CAD result exceeds browser mesh capacity after automatic preview adaptation.',
+  );
+}
 export async function convertNative({
   buffer,
   format,
@@ -91,20 +118,24 @@ export async function convertNative({
   bodyIndex = 0,
   detection,
   options: p,
+  onProgress = () => {},
 }) {
+  onProgress('Opening native CAD…');
   const oc = await kernel();
   let source =
     format === 'brep' || format === 'brp'
       ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
       : await cad.importSTEP(new Blob([buffer]));
-  if (!valid(oc, source))
-    throw Error(
-      'The source CAD boundary representation is invalid. Repair it in the source modeler.',
-    );
   const bodies = source.solids.sort((a, b) => volume(b) - volume(a));
   if (!bodies[bodyIndex])
     throw Error('The selected native CAD solid was not found.');
   source = bodies[bodyIndex];
+  // Conversion only uses the selected solid. Unrelated assembly parts must
+  // not invalidate a sound selected part.
+  if (!valid(oc, source))
+    throw Error(
+      'The selected CAD solid fails strict boundary-representation validation. Repair it in the source modeler.',
+    );
   if (scale !== 1) source.scale(scale);
   source = transform(oc, source, detection);
   const bounds = source.boundingBox,
@@ -140,7 +171,8 @@ export async function convertNative({
     newFeet = [],
     holes = [],
     regions = [];
-  for (const f of feet) {
+  for (const [index, f] of feet.entries()) {
+    onProgress(`Checking attachment ${index + 1} of ${feet.length}…`);
     const sx = f.sourceX ?? f.x,
       sy = f.sourceY ?? f.y,
       lo = [
@@ -162,7 +194,9 @@ export async function convertNative({
       [f.x - 21, f.y - 21, bottom + height],
       [f.x + 21, f.y + 21, bottom + height + 0.02],
     );
-    const contact = intersect(intersect(source, foot), seamSlice);
+    // Clip the source to the narrow seam band first, so contact booleans
+    // do not repeatedly process the entire foot profile and tool cavities.
+    const contact = intersect(intersect(source, seamSlice), foot);
     if (volume(contact) < 0.02)
       throw Error(
         'Native CAD foot has no substantial contact with the part at the seam.',
@@ -185,6 +219,7 @@ export async function convertNative({
         }
       }
   }
+  onProgress('Replacing native CAD feet…');
   let result = fuse(cut(source, union(cuts)), union(newFeet));
   for (const f of feet)
     for (const dx of [-13, 13])
@@ -206,9 +241,11 @@ export async function convertNative({
             throw Error('Native CAD hole would break through its solid roof.');
         }
       }
+  onProgress('Checking native CAD holes and solid validity…');
   if (holes.length) result = cut(result, union(holes));
   if (!valid(oc, result) || result.solids.length !== 1 || volume(result) <= 0)
     throw Error('Native CAD result is not one valid solid. Export blocked.');
+  onProgress('Checking preserved CAD geometry…');
   const added = cut(result, source),
     removed = cut(source, result),
     allowed = union(regions),
@@ -217,14 +254,6 @@ export async function convertNative({
     throw Error(
       'Native CAD preservation check failed: ' + outsideChange + ' mm³.',
     );
-  const mesh = (s) => {
-    const m = s.mesh({ tolerance: 0.01, angularTolerance: 0.1 });
-    return {
-      vertices: new Float32Array(m.vertices),
-      triangles: new Uint32Array(m.triangles),
-      volume: volume(s),
-    };
-  };
   // Validate the serialized file, not only the in-memory boolean result.
   const checkedStep = async (shape) => {
     // Keep native 3D curves/surfaces. Let the reader reconstruct optional
@@ -262,13 +291,18 @@ export async function convertNative({
       reopened.delete();
     }
   };
+  onProgress('Validating exported STEP files…');
   const step = await checkedStep(result),
     restored = transform(oc, result, detection, true),
     sourceStep = await checkedStep(restored);
+  onProgress('Preparing CAD preview…');
+  const geometry = await tessellateNative(result);
+  const addedMesh = await tessellateNative(added);
+  const removedMesh = await tessellateNative(removed);
   return {
-    geometry: mesh(result),
-    added: mesh(added),
-    removed: mesh(removed),
+    geometry,
+    added: addedMesh,
+    removed: removedMesh,
     step,
     sourceStep,
     report: {
@@ -284,7 +318,11 @@ export async function convertNative({
       stepRoundTripValid: true,
       stepSurfaceCurves: 'reconstructed-on-import',
       connectedSolids: 1,
-      tessellationDeflectionMM: 0.01,
+      tessellationDeflectionMM: Math.max(
+        geometry.tessellationDeflectionMM,
+        addedMesh.tessellationDeflectionMM,
+        removedMesh.tessellationDeflectionMM,
+      ),
     },
   };
 }

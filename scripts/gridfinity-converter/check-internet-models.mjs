@@ -106,14 +106,20 @@ try {
   };
 
   const ready = async () => {
-    for (let i = 0; i < 1200; i++) {
+    let lastStatus = '';
+    for (
+      let i = 0;
+      i < Number(process.env.AUDIT_TIMEOUT_SECONDS || 120) * 10;
+      i++
+    ) {
       await pause(100);
       const state = await evaluate(
         "({busy:document.body.dataset.busy,status:document.getElementById('status')?.textContent})",
       );
+      lastStatus = state.status;
       if (state.busy === 'false') return state.status;
     }
-    throw Error('Timed out');
+    throw Error('Timed out: ' + lastStatus);
   };
   await ready();
   await evaluate(
@@ -137,19 +143,40 @@ try {
       });
       record.importStatus = await ready();
       record.detection = await evaluate(
-        `({note:document.getElementById('detection-note').textContent,feet:document.querySelectorAll('#feet tr').length,selected:document.getElementById('selection-count').textContent,enabled:!document.getElementById('convert').disabled,dimensions:document.getElementById('model-size').textContent})`,
+        `({note:document.getElementById('detection-note').textContent,feet:document.querySelectorAll('#feet tr').length,selected:document.getElementById('selection-count').textContent,enabled:!document.getElementById('convert').disabled,dimensions:document.getElementById('model-size').textContent,bodies:document.getElementById('body').options.length,bodyNote:document.getElementById('body-note').textContent})`,
       );
+      if (process.env.AUDIT_SCREENSHOTS) {
+        await evaluate(
+          "document.getElementById('underside').click();document.getElementById('preview-panel').scrollIntoView({block:'start'})",
+        );
+        await pause(300);
+        const screenshot = await call('Page.captureScreenshot', {
+          format: 'png',
+        });
+        await fs.writeFile(
+          path.join(path.dirname(output), path.basename(item.path) + '.png'),
+          Buffer.from(screenshot.data, 'base64'),
+        );
+      }
       if (record.detection.enabled)
-        for (const [style, fit] of [
+        for (const [style, fit] of item.variants || [
           ['plain', 0],
+          ...(process.env.AUDIT_ALL_STYLES
+            ? [
+                ['magnets', 0],
+                ['screws', 0],
+              ]
+            : []),
           ['both', 0],
           ['plain', -0.5],
           ['plain', 0.5],
         ]) {
+          const conversionStarted = Date.now();
           await evaluate(
             `document.getElementById('style').value=${JSON.stringify(style)};document.getElementById('fit').value=${fit};document.getElementById('fit').dispatchEvent(new Event('input'));document.getElementById('convert').click()`,
           );
           const attempt = { style, fit, status: await ready() };
+          attempt.elapsedMS = Date.now() - conversionStarted;
           attempt.success = await evaluate(
             "!document.getElementById('stl').disabled",
           );
@@ -189,6 +216,11 @@ try {
             );
           }
           record.conversions.push(attempt);
+          console.log(path.basename(item.path), style, fit, attempt.status);
+          await fs.writeFile(
+            output,
+            JSON.stringify([...results, record], null, 2) + '\n',
+          );
         }
     } catch (error) {
       record.error = error.message;

@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "loadingVisible": true,
+    "loadingHidden": true,
+    "cancelHidesLoading": true,
+    "adapted": true,
+    "stages": true
+  },
+  "imported": {
+    "preview": {
+      "deflectionMM": 0.2,
+      "angularDeflection": 0.5,
+      "triangles": 1604,
+      "adapted": true,
+      "engineReadyMS": 38.59999990463257,
+      "readAndMeshMS": 1304.8000001907349
+    },
+    "progress": [
+      "Loading the CAD engine…",
+      "Reading CAD solids and building the preview…",
+      "Adapting the CAD preview (0.1 mm)… Original CAD retained.",
+      "Adapting the CAD preview (0.2 mm)… Original CAD retained."
+    ]
+  }
+}
