@@ -607,57 +607,100 @@ export function align(module, shape, detection) {
   s.delete();
   return aligned;
 }
+export function conversionParameters(input) {
+  const style = input.style ?? 'plain',
+    bottom = Number(input.bottom ?? 0),
+    height = Number(input.height ?? 4.75),
+    fit = Number(input.fit ?? 0),
+    magnetDiameter = Number(input.magnetDiameter ?? 6.5),
+    magnetDepth = Number(input.magnetDepth ?? 2.4),
+    screwDiameter = Number(input.screwDiameter ?? 3),
+    requestedScrewDepth = Number(input.screwDepth ?? 6),
+    roof = Number(input.roof ?? 0.8);
+  const screwDepth = requestedScrewDepth;
+  if (!Object.hasOwn(STYLES, style))
+    throw Error('Choose a supported foot style.');
+  for (const [name, value, lo, hi] of [
+    ['bottom', bottom, -2000, 2000],
+    ['replacement height', height, 4.75, 10],
+    ['fit allowance', fit, -0.5, 0.5],
+    ['magnet diameter', magnetDiameter, 5.5, 7],
+    ['magnet depth', magnetDepth, 1, 3],
+    ['screw diameter', screwDiameter, 2.5, 3.6],
+    ['screw depth', screwDepth, 2, 8],
+    ['roof', roof, 0.6, 2],
+  ])
+    if (!Number.isFinite(value) || value < lo || value > hi)
+      throw Error(`${name}: use ${lo}–${hi} mm.`);
+  const feet = input.feet;
+  if (!Array.isArray(feet) || !feet.length || feet.length > LIMITS.feet)
+    throw Error('Select between 1 and 128 feet.');
+  for (let i = 0; i < feet.length; i++) {
+    const p = feet[i];
+    if (
+      !Number.isFinite(p.x) ||
+      !Number.isFinite(p.y) ||
+      Math.max(Math.abs(p.x), Math.abs(p.y)) > 2000
+    )
+      throw Error('Invalid foot center.');
+    for (const k of ['x', 'y'])
+      if (
+        Math.abs(
+          (p[k] - feet[0][k]) / 42 - Math.round((p[k] - feet[0][k]) / 42),
+        ) > 1e-5
+      )
+        throw Error(
+          'All replacement feet must share a fixed 42 mm grid. Correct the grid origin or selected cells.',
+        );
+    for (let j = 0; j < i; j++)
+      if (Math.hypot(p.x - feet[j].x, p.y - feet[j].y) < 0.01)
+        throw Error('The same grid cell is selected more than once.');
+  }
+  const normalizedFeet = feet.map((p) => {
+    const sourceX = p.sourceX ?? p.x,
+      sourceY = p.sourceY ?? p.y;
+    if (
+      !Number.isFinite(sourceX) ||
+      !Number.isFinite(sourceY) ||
+      Math.hypot(sourceX - p.x, sourceY - p.y) > 1
+    )
+      throw Error(
+        'Grid correction exceeds 1 mm. Reorient or redetect the original feet.',
+      );
+    return { x: p.x, y: p.y, sourceX, sourceY };
+  });
+  return {
+    style,
+    pitch: 42,
+    feet: normalizedFeet,
+    bottom,
+    height,
+    fit,
+    magnetDiameter,
+    magnetDepth,
+    screwDiameter,
+    screwDepth,
+    requestedScrewDepth,
+    fitScrewDepth: Boolean(input.fitScrewDepth),
+    minimumRoof: roof,
+  };
+}
 export function convert(module, original, input) {
   return scope((keep) => {
-    const { Manifold: M } = module,
-      style = input.style ?? 'plain',
-      bottom = Number(input.bottom ?? 0),
-      height = Number(input.height ?? 4.75),
-      fit = Number(input.fit ?? 0),
-      magnetDiameter = Number(input.magnetDiameter ?? 6.5),
-      magnetDepth = Number(input.magnetDepth ?? 2.4),
-      screwDiameter = Number(input.screwDiameter ?? 3),
-      requestedScrewDepth = Number(input.screwDepth ?? 6),
-      roof = Number(input.roof ?? 0.8);
+    const { Manifold: M } = module;
+    const {
+      style,
+      bottom,
+      height,
+      fit,
+      magnetDiameter,
+      magnetDepth,
+      screwDiameter,
+      requestedScrewDepth,
+      minimumRoof: roof,
+      feet,
+    } = conversionParameters(input);
     let screwDepth = requestedScrewDepth;
-    if (!Object.hasOwn(STYLES, style))
-      throw Error('Choose a supported foot style.');
-    for (const [name, value, lo, hi] of [
-      ['bottom', bottom, -2000, 2000],
-      ['replacement height', height, 4.75, 10],
-      ['fit allowance', fit, -0.5, 0.5],
-      ['magnet diameter', magnetDiameter, 5.5, 7],
-      ['magnet depth', magnetDepth, 1, 3],
-      ['screw diameter', screwDiameter, 2.5, 3.6],
-      ['screw depth', screwDepth, 2, 8],
-      ['roof', roof, 0.6, 2],
-    ])
-      if (!Number.isFinite(value) || value < lo || value > hi)
-        throw Error(`${name}: use ${lo}–${hi} mm.`);
-    const feet = input.feet;
-    if (!Array.isArray(feet) || !feet.length || feet.length > LIMITS.feet)
-      throw Error('Select between 1 and 128 feet.');
-    for (let i = 0; i < feet.length; i++) {
-      const p = feet[i];
-      if (
-        !Number.isFinite(p.x) ||
-        !Number.isFinite(p.y) ||
-        Math.max(Math.abs(p.x), Math.abs(p.y)) > 2000
-      )
-        throw Error('Invalid foot center.');
-      for (const k of ['x', 'y'])
-        if (
-          Math.abs(
-            (p[k] - feet[0][k]) / 42 - Math.round((p[k] - feet[0][k]) / 42),
-          ) > 1e-5
-        )
-          throw Error(
-            'All replacement feet must share a fixed 42 mm grid. Correct the grid origin or selected cells.',
-          );
-      for (let j = 0; j < i; j++)
-        if (Math.hypot(p.x - feet[j].x, p.y - feet[j].y) < 0.01)
-          throw Error('The same grid cell is selected more than once.');
-    }
     const box = (size, pos) => keep(keep(M.cube(size)).translate(pos)),
       bore = (x, y, r, z, h) =>
         keep(keep(M.cylinder(h, r, r, 64)).translate([x, y, z])),
@@ -668,14 +711,6 @@ export function convert(module, original, input) {
     for (const [i, p] of feet.entries()) {
       const sx = p.sourceX ?? p.x,
         sy = p.sourceY ?? p.y;
-      if (
-        !Number.isFinite(sx) ||
-        !Number.isFinite(sy) ||
-        Math.hypot(sx - p.x, sy - p.y) > 1
-      )
-        throw Error(
-          'Grid correction exceeds 1 mm. Reorient or redetect the original feet.',
-        );
       const cut = box(
         [41.98 + Math.abs(sx - p.x), 41.98 + Math.abs(sy - p.y), height + 0.02],
         [Math.min(sx, p.x) - 20.99, Math.min(sy, p.y) - 20.99, bottom - 0.02],

@@ -1,22 +1,24 @@
 import * as THREE from 'three';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-local-20261020-1';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
+  conversionParameters,
   LIMITS,
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=step-audit-1';
-import {
-  importFile,
-  extensions,
-  export3MF,
-} from './importers.js?v=cad-roof-1';
+} from './kernel.js?v=native-local-20261020-1';
+import { importFile, extensions, export3MF } from './importers.js?v=native-local-20261020-1';
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
   cadWorker,
   nativeWorker,
+  nativeReject,
+  exportWorker,
+  exportReject,
+  nativePreparation,
   importAbort,
   sequence = 0,
   epoch = 0,
@@ -30,6 +32,7 @@ let worker,
   feet = [],
   selection = new Set(),
   original = null,
+  earlyPreview = null,
   sourceName = 'example-bin',
   sourceFormat = 'demo',
   view = 'original',
@@ -51,66 +54,28 @@ renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.localClippingEnabled = true;
 host.append(renderer.domElement);
 const scene = new THREE.Scene();
-scene.background = new THREE.Color('#eee9dc');
-const camera = new THREE.PerspectiveCamera(38, 1, 0.05, 100000);
+scene.background = new THREE.Color('#f3efe6');
+const camera = new THREE.PerspectiveCamera(THREE.MathUtils.radToDeg(0.6), 1, 0.05, 100000);
 camera.up.set(0, 0, 1);
 const orbit = new OrbitControls(camera, renderer.domElement);
 orbit.enableDamping = true;
-scene.add(new THREE.HemisphereLight(0xffffff, 0x596064, 2.3));
-const light = new THREE.DirectionalLight(0xffffff, 2.5);
-light.position.set(150, -200, 300);
-scene.add(light);
 const root = new THREE.Group(),
   markers = new THREE.Group();
 scene.add(root, markers);
 const plane = new THREE.Plane(new THREE.Vector3(0, 0, -1), 7),
   clips = [];
-const bands = new THREE.DataTexture(
-  new Uint8Array([95, 165, 225, 255]),
-  4,
-  1,
-  THREE.RedFormat,
-);
-bands.magFilter = THREE.NearestFilter;
-bands.minFilter = THREE.NearestFilter;
-bands.needsUpdate = true;
-const grid = new THREE.GridHelper(252, 6, 0x697b80, 0xc0c3bc);
-grid.rotation.x = Math.PI / 2;
-grid.position.z = -0.08;
-scene.add(grid);
 function clearGroup(group) {
   for (const o of group.children.slice()) {
     group.remove(o);
     o.traverse((n) => {
+      n.userData.disposed = true;
       n.geometry?.dispose();
       [].concat(n.material ?? []).forEach((m) => m.dispose());
     });
   }
 }
-function modelMesh(data, color = 0x5da3ad, opacity = 1) {
-  const g = new THREE.BufferGeometry();
-  g.setAttribute('position', new THREE.BufferAttribute(data.vertices, 3));
-  g.setIndex(new THREE.BufferAttribute(data.triangles, 1));
-  g.computeVertexNormals();
-  const material = new THREE.MeshToonMaterial({
-    color,
-    gradientMap: bands,
-    transparent: opacity < 1,
-    opacity,
-    side: THREE.DoubleSide,
-    clippingPlanes: clips,
-    depthWrite: opacity === 1,
-  });
-  const mesh = new THREE.Mesh(g, material);
-  if (data.triangles.length < 600000 && opacity === 1) {
-    mesh.add(
-      new THREE.LineSegments(
-        new THREE.EdgesGeometry(g, 32),
-        new THREE.LineBasicMaterial({ color: 0x273c40, clippingPlanes: clips }),
-      ),
-    );
-  }
-  return mesh;
+function modelMesh(data, color = PALETTE.teal, opacity = 1) {
+  return illustrationMesh(data, { color, opacity, clips, camera, target: orbit.target, requestRender });
 }
 function draw() {
   document.body.dataset.view = view;
@@ -118,22 +83,40 @@ function draw() {
     view === 'changes' ? 'Added material' : 'Selected foot';
   $('legend-unselected').textContent =
     view === 'changes' ? 'Removed material' : 'Unselected foot';
+  $('legend-selected').previousElementSibling.style.background = '#faa147';
+  $('legend-unselected').previousElementSibling.style.background =
+    view === 'changes' ? '#1d1b18' : '#899595';
   clearGroup(root);
   const data = view === 'original' || !result ? original : result.geometry;
   if (data) {
     root.add(
       modelMesh(
         data,
-        view === 'changes' ? 0x98a3a4 : 0x5da3ad,
+        view === 'changes' ? PALETTE.context : PALETTE.teal,
         view === 'changes' ? 0.22 : 1,
       ),
     );
     if (view === 'changes') {
       if (result.added.triangles.length)
-        root.add(modelMesh(result.added, 0x008a91));
+        root.add(modelMesh(result.added, PALETTE.orange));
       if (result.removed.triangles.length)
-        root.add(modelMesh(result.removed, 0xee8138, 0.85));
+        root.add(modelMesh(result.removed, PALETTE.ink, 0.65));
     }
+  } else if (earlyPreview) {
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(earlyPreview.vertices, 3),
+    );
+    root.add(
+      new THREE.LineSegments(
+        geometry,
+        new THREE.LineBasicMaterial({
+          color: 0x17616a,
+          clippingPlanes: clips,
+        }),
+      ),
+    );
   }
   for (const key of ['original', 'converted', 'changes'])
     $('view-' + key).setAttribute('aria-pressed', String(view === key));
@@ -149,10 +132,15 @@ function drawMarkers() {
     const selected = selection.has(p.id),
       g = new THREE.BoxGeometry(40.9, 40.9, height),
       m = new THREE.MeshBasicMaterial({
-        color: selected ? 0x008c96 : 0xf08b38,
+        color: selected ? 0xfaa147 : 0x899595,
         transparent: true,
         opacity: selected ? 0.16 : 0.08,
         depthWrite: false,
+        // Cell bottoms coincide with real foot bottoms; bias only this review
+        // overlay to prevent triangulation-shaped flicker on planar surfaces.
+        polygonOffset: true,
+        polygonOffsetFactor: -1,
+        polygonOffsetUnits: -2,
         side: THREE.DoubleSide,
         clippingPlanes: clips,
       }),
@@ -162,7 +150,7 @@ function drawMarkers() {
     const e = new THREE.LineSegments(
       new THREE.EdgesGeometry(g),
       new THREE.LineBasicMaterial({
-        color: selected ? 0x006f7a : 0xd4651e,
+        color: selected ? 0xfaa147 : 0x536a6d,
         depthTest: false,
         clippingPlanes: clips,
       }),
@@ -172,7 +160,7 @@ function drawMarkers() {
   }
 }
 function resetView(under = false) {
-  if (!original) return;
+  if (!root.children.length) return;
   const box = new THREE.Box3().setFromObject(root),
     center = box.getCenter(new THREE.Vector3()),
     size = box.getSize(new THREE.Vector3()),
@@ -191,10 +179,10 @@ function resetView(under = false) {
     .add(
       under
         ? new THREE.Vector3(0.65, -0.8, -1).normalize().multiplyScalar(d)
-        : new THREE.Vector3(1, -1, 0.85).normalize().multiplyScalar(d),
+        : new THREE.Vector3(Math.cos(-1.05) * Math.cos(0.87), Math.sin(-1.05) * Math.cos(0.87), Math.sin(0.87)).multiplyScalar(d),
     );
-  camera.near = Math.max(0.01, d / 10000);
-  camera.far = d * 50;
+  camera.near = Math.max(0.01, d * 0.02);
+  camera.far = d * 6;
   camera.updateProjectionMatrix();
   orbit.update();
   requestRender();
@@ -207,6 +195,13 @@ function requestRender() {
     // Controls emit change events until damping settles, scheduling only
     // the frames needed for interaction. Idle CAD views consume no frames.
     orbit.update();
+    const distance = camera.position.distanceTo(orbit.target);
+    const near = Math.max(0.01, distance * 0.02), far = Math.max(near + 1, distance * 6);
+    if (camera.near !== near || camera.far !== far) {
+      camera.near = near;
+      camera.far = far;
+      camera.updateProjectionMatrix();
+    }
     renderer.render(scene, camera);
   });
 }
@@ -296,6 +291,8 @@ function controls() {
   $('step').disabled = busy || !(result?.step || result?.brep);
   $('step').textContent = result?.brep ? 'Download BREP' : 'Download STEP';
   $('step').hidden = !raw?.nativeBuffer;
+  $('translate-step').disabled = busy || !result?.brep;
+  $('translate-step').hidden = !raw?.nativeBuffer || Boolean(result?.step);
   $('export-shortcut').hidden = !result || busy;
   $('selection-count').textContent = `${selection.size} selected`;
   const native = Boolean(raw?.nativeBuffer);
@@ -306,7 +303,9 @@ function controls() {
       : 'Mesh conversion · STL / 3MF export';
   $('export-format').textContent = native
     ? result?.brep
-      ? 'Native BREP · STEP export did not pass validation'
+      ? result.report.stepExportError
+        ? 'Native BREP · STEP export did not pass validation'
+        : 'Native BREP · STEP translation available on request'
       : 'Native STEP · STL / 3MF mesh exports also available'
     : 'STL / 3MF mesh output · STEP requires a STEP or BREP source';
   $('convert-help').textContent = busy
@@ -337,7 +336,9 @@ function controls() {
     : '';
   $('viewer-summary').textContent = detection
     ? `${span}${selection.size} of ${feet.length} feet selected · 42 mm pitch`
-    : 'Load a model to detect its male feet';
+    : earlyPreview
+      ? 'STEP edge preview · preparing solid and feet'
+      : 'Load a model to detect its male feet';
   $('section-z').disabled = !$('section').checked;
 }
 function setBusy(value, message, info) {
@@ -384,7 +385,7 @@ function setBusy(value, message, info) {
   $('loading').hidden = !value;
   busy = value;
   document.body.dataset.busy = String(value);
-  $('viewer-message').hidden = !value;
+  $('viewer-message').hidden = !value || Boolean(earlyPreview);
   if (message) {
     $('viewer-message').textContent = message;
     status(message);
@@ -404,15 +405,31 @@ function invalidate(
   controls();
   draw();
 }
-function terminate() {
+function terminate({ preserveIdleCAD = false } = {}) {
+  const keepCAD = preserveIdleCAD && cadWorker && !nativeWorker && raw?.nativeDocumentId;
+  if (!keepCAD) {
+    nativePreparation = null;
+    $('cad-preparation').hidden = true;
+  }
+  earlyPreview = null;
+  delete host.dataset.preview;
   importAbort?.abort();
   importAbort = null;
   worker?.terminate();
   worker = null;
-  cadWorker?.terminate();
-  cadWorker = null;
+  if (!keepCAD) {
+    if (cadWorker !== nativeWorker) cadWorker?.terminate();
+    cadWorker = null;
+    if (raw) raw.nativeDocumentId = null;
+  }
   nativeWorker?.terminate();
   nativeWorker = null;
+  nativeReject?.(new DOMException('Cancelled', 'AbortError'));
+  nativeReject = null;
+  exportWorker?.terminate();
+  exportWorker = null;
+  exportReject?.(new DOMException('Cancelled', 'AbortError'));
+  exportReject = null;
   for (const { reject } of pending.values())
     reject(new DOMException('Cancelled', 'AbortError'));
   pending.clear();
@@ -420,7 +437,7 @@ function terminate() {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=step-audit-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-local-20261020-1', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -593,9 +610,22 @@ async function loadFiles(files) {
         if (turn === epoch) setBusy(true, message, info);
       },
       importAbort.signal,
+      (preview) => {
+        if (turn !== epoch || original) return;
+        earlyPreview = preview;
+        host.dataset.preview = 'edges';
+        $('viewer-message').hidden = true;
+        draw();
+        resetView();
+        controls();
+        performance.mark('step-edge-preview-ready');
+      },
     );
     if (turn !== epoch) return;
+    earlyPreview = null;
+    host.dataset.preview = 'solid';
     raw = imported;
+    startNativePreparation();
     $('units-settings').open = Boolean(
       raw.requiresUnits || raw.preview?.adapted,
     );
@@ -782,17 +812,21 @@ async function runConversion() {
   result = null;
   setBusy(true, 'Replacing selected feet and checking preserved geometry…');
   try {
-    let r = await rpc('convert', { options: inputOptions() });
-    if (turn !== epoch) return;
+    let r;
     if (raw?.nativeBuffer) {
+      const options = conversionParameters(inputOptions());
+      options.originalVolume = detection.geometry.volume;
       setBusy(
         true,
         'Replacing native CAD feet and validating the boundary representation…',
       );
-      r = await nativeConversion(r.report);
-      if (turn !== epoch) return;
+      r = await nativeConversion(options);
+    } else {
+      r = await rpc('convert', { options: inputOptions() });
     }
+    if (turn !== epoch) return;
     result = r;
+    if (!cadWorker) $('cad-preparation').hidden = true;
     view = 'converted';
     setBusy(false);
     draw();
@@ -809,13 +843,17 @@ async function runConversion() {
       (r.report.sourceCurveRepair
         ? ' Imported CAD curve data was repaired before conversion.'
         : '') +
-      (r.brep
+      (r.brep && r.report.stepExportDeferred
+        ? ' BREP preserves the validated native CAD body. STEP translation is checked when requested.'
+        : r.brep
         ? ' STEP could not preserve a valid body on reopening. Download BREP for the validated native CAD body, or STL / 3MF for a mesh.'
         : '') +
       (['screws', 'both'].includes(r.report.style)
         ? ` Screw depth: ${r.report.screwDepth} mm${r.report.screwDepth < r.report.requestedScrewDepth ? `, fitted from ${r.report.requestedScrewDepth} mm to retain the solid roof` : ''}.`
         : '') +
-      (r.report.tessellationDeflectionMM > 0.01
+      (r.report.displayOnlyMesh
+        ? ' The viewer uses a display mesh. STL / 3MF export geometry is generated when you download.'
+        : r.report.tessellationDeflectionMM > 0.01
         ? ` STL/3MF mesh deviation: ${r.report.tessellationDeflectionMM} mm (automatically adapted). Native CAD export retains the surfaces.`
         : '');
     metrics($('conversion-metrics'), [
@@ -840,42 +878,107 @@ async function runConversion() {
     status(e.message, true);
   }
 }
+function preparationStatus(data) {
+  nativePreparation = data;
+  const note = $('cad-preparation');
+  note.hidden = false;
+  note.textContent = data.error
+    ? 'CAD preparation needs another check during conversion.'
+    : data.done ? 'Native CAD prepared for conversion.'
+      : `Preparing native CAD while you review: ${data.progress || 'checking source geometry…'}`;
+}
+function startNativePreparation() {
+  if (!cadWorker || !raw?.nativeDocumentId) return;
+  const w = cadWorker;
+  preparationStatus({ progress: 'checking source geometry…' });
+  w.onmessage = ({ data }) => {
+    if (cadWorker === w && data.preparation) preparationStatus(data);
+  };
+  w.onerror = () => {
+    if (cadWorker !== w) return;
+    preparationStatus({ error: true });
+    w.terminate();
+    cadWorker = null;
+    raw.nativeDocumentId = null;
+  };
+  w.postMessage({ type: 'prepare', documentId: raw.nativeDocumentId, bodyIndex: 0 });
+}
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=cad-roof-1', {
+    const turn = epoch;
+    const source = raw;
+    const requestId = ++sequence;
+    const documentId = cadWorker ? source.nativeDocumentId : null;
+    if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
+      setBusy(true, 'Finishing native CAD preparation before replacing feet…');
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-local-20261020-1', {
       type: 'module',
     });
     nativeWorker = w;
+    nativeReject = reject;
+    const current = () => nativeWorker === w && epoch === turn && raw === source;
+    const finish = (retain) => {
+      if (nativeWorker === w) nativeWorker = null;
+      if (nativeReject === reject) nativeReject = null;
+      w.onmessage = null;
+      w.onerror = null;
+      w.onmessageerror = null;
+      if (!retain) {
+        w.terminate();
+        if (cadWorker === w) cadWorker = null;
+        source.nativeDocumentId = null;
+      } else {
+        // An idle worker can still fail while warming its next validator.
+        // Drop its document so the next conversion reparses the original bytes.
+        w.onerror = w.onmessageerror = () => {
+          if (cadWorker !== w || raw !== source) return;
+          w.terminate();
+          cadWorker = null;
+          source.nativeDocumentId = null;
+          preparationStatus({ error: true });
+        };
+      }
+    };
     w.onmessage = ({ data }) => {
-      if (nativeWorker !== w) return;
+      if (!current()) return;
+      if (data.preparation) {
+        preparationStatus(data);
+        if (data.progress) setBusy(true, data.progress);
+        return;
+      }
+      if (data.requestId !== requestId) return;
       if (data.progress) {
         setBusy(true, data.progress);
         return;
       }
-      w.terminate();
-      if (nativeWorker === w) nativeWorker = null;
+      const retain = !data.error && documentId && data.result?.nativeDocumentId === documentId;
+      finish(retain);
       if (data.error)
-        reject(
-          Error(
-            data.stage
-              ? `${data.stage.replace(/…$/, '')}: ${data.error}`
-              : data.error,
-          ),
-        );
+        reject(Error(data.stage ? `${data.stage.replace(/…$/, '')}: ${data.error}` : data.error));
       else resolve(data.result);
     };
-    w.onerror = () => {
-      w.terminate();
+    w.onerror = w.onmessageerror = () => {
+      if (!current()) return;
+      finish(false);
       reject(Error('Native CAD conversion could not run.'));
     };
-    w.postMessage({
-      buffer: raw.nativeBuffer,
-      format: raw.format,
-      scale: unitScale(),
-      bodyIndex: Number($('body').value || 0),
-      detection,
-      options,
-    });
+    try {
+      w.postMessage({
+        type: 'convert',
+        requestId,
+        documentId,
+        retainDocument: Boolean(documentId),
+        deferOriginalPose: true,
+        fastDisplay: true,
+        nativeExportPreference: 'brep',
+        buffer: source.nativeBuffer,
+        format: source.format,
+        scale: unitScale(),
+        bodyIndex: Number($('body').value || 0),
+        detection,
+        options,
+      });
+    } catch (error) { finish(false); reject(error); }
   });
 }
 $('choose-file').onclick = () => $('files').click();
@@ -926,7 +1029,9 @@ $('workflow-action').onclick = () => {
 
 $('units').onchange = async () => {
   epoch++;
-  terminate();
+  // Native source geometry is unit-independent; scale a conversion clone later.
+  // Only the mesh import/detection needs rebuilding for a new display scale.
+  terminate({ preserveIdleCAD: true });
   detection = null;
   invalidate();
   if (isDemo) await prepare(true);
@@ -1039,6 +1144,15 @@ $('add-cell').onclick = () => {
   renderFeet();
 };
 $('cancel').onclick = () => {
+  if (exportWorker) {
+    exportWorker.terminate();
+    exportWorker = null;
+    exportReject?.(new DOMException('Cancelled', 'AbortError'));
+    exportReject = null;
+    setBusy(false);
+    status('Download preparation cancelled. Your conversion is still available.');
+    return;
+  }
   fileState = 'cancelled';
   epoch++;
   terminate();
@@ -1087,10 +1201,10 @@ function download(bytes, type, name) {
   setTimeout(() => URL.revokeObjectURL(url), 5000);
   status('Download requested: ' + name);
 }
-function exported() {
+function exported(geometry = result.geometry) {
   const data = $('source-pose').checked
-    ? restoreCoordinates(result.geometry, detection)
-    : result.geometry;
+    ? restoreCoordinates(geometry, detection)
+    : geometry;
   checkMesh(data);
   return data;
 }
@@ -1117,36 +1231,132 @@ function report() {
 function filename(ext) {
   return sourceName + '-' + result.report.style + '-42mm.' + ext;
 }
-$('stl').onclick = () => {
-  try {
-    if (result) download(binarySTL(exported()), 'model/stl', filename('stl'));
-  } catch (e) {
-    status(e.message + ' Try base-down coordinates.', true);
+function prepareNativeExport(data) {
+  return new Promise((resolve, reject) => {
+    const w = new Worker('./native-export-worker.js?v=native-local-20261020-1', { type: 'module' });
+    exportWorker = w;
+    exportReject = reject;
+    const finish = () => {
+      w.terminate();
+      if (exportWorker === w) {
+        exportWorker = null;
+        exportReject = null;
+      }
+    };
+    w.onmessage = ({ data }) => {
+      if (exportWorker !== w) return;
+      if (data.progress) {
+        setBusy(true, data.progress);
+        return;
+      }
+      finish();
+      if (data.error) reject(Error(data.stage ? `${data.stage}: ${data.error}` : data.error));
+      else resolve(data.result);
+    };
+    w.onerror = () => {
+      finish();
+      reject(Error('Native export preparation could not run.'));
+    };
+    w.postMessage(data);
+  });
+}
+async function exportMesh() {
+  const target = result;
+  if (!result.report.displayOnlyMesh) return result.geometry;
+  if (!result.exportGeometry) {
+    const prepared = await prepareNativeExport({
+      type: 'mesh',
+      buffer: result.brep || result.step,
+      format: result.report.nativeExportFormat,
+    });
+    if (result !== target) throw new DOMException('Cancelled', 'AbortError');
+    result.exportGeometry = prepared.geometry;
+    result.report.meshExport = prepared.report;
   }
-};
-$('three-mf').onclick = () => {
+  return result.exportGeometry;
+}
+async function downloadMesh(format) {
+  if (!result || busy) return;
+  const turn = epoch;
+  setBusy(true, 'Preparing download geometry…');
   try {
-    if (result)
-      download(export3MF(exported(), report()), 'model/3mf', filename('3mf'));
-  } catch (e) {
-    status(e.message + ' Try base-down coordinates.', true);
-  }
-};
-$('step').onclick = () => {
-  if (result?.step || result?.brep) {
-    const brep = Boolean(result.brep);
+    const geometry = exported(await exportMesh());
     download(
-      $('source-pose').checked
-        ? brep
-          ? result.sourceBrep
-          : result.sourceStep
-        : brep
-          ? result.brep
-          : result.step,
-      brep ? 'application/octet-stream' : 'application/step',
-      filename(brep ? 'brep' : 'step'),
+      format === 'stl' ? binarySTL(geometry) : export3MF(geometry, report()),
+      format === 'stl' ? 'model/stl' : 'model/3mf',
+      filename(format),
     );
+  } catch (e) {
+    if (e.name !== 'AbortError') status(e.message, true);
+  } finally {
+    if (turn === epoch) setBusy(false);
   }
+}
+$('stl').onclick = () => downloadMesh('stl');
+$('three-mf').onclick = () => downloadMesh('3mf');
+$('step').onclick = async () => {
+  if (!(result?.step || result?.brep) || busy) return;
+  const turn = epoch, target = result;
+  setBusy(true, 'Preparing native CAD download…');
+  try {
+    let bytes = result.brep || result.step;
+    let format = result.brep ? 'brep' : 'step';
+    if ($('source-pose').checked) {
+      if (result.originalPoseExport?.deferred && !result.preparedSourceExport) {
+        const prepared = await prepareNativeExport({
+          type: 'pose',
+          buffer: bytes,
+          format,
+          ...result.originalPoseExport,
+        });
+        if (result !== target) throw new DOMException('Cancelled', 'AbortError');
+        result.preparedSourceExport = prepared;
+        result.report.originalPoseExport = result.preparedSourceExport.report;
+      }
+      if (result.preparedSourceExport) {
+        bytes = result.preparedSourceExport.buffer;
+        format = result.preparedSourceExport.format;
+      } else {
+        bytes = result.sourceBrep || result.sourceStep;
+        format = result.sourceBrep ? 'brep' : 'step';
+      }
+    }
+    if (!bytes) throw Error('Native export is not available for this orientation.');
+    download(bytes, format === 'brep' ? 'application/octet-stream' : 'application/step', filename(format));
+  } catch (e) {
+    if (e.name !== 'AbortError') status(e.message, true);
+  } finally {
+    if (turn === epoch) setBusy(false);
+  }
+};
+$('translate-step').onclick = async () => {
+  if (!result?.brep || busy) return;
+  const turn = epoch, target = result;
+  const originalPose = $('source-pose').checked;
+  const cacheKey = originalPose ? 'translatedSourceStep' : 'translatedBaseStep';
+  setBusy(true, 'Translating and validating STEP…');
+  try {
+    if (!result[cacheKey]) {
+      const prepared = await prepareNativeExport({
+        type: 'pose', buffer: result.brep, format: 'brep', requestedFormat: 'step',
+        transform: originalPose ? result.originalPoseExport.transform : {
+          rotation: [1, 0, 0, 0, 1, 0, 0, 0, 1], translation: [0, 0, 0],
+        },
+        preferredSurfaceCurves: result.report.sourceCurveRepair ? 'preserved' : undefined,
+      });
+      if (result !== target) throw new DOMException('Cancelled', 'AbortError');
+      result[cacheKey] = prepared;
+    }
+    const prepared = result[cacheKey];
+    result.report[cacheKey] = prepared.report;
+    if (prepared.format !== 'step') {
+      status('STEP translation failed validation. Use Download BREP for the validated native CAD body.', true);
+      return;
+    }
+    download(prepared.buffer, 'application/step', filename('step'));
+  } catch (e) {
+    if (e.name !== 'AbortError') status(e.message, true);
+  } finally { if (turn === epoch) setBusy(false); }
 };
 $('report').onclick = () => {
   if (result)

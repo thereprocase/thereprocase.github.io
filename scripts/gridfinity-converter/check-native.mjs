@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {
   nativeFoot,
+  nativePosesIdentical,
   convertNative,
 } from '../../public/gridfinity-converter/native-cad.js';
 import * as cad from '../../public/gridfinity-converter/vendor/replicad/replicad.js';
@@ -14,6 +15,11 @@ import {
   checkMesh,
   meshData,
 } from '../../public/gridfinity-converter/kernel.js';
+const identityPose = { rotation: [1, 0, 0, 0, 1, 0, 0, 0, 1], translation: [0, 0, 0] };
+assert.equal(nativePosesIdentical(identityPose), true);
+assert.equal(nativePosesIdentical({ ...identityPose, translation: [1e-15, 0, 0] }), false);
+assert.equal(nativePosesIdentical({ ...identityPose, rotation: [1, 1e-15, 0, 0, 1, 0, 0, 0, 1] }), false);
+assert.equal(nativePosesIdentical({ ...identityPose, translation: [-41.75, -41.75, 0] }), false);
 const a = await nativeFoot(-21),
   b = await nativeFoot(21),
   top = cad.makeBox([-41.75, -20.75, 4.75], [41.75, 20.75, 20]),
@@ -55,7 +61,7 @@ const checks = [];
         detection: {},
         options: {},
       }),
-    /after automatic curve repair/,
+    /original solid also fails strict CAD validation/,
   );
   checks.push({ test: 'open-native-shell', exportBlocked: true });
   broken.delete();
@@ -74,6 +80,7 @@ for (const style of ['plain', 'magnets', 'screws', 'both']) {
     options: r.report,
   });
   assert.equal(native.report.nativeValid, true);
+  assert.equal(native.report.preservationMethod, 'convex-region-boundary-difference');
   assert.equal(native.report.stepRoundTripValid, true);
   assert.ok(native.report.outsideChange < 0.001);
   const imported = importSolid(m, native.geometry);
@@ -165,6 +172,28 @@ for (const style of ['plain', 'magnets', 'screws', 'both']) {
   console.log('Native BREP fallback PASS');
 }
 
+// A genuinely identical pose can reuse the exact validated bytes, including BREP fallback.
+{
+  const input = { buffer, format: 'step', detection: { ...d, ...identityPose },
+    options: convert(m, aligned, { feet: d.feet, style: 'plain' }).report };
+  const stepResult = await convertNative(input);
+  assert.equal(stepResult.report.originalPoseExportReused, true);
+  assert.equal(stepResult.sourceStep, stepResult.step);
+  const originalWriter = Object.getOwnPropertyDescriptor(cad.Shape.prototype, 'blobSTEP');
+  const wrong = cad.makeBox([0, 0, 0], [1, 1, 1]), wrongStep = wrong.blobSTEP();
+  try {
+    cad.Shape.prototype.blobSTEP = async () => wrongStep;
+    const brepResult = await convertNative(input);
+    assert.equal(brepResult.report.originalPoseExportReused, true);
+    assert.equal(brepResult.sourceBrep, brepResult.brep);
+    assert.ok(brepResult.brep.byteLength > 0);
+  } finally {
+    Object.defineProperty(cad.Shape.prototype, 'blobSTEP', originalWriter);
+    wrong.delete();
+  }
+  checks.push({ test: 'identical-pose-export-reuse', step: true, brep: true });
+}
+
 // BREP with user-selected inch units must retain the returned scaled shape.
 {
   const inchSource = source.clone().scale(1 / 25.4);
@@ -209,6 +238,8 @@ for (const format of ['step', 'brep']) {
     input = { buffer, format, detection: d, options: r.report };
   const converted = await convertNative(input);
   assert.equal(converted.report.nativeValid, true);
+  assert.equal(converted.report.originalPoseExportReused, false);
+  assert.notEqual(converted.sourceStep, converted.step);
   assert.equal(converted.report.stepRoundTripValid, true);
   assert.ok(converted.report.nativeCoordinateAdjustmentMM <= 0.0000051);
   checkMesh(converted.geometry);
@@ -253,9 +284,11 @@ const hn = await convertNative({
   buffer: await hollow.blobSTEP().arrayBuffer(),
   format: 'step',
   detection: hd,
-  options: hr.report,
+  options: { ...hr.report, screwDepth: 6, requestedScrewDepth: 6, fitScrewDepth: true },
 });
+assert.equal(hn.report.screwDepth, 3.9);
 assert.equal(hn.report.nativeValid, true);
+assert.equal(hn.report.preservationProof.proved, true);
 assert.ok(hn.report.outsideChange < 0.001);
 checks.push({ ...hn.report, test: 'hollow-perimeter-contact' });
 console.log('Native hollow bin PASS');
@@ -267,7 +300,7 @@ await assert.rejects(
       buffer: new TextEncoder().encode(hollow.serialize()),
       format: 'brep',
       detection: hd,
-      options: { ...hr.report, screwDepth: 6 },
+      options: { ...hr.report, screwDepth: 6, fitScrewDepth: false },
     }),
   /hole would break through its solid roof/,
 );

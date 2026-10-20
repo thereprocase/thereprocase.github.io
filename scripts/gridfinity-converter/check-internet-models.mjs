@@ -139,11 +139,22 @@ try {
         nodeId: doc.root.nodeId,
         selector: '#files',
       });
+      const loadStarted = Date.now();
       await call('DOM.setFileInputFiles', {
         nodeId: input.nodeId,
         files: [item.path],
       });
       record.importStatus = await ready();
+      record.importElapsedMS = Date.now() - loadStarted;
+      if (process.env.AUDIT_WAIT_PREPARED) {
+        for (let i = 0; i < 1200; i++) {
+          record.preparationStatus = await evaluate("document.getElementById('cad-preparation')?.textContent || ''");
+          if (/prepared for conversion|another check/.test(record.preparationStatus)) break;
+          if (i === 1199) throw Error('Timed out waiting for native preparation');
+          await pause(100);
+        }
+        record.loadToPreparedMS = Date.now() - loadStarted;
+      }
       record.detection = await evaluate(
         `({note:document.getElementById('detection-note').textContent,feet:document.querySelectorAll('#feet tr').length,selected:document.getElementById('selection-count').textContent,enabled:!document.getElementById('convert').disabled,dimensions:document.getElementById('model-size').textContent,bodies:document.getElementById('body').options.length,bodyNote:document.getElementById('body-note').textContent})`,
       );
@@ -179,6 +190,7 @@ try {
           );
           const attempt = { style, fit, status: await ready() };
           attempt.elapsedMS = Date.now() - conversionStarted;
+          attempt.loadToReadyMS = Date.now() - loadStarted;
           attempt.success = await evaluate(
             "!document.getElementById('stl').disabled",
           );
@@ -187,7 +199,9 @@ try {
             attempt.report = JSON.parse(
               await evaluate('window.auditBlobs.at(-1).text()'),
             );
+            if (!process.env.AUDIT_SKIP_DOWNLOADS) {
             await evaluate("document.getElementById('stl').click()");
+            await ready();
             const encoded = await evaluate(
               `new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(window.auditBlobs.at(-1))})`,
             );
@@ -199,12 +213,14 @@ try {
               attempt.exportPath,
               Buffer.from(encoded, 'base64'),
             );
+            }
           }
           if (
-            attempt.success &&
+            attempt.success && !process.env.AUDIT_SKIP_DOWNLOADS &&
             (await evaluate("!document.getElementById('step').disabled"))
           ) {
             await evaluate("document.getElementById('step').click()");
+            await ready();
             const encoded = await evaluate(
               `new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(window.auditBlobs.at(-1))})`,
             );

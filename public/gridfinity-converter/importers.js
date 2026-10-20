@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { LIMITS } from './kernel.js?v=converter-1';
+import { LIMITS } from './kernel.js?v=native-local-20261020-1';
 import {
   unzipSync,
   strFromU8,
@@ -348,9 +348,10 @@ function geometryOnlyGLTF(buffer, binary) {
 export async function importFile(
   file,
   companions = [],
-  onCADWorker = () => {},
+  onCADWorker,
   onProgress = () => {},
   signal,
+  onEarlyPreview,
 ) {
   if (file.size > LIMITS.fileBytes) throw Error('Maximum file size is 50 MB.');
   const ext = file.name.split('.').at(-1).toLowerCase();
@@ -365,21 +366,50 @@ export async function importFile(
     text = () => new TextDecoder().decode(buffer);
   let data,
     preview = null,
+    nativeDocumentId = null,
     unitScale = 1,
     unitNote =
       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
     const worker = ['iges', 'igs'].includes(ext)
-      ? new Worker('./cad-worker.js?v=cad-preview-1')
-      : new Worker('./native-preview-worker.js?v=cad-roof-1', {
+      ? new Worker('./cad-worker.js?v=native-local-20261020-1')
+      : new Worker('./native-preview-worker.js?v=native-local-20261020-1', {
           type: 'module',
         });
-    onCADWorker(worker);
+    onCADWorker?.(worker);
     const format = ['step', 'stp'].includes(ext)
       ? 'step'
       : ['iges', 'igs'].includes(ext)
         ? 'iges'
         : 'brep';
+    let earlyWorker;
+    const stopEarlyPreview = () => {
+      earlyWorker?.terminate();
+      earlyWorker = null;
+    };
+    if (format === 'step' && onEarlyPreview && !signal?.aborted) {
+      try {
+        earlyWorker = new Worker('./step-wire-worker.js?v=native-local-20261020-1', {
+          type: 'module',
+        });
+        earlyWorker.onmessage = ({ data }) => {
+          if (data.vertices && !signal?.aborted) {
+            try {
+              onEarlyPreview(data);
+            } catch {
+              /* Optional display must not interrupt import. */
+            }
+          }
+          stopEarlyPreview();
+        };
+        earlyWorker.onerror = stopEarlyPreview;
+        earlyWorker.onmessageerror = stopEarlyPreview;
+        const edgeBuffer = buffer.slice(0);
+        earlyWorker.postMessage({ buffer: edgeBuffer }, [edgeBuffer]);
+      } catch {
+        stopEarlyPreview();
+      }
+    }
     let timer;
     let abort;
     const payload = await new Promise((resolve, reject) => {
@@ -407,8 +437,13 @@ export async function importFile(
           return;
         }
         if (data.error) reject(Error(data.error));
-        else if (data.result) resolve(data);
-        else fail('The CAD importer returned an incomplete response.');
+        else if (data.result) {
+          nativeDocumentId =
+            typeof data.nativeDocumentId === 'string'
+              ? data.nativeDocumentId
+              : null;
+          resolve(data);
+        } else fail('The CAD importer returned an incomplete response.');
       };
       worker.onerror = () =>
         fail(
@@ -418,21 +453,38 @@ export async function importFile(
         fail('The browser could not receive the CAD preview.');
       arm();
       onProgress('Starting the CAD importer…');
-      worker.postMessage({ format, buffer }, [buffer]);
+      worker.postMessage(
+        { format, buffer, retainSource: Boolean(nativeBuffer && onCADWorker) },
+        [buffer],
+      );
     }).finally(() => {
       clearTimeout(timer);
+      stopEarlyPreview();
       signal?.removeEventListener('abort', abort);
-      worker.terminate();
-      onCADWorker(null);
+      if (!nativeDocumentId) {
+        worker.terminate();
+        onCADWorker?.(null);
+      } else {
+        // App owns this document worker until cancellation or a different file.
+        worker.onmessage = null;
+        worker.onerror = null;
+        worker.onmessageerror = null;
+      }
     });
     const imported = payload.result;
     preview = payload.preview;
-    data = combine(
-      imported.meshes.map((m) => ({
-        vertices: m.attributes.position.array,
-        triangles: m.index.array,
-      })),
-    );
+    try {
+      data = combine(
+        imported.meshes.map((m) => ({
+          vertices: m.attributes.position.array,
+          triangles: m.index.array,
+        })),
+      );
+    } catch (error) {
+      worker.terminate();
+      onCADWorker?.(null);
+      throw error;
+    }
     unitNote =
       format === 'brep'
         ? 'Native BREP; assumed millimetres. STEP export preserves CAD geometry.'
@@ -537,6 +589,7 @@ export async function importFile(
     unitScale,
     unitNote,
     nativeBuffer,
+    nativeDocumentId,
     preview,
     requiresUnits: ext === 'fbx',
   };
