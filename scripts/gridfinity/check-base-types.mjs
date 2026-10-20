@@ -2,13 +2,17 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import Module from '../../public/gridfinity-shelves/vendor/manifold.js';
 import {build,parameters,binarySTL} from '../../public/gridfinity-shelves/kernel.js';
+import {boards} from '../../public/gridfinity-shelves/boards.js';
+import {reinforce} from '../../public/gridfinity-shelves/reinforcement.js';
+import {facetedSTEP,modifier3MF} from '../../public/gridfinity-shelves/solid-exports.js';
 const m=await Module();m.setup();
 const inputs=JSON.parse(fs.readFileSync(new URL('../../public/gridfinity-shelves/inputs.json',import.meta.url)));
 const evidence=[];
-for(const config of [{},{columns:1,beam:5,mount_rows:1},{columns:2,rows:2,angle:-30,mount_rows:4,backplate:false},{columns:3,angle:5,clearance:.2,web:6,beam:20},{columns:1,angle:-30,mount_rows:1,backplate:false},{columns:2,clearance:-.1}]){
+for(const config of [{},{columns:1,beam:5,mount_rows:1},{columns:2,rows:2,angle:-30,mount_rows:4,backplate:false},{columns:3,angle:5,clearance:.2,web:6,beam:20},{columns:1,angle:-30,mount_rows:1,backplate:false},{columns:2,clearance:-.1},...Object.keys(boards).filter(b=>b!=='original').map(board_system=>({board_system,angle:-30}))]){
  const results={};
  for(const base_type of ['frame','weighted']){
   const r=build(m,inputs,{...config,base_type});results[base_type]=r;
+  if(base_type==='weighted'){r.helpers=reinforce(m,inputs,r);assert.ok(r.helpers.length);if(!Object.keys(config).length&&!process.env.SKIP_SOLID_EXPORT){assert.ok(facetedSTEP(r,m).includes('END-ISO-10303-21;'));assert.ok(modifier3MF(r).byteLength>100);}}
   assert.equal(new DataView(binarySTL(r)).getUint32(80,true),r.trianglesCount);
   const owned=[],keep=s=>(owned.push(s),s);
   try{
@@ -37,7 +41,7 @@ for(const config of [{},{columns:1,beam:5,mount_rows:1},{columns:2,rows:2,angle:
     }else probe(x,y,0,false);
    }
   }finally{owned.reverse().forEach(s=>s.delete());}
-  evidence.push({parameters:r.parameters,volume:r.volume,pegDelta:r.pegDelta,maxFootOverlap:r.maxFootOverlap,coreInteriorMissing:r.coreInteriorMissing,triangles:r.trianglesCount,hardwareProbes:true});
+  evidence.push({parameters:r.parameters,volume:r.volume,pegDelta:r.pegDelta,maxFootOverlap:r.maxFootOverlap,coreInteriorMissing:r.coreInteriorMissing,removedSliverVolume:r.removedSliverVolume,triangles:r.trianglesCount,hardwareProbes:true});
   console.log(base_type,JSON.stringify(config),'PASS');
  }
  assert.ok(results.weighted.volume>results.frame.volume);

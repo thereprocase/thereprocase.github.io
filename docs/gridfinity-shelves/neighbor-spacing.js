@@ -1,5 +1,5 @@
 import {boards} from './boards.js?v=dense-1';
-import {parameters} from './kernel.js?v=diagonal-1';
+import {parameters} from './kernel.js?v=base-types-1';
 /** Same-height repeats: preserve alternating slot/hex phases as well as hole pitch. */
 export function horizontalSpacing(board,columns){
  const b=boards[board],p=parameters({board_system:board,columns,rows:1}),width=p.frameWidth;

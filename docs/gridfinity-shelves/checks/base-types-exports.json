@@ -1,0 +1,101 @@
+{
+  "parameters": {
+    "columns": 1,
+    "rows": 1,
+    "clearance": 0,
+    "web": 2.4,
+    "beam": 10,
+    "angle": 0,
+    "mount_rows": 2,
+    "backplate": true,
+    "base_type": "weighted",
+    "peg_clearance": 0,
+    "hook_grip": 0,
+    "hoop_firmness": 0,
+    "board_system": "original",
+    "board_thickness": 5.5,
+    "slot_clearance": 0.2,
+    "board_gap": 0.2,
+    "retainer_depth": 3,
+    "hole_diameter": 7.14375,
+    "lower_clearance": 0.2,
+    "screw_clearance": 0.2,
+    "head_clearance": 0.35,
+    "counterbore_depth": 3.2,
+    "mountZ": [
+      0,
+      -25.4
+    ],
+    "backBottom": -29.68,
+    "webColumns": [
+      -21,
+      21
+    ],
+    "frameWidth": 46,
+    "width": 46,
+    "mounts": [
+      -12.7,
+      12.7
+    ],
+    "front": 51.55,
+    "mountSites": [
+      {
+        "x": -12.7,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": -12.7,
+        "z": -25.4,
+        "row": 1
+      },
+      {
+        "x": 12.7,
+        "z": 0,
+        "row": 0
+      },
+      {
+        "x": 12.7,
+        "z": -25.4,
+        "row": 1
+      }
+    ]
+  },
+  "volume": 25868.75597040455,
+  "helpers": 2,
+  "stepBytes": 18612452,
+  "threeMFBytes": 3949244,
+  "stepSHA256": "bc7f7d6185c896af82268ed45fdce032eb7b51ee9495e3508561355e7f65d34d",
+  "threeMFSHA256": "40b04fc85b42d994368f4708f17390e096eddba4a929ba025d7437dffc4a11a1",
+  "stepNormalization": [
+    {
+      "name": "Body_PRINT",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 25868.75597040455,
+      "cadVolume": 25868.75597040455
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_1",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3717.97968779582,
+      "cadVolume": 3717.97968779582
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_2",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3717.9796741696055,
+      "cadVolume": 3717.9796741696055
+    }
+  ],
+  "independentReadback": {
+    "reader": "Open CASCADE via OCP",
+    "validSTEP": true,
+    "solids": 3,
+    "volume": 33304.715332211425,
+    "expectedVolume": 33304.715332369975,
+    "threeMFZipAndXML": true
+  }
+}

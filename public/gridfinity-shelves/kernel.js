@@ -60,7 +60,8 @@ export function build(module, inputs, input) {
   const base=frame(5.55,baseBottom,5.72-baseBottom);
   // A deep tilted base can project behind the board. Keep added material
   // forward of the fixed root wall, which is built independently below.
-  pieces.push(weighted?keep(base.intersect(box([p.frameWidth+2,1000,2000],[-p.frameWidth/2-1,5.55,-1000]))):base);
+  const forwardOfRoots=weighted?box([p.frameWidth+2,1000,2000],[-p.frameWidth/2-1,5.55,-1000]):null;
+  pieces.push(weighted?keep(base.intersect(forwardOfRoots)):base);
   const frontMask=frame(-1000,-1000,2000);
   for(let j=0;j<p.rows;j++)for(let i=0;i<p.columns;i++){
    const x=(i-(p.columns-1)/2)*42,y=28.55+42*j;
@@ -68,6 +69,7 @@ export function build(module, inputs, input) {
    pockets.push(tilt(loft(x,y,[[5.52,41.1+2*c,3.55+c],[5.72,41.9+2*c,3.95+c],[6.72,41.9+2*c,3.95+c]])));
    feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
    if(weighted){
+    const hardwareStart=pockets.length;
     // Shelf adaptation of the original weighted base: hardware on a 26 mm grid.
     const bore=(xx,yy,z,h,r)=>tilt(moved(keep(M.cylinder(h,r,r,96)),[xx,yy,z]));
     for(const dx of [-13,13])for(const dy of [-13,13]){
@@ -84,6 +86,8 @@ export function build(module, inputs, input) {
      ]));
      pockets.push(tilt(moved(keep(recess.rotate([0,0,rotation])),[x,y,0])));
     }
+    // Rear recesses on steep tilts must not cut into a board connector root.
+    for(let k=hardwareStart;k<pockets.length;k++)pockets[k]=keep(pockets[k].intersect(forwardOfRoots));
    }
   }
   pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
@@ -110,7 +114,16 @@ export function build(module, inputs, input) {
   // Remove boolean slivers below float32 export resolution before validation.
   shape=keep(shape.simplify(0.00001));
   if(shape.status()!=='NoError'||shape.volume()<=0)throw Error(`Geometry failed: ${shape.status()}`);
-  const parts=shape.decompose();parts.forEach(keep);if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
+  const parts=shape.decompose();parts.forEach(keep);
+  let removedSliverVolume=0;
+  if(weighted&&parts.length>1){
+   parts.sort((a,b)=>b.volume()-a.volume());
+   const dust=parts.slice(1).reduce((sum,part)=>sum+Math.abs(part.volume()),0);
+   // Boolean rounding at the float32 board plane can isolate nanometre skins.
+   // Only remove dust below an absolute 0.000001 mm³ total; real splits fail.
+   if(dust<1e-6){removedSliverVolume=dust;shape=parts[0];parts.length=1;}
+  }
+  if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
   const clip=box([2*reach,60.15,400],[-reach,-60,-200]);
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
@@ -138,7 +151,7 @@ export function build(module, inputs, input) {
   const printMesh=new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(t)});
   const final=keep(new M(printMesh));
   if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export failed: '+final.status()+'; volume '+final.volume()+' vs '+shape.volume());
-  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
+  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,removedSliverVolume,trianglesCount:output.triVerts.length/3};
   validateFloatExport(final,result,keep,p.board_system!=='original');
   return result;
  } finally {for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}

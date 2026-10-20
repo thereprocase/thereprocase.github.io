@@ -229,3 +229,48 @@ Find largest width checks the current depth, board interface and bed, including 
 Copy settings link captures the current form inputs and the bed, placement, pose, neighbor-ghost and helper visibility choices. Opening a link restores those values and generates the model, including a fit coupon when shared from that preview. Settings live in the URL fragment and are validated before application. If clipboard access is unavailable, the page shows a selectable link. Invalid or incompatible links leave the current configuration unchanged and show an error.
 
 Settings-link validation: `node scripts/gridfinity/check-settings-links.mjs`. Browser workflow regression: `python scripts/gridfinity/check-qol-browser.py` with Python Playwright and Chromium available; `SITE` overrides the local default URL and `GRIDFINITY_BROWSER_OUT` chooses the evidence directory. [Combined browser evidence](checks/settings-browser.json) · [Width-search controls](checks/width-search-controls.json).
+
+## Gridfinity base types
+
+Choose **Frame** (the existing open-bottom receiver) or **Weighted**. These are
+shelf adaptations of the two types in [Zack Freedman's original baseplate
+set](https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925),
+not the unmodified original plates. Magnet-light, skeletonized and screw-together
+bases are community variants, not additional types in that original set.
+
+Weighted adds 6.4 mm below the frame, a seat floor, four 6.5 mm diameter × 2.4 mm
+deep pockets for 6×2 mm magnets per cell on a 26 mm grid, 3.2 mm M3 clearance
+bores with 6 mm diameter × 3 mm underside head recesses, a 21.4 mm square × 4 mm
+ballast cavity and four shallow rubber-foot recesses. The weight/foot cavity
+layout and magnet spacing follow the dimensional references in
+[Gridfinity Rebuilt at 910e22d](https://github.com/kennetek/gridfinity-rebuilt-openscad/tree/910e22d8607fd7f5f51ad5e5cbc5287a76810bfd).
+The deeper plate and its hardware recesses are trimmed forward of the fixed root wall when tilted, preserving
+the board interface. Hardware is optional. Added ballast increases cantilever load;
+magnet fit, screw access, cavity bridging and physical loading remain untested.
+
+`base_type` is saved in settings links and weighted parameter JSON and included
+in export filenames. Old recipes default to `frame`; frame parameter downloads
+omit the new field to retain compatibility with the native FreeCAD generator.
+Weighted geometry is available in browser STL, faceted STEP and modifier 3MF;
+the linked analytic FreeCAD generator has not been extended.
+
+`node scripts/gridfinity/check-base-types.mjs` tests both bases, extreme tilts,
+seat clearances, mount heights, open/solid backplates, all board systems,
+internal hardware cavities, STL topology and reinforcement/export integration.
+`node scripts/gridfinity/browser-check.mjs public /tmp/base-browser/mobile.png`
+tests selection, stale-download invalidation and actual weighted STL/JSON downloads
+alongside the existing pose, cancellation and narrow-screen checks. Create the
+output directory first. Evidence: `checks/base-types.json` and
+`checks/base-types-browser.json`. Earlier receipts retain their original scope.
+
+Weighted builds can discard isolated Boolean dust totaling less than 0.000001 mm³
+at the float32 board plane, recording `removedSliverVolume`. Larger disconnected
+components fail. Connector, root-wall, bin-fit and final STL checks still apply.
+`node scripts/gridfinity/check-base-browser.mjs public /tmp/base-browser/weighted.png`
+also checks preset selection, weighted settings-link restoration, reinforcement
+buttons and selector readability at 320, 390 and 1600 pixels.
+
+For weighted STEP exports, a valid mesh without degenerate triangle faces is
+retained exactly. If normalization is needed, finer tolerances are tried after
+the usual 0.001 mm pass; the same 0.01% material-change limit and mesh checks
+apply. Frame STEP processing retains its previous behavior.

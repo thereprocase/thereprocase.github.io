@@ -1,5 +1,5 @@
 import {footprintHull,placementAtAngle} from './bed-placement.js?v=diagonal-1';
-import {validateExport} from './kernel.js?v=diagonal-1';
+import {validateExport} from './kernel.js?v=base-types-1';
 const enc=new TextEncoder();
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const real=x=>{const s=num(x);return /[.e]/i.test(s)?s.replace(/e/i,'E').replace(/^(\-?\d+)E/,'$1.E'):s+'.';};
@@ -37,7 +37,35 @@ function planarFaces(part){
 export function facetedSTEP(r,module){
  r.stepNormalization=[];
  function hasDegenerate(part){const v=part.vertices,t=part.triangles;for(let i=0;i<t.length;i+=3){const a=3*t[i],b=3*t[i+1],c=3*t[i+2],ab=[0,1,2].map(k=>v[b+k]-v[a+k]),ac=[0,1,2].map(k=>v[c+k]-v[a+k]);if(!Math.hypot(ab[1]*ac[2]-ab[2]*ac[1],ab[2]*ac[0]-ab[0]*ac[2],ab[0]*ac[1]-ab[1]*ac[0]))return true;}return false;}
- function cadPart(part){if(!module)throw Error('CAD normalization requires the solid kernel.');const {Manifold:M,Mesh}=module,source=new M(new Mesh({numProp:3,vertProperties:part.vertices,triVerts:part.triangles}));let clean,difference;try{const bb=source.boundingBox(),size=Math.max(1,...bb.min.map(Math.abs),...bb.max.map(Math.abs)),tolerance=Math.max(.001,.00001+2**(Math.floor(Math.log2(size))-22));clean=source.simplify(tolerance);const a=source.subtract(clean),b=clean.subtract(source);difference=a.volume()+b.volume();a.delete();b.delete();if(difference>source.volume()*1e-4)throw Error('STEP normalization changed too much material.');const mesh=clean.getMesh(),result={...part,vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts)};validateExport(result);if(hasDegenerate(result))throw Error('STEP contains a degenerate planar face.');r.stepNormalization??=[];r.stepNormalization.push({name:part.name,toleranceMM:tolerance,symmetricDifferenceMM3:difference,sourceVolume:source.volume(),cadVolume:clean.volume()});return result;}finally{clean?.delete();source.delete();}}
+ function cadPart(part){
+  if(!module)throw Error('CAD normalization requires the solid kernel.');
+  if(r.parameters?.base_type==='weighted'&&!hasDegenerate(part)){
+   validateExport(part);
+   r.stepNormalization.push({name:part.name,toleranceMM:0,symmetricDifferenceMM3:0,sourceVolume:part.volume??r.volume,cadVolume:part.volume??r.volume});
+   return part;
+  }
+  const {Manifold:M,Mesh}=module,source=new M(new Mesh({numProp:3,vertProperties:part.vertices,triVerts:part.triangles}));
+  try{
+   const bb=source.boundingBox(),size=Math.max(1,...bb.min.map(Math.abs),...bb.max.map(Math.abs)),precision=.00001+2**(Math.floor(Math.log2(size))-22),standard=Math.max(.001,precision);
+   // Weighted floors add small curved features. If the usual simplification
+   // exceeds the material-change limit, retry at finer precision, keeping the
+   // same topology, face and volume guards. Existing frame exports are unchanged.
+   const tolerances=r.parameters?.base_type==='weighted'?[standard,Math.max(.0001,precision),precision]:[standard];
+   let lastError;
+   for(const tolerance of [...new Set(tolerances)]){
+    const clean=source.simplify(tolerance);
+    try{
+     const a=source.subtract(clean),b=clean.subtract(source),difference=a.volume()+b.volume();a.delete();b.delete();
+     if(difference>source.volume()*1e-4)throw Error('STEP normalization changed too much material.');
+     const mesh=clean.getMesh(),result={...part,vertices:new Float32Array(mesh.vertProperties),triangles:new Uint32Array(mesh.triVerts)};
+     validateExport(result);if(hasDegenerate(result))throw Error('STEP contains a degenerate planar face.');
+     r.stepNormalization.push({name:part.name,toleranceMM:tolerance,symmetricDifferenceMM3:difference,sourceVolume:source.volume(),cadVolume:clean.volume()});return result;
+    }catch(e){lastError=e;}finally{clean.delete();}
+   }
+   throw Error(`${part.name}: ${lastError.message}`);
+  }finally{source.delete();}
+ }
+
 
  const lines=[],add=s=>(lines.push(`#${lines.length+1}=${s};`),`#${lines.length}`),ctx=add("APPLICATION_CONTEXT('core data for automotive mechanical design processes')");
  add(`APPLICATION_PROTOCOL_DEFINITION('international standard','automotive_design',2000,${ctx})`);

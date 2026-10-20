@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "74b4a5943ce2d3348c87638b4f52b845f19df976d01f3c5b7f7ada9de90e2bf8",
-    "app.js": "24912539c137b4c039518e7a9658a63c3fd68d0bf48fbfe859e6d22a50b0f016",
+    "README.md": "2c2d90eb6ecbfabcada829419a522003668476d837ef1d61319c77d7f57045ad",
+    "app.js": "733bd0ada7bcab724dd979f264c7b4a02816060515daee063ec9234fb98d5faf",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -19,6 +19,9 @@
     "boards.js": "b3d4fae38cce3ab1cd20e0ae2bb2e6ab11e4d0a727d06137fbc730070dc2c73a",
     "checks/array-limits.json": "96a82ca2dc0de720eb755339715b7067ec22225cdeae683c8c9c5e29a5c313d1",
     "checks/backcheck.json": "faee2df0d9eff1465087ec5f5c75b991a194d15e37fbe9bc94766e1c5a1bca2b",
+    "checks/base-types-browser.json": "c07fa27a09dfdfe0db1d1d455b3789ff8595bf02870df12686f4ed633c3d0ff1",
+    "checks/base-types-exports.json": "d3adcb5abb3fec1e2be3c86d76ed123a6e821d370245cdd8a8391ffc85d52d49",
+    "checks/base-types.json": "27fd880f945e12b1124d2ae1bb4632d8bcd4bc77d0012a4b16541f430e71c45e",
     "checks/bed-viewer.json": "f7f123a91695c628171d09f1f86c10c4acf672fb791fd776274b5d35e3554f5a",
     "checks/board-array-stress.json": "a91cfec8abe54969e660ebde1da78775dcf09e20192f4bc9f3d5570c7b45a2db",
     "checks/board-browser.json": "4cbfbc77e729991b590d346176419659df35843f00c2d73cb59dc6893390f8d4",
@@ -50,37 +53,37 @@
     "checks/width-search-controls.json": "ee23a14d784772e73539c8816a720a5bc4e28793b86f79333d75904af81a0bd8",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
-    "export-worker.js": "50c91b0269c4f65b1f030c9481bb90205978fdca314edeaea32247c5941014e7",
+    "export-worker.js": "73d5dd7856197e4ad578c60f14abe3ae0513af14d29aa0b7bb8ff6418341b729",
     "fit-inputs.json": "7b55fdbea9d77a0bc809bbaaab180626f93a1af945594d984e2eb0350d79e0db",
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "f9e64bb7f5b0ef8710ff03cbe22072800b3935e6e76cec3e97b99e256a64b2de",
+    "index.html": "b3b47881f57f167525c0f8250f539c9869e36d2e1c0e1a862205d174703d38d5",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
-    "kernel.js": "eeba24094de399b5a563686f54823839424935c6360ef9dd2886e3376b94b31c",
-    "neighbor-spacing.js": "445c78ab3db06d739e17dfd4651206e8ed4e3c810ccb5e17dc45cc805a743a31",
+    "kernel.js": "e251ee904e4e68011a3bd23917ac3607062c9dc970ae2f94d3915e7238c9470d",
+    "neighbor-spacing.js": "d4a96d6598e1977f4991878ed7a3f10b684dd0e924212d3fee8346bce8fcfb1b",
     "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
     "peg-fit.js": "a8c3cbf1ce418f15f6da940ef615fe678e30d51083ec0f16e19a33e7d66e27d5",
-    "reinforcement.js": "10f929408106d69fca4e4f4886717e247b0d880d898bc2fd94740b42bc116700",
+    "reinforcement.js": "b197a5e4714be1f38deab772a6a658210c07e0d8b132c16bf8a567de995fa5c1",
     "reinforcement.png": "28231eb8cf49e034fc6d7dd2ff7ac3c8112a43ec78eeca40a3b68e2234641e04",
     "round-board-coupons.png": "a1a518a7564c8f58b31acf95e4ebf04204e47db0b8c2e3cfd4118c0938a87256",
     "screw-board-mounts.png": "f28c53b8fc6698cbb1ac48e05c4c8d5f51f9488adbe6d29630b7abce7cdb0e27",
-    "search-width-worker.js": "6cadde06cc3958ea216965d8e83ced2f7f92dc1b87efbe202174fa734b6fb04f",
+    "search-width-worker.js": "48409854a8602d89050f7b0149039f077bb1648111626fe2d0a2932b9a231f49",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "skadis-shelf.png": "b4f1112ce8ea537e5668c00aa05239e3e5740ba3d28050e19ca17ce956196839",
-    "solid-exports.js": "eff385108d88f802281eb4035875603bb73e12b729e91cb0c183420b83d6f890",
+    "solid-exports.js": "6081aeac8fac7cfeeb7506d74fc84438f436696e6a71fddc1f5e742954886398",
     "sources/round/LICENSE": "fcf06f213f25db874ab440e80901c3f1715b6c89d4b499e5dc772886c779a9b2",
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
     "sources/skadis/ikea-skadis.scad": "f2a76b33adc69f701a73fa4090886b39b2fed13906f22d9701549a36410f54d6",
-    "style.css": "8bd94d9402bc6cd4c13edacf5e9c2658a454b76256a4dfa4391fb540efe9e31c",
+    "style.css": "1e83a1cb97393f9d0b74e204e32b2907ff934a374f41031a47e45cbcd1b73a3f",
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
-    "worker.js": "79ee7a692da2ea8f70ff8ddd3dc8eda20273c19052a40d04e1e48e002c84b8c6"
+    "worker.js": "a9e963a57ddfd8ddf7e10dadbaaa9741b439a35da3afa85b0c416f0484c3fbd3"
   },
-  "revision": "dense-1",
+  "revision": "base-types-1",
   "peg_fit_source": "downloads/peg-fit-source.zip",
   "peg_fit_checks": [
     "checks/peg-fit.json",
@@ -93,5 +96,20 @@
   "mount_layout": "all usable holes across width and mounting height",
   "sharedAssets": {
     "/gridfinity-common/settings-link.js": "b72eecb434694f63afe3b979a20f21166f0cabd5f8ff8bc6fa12f6b331925496"
+  },
+  "base_types": {
+    "official_set": "https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925",
+    "types": [
+      "frame",
+      "weighted"
+    ],
+    "scope": "Shelf adaptations of the original Frame and Weighted baseplates; physical hardware fit and load untested",
+    "dimensional_reference": "https://github.com/kennetek/gridfinity-rebuilt-openscad/tree/910e22d8607fd7f5f51ad5e5cbc5287a76810bfd",
+    "checks": [
+      "checks/base-types.json",
+      "checks/base-types-browser.json",
+      "checks/base-types-exports.json"
+    ],
+    "frame_regression": "Three representative current-frame meshes were byte-identical to pre-change vertices and triangles"
   }
 }

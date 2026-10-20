@@ -1,6 +1,6 @@
 import {readSettingsLink,settingsURL,copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
 import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=diagonal-1';
-import {spacingForBed} from './neighbor-spacing.js?v=diagonal-1';
+import {spacingForBed} from './neighbor-spacing.js?v=base-types-1';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
@@ -109,7 +109,7 @@ for(const [id,fit] of [['fit-bed',true],['straight-bed',false]])$(id).onclick=()
 $('print-pose').onclick=()=>{installed=false;updatePose();reset();};$('installed').onclick=()=>{installed=true;updatePose();reset();};$('reset-view').onclick=reset;
 $('stl').onclick=()=>{if(result)download(binarySTL(result),'model/stl',fileStem(result)+'-frame-down.stl');};
 $('helpers').onclick=()=>{if(installed)installedHelpersVisible=!installedHelpersVisible;else helpersVisible=!helpersVisible;updateHelpers();};
-function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=new Worker('./export-worker.js?v=diagonal-1',{type:'module'});worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
+function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=new Worker('./export-worker.js?v=base-types-1',{type:'module'});worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
 $('step').onclick=()=>exportSolids('step');$('three-mf').onclick=()=>exportSolids('3mf');
 $('recipe').onclick=()=>{if(result)download(JSON.stringify(Object.fromEntries(Object.keys(defaults).filter(k=>(result.parameters.board_system!=='original'||!(k in boardDefaults))&&(k!=='base_type'||result.parameters.base_type!=='frame')).map(k=>[k,result.parameters[k]])),null,2)+'\n','application/json',fileStem(result)+'-parameters.json');};
 let previousBoard='original';
@@ -133,11 +133,11 @@ function feedback(){
  let p;try{p=result?.parameters??values();}catch{p={board_system:form.elements.board_system.value};}
  const recipe=Object.fromEntries(Object.keys(defaults).map(k=>[k,p[k]]));
  const part=result?(result.kind==='coupon'?'Fit coupon':'Shelf'):'Settings only';
- const text=`Board: ${boards[p.board_system]?.name??p.board_system}\nPart: ${part}\nModel revision: dense-1\n\nFit / print observations:\n${$('feedback-notes').value}\n\nMeasured board dimensions (mm):\n${$('feedback-measurements').value}\n\nParameters:\n\`\`\`json\n${JSON.stringify(recipe,null,2)}\n\`\`\`\n`;
+ const text=`Board: ${boards[p.board_system]?.name??p.board_system}\nPart: ${part}\nModel revision: base-types-1\n\nFit / print observations:\n${$('feedback-notes').value}\n\nMeasured board dimensions (mm):\n${$('feedback-measurements').value}\n\nParameters:\n\`\`\`json\n${JSON.stringify(recipe,null,2)}\n\`\`\`\n`;
  return {recipe,text,part};
 }
 $('feedback-open').onclick=()=>{const {text}=feedback();const url=new URL('https://github.com/thereprocase/thereprocase.github.io/issues/new');url.searchParams.set('title','Gridfinity board fit: '+boards[form.elements.board_system.value].name);url.searchParams.set('body',text);window.open(url.href,'_blank','noopener');};
-$('feedback-save').onclick=()=>{const {recipe,text,part}=feedback();download(JSON.stringify({date:new Date().toISOString(),revision:'dense-1',part,parameters:recipe,feedback:text},null,2)+'\n','application/json','gridfinity-board-feedback.json');};
+$('feedback-save').onclick=()=>{const {recipe,text,part}=feedback();download(JSON.stringify({date:new Date().toISOString(),revision:'base-types-1',part,parameters:recipe,feedback:text},null,2)+'\n','application/json','gridfinity-board-feedback.json');};
 function cancelWidthSearch(message='Settings changed · find the largest width again.'){
  if(widthWorker||widthResult){widthWorker?.terminate();widthWorker=null;widthResult=null;$('width-result').textContent=message;}
  $('find-width').disabled=busy;$('cancel-width').disabled=true;$('use-width').hidden=true;

@@ -1,7 +1,8 @@
 import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=dense-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,...pegFitDefaults,...boardDefaults};
+export const baseTypes = {frame:'Frame', weighted:'Weighted'};
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,base_type:'frame',...pegFitDefaults,...boardDefaults};
 export function parameters(input) {
  const p={...defaults,...boardSettings(input.board_system??'original'),...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
@@ -10,6 +11,7 @@ export function parameters(input) {
  for(const [k,lo,hi] of [['clearance',-.1,.2],['web',2.4,6],['beam',5,20],['angle',-30,5]]) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k}: use ${lo} to ${hi} ${k==='angle'?'degrees':'mm'}`);
  if(!Number.isInteger(p.mount_rows)||p.mount_rows<1||p.mount_rows>4)throw Error('Mount height: use one to four peg rows.');
  if(typeof p.backplate!=='boolean')throw Error('Backplate must be true or false.');
+ if(!Object.hasOwn(baseTypes,p.base_type))throw Error('Base type: choose frame or weighted.');
  const mountZ=Array.from({length:p.mount_rows},(_,i)=>-25.4*i),backBottom=p.mount_rows===1?-12.7:mountZ.at(-1)-4.28,webColumns=Array.from({length:p.columns+1},(_,i)=>(i-p.columns/2)*42);
  const frameWidth=42*p.columns+4,count=Math.floor((frameWidth-10)/25.4)+1;
  const original={...p,mountZ,backBottom,webColumns,frameWidth,width:frameWidth,mounts:Array.from({length:count},(_,i)=>(i-(count-1)/2)*25.4),front:51.55+42*(p.rows-1)};const layout=boardLayout(p);return {...original,...layout,mountSites:layout?.mountSites??original.mounts.flatMap(x=>mountZ.map((z,row)=>({x,z,row})))};
@@ -54,12 +56,39 @@ export function build(module, inputs, input) {
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
   const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
   const frame=(back,z,height)=>tilt(moved(keep(M.extrude([framePolygon(p.frameWidth,back,p.front)],height)),[0,0,z]));
-  pieces.push(frame(5.55,.72,5));const frontMask=frame(-1000,-1000,2000);
+  const weighted=p.base_type==='weighted',baseBottom=weighted?.72-6.4:.72;
+  const base=frame(5.55,baseBottom,5.72-baseBottom);
+  // A deep tilted base can project behind the board. Keep added material
+  // forward of the fixed root wall, which is built independently below.
+  const forwardOfRoots=weighted?box([p.frameWidth+2,1000,2000],[-p.frameWidth/2-1,5.55,-1000]):null;
+  pieces.push(weighted?keep(base.intersect(forwardOfRoots)):base);
+  const frontMask=frame(-1000,-1000,2000);
   for(let j=0;j<p.rows;j++)for(let i=0;i<p.columns;i++){
    const x=(i-(p.columns-1)/2)*42,y=28.55+42*j;
-   pockets.push(tilt(loft(x,y,[[-1,36.5,1.25],[1.42,36.5,1.25],[2.12,37.9,1.95],[3.92,37.9,1.95],[6.07,42.2,4.1],[7.6,42.2,4.1]].map(([z,w,r])=>[z,w+2*c,r+c]))));
+   pockets.push(tilt(loft(x,y,[[weighted?.97:-1,36.5,1.25],[1.42,36.5,1.25],[2.12,37.9,1.95],[3.92,37.9,1.95],[6.07,42.2,4.1],[7.6,42.2,4.1]].map(([z,w,r])=>[z,w+2*c,r+c]))));
    pockets.push(tilt(loft(x,y,[[5.52,41.1+2*c,3.55+c],[5.72,41.9+2*c,3.95+c],[6.72,41.9+2*c,3.95+c]])));
    feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
+   if(weighted){
+    const hardwareStart=pockets.length;
+    // Shelf adaptation of the original weighted base: hardware on a 26 mm grid.
+    const bore=(xx,yy,z,h,r)=>tilt(moved(keep(M.cylinder(h,r,r,96)),[xx,yy,z]));
+    for(const dx of [-13,13])for(const dy of [-13,13]){
+     pockets.push(bore(x+dx,y+dy,.97-2.4,2.5,3.25)); // 6×2 mm magnet recess
+     pockets.push(bore(x+dx,y+dy,baseBottom-.1,6.85,1.6)); // M3 clearance
+     pockets.push(bore(x+dx,y+dy,baseBottom-.1,3.1,3)); // underside head access
+    }
+    pockets.push(tilt(box([21.4,21.4,4.1],[x-10.7,y-10.7,baseBottom-.1])));
+    // Shallow radial recesses for rubber feet, matching the weighted layout.
+    for(const rotation of [0,90,180,270]){
+     const recess=keep(M.union([
+      box([8.5,4.25,2.1],[-4.25,7.875,baseBottom-.1]),
+      moved(keep(M.cylinder(2.1,4.25,4.25,96)),[0,12.125,baseBottom-.1])
+     ]));
+     pockets.push(tilt(moved(keep(recess.rotate([0,0,rotation])),[x,y,0])));
+    }
+    // Rear recesses on steep tilts must not cut into a board connector root.
+    for(let k=hardwareStart;k<pockets.length;k++)pockets[k]=keep(pockets[k].intersect(forwardOfRoots));
+   }
   }
   pieces.push(box([p.frameWidth,5.4,hinge+1-.72],[-p.frameWidth/2,.15,.72]));
   if(p.columns>1||p.beam>5)pieces.push(keep(tilt(box([42*p.columns,2.4,p.beam],[-21*p.columns,p.front-2.4,5.72-p.beam])).intersect(frontMask)));
@@ -85,7 +114,16 @@ export function build(module, inputs, input) {
   // Remove boolean slivers below float32 export resolution before validation.
   shape=keep(shape.simplify(0.00001));
   if(shape.status()!=='NoError'||shape.volume()<=0)throw Error(`Geometry failed: ${shape.status()}`);
-  const parts=shape.decompose();parts.forEach(keep);if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
+  const parts=shape.decompose();parts.forEach(keep);
+  let removedSliverVolume=0;
+  if(weighted&&parts.length>1){
+   parts.sort((a,b)=>b.volume()-a.volume());
+   const dust=parts.slice(1).reduce((sum,part)=>sum+Math.abs(part.volume()),0);
+   // Boolean rounding at the float32 board plane can isolate nanometre skins.
+   // Only remove dust below an absolute 0.000001 mm³ total; real splits fail.
+   if(dust<1e-6){removedSliverVolume=dust;shape=parts[0];parts.length=1;}
+  }
+  if(parts.length!==1)throw Error('Generated shelf components: '+JSON.stringify(parts.map(x=>({volume:x.volume(),bounds:x.boundingBox()}))));
   const clip=box([2*reach,60.15,400],[-reach,-60,-200]);
   const expected=keep(keep(M.union(pegs)).intersect(clip)),actual=keep(shape.intersect(clip));
   const pegDelta=keep(expected.subtract(actual)).volume()+keep(actual.subtract(expected)).volume();
@@ -113,7 +151,7 @@ export function build(module, inputs, input) {
   const printMesh=new Mesh({numProp:3,vertProperties:vertices,triVerts:new Uint32Array(t)});
   const final=keep(new M(printMesh));
   if(final.status()!=='NoError'||Math.abs(final.volume()-shape.volume())/shape.volume()>1e-5)throw Error('Float32 export failed: '+final.status()+'; volume '+final.volume()+' vs '+shape.volume());
-  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,trianglesCount:output.triVerts.length/3};
+  const output=final.getMesh(),result={vertices:new Float32Array(output.vertProperties),triangles:new Uint32Array(output.triVerts),parameters:p,volume:final.volume(),printRotation:rotation,printZShift:-minZ,hinge,pegDelta,coreMissing,coreInteriorMissing,coreTolerance,footOverlap,maxFootOverlap,removedSliverVolume,trianglesCount:output.triVerts.length/3};
   validateFloatExport(final,result,keep,p.board_system!=='original');
   return result;
  } finally {for(let i=allocated.length-1;i>=0;i--)allocated[i].delete();}

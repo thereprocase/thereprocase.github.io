@@ -1,0 +1,26 @@
+{
+  "default": "Base type\nFrame\nBoard\nOriginal round-hole pegboard\nArray\n2 \u00d7 1\nUnrotated footprint\n88.0 \u00d7 62.3 mm\nShelf tilt\n0\u00b0\nMount columns\n4\nTotal mounts\n8\nMount height\n2 peg rows\nBackplate\nSolid\nGussets\n3 \u00b7 Gridfinity boundaries\nSolid volume\n30.11 cm\u00b3\nMesh triangles\n45,850\nExport pose\nFrame face on bed\nPeg clearance / side\n0.00 mm\nHook grip\n0.00 mm\nHoop firmness\n0.00 mm\nReinforcement\n4 helper bodies \u00b7 3.5 mm margin",
+  "baseOptions": true,
+  "baseInvalidates": true,
+  "weighted": true,
+  "weightedRecipe": true,
+  "weightedSTL": true,
+  "defaultControls": true,
+  "mini": true,
+  "tallOpen": true,
+  "installed": true,
+  "invalidates": true,
+  "cancel": true,
+  "down": "Base type\nFrame\nBoard\nOriginal round-hole pegboard\nArray\n2 \u00d7 1\nUnrotated footprint\n88.0 \u00d7 58.3 mm\nShelf tilt\n-30\u00b0\nMount columns\n4\nTotal mounts\n8\nMount height\n2 peg rows\nBackplate\nSolid\nGussets\n3 \u00b7 Gridfinity boundaries\nSolid volume\n27.33 cm\u00b3\nMesh triangles\n45,690\nExport pose\nFrame face on bed\nPeg clearance / side\n0.00 mm\nHook grip\n0.00 mm\nHoop firmness\n0.00 mm\nReinforcement\n4 helper bodies \u00b7 3.5 mm margin",
+  "overflow390": false,
+  "overflow320": false,
+  "orbit": true,
+  "weightedSettingsAndLayout": {
+    "presetPreservesBase": true,
+    "settingsRestored": true,
+    "reinforcement": true,
+    "layout320": true,
+    "layout390": true,
+    "layout1600": true
+  }
+}
