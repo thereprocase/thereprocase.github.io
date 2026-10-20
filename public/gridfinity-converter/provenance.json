@@ -61,14 +61,14 @@
   ],
   "sha256": {
     "README.md": "8b5fab5bde847278a96359e5f43ac4772868c8ed2596803b2183a1e9bba4e8bf",
-    "app.js": "dde01b3b36d8eaebc522d7ea21fbca8d365ce68b2b6d829047a9653c09272398",
+    "app.js": "5b5d1981ed37135cde69288bab1cf66351ec0b539789581fb0d14819acfc4b0b",
     "cad-worker.js": "c60be9a643b3c33a6db35e2413a3452db0d9db281432541d7d5f569ac1a0f8b8",
     "demo.js": "86cdbb8b79440fc2f4b71740314ff4c6b25e707ffbce599dfd492109396c34e4",
     "importers.js": "e60cc7919303ee11e21c316d3f2f9bed7f3b08eda7aab36534c220b211e8512c",
-    "index.html": "5d233fd4466fe137bb5ae7b13480cd31e1b1235d4574f8c47c049b8fedc5a103",
-    "kernel.js": "39979b9908577447f938ed3f234495d257a6ead10139a56f8ab815f24c76b754",
+    "index.html": "02f057aa01d277dde58544b2e39715ed67a02f0b705aa7f43ce6fe57b32fb8be",
+    "kernel.js": "600897651e005fb1c7477b5e312f0702d0535d92571587cb25eff4262e13c73b",
     "native-cad.js": "130d4e6b150721805215ef17346c69513150a3189886e50001f8e4945adf0bc2",
-    "native-worker.js": "3dd7baaa5bbae8a3fc6bc1ca317cea193277ce57113849df7e861f814d24a1af",
+    "native-worker.js": "dcc56e94b4495a40d973b929a4f9f6c9cd204373d0cd6656f6a8e2029e22cae9",
     "style.css": "89c99195be54e71850845b7e6556ec1e823e7643a5a9ca1ec21cd8c16010a93e",
     "vendor/dependencies.json": "c5870f3282426b7f1c73991e9f5984c49f3135397b0bcdedde6c73b0471e6a30",
     "vendor/occt/license.occt-import-js.txt": "7ffe1954587c77dfba1cf8eb9b2ea743671fa6e63f9e7a2f258119d42e14eefe",
@@ -103,6 +103,6 @@
     "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
     "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
     "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
-    "worker.js": "a31e272e297c67f1737a710f248d9ad21940bd90e4d4cca810902de87d579023"
+    "worker.js": "d6bca48b75ef5ae658d29075a842137562580252f9365ab3c3ba030df9d52a6c"
   }
 }

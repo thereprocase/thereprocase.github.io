@@ -625,7 +625,7 @@ export function convert(module, original, input) {
     for (const [name, value, lo, hi] of [
       ['bottom', bottom, -2000, 2000],
       ['replacement height', height, 4.75, 10],
-      ['fit allowance', fit, -0.15, 0.15],
+      ['fit allowance', fit, -0.5, 0.5],
       ['magnet diameter', magnetDiameter, 5.5, 7],
       ['magnet depth', magnetDepth, 1, 3],
       ['screw diameter', screwDiameter, 2.5, 3.6],

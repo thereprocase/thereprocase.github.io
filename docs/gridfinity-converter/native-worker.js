@@ -1,6 +1,6 @@
-import { convertNative } from './native-cad.js?v=audit-1';
+import { convertNative } from './native-cad.js?v=friction-2';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import { importSolid, meshData, checkMesh } from './kernel.js?v=audit-1';
+import { importSolid, meshData, checkMesh } from './kernel.js?v=friction-2';
 self.onmessage = async ({ data }) => {
   try {
     const result = await convertNative(data),

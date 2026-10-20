@@ -231,4 +231,15 @@ fs.writeFileSync(
   ) + '\n',
 );
 console.log('Negative cases and fixed pitch PASS');
+
+// Both ends of the friction range must produce valid connected geometry.
+for (const fit of [-0.5, 0.5]) {
+  const d = detect(m, source);
+  const s = align(m, source, d);
+  const r = convert(m, s, { feet: d.feet, style: 'plain', fit });
+  assert.equal(r.report.connectedSolids, 1);
+  console.log('Friction endpoint passed:', fit);
+  s.delete();
+}
+
 [source, s, block, ring, feetOnly, cap, thin].forEach((s) => s.delete());

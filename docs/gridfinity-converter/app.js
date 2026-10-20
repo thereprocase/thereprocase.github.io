@@ -6,7 +6,7 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=audit-1';
+} from './kernel.js?v=friction-2';
 import {
   importFile,
   extensions,
@@ -349,7 +349,7 @@ function terminate() {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=audit-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=friction-2', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -727,7 +727,7 @@ async function runConversion() {
 }
 function nativeConversion(options) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-worker.js?v=audit-1', { type: 'module' });
+    const w = new Worker('./native-worker.js?v=friction-2', { type: 'module' });
     nativeWorker = w;
     w.onmessage = ({ data }) => {
       w.terminate();
@@ -756,7 +756,7 @@ function adjustFit(direction) {
     ? input.valueAsNumber
     : 0;
   const hundredths = Math.round(current * 100) + direction * 5;
-  input.value = (Math.max(-15, Math.min(15, hundredths)) / 100).toFixed(2);
+  input.value = (Math.max(-50, Math.min(50, hundredths)) / 100).toFixed(2);
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 $('fit-down').onclick = () => adjustFit(-1);

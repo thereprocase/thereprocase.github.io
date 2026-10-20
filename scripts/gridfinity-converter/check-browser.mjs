@@ -142,8 +142,8 @@ try {
     const down = field.value === '0.02';
     document.getElementById('fit-down').click();
     const negative = field.value === '-0.03';
-    field.value = '0.14'; document.getElementById('fit-up').click();
-    const clamped = field.value === '0.15';
+    field.value = '0.49'; document.getElementById('fit-up').click();
+    const clamped = field.value === '0.50';
     field.value = '0.02'; field.dispatchEvent(new Event('input'));
     return typed && up && down && negative && clamped;
   })()`);
