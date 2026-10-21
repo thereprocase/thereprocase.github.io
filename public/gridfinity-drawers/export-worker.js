@@ -1,6 +1,6 @@
 import Module from '../gridfinity-shelves/vendor/manifold.js';
 import {facetedSTEP} from '../gridfinity-shelves/solid-exports.js?v=drawer-qol-1';
-import {binarySTL} from './kernel.js?v=drawer-bases-1';
+import {binarySTL} from './kernel.js?v=drawer-bases-2';
 import {zip} from './zip.js';
 self.onmessage=async({data})=>{try{
  let bytes;

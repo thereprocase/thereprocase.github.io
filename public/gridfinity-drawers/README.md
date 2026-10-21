@@ -64,6 +64,30 @@ magnet fits, pocket probes, tiled cuts, valid connected meshes, reference-foot
 clearance and unchanged legacy meshes. [Browser checks](checks/base-options-browser.json)
 cover controls, saved settings, recipe/ZIP/STEP downloads and mobile layout.
 
+## Repeated-cell construction
+
+Hardware layouts with seat clearance at or below +0.05 mm per side build one
+cell solid and translate it on the 42 mm grid. Padding is added around the grid;
+open windows and shaped tile cuts are then subtracted. Wider clearances keep
+the whole-plate path because their socket cuts can cross the cell boundary.
+
+The reference foot is validated against the cell template once. Its measured
+XY bounds must be strictly inside the cell, so other cells and padding cannot
+intersect it. Open windows and tile cuts only remove material: the template's
+intersection volume bounds every repeated foot's overlap. Every tile still
+passes connected-solid, float32 re-entry, closed-edge and winding validation.
+The result includes construction and validation modes and stage timings.
+
+[Comparison and timings](checks/cell-reuse.json) compare exported float32 solids
+against the pre-optimization build by symmetric difference and bounding boxes.
+No mesh resolution reduction is used. The comparison budget is surface area × √3 × one float32 coordinate ULP at the tile’s maximum coordinate magnitude; actual changed volume is recorded separately.
+
+The default 300 × 400 mm, 6 × 8 all-options case took 33.4 seconds before and
+13.0 seconds after in the final paired local kernel run. Browser generation
+including preview took 30.8 seconds on the first measured run, then 19.9 and
+18.8 seconds. These are local measurements, not a universal sub-20-second
+guarantee. [Browser timing evidence](checks/cell-reuse-browser-timing.json).
+
 ## Tiling and CA joints
 
 Automatic tiling fits the specified usable print area in the displayed X/Y

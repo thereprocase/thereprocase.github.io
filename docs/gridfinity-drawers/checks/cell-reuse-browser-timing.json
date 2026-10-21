@@ -1,0 +1,46 @@
+{
+  "pass": true,
+  "configuration": "default 300x400, 6x8 cells, magnets+screws+ballast",
+  "runs": [
+    {
+      "wallSeconds": 30.828432956011966,
+      "timings": {
+        "cellBuildMS": 473,
+        "assemblyMS": 16399.700000047684,
+        "referenceValidationMS": 229.5,
+        "tileValidationMS": 9822.200000047684,
+        "totalMS": 26924.5
+      },
+      "construction": "translated-cell",
+      "tiles": 4,
+      "footOverlap": 0.00016475809603563128
+    },
+    {
+      "wallSeconds": 19.937520635081455,
+      "timings": {
+        "cellBuildMS": 429.10000014305115,
+        "assemblyMS": 8422.899999856949,
+        "referenceValidationMS": 68.10000014305115,
+        "tileValidationMS": 6402.299999952316,
+        "totalMS": 15322.400000095367
+      },
+      "construction": "translated-cell",
+      "tiles": 4,
+      "footOverlap": 0.00016475809603563128
+    },
+    {
+      "wallSeconds": 18.76691594487056,
+      "timings": {
+        "cellBuildMS": 421.5,
+        "assemblyMS": 7817.599999904633,
+        "referenceValidationMS": 66.79999995231628,
+        "tileValidationMS": 6128.700000047684,
+        "totalMS": 14434.599999904633
+      },
+      "construction": "translated-cell",
+      "tiles": 4,
+      "footOverlap": 0.00016475809603563128
+    }
+  ],
+  "errors": []
+}

@@ -26,7 +26,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00005583286888840944
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "magnets",
@@ -35,7 +35,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00005583286888840944
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "magnets",
@@ -44,7 +44,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00005583286888840944
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "screws",
@@ -53,7 +53,7 @@
       "height": 6.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000054449200983989996
+      "footOverlap": 0.00005444920098194717
     },
     {
       "name": "both",
@@ -62,7 +62,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "both",
@@ -71,7 +71,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "both",
@@ -80,7 +80,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "weighted",
@@ -89,7 +89,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted",
@@ -98,7 +98,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted",
@@ -107,43 +107,43 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "open-magnets",
       "fit": "snug",
-      "volume": 7566.834221159718,
+      "volume": 7566.8342211314875,
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "open-magnets",
       "fit": "glue",
-      "volume": 7538.128002332716,
+      "volume": 7538.128002304486,
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "open-magnets",
       "fit": "press",
-      "volume": 7585.218256314019,
+      "volume": 7585.218256285788,
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.000055833102031050084
     },
     {
       "name": "open-screws",
       "fit": "snug",
-      "volume": 4952.881776355791,
+      "volume": 4952.88177632756,
       "height": 6.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000054449200986142646
+      "footOverlap": 0.00005444920098194717
     },
     {
       "name": "open-both",
@@ -152,16 +152,16 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "open-both",
       "fit": "glue",
-      "volume": 7512.410445469357,
+      "volume": 7512.410445469356,
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "open-both",
@@ -170,7 +170,7 @@
       "height": 8.2,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.000055832868904155106
+      "footOverlap": 0.00005583310202857598
     },
     {
       "name": "weighted-plain",
@@ -179,7 +179,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted-magnets",
@@ -188,7 +188,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted-magnets",
@@ -197,7 +197,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted-magnets",
@@ -206,7 +206,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "name": "weighted-screws",
@@ -215,7 +215,7 @@
       "height": 11.65,
       "pocketProbes": true,
       "closedConnected": true,
-      "footOverlap": 0.00010439139958599287
+      "footOverlap": 0.0001043913995864158
     },
     {
       "tiled": true,
@@ -223,7 +223,7 @@
       "bottom": "closed",
       "cuts": "45",
       "tiles": 4,
-      "footOverlap": 0.00026106832687148326
+      "footOverlap": 0.00006085946697580152
     },
     {
       "tiled": true,
@@ -231,7 +231,7 @@
       "bottom": "closed",
       "cuts": "24,66",
       "tiles": 9,
-      "footOverlap": 0.00026106832687148326
+      "footOverlap": 0.00006085946697580152
     },
     {
       "tiled": true,
@@ -239,7 +239,7 @@
       "bottom": "open",
       "cuts": "45",
       "tiles": 4,
-      "footOverlap": 0.00026106832687148326
+      "footOverlap": 0.00006085946697580152
     },
     {
       "tiled": true,
@@ -247,7 +247,7 @@
       "bottom": "open",
       "cuts": "24,66",
       "tiles": 9,
-      "footOverlap": 0.0002610683268715006
+      "footOverlap": 0.00006085946697580152
     },
     {
       "tiled": true,
@@ -255,7 +255,7 @@
       "bottom": "closed",
       "cuts": "45",
       "tiles": 4,
-      "footOverlap": 0.0003075578328155624
+      "footOverlap": 0.00010939313560387387
     },
     {
       "tiled": true,
@@ -263,7 +263,7 @@
       "bottom": "closed",
       "cuts": "24,66",
       "tiles": 9,
-      "footOverlap": 0.0003075578328155624
+      "footOverlap": 0.00010939313560387387
     }
   ],
   "legacyMeshIdentical": true,

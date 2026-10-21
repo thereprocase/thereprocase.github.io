@@ -1,0 +1,140 @@
+{
+  "pass": true,
+  "baseline": "43ffa8c",
+  "cases": [
+    {
+      "name": "closed",
+      "oldMS": 1775.334509,
+      "newMS": 851.4365459999999,
+      "timings": {
+        "cellBuildMS": 208.9877959999999,
+        "assemblyMS": 261.99229000000014,
+        "referenceValidationMS": 55.261647999999695,
+        "tileValidationMS": 321.8256329999999,
+        "totalMS": 848.1857259999997
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.0010741288615152634,
+      "maxQuantizationBudget": 0.041032305579413814,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0.00006085946697580152
+    },
+    {
+      "name": "open",
+      "oldMS": 2116.3248980000008,
+      "newMS": 1159.5627479999985,
+      "timings": {
+        "cellBuildMS": 210.84396599999855,
+        "assemblyMS": 549.0465640000002,
+        "referenceValidationMS": 62.38194199999998,
+        "tileValidationMS": 336.18698700000095,
+        "totalMS": 1158.5117439999995
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.0010741055194970783,
+      "maxQuantizationBudget": 0.034177838160082324,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0.00006085946697580152
+    },
+    {
+      "name": "weighted",
+      "oldMS": 2410.826127999999,
+      "newMS": 1243.7159749999992,
+      "timings": {
+        "cellBuildMS": 284.81155899999794,
+        "assemblyMS": 391.2235900000014,
+        "referenceValidationMS": 56.44893199999933,
+        "tileValidationMS": 509.82097500000236,
+        "totalMS": 1242.321251999998
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.0010730171882267574,
+      "maxQuantizationBudget": 0.04942060694949132,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0.00010939313560387387
+    },
+    {
+      "name": "tight",
+      "oldMS": 1765.4229879999984,
+      "newMS": 850.0422260000014,
+      "timings": {
+        "cellBuildMS": 224.3249250000008,
+        "assemblyMS": 242.6276059999982,
+        "referenceValidationMS": 57.921604000002844,
+        "tileValidationMS": 324.2089870000018,
+        "totalMS": 849.0975850000032
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.0006503999023525484,
+      "maxQuantizationBudget": 0.04102327928386293,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0.000026267098528006047
+    },
+    {
+      "name": "clearance-fallback",
+      "oldMS": 1391.4171889999998,
+      "newMS": 1617.640993000001,
+      "timings": {
+        "cellBuildMS": 49.76362700000027,
+        "assemblyMS": 962.5046510000029,
+        "referenceValidationMS": 179.5228449999995,
+        "tileValidationMS": 424.8897399999987,
+        "totalMS": 1616.6961129999981
+      },
+      "construction": "whole-plate",
+      "referenceValidation": "per-foot",
+      "maxChangedVolume": 1.1564955522076065e-18,
+      "maxQuantizationBudget": 0.041015533417796936,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0
+    },
+    {
+      "name": "open-through-cells",
+      "oldMS": 2379.145961000002,
+      "newMS": 1343.7733850000004,
+      "timings": {
+        "cellBuildMS": 268.93110100000195,
+        "assemblyMS": 619.3980040000024,
+        "referenceValidationMS": 66.85865799999738,
+        "tileValidationMS": 387.4832300000053,
+        "totalMS": 1342.684702999999
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.0004746236194962505,
+      "maxQuantizationBudget": 0.03106864027714837,
+      "maxBoundsDelta": 0,
+      "tiles": 9,
+      "maxFootOverlap": 0.00006085946697580152
+    },
+    {
+      "name": "full-default",
+      "oldMS": 33353.321031,
+      "newMS": 13033.785249000008,
+      "timings": {
+        "cellBuildMS": 277.8702639999974,
+        "assemblyMS": 6754.56826900001,
+        "referenceValidationMS": 62.957903999995324,
+        "tileValidationMS": 5928.573237999997,
+        "totalMS": 13023.98967000001
+      },
+      "construction": "translated-cell",
+      "referenceValidation": "template-overlap-upper-bound",
+      "maxChangedVolume": 0.04624846966589685,
+      "maxQuantizationBudget": 2.2205071999368577,
+      "maxBoundsDelta": 0,
+      "tiles": 4,
+      "maxFootOverlap": 0.00016475809603563128
+    }
+  ],
+  "scope": "Float32 symmetric-difference volume and bounds; reference-foot containment upper bound; full default all-options timing. No tessellation reduction."
+}
