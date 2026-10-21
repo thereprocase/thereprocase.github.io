@@ -77,7 +77,7 @@ try {
 document.documentElement.dataset.cadIsolation = isolation;
 if (isolation !== 'reloading') {
   try {
-    await import('./app.js?v=female-bases-ui-1');
+    await import('./app.js?v=magnet-fit-2');
     for (const gate of gates) if (gate) gate.disabled = false;
   } catch (error) {
     if (status)

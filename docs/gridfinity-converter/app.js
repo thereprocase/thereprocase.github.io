@@ -10,7 +10,7 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=female-bases-20261021-3';
+} from './kernel.js?v=magnet-fit-2';
 import { importFile, extensions, export3MF } from './importers.js?v=female-bases-20261021-3';
 const nativeExportWarmPool = createNativeExportWarmPool();
 addEventListener('pagehide', () => {
@@ -464,7 +464,7 @@ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {})
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=female-bases-20261021-3', { type: 'module' });
+    worker = new Worker('./worker.js?v=magnet-fit-2', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -1147,6 +1147,17 @@ for (const id of [
   'roof',
 ])
   $(id).oninput = () => invalidate();
+function syncMagnetFit() {
+  for (const button of document.querySelectorAll('[data-magnet-diameter]'))
+    button.setAttribute('aria-pressed', String(Number(button.dataset.magnetDiameter) === Number($('magnetDiameter').value)));
+}
+for (const button of document.querySelectorAll('[data-magnet-diameter]'))
+  button.onclick = () => {
+    $('magnetDiameter').value = button.dataset.magnetDiameter;
+    $('magnetDiameter').dispatchEvent(new Event('input', {bubbles: true}));
+  };
+$('magnetDiameter').addEventListener('input', syncMagnetFit);
+syncMagnetFit();
 $('select-all').onclick = () => {
   selection = new Set(
     feet.filter((p) => p.gridMatch || p.manual).map((p) => p.id),

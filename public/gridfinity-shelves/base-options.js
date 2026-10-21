@@ -20,4 +20,4 @@ export function baseTypeFor(choices){
 }
 
 /** Nominal pockets for 6 × 2 mm magnets; depth is shared between fit presets. */
-export const magnetFits={glue:{label:'Glue fit',diameter:6.5},press:{label:'Press fit',diameter:5.9}};
+export const magnetFits={snug:{label:'Snug glue',diameter:6.2},glue:{label:'Official',diameter:6.5},press:{label:'Friction',diameter:6.0}};

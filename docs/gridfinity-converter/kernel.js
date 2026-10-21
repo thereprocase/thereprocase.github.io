@@ -678,7 +678,7 @@ export function conversionParameters(input) {
     bottom = Number(input.bottom ?? 0),
     height = Number(input.height ?? 4.75),
     fit = Number(input.fit ?? 0),
-    magnetDiameter = Number(input.magnetDiameter ?? 6.5),
+    magnetDiameter = Number(input.magnetDiameter ?? 6.2),
     magnetDepth = Number(input.magnetDepth ?? 2.4),
     screwDiameter = Number(input.screwDiameter ?? 3),
     requestedScrewDepth = Number(input.screwDepth ?? 6),

@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "be8445bbd6a9b0c8d06941eefbf5196cf3c7718d195c6ab40f8eebc64f90a031",
-    "app.js": "d691d9b9b953542e7e4892a5fc32d46078d9d96463b9d56720e591e792193ba6",
+    "README.md": "31d66d3a0af649ea6c7bc19e18563dc16d9b59104035add32d68128db9997f42",
+    "app.js": "98566dda7898aef27db2055a12e3d5c8433ba370ecb5d61f6fd0ebf5e5d9fdb4",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -33,7 +33,7 @@
     "checks/diagonal-browser.json": "676d1610a968c163c422cbfa32cf9ec793e112fe77e56493f3f10a07d78ba342",
     "checks/diagonal-placement.json": "2a913edacb42aea0e7d11de5f55f4074acaec490bfc9d70e4c5bbdb9c4b063d0",
     "checks/exported-stl.json": "fe9f06897ba0be8394054f20a82ceca3b28e18370b9ee26b4c07ed477733293f",
-    "checks/layout-revisions.json": "8a26dcf03503aa4c70989ebaa4852c492e7ab81d1fd7f5b9dbec746eea2af59a",
+    "checks/layout-revisions.json": "0083a8af5d25b485824a35b0bce904df48db75c36636fea3cde1975dff4f1903",
     "checks/modifier-readback.json": "d8f315e0eae5a7bba4b5e3e5d69d4c6efe307cd9007c50979e1d22f5bad8b8a8",
     "checks/native-comparison.json": "71c59da4dcca6e706f6f2191e6890925482b2fd9d2502af8bcb7f9a634433393",
     "checks/peg-fit-browser.json": "1f35d2f3d52a25515eb1716ca9449d133db5fb3e22ea241e9d95a94b0ce3ea6a",
@@ -53,26 +53,26 @@
     "checks/width-search-controls.json": "ee23a14d784772e73539c8816a720a5bc4e28793b86f79333d75904af81a0bd8",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
-    "export-worker.js": "adb0f42d6f6db8992162fe6f57253f1666182b3bf0588975b505031b80ea0728",
+    "export-worker.js": "e0ed21814c200f5ddee131dda73790de7df1e3e81f35afb426608084f14b70cc",
     "fit-inputs.json": "7b55fdbea9d77a0bc809bbaaab180626f93a1af945594d984e2eb0350d79e0db",
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "7449a3c4c55835fa95f7740c949008509507f2c7564fd86e975d64d4bc6f6bdf",
+    "index.html": "7dfe009bc487b59ca80719bdd72aa472213f490f7e81c90941300a675bd3f4ca",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
-    "kernel.js": "63e189fe4b46421cb5c35e640a9a84a211c0690853769fe94a059aa589436d84",
-    "neighbor-spacing.js": "6b8ce4ef304f0e157a6ac7cb7b71304a02729ba609b23247357b3ed5e1600905",
+    "kernel.js": "8eaa67315bb8ac5fe0f235c7e93d68d4999d0d6ef85d57f83cb82eb71559b981",
+    "neighbor-spacing.js": "104250827c16a4866b026abff26965c20d6672f91706369b06f439e118e9af9b",
     "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
     "peg-fit.js": "a8c3cbf1ce418f15f6da940ef615fe678e30d51083ec0f16e19a33e7d66e27d5",
-    "reinforcement.js": "55df3eafda13c1cfd9adcce3dabeb4878ffcf13a7fab2d4bf5738964a984dca1",
+    "reinforcement.js": "b0325bc50c9d98773be29ad092f480516583b56d141d0e8c461f1ed5161cb5ae",
     "reinforcement.png": "28231eb8cf49e034fc6d7dd2ff7ac3c8112a43ec78eeca40a3b68e2234641e04",
     "round-board-coupons.png": "a1a518a7564c8f58b31acf95e4ebf04204e47db0b8c2e3cfd4118c0938a87256",
     "screw-board-mounts.png": "f28c53b8fc6698cbb1ac48e05c4c8d5f51f9488adbe6d29630b7abce7cdb0e27",
-    "search-width-worker.js": "c554e68598840bdf4ab746910de95e5a572259f7bb3041e622934dfdcfcf56f5",
+    "search-width-worker.js": "fd222681e021138e1e78e5fb7b062219d1178333e5f150187c7e945f325c9daa",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "skadis-shelf.png": "b4f1112ce8ea537e5668c00aa05239e3e5740ba3d28050e19ca17ce956196839",
-    "solid-exports.js": "57aa191da72b6f0440cfb94908c5db19cfa92d787d1af3a8e9fa2c3ea7367d21",
+    "solid-exports.js": "0be8e00d34e9710584b53899689ade851e9b3712954f28415de291c269a18696",
     "sources/round/LICENSE": "fcf06f213f25db874ab440e80901c3f1715b6c89d4b499e5dc772886c779a9b2",
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
@@ -81,7 +81,7 @@
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
-    "worker.js": "6467e9a8e01ba3402805dde71d2a9d06d6e3a88103392eb8b9815618c5277dff",
+    "worker.js": "ceeed6b556ce4f9db822ac01a3cbb99a70d252fb26dfc54e094b69cbee42a4dc",
     "checks/runtime-1.json": "aa4cbbb3f142249102fbfe4decbb23c72a6b3bd7c681006f1d0f150c84a910ae",
     "checks/runtime-2.json": "c5fbd237cf66052a4f87308e3d4769edc2a00bc6cee4c6774b1922b08728d2d2",
     "checks/runtime-3.json": "4d9811750f63b05396c19ef313d16ddb35eccb9061de443b9a201e7cca008eee",
@@ -90,16 +90,16 @@
     "checks/six-base-types-exports.json": "fcb15912c44dbedc7c16277fc3ff06e2b8b0f4afcc04eee66b3134e89ee1eb44",
     "checks/weighted-step-completeness.json": "6cc692f7c8b922243d6768a4cec330f48d9778709d29333d4779f46dbd82a915",
     "checks/rectangle-fit.json": "d07070c09812fdd802728537aa195b78b15a8be14d1434f1f47164040f78e18b",
-    "base-options.js": "82178eaa2bf810b96503b321fcccd7052ae981af19bad41660d9249c11cfee43",
-    "width-cache.js": "1ff5248436f608566430c9e379aa0f3ad8d871b672bf418e046ab2d5cca4bbac",
-    "width-precomputed.json": "6d8bab4706331f757524927cd0cc8836bae107cab216d2938adeecb1e33dfc23",
+    "base-options.js": "8e749bfb56abdc4e5ea8140e1fe09bea9356faba59a756b385a58f9b4860e661",
+    "width-cache.js": "ce25613452409896f33c00f05e9a4739d380fe777c273acec1f2940cb4050b9c",
+    "width-precomputed.json": "d2a048d8e7ff330a9dc0c738ef72baf27749b5858f1259941e24d2eb822dafff",
     "checks/base-controls.json": "33fb9810a0d1592db3d27470efa699ede019fe76fc4a809d611db5cc0130050d",
     "checks/base-controls-browser.json": "bf49a576dc819b738f7fa5bada8e8f4e574c3d7190eb3277a645f2df2befdc77",
     "checks/width-cache.json": "c0efa7a73b0f42aea296e6bbdbf283d491eeb164182b0a71d3005b9f2e4895ca",
-    "checks/magnet-fit.json": "af66ed34f0741bd71683a3c293173f0c9cf0023f50e0f4a2f70bbc82a862f9b9",
-    "checks/magnet-fit-browser.json": "177bb1ffc2269aee0dbe472c2d077ac1f63ad15b58c8598312038f6552879b01"
+    "checks/magnet-fit.json": "bee6d5a6f2e89644e96b44b52f11041c6b0886f5b54b789502d283f8ab96478a",
+    "checks/magnet-fit-browser.json": "77f08999b73b6f1b629cf598445eb704c932b018442eea1feefbd384f2d84bf5"
   },
-  "revision": "magnet-fit-1",
+  "revision": "magnet-fit-2",
   "peg_fit_source": "downloads/peg-fit-source.zip",
   "peg_fit_checks": [
     "checks/peg-fit.json",
@@ -200,29 +200,35 @@
     ]
   },
   "widthCache": {
-    "revision": "magnet-fit-1",
+    "revision": "magnet-fit-2",
     "precomputed": "width-precomputed.json",
-    "profile": "default original board, one row, zero tilt; all base combinations and both magnet fits",
+    "profile": "default original board, one row, zero tilt; all base combinations and all three magnet fits",
     "maximumPrecomputedColumns": 11,
     "completedResultCacheEntries": 32,
     "validation": "checks/width-cache.json"
   },
   "magnetFit": {
-    "revision": "magnet-fit-1",
-    "default": "glue",
+    "revision": "magnet-fit-2",
+    "default": "snug",
     "magnetNominalMM": [
       6,
       2
     ],
-    "pocketDiameterMM": {
-      "glue": 6.5,
-      "press": 5.9
+    "presets": {
+      "snug": {
+        "label": "Snug glue",
+        "diameterMM": 6.2
+      },
+      "glue": {
+        "label": "Official",
+        "diameterMM": 6.5
+      },
+      "press": {
+        "label": "Friction",
+        "diameterMM": 6.0
+      }
     },
     "pocketDepthMM": 2.4,
-    "qualification": "Nominal fit presets; physical retention not tested and depends on printing tolerances.",
-    "validation": [
-      "checks/magnet-fit.json",
-      "checks/magnet-fit-browser.json"
-    ]
+    "qualification": "Snug glue matches stacking box dimensions and owner-reported fit. Friction retention depends on printing tolerances."
   }
 }

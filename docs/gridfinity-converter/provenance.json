@@ -68,8 +68,8 @@
     "checks/windows-native-step-5.json"
   ],
   "sha256": {
-    "README.md": "89847236a9b0ff05c015b63b59cee164030f847eb46c48c4a520e7339c4c1326",
-    "app.js": "580c9a3809ca83ed7a6a731f8ad3e87dea02001ff2840a80654edaf67a1c91eb",
+    "README.md": "7f8865ac73724eed403d3c9f08c129dc325083699931cffcb788842939686753",
+    "app.js": "00a57d493bd8d2c9c405a791dc7703aa0c829f32c7144effc52f61206b498c38",
     "brep-equivalence.js": "9e2b5f15702a88c61497a678f6eda9cc9871e8fbd0da535516806f77e094adfc",
     "cad-worker.js": "4b31e7315c586aa283f887b8c5eea39ede4651cb7ef3783e73a1232c0d0b7ca6",
     "checks/browser.json": "7527e309ad248553e490ce58d7399905a965c2fef757046ba3787194f09b3e17",
@@ -94,10 +94,10 @@
     "demo.js": "5996c4bd76847ba4caa94867ab5ca530e764de8d05fcff1827e3528d9a98adad",
     "illustration-view.js": "20682e0c77b9e8d67e9eb3549c8e34affac50f215032dc40273b1977c8369339",
     "importers.js": "503a70dd020c5448a29cbf6f597a2f84b75848015c5409d1822ee44ba29d14e0",
-    "index.html": "6c05dad9c60159bf6869f3efa6c394cf25d6c1cec0e4d6d67efb59792d5ae53a",
-    "isolation-bootstrap.js": "3a1177d9c8547a84eb23242ccf6ed23f2f47e94a61813e956a8e7fd2dcb3a785",
+    "index.html": "39b29492784c931849dfba77fc2c1907c53781e6ee6cea30a31c26d3fe096ae5",
+    "isolation-bootstrap.js": "c56b278d4c482cc77ee98a7b506c09c1f3ad416c3a3e3e6d0734d9f26e4b1b52",
     "isolation-service-worker.js": "536920e1932d302fdb9edc93db3e97a94b3dfa70e10702ed3fee679289f11b47",
-    "kernel.js": "72557ffac440c37d5de11548c109270b68edc98a109ef68c496a9ded813c8261",
+    "kernel.js": "b4a616dbe5e52320344f6d5bd681d835a5a72c191bfa9545c5ec48f52b263207",
     "native-async-primary.js": "472f0b9805e218d3ef92ba2a5948621983cbeb19840afc7d68b5524ceabce39b",
     "native-bounds-build.js": "f41a75c7f5e63661066f713c970ee57091a2f030f727ee20be036a24a4a41963",
     "native-bounds-match.js": "2bab2055953b12629b706e972abf5184957919fc3b91e8a5ec1d3b9f658ef2d6",
@@ -185,7 +185,7 @@
     "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
     "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
     "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
-    "worker.js": "c734881633ffd8c9fa5e1e6f8ebab467b65e9b41cb5507d20a59774091fc890b",
+    "worker.js": "d0efda7a284c080d636f784e6356f116fe6635e72608d2fcb371d1675af6c1af",
     "socket-profile.js": "3a4950ae8549524cd7933253dfe8a4ec7e877d629da0b58d65a89effc1a2bae6",
     "native-socket-edit.js": "3c2f14e267a3ab2fd8097fa1871ea2769197adee218cefed7f9d88d36bad3c85",
     "native-socket-placement.js": "9d119dbe15e19007140f04900097d5649c5f17a91d17673af510e4764be34166",
@@ -196,7 +196,8 @@
     "checks/female-faceted-v3.json": "48db0a33561a82e7c0411e052afc223a2307682bceb13c6c58c7036faab20533",
     "checks/female-browser-v3.json": "0b3105f800570288659cccba38ebad771051cd3eed961839afd89401d6898e21",
     "checks/female-selection-v3.json": "8180d62925c16977eeb7610dd8d8fc460598c1ff057fc11d5f5fdfbce6c4a384",
-    "checks/windows-female-bases-v3.json": "4c7df965ec3a213eb1acc27254e97fb840507df3fe4d733eb5253c198dde92bb"
+    "checks/windows-female-bases-v3.json": "4c7df965ec3a213eb1acc27254e97fb840507df3fe4d733eb5253c198dde92bb",
+    "checks/magnet-presets.json": "d8a908d4c3881d8fe292f879337a56c9c1eb44705fb5f3711733af38870acbb4"
   },
   "release": "native-step-20261021-5",
   "viewer": "Render skill recipe: three-band cel shading, welded-normal silhouettes, 30-degree feature edges; source geometry unchanged",
@@ -548,5 +549,30 @@
     "appVersion": "female-bases-ui-1",
     "uiValidation": "Male-only hidden roof and screw depth are excluded from socket validation; weighted hardware fields validated; through-floor holes labelled accurately.",
     "qualification": "Local checks and independent Windows functional matrix pass. Same-origin STL control shows no regression. Timing misses above 20 seconds are preserved in the Windows report; no universal speed guarantee."
-  }
+  },
+  "magnetFit": {
+    "revision": "magnet-fit-2",
+    "default": "snug",
+    "magnetNominalMM": [
+      6,
+      2
+    ],
+    "presets": {
+      "snug": {
+        "label": "Snug glue",
+        "diameterMM": 6.2
+      },
+      "glue": {
+        "label": "Official",
+        "diameterMM": 6.5
+      },
+      "press": {
+        "label": "Friction",
+        "diameterMM": 6.0
+      }
+    },
+    "pocketDepthMM": 2.4,
+    "qualification": "Snug glue matches stacking box dimensions and owner-reported fit. Friction retention depends on printing tolerances."
+  },
+  "uiRevision": "magnet-fit-2"
 }

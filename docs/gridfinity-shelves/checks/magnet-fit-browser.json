@@ -5,8 +5,8 @@
   "pressSTLFilename": "original-shelf-1x1-open-magnets-press-fit-2peg-solid-tilt0-seat0-web2p4-beam5-peg0-grip0-hoop0-frame-down.stl",
   "recipeFit": "press",
   "settingsLinkRoundTrip": true,
-  "legacyLinksDefaultGlue": true,
-  "precomputedWidthSeconds": 0.5211485237814486,
+  "linksWithoutFitDefaultSnug": true,
+  "precomputedWidthSeconds": 0.5221386849880219,
   "mobileAndDesktop": true,
   "errors": []
 }

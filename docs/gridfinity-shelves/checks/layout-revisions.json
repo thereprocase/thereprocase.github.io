@@ -41,5 +41,5 @@
   "scope": "Every usable board hole across width and selected mounting height; bed preview bounds and 3MF placement; existing per-peg interface geometry retained.",
   "currentPlacementRevision": "rectangle-fit-1",
   "baseControlsRevision": "base-controls-1",
-  "magnetFitRevision": "magnet-fit-1"
+  "magnetFitRevision": "magnet-fit-2"
 }

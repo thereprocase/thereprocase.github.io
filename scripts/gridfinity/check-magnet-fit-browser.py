@@ -14,16 +14,16 @@ async def main():
   await page.goto(URL);await ready(page)
   assert await page.locator('#magnet-fit-controls').is_hidden()
   await page.locator('[data-base-toggle=magnets]').click();assert await page.locator('#magnet-fit-controls').is_visible()
-  assert await page.locator('[data-magnet-fit=glue]').get_attribute('aria-pressed')=='true'
+  assert await page.locator('[data-magnet-fit=snug]').get_attribute('aria-pressed')=='true'
   await page.locator('[data-magnet-fit=press]').click();assert await page.locator('[name=magnet_fit]').input_value()=='press'
-  assert '5.9 mm diameter × 2.4 mm deep' in await page.locator('#magnet-fit-note').inner_text()
+  assert '6.0 mm diameter × 2.4 mm deep' in await page.locator('#magnet-fit-note').inner_text()
   await page.locator('[data-base-toggle=magnets]').click();assert await page.locator('#magnet-fit-controls').is_hidden()
   await page.locator('[data-base-toggle=magnets]').click();assert await page.locator('[data-magnet-fit=press]').get_attribute('aria-pressed')=='true'
   await reveal(page,'#find-width');start=time.monotonic();await page.locator('#find-width').click();await page.wait_for_function("document.querySelector('#width-result').textContent.includes('Largest supported width')",timeout=15000)
   elapsed=time.monotonic()-start;assert await page.locator('html').get_attribute('data-width-search-source')=='precomputed'
   await reveal(page,'[data-preset="11"]');await page.locator('[data-preset="11"]').click();await ready(page)
   assert await page.locator('[name=magnet_fit]').input_value()=='press'
-  assert 'Press fit · Ø5.9 × 2.4 mm' in await page.locator('#dimensions').text_content()
+  assert 'Friction · Ø6.0 × 2.4 mm' in await page.locator('#dimensions').text_content()
   async with page.expect_download() as download:await page.locator('#stl').click()
   download=await download.value;assert '-press-fit-' in download.suggested_filename
   await reveal(page,'#recipe')
@@ -37,7 +37,7 @@ async def main():
    await page.locator('[data-magnet-fit=press]').scroll_into_view_if_needed();await page.screenshot(path='/tmp/magnet-fit-'+str(width)+'.png')
   fixture={'v':1,'tool':'shelves','parameters':{'columns':1,'base_type':'magnets'},'view':{}}
   fragment=base64.urlsafe_b64encode(json.dumps(fixture).encode()).decode().rstrip('=');await page.goto('about:blank');await page.goto(URL+'#settings='+fragment);await ready(page)
-  assert await page.locator('[name=magnet_fit]').input_value()=='glue';assert await page.locator('[data-magnet-fit=glue]').get_attribute('aria-pressed')=='true'
+  assert await page.locator('[name=magnet_fit]').input_value()=='snug';assert await page.locator('[data-magnet-fit=snug]').get_attribute('aria-pressed')=='true'
   assert not errors,errors
-  print(json.dumps({'pass':True,'toggleVisibilityAndRetention':True,'presetPreservesFit':True,'pressSTLFilename':download.suggested_filename,'recipeFit':'press','settingsLinkRoundTrip':True,'legacyLinksDefaultGlue':True,'precomputedWidthSeconds':elapsed,'mobileAndDesktop':True,'errors':errors},indent=2));await browser.close()
+  print(json.dumps({'pass':True,'toggleVisibilityAndRetention':True,'presetPreservesFit':True,'pressSTLFilename':download.suggested_filename,'recipeFit':'press','settingsLinkRoundTrip':True,'linksWithoutFitDefaultSnug':True,'precomputedWidthSeconds':elapsed,'mobileAndDesktop':True,'errors':errors},indent=2));await browser.close()
 asyncio.run(main())

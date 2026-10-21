@@ -234,11 +234,11 @@ Settings-link validation: `node scripts/gridfinity/check-settings-links.mjs`. Br
 
 Choose **Open** or **Closed** floor, then toggle **Magnets**, **M3 screw holes**, and **Ballast** independently. Magnets and screws work together on either floor. Ballast switches the floor to Closed; choosing Open switches ballast off while retaining the hardware choices. These controls configure the bin-facing Gridfinity interface, separately from pegboard mounting hardware.
 
-Open floors with hardware retain four corner gussets per cell around the standard 26 mm hardware grid. Their center is a through-window. Magnet pockets have **Glue fit** (6.5 mm diameter, the default) and **Press fit** (nominal 5.9 mm diameter) buttons for 6×2 mm magnets. Both are 2.4 mm deep, with the existing 0.8 mm bottom on unweighted bases. Glue fit has about 2.05 mm material to the diagonal window edge; press fit adds 0.3 mm there. Press fit is a starting preset, not a measured printer calibration. Screw holes are 3.2 mm through-bores. Closed floors without magnets are 1.2 mm thick; magnet floors are 3.2 mm thick. Ballast uses its existing deeper base, with magnet pockets and screw/head holes only when enabled.
+Open floors with hardware retain four corner gussets per cell around the standard 26 mm hardware grid. Their center is a through-window. Magnet pockets offer **Snug glue** (6.2 mm diameter, default), **Official** (6.5 mm) and **Friction** (6.0 mm). All are 2.4 mm deep for 6 × 2 mm magnets. Snug glue matches the stacking boxes and the owner’s reported fit; friction retention depends on printing tolerances. The choice is retained in settings links and recipes.
 
 The original `frame`, `plain`, `magnets`, `screws`, `both`, and `weighted` recipe names retain their previous geometry. New names encode the additional combinations; settings links, parameter downloads and export filenames retain the complete choice. Open and weighted layouts are shelf adaptations of [Zack Freedman's original baseplates](https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925); the other combinations are adaptations, not claims of additional official designs.
 
-Weighted adds 6.4 mm below the frame, a seat floor, optional four 6.5 mm diameter × 2.4 mm
+Weighted adds 6.4 mm below the frame, a seat floor, optional four selectable-diameter × 2.4 mm
 deep pockets for 6×2 mm magnets per cell on a 26 mm grid, optional 3.2 mm M3 clearance
 bores with 6 mm diameter × 3 mm underside head recesses, a 21.4 mm square × 4 mm
 ballast cavity and four shallow rubber-foot recesses. The weight/foot cavity

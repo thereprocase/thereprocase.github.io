@@ -1,7 +1,7 @@
 import Module from './vendor/manifold.js';
-import {build,parameters} from './kernel.js?v=magnet-fit-1';
+import {build,parameters} from './kernel.js?v=magnet-fit-2';
 import {footprintHull,bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
-import {precomputedWidth} from './width-cache.js?v=magnet-fit-1';
+import {precomputedWidth} from './width-cache.js?v=magnet-fit-2';
 self.onmessage=async({data})=>{try{
  const p=parameters({...data.parameters,columns:1}),{width,depth}=data.bed;
  if(!Number.isFinite(width)||!Number.isFinite(depth)||width<25||depth<25||width>2000||depth>2000)throw Error('Invalid bed dimensions.');
@@ -9,7 +9,7 @@ self.onmessage=async({data})=>{try{
  const upper=Math.min(32,Math.floor(64/p.rows),Math.floor((Math.hypot(width,depth)-4+1e-6)/42));
  if(upper<1){self.postMessage({result:{columns:0,rows:p.rows,tested:0}});return;}
  // Precomputed hulls are optional: a missing/stale table falls back to verified meshes.
- let cached;try{const response=await fetch('./width-precomputed.json?v=magnet-fit-1');if(response.ok)cached=precomputedWidth(await response.json(),p,{width,depth},upper);}catch{}
+ let cached;try{const response=await fetch('./width-precomputed.json?v=magnet-fit-2');if(response.ok)cached=precomputedWidth(await response.json(),p,{width,depth},upper);}catch{}
  if(cached){self.postMessage({result:cached});return;}
  const [module,inputs]=await Promise.all([Module().then(m=>{m.setup();return m;}),fetch('./inputs.json?v=backplate-4').then(r=>{if(!r.ok)throw Error('Could not load connector geometry.');return r.json();})]);
  if((!p.board_system||p.board_system==='original')&&(p.peg_clearance||p.hook_grip||p.hoop_firmness))inputs.fitLibrary=await fetch('./fit-inputs.json?v=fit-7').then(r=>{if(!r.ok)throw Error('Could not load peg-fit geometry.');return r.json();});

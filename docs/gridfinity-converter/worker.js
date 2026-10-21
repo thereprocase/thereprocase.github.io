@@ -6,7 +6,7 @@ import {
   detect,
   align,
   convert,
-} from './kernel.js?v=female-bases-20261021-3';
+} from './kernel.js?v=magnet-fit-2';
 const ready = Module().then((m) => {
   m.setup();
   return m;

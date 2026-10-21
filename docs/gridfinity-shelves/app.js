@@ -1,13 +1,13 @@
 import {demandRenderer,taskWorker} from '../gridfinity-common/generator-runtime.js?v=runtime-3';
 import {readSettingsLink,settingsURL,copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
 import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
-import {spacingForBed} from './neighbor-spacing.js?v=magnet-fit-1';
+import {spacingForBed} from './neighbor-spacing.js?v=magnet-fit-2';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
-import {defaults,baseTypes,parameters,binarySTL} from './kernel.js?v=magnet-fit-1';
-import {widthCacheKey,readWidthCache,saveWidthCache} from './width-cache.js?v=magnet-fit-1';
-import {baseChoices,baseTypeFor,magnetFits} from './base-options.js?v=magnet-fit-1';
+import {defaults,baseTypes,parameters,binarySTL} from './kernel.js?v=magnet-fit-2';
+import {widthCacheKey,readWidthCache,saveWidthCache} from './width-cache.js?v=magnet-fit-2';
+import {baseChoices,baseTypeFor,magnetFits} from './base-options.js?v=magnet-fit-2';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false,helperObjects=[],helpersVisible=true,installedHelpersVisible=false;
 let widthWorker,widthResult,sharedKind='shelf',busy=false;let ghosts,ghostsEnabled=false,viewHull,fitToBed=false;try{fitToBed=localStorage.getItem('gridfinity-shelf-placement-v1')==='fit';}catch{}
@@ -69,7 +69,7 @@ function updateBaseUI(){
  $('magnet-fit-controls').hidden=!p.magnets;
  const fit=form.elements.magnet_fit.value;
  for(const button of document.querySelectorAll('[data-magnet-fit]'))button.setAttribute('aria-pressed',String(button.dataset.magnetFit===fit));
- $('magnet-fit-note').textContent=`For 6 × 2 mm magnets: ${magnetFits[fit].diameter.toFixed(1)} mm diameter × 2.4 mm deep.`+(fit==='press'?' Nominal press fit; actual fit depends on your printer.':' Clearance for adhesive.');
+ $('magnet-fit-note').textContent=`For 6 × 2 mm magnets: ${magnetFits[fit].diameter.toFixed(1)} mm diameter × 2.4 mm deep.`+(fit==='press'?' Nominal friction fit; actual fit depends on your printer.':fit==='snug'?' Snug clearance for glue, matching the stacking boxes.':' Official-size clearance for adhesive.');
  for(const button of document.querySelectorAll('[data-base-floor]'))button.setAttribute('aria-pressed',String(p.closed===(button.dataset.baseFloor==='closed')));
  for(const button of document.querySelectorAll('[data-base-toggle]'))button.setAttribute('aria-pressed',String(p[button.dataset.baseToggle]));
  $('base-note').textContent=p.weighted?'Ballast cavities and foot recesses require a closed floor. Hardware remains optional.':!p.closed&&(p.magnets||p.screws)?'Open centers with four corner supports per cell. Magnet and screw positions stay unchanged.':'Open centers or a closed floor. Ballast requires Closed; choosing Open turns ballast off.';
@@ -120,7 +120,7 @@ function show(r){viewLoop.request();clearGhosts();result=r;viewResult=r;viewHull
 }
 function setBusy(b){document.documentElement.dataset.busy=String(b);busy=b;$('use-width').disabled=b;$('find-width').disabled=b||!!widthWorker;for(const id of ['step','three-mf','helpers'])$(id).disabled=b||!result?.helpers?.length;form.elements.board_system.disabled=b;$('coupon').disabled=b;$('generate-preview').disabled=b;$('generate-preview').textContent=b?'Generating…':'Generate preview';$('generate').disabled=b;$('cancel').disabled=!b;}
 function generate(kind='shelf'){updateBaseUI();if(widthWorker)cancelWidthSearch();if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['base_type','magnet_fit','board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
- worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent=mesh?'Previous model · computing new geometry…':'Computing geometry in your browser…';$('viewer-note').hidden=false;worker=taskWorker('./worker.js?v=magnet-fit-1',$('status'));
+ worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent=mesh?'Previous model · computing new geometry…':'Computing geometry in your browser…';$('viewer-note').hidden=false;worker=taskWorker('./worker.js?v=magnet-fit-2',$('status'));
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('viewer-note').textContent=mesh?'Previous model · generation failed':'No new model generated. See the error below.';$('viewer-note').hidden=false;$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('viewer-note').textContent=mesh?'Previous model · geometry engine failed to load':'Geometry engine failed to load.';$('viewer-note').hidden=false;$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage({parameters:p,kind});
 }
@@ -132,7 +132,7 @@ for(const [id,fit] of [['fit-bed',true],['straight-bed',false]])$(id).onclick=()
 $('print-pose').onclick=()=>{installed=false;updatePose();reset();};$('installed').onclick=()=>{installed=true;updatePose();reset();};$('reset-view').onclick=reset;
 $('stl').onclick=()=>{if(!result||busy)return;const start=performance.now();download(binarySTL(result),'model/stl',fileStem(result)+'-frame-down.stl');const elapsed=performance.now()-start;document.documentElement.dataset.lastTaskMS=String(elapsed);document.documentElement.dataset.lastTaskOutcome='success';$('status').textContent='Geometry ready · STL downloaded · '+(elapsed/1000).toFixed(2)+' s';};
 $('helpers').onclick=()=>{if(installed)installedHelpersVisible=!installedHelpersVisible;else helpersVisible=!helpersVisible;updateHelpers();};
-function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=magnet-fit-1',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
+function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=magnet-fit-2',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
 $('step').onclick=()=>exportSolids('step');$('three-mf').onclick=()=>exportSolids('3mf');
 $('recipe').onclick=()=>{if(result)download(JSON.stringify(Object.fromEntries(Object.keys(defaults).filter(k=>(result.parameters.board_system!=='original'||!(k in boardDefaults))&&(k!=='base_type'||result.parameters.base_type!=='frame')&&(k!=='magnet_fit'||baseChoices[result.parameters.base_type].magnets)).map(k=>[k,result.parameters[k]])),null,2)+'\n','application/json',fileStem(result)+'-parameters.json');};
 let previousBoard='original';
@@ -175,7 +175,7 @@ $('find-width').onclick=()=>{
  let input;try{if(!form.reportValidity())return;input=values();parameters({...input,columns:1});}catch(e){$('width-result').textContent=e.message;return;}
  cancelWidthSearch();widthResult=null;$('find-width').disabled=true;$('cancel-width').disabled=false;$('width-result').textContent='Finding the largest width with 2D footprint fitting…';
  const cacheKey=widthCacheKey(input,{width:bedWidth,depth:bedDepth}),cached=readWidthCache(cacheKey);if(cached){showWidthResult(cached);return;}
- const search=widthWorker=new Worker('./search-width-worker.js?v=magnet-fit-1',{type:'module'});
+ const search=widthWorker=new Worker('./search-width-worker.js?v=magnet-fit-2',{type:'module'});
  const finish=()=>{widthWorker?.terminate();widthWorker=null;$('find-width').disabled=busy;$('cancel-width').disabled=true;};
  widthWorker.onmessage=({data})=>{if(widthWorker!==search)return;if(data.progress){$('width-result').textContent=`Checking ${data.progress.columns} × ${data.progress.rows}, ${data.progress.tested + 1} of ${data.progress.total} widths · fitting the footprint at all rotations…`;return;}
  finish();if(data.error){$('width-result').textContent='Width check failed: '+data.error;return;}

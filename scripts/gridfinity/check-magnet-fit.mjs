@@ -4,7 +4,7 @@ import {build,parameters,binarySTL} from '../../public/gridfinity-shelves/kernel
 import {footprintHull,placementAtAngle} from '../../public/gridfinity-shelves/bed-placement.js';
 const m=await Module();m.setup();const inputs=JSON.parse(fs.readFileSync(new URL('../../public/gridfinity-shelves/inputs.json',import.meta.url))),table=JSON.parse(fs.readFileSync(new URL('../../public/gridfinity-shelves/width-precomputed.json',import.meta.url)));
 const evidence=[],styles=['magnets','both','open-magnets','open-both','weighted','weighted-magnets'];
-for(const base_type of styles){const results={};for(const magnet_fit of ['glue','press']){
+for(const base_type of styles){const results={};for(const magnet_fit of ['snug','glue','press']){
  const r=build(m,inputs,{columns:1,base_type,magnet_fit});results[magnet_fit]=r;
  assert.equal(new DataView(binarySTL(r)).getUint32(80,true),r.trianglesCount);
  const own=[],keep=x=>(own.push(x),x);
@@ -15,7 +15,7 @@ for(const base_type of styles){const results={};for(const magnet_fit of ['glue',
   const probe=(x,y,z,solid)=>{const box=keep(keep(m.Manifold.cube([.1,.1,.1])).translate([x-.05,y-.05,z-.05])),volume=keep(shape.intersect(box)).volume();assert(solid?Math.abs(volume-.001)<1e-6:volume<1e-6,`${base_type} ${magnet_fit} ${x},${y},${z} ${volume}`);};
   for(const dx of [-13,13])for(const dy of [-13,13]){
    probe(dx+2.7,28.55+dy,0,false); // Inside both pocket sizes.
-   probe(dx+3.1,28.55+dy,0,magnet_fit==='press'); // Between 5.9 and 6.5 mm diameters.
+   probe(dx+3.17,28.55+dy,0,magnet_fit!=='glue'); // Separates Official from the two closer fits.
    probe(dx+3.5,28.55+dy,0,true); // Outer support retained.
    probe(dx+2,28.55+dy,-1.6,true); // Pocket bottom unchanged.
    probe(dx+2,28.55+dy,-1.2,false);
@@ -27,9 +27,8 @@ for(const base_type of styles){const results={};for(const magnet_fit of ['glue',
  evidence.push({base_type,magnet_fit,volume:r.volume,triangles:r.trianglesCount,pegDelta:r.pegDelta,maxFootOverlap:r.maxFootOverlap,pocketAndFloorProbes:true,precomputedFootprintUnchanged:true});console.log('PASS',base_type,magnet_fit);
  }
  // Exact 96-sided cylinder area difference, four 2.4-mm-deep pockets.
- const expected=48*Math.sin(2*Math.PI/96)*(3.25**2-2.95**2)*2.4*4;
- assert(Math.abs(results.press.volume-results.glue.volume-expected)<.02,base_type);
+ for(const [fit,radius] of [['snug',3.1],['press',3]]){const expected=48*Math.sin(2*Math.PI/96)*(3.25**2-radius**2)*2.4*4;assert(Math.abs(results[fit].volume-results.glue.volume-expected)<.02,base_type+fit);}
 }
 const frame=build(m,inputs,{columns:1});const old=table.hulls[1],h=footprintHull(frame.vertices);assert.deepEqual(h,old);
-for(const value of ['invalid','toString',null,5])assert.throws(()=>parameters({magnet_fit:value}));assert.equal(parameters({}).magnet_fit,'glue');
-fs.writeFileSync('/tmp/magnet-fit-checks.json',JSON.stringify({pass:true,cases:evidence,legacyDefault:'glue',frameHullUnchanged:true},null,2)+'\n');
+for(const value of ['invalid','toString',null,5])assert.throws(()=>parameters({magnet_fit:value}));assert.equal(parameters({}).magnet_fit,'snug');
+fs.writeFileSync('/tmp/magnet-fit-checks.json',JSON.stringify({pass:true,cases:evidence,defaultFit:'snug',frameHullUnchanged:true},null,2)+'\n');

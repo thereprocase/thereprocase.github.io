@@ -3,6 +3,16 @@
   "cases": [
     {
       "base_type": "magnets",
+      "magnet_fit": "snug",
+      "volume": 22102.845986146676,
+      "triangles": 24564,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "magnets",
       "magnet_fit": "glue",
       "volume": 22074.139785969975,
       "triangles": 24564,
@@ -14,10 +24,20 @@
     {
       "base_type": "magnets",
       "magnet_fit": "press",
-      "volume": 22130.196021673364,
+      "volume": 22121.230032979864,
       "triangles": 24564,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "both",
+      "magnet_fit": "snug",
+      "volume": 22077.128439443903,
+      "triangles": 26116,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
       "pocketAndFloorProbes": true,
       "precomputedFootprintUnchanged": true
     },
@@ -34,10 +54,20 @@
     {
       "base_type": "both",
       "magnet_fit": "press",
-      "volume": 22104.478474970594,
+      "volume": 22095.51248627709,
       "triangles": 26116,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-magnets",
+      "magnet_fit": "snug",
+      "volume": 19915.646172802604,
+      "triangles": 24598,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674838005654,
       "pocketAndFloorProbes": true,
       "precomputedFootprintUnchanged": true
     },
@@ -54,10 +84,20 @@
     {
       "base_type": "open-magnets",
       "magnet_fit": "press",
-      "volume": 19942.996208329296,
+      "volume": 19934.03021963579,
       "triangles": 24598,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006856674838005654,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-both",
+      "magnet_fit": "snug",
+      "volume": 19889.928621301522,
+      "triangles": 26152,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
       "pocketAndFloorProbes": true,
       "precomputedFootprintUnchanged": true
     },
@@ -74,10 +114,20 @@
     {
       "base_type": "open-both",
       "magnet_fit": "press",
-      "volume": 19917.278656828214,
+      "volume": 19908.31266813471,
       "triangles": 26152,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted",
+      "magnet_fit": "snug",
+      "volume": 25897.46217058125,
+      "triangles": 28546,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
       "pocketAndFloorProbes": true,
       "precomputedFootprintUnchanged": true
     },
@@ -94,8 +144,18 @@
     {
       "base_type": "weighted",
       "magnet_fit": "press",
-      "volume": 25924.812206107938,
+      "volume": 25915.846217414437,
       "triangles": 28546,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted-magnets",
+      "magnet_fit": "snug",
+      "volume": 26276.695669101442,
+      "triangles": 25456,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006844138742339232,
       "pocketAndFloorProbes": true,
@@ -114,7 +174,7 @@
     {
       "base_type": "weighted-magnets",
       "magnet_fit": "press",
-      "volume": 26304.045704628134,
+      "volume": 26295.079715934633,
       "triangles": 25456,
       "pegDelta": 3.438003605167535e-8,
       "maxFootOverlap": 0.00006844138742339232,
@@ -122,6 +182,6 @@
       "precomputedFootprintUnchanged": true
     }
   ],
-  "legacyDefault": "glue",
+  "defaultFit": "snug",
   "frameHullUnchanged": true
 }
