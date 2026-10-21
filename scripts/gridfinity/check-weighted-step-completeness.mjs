@@ -1,0 +1,16 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const root=new URL('../../public',import.meta.url).pathname;
+const {default:Module}=await import(root+'/gridfinity-shelves/vendor/manifold.js');
+const {build}=await import(root+'/gridfinity-shelves/kernel.js');
+const {reinforce}=await import(root+'/gridfinity-shelves/reinforcement.js');
+const {facetedSTEP}=await import(root+'/gridfinity-shelves/solid-exports.js');
+const {parseFacetedSTEP}=await import(root+'/gridfinity-converter/faceted-step.js');
+const {importSolid}=await import(root+'/gridfinity-converter/kernel.js');
+const m=await Module();m.setup();const inputs=JSON.parse(fs.readFileSync(root+'/gridfinity-shelves/inputs.json'));
+const r=build(m,inputs,{base_type:'weighted'});r.helpers=reinforce(m,inputs,r);
+const start=performance.now(),text=facetedSTEP(r,m),writeMS=performance.now()-start;
+const parsed=parseFacetedSTEP(text),loaded=importSolid(m,parsed);
+assert.equal(loaded.bodies.length,r.helpers.length+1);
+const source=[{name:'Body_PRINT',volume:r.volume,vertices:r.vertices,triangles:r.triangles},...r.helpers];
+const comparisons=loaded.bodies.map((b,i)=>{const expected=source.find(s=>s.name===loaded.names[i]);assert.ok(expected);const sourceBodies=importSolid(m,expected).bodies;assert.equal(sourceBodies.length,1);const sourceVolume=sourceBodies[0].volume(),delta=b.volume()-sourceVolume;const added=b.subtract(sourceBodies[0]),removed=sourceBodies[0].subtract(b),difference=added.volume()+removed.volume();added.delete();removed.delete();sourceBodies.forEach(s=>s.delete());assert.ok(Math.abs(delta)<.001);assert.ok(Math.abs(difference)<.001);return {name:loaded.names[i],generatorVolumeBeforeFloat32:expected.volume,sourceMeshVolume:sourceVolume,reopenedVolume:b.volume(),delta,symmetricDifferenceMM3:difference};});
+loaded.bodies.forEach(b=>b.delete());const evidence={baseType:'weighted',stepBytes:text.length,writeMS,bodyCount:comparisons.length,stepNormalization:r.stepNormalization,comparisons};fs.writeFileSync('/tmp/weighted-completeness.json',JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence));

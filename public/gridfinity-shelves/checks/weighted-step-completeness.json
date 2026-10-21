@@ -1,0 +1,85 @@
+{
+  "baseType": "weighted",
+  "stepBytes": 37404663,
+  "writeMS": 3262.5615309999994,
+  "bodyCount": 5,
+  "stepNormalization": [
+    {
+      "name": "Body_PRINT",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 47881.285359303176,
+      "cadVolume": 47881.285359303176
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_1",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3554.279278087359,
+      "cadVolume": 3554.279278087359
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_2",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3701.613763921487,
+      "cadVolume": 3701.613763921487
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_3",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3701.613764220586,
+      "cadVolume": 3701.613764220586
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_4",
+      "toleranceMM": 0,
+      "symmetricDifferenceMM3": 0,
+      "sourceVolume": 3554.2792796248614,
+      "cadVolume": 3554.2792796248614
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "Body_PRINT",
+      "generatorVolumeBeforeFloat32": 47881.285359303176,
+      "sourceMeshVolume": 47881.284016742466,
+      "reopenedVolume": 47881.28401674508,
+      "delta": 2.61206878349185e-9,
+      "symmetricDifferenceMM3": 5.852355342514056e-8
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_1",
+      "generatorVolumeBeforeFloat32": 3554.279278087359,
+      "sourceMeshVolume": 3554.2793083745514,
+      "reopenedVolume": 3554.2793083745514,
+      "delta": 0,
+      "symmetricDifferenceMM3": 9.885213307636587e-16
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_2",
+      "generatorVolumeBeforeFloat32": 3701.613763921487,
+      "sourceMeshVolume": 3701.613796170218,
+      "reopenedVolume": 3701.613796170218,
+      "delta": 0,
+      "symmetricDifferenceMM3": 4.228388472693467e-18
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_3",
+      "generatorVolumeBeforeFloat32": 3701.613764220586,
+      "sourceMeshVolume": 3701.6137964693235,
+      "reopenedVolume": 3701.6137964693235,
+      "delta": 0,
+      "symmetricDifferenceMM3": 1.780585227872944e-15
+    },
+    {
+      "name": "Reinforcement_100pct_3p5mm_4",
+      "generatorVolumeBeforeFloat32": 3554.2792796248614,
+      "sourceMeshVolume": 3554.2793098699276,
+      "reopenedVolume": 3554.2793098701086,
+      "delta": 1.8098944565281272e-10,
+      "symmetricDifferenceMM3": 1.8068698748037286e-10
+    }
+  ]
+}

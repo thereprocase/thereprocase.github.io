@@ -87,7 +87,8 @@
     "checks/runtime-3.json": "4d9811750f63b05396c19ef313d16ddb35eccb9061de443b9a201e7cca008eee",
     "checks/six-base-types-offset.json": "2eca1b0728f519c143a119fb35646e04d9e359a94a7c92339aef2a67b2ee8562",
     "checks/six-base-types-remaining.json": "e5217bcc22b58de672e3e73a4ff31cb1f351875af0f2c4b92bbbb3f78608237f",
-    "checks/six-base-types-exports.json": "fcb15912c44dbedc7c16277fc3ff06e2b8b0f4afcc04eee66b3134e89ee1eb44"
+    "checks/six-base-types-exports.json": "fcb15912c44dbedc7c16277fc3ff06e2b8b0f4afcc04eee66b3134e89ee1eb44",
+    "checks/weighted-step-completeness.json": "6cc692f7c8b922243d6768a4cec330f48d9778709d29333d4779f46dbd82a915"
   },
   "revision": "base-types-1",
   "peg_fit_source": "downloads/peg-fit-source.zip",
@@ -167,7 +168,8 @@
     "validation": [
       "checks/six-base-types-offset.json",
       "checks/six-base-types-remaining.json",
-      "checks/six-base-types-exports.json"
+      "checks/six-base-types-exports.json",
+      "checks/weighted-step-completeness.json"
     ]
   }
 }
