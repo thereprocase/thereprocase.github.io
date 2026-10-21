@@ -1,5 +1,6 @@
+import {isDirectFacetedSTEP} from './faceted-step.js?v=female-bases-20261021-3';
 import * as THREE from 'three';
-import { LIMITS } from './kernel.js?v=native-step-20261021-5';
+import { LIMITS } from './kernel.js?v=female-bases-20261021-3';
 import {
   unzipSync,
   strFromU8,
@@ -359,8 +360,9 @@ export async function importFile(
     throw Error(
       'Unsupported format. Export STL, STEP, OBJ, 3MF, PLY, AMF, OFF, glTF/GLB, DAE or FBX.',
     );
-  const buffer = await file.arrayBuffer(),
-    nativeBuffer = ['step', 'stp', 'brep', 'brp'].includes(ext)
+  const buffer = await file.arrayBuffer();
+  const directFaceted = ['step','stp'].includes(ext) && isDirectFacetedSTEP(new TextDecoder().decode(buffer));
+  const nativeBuffer = !directFaceted && ['step', 'stp', 'brep', 'brp'].includes(ext)
       ? buffer.slice(0)
       : null,
     text = () => new TextDecoder().decode(buffer);
@@ -371,9 +373,11 @@ export async function importFile(
     unitNote =
       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
-    const worker = ['iges', 'igs'].includes(ext)
-      ? new Worker('./cad-worker.js?v=native-step-20261021-5')
-      : new Worker('./native-preview-worker.js?v=native-step-20261021-5', {
+    const worker = directFaceted
+      ? new Worker('./faceted-step-worker.js?v=female-bases-20261021-3', {type:'module'})
+      : ['iges', 'igs'].includes(ext)
+      ? new Worker('./cad-worker.js?v=female-bases-20261021-3')
+      : new Worker('./native-preview-worker.js?v=female-bases-20261021-3', {
           type: 'module',
         });
     onCADWorker?.(worker);
@@ -387,9 +391,9 @@ export async function importFile(
       earlyWorker?.terminate();
       earlyWorker = null;
     };
-    if (format === 'step' && onEarlyPreview && !signal?.aborted) {
+    if (!directFaceted && format === 'step' && onEarlyPreview && !signal?.aborted) {
       try {
-        earlyWorker = new Worker('./step-wire-worker.js?v=native-step-20261021-5', {
+        earlyWorker = new Worker('./step-wire-worker.js?v=female-bases-20261021-3', {
           type: 'module',
         });
         earlyWorker.onmessage = ({ data }) => {
@@ -452,7 +456,7 @@ export async function importFile(
       worker.onmessageerror = () =>
         fail('The browser could not receive the CAD preview.');
       arm();
-      onProgress('Starting the CAD importer…');
+      onProgress(directFaceted ? 'Reading original STEP polygon faces…' : 'Starting the CAD importer…');
       worker.postMessage(
         { format, buffer, retainSource: Boolean(nativeBuffer && onCADWorker) },
         [buffer],
@@ -474,7 +478,7 @@ export async function importFile(
     const imported = payload.result;
     preview = payload.preview;
     try {
-      data = combine(
+      data = directFaceted ? imported : combine(
         imported.meshes.map((m) => ({
           vertices: m.attributes.position.array,
           triangles: m.index.array,
@@ -485,13 +489,14 @@ export async function importFile(
       onCADWorker?.(null);
       throw error;
     }
-    unitNote =
-      format === 'brep'
+    unitNote = directFaceted
+      ? 'Faceted STEP: original polygon faces imported without retessellation. Named bodies remain separate; conversion exports STL / 3MF.'
+      : format === 'brep'
         ? 'Native BREP; assumed millimetres. STEP export preserves CAD geometry.'
         : format === 'step'
           ? 'Native STEP; file units converted to millimetres. STEP export preserves CAD geometry.'
           : 'IGES uses mesh conversion. Use STEP to preserve native CAD surfaces.';
-    unitNote += ` Preview deviation: ${payload.preview.deflectionMM} mm${payload.preview.adapted ? ' (automatically adapted)' : ''}.`;
+    if (payload.preview) unitNote += ` Preview deviation: ${payload.preview.deflectionMM} mm${payload.preview.adapted ? ' (automatically adapted)' : ''}.`;
     if (nativeBuffer)
       unitNote +=
         ' Original CAD geometry retained for native conversion and STEP export.';

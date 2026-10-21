@@ -1,5 +1,5 @@
 import Module from './vendor/manifold.js';
-import {build,parameters} from './kernel.js?v=base-types-1';
+import {build,parameters} from './kernel.js?v=female-bases-2';
 import {footprintHull,bestPlacement} from './bed-placement.js?v=diagonal-1';
 self.onmessage=async({data})=>{try{
  const p=parameters({...data.parameters,columns:1}),{width,depth}=data.bed;

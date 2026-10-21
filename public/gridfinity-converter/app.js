@@ -1,6 +1,7 @@
-import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-5';
+import {SOCKET_STYLES} from './socket-profile.js?v=female-bases-20261021-3';
+import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=female-bases-20261021-3';
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-5';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=female-bases-20261021-3';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -9,8 +10,8 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-step-20261021-5';
-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-5';
+} from './kernel.js?v=female-bases-20261021-3';
+import { importFile, extensions, export3MF } from './importers.js?v=female-bases-20261021-3';
 const nativeExportWarmPool = createNativeExportWarmPool();
 addEventListener('pagehide', () => {
   if (cancelNativeExport()) {
@@ -286,10 +287,11 @@ function controls() {
   $('detect').disabled = busy || !loaded;
   $('convert').disabled = !canConvert();
   $('cancel').disabled = !busy;
-  $('magnet-controls').disabled = !['magnets', 'both'].includes(
+  $('magnet-controls').disabled = !['magnets', 'both', 'weighted'].includes(
     $('style').value,
   );
-  $('screw-controls').disabled = !['screws', 'both'].includes($('style').value);
+  $('screw-controls').disabled = !['screws', 'both', 'weighted'].includes($('style').value);
+  for(const id of ['screw-depth-mode','screwDepth','roof'])$(id).closest('label').hidden=detection?.interfaceType==='female';
   for (const id of [
     'stl',
     'three-mf',
@@ -323,8 +325,8 @@ function controls() {
     : !detection
       ? 'Load a model and detect its feet first.'
       : !selection.size
-        ? 'Select at least one foot in step 2.'
-        : `${selection.size} selected feet · ${STYLES[$('style').value]}. Click Convert feet to apply.`;
+        ? (feet.length?'Select at least one cell in Review.':'No Gridfinity feet or sockets found. Check units and orientation or choose another model.')
+        : `${selection.size} selected cells · ${interfaceStyles()[$('style').value]}. Click ${detection?.interfaceType==='female'?'Convert sockets':'Convert feet'} to apply.`;
   $('workflow-action').disabled =
     busy || (fileState !== 'empty' && !result && !canConvert());
   $('workflow-action').textContent =
@@ -462,7 +464,7 @@ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {})
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-step-20261021-5', { type: 'module' });
+    worker = new Worker('./worker.js?v=female-bases-20261021-3', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -551,7 +553,7 @@ async function prepare(demo = false) {
       ...r.bodies.map((b) => {
         const option = document.createElement('option');
         option.value = b.index;
-        option.textContent = `Part ${b.index + 1} · ${(b.volume / 1000).toFixed(2)} cm³`;
+        option.textContent = `${b.name || `Part ${b.index + 1}`} · ${(b.volume / 1000).toFixed(2)} cm³`;
         return option;
       }),
     );
@@ -706,6 +708,7 @@ async function runDetection() {
     const r = await rpc('detect', {
       bodyIndex: Number($('body').value || 0),
       options: {
+        interfaceType: $('interface-type').value,
         orientation: $('orientation').value,
         yaw: Number($('yaw').value),
         bottom: Number($('bottom').value),
@@ -713,6 +716,8 @@ async function runDetection() {
     });
     if (turn !== epoch) return;
     detection = r;
+    $('bottom').value=r.bottom.toFixed(5);
+    syncInterface();
     original = r.geometry;
     feet = r.feet.map((p) => ({ ...p }));
     selection = new Set(feet.filter((p) => p.gridMatch).map((p) => p.id));
@@ -720,12 +725,13 @@ async function runDetection() {
     $('grid-y').value = r.grid.y.toFixed(4);
     $('detection-note').dataset.matched = String(r.grid.matched > 0);
     $('orientation-settings').open = r.grid.matched === 0;
+    if(r.grid.matched===0)$('selection-panel').open=true;
     $('detection-note').textContent = feet.length
       ? `${r.grid.matched} of ${feet.length} profile matches on one 42 mm grid. ` +
         (r.grid.matched === 1
           ? 'Single foot: pitch cannot be measured independently.'
           : `Maximum center residual ${r.grid.maxResidual.toFixed(3)} mm.`)
-      : 'No standard male feet detected. Check units and orientation, or place cells manually on the fixed grid. Baseplates and female sockets are not converted.';
+      : 'No Gridfinity feet or sockets found. This model has no complete matching tapered profiles on a 42 mm grid. Check units, select the correct interface and orientation, or choose a different model.';
     const cells = feet.filter((p) => p.gridMatch);
     const array = cells.length
       ? `${Math.max(...cells.map((p) => p.column)) - Math.min(...cells.map((p) => p.column)) + 1} × ${Math.max(...cells.map((p) => p.row)) - Math.min(...cells.map((p) => p.row)) + 1} cells; ${cells.length} occupied. `
@@ -736,8 +742,9 @@ async function runDetection() {
     setBusy(false);
     status(
       feet.length
-        ? 'Feet detected. Choose a style or click Convert feet.'
-        : 'No automatic matches. Review orientation or place cells manually.',
+        ? (r.interfaceType==='female'?'Female sockets detected. Choose a base style, then Convert sockets.':'Male feet detected. Choose a style, then Convert feet.')
+        : 'No Gridfinity feet or sockets found. Check model units and orientation, or choose a different model.',
+      !feet.length,
     );
     sizeInfo(original);
     renderFeet();
@@ -760,7 +767,7 @@ function renderFeet() {
       check.disabled = busy;
       check.setAttribute(
         'aria-label',
-        `Select foot at column ${p.column}, row ${p.row}`,
+        `Select ${detection?.interfaceType==='female'?'socket':'foot'} at column ${p.column}, row ${p.row}`,
       );
       check.onchange = () => {
         if (check.checked) selection.add(p.id);
@@ -792,6 +799,15 @@ function renderFeet() {
   controls();
   drawMarkers();
 }
+function interfaceStyles(){return detection?.interfaceType==='female'?SOCKET_STYLES:STYLES;}
+function syncInterface(){
+ const female=detection?.interfaceType==='female',styles=interfaceStyles(),select=$('style'),current=select.value;
+ select.replaceChildren(...Object.entries(styles).map(([value,label])=>new Option(label,value)));
+ select.value=Object.hasOwn(styles,current)?current:'plain';
+ $('convert').textContent=female?'Convert sockets':'Convert feet';
+ $('height').min=female?'5':'4.75';$('height').max=female?'20':'10';
+ $('height').value=female?Math.max(6.2,detection.bounds.max[2]-detection.bottom<=12?detection.bounds.max[2]-detection.bottom:6.2).toFixed(2):'4.75';
+}
 function inputOptions() {
   const o = Object.fromEntries(
     [
@@ -805,19 +821,24 @@ function inputOptions() {
       'roof',
     ].map((k) => [k, Number($(k).value)]),
   );
+  o.interfaceType=detection?.interfaceType??'male';
+  if(o.interfaceType==='female'){o.roof=.8;o.screwDepth=6;}
   o.style = $('style').value;
-  o.fitScrewDepth = $('screw-depth-mode').value === 'fit';
+  o.fitScrewDepth = o.interfaceType!=='female'&&$('screw-depth-mode').value === 'fit';
   o.feet = feet.filter((p) => selection.has(p.id));
   return o;
 }
 async function runConversion() {
   if (!canConvert()) return;
-  const fields = ['bottom', 'height', 'fit', 'roof'];
+  const fields = ['bottom', 'height', 'fit'];
+  if(detection?.interfaceType!=='female')fields.push('roof');
   const style = $('style').value;
-  if (['magnets', 'both'].includes(style))
+  if (['magnets', 'both', 'weighted'].includes(style))
     fields.push('magnetDiameter', 'magnetDepth');
-  if (['screws', 'both'].includes(style))
-    fields.push('screwDiameter', 'screwDepth');
+  if (['screws', 'both', 'weighted'].includes(style)){
+    fields.push('screwDiameter');
+    if(detection?.interfaceType!=='female')fields.push('screwDepth');
+  }
   for (const id of fields) {
     const el = $(id);
     if (!el.value.trim() || !el.checkValidity()) {
@@ -865,7 +886,7 @@ async function runConversion() {
     if (matchMedia('(max-width: 700px)').matches)
       $('preview-panel').scrollIntoView({ block: 'start' });
     $('conversion-note').textContent =
-      `${r.report.feet.length} feet converted to ${STYLES[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.` +
+      `${r.report.feet.length} ${r.report.interfaceType==='female'?'sockets':'feet'} converted to ${(r.report.interfaceType==='female'?SOCKET_STYLES:STYLES)[r.report.style].toLowerCase()} on a fixed 42 mm grid. Exports contain the selected part.` +
       (r.report.sourceCurveRepair
         ? ' Imported CAD curve data was repaired before conversion.'
         : '') +
@@ -874,7 +895,9 @@ async function runConversion() {
         : r.brep
         ? ' STEP could not preserve a valid body on reopening. Download BREP for the validated native CAD body, or STL / 3MF for a mesh.'
         : '') +
-      (['screws', 'both'].includes(r.report.style)
+      (r.report.interfaceType==='female' && ['screws','both','weighted'].includes(r.report.style)
+        ? ` Through-floor M3 holes: ${r.report.screwDepth} mm.`
+        : ['screws', 'both'].includes(r.report.style)
         ? ` Screw depth: ${r.report.screwDepth} mm${r.report.screwDepth < r.report.requestedScrewDepth ? `, fitted from ${r.report.requestedScrewDepth} mm to retain the solid roof` : ''}.`
         : '') +
       (r.report.displayOnlyMesh
@@ -955,7 +978,7 @@ function nativeConversion(options) {
       typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-5', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=female-bases-20261021-3', {
       type: 'module',
     });
     nativeWorker = w;
@@ -1085,6 +1108,7 @@ document.addEventListener('dragover', (e) => e.preventDefault());
 document.addEventListener('drop', (e) => e.preventDefault());
 $('demo').onclick = loadDemo;
 $('detect').onclick = runDetection;
+$('interface-type').onchange=()=>{if(loaded)void runDetection();};
 $('convert').onclick = runConversion;
 $('workflow-action').onclick = () => {
   if (fileState === 'empty') $('files').click();
@@ -1331,7 +1355,7 @@ function prepareNativeExport(data) {
       if (verifierExport) {
         lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
         w = lease.worker;
-      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-5', { type: 'module' });
+      } else w = new Worker('./native-export-worker.js?v=female-bases-20261021-3', { type: 'module' });
       if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
       exportWorker = w;
       w.onmessage = ({ data: reply }) => {

@@ -1,0 +1,5324 @@
+[
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 8319.97416311075,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821782454576855,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 21048,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 10082.895924594362,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821787025250865,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 21040,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 12955.278901121306,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821787033107293,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 22556,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 10044.319904758833,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821786962804164,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 22594,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 12929.561920484171,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821787033112844,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 24108,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 1,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 1,
+      "backplate": false,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0
+      ],
+      "backBottom": -12.7,
+      "webColumns": [
+        -21,
+        21
+      ],
+      "frameWidth": 46,
+      "width": 46,
+      "mounts": [
+        -12.7,
+        12.7
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        }
+      ]
+    },
+    "volume": 15896.769680973868,
+    "pegDelta": 3.429777185294749e-8,
+    "maxFootOverlap": 0.00006821787033765964,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 26506,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 30258.454990077225,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146683765423,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 45828,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 34262.302421358974,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146685096119,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 45824,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 40668.94677836162,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146681164916,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 48888,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 34185.14974459637,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146681164916,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 48920,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 40617.5116910909,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146671945456,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 51992,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": -0.1,
+      "web": 2.4,
+      "beam": 10,
+      "angle": 0,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "original",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -29.68,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ]
+    },
+    "volume": 48023.174418554394,
+    "pegDelta": 5.226124916616612e-8,
+    "maxFootOverlap": 32.51146681164916,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 56780,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 31473.434947999172,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.00009140472170188804,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 4258,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 35177.69436076421,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.00009140472237817753,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 4244,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 40800.911175789304,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.0000914196464112269,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 7334,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 35100.54221508099,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.0000914196461534609,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 7354,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 40749.47613514739,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.00009140057511284579,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 10436,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "skadis",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -20
+      ],
+      "backBottom": -37.5,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -20,
+        0,
+        20
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 20,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -20,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 40,
+      "boardPitchZ": 20
+    },
+    "volume": 46364.02705824121,
+    "pegDelta": 1.509903313490213e-14,
+    "maxFootOverlap": 0.00009140073014734073,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 15024,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 30897.7978496167,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009140462994153087,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9484,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 34602.058186497416,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009140463089431573,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9484,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 40225.27313908088,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009141955480474518,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12552,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 34524.9057541986,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009141955487389644,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12594,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 40173.8383956732,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009140048299979545,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 15654,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_small",
+      "board_thickness": 3.2,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 4.7625,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 45788.79761651169,
+    "pegDelta": 1.5370071881903868e-10,
+    "maxFootOverlap": 0.00009140064088159358,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 20058,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 34090.66188974893,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009136966424319544,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9746,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 37794.92350478612,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009136966421322622,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9734,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 43418.14051060779,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009138873661992647,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12810,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 37717.771492001164,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009138873537615477,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12844,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 43366.70447110612,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009136966360991512,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 15912,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "us_large",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 48981.30524169526,
+    "pegDelta": 7.943778597166875e-10,
+    "maxFootOverlap": 0.00009136982269480818,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 20326,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 32011.68253221241,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009141177311393254,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9202,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 35715.94425587642,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009141177279563351,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9242,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 41339.15837935563,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009142753792071881,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12318,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 35638.791363787815,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009142753720784333,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12352,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 41287.723419452464,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009141177256244828,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 15420,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "wall_control",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6.35,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25.4
+      ],
+      "backBottom": -30.4,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.099999999999994,
+        -12.7,
+        12.7,
+        38.099999999999994
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": -12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 12.7,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.7,
+          "z": -25.4,
+          "row": 1
+        },
+        {
+          "x": 38.099999999999994,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.099999999999994,
+          "z": -25.4,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25.4,
+      "boardPitchZ": 25.4
+    },
+    "volume": 46902.43831717736,
+    "pegDelta": 5.657974148921717e-9,
+    "maxFootOverlap": 0.00009141193116889317,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 20086,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 32194.980973889156,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.00009142560286082138,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9282,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 35899.24300378639,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.0000914256028047264,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9330,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 41522.45961876668,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.00009143722144681832,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12400,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 35822.09064029691,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.0000914372201217311,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 12440,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 41471.02373998034,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.00009142145583831792,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 15502,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "metric25",
+      "board_thickness": 5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 6,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 47085.9111978436,
+    "pegDelta": 5.141984494647163e-10,
+    "maxFootOverlap": 0.00009142161469455595,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 20170,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 41994.07125841616,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009140472217536903,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 8468,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 45698.3313302129,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009140472216666351,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 8448,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 51321.54749207735,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009141964816330151,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 11514,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 45621.17868815448,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009141964737697455,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 11558,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 51270.11252037221,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009140057561659576,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 14616,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "bott_perfo",
+      "board_thickness": 0.9,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 9.2,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -38.1
+      ],
+      "backBottom": -43.1,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -38.1,
+        0,
+        38.1
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -38.1,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 0,
+          "z": -38.1,
+          "row": 1
+        },
+        {
+          "x": 38.1,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 38.1,
+          "z": -38.1,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 38.1,
+      "boardPitchZ": 38.1
+    },
+    "volume": 56882.528243745495,
+    "pegDelta": 3.6602617343339574e-9,
+    "maxFootOverlap": 0.00009140073423749399,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 19078,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 26295.936092168482,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008743244851771395,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9982,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 29916.0266698548,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008743244890780814,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 1.3877787807814457e-17,
+    "triangles": 10358,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 35516.147500715204,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008744737582438155,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 13376,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 29838.873556401322,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008744737541258194,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 1.3877787807814457e-17,
+    "triangles": 13468,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 35464.71254626752,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008742830189723446,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 16478,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "multiboard",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -25
+      ],
+      "backBottom": -30,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -37.5,
+        -12.5,
+        12.5,
+        37.5
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -37.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": -12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 12.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 12.5,
+          "z": -25,
+          "row": 1
+        },
+        {
+          "x": 37.5,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 37.5,
+          "z": -25,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 25,
+      "boardPitchZ": 25
+    },
+    "volume": 41080.543113591266,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.0000874284595617722,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 20924,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "frame",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 32572.334382887308,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008936525084959645,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 9836,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "plain",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 36233.80462964507,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.0000893652520369216,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 10054,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "magnets",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 41843.340429010146,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008938017840183194,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 13268,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "screws",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 36156.6533612931,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008938017814550151,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 13168,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "both",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 41791.90568078954,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008936110442434722,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 16370,
+    "hardwareProbes": true
+  },
+  {
+    "parameters": {
+      "columns": 2,
+      "rows": 1,
+      "clearance": 0,
+      "web": 2.4,
+      "beam": 10,
+      "angle": -30,
+      "mount_rows": 2,
+      "backplate": true,
+      "base_type": "weighted",
+      "peg_clearance": 0,
+      "hook_grip": 0,
+      "hoop_firmness": 0,
+      "board_system": "hsw",
+      "board_thickness": 5.5,
+      "slot_clearance": 0.2,
+      "board_gap": 0.2,
+      "retainer_depth": 3,
+      "hole_diameter": 7.14375,
+      "lower_clearance": 0.2,
+      "screw_clearance": 0.2,
+      "head_clearance": 0.35,
+      "counterbore_depth": 3.2,
+      "mountZ": [
+        0,
+        -11.8,
+        -23.6,
+        -35.400000000000006
+      ],
+      "backBottom": -40.400000000000006,
+      "webColumns": [
+        -42,
+        0,
+        42
+      ],
+      "frameWidth": 88,
+      "width": 88,
+      "mounts": [
+        -30.657299293969125,
+        -10.219099764656375,
+        10.219099764656375,
+        30.657299293969125
+      ],
+      "front": 51.55,
+      "mountSites": [
+        {
+          "x": -30.657299293969125,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": -30.657299293969125,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": -10.219099764656375,
+          "z": -35.400000000000006,
+          "row": 1
+        },
+        {
+          "x": 10.219099764656375,
+          "z": 0,
+          "row": 0
+        },
+        {
+          "x": 10.219099764656375,
+          "z": -23.6,
+          "row": 1
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -11.8,
+          "row": 0
+        },
+        {
+          "x": 30.657299293969125,
+          "z": -35.400000000000006,
+          "row": 1
+        }
+      ],
+      "boardPitchX": 20.43819952931275,
+      "boardPitchZ": 23.6
+    },
+    "volume": 47326.15387313509,
+    "pegDelta": 0,
+    "maxFootOverlap": 0.00008936126214629207,
+    "coreInteriorMissing": 0,
+    "removedSliverVolume": 0,
+    "triangles": 21244,
+    "hardwareProbes": true
+  }
+]

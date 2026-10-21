@@ -232,10 +232,10 @@ Settings-link validation: `node scripts/gridfinity/check-settings-links.mjs`. Br
 
 ## Gridfinity base types
 
-Choose **Frame** (the existing open-bottom receiver) or **Weighted**. These are
+Choose **Frame**, **Solid floor**, **Magnets**, **M3 screws**, **Magnets + M3 screws**, or **Weighted**. Frame and Weighted are
 shelf adaptations of the two types in [Zack Freedman's original baseplate
 set](https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925),
-not the unmodified original plates. Magnet-light, skeletonized and screw-together
+not the unmodified original plates. The four additional floor/hardware choices are adaptations of the same socket profile, not four additional official baseplates. Solid floor and screw-only variants use a 1.2 mm floor; magnets and combined variants use a 3.2 mm floor with 6.5 mm diameter × 2.4 mm pockets. M3 holes pass through the floor. All variants preserve the board connectors and root wall. Magnet-light, skeletonized and screw-together
 bases are community variants, not additional types in that original set.
 
 Weighted adds 6.4 mm below the frame, a seat floor, four 6.5 mm diameter × 2.4 mm

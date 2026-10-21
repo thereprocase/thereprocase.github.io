@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "2c2d90eb6ecbfabcada829419a522003668476d837ef1d61319c77d7f57045ad",
-    "app.js": "b04d9c2d052d16054a3c93c0629d1b4a7e3565ae610d1cd6f06821f793f0ba05",
+    "README.md": "b6b163b1c8abd577136bba34f6abb246735abeed5d8695c5d38333dd22afbeff",
+    "app.js": "085a2768d00ff6dadb0166d735fd042ab3bca88c145115635ae917dc656f222f",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -53,26 +53,26 @@
     "checks/width-search-controls.json": "ee23a14d784772e73539c8816a720a5bc4e28793b86f79333d75904af81a0bd8",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
-    "export-worker.js": "73d5dd7856197e4ad578c60f14abe3ae0513af14d29aa0b7bb8ff6418341b729",
+    "export-worker.js": "56f321bbe25089c75145e97ad03bde0d628b453e154468b30bc0094fd20f773c",
     "fit-inputs.json": "7b55fdbea9d77a0bc809bbaaab180626f93a1af945594d984e2eb0350d79e0db",
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "0cf50e488fe727facd7f8952c19a57888e37d3ff71e5e16cb1967bd1295b8ac3",
+    "index.html": "1db680b2821a9122e83e2ab53a7faf84eba7e36a8ac803ea3fdaac36eda51255",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
-    "kernel.js": "e251ee904e4e68011a3bd23917ac3607062c9dc970ae2f94d3915e7238c9470d",
-    "neighbor-spacing.js": "d4a96d6598e1977f4991878ed7a3f10b684dd0e924212d3fee8346bce8fcfb1b",
+    "kernel.js": "5857df45da559639791a70c4b61752ff703418d26ff0c54809e9d5c7f16506d2",
+    "neighbor-spacing.js": "127466899f570ffdfbb6f6f829833f4882dd668494d8f41147d4db5d0336df3a",
     "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
     "peg-fit.js": "a8c3cbf1ce418f15f6da940ef615fe678e30d51083ec0f16e19a33e7d66e27d5",
-    "reinforcement.js": "b197a5e4714be1f38deab772a6a658210c07e0d8b132c16bf8a567de995fa5c1",
+    "reinforcement.js": "82ae3ffaa1a99901f07fdd58b622f87243e90d8ae8f0ec206bb023440e50d8b3",
     "reinforcement.png": "28231eb8cf49e034fc6d7dd2ff7ac3c8112a43ec78eeca40a3b68e2234641e04",
     "round-board-coupons.png": "a1a518a7564c8f58b31acf95e4ebf04204e47db0b8c2e3cfd4118c0938a87256",
     "screw-board-mounts.png": "f28c53b8fc6698cbb1ac48e05c4c8d5f51f9488adbe6d29630b7abce7cdb0e27",
-    "search-width-worker.js": "48409854a8602d89050f7b0149039f077bb1648111626fe2d0a2932b9a231f49",
+    "search-width-worker.js": "a936f118e6d89fc215af3b9e876eda34b534f288b927c6b30eddcb9331e99371",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "skadis-shelf.png": "b4f1112ce8ea537e5668c00aa05239e3e5740ba3d28050e19ca17ce956196839",
-    "solid-exports.js": "6081aeac8fac7cfeeb7506d74fc84438f436696e6a71fddc1f5e742954886398",
+    "solid-exports.js": "4ad89751b11bfc941121a78532270ccfe42fedd2aab8a848f75bab33edfe45ba",
     "sources/round/LICENSE": "fcf06f213f25db874ab440e80901c3f1715b6c89d4b499e5dc772886c779a9b2",
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
@@ -81,7 +81,13 @@
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
-    "worker.js": "a9e963a57ddfd8ddf7e10dadbaaa9741b439a35da3afa85b0c416f0484c3fbd3"
+    "worker.js": "c85423ed0c5095296ec61a157dbf97e43932f013561ef63a288457a31a0824c4",
+    "checks/runtime-1.json": "aa4cbbb3f142249102fbfe4decbb23c72a6b3bd7c681006f1d0f150c84a910ae",
+    "checks/runtime-2.json": "c5fbd237cf66052a4f87308e3d4769edc2a00bc6cee4c6774b1922b08728d2d2",
+    "checks/runtime-3.json": "4d9811750f63b05396c19ef313d16ddb35eccb9061de443b9a201e7cca008eee",
+    "checks/six-base-types-offset.json": "2eca1b0728f519c143a119fb35646e04d9e359a94a7c92339aef2a67b2ee8562",
+    "checks/six-base-types-remaining.json": "e5217bcc22b58de672e3e73a4ff31cb1f351875af0f2c4b92bbbb3f78608237f",
+    "checks/six-base-types-exports.json": "fcb15912c44dbedc7c16277fc3ff06e2b8b0f4afcc04eee66b3134e89ee1eb44"
   },
   "revision": "base-types-1",
   "peg_fit_source": "downloads/peg-fit-source.zip",
@@ -146,5 +152,22 @@
       "/gridfinity-common/workspace-layout.css": "481791a565a4a8f2769857010b510031eb066997a6ed7b2caef9345201334848",
       "/gridfinity-common/workspace-layout.js": "d204884f6c358c1f190348cd1666cf9769afb6757f0a54d4025a680b908cf58a"
     }
+  },
+  "sixBaseStyles": {
+    "build": "female-bases-2",
+    "styles": [
+      "frame",
+      "plain",
+      "magnets",
+      "screws",
+      "both",
+      "weighted"
+    ],
+    "origin": "Frame and Weighted adapt the original baseplate types. Four floor/hardware variants use the same socket profile; not four additional official designs.",
+    "validation": [
+      "checks/six-base-types-offset.json",
+      "checks/six-base-types-remaining.json",
+      "checks/six-base-types-exports.json"
+    ]
   }
 }

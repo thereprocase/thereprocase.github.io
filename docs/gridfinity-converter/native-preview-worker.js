@@ -1,4 +1,4 @@
-import { previewNative, prepareNativeDocument } from './native-cad.js?v=native-step-20261021-5';
+import { previewNative, prepareNativeDocument } from './native-cad.js?v=female-bases-20261021-3';
 let queued = Promise.resolve();
 let fatalKernel = false;
 self.onmessage = ({ data }) => {
@@ -23,13 +23,13 @@ async function handle(data) {
   }
   if (data.type === 'convert') {
     const { runNativeConversion } =
-      await import('./native-worker-run.js?v=native-step-20261021-5');
+      await import('./native-worker-run.js?v=female-bases-20261021-3');
     await runNativeConversion(data);
     // Each conversion consumes its validation child. Warm the next child while
     // the user reviews the result, without posting another conversion response.
     if (data.retainDocument) {
       try {
-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-5');
+        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=female-bases-20261021-3');
         await prewarmNativeBrepValidator();
       } catch { /* Optional warming never changes a conversion result. */ }
     }
@@ -48,7 +48,7 @@ async function handle(data) {
     self.postMessage(payload, transfers);
     if (payload.nativeDocumentId || payload.result?.nativeDocumentId) {
       try {
-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-5');
+        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=female-bases-20261021-3');
         await prewarmNativeBrepValidator();
       } catch { /* Optional warming must not invalidate the delivered preview. */ }
     }

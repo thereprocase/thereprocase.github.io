@@ -302,7 +302,7 @@ try {
     "document.getElementById('height').value='2';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('convert').click()",
   );
   results.visibleValidation = await evaluate(
-    "document.getElementById('status').classList.contains('error') && document.getElementById('status').textContent.includes('Replacement height')",
+    "document.getElementById('status').classList.contains('error') && document.getElementById('status').textContent.includes('Replacement depth')",
   );
   await evaluate(
     "document.getElementById('height').value='4.75';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('column').value='0'",
@@ -400,6 +400,17 @@ try {
     results.nativeDownload = (
       await fs.readdir(path.dirname(path.resolve(output)))
     ).includes('native-both-42mm.step');
+  }
+  if(process.env.SOCKET_FIXTURES){
+    const load=async file=>{const doc=await call('DOM.getDocument'),node=await call('DOM.querySelector',{nodeId:doc.root.nodeId,selector:'#files'});await call('DOM.setFileInputFiles',{nodeId:node.nodeId,files:[path.resolve(process.env.SOCKET_FIXTURES,file)]});await ready();};
+    for(const file of ['cube.stl','plate.stl']){await load(file);results['noFeet-'+file]=await evaluate("document.getElementById('status').textContent.includes('No Gridfinity feet or sockets found')&&document.getElementById('status').classList.contains('error')&&document.getElementById('convert').disabled");}
+    for(const file of ['female.stl','analytic-female-1x1.step','faceted-closed.step','faceted-open.step','faceted-shelf.step']){
+      console.log('Checking female browser fixture',file);await load(file);if(file.startsWith('faceted')){results['meshRoute-'+file]=await evaluate("document.getElementById('step').hidden && document.getElementById('translate-step').hidden").catch(()=>false);if(file==='faceted-shelf.step')results.namedBodies=await evaluate("document.getElementById('body').options.length===5&&document.getElementById('body').options[0].textContent.includes('Body_PRINT')");}results['femaleDetect-'+file]=await evaluate("document.getElementById('convert').textContent==='Convert sockets'&&!document.getElementById('convert').disabled&&document.getElementById('style').options.length===6");
+      await evaluate("document.getElementById('roof').value='99';document.getElementById('screwDepth').value='99'");
+      console.log('Socket controls',await evaluate("Object.fromEntries(['bottom','height','fit','magnetDiameter','magnetDepth','yaw','orientation'].map(id=>[id,document.getElementById(id).value]))"));
+      await evaluate("document.getElementById('style').value='magnets';document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('convert').click()");await ready();
+      results['femaleConvert-'+file]=await evaluate("!document.getElementById('stl').disabled&&document.getElementById('conversion-note').textContent.includes('sockets converted')");
+    }
   }
   if (Object.values(results).some((v) => !v))
     throw Error(JSON.stringify(results));

@@ -1,4 +1,4 @@
-import { demo } from './demo.js?v=native-step-20261021-5';
+import { demo } from './demo.js?v=female-bases-20261021-3';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
 import {
   importSolid,
@@ -6,7 +6,7 @@ import {
   detect,
   align,
   convert,
-} from './kernel.js?v=native-step-20261021-5';
+} from './kernel.js?v=female-bases-20261021-3';
 const ready = Module().then((m) => {
   m.setup();
   return m;
@@ -37,6 +37,7 @@ self.onmessage = async ({ data }) => {
       result = {
         bodies: bodies.map((s, i) => ({
           index: i,
+          name: loaded.names?.[i],
           volume: s.volume(),
           bounds: s.boundingBox(),
           triangles: s.numTri(),

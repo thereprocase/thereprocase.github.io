@@ -1,8 +1,8 @@
-import { convertNative, nativeMeshExport, hasPreparedNativeDocument } from './native-cad.js?v=native-step-20261021-5';
-import { createNativeCancellation } from './native-cancellation.js?v=native-step-20261021-5';
+import { convertNative, nativeMeshExport, hasPreparedNativeDocument } from './native-cad.js?v=female-bases-20261021-3';
+import { createNativeCancellation } from './native-cancellation.js?v=female-bases-20261021-3';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import { importSolid, meshData } from './kernel.js?v=native-step-20261021-5';
-import { checkNativeDisplayMesh } from './native-display-check.js?v=native-step-20261021-5';
+import { importSolid, meshData } from './kernel.js?v=female-bases-20261021-3';
+import { checkNativeDisplayMesh } from './native-display-check.js?v=female-bases-20261021-3';
 let warmedValidator;
 let displayModule;
 function preparedDisplayModule() {
@@ -17,7 +17,7 @@ export function prewarmNativeBrepValidator() {
   let markStarted;
   const started = new Promise(resolve => { markStarted = resolve; });
   let child;
-  try { child = new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-5', import.meta.url), { type: 'module' }); }
+  try { child = new Worker(new URL('./native-brep-worker.js?v=female-bases-20261021-3', import.meta.url), { type: 'module' }); }
   catch { markStarted(); return started; }
   const entry = { child, started, startedAtMS: Date.now(), warmedAtMS: undefined };
   warmedValidator = entry;
@@ -52,7 +52,7 @@ export async function runNativeConversion(data) {
     warmedValidator = undefined;
     let child;
     try {
-      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-5', import.meta.url), { type: 'module' });
+      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=female-bases-20261021-3', import.meta.url), { type: 'module' });
     } catch {
       markReady();
       resolve({ fallbackRequired: true });

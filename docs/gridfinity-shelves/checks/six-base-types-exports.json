@@ -1,0 +1,178 @@
+[
+  {
+    "base_type": "plain",
+    "volume": 34120.41336233855,
+    "helpers": 4,
+    "stepBytes": 32634865,
+    "threeMFBytes": 7022029,
+    "stepNormalization": [
+      {
+        "name": "Body_PRINT",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 3.001153985501369,
+        "sourceVolume": 34120.41336233855,
+        "cadVolume": 34117.505958846064
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_1",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001642697464302331,
+        "sourceVolume": 3348.082856625092,
+        "cadVolume": 3348.0814969473277
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_2",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016602708051795326,
+        "sourceVolume": 3422.745813809055,
+        "cadVolume": 3422.744434333373
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_3",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016752675959629346,
+        "sourceVolume": 3422.745814108154,
+        "cadVolume": 3422.7444210472468
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_4",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001686241453886958,
+        "sourceVolume": 3348.0828582254435,
+        "cadVolume": 3348.0814831001635
+      }
+    ]
+  },
+  {
+    "base_type": "magnets",
+    "volume": 40527.057718958284,
+    "helpers": 4,
+    "stepBytes": 33053309,
+    "threeMFBytes": 7264375,
+    "stepNormalization": [
+      {
+        "name": "Body_PRINT",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 3.2531570392804356,
+        "sourceVolume": 40527.057718958284,
+        "cadVolume": 40523.89831221493
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_1",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001642697464302331,
+        "sourceVolume": 3423.7512593759607,
+        "cadVolume": 3423.749899698196
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_2",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016602708051795326,
+        "sourceVolume": 3525.0826643718956,
+        "cadVolume": 3525.081284896214
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_3",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016752675959629346,
+        "sourceVolume": 3525.0826646709943,
+        "cadVolume": 3525.0812716100877
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_4",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001686241453886958,
+        "sourceVolume": 3423.7512609763126,
+        "cadVolume": 3423.7498858510326
+      }
+    ]
+  },
+  {
+    "base_type": "screws",
+    "volume": 34043.26068519303,
+    "helpers": 4,
+    "stepBytes": 33051226,
+    "threeMFBytes": 7266215,
+    "stepNormalization": [
+      {
+        "name": "Body_PRINT",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 3.001153985501369,
+        "sourceVolume": 34043.26068519303,
+        "cadVolume": 34040.35328170054
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_1",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001642697464302331,
+        "sourceVolume": 3348.082856625092,
+        "cadVolume": 3348.0814969473277
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_2",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016602708051795326,
+        "sourceVolume": 3422.745813809055,
+        "cadVolume": 3422.744434333373
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_3",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016752675959629346,
+        "sourceVolume": 3422.745814108154,
+        "cadVolume": 3422.7444210472468
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_4",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001686241453886958,
+        "sourceVolume": 3348.0828582254435,
+        "cadVolume": 3348.0814831001635
+      }
+    ]
+  },
+  {
+    "base_type": "both",
+    "volume": 40475.622631518985,
+    "helpers": 4,
+    "stepBytes": 33485976,
+    "threeMFBytes": 7518193,
+    "stepNormalization": [
+      {
+        "name": "Body_PRINT",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 3.2531570392804356,
+        "sourceVolume": 40475.622631518985,
+        "cadVolume": 40472.46322477563
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_1",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001642697464302331,
+        "sourceVolume": 3423.7512593759607,
+        "cadVolume": 3423.749899698196
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_2",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016602708051795326,
+        "sourceVolume": 3525.0826643718956,
+        "cadVolume": 3525.081284896214
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_3",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.0016752675959629346,
+        "sourceVolume": 3525.0826646709943,
+        "cadVolume": 3525.0812716100877
+      },
+      {
+        "name": "Reinforcement_100pct_3p5mm_4",
+        "toleranceMM": 0.001,
+        "symmetricDifferenceMM3": 0.001686241453886958,
+        "sourceVolume": 3423.7512609763126,
+        "cadVolume": 3423.7498858510326
+      }
+    ]
+  }
+]

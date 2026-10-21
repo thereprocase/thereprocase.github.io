@@ -1,0 +1,866 @@
+[
+  {
+    "interfaceType": "female",
+    "style": "frame",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 6.2,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 0,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 1.2,
+    "convertedVolume": 4544.032081846058,
+    "addedVolume": 0,
+    "removedVolume": 1267.4999999995393,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 8,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 49,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 91.4227719999999,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 10.270061000000169
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 22.631271000000197,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 69.7580640000001,
+      "startedAtMS": 1792586222060,
+      "finishedAtMS": 1792586222130,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2472,
+            "elapsedMS": 89.59085899999991
+          }
+        ],
+        "elapsedMS": 90.34815600000002
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 0,
+            "elapsedMS": 0.09684500000003027
+          }
+        ],
+        "elapsedMS": 0.4076329999998052
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 12,
+            "elapsedMS": 2.2342570000000705
+          }
+        ],
+        "elapsedMS": 2.83807699999943
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "interfaceType": "female",
+    "style": "plain",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 6.2,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 0,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 1.2,
+    "convertedVolume": 5811.532084589362,
+    "addedVolume": 0,
+    "removedVolume": 0,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 5,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 45,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 61.69504500000039,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 5.427736999999979
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 14.517480000000432,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 66.27616300000045,
+      "startedAtMS": 1792586231050,
+      "finishedAtMS": 1792586231117,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2452,
+            "elapsedMS": 82.53574500000104
+          }
+        ],
+        "elapsedMS": 82.69874199999686
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 0,
+            "elapsedMS": 0.09381699999721604
+          }
+        ],
+        "elapsedMS": 0.41622600000118837
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 0,
+            "elapsedMS": 0.06998899999962305
+          }
+        ],
+        "elapsedMS": 0.2513939999989816
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "interfaceType": "female",
+    "style": "magnets",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 8.2,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 0,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 3.2,
+    "convertedVolume": 9017.615383515165,
+    "addedVolume": 3365.36205246681,
+    "removedVolume": 159.2787475369446,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 17,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 57,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 59.97435300000143,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 4.224892000002001
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 16.61242200000197,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 66.96020800000042,
+      "startedAtMS": 1792586239715,
+      "finishedAtMS": 1792586239782,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 4476,
+            "elapsedMS": 184.57055800000307
+          }
+        ],
+        "elapsedMS": 184.72188800000004
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2028,
+            "elapsedMS": 90.69722799999727
+          }
+        ],
+        "elapsedMS": 92.85751999999775
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2000,
+            "elapsedMS": 82.47333799999979
+          }
+        ],
+        "elapsedMS": 84.4001360000002
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "interfaceType": "female",
+    "style": "screws",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 6.2,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 1.2000000000000002,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 1.2,
+    "convertedVolume": 5777.602881184865,
+    "addedVolume": 0,
+    "removedVolume": 33.92920065875743,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 17,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 49,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 65.39058099999966,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 4.308561999998346
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 12.886501000000862,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 85.09491500000149,
+      "startedAtMS": 1792586248918,
+      "finishedAtMS": 1792586249003,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 4484,
+            "elapsedMS": 165.3727149999977
+          }
+        ],
+        "elapsedMS": 165.5765640000027
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 0,
+            "elapsedMS": 0.08398200000374345
+          }
+        ],
+        "elapsedMS": 0.30077199999504955
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2000,
+            "elapsedMS": 68.94946700000582
+          }
+        ],
+        "elapsedMS": 70.80565399999614
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "interfaceType": "female",
+    "style": "both",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 8.2,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 3.1999999999999993,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 3.2,
+    "convertedVolume": 8994.995912846649,
+    "addedVolume": 3342.7425853609643,
+    "removedVolume": 159.2787475369446,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 29,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 61,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 57.35307699999976,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 6.284433000000718
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 24.98580899999797,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 86.14654500000324,
+      "startedAtMS": 1792586257972,
+      "finishedAtMS": 1792586258058,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 6508,
+            "elapsedMS": 238.91654500000004
+          }
+        ],
+        "elapsedMS": 239.0632770000011
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 4060,
+            "elapsedMS": 166.82574900000327
+          }
+        ],
+        "elapsedMS": 170.2311899999986
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2000,
+            "elapsedMS": 66.61285500000668
+          }
+        ],
+        "elapsedMS": 68.4940440000064
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  },
+  {
+    "interfaceType": "female",
+    "style": "weighted",
+    "pitch": 42,
+    "feet": [
+      {
+        "x": 0,
+        "y": -0.00001,
+        "sourceX": 0,
+        "sourceY": -0.00001
+      }
+    ],
+    "bottom": 0,
+    "height": 11.4,
+    "fit": 0,
+    "magnetDiameter": 6.5,
+    "magnetDepth": 2.4,
+    "screwDiameter": 3,
+    "screwDepth": 6.4,
+    "requestedScrewDepth": 6,
+    "fitScrewDepth": false,
+    "minimumRoof": 0.8,
+    "originalVolume": 5811.532012570091,
+    "socketFloor": 6.4,
+    "convertedVolume": 12117.560222690638,
+    "addedVolume": 6465.306919313851,
+    "removedVolume": 159.2787475369446,
+    "outsideChange": 0,
+    "nativeEditMethod": "bounded-socket-replacement",
+    "socketPlacement": {
+      "refined": true,
+      "normalAdjustment": 2.1654663179013213e-7,
+      "rimOffsetMM": 0.000006476398965560293
+    },
+    "nativeLifetime": {
+      "before": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      },
+      "afterCleanup": {
+        "allocator": "mimalloc",
+        "scope": "current-thread statistics; backing arena is not live allocation",
+        "wasmCapacityBytes": 104857600
+      }
+    },
+    "constructionRelease": {
+      "releasedArenaEntries": 68,
+      "retainedArenaEntries": 6
+    },
+    "reusedLocalSource": false,
+    "preservationMethod": "convex-region-boundary-difference",
+    "preservationProof": {
+      "proved": true,
+      "provisional": false,
+      "method": "convex-region-boundary-difference",
+      "unchangedFaces": 4,
+      "changedOriginalFaces": 43,
+      "changedResultFaces": 103,
+      "missingAreaMM2": 0,
+      "addedAreaMM2": 0
+    },
+    "representation": "native-brep",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "model"
+    },
+    "nativeBooleanToleranceMM": 0.00001,
+    "sourceCurveRepair": null,
+    "sourcePreparationMS": 64.14217000000644,
+    "usedPreparedSource": false,
+    "sourceBoundsCheck": {
+      "matches": true,
+      "method": "conservative-face-and-vertex-extrema",
+      "faceCount": 47,
+      "refinedFaces": 0,
+      "vertexCount": 10,
+      "vertexTraversalComplete": false,
+      "uniqueVertexCount": 5,
+      "elapsedMS": 8.778521000000183
+    },
+    "sourceVolumeCheck": {
+      "reused": false,
+      "elapsedMS": 14.065114000004542,
+      "method": "native-volume"
+    },
+    "nativeCoordinateResolutionMM": 0.00001,
+    "nativeCoordinateAdjustmentMM": 0.0000026151537895202637,
+    "nativeValid": true,
+    "nativeExportFormat": "brep",
+    "stepRoundTripValid": false,
+    "brepRoundTripValid": true,
+    "stepExportDeferred": true,
+    "primaryExactValidation": {
+      "copyMethod": "original-result",
+      "copyElapsedMS": 0,
+      "elapsedMS": 94.41068300000188,
+      "startedAtMS": 1792586269113,
+      "finishedAtMS": 1792586269208,
+      "passed": true,
+      "wasmMemoryMetric": "linear-memory-capacity-not-live-allocation",
+      "wasmCapacityBeforeBytes": 104857600,
+      "wasmCapacityAfterBytes": 104857600
+    },
+    "originalPoseExportReused": false,
+    "originalPoseExportDeferred": true,
+    "connectedSolids": 1,
+    "displayOnlyMesh": false,
+    "displayMeshDeflectionMM": 0.01,
+    "meshTessellation": {
+      "converted": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 9712,
+            "elapsedMS": 405.1196920000002
+          }
+        ],
+        "elapsedMS": 405.2679930000013
+      },
+      "added": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 7264,
+            "elapsedMS": 310.3398159999997
+          }
+        ],
+        "elapsedMS": 319.9794699999984
+      },
+      "removed": {
+        "attempts": [
+          {
+            "deflectionMM": 0.01,
+            "triangles": 2000,
+            "elapsedMS": 66.33433499999956
+          }
+        ],
+        "elapsedMS": 68.14449400000012
+      }
+    },
+    "tessellationDeflectionMM": 0.01
+  }
+]

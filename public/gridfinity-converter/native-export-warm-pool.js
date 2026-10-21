@@ -1,6 +1,6 @@
 /** One unused export kernel; every acquired worker is consumed once. */
 export function createNativeExportWarmPool({
-  createWorker = () => new Worker(new URL('./native-export-worker.js?v=native-step-20261021-5', import.meta.url), { type: 'module' }),
+  createWorker = () => new Worker(new URL('./native-export-worker.js?v=female-bases-20261021-3', import.meta.url), { type: 'module' }),
   startupMS = 30000,
   idleMS = 60000,
 } = {}) {

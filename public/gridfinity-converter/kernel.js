@@ -1,3 +1,4 @@
+import {SOCKET_STYLES,socketPlan} from './socket-profile.js?v=female-bases-20261021-3';
 /** Local male Gridfinity foot recognition and bounded replacement, millimetres. */
 export const STYLES = {
   plain: 'Plain feet',
@@ -163,6 +164,20 @@ function materialBodies(module, shape) {
   });
 }
 export function importSolid(module, data, scale = 1) {
+  if (data.bodies?.length) {
+    if (data.bodies.length > 64) throw Error('More than 64 named bodies. Choose a smaller assembly.');
+    const bodies=[], names=[];
+    let merged=false;
+    try {
+      for (const part of data.bodies) {
+        const loaded=importSolid(module, {...part, bodies:undefined}, scale);
+        merged ||= loaded.merged;
+        for(const body of loaded.bodies){bodies.push(body);names.push(part.name);}
+      }
+      return {bodies,names,merged};
+    } catch(error) {bodies.forEach(b=>b.delete());throw error;}
+  }
+
   checkMesh(data, false);
   if (!Number.isFinite(scale) || scale <= 0 || scale > 1000)
     throw Error('Invalid unit scale.');
@@ -268,6 +283,9 @@ export function foot(module, cx = 0, cy = 0, bottom = 0, seam = 4.75, fit = 0) {
     [4.75, 41.5, 3.75],
   ];
   if (seam > 4.75) sections.push([seam, 41.5, 3.75]);
+  return profileLoft(module,sections,cx,cy,bottom,fit);
+}
+export function profileLoft(module,sections,cx=0,cy=0,bottom=0,fit=0){
   const rings = sections.map(([z, w, r]) =>
       rounded(cx, cy, w + 2 * fit, r + fit, z + bottom),
     ),
@@ -277,7 +295,7 @@ export function foot(module, cx = 0, cy = 0, bottom = 0, seam = 4.75, fit = 0) {
     lo = vertices.length;
   vertices.push([cx, cy, bottom]);
   const hi = vertices.length;
-  vertices.push([cx, cy, bottom + seam]);
+  vertices.push([cx, cy, sections.at(-1)[0] + bottom]);
   for (let i = 0; i < n; i++) {
     const j = (i + 1) % n;
     triangles.push(
@@ -333,7 +351,8 @@ function candidates(data) {
     if (!normals.some((x) => dot(x, n) > 0.9995)) normals.push(n);
   return normals;
 }
-function getYaw(section) {
+function getYaw(section, robust = false) {
+  const edges=[];
   let c = 0,
     s = 0;
   for (const poly of section.toPolygons())
@@ -345,10 +364,17 @@ function getYaw(section) {
         l = Math.hypot(dx, dy);
       if (l < 5) continue;
       const angle = Math.atan2(dy, dx);
+      if(robust)edges.push({angle,weight:l});
       c += l * Math.cos(4 * angle);
       s += l * Math.sin(4 * angle);
     }
-  return Math.hypot(c, s) > 1 ? Math.atan2(s, c) / 4 : 0;
+  const average=Math.hypot(c,s)>1?Math.atan2(s,c)/4:0;
+  if(!robust || !edges.length)return average;
+  // A few skewed exterior edges must not bias the socket's long straight walls.
+  const candidates=edges.map(e=>({angle:average+Math.atan2(Math.sin(4*(e.angle-average)),Math.cos(4*(e.angle-average)))/4,weight:e.weight})).sort((a,b)=>a.angle-b.angle);
+  const half=candidates.reduce((n,e)=>n+e.weight,0)/2;let cumulative=0;
+  for(const e of candidates){cumulative+=e.weight;if(cumulative>=half)return e.angle;}
+  return average;
 }
 function sectionParts(shape, z, keep) {
   const cs = keep(shape.slice(z));
@@ -467,6 +493,31 @@ function inspect(shape, module, bottom, keep) {
   }
   return result;
 }
+function socketPlanes(shape){
+ const {vertices:v,triangles:t}=meshData(shape),bins=[];
+ for(let i=0;i<t.length;i+=3){
+  const a=t[i]*3,b=t[i+1]*3,c=t[i+2]*3,ab=[0,1,2].map(k=>v[b+k]-v[a+k]),ac=[0,1,2].map(k=>v[c+k]-v[a+k]),n=cross(ab,ac),area=norm(n)/2;
+  if(area<.05||n[2]/(area*2)>-.9999)continue;
+  const z=(v[a+2]+v[b+2]+v[c+2])/3;let bin=bins.find(b=>Math.abs(b.z-z)<.02);
+  if(bin){bin.z=(bin.z*bin.area+z*area)/(bin.area+area);bin.area+=area;}else bins.push({z,area});
+ }
+ return bins.sort((a,b)=>b.area-a.area).slice(0,8).map(b=>b.z).filter(z=>z>=-.01);
+}
+function inspectSockets(shape,module,bottom,keep){
+ const bounds=shape.boundingBox(),size=[bounds.max[0]-bounds.min[0]+4,bounds.max[1]-bounds.min[1]+4];
+ const rect=keep(keep(module.CrossSection.square(size)).translate([bounds.min[0]-2,bounds.min[1]-2]));
+ const holes=z=>keep(rect.subtract(keep(shape.slice(bottom+z)))).decompose().map(o=>{keep(o);const b=o.bounds();return {x:(b.min[0]+b.max[0])/2,y:(b.min[1]+b.max[1])/2,w:b.max[0]-b.min[0],h:b.max[1]-b.min[1],area:o.area()};});
+ const mouth=holes(.2),mid=holes(2.3),deep=holes(4.5),out=[];
+ for(const a of mouth){
+  if(a.w<40||a.w>42.3||a.h<40||a.h>42.3||Math.abs(a.w-a.h)>.5||a.area/(a.w*a.h)<.9)continue;
+  const at=list=>list.find(b=>b.w<42.3&&b.h<42.3&&b.area/(b.w*b.h)>.9&&Math.hypot(b.x-a.x,b.y-a.y)<.1&&Math.abs(b.w-b.h)<.5);
+  const b=at(mid),c=at(deep);
+  if(!b||!c||b.w<37||b.w>38.7||b.h<37||b.h>38.7||c.w<35.6||c.w>37.2||c.h<35.6||c.h>37.2||a.w-b.w<2||b.w-c.w<.5)continue;
+  out.push({x:a.x,y:a.y,confidence:.95,magnetCount:0,screwCount:0,sourceStyle:'Female socket',measurements:{lower:[a.w,a.h],middle:[b.w,b.h],upper:[c.w,c.h]}});
+ }
+ if(out.length>LIMITS.feet)throw Error('More than 128 sockets detected. Export a smaller part.');
+ return out;
+}
 const AXES = {
   '-z': [0, 0, -1],
   '+z': [0, 0, 1],
@@ -522,6 +573,8 @@ export function fitGrid(feet) {
   return { pitch: 42, ...origin, matched, total: feet.length, maxResidual };
 }
 export function detect(module, shape, options = {}) {
+  const interfaceType=options.interfaceType??'auto';
+  if(!['auto','male','female'].includes(interfaceType))throw Error('Choose automatic, male feet or female sockets.');
   const orientation = options.orientation ?? 'auto',
     yaw = Number(options.yaw ?? 0),
     bottom = Number(options.bottom ?? 0);
@@ -537,13 +590,15 @@ export function detect(module, shape, options = {}) {
   const normals =
     orientation === 'auto' ? candidates(meshData(shape)) : [AXES[orientation]];
   let best;
+  for(const requestedType of (interfaceType==='auto'?['male','female']:[interfaceType])){
+  if(best?.score>0)break;
   for (const n of normals) {
     const proposal = scope((keep) => {
       const base = normalDown(n),
         first = keep(shape.transform(affine(base))),
         b = first.boundingBox(),
         slice = keep(first.slice(b.min[2] + bottom + 0.2)),
-        autoYaw = getYaw(slice),
+        autoYaw = getYaw(slice, requestedType==='female'),
         rotation = mult(rz(-autoYaw + (yaw * Math.PI) / 180), base),
         rotated = keep(shape.transform(affine(rotation))),
         bb = rotated.boundingBox(),
@@ -553,9 +608,17 @@ export function detect(module, shape, options = {}) {
           -bb.min[2],
         ],
         aligned = keep(rotated.translate(translation)),
-        feet = inspect(aligned, module, bottom, keep);
+        male = requestedType==='female'?[]:inspect(aligned,module,bottom,keep);
+      let female=[],socketBottom=bottom;
+      if(requestedType==='female'){
+       const planes=options.bottomExplicit?[bottom]:[bottom,...socketPlanes(aligned).filter(z=>Math.abs(z-bottom)>.02)];
+       for(const plane of planes){const found=inspectSockets(aligned,module,plane,keep);if(found.length>female.length){female=found;socketBottom=plane;}}
+      }
+      const detectedType=requestedType,feet=detectedType==='female'?female:male;
       const grid = fitGrid(feet);
       return {
+        bottom:detectedType==='female'?socketBottom:bottom,
+        interfaceType:detectedType,
         rotation,
         translation,
         normal: n,
@@ -571,10 +634,11 @@ export function detect(module, shape, options = {}) {
     });
     if (!best || proposal.score > best.score + 0.0001) best = proposal;
   }
+  }
   const aligned = shape.transform(affine(best.rotation)),
     shifted = aligned.translate(best.translation);
   aligned.delete();
-  const result = { ...best, bottom, geometry: meshData(shifted) };
+  const result = { ...best, geometry: meshData(shifted) };
   shifted.delete();
   result.feet.sort((a, b) => a.y - b.y || a.x - b.x);
   result.feet.forEach((p, i) => (p.id = i + 1));
@@ -608,6 +672,8 @@ export function align(module, shape, detection) {
   return aligned;
 }
 export function conversionParameters(input) {
+  const interfaceType=input.interfaceType??'male';
+  if(!['male','female'].includes(interfaceType))throw Error('Detect a male or female interface first.');
   const style = input.style ?? 'plain',
     bottom = Number(input.bottom ?? 0),
     height = Number(input.height ?? 4.75),
@@ -618,11 +684,11 @@ export function conversionParameters(input) {
     requestedScrewDepth = Number(input.screwDepth ?? 6),
     roof = Number(input.roof ?? 0.8);
   const screwDepth = requestedScrewDepth;
-  if (!Object.hasOwn(STYLES, style))
+  if (!Object.hasOwn(interfaceType==='female'?SOCKET_STYLES:STYLES, style))
     throw Error('Choose a supported foot style.');
   for (const [name, value, lo, hi] of [
     ['bottom', bottom, -2000, 2000],
-    ['replacement height', height, 4.75, 10],
+    ['replacement height', height, interfaceType==='female'?5:4.75, interfaceType==='female'?20:10],
     ['fit allowance', fit, -0.5, 0.2],
     ['magnet diameter', magnetDiameter, 5.5, 7],
     ['magnet depth', magnetDepth, 1, 3],
@@ -670,6 +736,7 @@ export function conversionParameters(input) {
     return { x: p.x, y: p.y, sourceX, sourceY };
   });
   return {
+    interfaceType,
     style,
     pitch: 42,
     feet: normalizedFeet,
@@ -682,10 +749,11 @@ export function conversionParameters(input) {
     screwDepth,
     requestedScrewDepth,
     fitScrewDepth: Boolean(input.fitScrewDepth),
-    minimumRoof: roof,
+    minimumRoof: interfaceType==='female'?.8:roof,
   };
 }
 export function convert(module, original, input) {
+  if(input.interfaceType==='female')return convertSockets(module,original,input);
   return scope((keep) => {
     const { Manifold: M } = module;
     const {
@@ -919,6 +987,46 @@ export function convert(module, original, input) {
     };
   });
 }
+function convertSockets(module,original,input){return scope(keep=>{
+ const p=conversionParameters(input),plan=socketPlan(p),M=module.Manifold;
+ const tool=s=>s.kind==='box'?keep(keep(M.cube(s.hi.map((n,i)=>n-s.lo[i]))).translate(s.lo)):s.kind==='cylinder'?keep(keep(M.cylinder(s.height,s.radius,s.radius,64)).translate([s.x,s.y,s.z])):keep(profileLoft(module,s.sections,s.x,s.y));
+ const fills=plan.fills.map(tool),cuts=plan.cuts.map(tool),fill=keep(M.union(fills)),cut=keep(M.union(cuts));
+ // The existing socket walls must meet each bounded cell; never attach a free block.
+ for(const f of fills)if(keep(original.intersect(f)).volume()<1)throw Error('A selected socket has no supporting material. Review the detected cells.');
+ let result=keep(keep(keep(original.subtract(fill)).add(keep(fill.subtract(cut)))).subtract(cut));
+ let removedSliverVolume=0;
+ const withoutDust=shape=>{
+  const parts=shape.decompose();parts.forEach(keep);parts.sort((a,b)=>b.volume()-a.volume());
+  const dust=parts.slice(1).reduce((n,s)=>n+Math.abs(s.volume()),0);
+  if(parts.length>1 && dust<1e-6){removedSliverVolume+=dust;return parts[0];}
+  return shape;
+ };
+ result=withoutDust(result);
+ const before=result,bb=before.boundingBox(),magnitude=Math.max(1,...bb.min.map(Math.abs),...bb.max.map(Math.abs)),exportPrecision=.00001+2**(Math.floor(Math.log2(magnitude))-23);
+ const normalizationBudget=Math.max(.001,before.surfaceArea()*exportPrecision);
+ const initialSliverVolume=removedSliverVolume;
+ let roundingChange=0,clean=false,cleanError;
+ for(const tolerance of [null,0,.00001,exportPrecision,exportPrecision*4]){
+  try{
+  if(tolerance!==null){
+   removedSliverVolume=initialSliverVolume;
+   const cleanData=meshData(tolerance?keep(before.simplify(tolerance)):before);
+   const cleanMesh=new module.Mesh({numProp:3,vertProperties:cleanData.vertices,triVerts:cleanData.triangles});cleanMesh.merge();result=withoutDust(keep(new M(cleanMesh)));
+  }
+  if(result.status()!=='NoError')continue;
+  checkMesh(meshData(result));clean=true;break;}catch(error){cleanError=error.message;}
+ }
+ if(!clean)throw Error('Socket replacement could not produce a closed export mesh: '+(cleanError||result.status()));
+ if(result!==before)roundingChange=keep(before.subtract(result)).volume()+keep(result.subtract(before)).volume();
+ if(roundingChange>normalizationBudget)throw Error('Socket export normalization exceeds float32 surface precision.');
+ if(result.status()!=='NoError'||result.volume()<=0)throw Error('Socket replacement did not produce a valid solid.');
+ const parts=materialBodies(module,result);parts.forEach(keep);if(parts.length!==1)throw Error('Socket replacement would disconnect the part. Increase the floor depth or choose a solid floor.');
+ const geometry=meshData(result);checkMesh(geometry);
+ const added=keep(result.subtract(original)),removed=keep(original.subtract(result)),allowed=keep(M.union([...fills,...cuts]));
+ const outsideChange=keep(added.subtract(allowed)).volume()+keep(removed.subtract(allowed)).volume();
+ if(outsideChange>Math.max(.001,original.volume()*1e-8))throw Error('Socket preservation check failed outside the selected cells: '+outsideChange+' mm3.');
+ return {geometry,added:meshData(added),removed:meshData(removed),report:{...p,height:plan.depth,socketFloor:plan.floor,screwDepth:['screws','both','weighted'].includes(p.style)?plan.depth-5:0,originalVolume:original.volume(),convertedVolume:result.volume(),addedVolume:added.volume(),removedVolume:removed.volume(),outsideChange,removedSliverVolume,normalizationChange:roundingChange,normalizationBudget,closedMesh:true,connectedSolids:1}};
+});}
 export function restoreCoordinates(geometry, detection) {
   const v = new Float32Array(geometry.vertices.length),
     r = detection.rotation,

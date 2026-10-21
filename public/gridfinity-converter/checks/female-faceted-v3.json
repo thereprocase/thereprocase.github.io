@@ -1,0 +1,162 @@
+[
+  {
+    "bottom": "closed",
+    "style": "frame",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "closed",
+    "style": "plain",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "closed",
+    "style": "magnets",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "closed",
+    "style": "screws",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "closed",
+    "style": "both",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "closed",
+    "style": "weighted",
+    "volume": 20989.83303895254,
+    "expected": 20989.83335579931,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "frame",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "plain",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "magnets",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "screws",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "both",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "bottom": "open",
+    "style": "weighted",
+    "volume": 15926.308727368048,
+    "expected": 15926.309043292007,
+    "outsideChange": 0
+  },
+  {
+    "path": "/tmp/new-base-exports/plain.step",
+    "bodyNames": [
+      "Body_PRINT",
+      "Reinforcement_100pct_3p5mm_1",
+      "Reinforcement_100pct_3p5mm_2",
+      "Reinforcement_100pct_3p5mm_3",
+      "Reinforcement_100pct_3p5mm_4"
+    ],
+    "cells": 2,
+    "elapsedMS": 58710.476883999996,
+    "conversions": [
+      {
+        "style": "frame",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "plain",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "magnets",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "screws",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "both",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "weighted",
+        "outsideChange": 8.399336121167437e-7
+      }
+    ]
+  },
+  {
+    "path": "/tmp/new-base-exports/both.step",
+    "bodyNames": [
+      "Body_PRINT",
+      "Reinforcement_100pct_3p5mm_1",
+      "Reinforcement_100pct_3p5mm_2",
+      "Reinforcement_100pct_3p5mm_3",
+      "Reinforcement_100pct_3p5mm_4"
+    ],
+    "cells": 2,
+    "elapsedMS": 70409.76156599999,
+    "conversions": [
+      {
+        "style": "frame",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "plain",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "magnets",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "screws",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "both",
+        "outsideChange": -1.6198544242063129e-13
+      },
+      {
+        "style": "weighted",
+        "outsideChange": 8.399336121167437e-7
+      }
+    ]
+  }
+]

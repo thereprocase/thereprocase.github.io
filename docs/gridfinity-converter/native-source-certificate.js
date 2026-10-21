@@ -1,8 +1,8 @@
 // PRIVATE worker-result protocol: callers must obtain certificates only from the
 // independent validator result, never imported metadata, report fields, or files.
 // SHA binds bytes; it does not authenticate user-supplied metadata.
-import { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=native-step-20261021-5';
-export { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=native-step-20261021-5';
+import { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=female-bases-20261021-3';
+export { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=female-bases-20261021-3';
 const SCHEMA = 2;
 const hex = bytes => Array.from(new Uint8Array(bytes), x=>x.toString(16).padStart(2,'0')).join('');
 const identity = pose => Array.isArray(pose?.rotation) && pose.rotation.length===9 && pose.rotation.every((x,i)=>x===[1,0,0,0,1,0,0,0,1][i]) && Array.isArray(pose?.translation) && pose.translation.length===3 && pose.translation.every(x=>x===0);

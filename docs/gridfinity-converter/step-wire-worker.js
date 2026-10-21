@@ -1,4 +1,4 @@
-import { fastStepWire } from './step-wire.js?v=native-step-20261021-5';
+import { fastStepWire } from './step-wire.js?v=female-bases-20261021-3';
 self.onmessage = ({ data }) => {
   try {
     const result = fastStepWire(data.buffer);

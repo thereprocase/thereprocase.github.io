@@ -1,21 +1,23 @@
-import {beginNativeAsyncPrimary,isNativeKernelPoison,quarantineNativeOwnership} from './native-async-primary.js?v=native-step-20261021-5';
-import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-5';
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-5';
-import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-5';
-import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-5';
-import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-5';
-import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-5';
-import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-5';
-import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-5';
-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-5';
-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-5';
-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-5';
-import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-5';
-import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-5';
-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-5';
+import {refineSocketPlacement} from './native-socket-placement.js?v=female-bases-20261021-3';
+import {prepareNativeSocketEdit} from './native-socket-edit.js?v=female-bases-20261021-3';
+import {beginNativeAsyncPrimary,isNativeKernelPoison,quarantineNativeOwnership} from './native-async-primary.js?v=female-bases-20261021-3';
+import { withStepRepairFallback } from './step-repair-fallback.js?v=female-bases-20261021-3';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=female-bases-20261021-3';
+import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=female-bases-20261021-3';
+import { readVerifierSTEP } from './step-verifier-reader.js?v=female-bases-20261021-3';
+import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=female-bases-20261021-3';
+import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=female-bases-20261021-3';
+import { castOwned, ownedSolids } from './native-owned-shape.js?v=female-bases-20261021-3';
+import { copyNativeArray } from './native-buffer.js?v=female-bases-20261021-3';
+import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=female-bases-20261021-3';
+import { prepareNativeLocalEdit } from './native-local-edit.js?v=female-bases-20261021-3';
+import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=female-bases-20261021-3';
+import { preservedRepairGeometry } from './repair-signature.js?v=female-bases-20261021-3';
+import { proveNativePreservation } from './native-preservation.js?v=female-bases-20261021-3';
+import { equivalentBrepTokens } from './brep-equivalence.js?v=female-bases-20261021-3';
 /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
-import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-5';
-import * as cad from './vendor/replicad/replicad.js?v=native-step-20261021-5';
+import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=female-bases-20261021-3';
+import * as cad from './vendor/replicad/replicad.js?v=female-bases-20261021-3';
 let ready, OC, kernelPurpose;
 let displayFaceCache = null;
 const retainedDisplayCaches = new Set();
@@ -1024,6 +1026,8 @@ export async function convertNative({
     if (previousVolume !== undefined)
       volumeCache.set(source, previousVolume * Math.abs(scale ** 3));
   }
+  const socketPlacement=p.interfaceType==='female'?refineSocketPlacement(source,detection,p.bottom):null;
+  if(socketPlacement?.refined)detection=socketPlacement.detection;
   source = transform(oc, source, detection);
   // Result faces derive only from this source and native CAD tools. Those tools
   // carry no imported display data; any retained polygons came from our mesher.
@@ -1137,15 +1141,17 @@ export async function convertNative({
     }
     return clipped;
   };
-  const localEdit = await prepareNativeLocalEdit({
+  const female=p.interfaceType==='female';
+  const localEdit = female ? prepareNativeSocketEdit({cad,source,parameters:p,cut,fuse,intersect,union,volume,cylinder:nativeCylinder,own:ownConversionShape,checkCancelled}) : await prepareNativeLocalEdit({
     cad, source, feet, bottom, height, fit, roof, nativeFoot, checkCancelled,
     maximumHoleDepth, maximumHoleRadius: Math.max(magnetDiameter,screwDiameter)/2,
     cut, fuse, intersect, union, volume, clipSource, own: ownConversionShape, onProgress,
   });
+  if(female)p={...p,height:localEdit.effectiveDepth,socketFloor:localEdit.socketFloor,screwDepth:['screws','both','weighted'].includes(style)?localEdit.effectiveDepth-5:0};
   const holes = [], regions = [...localEdit.regions];
   const roofBody = localEdit.localPlain;
   let result;
-  if (p.fitScrewDepth && ['screws', 'both'].includes(style)) {
+  if (!female && p.fitScrewDepth && ['screws', 'both'].includes(style)) {
     const fits = (depth) =>
       feet.every((f) =>
         [-13, 13].every((dx) =>
@@ -1181,7 +1187,7 @@ export async function convertNative({
     }
     p = { ...p, screwDepth };
   }
-  for (const f of feet)
+  for (const f of (female?[]:feet))
     for (const dx of [-13, 13])
       for (const dy of [-13, 13]) {
         const dims = [];
@@ -1200,7 +1206,7 @@ export async function convertNative({
         }
       }
   let roofIndex = 0;
-  for (const f of feet)
+  for (const f of (female?[]:feet))
     for (const dx of [-13, 13])
       for (const dy of [-13, 13]) {
         const dims = [];
@@ -1411,7 +1417,8 @@ export async function convertNative({
       addedVolume: volume(added),
       removedVolume: volume(removed),
       outsideChange,
-      nativeEditMethod: 'local-hardware-algebra',
+      nativeEditMethod: p.interfaceType==='female'?'bounded-socket-replacement':'local-hardware-algebra',
+      socketPlacement:socketPlacement?{refined:socketPlacement.refined,normalAdjustment:socketPlacement.normalAdjustment,rimOffsetMM:socketPlacement.rimOffsetMM}:undefined,
       nativeLifetime: lifetime,
       constructionRelease,
       reusedLocalSource,

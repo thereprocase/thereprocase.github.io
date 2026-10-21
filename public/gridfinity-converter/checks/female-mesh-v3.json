@@ -1,0 +1,1370 @@
+[
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "frame",
+    "report": {
+      "interfaceType": "female",
+      "style": "frame",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 15919.831649616552,
+      "addedVolume": 0.001077823423521563,
+      "removedVolume": 5070.00204329325,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0009106218858405566,
+      "normalizationBudget": 0.17519874652136838,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "plain",
+    "report": {
+      "interfaceType": "female",
+      "style": "plain",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 20989.830843761756,
+      "addedVolume": 0.001077823423521563,
+      "removedVolume": 0.002849210262636677,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0013445437652027572,
+      "normalizationBudget": 0.2833125673221496,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "magnets",
+    "report": {
+      "interfaceType": "female",
+      "style": "magnets",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 33816.21132054007,
+      "addedVolume": 13462.473487380348,
+      "removedVolume": 636.0947819894166,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.3126990070129857,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "screws",
+    "report": {
+      "interfaceType": "female",
+      "style": "screws",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 1.2000000000000002,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 20854.331998394646,
+      "addedVolume": 0.001077823423521563,
+      "removedVolume": 135.50169457737042,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0013639471562111548,
+      "normalizationBudget": 0.28269161855316405,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "both",
+    "report": {
+      "interfaceType": "female",
+      "style": "both",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 3.1999999999999993,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 33725.87872401235,
+      "addedVolume": 13372.140890852628,
+      "removedVolume": 636.0947819894166,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31124510993845506,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": false,
+    "style": "weighted",
+    "report": {
+      "interfaceType": "female",
+      "style": "weighted",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 11.4,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 6.4,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 6.4,
+      "originalVolume": 20989.832612783015,
+      "convertedVolume": 46219.882107508405,
+      "addedVolume": 25866.144274348684,
+      "removedVolume": 636.0947819894166,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.3763418676929892,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "frame",
+    "report": {
+      "interfaceType": "female",
+      "style": "frame",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 15920.010671786955,
+      "addedVolume": 0.20075338540042476,
+      "removedVolume": 5070.0249750084395,
+      "outsideChange": 8.15884253742978e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.17519978293423974,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "plain",
+    "report": {
+      "interfaceType": "female",
+      "style": "plain",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 20990.276805708305,
+      "addedVolume": 0.46627525638618494,
+      "removedVolume": 0.024357104329381242,
+      "outsideChange": 8.15884253742978e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.28331315123543793,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "magnets",
+    "report": {
+      "interfaceType": "female",
+      "style": "magnets",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 33816.21190174051,
+      "addedVolume": 13462.49347812699,
+      "removedVolume": 636.1164648549235,
+      "outsideChange": 8.15884253743233e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31269900643588183,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "screws",
+    "report": {
+      "interfaceType": "female",
+      "style": "screws",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 1.2000000000000002,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 20854.770798322596,
+      "addedVolume": 0.45917833053444995,
+      "removedVolume": 135.52326772138994,
+      "outsideChange": 8.158842682055361e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.2826923336355626,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "both",
+    "report": {
+      "interfaceType": "female",
+      "style": "both",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 3.1999999999999993,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 33725.879305212795,
+      "addedVolume": 13372.160881712363,
+      "removedVolume": 636.1164648590135,
+      "outsideChange": 8.15884253743233e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31124510936135114,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "closed",
+    "rotated": true,
+    "style": "weighted",
+    "report": {
+      "interfaceType": "female",
+      "style": "weighted",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.999939028173685,
+          "y": -20.999997700564563,
+          "sourceX": -20.999940160661936,
+          "sourceY": -20.999998830258846
+        },
+        {
+          "x": 21.000060971826315,
+          "y": -20.999997700564563,
+          "sourceX": 21.000062104314566,
+          "sourceY": -20.999998833984137
+        },
+        {
+          "x": -20.999939028173685,
+          "y": 21.000002299435437,
+          "sourceX": -20.999940160661936,
+          "sourceY": 21.000003430992365
+        },
+        {
+          "x": 21.000060971826315,
+          "y": 21.000002299435437,
+          "sourceX": 21.000062104314566,
+          "sourceY": 21.000003430992365
+        }
+      ],
+      "bottom": 0,
+      "height": 11.4,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 6.4,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 6.4,
+      "originalVolume": 20989.834981628883,
+      "convertedVolume": 46219.88268870885,
+      "addedVolume": 25866.164265095325,
+      "removedVolume": 636.1164648549235,
+      "outsideChange": 8.158842537434423e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.3763418671158853,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "frame",
+    "report": {
+      "interfaceType": "female",
+      "style": "frame",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 15919.831649616552,
+      "addedVolume": 0.0011693761729901324,
+      "removedVolume": 6.478779539553571,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0009106218858405566,
+      "normalizationBudget": 0.17519874652136838,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "plain",
+    "report": {
+      "interfaceType": "female",
+      "style": "plain",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 20989.830843761756,
+      "addedVolume": 5063.524383538872,
+      "removedVolume": 0.002849210262636677,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0013445437652027572,
+      "normalizationBudget": 0.2833125673221496,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "magnets",
+    "report": {
+      "interfaceType": "female",
+      "style": "magnets",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 33816.21132054007,
+      "addedVolume": 17889.904808819232,
+      "removedVolume": 0.0028492109559765653,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.3126990070129857,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "screws",
+    "report": {
+      "interfaceType": "female",
+      "style": "screws",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 1.2000000000000002,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 20854.331998394646,
+      "addedVolume": 4928.025538171764,
+      "removedVolume": 0.0028492102626366837,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0.0013639471562111548,
+      "normalizationBudget": 0.28269161855316405,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "both",
+    "report": {
+      "interfaceType": "female",
+      "style": "both",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 3.1999999999999993,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 33725.87872401235,
+      "addedVolume": 17799.57221229151,
+      "removedVolume": 0.0028492109559765653,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31124510993845506,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": false,
+    "style": "weighted",
+    "report": {
+      "interfaceType": "female",
+      "style": "weighted",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -21.000001072883606,
+          "y": -20.999998927116394,
+          "sourceX": -21.00000023841858,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": 20.999998927116394,
+          "y": -20.999998927116394,
+          "sourceX": 20.999998092651367,
+          "sourceY": -20.999998092651367
+        },
+        {
+          "x": -21.000001072883606,
+          "y": 21.000001072883606,
+          "sourceX": -21.00000023841858,
+          "sourceY": 21.00000023841858
+        },
+        {
+          "x": 20.999998927116394,
+          "y": 21.000001072883606,
+          "sourceX": 20.999998092651367,
+          "sourceY": 21.00000023841858
+        }
+      ],
+      "bottom": 0,
+      "height": 11.4,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 6.4,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 6.4,
+      "originalVolume": 15926.309307067568,
+      "convertedVolume": 46219.882107508405,
+      "addedVolume": 30293.575595787566,
+      "removedVolume": 0.0028492109559751047,
+      "outsideChange": 0,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.3763418676929892,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "frame",
+    "report": {
+      "interfaceType": "female",
+      "style": "frame",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 15919.963616395915,
+      "addedVolume": 0.1553239982726981,
+      "removedVolume": 6.501684563453125,
+      "outsideChange": 0.00007586115588846531,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.17519951259056565,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "plain",
+    "report": {
+      "interfaceType": "female",
+      "style": "plain",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 20989.963925910994,
+      "addedVolume": 5063.672367297164,
+      "removedVolume": 0.018414121004258436,
+      "outsideChange": -4.8816250253419e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.28331332850346236,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "magnets",
+    "report": {
+      "interfaceType": "female",
+      "style": "magnets",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 0,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 33816.21125260943,
+      "addedVolume": 17889.91975031291,
+      "removedVolume": 0.018414608472944814,
+      "outsideChange": 9.798334897651727e-9,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31269900682388857,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "screws",
+    "report": {
+      "interfaceType": "female",
+      "style": "screws",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 6.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 1.2000000000000002,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 1.2,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 20854.46503111941,
+      "addedVolume": 4928.1734725055785,
+      "removedVolume": 0.018414121004257683,
+      "outsideChange": -4.88165787741493e-11,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.28269237973447675,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "both",
+    "report": {
+      "interfaceType": "female",
+      "style": "both",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 8.2,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 3.1999999999999993,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 3.2,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 33725.8786560817,
+      "addedVolume": 17799.58715378519,
+      "removedVolume": 0.018414608472942927,
+      "outsideChange": 9.798334897651727e-9,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.31124510974935793,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  },
+  {
+    "bottom": "open",
+    "rotated": true,
+    "style": "weighted",
+    "report": {
+      "interfaceType": "female",
+      "style": "weighted",
+      "pitch": 42,
+      "feet": [
+        {
+          "x": -20.99999895412475,
+          "y": -20.99995376355946,
+          "sourceX": -21.000000085681677,
+          "sourceY": -20.999954897910357
+        },
+        {
+          "x": 21.00000104587525,
+          "y": -20.99995376355946,
+          "sourceX": 21.000002179294825,
+          "sourceY": -20.999954894185066
+        },
+        {
+          "x": -20.99999895412475,
+          "y": 21.00004623644054,
+          "sourceX": -21.000000085681677,
+          "sourceY": 21.000047367066145
+        },
+        {
+          "x": 21.00000104587525,
+          "y": 21.00004623644054,
+          "sourceX": 21.000002175569534,
+          "sourceY": 21.000047370791435
+        }
+      ],
+      "bottom": 0,
+      "height": 11.4,
+      "fit": 0,
+      "magnetDiameter": 6.5,
+      "magnetDepth": 2.4,
+      "screwDiameter": 3,
+      "screwDepth": 6.4,
+      "requestedScrewDepth": 6,
+      "fitScrewDepth": false,
+      "minimumRoof": 0.8,
+      "socketFloor": 6.4,
+      "originalVolume": 15926.309987746961,
+      "convertedVolume": 46219.88204007026,
+      "addedVolume": 30293.590543349943,
+      "removedVolume": 0.01841658324782266,
+      "outsideChange": 0.000008063085277200102,
+      "removedSliverVolume": 0,
+      "normalizationChange": 0,
+      "normalizationBudget": 0.37634186750389204,
+      "closedMesh": true,
+      "connectedSolids": 1
+    }
+  }
+]
