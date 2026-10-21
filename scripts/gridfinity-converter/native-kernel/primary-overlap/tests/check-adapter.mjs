@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';
+import {beginNativeAsyncPrimary,isNativeKernelPoison} from '/tmp/primary-async-site/gridfinity-converter/native-async-primary.js';
+function fake({fail=false,broken=false,polls=2}={}){let deleted=0,joined=false,remaining=polls;const oc={NativeAsyncExactJob:class{tryJoinFinished(){if(broken)throw Error('invalid pthread status');if(remaining-->0)return false;return joined=true;}passed(){return !fail;}error(){return fail?'invalid CAD':'';}elapsedMS(){return 5;}delete(){assert(joined);deleted++;}}};return {oc,get deleted(){return deleted;}};}
+for(const fail of [false,true]){const t=fake({fail}),h=beginNativeAsyncPrimary(t.oc,{wrapped:{}});const r=await h.complete();assert.equal(r.passed,!fail);assert.equal(r.poolBudgetRestored,true);assert.equal(h.retired,true);assert.equal(t.deleted,1);assert.equal(await h.drain(),r);assert.equal(t.deleted,1);}
+{const t=fake(),h=beginNativeAsyncPrimary(t.oc,{wrapped:{}}),cancel=new DOMException('cancel','AbortError');await assert.rejects(h.complete(()=>{throw cancel;}),e=>e===cancel);assert.equal(t.deleted,0);await h.drain();assert.equal(t.deleted,1);}
+{const t=fake({broken:true}),h=beginNativeAsyncPrimary(t.oc,{wrapped:{}});assert.throws(()=>h.poll(),isNativeKernelPoison);assert.equal(t.deleted,0);assert.throws(()=>h.poll(),isNativeKernelPoison);}
+{const t=fake(),h=beginNativeAsyncPrimary(t.oc,{wrapped:{}});const trap=new WebAssembly.RuntimeError('main trap');assert.equal(h.poison(trap),trap);assert.throws(()=>h.poll(),isNativeKernelPoison);assert.equal(t.deleted,0);}
+console.log(JSON.stringify({normalRetirement:true,failedCheckerRetires:true,cancelDrainsBeforeDelete:true,pthreadFailurePoisons:true,mainTrapQuarantines:true,noUnfinishedDeletion:true}));

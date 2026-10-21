@@ -1,4 +1,4 @@
-import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-4';
+import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-5';
 /** Exact boundary comparison outside a convex box; meshes never participate. */
 export function nativeFaces(oc, cad, shape) {
   const explorer = new oc.TopExp_Explorer(shape.wrapped,
@@ -27,11 +27,11 @@ function bucketsFor(faces) {
   return buckets;
 }
 /** Caller supplies a convex editBox and exact-valid bounded regular solids. Unsupported cases fall back. */
-export function proveNativePreservation({ oc, cad, source, result, editBox, cut, validatedSolids = false, sourceSignedVolume, resultSignedVolume }) {
+export function proveNativePreservation({ oc, cad, source, result, editBox, cut, validatedSolids = false, pendingResultValidation = false, sourceSignedVolume, resultSignedVolume }) {
   const owned = [];
   const keep = (shape) => { owned.push(shape); return shape; };
   try {
-    if (!validatedSolids || !Number.isFinite(sourceSignedVolume) ||
+    if ((!validatedSolids && !pendingResultValidation) || !Number.isFinite(sourceSignedVolume) ||
         !Number.isFinite(resultSignedVolume) || !(sourceSignedVolume > 0) || !(resultSignedVolume > 0))
       return { proved: false, reason: 'Requires exact-valid finite positive solids' };
     const original = nativeFaces(oc, cad, source), converted = nativeFaces(oc, cad, result);
@@ -59,13 +59,12 @@ export function proveNativePreservation({ oc, cad, source, result, editBox, cut,
     // of this convex box is connected, so their material agrees outside it.
     // Reject even tiny residual faces; area tolerances cannot hide thin edits.
     const proved = original.length > removed.length && residualFaces.every((faces) => faces.length === 0);
-    return { proved, method: 'convex-region-boundary-difference',
+    return { proved: proved && validatedSolids, provisional: proved && pendingResultValidation, method: 'convex-region-boundary-difference',
       unchangedFaces: original.length - removed.length,
       changedOriginalFaces: removed.length, changedResultFaces: added.length,
       missingAreaMM2: missingArea, addedAreaMM2: addedArea };
   } catch (error) {
-    // A native trap can invalidate the kernel; never continue with fallback Booleans.
-    if (error instanceof WebAssembly.RuntimeError) throw error;
+    if(error instanceof WebAssembly.RuntimeError)throw error;
     return { proved: false, method: 'convex-region-boundary-difference', reason: error.message };
   } finally {
     for (let i = owned.length - 1; i >= 0; i--) owned[i].delete();

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { LIMITS } from './kernel.js?v=native-step-20261021-4';
+import { LIMITS } from './kernel.js?v=native-step-20261021-5';
 import {
   unzipSync,
   strFromU8,
@@ -372,8 +372,8 @@ export async function importFile(
       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
     const worker = ['iges', 'igs'].includes(ext)
-      ? new Worker('./cad-worker.js?v=native-step-20261021-4')
-      : new Worker('./native-preview-worker.js?v=native-step-20261021-4', {
+      ? new Worker('./cad-worker.js?v=native-step-20261021-5')
+      : new Worker('./native-preview-worker.js?v=native-step-20261021-5', {
           type: 'module',
         });
     onCADWorker?.(worker);
@@ -389,7 +389,7 @@ export async function importFile(
     };
     if (format === 'step' && onEarlyPreview && !signal?.aborted) {
       try {
-        earlyWorker = new Worker('./step-wire-worker.js?v=native-step-20261021-4', {
+        earlyWorker = new Worker('./step-wire-worker.js?v=native-step-20261021-5', {
           type: 'module',
         });
         earlyWorker.onmessage = ({ data }) => {

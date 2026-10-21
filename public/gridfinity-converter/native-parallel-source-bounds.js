@@ -1,5 +1,5 @@
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-4';
-import { properRigidPose } from './native-source-certificate.js?v=native-step-20261021-4';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-5';
+import { properRigidPose } from './native-source-certificate.js?v=native-step-20261021-5';
 export async function boundsInputIdentity(buffer,pose){
  if(!(buffer instanceof ArrayBuffer)||!properRigidPose(pose))throw Error('Invalid bounds request.');
  const digest=await crypto.subtle.digest('SHA-256',buffer);
@@ -18,7 +18,7 @@ export function startParallelSourceBounds({buffer,transform:pose},onProgress,{wo
  const markStarted=value=>{if(startSettled)return;startSettled=true;clearTimeout(startTimer);resolveStarted(value);};
  const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);clearTimeout(startTimer);child?.terminate();markStarted(value);resolve(value);};
  try{
-  child=preparedWorker ?? new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-4',import.meta.url),{type:'module'});
+  child=preparedWorker ?? new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-5',import.meta.url),{type:'module'});
   child.onmessage=({data})=>{
    if(settled)return;
    const payload=data&&typeof data==='object'?data:{error:'Malformed bounds worker response'};
@@ -40,7 +40,7 @@ export function startParallelSourceBounds({buffer,transform:pose},onProgress,{wo
 }
 
 /** One module-only child. Ownership transfers once, or disposal terminates it. */
-export function createSourceBoundsModuleWarmup({createWorker=()=>new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-4',import.meta.url),{type:'module'}),timeoutMS=30000}={}) {
+export function createSourceBoundsModuleWarmup({createWorker=()=>new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-5',import.meta.url),{type:'module'}),timeoutMS=30000}={}) {
  let child, timer, closed=false, ready=false, settle;
  const result=new Promise(resolve=>settle=resolve);
  const dispose=()=>{if(closed)return;closed=true;clearTimeout(timer);child?.terminate();child=null;settle(false);};

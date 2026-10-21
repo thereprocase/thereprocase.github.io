@@ -62,11 +62,13 @@
     "checks/native-consistency-independent.json",
     "checks/native-preview.json",
     "checks/loading-progress.json",
-    "checks/windows-native-step-3.json"
+    "checks/windows-native-step-3.json",
+    "checks/primary-overlap-native-step-5.json",
+    "checks/windows-native-step-5.json"
   ],
   "sha256": {
-    "README.md": "15d91553749316528bda720cc499faa488d8454ffb8e487f0d606419867514f2",
-    "app.js": "1f3c61aa574f334ce9df478ea36161f82ede9a035566a0f45b7522790ac079c9",
+    "README.md": "2d3f0c97470f3670b39554b2124adcaf48bedf6f7b7d111bc21805a89c80978a",
+    "app.js": "ad2c6de4faa0717e4f5b0a69ece99224138a1b8fcc2bb0da311c669bdec52803",
     "brep-equivalence.js": "9e2b5f15702a88c61497a678f6eda9cc9871e8fbd0da535516806f77e094adfc",
     "cad-worker.js": "4b31e7315c586aa283f887b8c5eea39ede4651cb7ef3783e73a1232c0d0b7ca6",
     "checks/browser.json": "7527e309ad248553e490ce58d7399905a965c2fef757046ba3787194f09b3e17",
@@ -82,47 +84,50 @@
     "checks/native-consistency-independent.json": "93e39420d47b41689949a260a6398a4d59facd34198ceadb7d6ddea2be072ec7",
     "checks/native-coordinate-models.json": "c6a5a5feb6aea707e3fb17938e4dede1f4022b889e52f2f1aaf5cb0038bf50e1",
     "checks/native-preview.json": "9f796fb4596731b2ecd8ea1ae7a98367a73199982a218ae6b07499d1d6f267ea",
+    "checks/primary-overlap-native-step-5.json": "1fa1d8e6df6d69478d998ea9b2457f5a06b8416e413359f6830f3372fbcdda1f",
     "checks/recovery-native-step-4.json": "a7039b2c728350dc6e5366ef82b26cdabb8450677567e6cf4c56cc66b63510ea",
     "checks/ux-browser-short.json": "54e6b0e871917b8e4f65055fda3c4828895ce749d2f4a4a5f6748e0817afbdcc",
     "checks/ux-browser.json": "4e9ca6db0658a05bc31007a801d51dd2af785a45bc1ded5e5da5ee49458cfaa6",
     "checks/windows-native-step-3.json": "36c47cae5005f705387db6c20f5bea8f4adbcb0d7b16f6c830520882edaaba3b",
-    "demo.js": "c269570dc756dcb7df47843ceac6403917938f3d99843a64f780690393a5f143",
-    "illustration-view.js": "9664b2a6c5c8dfc7bdb1afd13a5ef31b829294fe77a27617518415d1c68c2c90",
-    "importers.js": "8356cdb508b1312bacd828da0ef1f55a72a1ae9db34e2b45f43ea53031244c92",
-    "index.html": "05ac80f9c709af2fec0f3b460add0107c620a298f0ddcd3a358a00d500e61c3d",
-    "isolation-bootstrap.js": "ea78f7635792f76fa60091ca622019b8a843d50d61f9f8425944541827155f41",
+    "checks/windows-native-step-5.json": "1d2f69a60462b1cb81b78c5b9ed02a48321f58bddf8acc610e0a91813a4ea6ce",
+    "demo.js": "64dcc86d38cb8d75bf59d02252bade64158ca04246ae7b9304eea5e91ce78d68",
+    "illustration-view.js": "3571f9818ebb18727d0b3014313ac192f7f5b034a7c218939cbd2b3fdd01b631",
+    "importers.js": "3f71e90e33e9b8a6ad12c0dd61f95d3dc9fede4bde766b7d1469046c4e1d58e8",
+    "index.html": "cd11678985a2b4b2da2732a8f0db563ad33a013a5605a44b41364bd6d23404a1",
+    "isolation-bootstrap.js": "5f95f32098895bf98ab2d9c9de02574d3768354b57a51c629bcd98f4e3329e26",
     "isolation-service-worker.js": "536920e1932d302fdb9edc93db3e97a94b3dfa70e10702ed3fee679289f11b47",
     "kernel.js": "141297499beede4188ea65dcdb3bc0b66739b2493f225fbacc1efa86964ec02a",
+    "native-async-primary.js": "472f0b9805e218d3ef92ba2a5948621983cbeb19840afc7d68b5524ceabce39b",
     "native-bounds-build.js": "f41a75c7f5e63661066f713c970ee57091a2f030f727ee20be036a24a4a41963",
     "native-bounds-match.js": "2bab2055953b12629b706e972abf5184957919fc3b91e8a5ec1d3b9f658ef2d6",
-    "native-brep-worker.js": "fdcaf56ab6e0f1563a492c254009cf73286ddb046899f8c2208ad681a96339f2",
+    "native-brep-worker.js": "b69889f6fec79e4c0d1fb9790fca9cba69e7141cae813314b2e5e716fc6594fc",
     "native-buffer.js": "aa1e0d9290c0395c617809ab9cc742bf6dd32ea6d05ce7d79063fa7bdef0461e",
-    "native-cad.js": "60435103adc0cec92763622b4c38e9f386963d438b196816e0f2f8a305198116",
+    "native-cad.js": "55c96fd26f37eceb2621161451dbc13226b2828d8f161244ae7a46b9433eb54c",
     "native-cancellation.js": "0d658e754ddc1f6919175be5aff804da621a8da7ca7cd0a95d189d38054fd3bb",
     "native-contact.js": "0f3df01540ee6d59f38c8ec7c7a102e5ccb5de2f36b9f170c76d2a2b971cb327",
-    "native-display-check.js": "80f9d775f7555a177c1a9351c8fcff399210f20b147864cc1139af4f057ce53c",
-    "native-export-warm-pool.js": "0b40ee8ca6c4cf12d3409ae0a4499d0d0fdb83ac3429777eb63fb4033bc81f18",
-    "native-export-worker.js": "56e048a6bc468a51a4f3dec9731853cf55abb3e15966228df6c412fc34e43052",
-    "native-kernel.js": "a62efc44155cdad595c39e0222b47dc9c9361ccc0206f42a1d8166159598c963",
+    "native-display-check.js": "d05bdd13bacefceb9b856a1ddced4e7de1ab96911894a34056f6f097fe061ccf",
+    "native-export-warm-pool.js": "66e70eb4776f6b50631617ffda1b5a5d17d581ff5f3224ce78e6a2223d4dd048",
+    "native-export-worker.js": "8dff7cff8a6df80b985b48eb69f56fde237a417511aa6da8961feca817b33487",
+    "native-kernel.js": "c17203c2e4f6c61536fc90475ff71d141bfd8b97794864cbd19d9d495aec2a21",
     "native-local-edit.js": "cca899724610325c84526af5469171d72885cf8a7b10520f6a151cbe23d527e5",
     "native-mesh-cache.js": "37c438e448f673b89187c6f481847cec459d75e2172b998d099ba5d3250856a3",
-    "native-mesh-export.js": "af0dce68490dfafe4643296d5a899883b4b83c4a86858762d956587df45b13af",
+    "native-mesh-export.js": "dbfa74a53e22732bb1450778c6c0f9e2fdedb8becf1255c0ff163f09794394bc",
     "native-owned-shape.js": "0c994060728d3377a1f20748e8cac7e0b60c151bf21501d6c5bbb781abad4117",
-    "native-parallel-source-bounds.js": "664211603298c411bf6da2ed298399f5f06b0022cb829cdf90320b1c5ec24807",
-    "native-preservation.js": "9d88c286327dbbd20106314dcdb585024b7356132ebc52edfc87f7d194d47031",
-    "native-preview-worker.js": "0b2bb1f31c20e8b7c1721235f27d2220e88dac31a8bf90e5acfa985b8c902bab",
-    "native-source-bounds-worker.js": "38367d418540f843e7541ded595da6e8789188460ceec37ca0cb77a82d75c43d",
-    "native-source-certificate-build.js": "d50a039dfec4e459f111d61aeda862cbaf2ac56756e52966bcfc8d85c061bb14",
-    "native-source-certificate.js": "0ad18949ea015e1654ecc72afcfade9e1eb81c2fbd9d28651e1a56e5d509c58b",
-    "native-worker-run.js": "f66084140249d27f9e0b0df71a6a0d1c0a19e2f09677893bfe2abd497824e9b8",
-    "native-worker.js": "a9002f6ec845bd15da94bad7e0a4d476035fd593f5f125a9d101713b048a48a7",
-    "render-geometry-worker.js": "eee5472d6590c1e001d23d184a1cabcd40e089e53ff95ee3e96f4d604ca556f8",
+    "native-parallel-source-bounds.js": "4d96669521eaec4cc8cc8aa662d1478e708c1b231276b9489417d113468a9cdb",
+    "native-preservation.js": "2564ff51d6842d5e361c613d6e2c7cd504f1956fbbd637d17d760073df14d6bc",
+    "native-preview-worker.js": "0d05bf5387aa6dc848c2324cd4bcf643b1eb7e6eb821d33d26e85d8b7d9faaa4",
+    "native-source-bounds-worker.js": "cd7f50eda2fa9af771fc0c38cc6664c8d52b00ec421afbe58687747dc1edd6c9",
+    "native-source-certificate-build.js": "becae1498513a214d48bb1ba3013139b4c2193ffa792db2fcc7e8c88485b1533",
+    "native-source-certificate.js": "0dc1fb6362b2280e4fadabeda86922993f6f4c1ef4d4ef87aaea6eaa9887fdd9",
+    "native-worker-run.js": "0640745f3d2d19f3d9a4dccddd7c9c6099f6165d793a3103db887090aff216b3",
+    "native-worker.js": "8a7777d06fe73c8e8f351dea58cd049dbcd40efc4de3af6976ec645a9ad0d46d",
+    "render-geometry-worker.js": "76b821fa283c3fb40633ba8fc854f246c13a878d0414930ab657fbdf00b19a84",
     "render-geometry.js": "a9ef85950973fd8f287f8342a09e9a4ed65b818a2e26e52263f090bc3a88f55a",
     "repair-signature.js": "0d951c33b9a667de26ef728c2f8cdf4edd6cb4ebded10bbe95b519295ac84ad3",
     "step-repair-fallback.js": "c7483b577434d5ba47f870faedc8cf73b9a890e6d75580a0b2eb977912da0e30",
     "step-verifier-policy.js": "8db42bd4cae6c84a3f40be7a4852979b933ff4a2f6e7cf75cb5e5f647a2757c1",
     "step-verifier-reader.js": "e4a042eef20db9b889d241b653c5a9a557a07e35bea5db8c6abba6761fdc86fe",
-    "step-wire-worker.js": "18eb294800616c05da3aa827b31933b4024735f139d8598b2e779937b390bce3",
+    "step-wire-worker.js": "4d5b98a32ba212294098c0f032687d8e869c95a06fb6feb6cc649b200fcbddf6",
     "step-wire.js": "6d3610dd5b0160e11509a845443d66d07404587828002b555241404bffb05bb1",
     "style.css": "dc2a6c6a92c47bb9cff2bb588a3ce0e422caf22278548be37bba389c97c9808f",
     "vendor/dependencies.json": "c5870f3282426b7f1c73991e9f5984c49f3135397b0bcdedde6c73b0471e6a30",
@@ -151,6 +156,9 @@
     "vendor/replicad/model_exact_multi_pool4.js": "053e0528dcf4ee912e8f398a10a58a6e6209449bf1c3776648551c51098a6634",
     "vendor/replicad/model_exact_single.js": "68f05513e7060a3921ce7a36995ea5d686691046ee74b1b7478ace6946b1a279",
     "vendor/replicad/model_exact_single.wasm": "1569b1da4f75f7bcebddf8e18f1f32bd44388c8c00972cdb45923dc389f9078d",
+    "vendor/replicad/primary_async_multi.js": "9556b63b77923a8040526c9b21c5d9441e56b42c6e9ef69819389519e6e4f8ac",
+    "vendor/replicad/primary_async_multi.wasm": "6086f294aa3a8ceed97cb7d2036e9f63f44d2d55e81c411471936068ab177907",
+    "vendor/replicad/primary_async_multi_pool4.js": "66ccec72765daa8862822b981255c439a26ac85415bb2fe9991f9b691ac4f703",
     "vendor/replicad/replicad.js": "e882ed69101e23937e159f5c2c5362264de6922141602bb1fd25cf2a650fe651",
     "vendor/replicad/replicad_single.js": "018e57538fcb773f0124eae60aee4de693d3aae01c55b2b883a874911ab121c3",
     "vendor/replicad/replicad_single.wasm": "4c9f22e9f3828dca6f3c95405934cdbe624e593c35266f47f392ab337478dbde",
@@ -176,9 +184,9 @@
     "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
     "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
     "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
-    "worker.js": "d3e6ef3166740cf1ffa2000218963df8258005ccddee77aaa312edb7e871e8cb"
+    "worker.js": "996077f1292b04e1f3f484cc8a1a373eba653d5ec98c3011018304950c9edbbc"
   },
-  "release": "native-step-20261021-4",
+  "release": "native-step-20261021-5",
   "viewer": "Render skill recipe: three-band cel shading, welded-normal silhouettes, 30-degree feature edges; source geometry unchanged",
   "threadedKernel": {
     "basePackage": "replicad-opencascadejs@1.1.0",
@@ -197,7 +205,7 @@
     "validation": "Ownership, repeated source/copy cleanup, serial/threaded equivalence, actual browser cancellation with zero surviving descendants.",
     "primaryCheck": "Guarded topology-only snapshot preserves immutable exact curves and surfaces for primary strict validity; export deep snapshot and independent reopening unchanged. Unsupported/no-face/free-edge inputs use the existing path. Inclusive timing includes extra copy."
   },
-  "candidateStatus": "Recovery and display-cache update; correctness qualification in checks/recovery-native-step-4.json. Prior release3 Windows speed miss remains open; no release4 Windows performance claim.",
+  "candidateStatus": "Qualified on supplied pencil cup; Windows fresh/cold/repeated/cancellation matrix passed",
   "stepVerifier": {
     "purpose": "Independent verification of application-generated STEP only; never used as the general model importer.",
     "precision": "Preserved surface pcurves and intervals, source-derived writer tolerance ceiling, strict independent reopened validity, volume, bounds and per-kind tolerances.",
@@ -222,8 +230,8 @@
   },
   "nativeKernelArtifacts": {
     "modelThreaded": {
-      "path": "vendor/replicad/topology_copy_guarded_multi.wasm",
-      "sha256": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc"
+      "path": "vendor/replicad/primary_async_multi.wasm",
+      "sha256": "6086f294aa3a8ceed97cb7d2036e9f63f44d2d55e81c411471936068ab177907"
     },
     "modelSingle": {
       "path": "vendor/replicad/model_exact_single.wasm",
@@ -247,7 +255,7 @@
     "preparation": "Preserve an already strict-valid source with consistent SameParameter/SameRange flags; otherwise use preservation-guarded curve consistency repair.",
     "openIssue": "Supplied3x4 positive-fit variants at +0.05,+0.10,+0.20 pass conversion and BREP but STEP is rejected by unchanged tolerance ceilings. Default-fit allstyles and pencilcup both STEP poses pass."
   },
-  "build": "native-step-20261021-4",
+  "build": "native-step-20261021-5",
   "fitRangeMMPerSide": [
     -0.5,
     0.2
@@ -264,19 +272,210 @@
     "replicad": "Release temporary owning loft Shape handles and curve-to-edge builders/curves; seven matched operation outputs byte-identical in ownership audit. Original package integrity describes upstream source, not modified vendor bytes."
   },
   "windowsQualification": {
-    "candidate": "fast-export-20261021-025000",
+    "candidate": "primary-overlap-20261021-040500",
     "hardware": "AMD Ryzen 7 5800X3D, Windows 11, Edge 155",
     "completedConversions": 17,
+    "cancelledConversions": 1,
     "strictSTEPExports": 11,
-    "conversionAbove20s": 1,
-    "maxConversionUISeconds": 21.04,
-    "maxSTEPUISeconds": 19.733,
-    "coldSTEPUISeconds": 18.295,
-    "selectionToConvertedUISeconds": [
-      35.391,
-      40.568
+    "allPassed": true,
+    "threads": 4,
+    "freshConvertSeconds": [
+      17.36,
+      17.18,
+      17.22,
+      17.38,
+      17.43
     ],
-    "timingLimit": "Quiet-host outlier remains unexplained; repeated/cold/recovery checks passed; not a universal timing guarantee."
+    "repeatedConvertSeconds": [
+      17.32,
+      15.39,
+      16.02,
+      13.33,
+      15.78,
+      14.29,
+      14.84,
+      14.49,
+      15.0,
+      14.61
+    ],
+    "coldSTEPSeconds": 18.54,
+    "retrySeconds": 14.89,
+    "cancelLatencySeconds": 3.01,
+    "selectionToConvertedSeconds": [
+      34.927,
+      35.962
+    ],
+    "endpointNote": "Relay harness wall times; independently audited diagnostic UI endpoints are slightly earlier. Preview times come from relay harness only.",
+    "primaryConcurrentOutlierMS": 7000,
+    "cancelOrdering": {
+      "jobStartedRelativeMS": -25,
+      "jobRetiredRelativeMS": 2960,
+      "cleanAckRelativeMS": 2986,
+      "pendingValidationTasks": 0
+    },
+    "scope": "Seven quiet-host loads, 17 completed conversions and 11 STEP exports; measurements on this supplied part, not a universal latency guarantee. Complete selection-to-converted remains about 35 seconds.",
+    "memory": "Model linear-memory capacity 1866 MiB after cleanup throughout measured swaps. Limited current-thread allocation residue remains unresolved; no indefinite bounded-memory claim.",
+    "diagnosticSummary": [
+      {
+        "session": "a1a74a60-196f-45ab-943a-13f330b966d3",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "f42d3a13-4bb6-489a-898d-3aa0529db86c",
+        "preparedMS": 17438,
+        "convertMS": [
+          17353
+        ],
+        "STEPMS": [
+          15973
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 35023
+      },
+      {
+        "session": "4f160d49-c161-4429-bff3-b7620321842c",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "ad689fbc-ee8b-43ba-a2de-af8895a80de2",
+        "preparedMS": 18516,
+        "convertMS": [
+          17180
+        ],
+        "STEPMS": [
+          15997
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 35962
+      },
+      {
+        "session": "01c90786-9f13-4956-85c4-a614be7f5621",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "7fa4c3a3-71ff-4475-9c8c-b72309f5d853",
+        "preparedMS": 17456,
+        "convertMS": [
+          17214
+        ],
+        "STEPMS": [
+          16083
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 34927
+      },
+      {
+        "session": "8364224e-66d4-45de-bd56-7bb5d47f8dde",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "03be78f1-1c2d-4cad-8418-acc5317d78f5",
+        "preparedMS": 17352,
+        "convertMS": [
+          17326
+        ],
+        "STEPMS": [
+          16019
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 34946
+      },
+      {
+        "session": "b7946148-1233-41c7-84c1-56e3d60e8d08",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "9a529e00-4823-4e3e-bd76-9720ea3ce6d6",
+        "preparedMS": 17426,
+        "convertMS": [
+          17392
+        ],
+        "STEPMS": [
+          16283
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 35056
+      },
+      {
+        "session": "8d68e5ca-dc46-4012-a434-c3e14d4a458c",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "ac1ab805-98da-4113-bef1-03cbbedf7f33",
+        "preparedMS": 17643,
+        "convertMS": [
+          17599
+        ],
+        "STEPMS": [
+          18498,
+          15292
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 35489
+      },
+      {
+        "session": "87a2b888-a1f9-4ba0-bd6a-2d08699058ef",
+        "preparedMS": null,
+        "convertMS": [],
+        "STEPMS": [],
+        "errors": 0,
+        "selectionToFirstConvertedMS": null
+      },
+      {
+        "session": "65e2284b-ec8c-40e6-9e86-ab3fea112abb",
+        "preparedMS": 17618,
+        "convertMS": [
+          17315,
+          15373,
+          15983,
+          13319,
+          15748,
+          14251,
+          14827,
+          14451,
+          14994,
+          14569,
+          14882
+        ],
+        "STEPMS": [
+          16286,
+          15113,
+          16828,
+          15049
+        ],
+        "errors": 0,
+        "selectionToFirstConvertedMS": 35182
+      }
+    ],
+    "diagnosticChecks": {
+      "nativeValid": true,
+      "asyncAccepted": true,
+      "STEPValid": true
+    }
   },
   "nativePreparationRecovery": {
     "fatalKernel": "WebAssembly.RuntimeError terminates worker, invalidates native document, retains input/settings for fresh retry",
@@ -294,5 +493,13 @@
     "outsideChangeMM3": 0,
     "nativeAndSTEPStrictValid": true,
     "WindowsPerformanceClaim": false
+  },
+  "asyncPrimaryValidation": {
+    "snapshot": "existing independent deep candidate snapshot",
+    "concurrency": "two participants each; four total; four-thread kernel only",
+    "retirement": "nonblocking pthread_tryjoin_np before restoring four-thread pool",
+    "acceptance": "strict primary pass plus independent BREP and preservation; provisional proof cannot publish",
+    "tests": "Local full-cup/lifecycle tests and Windows 17 conversions / 11 STEP exports passed",
+    "timing": "native background elapsed is separate from conversion wall time"
   }
 }

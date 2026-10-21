@@ -1,0 +1,22 @@
+{
+  "fingerprint": "native-certificate-kernel-set-sha256:23ec93d47682045adf27ac98cee6614e7bbd06d98dc531b532e1824cb76a9fbf",
+  "protocol": "strict-brep-source-certificate-v2",
+  "artifacts": {
+    "issuer-single": {
+      "filename": "vendor/replicad/model_exact_single.wasm",
+      "sha256": "1569b1da4f75f7bcebddf8e18f1f32bd44388c8c00972cdb45923dc389f9078d"
+    },
+    "issuer-threaded": {
+      "filename": "vendor/replicad/primary_async_multi.wasm",
+      "sha256": "6086f294aa3a8ceed97cb7d2036e9f63f44d2d55e81c411471936068ab177907"
+    },
+    "verifier-single": {
+      "filename": "vendor/export-verifier/analytic_writer17_single_verifier.wasm",
+      "sha256": "febfd8038cb03abddcfe457d48c1112c45d2dc152f9567067f884d9b028bf667"
+    },
+    "verifier-threaded": {
+      "filename": "vendor/export-verifier/writer17_torus_verifier.wasm",
+      "sha256": "79477510c543664107816a9eea318c08e678251a1601d6b9f26a73550e317200"
+    }
+  }
+}

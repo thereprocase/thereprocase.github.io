@@ -1,6 +1,6 @@
-import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-4';
+import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-5';
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-4';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-5';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -9,8 +9,8 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-step-20261021-4';
-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-4';
+} from './kernel.js?v=native-step-20261021-5';
+import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-5';
 const nativeExportWarmPool = createNativeExportWarmPool();
 addEventListener('pagehide', () => {
   if (cancelNativeExport()) {
@@ -462,7 +462,7 @@ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {})
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-step-20261021-4', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-step-20261021-5', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -955,7 +955,7 @@ function nativeConversion(options) {
       typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-4', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-5', {
       type: 'module',
     });
     nativeWorker = w;
@@ -1331,7 +1331,7 @@ function prepareNativeExport(data) {
       if (verifierExport) {
         lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
         w = lease.worker;
-      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-4', { type: 'module' });
+      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-5', { type: 'module' });
       if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
       exportWorker = w;
       w.onmessage = ({ data: reply }) => {

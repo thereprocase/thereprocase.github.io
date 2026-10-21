@@ -1,0 +1,48 @@
+{
+  "baseCommit": "edeb5ea048ac3ddcae2ee288a782b639dfcfb8bb",
+  "site": "/tmp/primary-async-site/gridfinity-converter",
+  "files": {
+    "native-cad.js": {
+      "bytes": 74650,
+      "sha256": "ac90c3581053cec0a10dadad65c6f6dbe83a3a9fe0e25dac90440910a11b9d3b"
+    },
+    "native-async-primary.js": {
+      "bytes": 2379,
+      "sha256": "472f0b9805e218d3ef92ba2a5948621983cbeb19840afc7d68b5524ceabce39b"
+    },
+    "native-preservation.js": {
+      "bytes": 4274,
+      "sha256": "8e0e0898eaf5f1b12a2c35763d7329708fcf3fc06e5b1cfe98f8643b5d974bbe"
+    },
+    "native-worker-run.js": {
+      "bytes": 8368,
+      "sha256": "4612615035ae25d56653917de923e0ca803635a9b5911f2e439a5df096cd14ed"
+    },
+    "native-kernel.js": {
+      "bytes": 2669,
+      "sha256": "c17203c2e4f6c61536fc90475ff71d141bfd8b97794864cbd19d9d495aec2a21"
+    },
+    "app.js": {
+      "bytes": 50340,
+      "sha256": "ff0fcff14bb82835923777d957787f1b5176716ddd05ba535cd57155dc985603"
+    },
+    "native-preview-worker.js": {
+      "bytes": 2425,
+      "sha256": "15b42643eb353ea6d7be7109c2257864da921c8bc55716fd2264b0750df36913"
+    },
+    "native-mesh-cache.js": {
+      "bytes": 7685,
+      "sha256": "37c438e448f673b89187c6f481847cec459d75e2172b998d099ba5d3250856a3"
+    },
+    "vendor/replicad/primary_async_multi.wasm": {
+      "bytes": 22515716,
+      "sha256": "6086f294aa3a8ceed97cb7d2036e9f63f44d2d55e81c411471936068ab177907"
+    },
+    "vendor/replicad/primary_async_multi.js": {
+      "bytes": 69184,
+      "sha256": "9556b63b77923a8040526c9b21c5d9441e56b42c6e9ef69819389519e6e4f8ac"
+    }
+  },
+  "qualification": "Small normal/cancel strict STEP passed. Full cup and Windows pending. Existing clean artifact reused; audit hook excluded.",
+  "primaryTiming": "elapsedMS is background checker native elapsed; startedAtMS/finishedAtMS span start through observed pthread retirement, not conversion wall time."
+}

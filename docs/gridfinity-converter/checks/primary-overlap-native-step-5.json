@@ -1,0 +1,55 @@
+{
+  "build": "native-step-20261021-5",
+  "candidate": "primary-overlap-20261021-040500",
+  "status": "Local correctness and Windows fresh/cold/repeated/cancellation qualification passed",
+  "fullCup": {
+    "passed": true,
+    "sourceSHA256": "c2b5f0c6051368c21945b47d5ce2dbc83b2dee7acdf1a5b5b2b6b5ad74af5af4",
+    "BREPSHA256": "000ac6da040b75ae623a64aa55a1d97fc2538eb9838ab6adf91f5d6c9e595a76",
+    "outsideChangeMM3": 0,
+    "originalVolumeMM3": 70403.43064425353,
+    "convertedVolumeMM3": 69129.20071101829,
+    "primaryValidation": {
+      "copyMethod": "existing-deep-snapshot-async",
+      "copyElapsedMS": 0,
+      "passed": true,
+      "pending": false,
+      "error": "",
+      "elapsedMS": 17259.014912,
+      "startedAtMS": 1792555819009,
+      "finishedAtMS": 1792555844218,
+      "retirement": "pthread-tryjoin",
+      "poolBudgetRestored": true
+    },
+    "retirementBeforePublicationAndSTEP": true,
+    "stepPoses": [
+      {
+        "pose": "base-down",
+        "strictValid": true,
+        "roundTripValid": true,
+        "bytes": 51338512
+      },
+      {
+        "pose": "original",
+        "strictValid": true,
+        "roundTripValid": true,
+        "bytes": 51231887
+      }
+    ],
+    "performanceClaim": false
+  },
+  "lifecycle": {
+    "normalStrictSTEP": true,
+    "cancelAfterJobStartRetiresBeforeCleanAck": true,
+    "ordinaryErrorDrainsBeforeReject": true,
+    "actualMainWasmTrapTerminatesWorker": true,
+    "actualBackgroundPthreadTrapTerminatesWorker": true,
+    "noPartialResultOrCleanAckAfterTrap": true,
+    "freshWorkerRetryStrictSTEP": true
+  },
+  "independentReview": "Deep-snapshot isolation, explicit pthread retirement, boundary pool restoration and final acceptance reviewed; no blockers found",
+  "auditBindingsShipped": false,
+  "WindowsTimingQualified": true,
+  "sourceBundle": "scripts/gridfinity-converter/native-kernel/primary-overlap",
+  "windowsEvidence": "windows-native-step-5.json"
+}

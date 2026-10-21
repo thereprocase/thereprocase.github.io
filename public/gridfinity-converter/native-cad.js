@@ -1,20 +1,21 @@
-import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-4';
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-4';
-import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-4';
-import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-4';
-import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-4';
-import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-4';
-import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-4';
-import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-4';
-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-4';
-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-4';
-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-4';
-import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-4';
-import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-4';
-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-4';
+import {beginNativeAsyncPrimary,isNativeKernelPoison,quarantineNativeOwnership} from './native-async-primary.js?v=native-step-20261021-5';
+import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-5';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-5';
+import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-5';
+import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-5';
+import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-5';
+import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-5';
+import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-5';
+import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-5';
+import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-5';
+import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-5';
+import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-5';
+import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-5';
+import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-5';
+import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-5';
 /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
-import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-4';
-import * as cad from './vendor/replicad/replicad.js?v=native-step-20261021-4';
+import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-5';
+import * as cad from './vendor/replicad/replicad.js?v=native-step-20261021-5';
 let ready, OC, kernelPurpose;
 let displayFaceCache = null;
 const retainedDisplayCaches = new Set();
@@ -924,6 +925,7 @@ export async function convertNative({
   deferOriginalPose = false,
   nativeExportPreference = 'auto',
   topologyCopyPrimary = false,
+  asyncPrimaryExact = false,
   validateBrepCandidate,
   checkCancelled = () => {},
   waitForCancellation = promise => promise,
@@ -948,7 +950,7 @@ export async function convertNative({
   };
   const lifetime = { before: memoryStats() };
   conversionShapes = ownedShapes;
-  let retainedRecord = null;
+  let retainedRecord = null, candidateSnapshot, primarySnapshot, primaryJob, terminalNativeFailure=false;
   try {
   let source, sourceCurveRepair, sourcePreparationMS;
   const resolvedPreparedId = preparedDocumentId || (documentId &&
@@ -1242,7 +1244,7 @@ export async function convertNative({
   });
   // The candidate is immutable; booleans below use non-destructive inputs.
   // Capture failures immediately because this worker's exact checks are synchronous.
-  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primarySnapshot, primaryStartedAtMS, primaryExactValidation;
+  let sourceCertificate, parallelBrep, parallelBrepReport, primaryStartedAtMS, primaryExactValidation;
   try {
     if (nativeExportPreference === 'brep' && validateBrepCandidate) {
       candidateSnapshot = nativeGeometryCopy(oc, result);
@@ -1255,6 +1257,14 @@ export async function convertNative({
       // Await its kernel-ready acknowledgement before entering synchronous checks.
       if (candidateTask?.ready) await waitForCancellation(candidateTask.ready);
     }
+    if(asyncPrimaryExact && candidateSnapshot && nativeKernelInfo(oc).threads===4 && oc.NativeAsyncExactJob) {
+      checkCancelled();
+      if(solidCount(result)!==1 || volume(result)<=0)throw Error('Native CAD result is not one valid solid. Export blocked.');
+      primaryJob=beginNativeAsyncPrimary(oc,candidateSnapshot,onProgress);
+      primaryStartedAtMS=primaryJob.startedInfo.startedAtMS;
+      onProgress('Native primary validation started.',primaryJob.startedInfo);
+      primaryExactValidation={copyMethod:'existing-deep-snapshot-async',copyElapsedMS:0,passed:false,pending:true};
+    } else {
     primaryStartedAtMS = Date.now();
     const exactStarted = performance.now(), capacityBefore = oc.wasmMemory.buffer.byteLength;
     let exactSucceeded = false, primaryCopyElapsedMS = 0, primaryCopyMethod = !generatedDisplayMesh ? 'original-result' : topologyCopyPrimary && !oc.nativeTopologyCopyWithoutMesh ? 'missing-helper-deep-fallback' : candidateSnapshot ? 'existing-deep-snapshot' : 'fresh-deep-copy';
@@ -1279,21 +1289,36 @@ export async function convertNative({
         wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore, wasmCapacityAfterBytes: oc.wasmMemory.buffer.byteLength };
       onProgress('Exact result geometry check finished.', { diagnostic: 'native-validation-complete', ...primaryExactValidation });
     }
-  } finally { try { primarySnapshot?.delete(); } finally { candidateSnapshot?.delete(); } }
+    }
+  } catch(error) {
+    if(isNativeKernelPoison(error)){terminalNativeFailure=true;primaryJob?.poison(error);quarantineNativeOwnership(candidateSnapshot,primarySnapshot,ownedShapes);}
+    throw error;
+  } finally {
+    if(!terminalNativeFailure&&!primaryJob){primarySnapshot?.delete();primarySnapshot=null;candidateSnapshot?.delete();candidateSnapshot=null;}
+  }
+  const pollPrimaryAtBoundary = () => {
+    const checked = primaryJob?.poll();
+    if (!checked) return;
+    primaryExactValidation = {...primaryExactValidation, ...checked, pending: false};
+    if (!checked.passed) throw Error(checked.error || 'Native CAD result is not one valid solid. Export blocked.');
+  };
   checkCancelled();
+  pollPrimaryAtBoundary();
   onProgress('Preparing the exact edit region…');
   // The shared convex box contains every allowed tool and every roof probe.
   const editBox = localEdit.editBox;
   checkCancelled();
+  pollPrimaryAtBoundary();
   onProgress('Checking preserved CAD boundary faces…');
   const preservationProof = proveNativePreservation({
-    oc, cad, source, result, editBox, cut, validatedSolids: true,
+    oc, cad, source, result, editBox, cut, validatedSolids: !primaryJob, pendingResultValidation:Boolean(primaryJob),
     sourceSignedVolume: signedVolumeCache.get(source),
     resultSignedVolume: signedVolumeCache.get(result),
   });
   let added, removed;
-  if (preservationProof.proved) {
+  if (preservationProof.proved || preservationProof.provisional) {
     checkCancelled();
+  pollPrimaryAtBoundary();
     onProgress('Measuring changes within the local CAD region…');
     const localSource = localEdit.localSource;
     const localResult = intersect(result, editBox);
@@ -1303,12 +1328,14 @@ export async function convertNative({
     } finally { localSource.delete(); localResult.delete(); }
   } else {
     checkCancelled();
+  pollPrimaryAtBoundary();
     onProgress('Checking preserved CAD geometry with full solid differences…');
     added = cut(result, source);
     removed = cut(source, result);
   }
   editBox.delete();
   checkCancelled();
+  pollPrimaryAtBoundary();
   onProgress('Checking material changes outside the allowed edit…');
   const outsideAdded = volume(cut(added, allowed));
   const outsideChange = outsideAdded + volume(cut(removed, allowed));
@@ -1316,6 +1343,13 @@ export async function convertNative({
     throw Error(
       'Native CAD preservation check failed: ' + outsideChange + ' mm³.',
     );
+  if(primaryJob){
+    const checked=await primaryJob.complete(checkCancelled);
+    primaryExactValidation={...primaryExactValidation,...checked,pending:false};
+    if(!checked.passed)throw Error(checked.error || 'Native CAD result is not one valid solid. Export blocked.');
+    if(preservationProof.provisional){preservationProof.proved=true;delete preservationProof.provisional;}
+    candidateSnapshot.delete();candidateSnapshot=null;
+  }
   const primaryFinishedAtMS = Date.now();
   const { checkedStep, checkedBrep } = createNativeExportChecks(oc, {
     preferPreservedCurves: Boolean(sourceCurveRepair), onProgress,
@@ -1420,8 +1454,17 @@ export async function convertNative({
       ),
     },
   };
+  } catch(error) {
+    if(isNativeKernelPoison(error)){terminalNativeFailure=true;primaryJob?.poison(error);quarantineNativeOwnership(candidateSnapshot,primarySnapshot,ownedShapes);}
+    throw error;
   } finally {
-    try { for (const shape of ownedShapes) shape.delete(); }
+    try {
+      if(!terminalNativeFailure&&primaryJob&&!primaryJob.retired){
+        try{await primaryJob.drain();}catch(error){terminalNativeFailure=true;primaryJob.poison(error);quarantineNativeOwnership(candidateSnapshot,primarySnapshot,ownedShapes);throw error;}
+      }
+    } finally {
+    if(!terminalNativeFailure){
+    try {primarySnapshot?.delete();candidateSnapshot?.delete();for (const shape of ownedShapes) shape.delete();}
     finally {
     conversionShapes = null;
     if (retainedRecord) {
@@ -1431,6 +1474,8 @@ export async function convertNative({
     }
     lifetime.afterCleanup = memoryStats();
   }
+  }
+    }
   }
 }
 

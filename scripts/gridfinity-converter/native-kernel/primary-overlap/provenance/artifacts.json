@@ -1,0 +1,28 @@
+{
+  "baseCommit": "edeb5ea048ac3ddcae2ee288a782b639dfcfb8bb",
+  "image": "ghcr.io/taucad/opencascade.js:canary-ebd263f1-multi-threaded",
+  "imageId": "sha256:5cb67064edc903ae50c254e32417da9662fa88ec2e734386c28a3806949862ce",
+  "artifacts": {
+    "primary_async_multi.js": {
+      "sha256": "9556b63b77923a8040526c9b21c5d9441e56b42c6e9ef69819389519e6e4f8ac",
+      "bytes": 69184,
+      "included": false
+    },
+    "primary_async_multi_pool4.js": {
+      "sha256": "66ccec72765daa8862822b981255c439a26ac85415bb2fe9991f9b691ac4f703",
+      "bytes": 69250,
+      "included": false
+    },
+    "primary_async_multi.wasm": {
+      "sha256": "6086f294aa3a8ceed97cb7d2036e9f63f44d2d55e81c411471936068ab177907",
+      "bytes": 22515716,
+      "included": false
+    },
+    "primary_async_audit_multi.wasm": {
+      "sha256": "976b70f5a2d497db464c1e1ba72dacda3fb61674a5c33f5c57627e86127a9fad",
+      "bytes": 22515810,
+      "included": false
+    }
+  },
+  "buildScope": "Relink using existing pinned corrected binding object cache and exact reader objects; not a clean-cache rebuild."
+}

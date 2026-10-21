@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "sourceSHA256": "c2b5f0c6051368c21945b47d5ce2dbc83b2dee7acdf1a5b5b2b6b5ad74af5af4",
+  "sourceFileUnchanged": true,
+  "brepSHA256": "000ac6da040b75ae623a64aa55a1d97fc2538eb9838ab6adf91f5d6c9e595a76",
+  "primaryRetirementBeforePublicationAndSTEP": true,
+  "primaryExactValidation": {
+    "copyMethod": "existing-deep-snapshot-async",
+    "copyElapsedMS": 0,
+    "passed": true,
+    "pending": false,
+    "error": "",
+    "elapsedMS": 17259.014912,
+    "startedAtMS": 1792555819009,
+    "finishedAtMS": 1792555844218,
+    "retirement": "pthread-tryjoin",
+    "poolBudgetRestored": true
+  },
+  "originalVolume": 70403.43064425353,
+  "convertedVolume": 69129.20071101829,
+  "outsideChange": 0,
+  "nativeValid": true,
+  "brepRoundTripValid": true,
+  "closedMesh": true,
+  "modelThreads": 4,
+  "brepChildThreads": 4,
+  "conversionWallMS": 86355,
+  "timingCaveat": "Local correctness qualification, not a controlled Windows speed claim. Overlapping phase timings must not be summed.",
+  "STEP": [
+    {
+      "pose": "base-down",
+      "elapsedMS": 86157,
+      "sha256": "7337a197d6770c29957b8170347043973415c7737d16f6db2628462c537340c8",
+      "bytes": 51338512,
+      "nativeValid": true,
+      "stepRoundTripValid": true,
+      "threads": 4
+    },
+    {
+      "pose": "original",
+      "elapsedMS": 82510,
+      "sha256": "bb317a9b8e23dde1f037f3bdd1d0f8963777f2f77dffe2cf1471fb59526558ff",
+      "bytes": 51231887,
+      "nativeValid": true,
+      "stepRoundTripValid": true,
+      "threads": 4
+    }
+  ]
+}

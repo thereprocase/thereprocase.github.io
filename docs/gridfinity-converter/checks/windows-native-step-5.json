@@ -1,0 +1,206 @@
+{
+  "candidate": "primary-overlap-20261021-040500",
+  "hardware": "AMD Ryzen 7 5800X3D, Windows 11, Edge 155",
+  "completedConversions": 17,
+  "cancelledConversions": 1,
+  "strictSTEPExports": 11,
+  "allPassed": true,
+  "threads": 4,
+  "freshConvertSeconds": [
+    17.36,
+    17.18,
+    17.22,
+    17.38,
+    17.43
+  ],
+  "repeatedConvertSeconds": [
+    17.32,
+    15.39,
+    16.02,
+    13.33,
+    15.78,
+    14.29,
+    14.84,
+    14.49,
+    15.0,
+    14.61
+  ],
+  "coldSTEPSeconds": 18.54,
+  "retrySeconds": 14.89,
+  "cancelLatencySeconds": 3.01,
+  "selectionToConvertedSeconds": [
+    34.927,
+    35.962
+  ],
+  "endpointNote": "Relay harness wall times; independently audited diagnostic UI endpoints are slightly earlier. Preview times come from relay harness only.",
+  "primaryConcurrentOutlierMS": 7000,
+  "cancelOrdering": {
+    "jobStartedRelativeMS": -25,
+    "jobRetiredRelativeMS": 2960,
+    "cleanAckRelativeMS": 2986,
+    "pendingValidationTasks": 0
+  },
+  "scope": "Seven quiet-host loads, 17 completed conversions and 11 STEP exports; measurements on this supplied part, not a universal latency guarantee. Complete selection-to-converted remains about 35 seconds.",
+  "memory": "Model linear-memory capacity 1866 MiB after cleanup throughout measured swaps. Limited current-thread allocation residue remains unresolved; no indefinite bounded-memory claim.",
+  "diagnosticSummary": [
+    {
+      "session": "a1a74a60-196f-45ab-943a-13f330b966d3",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "f42d3a13-4bb6-489a-898d-3aa0529db86c",
+      "preparedMS": 17438,
+      "convertMS": [
+        17353
+      ],
+      "STEPMS": [
+        15973
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 35023
+    },
+    {
+      "session": "4f160d49-c161-4429-bff3-b7620321842c",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "ad689fbc-ee8b-43ba-a2de-af8895a80de2",
+      "preparedMS": 18516,
+      "convertMS": [
+        17180
+      ],
+      "STEPMS": [
+        15997
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 35962
+    },
+    {
+      "session": "01c90786-9f13-4956-85c4-a614be7f5621",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "7fa4c3a3-71ff-4475-9c8c-b72309f5d853",
+      "preparedMS": 17456,
+      "convertMS": [
+        17214
+      ],
+      "STEPMS": [
+        16083
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 34927
+    },
+    {
+      "session": "8364224e-66d4-45de-bd56-7bb5d47f8dde",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "03be78f1-1c2d-4cad-8418-acc5317d78f5",
+      "preparedMS": 17352,
+      "convertMS": [
+        17326
+      ],
+      "STEPMS": [
+        16019
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 34946
+    },
+    {
+      "session": "b7946148-1233-41c7-84c1-56e3d60e8d08",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "9a529e00-4823-4e3e-bd76-9720ea3ce6d6",
+      "preparedMS": 17426,
+      "convertMS": [
+        17392
+      ],
+      "STEPMS": [
+        16283
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 35056
+    },
+    {
+      "session": "8d68e5ca-dc46-4012-a434-c3e14d4a458c",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "ac1ab805-98da-4113-bef1-03cbbedf7f33",
+      "preparedMS": 17643,
+      "convertMS": [
+        17599
+      ],
+      "STEPMS": [
+        18498,
+        15292
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 35489
+    },
+    {
+      "session": "87a2b888-a1f9-4ba0-bd6a-2d08699058ef",
+      "preparedMS": null,
+      "convertMS": [],
+      "STEPMS": [],
+      "errors": 0,
+      "selectionToFirstConvertedMS": null
+    },
+    {
+      "session": "65e2284b-ec8c-40e6-9e86-ab3fea112abb",
+      "preparedMS": 17618,
+      "convertMS": [
+        17315,
+        15373,
+        15983,
+        13319,
+        15748,
+        14251,
+        14827,
+        14451,
+        14994,
+        14569,
+        14882
+      ],
+      "STEPMS": [
+        16286,
+        15113,
+        16828,
+        15049
+      ],
+      "errors": 0,
+      "selectionToFirstConvertedMS": 35182
+    }
+  ],
+  "diagnosticChecks": {
+    "nativeValid": true,
+    "asyncAccepted": true,
+    "STEPValid": true
+  }
+}

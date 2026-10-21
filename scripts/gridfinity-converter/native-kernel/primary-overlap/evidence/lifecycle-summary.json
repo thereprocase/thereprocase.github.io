@@ -1,0 +1,23 @@
+{
+  "normal": {
+    "exitCode": 0
+  },
+  "cancelAfterJobStart": {
+    "exitCode": 0
+  },
+  "ordinaryErrorAfterJobStart": {
+    "exitCode": 0
+  },
+  "actualMainNativeTrapWithCancel": {
+    "exitCode": 0
+  },
+  "actualBackgroundPthreadTrapWithCancel": {
+    "exitCode": 0
+  },
+  "cleanNativeSmoke": {
+    "exitCode": 0,
+    "auditHookAbsent": true,
+    "validAndNullShapeChecked": true
+  },
+  "WindowsQualification": "Pending at bundle preparation; no performance guarantee."
+}

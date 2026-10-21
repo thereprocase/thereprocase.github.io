@@ -1,0 +1,1250 @@
+{
+  "/home/repro/primary-overlap-audit/mimalloc-diagnostics.o": {
+    "sha256": "9926212c9e64ab9ded8d526afa8be90219728a2bd6e7a0d54e537fd2e605c9c8",
+    "bytes": 19893
+  },
+  "/home/repro/primary-overlap-audit/out-multi/ShapeAnalysis_Edge.cxx.o": {
+    "sha256": "943cb80bbd65bd800cb30688b894ca792883adbd3109206ff1cf90ecb25a23ff",
+    "bytes": 78927
+  },
+  "/home/repro/primary-overlap-audit/out-multi/ShapeFix_Edge.cxx.o": {
+    "sha256": "347106347ec23bae6d6c47e85e35f92db5bc02f4b2a33cf7df8a4a1f4076ef30",
+    "bytes": 34230
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKCDF/CDM/CDM_Document.hxx/CDM_Document.cpp.o": {
+    "sha256": "440aa3206ee176f4f1959e2d586ad0a200a62e5a1267a9bba7c65c6c84e50a62",
+    "bytes": 82506
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDF/TDF_Attribute.hxx/TDF_Attribute.cpp.o": {
+    "sha256": "eaa2be5b13809a8dfbe7c256e62c0201fd6d7130f03d4d36c99a7a533f1adb67",
+    "bytes": 82224
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDF/TDF_Label.hxx/TDF_Label.cpp.o": {
+    "sha256": "faeb31a609ebc890309dae9c0c3b105ff3582bf9796172e693dbd1488610f8b2",
+    "bytes": 61354
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDataStd/TDataStd_GenericEmpty.hxx/TDataStd_GenericEmpty.cpp.o": {
+    "sha256": "35d5a277536be2ebc46e2f2e73c33eada04388141903b20256d627face79c2cf",
+    "bytes": 15898
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDataStd/TDataStd_GenericExtString.hxx/TDataStd_GenericExtString.cpp.o": {
+    "sha256": "91b19fdaaa90162a2bf97403440da568b060e71b46d15b1c0f293ab72471c399",
+    "bytes": 22538
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDataStd/TDataStd_Name.hxx/TDataStd_Name.cpp.o": {
+    "sha256": "a76c8d9ff120f48a0b6064015c34e4473add9bd49226ccc54c4023bf0ec1799f",
+    "bytes": 23982
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ApplicationFramework/TKLCAF/TDocStd/TDocStd_Document.hxx/TDocStd_Document.cpp.o": {
+    "sha256": "1ea908c6614481583ad2c914504542b0365934d640e24a08c75c8343a94d6e26",
+    "bytes": 65097
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTEP/STEPCAFControl/STEPCAFControl_Writer.hxx/STEPCAFControl_Writer.cpp.o": {
+    "sha256": "54fd5d10de0b8bc3d5b78474f52b0f1488f96d4fae648fbb1e0975e54a6973df",
+    "bytes": 112394
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTEP/STEPControl/STEPControl_Reader.hxx/STEPControl_Reader.cpp.o": {
+    "sha256": "d9458028e6312b6ebf0d78482b20790e1dccfa736967b4349278011cb8675369",
+    "bytes": 43378
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTEP/STEPControl/STEPControl_StepModelType.hxx/STEPControl_StepModelType.cpp.o": {
+    "sha256": "e61ec6a2068102dbcaf3b501cae433166e5b251a52b9441c57d9c2bf05e3ed01",
+    "bytes": 2163
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTEP/STEPControl/STEPControl_Writer.hxx/STEPControl_Writer.cpp.o": {
+    "sha256": "640e5da0f352058d12761efad24ac28c92eac0319791994fee0705a698241e35",
+    "bytes": 65313
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTEP/StepData/StepData_StepModel.hxx/StepData_StepModel.cpp.o": {
+    "sha256": "51bcc287996287f45d2cd1270402eeeddb3a961a4f0072c9cdcc662ca2891258",
+    "bytes": 52525
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTL/StlAPI/StlAPI.hxx/StlAPI.cpp.o": {
+    "sha256": "3ed50418bc3a0aeb735e903b52b534762103b993b67827f5e01ef0cc60c87b13",
+    "bytes": 19052
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTL/StlAPI/StlAPI_Reader.hxx/StlAPI_Reader.cpp.o": {
+    "sha256": "b5ba0ad07773e8c709cd70f0c4b955c32fd3a00d4bdf9aa7ec776b32f907c990",
+    "bytes": 11886
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKDESTL/StlAPI/StlAPI_Writer.hxx/StlAPI_Writer.cpp.o": {
+    "sha256": "5f890b48d50a71d865980ff7e01f45e03cd860a96f66f2537ab2cd0209c43648",
+    "bytes": 19488
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXCAF/XCAFDoc/XCAFDoc_ColorTool.hxx/XCAFDoc_ColorTool.cpp.o": {
+    "sha256": "7332b7e4bf68271990a28cccf73d17713f303f885faaf3e24a4fe4f74a0b27ff",
+    "bytes": 118751
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXCAF/XCAFDoc/XCAFDoc_ColorType.hxx/XCAFDoc_ColorType.cpp.o": {
+    "sha256": "55be079be6312d681c155dffc2458a48901f78eeecbd13f6f2db3eabcf757c68",
+    "bytes": 1661
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXCAF/XCAFDoc/XCAFDoc_DocumentTool.hxx/XCAFDoc_DocumentTool.cpp.o": {
+    "sha256": "236eb055c1ab2abbda790b461455c8d05ac41837e09788fc01d6df409f5de225",
+    "bytes": 74487
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXCAF/XCAFDoc/XCAFDoc_LengthUnit.hxx/XCAFDoc_LengthUnit.cpp.o": {
+    "sha256": "7d47e011c9cb6dec21840880520305d53687e628cb3d93c068a7d94b9b8d3306",
+    "bytes": 32807
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXCAF/XCAFDoc/XCAFDoc_ShapeTool.hxx/XCAFDoc_ShapeTool.cpp.o": {
+    "sha256": "868c6ff9d99a920987c8628e1ae8b173a560ed011d20ecf5ba1ce4813fccd0eb",
+    "bytes": 155791
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/IFSelect/IFSelect_ReturnStatus.hxx/IFSelect_ReturnStatus.cpp.o": {
+    "sha256": "2dfb54d14591a3da40a552895c08b63154e8d7835b1fae25a8a594ca659e0515",
+    "bytes": 1959
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/IFSelect/IFSelect_WorkSession.hxx/IFSelect_WorkSession.cpp.o": {
+    "sha256": "b866f390a49de73a7c945c1ce1c5817bfdd1e8a44cca9e5fa6cfe78dfb847374",
+    "bytes": 403890
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/Interface/Interface_InterfaceModel.hxx/Interface_InterfaceModel.cpp.o": {
+    "sha256": "6569a0c9705b8320019ffc67d44f5f827bb0c81476e95993dff22bf71b2d286b",
+    "bytes": 139406
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/Interface/Interface_Static.hxx/Interface_Static.cpp.o": {
+    "sha256": "b083bfaae143a365245bdfdd88275ad86794cb531d4ca75db929199f99b65ebd",
+    "bytes": 92451
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/Interface/Interface_TypedValue.hxx/Interface_TypedValue.cpp.o": {
+    "sha256": "69b8932005c0400c7b1300287739604e7baf4ac0d6deb7758a5614b49cd7612d",
+    "bytes": 30217
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/MoniTool/MoniTool_TypedValue.hxx/MoniTool_TypedValue.cpp.o": {
+    "sha256": "b4a48a30f1f5186f678e83bd7896ade324cc6f1954a4c45901f8e2d044c8c90b",
+    "bytes": 216546
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/XSControl/XSControl_Reader.hxx/XSControl_Reader.cpp.o": {
+    "sha256": "bee00ad95e8ea815849c22ddc7f2eac4a0110363a5f9a6c124f2fcc9411ba19a",
+    "bytes": 114479
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/DataExchange/TKXSBase/XSControl/XSControl_WorkSession.hxx/XSControl_WorkSession.cpp.o": {
+    "sha256": "2c736803b2786dadf949cf67dafa75437a393e027c3009110859fc9c367feb7b",
+    "bytes": 90216
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Bnd/Bnd_Box.hxx/Bnd_Box.cpp.o": {
+    "sha256": "eb488033768b87a5dc1a677041f71ed11844558c98f6367e929841ab99a2a81c",
+    "bytes": 76564
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Bnd/Bnd_Box2d.hxx/Bnd_Box2d.cpp.o": {
+    "sha256": "b44987f809a72bf8c4dc8bedeb15f95d6dd2e3fbf22fd6b040d68d1da3ca9fdd",
+    "bytes": 65563
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Bnd/Bnd_OBB.hxx/Bnd_OBB.cpp.o": {
+    "sha256": "2aa3d85c6b9fb013089fd65b6183dd5ab627f951e455ab8b83892331478f5210",
+    "bytes": 60338
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Convert/Convert_ParameterisationType.hxx/Convert_ParameterisationType.cpp.o": {
+    "sha256": "dc4df7f8b6da2daba428314709b3e470ae72fe671745c60e800d73b1cd4e1ed1",
+    "bytes": 2155
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/GeomAbs/GeomAbs_CurveType.hxx/GeomAbs_CurveType.cpp.o": {
+    "sha256": "99dd839cfba7eaa1f3f72442bd4815dad9d1fa694ef68945ea1a42c7917853c4",
+    "bytes": 2077
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/GeomAbs/GeomAbs_JoinType.hxx/GeomAbs_JoinType.cpp.o": {
+    "sha256": "c26b9d287feb14b272f3a64a86f4e90c325d5c8b6c72a1350892d245774637ce",
+    "bytes": 1645
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/GeomAbs/GeomAbs_Shape.hxx/GeomAbs_Shape.cpp.o": {
+    "sha256": "19cda8dc04f28398390aa54e7901bec861d161d49d5cf36ea25d989bd79c0319",
+    "bytes": 2149
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/GeomAbs/GeomAbs_SurfaceType.hxx/GeomAbs_SurfaceType.cpp.o": {
+    "sha256": "69dcbebe87350ba6efdbb3d618f2804c585986dd0c7addcb904a84359cc96e6a",
+    "bytes": 2308
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Poly/Poly_Connect.hxx/Poly_Connect.cpp.o": {
+    "sha256": "79a7fb64eb099000c54d9f6599b35c4377d4bf85caae1a3f3e8e4601448fa2b1",
+    "bytes": 36604
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Poly/Poly_PolygonOnTriangulation.hxx/Poly_PolygonOnTriangulation.cpp.o": {
+    "sha256": "81e274a01bb9d4c5eea6cbc2faebcaef430cdde820ec069d693418859929e602",
+    "bytes": 59299
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Poly/Poly_Triangle.hxx/Poly_Triangle.cpp.o": {
+    "sha256": "453b8fb9b028a839aa39a5f8d7fa562ccdc4d4d85f5a0bd1efddbe5766510550",
+    "bytes": 24346
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/Poly/Poly_Triangulation.hxx/Poly_Triangulation.cpp.o": {
+    "sha256": "b0fe4a0ab50529966c40436b37cc7bbef641c040be7f694fde1b93612f2e21b5",
+    "bytes": 103789
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/TopLoc/TopLoc_Location.hxx/TopLoc_Location.cpp.o": {
+    "sha256": "e55f3315a61922ba7f78d42bff25d7b98081ae186c785380605e99f4a0c14253",
+    "bytes": 39228
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Ax1.hxx/gp_Ax1.cpp.o": {
+    "sha256": "940208e2cb8edc18742465a4bc7cdd4fb958facc733e72fcf6a818109b3852a8",
+    "bytes": 63916
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Ax2.hxx/gp_Ax2.cpp.o": {
+    "sha256": "6c2575d6e0eb5c7e0afd2bb73176641287d3dd091f9192a8377ed2a2cfca20b1",
+    "bytes": 80309
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Ax22d.hxx/gp_Ax22d.cpp.o": {
+    "sha256": "e7773c7aebe36eeaba37b766bf35e86f8c0a29783edadab91949a31c1345792c",
+    "bytes": 60002
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Ax2d.hxx/gp_Ax2d.cpp.o": {
+    "sha256": "9d8b878d6df7a978231026dc89f5c0a9d9a565cb0f6ed4763b1d865c1e670b3f",
+    "bytes": 56426
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Ax3.hxx/gp_Ax3.cpp.o": {
+    "sha256": "f591667502e70a005274fecf5f8bfe617f30c753837063b4c966df30cf639ca8",
+    "bytes": 89589
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Circ.hxx/gp_Circ.cpp.o": {
+    "sha256": "ef6e0715c05b41a4c2ca35c03fc1f94187263b4485864f40a6e2eb4cb388c6a6",
+    "bytes": 60334
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Circ2d.hxx/gp_Circ2d.cpp.o": {
+    "sha256": "ecc938877ff9b0999f2f1c233df2d2684caaddaaf6eddda2d4a268e644583543",
+    "bytes": 76342
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Cylinder.hxx/gp_Cylinder.cpp.o": {
+    "sha256": "cb2d7b4b46ec5231a3730e2154d004bda91426660a2f9d924355971b39f2f9a8",
+    "bytes": 74956
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Dir.hxx/gp_Dir.cpp.o": {
+    "sha256": "859cdbd5410571f817a8066cc9b94639116af94640e03b03dadafe4d08800497",
+    "bytes": 88238
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Dir2d.hxx/gp_Dir2d.cpp.o": {
+    "sha256": "409217fa21581c1c841a31563af14cef096e5d8a1b68b40582c2b96f755c7d6e",
+    "bytes": 77594
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Elips.hxx/gp_Elips.cpp.o": {
+    "sha256": "1c7fb6f086d17179049fc17c4e2fbc68b5b3c404b9b90c256ddc2227382e051d",
+    "bytes": 61977
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Elips2d.hxx/gp_Elips2d.cpp.o": {
+    "sha256": "d39e1c6deac6a9842cda15ca0027493625c55e3912f20f6582b90fdc0a023b9c",
+    "bytes": 78779
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_GTrsf.hxx/gp_GTrsf.cpp.o": {
+    "sha256": "a778d3cc4b2034e5857b2cf7698c86405ea4a8d23a49be611be7321b405fdb7c",
+    "bytes": 62174
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_GTrsf2d.hxx/gp_GTrsf2d.cpp.o": {
+    "sha256": "d5fc0bcadd172269df706f86f960cc91b360f4a5a85ff0c67c5109f09a3db80c",
+    "bytes": 49016
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Pln.hxx/gp_Pln.cpp.o": {
+    "sha256": "4ac9d7a304a898eda7e1b55977357a6c9ad30a1cf322c77f17b9de2d27fb6ac7",
+    "bytes": 89432
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Pnt.hxx/gp_Pnt.cpp.o": {
+    "sha256": "98ecce8aea482a1ae67bf9c77287d3602354431887aa68b9d241252e015efd9b",
+    "bytes": 68411
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Pnt2d.hxx/gp_Pnt2d.cpp.o": {
+    "sha256": "9cc019102b64745c6065edd56482675bf70fb06e2e51065436bef84bccc830d6",
+    "bytes": 65390
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Sphere.hxx/gp_Sphere.cpp.o": {
+    "sha256": "72627637b8fb9e8f286f45439baf34680e5b1a5b4a34072801ea680666d6ad7c",
+    "bytes": 70497
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Trsf.hxx/gp_Trsf.cpp.o": {
+    "sha256": "6733681f267f03d319fc933e4e6e2323869f06e14f05600931fe7435619967af",
+    "bytes": 86802
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Trsf2d.hxx/gp_Trsf2d.cpp.o": {
+    "sha256": "2a307f8e222c14204d0a71fd2ea8082b001e8b25163ced4b70da8692c7eaf7ec",
+    "bytes": 61921
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Vec.hxx/gp_Vec.cpp.o": {
+    "sha256": "f9d7c7e05385a9c6b6a300cf7f2734ef9747e09b19dca14f26423dbd9854eba0",
+    "bytes": 94244
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_Vec2d.hxx/gp_Vec2d.cpp.o": {
+    "sha256": "291a0792d42bdf9d8b7db0735b9d1dcda8325498bd475290171627f1b1620ed3",
+    "bytes": 85277
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_XY.hxx/gp_XY.cpp.o": {
+    "sha256": "f9f8d384f237878285883901f4c5a2149ab8b9af874947c1527a458b16fc8f9f",
+    "bytes": 65424
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKMath/gp/gp_XYZ.hxx/gp_XYZ.cpp.o": {
+    "sha256": "bb860f9836b990e8eccd528780bbd9c2cd94af199113cee5c3f86fab5efd1b41",
+    "bytes": 71526
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Message/Message_ProgressRange.hxx/Message_ProgressRange.cpp.o": {
+    "sha256": "99f9261f747a57962ff151ff557943625161a525bbeebccecf96b1c3a2249827",
+    "bytes": 9179
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/NCollection/NCollection_BaseList.hxx/NCollection_BaseList.cpp.o": {
+    "sha256": "5788faf986a4353af76cbe4eb13a946de1498591c88e94dac88c14e32b7c569d",
+    "bytes": 9158
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/OSD/OSD_ThreadPool.hxx/OSD_ThreadPool.cpp.o": {
+    "sha256": "04c13a80ec90c89ca73116faadc37f5046ce68d97bb270970d74d348d7a272e9",
+    "bytes": 27529
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Precision/Precision.hxx/Precision.cpp.o": {
+    "sha256": "7efb58c2321100a37157cd4d75436b7366e911da3893dd86459484c4b5b9769c",
+    "bytes": 10417
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Quantity/Quantity_Color.hxx/Quantity_Color.cpp.o": {
+    "sha256": "b6c37792c660d3c28bd55b98325b37557efa223bb93003a19b7892b539b4fa9a",
+    "bytes": 77301
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Quantity/Quantity_ColorRGBA.hxx/Quantity_ColorRGBA.cpp.o": {
+    "sha256": "dc0d6917d24f9f694a596422a551235aa0518b0c45db91cead53f4fd1d7f93cf",
+    "bytes": 36919
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Standard/Standard_Failure.hxx/Standard_Failure.cpp.o": {
+    "sha256": "34d535aef430f5a7f947062ec17d694a312ed373b2ebdbd50c90133277f1df30",
+    "bytes": 36756
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/Standard/Standard_Transient.hxx/Standard_Transient.cpp.o": {
+    "sha256": "79dd43dbe6acf46b2da4a8e2f145eb42cafa5cbdf0bf11d9bb527dd7f89677f1",
+    "bytes": 33772
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/FoundationClasses/TKernel/TCollection/TCollection_ExtendedString.hxx/TCollection_ExtendedString.cpp.o": {
+    "sha256": "6f4da8b0941c730b15d924723d75f04b741034a05f0943c8246ad5d26b9ae2a1",
+    "bytes": 120580
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BOPAlgo/BOPAlgo_GlueEnum.hxx/BOPAlgo_GlueEnum.cpp.o": {
+    "sha256": "fff9ce26ec10939c49907d0786f83e3a0f7f6690d2f983f4a3b86ffcad90916e",
+    "bytes": 1647
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BOPAlgo/BOPAlgo_Options.hxx/BOPAlgo_Options.cpp.o": {
+    "sha256": "8d62a395c0d0fc1fc7de6f90717000dcb8a0a3d18b83d86334e5146319f9593d",
+    "bytes": 23781
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Algo.hxx/BRepAlgoAPI_Algo.cpp.o": {
+    "sha256": "c9441bc6c94d1d015b2635c7d31c2b588c2097181aa8968916e517a406c0e83b",
+    "bytes": 16691
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_BooleanOperation.hxx/BRepAlgoAPI_BooleanOperation.cpp.o": {
+    "sha256": "640a2e6fa2cfb40c5dbd0ccb7b3f8cf91fffbdf8c5289927425eb9229f8b2a7c",
+    "bytes": 28682
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_BuilderAlgo.hxx/BRepAlgoAPI_BuilderAlgo.cpp.o": {
+    "sha256": "cd0837851551719834044aae406231a9a4daa2f5d317c6db9e5066420745901e",
+    "bytes": 45153
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Common.hxx/BRepAlgoAPI_Common.cpp.o": {
+    "sha256": "83968ffefb88385dfc611f2ca94cf6d173b068de1111bcebd26dc11afff7b7f7",
+    "bytes": 14661
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Cut.hxx/BRepAlgoAPI_Cut.cpp.o": {
+    "sha256": "d7ab5b8f1794053396c7d6c955cd157394671d54c2586a7ba50ccb6be6a95827",
+    "bytes": 14476
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Fuse.hxx/BRepAlgoAPI_Fuse.cpp.o": {
+    "sha256": "8f278ce095319c012252455fc9eb3fe99a07639236c42dc73a9b9a6900c2ad30",
+    "bytes": 14538
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Section.hxx/BRepAlgoAPI_Section.cpp.o": {
+    "sha256": "3c6523b5327455e73e561030e4e546c4170c94f53df6091edb51f961ac4b8fbd",
+    "bytes": 49924
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBO/BRepAlgoAPI/BRepAlgoAPI_Splitter.hxx/BRepAlgoAPI_Splitter.cpp.o": {
+    "sha256": "5a9bd8ef8ab22f3b0bec9cc37632315b098551fbc2edf2e323df2232dd02236a",
+    "bytes": 21021
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKBool/BRepFill/BRepFill_TypeOfContact.hxx/BRepFill_TypeOfContact.cpp.o": {
+    "sha256": "2f082c2189f94986abf6e18299a326211cffa53cd63b5595937c0ca546b34d1e",
+    "bytes": 1731
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFeat/BRepFeat/BRepFeat_Form.hxx/BRepFeat_Form.cpp.o": {
+    "sha256": "06fc61ec2637144108c8e9b1dc40e9f65d2b26b85231a0c6b261379b3e5ec0bc",
+    "bytes": 25547
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFeat/BRepFeat/BRepFeat_MakeDPrism.hxx/BRepFeat_MakeDPrism.cpp.o": {
+    "sha256": "126f3df7cb2160d36a5537d91ccea981802ade6f64cd995dff3249b323159de1",
+    "bytes": 55957
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFillet/BRepFilletAPI/BRepFilletAPI_LocalOperation.hxx/BRepFilletAPI_LocalOperation.cpp.o": {
+    "sha256": "139826bad47217266aabc4b33f0e3dc642f328c59fc6ba500bf6af0089eab210",
+    "bytes": 23637
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFillet/BRepFilletAPI/BRepFilletAPI_MakeChamfer.hxx/BRepFilletAPI_MakeChamfer.cpp.o": {
+    "sha256": "bddcd59945c0d2726c66e9e5247b5f10641c9fba93180c5790782f1d425a3e57",
+    "bytes": 74595
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFillet/BRepFilletAPI/BRepFilletAPI_MakeFillet.hxx/BRepFilletAPI_MakeFillet.cpp.o": {
+    "sha256": "88c1a0edd2172e3dbe221b78ba53cad28f5867252dc79344174a3bdd00991932",
+    "bytes": 118582
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFillet/ChFi3d/ChFi3d_FilletShape.hxx/ChFi3d_FilletShape.cpp.o": {
+    "sha256": "1db507e9229ee2b637ab3901a49655adfc6fa6aadd43ce660d34051801eb82d7",
+    "bytes": 1674
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKFillet/ChFiDS/ChFiDS_ChamfMode.hxx/ChFiDS_ChamfMode.cpp.o": {
+    "sha256": "d791cd1f5e3808975a4d4f50e8e0f4e115b90f7128d0847bf1bf939f40975b8b",
+    "bytes": 1688
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Geom2dAPI/Geom2dAPI_ExtremaCurveCurve.hxx/Geom2dAPI_ExtremaCurveCurve.cpp.o": {
+    "sha256": "6965e990353816592559524ac5f04883b4c5873d716c8517e857efa0036f6a54",
+    "bytes": 52121
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Geom2dAPI/Geom2dAPI_InterCurveCurve.hxx/Geom2dAPI_InterCurveCurve.cpp.o": {
+    "sha256": "01ad2bf4cf24c0bd004e474d6f3599367bb1958566d04ac03f2fd37fc896046e",
+    "bytes": 46612
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Geom2dAPI/Geom2dAPI_PointsToBSpline.hxx/Geom2dAPI_PointsToBSpline.cpp.o": {
+    "sha256": "bab1e43bde9efa669726652983631f82b101a9ea1cae40e2a8469f9050e75b05",
+    "bytes": 77952
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Geom2dAPI/Geom2dAPI_ProjectPointOnCurve.hxx/Geom2dAPI_ProjectPointOnCurve.cpp.o": {
+    "sha256": "9e0015e116a7830b6fd25814f00ff5485ed83e3699bc57611b45e62fe1ec7d8f",
+    "bytes": 65823
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/GeomAPI/GeomAPI_Interpolate.hxx/GeomAPI_Interpolate.cpp.o": {
+    "sha256": "696afc25b651ccb7f3627c1b4bcf361f3ff1d2b0d2f87dcba94b5e335f3c9e59",
+    "bytes": 32748
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/GeomAPI/GeomAPI_PointsToBSpline.hxx/GeomAPI_PointsToBSpline.cpp.o": {
+    "sha256": "d57b4af9ba591d3d630a8bd3641e1b75e28c537dd426bfea286bb2895d6d4a4b",
+    "bytes": 75013
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/GeomAPI/GeomAPI_PointsToBSplineSurface.hxx/GeomAPI_PointsToBSplineSurface.cpp.o": {
+    "sha256": "3c6d34edc50c80cb0a1aefa5d63f9c8d8958ebf53f2576d0c39a69bd01c96a39",
+    "bytes": 92543
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/GeomAPI/GeomAPI_ProjectPointOnSurf.hxx/GeomAPI_ProjectPointOnSurf.cpp.o": {
+    "sha256": "dd90e2aedc73761d8c37ef68f3eaf4b94d9f0ec0b04aeb08eef6dd2c28383e3f",
+    "bytes": 105158
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_BSpFunc.hxx/Law_BSpFunc.cpp.o": {
+    "sha256": "d29abcc7d33baef5d6b17a834f60ac9eb36a9da4461815612ae0342f764bc8dc",
+    "bytes": 42763
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_Composite.hxx/Law_Composite.cpp.o": {
+    "sha256": "b2c727a0adbcdd1cd29e039ff41037a2be7478a001683d0c103e401fc5573efe",
+    "bytes": 48753
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_Function.hxx/Law_Function.cpp.o": {
+    "sha256": "8de63fae42907919909ae0458c26fb735e32f9465dbc52c9bc74122dd15281ff",
+    "bytes": 35632
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_Interpol.hxx/Law_Interpol.cpp.o": {
+    "sha256": "6eff42dd76a24af8f1b46ca876596a0b906bb48d50cd94bca546efdee17dbf3b",
+    "bytes": 31358
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_Linear.hxx/Law_Linear.cpp.o": {
+    "sha256": "0d582cc567c09d3e156419cd4b5126ab72f81e79cdb181830100d2373f7806dd",
+    "bytes": 38307
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKGeomAlgo/Law/Law_S.hxx/Law_S.cpp.o": {
+    "sha256": "609e09ec36258e0eb2b55365b57871ff0115676fd973e8d686ad9ceb1327b8a1",
+    "bytes": 14333
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKHLR/HLRAlgo/HLRAlgo_Projector.hxx/HLRAlgo_Projector.cpp.o": {
+    "sha256": "f8862718b195bc413c0c1a0d104a5131b95491276223b3b5199614c739a937e7",
+    "bytes": 55121
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKHLR/HLRBRep/HLRBRep_Algo.hxx/HLRBRep_Algo.cpp.o": {
+    "sha256": "72e79bef29d8ab28f3538b7358329db80d60b284918fa38179970008bbe4da21",
+    "bytes": 30671
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKHLR/HLRBRep/HLRBRep_HLRToShape.hxx/HLRBRep_HLRToShape.cpp.o": {
+    "sha256": "685217e9fdc841bd6401bef53701f81b28241dda03fc6f478de91f8c349af2a6",
+    "bytes": 22336
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKHLR/HLRBRep/HLRBRep_InternalAlgo.hxx/HLRBRep_InternalAlgo.cpp.o": {
+    "sha256": "327edc278350f0f5c43bce9fea78f67d7ebec65849e2978a23238171286ccc06",
+    "bytes": 53720
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKMesh/BRepMesh/BRepMesh_DiscretRoot.hxx/BRepMesh_DiscretRoot.cpp.o": {
+    "sha256": "77f961f34348ce0a64c314e44259f4f69911eacd38e3e3e6462f1241a84aea43",
+    "bytes": 25250
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKMesh/BRepMesh/BRepMesh_IncrementalMesh.hxx/BRepMesh_IncrementalMesh.cpp.o": {
+    "sha256": "5b81f07022787f016e454c0105c0dd98a247c00a22d5a5c4c59e9e8c82f36dc9",
+    "bytes": 57768
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffset/BRepOffset_Mode.hxx/BRepOffset_Mode.cpp.o": {
+    "sha256": "02fbaf46428618fedf5fb6e85e9c5935e7aba657efe0accd6afe8ddca7b3ccb0",
+    "bytes": 1638
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_DraftAngle.hxx/BRepOffsetAPI_DraftAngle.cpp.o": {
+    "sha256": "ae3db5d4babb690970e99a7498e0397af1d36495f2fd703ad7411585b796933c",
+    "bytes": 40425
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakeFilling.hxx/BRepOffsetAPI_MakeFilling.cpp.o": {
+    "sha256": "a4e77ba9e2609de2871453082dacdab198ba56487f2de7de01745f647eaf07aa",
+    "bytes": 70609
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakeOffset.hxx/BRepOffsetAPI_MakeOffset.cpp.o": {
+    "sha256": "f0e093577bd0c1c22abe4e9fdfa584c784070d8f5d861086bb532be0aae4764f",
+    "bytes": 56855
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakeOffsetShape.hxx/BRepOffsetAPI_MakeOffsetShape.cpp.o": {
+    "sha256": "e91d39f00a8c0dde80a91c3fcd5b5444b88fa9e70d3254fb7ce20018336e9092",
+    "bytes": 37349
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakePipe.hxx/BRepOffsetAPI_MakePipe.cpp.o": {
+    "sha256": "62e88ce3c0d509197e9e981bccd49a9dec96ecab1ba976a8a878fb88bc24f3f4",
+    "bytes": 52559
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakePipeShell.hxx/BRepOffsetAPI_MakePipeShell.cpp.o": {
+    "sha256": "8c439dc8f19d506b95d735e99cb7497c92ac933d83ebc86b0b0b366781de46a1",
+    "bytes": 107500
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakeThickSolid.hxx/BRepOffsetAPI_MakeThickSolid.cpp.o": {
+    "sha256": "bfde3fe9cd272a6a3e205dd8e48b392a7aefb04387fc08af4561e5628a0976e0",
+    "bytes": 34674
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_ThruSections.hxx/BRepOffsetAPI_ThruSections.cpp.o": {
+    "sha256": "dea83e1d0f1edffa146d94a8fc2be37101ddb263e99a41be2741b92c846ec0a9",
+    "bytes": 67027
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeBox.hxx/BRepPrimAPI_MakeBox.cpp.o": {
+    "sha256": "51589090fa6567eb060f785dd163a7799c52dc1a21fc42424f6e0115e1861340",
+    "bytes": 53005
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeCylinder.hxx/BRepPrimAPI_MakeCylinder.cpp.o": {
+    "sha256": "f9e0f1423f38bb928bc436f746995a6c2431a1921c88e07469022620c290a236",
+    "bytes": 24767
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeHalfSpace.hxx/BRepPrimAPI_MakeHalfSpace.cpp.o": {
+    "sha256": "cc572093d43949d99e334a92ef7fa3ed10b6cee4f195b6948464c35a47e251b2",
+    "bytes": 22830
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeOneAxis.hxx/BRepPrimAPI_MakeOneAxis.cpp.o": {
+    "sha256": "7e29fbe180150a9186dbefd21cfe19cc074472495f5951b93e55357f966fb6e5",
+    "bytes": 17985
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakePrism.hxx/BRepPrimAPI_MakePrism.cpp.o": {
+    "sha256": "eebdb235740586f5ae071017db1b4324bba2624d90d00139d808eca475bb2c29",
+    "bytes": 58211
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeRevol.hxx/BRepPrimAPI_MakeRevol.cpp.o": {
+    "sha256": "b6fdc4d293e8731299ce16792c8adf054fbd95271d3c5d88034b0f00697ed3fb",
+    "bytes": 48098
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeRevolution.hxx/BRepPrimAPI_MakeRevolution.cpp.o": {
+    "sha256": "84191bcc122db9a387a7e0ee5016d1c863fb6eb5f1a7f0db0db6675ae1b1949f",
+    "bytes": 36997
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeSphere.hxx/BRepPrimAPI_MakeSphere.cpp.o": {
+    "sha256": "a9a20ba1b9501b4bbbd949cd7b8686d2ae62456f785a70f3cb4fd3f8aa96860e",
+    "bytes": 40978
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeSweep.hxx/BRepPrimAPI_MakeSweep.cpp.o": {
+    "sha256": "ee9a9a44d29af148416e20e9a3aa55b3fc453a467e75d53818148fb86b71a711",
+    "bytes": 6634
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKPrim/BRepPrimAPI/BRepPrimAPI_MakeTorus.hxx/BRepPrimAPI_MakeTorus.cpp.o": {
+    "sha256": "0dd8d22410c27b768a07ec54ddacf13e5b85c9cab9d6b79df973dd5c67360651",
+    "bytes": 31872
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_EdgeConnect.hxx/ShapeFix_EdgeConnect.cpp.o": {
+    "sha256": "ec336a0059422d7f03e4a009f6923bda547a18e5f3e809907674adda59b8b64c",
+    "bytes": 18347
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Face.hxx/ShapeFix_Face.cpp.o": {
+    "sha256": "b7759c0259dff289466258f03d1c4aa37aabf0a6aa4159657e99da4f580e3edb",
+    "bytes": 75491
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Root.hxx/ShapeFix_Root.cpp.o": {
+    "sha256": "0fc9045adeae8088bd13f1456fef695697deb145a66d6bebddb4387a06da2623",
+    "bytes": 43897
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Solid.hxx/ShapeFix_Solid.cpp.o": {
+    "sha256": "8900176f0d1dcea32283f24b2520e56018b33e57bf41bd79c133cf308b0dd084",
+    "bytes": 40778
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Wire.hxx/ShapeFix_Wire.cpp.o": {
+    "sha256": "509b7b08386394de86830662844e9a74f7c24526ddcb2aaf83b3c025f0a544c7",
+    "bytes": 115034
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKShHealing/ShapeUpgrade/ShapeUpgrade_UnifySameDomain.hxx/ShapeUpgrade_UnifySameDomain.cpp.o": {
+    "sha256": "aa3c15680f110c6d1ba3a39e6cc92c075aaaa69334850405858fbe8b9adbb3f8",
+    "bytes": 40301
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBndLib/BRepBndLib.hxx/BRepBndLib.cpp.o": {
+    "sha256": "1ec7a7223e49c2c0048251b47be2bb4b4edfd79271e7c5778236d269333308ac",
+    "bytes": 16492
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_Command.hxx/BRepBuilderAPI_Command.cpp.o": {
+    "sha256": "e2e8815d45d8b9bbc9eb0a3830589ca6c60d1e64ffb43fcbd7fbde14e7299b04",
+    "bytes": 5468
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeEdge.hxx/BRepBuilderAPI_MakeEdge.cpp.o": {
+    "sha256": "1849129dc3f52fa731ea5c2708a5308e8a9951fec48b00e7f22e453c5584d06c",
+    "bytes": 126048
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeFace.hxx/BRepBuilderAPI_MakeFace.cpp.o": {
+    "sha256": "72328de4970f899cc0c34ef3bc707cad129bddaaed050d2e21fd08e5317bd5e3",
+    "bytes": 83130
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeShape.hxx/BRepBuilderAPI_MakeShape.cpp.o": {
+    "sha256": "ce6d47ce6d074a96bdfb7a8f6e5c74419c70e05d960d92ea9040bf362615dec6",
+    "bytes": 21080
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeShell.hxx/BRepBuilderAPI_MakeShell.cpp.o": {
+    "sha256": "38f24d272f0aebd2fb0f4c6dc2ff0726380ca646fb57d5f7d5a2a5d0db0e503d",
+    "bytes": 24187
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeSolid.hxx/BRepBuilderAPI_MakeSolid.cpp.o": {
+    "sha256": "968ece66e98054345210113b83bef38aca45e9b39995ac93d467532946e38809",
+    "bytes": 33700
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeVertex.hxx/BRepBuilderAPI_MakeVertex.cpp.o": {
+    "sha256": "57abf47908d1f456eb0346ab690a6f86dfe1666073dd339b0a3a000ab41b7f75",
+    "bytes": 8125
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_MakeWire.hxx/BRepBuilderAPI_MakeWire.cpp.o": {
+    "sha256": "1d7c0a51cb70ba2acafd0eba176f2739655a9fd9e7a9648ddf54ee549f4da14d",
+    "bytes": 40988
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_ModifyShape.hxx/BRepBuilderAPI_ModifyShape.cpp.o": {
+    "sha256": "6249a4363e7751f80f1a8129ec2e8001d73b3379181842af9024414b137ecbbf",
+    "bytes": 11721
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_Sewing.hxx/BRepBuilderAPI_Sewing.cpp.o": {
+    "sha256": "759722736c0f59b8a37d0f9283733607fb5526fcf9701d65c398df5afd28baca",
+    "bytes": 78303
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_Transform.hxx/BRepBuilderAPI_Transform.cpp.o": {
+    "sha256": "480902d3aebc8c436eba4ce060f2d6e8c069f88223620d377a7a3d3fce0163b7",
+    "bytes": 24891
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_TransitionMode.hxx/BRepBuilderAPI_TransitionMode.cpp.o": {
+    "sha256": "f76b6cdd9ddf13c82f619b7f1de58bb3bfa9edb09cbaf128df94e6d239cc4542",
+    "bytes": 1837
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_WireError.hxx/BRepBuilderAPI_WireError.cpp.o": {
+    "sha256": "389c56ca45e1316171f210e47fcb64b81fc48a1cf4fb3cf2e44aad52598f426c",
+    "bytes": 1915
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepCheck/BRepCheck_Analyzer.hxx/BRepCheck_Analyzer.cpp.o": {
+    "sha256": "bd7a47f3256525caf420a9d6b5258a6fed058d68be713ee7988fa80f03f6f50a",
+    "bytes": 31646
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepExtrema/BRepExtrema_DistShapeShape.hxx/BRepExtrema_DistShapeShape.cpp.o": {
+    "sha256": "76e88404c6ebc103297a1fff9c70c7bc3ba3b493f98fa25c1f79c210b16a98ff",
+    "bytes": 95463
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepGProp/BRepGProp.hxx/BRepGProp.cpp.o": {
+    "sha256": "d2c944213442d5e6fe8812a29aab6a51ff05c25634f2bfefae61c578e37fdb30",
+    "bytes": 34826
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepGProp/BRepGProp_Face.hxx/BRepGProp_Face.cpp.o": {
+    "sha256": "cea248bc2d9f71dc5fe80b50423dd71c726f0f4c5c56e717c1c80ed940389e16",
+    "bytes": 104018
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepLib/BRepLib.hxx/BRepLib.cpp.o": {
+    "sha256": "bda46949f4970d990060847bb72eeaad236284153766496ff75ef6a84548872c",
+    "bytes": 128694
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingAlgorithms/TKTopAlgo/BRepLib/BRepLib_ToolTriangulatedShape.hxx/BRepLib_ToolTriangulatedShape.cpp.o": {
+    "sha256": "90ea4e6b7d391905d85196baed12d878b5c371e219c3726596c6f57a37e0d9e1",
+    "bytes": 14517
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRep/BRep_Tool.hxx/BRep_Tool.cpp.o": {
+    "sha256": "cba91e42c5d09fc604d2ec266f4713cccc3ffa452eff0f78125a40633dbc81c3",
+    "bytes": 167813
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRepAdaptor/BRepAdaptor_CompCurve.hxx/BRepAdaptor_CompCurve.cpp.o": {
+    "sha256": "62c77bc45a56dad9755e20cdf78ebfd03d25a4df3a6d07ca45a48d40c8c06d6e",
+    "bytes": 81335
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRepAdaptor/BRepAdaptor_Curve.hxx/BRepAdaptor_Curve.cpp.o": {
+    "sha256": "2ca7cd741c9a54cb8272a92f049b9d83e0ae42bd1f729134dd166697ff2041e5",
+    "bytes": 27800
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRepAdaptor/BRepAdaptor_Curve2d.hxx/BRepAdaptor_Curve2d.cpp.o": {
+    "sha256": "01edb2be920bfb8a543a9d09f439f9359f5a7f92d908492f90a54e8be193ca0e",
+    "bytes": 22484
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRepAdaptor/BRepAdaptor_Surface.hxx/BRepAdaptor_Surface.cpp.o": {
+    "sha256": "7a8a5d9bdbb0478163aac53d9433b79f3eeb30feb6814647d116555ac88c5eb9",
+    "bytes": 29368
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BRepTools/BRepTools.hxx/BRepTools.cpp.o": {
+    "sha256": "f526b44ddab9d329197aa27cbff43eebb5a11770fd4f26dc12627eeff17513d3",
+    "bytes": 141277
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/BinTools/BinTools.hxx/BinTools.cpp.o": {
+    "sha256": "8ad348f9ffaa4ee687f82c4483ab8b3e68b86581137c303cba2cc336b3aafee5",
+    "bytes": 29069
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopExp/TopExp_Explorer.hxx/TopExp_Explorer.cpp.o": {
+    "sha256": "dc48579e6528ef09c36292c47d986393142733430af711161a133e43a9afef1e",
+    "bytes": 23000
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Builder.hxx/TopoDS_Builder.cpp.o": {
+    "sha256": "e42a0f7c0c988ddf7b2c4a2af68504bf67072b91d22dafa2e4430a4ef02ffbba",
+    "bytes": 33641
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_CompSolid.hxx/TopoDS_CompSolid.cpp.o": {
+    "sha256": "e9161612616269c0f5d71ffccba8fb7b9c402b7505fefcb3650e18b989068f6c",
+    "bytes": 5417
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Compound.hxx/TopoDS_Compound.cpp.o": {
+    "sha256": "0bf10b328867109bc3d4129c5c3110c6cf4aa729b559eb75fba294c8d635e2a3",
+    "bytes": 5360
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Edge.hxx/TopoDS_Edge.cpp.o": {
+    "sha256": "f2017e48251faac729cbab4a210dbdeaa7ee885a96dd2f0c424dd84542132b27",
+    "bytes": 5135
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Face.hxx/TopoDS_Face.cpp.o": {
+    "sha256": "25472922e7c8be87c49b28fb4a6db436f5c3fc416da511323afcef131e1ac622",
+    "bytes": 5135
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Shape.hxx/TopoDS_Shape.cpp.o": {
+    "sha256": "ebdba9f9b30e9b22bfe7dc6e295c9777db411fe487366f125424d7c28af5537d",
+    "bytes": 47489
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Shell.hxx/TopoDS_Shell.cpp.o": {
+    "sha256": "7997d55913d0993e24873b5b61f99b371943ab4b2f060a49fa51bdc38fb8e86e",
+    "bytes": 5191
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Solid.hxx/TopoDS_Solid.cpp.o": {
+    "sha256": "3a5b54cca92b0e1da4132cc04ed314b9b7a102dd60f6451e8faa3752d36d4bf2",
+    "bytes": 5191
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Vertex.hxx/TopoDS_Vertex.cpp.o": {
+    "sha256": "2199e899e07723e6d46e0968664df6f49599ffd22af5470efeec460085f2d1c1",
+    "bytes": 5247
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKBRep/TopoDS/TopoDS_Wire.hxx/TopoDS_Wire.cpp.o": {
+    "sha256": "658e0ebcd6253124329f3a128a3cb9ad427b5895068f1e83b5a8aee00f13ef71",
+    "bytes": 5135
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Adaptor2d/Adaptor2d_Curve2d.hxx/Adaptor2d_Curve2d.cpp.o": {
+    "sha256": "a1f7028750013f47bf6e00892abc4e78e5acd01ad82f17d107b274ce0b754c4d",
+    "bytes": 66139
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_BSplineCurve.hxx/Geom2d_BSplineCurve.cpp.o": {
+    "sha256": "e05177cf3844b17af3d842f72fc72d854c2ae5fb1050a7c5c11d7e4a935f07a5",
+    "bytes": 167245
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_BezierCurve.hxx/Geom2d_BezierCurve.cpp.o": {
+    "sha256": "ee041a20cdf4a1250b60ab6b067c514aacabec8db8249c1a615f71cb29117f6b",
+    "bytes": 101038
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_BoundedCurve.hxx/Geom2d_BoundedCurve.cpp.o": {
+    "sha256": "2c3355a477442a181575cfb8dc5aed9fc2d59fd592ad91e872a94e826195a88a",
+    "bytes": 13265
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Circle.hxx/Geom2d_Circle.cpp.o": {
+    "sha256": "f3ba3c68810e4b4f8a2ddda7849188b77ff85f3a623da66e3de4570c0e5bd33f",
+    "bytes": 42260
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Conic.hxx/Geom2d_Conic.cpp.o": {
+    "sha256": "5191527265eceda4d8e348fbc0353e5750a7eaa3b89d3bb60c495605ef86b717",
+    "bytes": 28469
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Curve.hxx/Geom2d_Curve.cpp.o": {
+    "sha256": "f4bf07bab91039b335710874e35a6056da925b6f1e95a053c892f0988c63903c",
+    "bytes": 57197
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Ellipse.hxx/Geom2d_Ellipse.cpp.o": {
+    "sha256": "374f1114079e4a21a416ff50adbf7585179f42b2940bbe8b9d0ddcbc0722c32b",
+    "bytes": 46640
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Geometry.hxx/Geom2d_Geometry.cpp.o": {
+    "sha256": "1804fd669bacc6da8e107a665d670856a9d79f4108a027ce63d123e8a216da30",
+    "bytes": 41969
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_Line.hxx/Geom2d_Line.cpp.o": {
+    "sha256": "3219b2812c3b4ad04c0533637af85cbecbd0236dd33f3cda6a0ddef753078237",
+    "bytes": 58451
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_OffsetCurve.hxx/Geom2d_OffsetCurve.cpp.o": {
+    "sha256": "60f845a988ee05ef7b6f77c639e49d2dd1226a41e02bf2b8db6d28d6314a1102",
+    "bytes": 55049
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2d/Geom2d_TrimmedCurve.hxx/Geom2d_TrimmedCurve.cpp.o": {
+    "sha256": "116b77addadb81ebabb7f6ac4659cb2700cee12dffc8ab51c0bd266f52d06bd3",
+    "bytes": 49991
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG2d/Geom2dAdaptor/Geom2dAdaptor_Curve.hxx/Geom2dAdaptor_Curve.cpp.o": {
+    "sha256": "21ac9c797b8fde98eecdc4d4d83f88d9b573a88f23fee4e664a76f16eec359b3",
+    "bytes": 104118
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Adaptor3d/Adaptor3d_Curve.hxx/Adaptor3d_Curve.cpp.o": {
+    "sha256": "a63c1099dceb6aa69d944607cd0267991f84f99647e287e46bed8f5dfe1a8e86",
+    "bytes": 67668
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Adaptor3d/Adaptor3d_Surface.hxx/Adaptor3d_Surface.cpp.o": {
+    "sha256": "6177e00283fbf5c12edda3bda25f8c9e7c46f410acfbc2ef9c46e49441e679a9",
+    "bytes": 78004
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_BSplineCurve.hxx/Geom_BSplineCurve.cpp.o": {
+    "sha256": "d62f478ae40d3844d42dceb5f8e6d86c3404ba0bc1d805fceca2e076620bcada",
+    "bytes": 165791
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_BSplineSurface.hxx/Geom_BSplineSurface.cpp.o": {
+    "sha256": "a526b1cf3d11ac254f0ccfa3c8edae124f41ceff4ffda78638f979c070d8a5bd",
+    "bytes": 216162
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_BezierCurve.hxx/Geom_BezierCurve.cpp.o": {
+    "sha256": "668b13b51e18224ba1fb801db93c1f6d9c1f62043db9b7677e9135d301bd4788",
+    "bytes": 92486
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_BoundedCurve.hxx/Geom_BoundedCurve.cpp.o": {
+    "sha256": "787cf367544b910dbb597f25863bfb31acb1bd93b2b636fc07b6b1ef6fba08fa",
+    "bytes": 13058
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_BoundedSurface.hxx/Geom_BoundedSurface.cpp.o": {
+    "sha256": "b1dbb0410fb1d4e4b39086dc88dc34387fd8e22df15e55f109ee8d9a4edaadbf",
+    "bytes": 11648
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_ConicalSurface.hxx/Geom_ConicalSurface.cpp.o": {
+    "sha256": "cb797e557628fd4bb9acf29738289c68acd51ff3ed7916240ee7c4503d64a148",
+    "bytes": 68186
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_Curve.hxx/Geom_Curve.cpp.o": {
+    "sha256": "437a4cb0cd748d3f00e4fd469feb3407ed3adfac6abc551fb4513d2598297a0e",
+    "bytes": 56363
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_CylindricalSurface.hxx/Geom_CylindricalSurface.cpp.o": {
+    "sha256": "00eafb1407e3038594b5275b97b9c9ee2f6ee6c69aa692f362bddc4977f5d4f3",
+    "bytes": 66902
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_ElementarySurface.hxx/Geom_ElementarySurface.cpp.o": {
+    "sha256": "9ca426ef0c8fbde4d02bf2d2a5882629b40539c8ee02ab88bb168b6e2f924525",
+    "bytes": 29517
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_Geometry.hxx/Geom_Geometry.cpp.o": {
+    "sha256": "cc66ebcc606cc4b0d7be02b77646cef38180f15ea30c853cf1dc6f2deda2fd51",
+    "bytes": 48993
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_SphericalSurface.hxx/Geom_SphericalSurface.cpp.o": {
+    "sha256": "7deede5c7488353270253d4ea44acd6a55290b19001cc090b93de76d74a3e8c3",
+    "bytes": 59264
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_Surface.hxx/Geom_Surface.cpp.o": {
+    "sha256": "5b8c5ce08bfc8edafce26318a1d605e9d7f154f9275a8f3adec473f5a8930735",
+    "bytes": 75038
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/Geom/Geom_TrimmedCurve.hxx/Geom_TrimmedCurve.cpp.o": {
+    "sha256": "08be0ab3ee3cb6bd826a68ede67f02d5eff908230f34dba973cffc46eda5bf56",
+    "bytes": 49176
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/GeomAdaptor/GeomAdaptor_TransformedCurve.hxx/GeomAdaptor_TransformedCurve.cpp.o": {
+    "sha256": "f2992f7c85a188c93ad71ebcb15c09cac4004b57f25fdb99612c6bd269b453c7",
+    "bytes": 100328
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/GeomAdaptor/GeomAdaptor_TransformedSurface.hxx/GeomAdaptor_TransformedSurface.cpp.o": {
+    "sha256": "c509caaa67697e1731874819cc8bd836c2b49f7691d4df9301480a2e2fa21b34",
+    "bytes": 118325
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/TopAbs/TopAbs_Orientation.hxx/TopAbs_Orientation.cpp.o": {
+    "sha256": "edebec3e08fb18d4ae53ea6fefe145336371629ffbb6e5e84a2ce80562ffeb84",
+    "bytes": 1793
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKG3d/TopAbs/TopAbs_ShapeEnum.hxx/TopAbs_ShapeEnum.cpp.o": {
+    "sha256": "0143fd302f26965e6f862f1ead7b1cb59f633e6f9f17d057f48b75a6137b31b6",
+    "bytes": 2028
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/BndLib/BndLib_Add2dCurve.hxx/BndLib_Add2dCurve.cpp.o": {
+    "sha256": "de8130fdc4527369f1dcbf760ba21ba0027510254c2453c781ed005e472cc3bc",
+    "bytes": 31975
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/Extrema/Extrema_ExtAlgo.hxx/Extrema_ExtAlgo.cpp.o": {
+    "sha256": "bab47b1c2f4ea5e8725da85c1ac8252f7d31f1fe28b0f09cf7f2ab67be35bec3",
+    "bytes": 1520
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeArcOfCircle.hxx/GC_MakeArcOfCircle.cpp.o": {
+    "sha256": "496f0a444c51402a5504ede1f814f0debcbd6ecc5aa4b87af5f8ab243ce6e5f1",
+    "bytes": 31393
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeArcOfCircle2d.hxx/GC_MakeArcOfCircle2d.cpp.o": {
+    "sha256": "cb22c2feeee9efe0d39235fa746b32c0d62692f9b87e2d5688e07af33f47b63b",
+    "bytes": 31706
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeArcOfEllipse.hxx/GC_MakeArcOfEllipse.cpp.o": {
+    "sha256": "a3d0b68491c549b377a297a5db17863007c52dcfcd0d7c6c6b3ba489fec31394",
+    "bytes": 25030
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeArcOfEllipse2d.hxx/GC_MakeArcOfEllipse2d.cpp.o": {
+    "sha256": "2a4102306d433320899e21fe63bdd0051fa27f4b48aa9c93b170ae29da6d3fce",
+    "bytes": 25297
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeCircle2d.hxx/GC_MakeCircle2d.cpp.o": {
+    "sha256": "84ef295063a8f6b5764ff9aeb8f56044b63f6b8e00dd85ed5f42f44bd2e07f44",
+    "bytes": 36601
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeEllipse2d.hxx/GC_MakeEllipse2d.cpp.o": {
+    "sha256": "047d58e0ebe4ae2c5b9bd662a8b8294cea2bd045d52af40020a9616a799053ff",
+    "bytes": 31159
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_MakeSegment2d.hxx/GC_MakeSegment2d.cpp.o": {
+    "sha256": "84aa829b41cb67582714ea1d6369bc0b88b2e5f63b6deb5db0eb7a3101b6fed8",
+    "bytes": 28076
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GC/GC_Root.hxx/GC_Root.cpp.o": {
+    "sha256": "65b73fe9f2c4ce4b479279461e5a72132992259140c5381184df8629e1c861f9",
+    "bytes": 6431
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GCPnts/GCPnts_TangentialDeflection.hxx/GCPnts_TangentialDeflection.cpp.o": {
+    "sha256": "6dea527f6d9306cdee5102fbb131d0d07faa7a7866648cc80a8d3668dabc9c4d",
+    "bytes": 67234
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GProp/GProp_GProps.hxx/GProp_GProps.cpp.o": {
+    "sha256": "074209ce1bbc1a5aff3ac7b7a48154dc29ebcc5c8f5dc10567e6b34675e626ce",
+    "bytes": 31956
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/Geom2dConvert/Geom2dConvert.hxx/Geom2dConvert.cpp.o": {
+    "sha256": "001b8c672c5574e1b823e75abc1fdf34c4ccd52d3e3d798f1b6c10e5799005cb",
+    "bytes": 60676
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/Geom2dConvert/Geom2dConvert_ApproxCurve.hxx/Geom2dConvert_ApproxCurve.cpp.o": {
+    "sha256": "b780e11964771b746ad0a6f8ca1b42578f11b426a71130cb183249a2e32ee870",
+    "bytes": 30984
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/Geom2dConvert/Geom2dConvert_BSplineCurveToBezierCurve.hxx/Geom2dConvert_BSplineCurveToBezierCurve.cpp.o": {
+    "sha256": "2896ca1f1833cb2198a0121796da7da9c45e0adcb1ceb2b4170f6e85ff5d78e8",
+    "bytes": 24101
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GeomConvert/GeomConvert.hxx/GeomConvert.cpp.o": {
+    "sha256": "1d3596244960f5dae6aac071ef048f3030e4af25b3cf2657ee0875eabf7e8dfd",
+    "bytes": 84988
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GeomLib/GeomLib.hxx/GeomLib.cpp.o": {
+    "sha256": "c1df3fd02a39a113e6588635def5b7a87c612c1b1ca96940681b10e0295b2160",
+    "bytes": 126466
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/ModelingData/TKGeomBase/GeomTools/GeomTools.hxx/GeomTools.cpp.o": {
+    "sha256": "72a7b68376c4e0764b633002332a0fdffe20ade56358eea87dcf747fe58e062e",
+    "bytes": 3831
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/Extrema_GGExtPC_Adaptor2d_Curve2d_Extrema_Curve2dTool_Extrema_ExtPElC2d_gp_Pnt2d_gp_Vec2d_Extrema_POnCurv2d_NCollection_Sequence_Extrema_POnCurv2d_Extrema_GGenExtPC_Adaptor2d_Curve2d_255e67ef2564152f.cpp.o": {
+    "sha256": "8ffea1fa1251893f61e031bd6795d7f94af2f25375a5d1cc1c065ec06792f696",
+    "bytes": 123101
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_ChFiDS_CircSection.cpp.o": {
+    "sha256": "763455c79bfb0bbfa93a2a6e384201c28f9bf721f371213300b83521c3180fc4",
+    "bytes": 61944
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_NCollection_Vec3_float.cpp.o": {
+    "sha256": "e01f6f36b52b90966429700041361aa136bf5d38f2cb0c1664beb97f1f4dd5cc",
+    "bytes": 62184
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_Poly_Triangle.cpp.o": {
+    "sha256": "233b59b81cbbd0e93e0f69c08619892f7f4ea2ed11c756ed5334e25e050d5338",
+    "bytes": 60508
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_bool.cpp.o": {
+    "sha256": "11f6d5e1f1efd91307be19ce86c0a9bbee95e8e5bcf7e7a352d56680e4385a53",
+    "bytes": 56305
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_double.cpp.o": {
+    "sha256": "8d2879b0b63166c4c84bab66124a340cd4fb81bf21315fff551cba8948b683ab",
+    "bytes": 56482
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_float.cpp.o": {
+    "sha256": "f48253129ef4d3734758b2d81f1bf369bb03b93f9f025e9026864737cd735f2a",
+    "bytes": 56467
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_gp_Dir.cpp.o": {
+    "sha256": "f0656ff07f55323bd014b3a6b6bc3ba3636b12b5aae2a9669232026ae46cb198",
+    "bytes": 59941
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_gp_Pnt.cpp.o": {
+    "sha256": "0735a005d9858eff6dfef8a3ea0fbbf42af6dbed05879936e284501b0bb253d9",
+    "bytes": 59701
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_gp_Pnt2d.cpp.o": {
+    "sha256": "2b96e5b51bf905c43d17d76b8e9c87303c2d40a5223368639f44c2f731a6445d",
+    "bytes": 59703
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_gp_Vec.cpp.o": {
+    "sha256": "bc7a16bb706f0dd5064ff1e3fdee0cce835bf5d82c30d8bc88a48e7074e71267",
+    "bytes": 59701
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_handle_Geom2d_BSplineCurve.cpp.o": {
+    "sha256": "b8a65bda08b8f3ed1378f1fcb5468d30b0627a02e964fe8ebb654a0edfa52b56",
+    "bytes": 70113
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_handle_Geom2d_BezierCurve.cpp.o": {
+    "sha256": "e9081298566716bbab67b6d1befc20a02d3770b19447c1507abcf4a8c92d4248",
+    "bytes": 69823
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_handle_Geom_BSplineCurve.cpp.o": {
+    "sha256": "1b0ff6878f8d487e8dec08da5798e00ecaf7af01df34b40a6a6d92f8b40ed281",
+    "bytes": 69543
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_int.cpp.o": {
+    "sha256": "9f6ac759e0f27991221e93b6a3489a473b2fdab63404990a84c06659565988ac",
+    "bytes": 56406
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array1_unsignedchar.cpp.o": {
+    "sha256": "a616a87e483fdb44fc50068722a822bc16b91338d4a81b0cbb01fe94437f92ff",
+    "bytes": 56306
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array2_double.cpp.o": {
+    "sha256": "03cc2fb5710b40b1c237c4ad20a980596401808600695ff6c447f9e05e656796",
+    "bytes": 35107
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Array2_gp_Pnt.cpp.o": {
+    "sha256": "d141c6909cfb2531246235e78f8bc085eb5032ce8dcea6ffbf842b51c1ab6f19",
+    "bytes": 37296
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_AsciiString_TCollection_AsciiString.cpp.o": {
+    "sha256": "554a5b2d711be64f5dd201d7033820067042fae09af383a1a9fc9ef6c5913fe4",
+    "bytes": 136575
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_AsciiString_handle_STEPCAFControl_ExternFile.cpp.o": {
+    "sha256": "73b7dd703e7a40340c721f6c6a1d96661828a8b507900dcd0010793ad04b7e22",
+    "bytes": 154431
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_AsciiString_handle_Standard_Transient.cpp.o": {
+    "sha256": "07a856ff58741574585403c7868fb22ba9c3f0dc4976853694878698b9c4003e",
+    "bytes": 149315
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_AsciiString_int.cpp.o": {
+    "sha256": "82371821167c41e5fe90b15573eb763275744d1e4e38a42b57dcd2f00afd1510",
+    "bytes": 125874
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_TCollection_ExtendedString.cpp.o": {
+    "sha256": "e0c7e4666d2973f8e6332a2b851ae6e5aec114026f2f65e663d27f9a312850dd",
+    "bytes": 140254
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_double.cpp.o": {
+    "sha256": "ca52ee9b3f4dcc618266d257c81e0cca3136a23764c6d74017276eb3b03b1138",
+    "bytes": 129621
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_handle_CDM_MetaData.cpp.o": {
+    "sha256": "c4bc14b83e41378fba30e1cf7f9ac8cd2434477a9dd890f62c0dd3997135c329",
+    "bytes": 147215
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_handle_NCollection_HArray1_double.cpp.o": {
+    "sha256": "00c736f20f65f5c8b4464b06f4ec3bfeb0ff6cb1c61530c13a881deb0018c33f",
+    "bytes": 156322
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_handle_NCollection_HArray1_int.cpp.o": {
+    "sha256": "c5413273e70ed7d43edfb12505be52517feebe415a03f3e33c5bc67ec6363eae",
+    "bytes": 154982
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_int.cpp.o": {
+    "sha256": "6b81118be8464cfbba989ece35710e235eec618402d8889e2aff765fa1167898",
+    "bytes": 128186
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TCollection_ExtendedString_uint8_t.cpp.o": {
+    "sha256": "8865c80184ba06dc9513d306489bedabdda23306b491a4e980fddb43d2b733aa",
+    "bytes": 130044
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TDF_Label_TDF_Label.cpp.o": {
+    "sha256": "d078fde1f6bfc1743eae46bef695b193b4de38aa911415a4d10a83dd9fcab75f",
+    "bytes": 113455
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TopoDS_Shape_BRepTopAdaptor_Tool_TopTools_ShapeMapHasher.cpp.o": {
+    "sha256": "5f192cebad6890a2f3df5b38d797fbcfe15646cec29ad9b8026b139af99d8f9c",
+    "bytes": 141312
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TopoDS_Shape_NCollection_List_TopoDS_Shape_TopTools_ShapeMapHasher.cpp.o": {
+    "sha256": "efd911484efd2d2aa1cf8a3b6027361e74089a4cf80c4b3cdfc61be07495b319",
+    "bytes": 149023
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_TopoDS_Shape_TopoDS_Shape_TopTools_ShapeMapHasher.cpp.o": {
+    "sha256": "b61eb319f9d9763108cd7eb4f7ef38a7beb08f031df68a34d8b92e6ef9e86f0f",
+    "bytes": 132022
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DataMap_handle_TDF_Attribute_handle_TDF_Attribute.cpp.o": {
+    "sha256": "cdf0850a7d3f6b560bc885a9818a59790ead578d7041f5fbf79cb3e7a21588aa",
+    "bytes": 133458
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DynamicArray_handle_Standard_Transient.cpp.o": {
+    "sha256": "d2c953fdba06a26ca332284146da56214c55d0d6e8e72bba3ee25f9d49852717",
+    "bytes": 94487
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_DynamicArray_int.cpp.o": {
+    "sha256": "913d05fb00373df40cbbe5758d9d7bab5d940c4b49daa75f6b49d679b280ff2c",
+    "bytes": 75375
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_ChFiDS_CircSection.cpp.o": {
+    "sha256": "2d1541db96402827096feef9108c1b8fbbf8d4646a5dda3e6551442e644d0048",
+    "bytes": 30854
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_Poly_Triangle.cpp.o": {
+    "sha256": "a4c4b3b8cfcd53000cae99e7d998bbb85cb8f3ca5ca99c7fa8b88a8f83b007c8",
+    "bytes": 29872
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_bool.cpp.o": {
+    "sha256": "fdf2031b51116e4075517a24d65414e001dca0270e659c05f8d5a4e8dab71459",
+    "bytes": 27286
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_double.cpp.o": {
+    "sha256": "c498a29d8822e7a44e802a95e0b40d4f0cdb7dd643c2ca4eb99f8d0ed1f8c5b3",
+    "bytes": 27463
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_float.cpp.o": {
+    "sha256": "f9b3fea3b8622e320b2965935715ab29893c872f76a6427729de5ba5027cc2e1",
+    "bytes": 27451
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_gp_Pnt.cpp.o": {
+    "sha256": "2b6fd4e09984f4738f7cc9499fdac4caad48a3a40013e2c0143aa2e66514309e",
+    "bytes": 29140
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_gp_Pnt2d.cpp.o": {
+    "sha256": "54aec10f5b1f1804831902973bca9ac3ddd173dade6f72ed263594bf25dd38d1",
+    "bytes": 29213
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_handle_Geom2d_BSplineCurve.cpp.o": {
+    "sha256": "b7c87ec5a5962e73c3f63e6934b0503c8814e22f3b15146bc76be904ca7c6511",
+    "bytes": 35082
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_handle_Geom_BSplineCurve.cpp.o": {
+    "sha256": "8764fc1c493da7e0c6746d656c4f19ec741c630c064e41e5340db0e1ef4c095e",
+    "bytes": 34707
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_int.cpp.o": {
+    "sha256": "d667ec60638255247e052594bf7735b9f4ef357c373724771cbf2fae83ffd941",
+    "bytes": 27408
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HArray1_unsignedchar.cpp.o": {
+    "sha256": "dcb4b9cc27655c77e359b4b236375f5704885615d67df0f4c01e886a206cd141",
+    "bytes": 27413
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_TCollection_AsciiString.cpp.o": {
+    "sha256": "f0f8da9a3d6aa946a1c76ab887cfaf06dc60d5a774a7b365930a6f467efe9267",
+    "bytes": 43029
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_TCollection_ExtendedString.cpp.o": {
+    "sha256": "1ae9be8a2ff2fd484d4ccfd171c121ee9e448cd022ff7713ee5b77a118cc12e5",
+    "bytes": 43626
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_TopoDS_Shape.cpp.o": {
+    "sha256": "084c67b96e51e80393fc155626e8e13404bfa07164ca5460e96bb793ee7bc416",
+    "bytes": 40840
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_handle_Standard_Transient.cpp.o": {
+    "sha256": "45741e4e7a7c60b1af883fe4c98eea1375d96086e5d3449a9ee387c8b952b984",
+    "bytes": 45456
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_handle_TCollection_HAsciiString.cpp.o": {
+    "sha256": "577d81ef36c73db5895a37844672343f5b23856c714143a5ea771aaeeb17c8c0",
+    "bytes": 46639
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_HSequence_int.cpp.o": {
+    "sha256": "00a5ee6d4791c76eccba1d51009b8177fc02bd8aeeabab33d54f810807cb4a9f",
+    "bytes": 36792
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_IndexedDataMap_TDF_Label_TopoDS_Shape.cpp.o": {
+    "sha256": "e1e020f6ddb042ad5b0a1ef6682979c8ecb0632f0c937df08ee21d05d9871221",
+    "bytes": 148437
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_IndexedDataMap_handle_Standard_Transient_handle_Standard_Transient.cpp.o": {
+    "sha256": "9270f40325502228d39ca65fd406001a0c7424da56355ff6526a8ab7404a22cc",
+    "bytes": 168500
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_IndexedMap_Message_MetricType.cpp.o": {
+    "sha256": "9ea43c20f189289a4e19febc5eb9a088bbe02ee86a11d21bc421a5168ef972cf",
+    "bytes": 119300
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_IndexedMap_TopoDS_Shape_TopTools_ShapeMapHasher.cpp.o": {
+    "sha256": "b56f8ddfcd0643c5fe74c371b872495d8615ceb65b699653ed46e86502209c94",
+    "bytes": 127586
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_IndexedMap_handle_TDF_Attribute.cpp.o": {
+    "sha256": "3bf5946382e656d6b572cbb5a29e6295143dbe53e27a2ae528fa3454a72c8a00",
+    "bytes": 126637
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_BRepCheck_Status.cpp.o": {
+    "sha256": "4566c9820e03924e0048838748af96ff173c7a1cc6f1a784f1f9645fa0dfdad3",
+    "bytes": 63500
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_TDF_Label.cpp.o": {
+    "sha256": "90275d2fadcc3ef3de9bc0f245768509f19b9e06c2dcaa9eb4e57ba8da9f4fb9",
+    "bytes": 62022
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_TopoDS_Shape.cpp.o": {
+    "sha256": "44b9c48613446ee0d27f1cc68e00efd1e724f8cff4cac43c8245d7a8ce9203d2",
+    "bytes": 63635
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_handle_Law_Function.cpp.o": {
+    "sha256": "ec8a92a16ffe1653a2130a44e5807183173669a5973237f15e6c873d7ebc5bee",
+    "bytes": 68037
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_handle_Message_Alert.cpp.o": {
+    "sha256": "f355a297df699c7c12dc1a12b04b134dfa0d8bef7d6069f4511d66978288cc51",
+    "bytes": 68249
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_handle_Poly_Triangulation.cpp.o": {
+    "sha256": "bbec051ddf200d6c62d2bb11fbffcac7321a0df6d4db578fa66ba695272992a2",
+    "bytes": 69315
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_handle_TDF_AttributeDelta.cpp.o": {
+    "sha256": "af6b718ce5aab09a00366e3cabf40192dba6e280032cdee5b87c0bb7fbb71737",
+    "bytes": 69315
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_List_handle_TDF_Delta.cpp.o": {
+    "sha256": "9b8f973dd506a5f42f41191f432aafd5320b056cdb16e541556dfda1a87d3d8a",
+    "bytes": 67188
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Map_TDF_Label.cpp.o": {
+    "sha256": "9341a3564284247e2ee293bf01407da5ee49a35e57c96a0efc6dfda39e2c3193",
+    "bytes": 115957
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Map_TopoDS_Shape_TopTools_ShapeMapHasher.cpp.o": {
+    "sha256": "4ab9405dcc9c34b15b9477a6facc05a39b69e7ca11ee37c30b7e79b97662be9f",
+    "bytes": 129822
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Map_handle_TDF_Attribute.cpp.o": {
+    "sha256": "323898587140fd637d2634d22a41b1feaaf8a3f8e3ec9a87ebf5dc682affcee8",
+    "bytes": 130489
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_Extrema_POnCurv2d.cpp.o": {
+    "sha256": "c681baa12da384fa92987a668bd22908be81e85395399dd8f3850a6bd56dd0f8",
+    "bytes": 80206
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_HLRBRep_ShapeBounds.cpp.o": {
+    "sha256": "c773514c4b804eeb64a5ce9ec1b525dc7e02410931caeadd77da85d7fddd08e2",
+    "bytes": 81731
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_IntRes2d_IntersectionPoint.cpp.o": {
+    "sha256": "b328d7c230d406541a41811c4a483fe9f8fba578bab390e1f54a0d8ea8fca9bb",
+    "bytes": 82779
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_TCollection_AsciiString.cpp.o": {
+    "sha256": "7606692eba7e35fe910c824b81a4a8b475eb934b569fb6b9d9e96c7ec43fb4ed",
+    "bytes": 82910
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_TCollection_ExtendedString.cpp.o": {
+    "sha256": "24a75fdcaa7d424ad835e01b348be245a4742381f7b4bf9b7bae52943d5416f0",
+    "bytes": 83816
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_TDF_Label.cpp.o": {
+    "sha256": "d24973238433157498bd4675e8ccdd4e9c93b29729687156c83fa312b835afaa",
+    "bytes": 77348
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_TopoDS_Shape.cpp.o": {
+    "sha256": "f84cf506b2a86dab3001e5624bfae9b8b994a3aafdfb8a104cfdfbc62577e658",
+    "bytes": 79508
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_double.cpp.o": {
+    "sha256": "ae1447d0d41ecaf023b091f19e0516fb8658cc9f6792364fcf3c3564e3cf5a07",
+    "bytes": 71176
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_gp_Pnt.cpp.o": {
+    "sha256": "c3bebe775f5665acea2e38e911d149a39b990d3a03bb4e9dc0a9678a8ea0d94d",
+    "bytes": 76632
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_gp_Pnt2d.cpp.o": {
+    "sha256": "80dc08869b915cde952c052ca915d7496740ddc8306c31d3fdbb683881c0dbc3",
+    "bytes": 77079
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_handle_Geom_Curve.cpp.o": {
+    "sha256": "b733ded174e452cd1bf0ec29b0324ce5e555540e0c34551d49b6c0b476ccbad1",
+    "bytes": 85331
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_handle_Standard_Transient.cpp.o": {
+    "sha256": "99e4cd1a1183c668b10605653039d133240bd84134bd507f76af71f19d0b2f06",
+    "bytes": 87722
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_handle_TCollection_HAsciiString.cpp.o": {
+    "sha256": "b4f62fe5afcdcbcad0d4850679715a18a18c8244c62c6de42c9dc5e1eb17af1c",
+    "bytes": 89507
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_handle_TDF_Attribute.cpp.o": {
+    "sha256": "7a28d1bce7f8f6133d21014553cd0e6c8a902f6382a4c7acd1da1c8172264af5",
+    "bytes": 86227
+  },
+  "/home/repro/occt-destructor-audit/repaired-objects/myMain.h/NCollection_Sequence_int.cpp.o": {
+    "sha256": "d0d6616183f317ada2d8df62fc7b544662efde10810c453aeabeafe0652f6481",
+    "bytes": 71106
+  }
+}
