@@ -22,7 +22,7 @@ separate from drawer padding and joint adjustments.
 
 ## Bottom styles
 
-Choose **Closed** for a continuous floor or **Open** for rounded 32.5 mm windows
+With hardware off, choose **Closed** for a continuous floor or **Open** for rounded 32.5 mm windows
 through each cell floor. Open retains a 2 mm ledge around the lower seat and at
 least 2.4 mm of floor on either side of the shaped glue faces. The seat tapers,
 outer frame, overall height and 42 mm pitch stay the same. Cuts through a cell
@@ -32,6 +32,37 @@ Every tile must remain one connected, watertight solid in either mode.
 
 Recipes save the selection. Existing recipes without a bottom field load Closed.
 STL downloads are watertight solids even when the floor has open windows.
+
+## Magnets, screws and ballast
+
+Floor, Magnets and M3 screw holes are independent buttons. Ballast requires Closed;
+turning Ballast on closes the floor, and choosing Open turns Ballast off. These
+provide the same 12 floor/hardware/ballast combinations as the shelf generator.
+
+Magnet pockets are 2.4 mm deep for 6 × 2 mm magnets. Fit presets share the shelf
+and converter definitions: **Snug glue** Ø6.2 mm (default), **Official** Ø6.5 mm,
+and **Friction** Ø6.0 mm. Snug glue matches the stacking boxes and the owner's
+reported fit; friction retention depends on printing tolerances.
+
+Hardware centers are ±13 mm from each cell center. M3 clearance holes are
+Ø3.2 mm and pass through the floor. Magnets raise the seat floor to 3.2 mm above
+the underside, retaining 0.8 mm below each pocket. Open floors with hardware
+use an octagonal central window, retaining four corner supports. Tile seam
+lands remain, although hardware holes can cross them. Assemble tiles before
+installing hardware that spans a cut.
+
+Ballast raises the seat floor to 6.65 mm, with 21.4 × 21.4 × 4 mm weight cavities
+and 2 mm-deep rubber-foot recesses opening from underneath. M3 hardware, when
+enabled, also gets Ø6 mm underside head recesses. Weights need a suitable
+retaining backing. Hardware remains optional. The 5 mm seat profile and 42 mm
+pitch are preserved; total height includes the increased floor depth.
+
+Recipes, shared links and download names carry these options. Older recipes
+without hardware fields retain their original no-hardware geometry.
+[Hardware geometry checks](checks/base-options.json) cover all combinations and
+magnet fits, pocket probes, tiled cuts, valid connected meshes, reference-foot
+clearance and unchanged legacy meshes. [Browser checks](checks/base-options-browser.json)
+cover controls, saved settings, recipe/ZIP/STEP downloads and mobile layout.
 
 ## Tiling and CA joints
 

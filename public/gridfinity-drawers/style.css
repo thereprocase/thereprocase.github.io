@@ -12,3 +12,5 @@ fieldset,.file{min-width:0}.file{max-width:100%}#viewer canvas{max-width:100%}@m
 .tile-labels{position:absolute;inset:0;z-index:1;pointer-events:none}.tile-labels button{position:absolute;transform:translate(-50%,-50%);padding:3px 5px;min-height:25px;border:1px solid #273c40;background:rgba(255,255,255,.94);font:11px 'IBM Plex Mono',monospace;white-space:nowrap;pointer-events:auto}.tile-labels button[aria-pressed=true]{background:#0000a8;color:white}#viewer-note{z-index:3}
 
 #share-status,#width-result{overflow-wrap:anywhere}
+
+#base-options,#magnet-fit-controls,#base-note{grid-column:1/-1}.base-buttons{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.base-buttons button{min-height:36px}.base-buttons button[aria-pressed=true]{background:#0000a8;color:white}

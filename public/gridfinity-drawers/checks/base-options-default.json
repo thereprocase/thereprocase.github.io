@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "configuration": "default 300x400, 6x8 cells, magnets+screws+ballast",
+  "milliseconds": 37964.447937,
+  "tiles": 4,
+  "triangles": 316252,
+  "maxFootOverlap": 0.0010922284902728883,
+  "allTilesFit": true
+}

@@ -1,30 +1,46 @@
 {
-  "date": "2026-10-18",
+  "date": "2026-10-21",
   "illustration": "overview.png",
   "method": "Render of actual default generator STL tiles; display-only 14 mm separation. No AI geometry.",
   "geometry_checks": "geometry.json",
   "independent_stl_checks": "independent.json",
   "physical_fit": "untested",
-  "ca_gap": "provisional 0.10 mm horizontal",
+  "ca_gap": "0.15 mm total printing-fit relief by default",
   "sources": [
     {
       "path": "app.js",
-      "sha256": "9c666fdf8ab7f3d70c3a26b9e00df008671f499dc0883a3a9cfe0f42e7b3d559"
+      "sha256": "a566a3dc430c995690ce230169ef5e177a261b713c16e3c8e2f26b21dbf17f69"
     },
     {
       "path": "kernel.js",
-      "sha256": "d4be2b7deadda601539512d93e48d58244e933b5a1a6d446408c2414e5ef169d"
+      "sha256": "909bd50c968cbf29afdbf5a5ed7bf0740a9dd1f793ad259e0c36f6b88c8ac700"
     },
     {
       "path": "worker.js",
-      "sha256": "caaabbfb7b88ca852c7a0966208429060cd4d2b214d64557e7c935247d8eb80b"
+      "sha256": "19762585f6805e0941e90b01e649199a2b3587337f25c369e0902d8ea5ce5e6d"
     },
     {
       "path": "zip.js",
       "sha256": "7347c352349e55076b21eefcd305daf53243ec326acdc8855908e26feab63ed8"
+    },
+    {
+      "path": "index.html",
+      "sha256": "e35a39a4981e6745e1db9d2f416d0044c69fa5f9173cfd0107e7b91a87d292ec"
+    },
+    {
+      "path": "export-worker.js",
+      "sha256": "ce2c59ac33f471ee77022b1a729b1dc5a6d515baaa73b012f80788c555be128b"
+    },
+    {
+      "path": "style.css",
+      "sha256": "abe4dc670aeffd5be117be1f92d8282aa6e723090e950b781e50bd5abb2e6dab"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fbf93e199cf9a6b2c6c5411fce43fb04b9d9b19dd2b961f4e531c7f20134c059"
     }
   ],
-  "revision": "Open/Closed bottom options",
+  "revision": "drawer-bases-1",
   "bottom_comparison": "bottom-options-v2.png, actual generated 90x90 mm 2x2 grids, X/Y cuts45mm between cells, display-only5mm separation",
   "open_checks": "open-bottoms.json",
   "open_browser_checks": "browser-open.json",
@@ -54,5 +70,29 @@
     ],
     "evidence": "runtime-3.json",
     "outcomes": "running, success, error or cancelled; terminal wall time belongs to that operation"
+  },
+  "baseOptions": {
+    "floor": [
+      "open",
+      "closed"
+    ],
+    "independentHardware": [
+      "magnets",
+      "screws"
+    ],
+    "ballastRequires": "closed",
+    "magnetFitsMM": {
+      "snug": 6.2,
+      "glue": 6.5,
+      "press": 6.0
+    },
+    "defaultMagnetFit": "snug",
+    "magnetDepthMM": 2.4,
+    "minimumMagnetFloorMM": 3.2,
+    "weightedFloorMM": 6.65,
+    "geometryEvidence": "base-options.json",
+    "browserEvidence": "base-options-browser.json",
+    "defaultSizeEvidence": "base-options-default.json",
+    "legacyMeshIdentical": true
   }
 }

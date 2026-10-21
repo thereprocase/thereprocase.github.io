@@ -5,7 +5,7 @@
       "tiles": 1,
       "footOverlap": 0.0002588765373260958,
       "triangles": 4220,
-      "milliseconds": 212,
+      "milliseconds": 715,
       "pass": true
     },
     {
@@ -13,7 +13,7 @@
       "tiles": 4,
       "footOverlap": 0.0010215900724612423,
       "triangles": 54208,
-      "milliseconds": 2794,
+      "milliseconds": 9549,
       "pass": true
     },
     {
@@ -21,7 +21,7 @@
       "tiles": 6,
       "footOverlap": 0.0008823686955819975,
       "triangles": 14124,
-      "milliseconds": 639,
+      "milliseconds": 2204,
       "pass": true
     },
     {
@@ -29,7 +29,7 @@
       "tiles": 2,
       "footOverlap": 0.0002588765373260958,
       "triangles": 4348,
-      "milliseconds": 187,
+      "milliseconds": 615,
       "pass": true
     },
     {
@@ -37,7 +37,7 @@
       "tiles": 2,
       "footOverlap": 0.0002588765373260958,
       "triangles": 4436,
-      "milliseconds": 187,
+      "milliseconds": 651,
       "pass": true
     },
     {
@@ -45,7 +45,7 @@
       "tiles": 1,
       "footOverlap": 0.00036765690713682134,
       "triangles": 6278,
-      "milliseconds": 301,
+      "milliseconds": 987,
       "pass": true
     },
     {
@@ -53,7 +53,7 @@
       "tiles": 1,
       "footOverlap": 0.0007396059280886048,
       "triangles": 9604,
-      "milliseconds": 439,
+      "milliseconds": 1649,
       "pass": true
     },
     {
@@ -61,7 +61,7 @@
       "tiles": 4,
       "footOverlap": 0,
       "triangles": 4492,
-      "milliseconds": 159,
+      "milliseconds": 519,
       "pass": true
     },
     {
@@ -69,7 +69,7 @@
       "tiles": 1,
       "footOverlap": 0.00005444920098404508,
       "triangles": 1064,
-      "milliseconds": 41,
+      "milliseconds": 134,
       "pass": true
     },
     {
@@ -77,7 +77,7 @@
       "tiles": 6,
       "footOverlap": 0.0008823686955819975,
       "triangles": 13936,
-      "milliseconds": 634,
+      "milliseconds": 2180,
       "pass": true
     },
     {
@@ -85,7 +85,7 @@
       "tiles": 2,
       "footOverlap": 0.0006384487321155672,
       "triangles": 13358,
-      "milliseconds": 597,
+      "milliseconds": 2211,
       "pass": true
     }
   ],

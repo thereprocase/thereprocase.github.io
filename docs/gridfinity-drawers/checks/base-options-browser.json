@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "floorHardwareControls": true,
+  "magnetFits": [
+    "snug",
+    "glue",
+    "press"
+  ],
+  "ballastFloorMutualExclusion": true,
+  "sharedSettingsAndRecipe": true,
+  "fourTileZIP": true,
+  "facetedSTEP": true,
+  "mobileAndDesktop": true,
+  "errors": []
+}
