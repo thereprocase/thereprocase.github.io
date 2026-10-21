@@ -1,0 +1,127 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "base_type": "magnets",
+      "magnet_fit": "glue",
+      "volume": 22074.139785969975,
+      "triangles": 24564,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "magnets",
+      "magnet_fit": "press",
+      "volume": 22130.196021673364,
+      "triangles": 24564,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "both",
+      "magnet_fit": "glue",
+      "volume": 22048.422239267205,
+      "triangles": 26116,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "both",
+      "magnet_fit": "press",
+      "volume": 22104.478474970594,
+      "triangles": 26116,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-magnets",
+      "magnet_fit": "glue",
+      "volume": 19886.939971599466,
+      "triangles": 24604,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674838005654,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-magnets",
+      "magnet_fit": "press",
+      "volume": 19942.996208329296,
+      "triangles": 24598,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674838005654,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-both",
+      "magnet_fit": "glue",
+      "volume": 19861.222421124825,
+      "triangles": 26152,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "open-both",
+      "magnet_fit": "press",
+      "volume": 19917.278656828214,
+      "triangles": 26152,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006856674837999756,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted",
+      "magnet_fit": "glue",
+      "volume": 25868.75597040455,
+      "triangles": 28546,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted",
+      "magnet_fit": "press",
+      "volume": 25924.812206107938,
+      "triangles": 28546,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted-magnets",
+      "magnet_fit": "glue",
+      "volume": 26247.989468924745,
+      "triangles": 25456,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    },
+    {
+      "base_type": "weighted-magnets",
+      "magnet_fit": "press",
+      "volume": 26304.045704628134,
+      "triangles": 25456,
+      "pegDelta": 3.438003605167535e-8,
+      "maxFootOverlap": 0.00006844138742339232,
+      "pocketAndFloorProbes": true,
+      "precomputedFootprintUnchanged": true
+    }
+  ],
+  "legacyDefault": "glue",
+  "frameHullUnchanged": true
+}

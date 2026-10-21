@@ -18,3 +18,6 @@ export function baseTypeFor(choices){
  const entry=Object.entries(baseChoices).find(([,p])=>Object.keys(p).every(k=>p[k]===choices[k]));
  if(!entry)throw Error('Ballast requires a closed floor.');return entry[0];
 }
+
+/** Nominal pockets for 6 × 2 mm magnets; depth is shared between fit presets. */
+export const magnetFits={glue:{label:'Glue fit',diameter:6.5},press:{label:'Press fit',diameter:5.9}};

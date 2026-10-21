@@ -1,5 +1,5 @@
 import {footprintHull,placementAtAngle} from './bed-placement.js?v=rectangle-fit-1';
-import {validateExport} from './kernel.js?v=base-controls-1';
+import {validateExport} from './kernel.js?v=magnet-fit-1';
 const enc=new TextEncoder();
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const real=x=>{const s=num(x);return /[.e]/i.test(s)?s.replace(/e/i,'E').replace(/^(\-?\d+)E/,'$1.E'):s+'.';};

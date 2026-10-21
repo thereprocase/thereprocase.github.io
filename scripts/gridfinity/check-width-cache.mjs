@@ -5,7 +5,7 @@ import {widthCacheKey,precomputedWidth,readWidthCache,saveWidthCache} from '../.
 const root=new URL('../../public/gridfinity-shelves/',import.meta.url),data=JSON.parse(fs.readFileSync(new URL('width-precomputed.json',root)));
 for(const [name,hash] of Object.entries(data.sources))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(new URL(name,root))).digest('hex'),hash,name);
 const bed={width:256,depth:256},upper=8;
-for(const base_type of Object.keys(baseChoices))assert.equal(precomputedWidth(data,parameters({base_type}),bed,upper).columns,7);
+for(const base_type of Object.keys(baseChoices))for(const magnet_fit of ['glue','press'])assert.equal(precomputedWidth(data,parameters({base_type,magnet_fit}),bed,upper).columns,7);
 for(const [key,value] of Object.entries({rows:2,angle:-2,mount_rows:3,board_system:'skadis',clearance:.1,web:3,beam:12,backplate:false,peg_clearance:.05}))assert.equal(precomputedWidth(data,parameters({[key]:value}),bed,upper),null,key);
 assert.equal(precomputedWidth({...data,revision:'old'},parameters({}),bed,upper),null);
 assert.equal(precomputedWidth(data,parameters({}),bed,12),null);

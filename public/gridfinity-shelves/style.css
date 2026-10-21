@@ -20,3 +20,5 @@ select{min-width:0;width:100%;padding:9px;font:inherit;border:1px solid #555;bac
 
 .base-options{display:grid;gap:10px}.base-buttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.base-buttons button{min-height:36px;padding:7px 12px}.base-buttons button[aria-pressed="true"]{background:#0000b5;color:#fff;border-color:#0000b5}.base-buttons button:focus-visible{outline:3px solid #e76f00;outline-offset:2px}
 .compact-fields>.base-options,.compact-fields>#base-note{grid-column:1/-1}
+
+.compact-fields>#magnet-fit-controls{grid-column:1/-1}

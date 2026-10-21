@@ -1,5 +1,5 @@
 import {bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
-export const widthRevision='base-controls-1';
+export const widthRevision='magnet-fit-1';
 const storageKey='gridfinity-width-results-'+widthRevision;
 export function widthCacheKey(parameters,bed){
  return JSON.stringify([widthRevision,Object.entries(parameters).filter(([k])=>k!=='columns').sort(([a],[b])=>a.localeCompare(b)),bed.width,bed.depth]);

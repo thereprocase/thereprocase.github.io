@@ -1,9 +1,9 @@
 import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=dense-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-import {baseChoices,baseTypes} from './base-options.js?v=base-controls-1';
+import {baseChoices,baseTypes,magnetFits} from './base-options.js?v=magnet-fit-1';
 export {baseTypes};
-export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,base_type:'frame',...pegFitDefaults,...boardDefaults};
+export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,base_type:'frame',magnet_fit:'glue',...pegFitDefaults,...boardDefaults};
 export function parameters(input) {
  const p={...defaults,...boardSettings(input.board_system??'original'),...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
  for(const k of Object.keys(input)) if(!(k in defaults)) throw Error(`Unknown parameter: ${k}`);
@@ -13,6 +13,7 @@ export function parameters(input) {
  if(!Number.isInteger(p.mount_rows)||p.mount_rows<1||p.mount_rows>4)throw Error('Mount height: use one to four peg rows.');
  if(typeof p.backplate!=='boolean')throw Error('Backplate must be true or false.');
  if(!Object.hasOwn(baseTypes,p.base_type))throw Error('Choose a supported Gridfinity base type.');
+ if(!Object.hasOwn(magnetFits,p.magnet_fit))throw Error('Choose Glue fit or Press fit for the magnets.');
  const mountZ=Array.from({length:p.mount_rows},(_,i)=>-25.4*i),backBottom=p.mount_rows===1?-12.7:mountZ.at(-1)-4.28,webColumns=Array.from({length:p.columns+1},(_,i)=>(i-p.columns/2)*42);
  const frameWidth=42*p.columns+4,count=Math.floor((frameWidth-10)/25.4)+1;
  const original={...p,mountZ,backBottom,webColumns,frameWidth,width:frameWidth,mounts:Array.from({length:count},(_,i)=>(i-(count-1)/2)*25.4),front:51.55+42*(p.rows-1)};const layout=boardLayout(p);return {...original,...layout,mountSites:layout?.mountSites??original.mounts.flatMap(x=>mountZ.map((z,row)=>({x,z,row})))};
@@ -81,7 +82,7 @@ export function build(module, inputs, input) {
     // Shelf adaptation of the original weighted base: hardware on a 26 mm grid.
     const bore=(xx,yy,z,h,r)=>tilt(moved(keep(M.cylinder(h,r,r,96)),[xx,yy,z]));
     for(const dx of [-13,13])for(const dy of [-13,13]){
-     if(magnets)pockets.push(bore(x+dx,y+dy,.97-2.4,2.5,3.25)); // 6×2 mm magnet recess
+     if(magnets)pockets.push(bore(x+dx,y+dy,.97-2.4,2.5,magnetFits[p.magnet_fit].diameter/2)); // 6×2 mm magnet recess
      if(screws)pockets.push(bore(x+dx,y+dy,baseBottom-.1,.97-baseBottom+.2,1.6)); // M3 clearance
      if(weighted&&screws)pockets.push(bore(x+dx,y+dy,baseBottom-.1,3.1,3)); // underside head access
     }
