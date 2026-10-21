@@ -3,7 +3,7 @@
  */
 export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height,
   fit, maximumHoleDepth, maximumHoleRadius, roof, nativeFoot,
-  cut, fuse, intersect, union, volume, own = shape => shape, onProgress = () => {} }) {
+  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {} }) {
   if (!feet.length) throw Error('Select at least one foot before converting.');
   const made = new Set();
   const keep = shape => { made.add(shape); return own(shape); };
@@ -13,13 +13,12 @@ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height
     const xs = feet.flatMap(f => [f.x, f.sourceX ?? f.x]);
     const ys = feet.flatMap(f => [f.y, f.sourceY ?? f.y]);
     // Contains every removal tool, replacement foot, seam probe and roof probe.
-    const editBox = box(
-      [Math.min(...xs)-margin, Math.min(...ys)-margin, bottom-.1],
-      [Math.max(...xs)+margin, Math.max(...ys)+margin,
-        bottom+Math.max(4.75, height+.02, maximumHoleDepth+roof)+.1],
-    );
+    const clipMin = [Math.min(...xs)-margin, Math.min(...ys)-margin, bottom-.1];
+    const clipMax = [Math.max(...xs)+margin, Math.max(...ys)+margin,
+      bottom+Math.max(4.75, height+.02, maximumHoleDepth+roof)+.1];
+    const editBox = box(clipMin, clipMax);
     onProgress('Preparing the shared native edit region…');
-    const localSource = keep(intersect(source, editBox));
+    const localSource = keep(clipSource(source, editBox, {min:clipMin,max:clipMax}));
     const cuts = [], newFeet = [];
     for (const [index, f] of feet.entries()) {
       const sx=f.sourceX ?? f.x, sy=f.sourceY ?? f.y;

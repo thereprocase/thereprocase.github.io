@@ -1,0 +1,23 @@
+{
+  "baseRevision": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "scope": "Official exact edge-deviation overload and two reader callsite changes only; general import, no verifier-only pcurve/range suppression.",
+  "upstreamCommits": [
+    "3f3d32d9f3e79678176c131521f98b2a6ce440cb",
+    "8f817f5da580572f1e28a3038da27ae4499134b7"
+  ],
+  "sources": {
+    "src/ModelingAlgorithms/TKShHealing/ShapeAnalysis/ShapeAnalysis_Edge.cxx": {
+      "baseSha256": "6067b2c56b43a331dba2463ead64fb7a2f4ea37fa35ac654fa7f84e6533010e4",
+      "patchedSha256": "9c1c29cd23bf2eb84ae921abbe2dfd6e9ad5239afaf2e03b3b94e522ea646e60"
+    },
+    "src/ModelingAlgorithms/TKShHealing/ShapeAnalysis/ShapeAnalysis_Edge.hxx": {
+      "baseSha256": "145aeea6b64658da6f8055dd27b8c2ca3b79a1cdc8aad51aa2f1a30a605adaa9",
+      "patchedSha256": "ed76401f9f4b6a293803dff66f173249eb1127c1e71271d50c0b11c3034d108e"
+    },
+    "src/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Edge.cxx": {
+      "baseSha256": "8d03114683f88e1649ff5b160086354a3bcc443fa196055105b3ecbfc89ae380",
+      "patchedSha256": "834854125e4b1a033d624ec614e6f67e0ac12d6c72718bec65c26b5dd4eaa6a5"
+    }
+  },
+  "status": "Released with guarded curve-consistency preparation; default-fit 3x4 model and pencil-cup conversion and STEP round trips validated. Experimental valid-first preparation is excluded."
+}

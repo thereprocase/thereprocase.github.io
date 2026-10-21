@@ -40,6 +40,9 @@ try {
     if(index === 6) assert.ok(result.report.meshTessellation.converted.reusedFaces > 0,'fresh mesh fallback must not invalidate original cache');
     assert.equal(prepared,true);
     assert.equal(result.nativeDocumentId,documentId);
+    assert.equal(result.report.reusedLocalSource, [1,6].includes(index), 'Source clip cache follows exact placement and clip bounds');
+    assert.equal(Boolean(result.report.sourceBoundsCheck.reused), [1,2,6].includes(index), 'Bounds proof cache follows units, placement and detection bounds');
+    assert.ok(result.report.constructionRelease.releasedArenaEntries > 0, 'construction tools are released before dual validation');
     const after = nativeGeometrySnapshot(oc,canonical);
     assert.equal(withoutCheckedFlag(after),withoutCheckedFlag(original),'canonical CAD geometry must stay unchanged');
     if(index === 1) {

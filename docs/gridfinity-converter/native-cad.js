@@ -1,13 +1,21 @@
-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-local-20261020-1';
-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-local-20261020-1';
-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-local-20261020-1';
-import { preservedRepairGeometry } from './repair-signature.js?v=native-local-20261020-1';
-import { proveNativePreservation } from './native-preservation.js?v=native-local-20261020-1';
-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-local-20261020-1';
+import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-1';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-1';
+import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-1';
+import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-1';
+import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-1';
+import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-1';
+import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-1';
+import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-1';
+import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-1';
+import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-1';
+import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-1';
+import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-1';
+import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-1';
+import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-1';
 /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
-import initOC from './vendor/replicad/replicad_single.js';
+import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-1';
 import * as cad from './vendor/replicad/replicad.js';
-let ready, OC;
+let ready, OC, kernelPurpose;
 let displayFaceCache = null;
 const retainedDisplayCaches = new Set();
 let conversionShapes = null;
@@ -15,11 +23,25 @@ function ownConversionShape(shape) {
   conversionShapes?.add(shape);
   return shape;
 }
+/** Drop construction handles; output TShapes keep their own shared references. */
+function releaseConstructionShapes(checkpoint, retained) {
+  let releasedArenaEntries = 0;
+  for (const shape of conversionShapes) {
+    if (checkpoint.has(shape) || retained.has(shape)) continue;
+    // Replicad WrappingObj.delete() is explicitly idempotent; some contact
+    // probes were already deleted immediately after use.
+    shape.delete();
+    conversionShapes.delete(shape);
+    releasedArenaEntries++;
+  }
+  return { releasedArenaEntries, retainedArenaEntries: conversionShapes.size };
+}
 const nativeBox = (...args) => ownConversionShape(cad.makeBox(...args));
 const nativeCylinder = (...args) => ownConversionShape(cad.makeCylinder(...args));
 function disposePreparedDocuments() {
   for (const record of preparedNativeDocuments.values()) {
     record.source.delete();
+    record.localClip?.shape.delete();
     if (record.displayCache) {
       retainedDisplayCaches.delete(record.displayCache);
       if (record.displayCache !== displayFaceCache) disposeFaceMeshCache(record.displayCache);
@@ -59,9 +81,10 @@ function exactBounds(shape) {
     box.delete();
   }
 }
-async function kernel() {
+async function kernel(purpose = 'model') {
+  kernelPurpose = claimKernelPurpose(kernelPurpose, purpose);
   if (!ready)
-    ready = initOC().then((oc) => {
+    ready = initNativeKernel({purpose}).then((oc) => {
       OC = oc;
       cad.setOC(oc);
       return oc;
@@ -83,7 +106,7 @@ export async function previewNative({
   onProgress('Reading native CAD…', { stage: 2, total: 5 });
   const source =
     format === 'brep'
-      ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
+      ? castOwned(cad, oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
       : await cad.importSTEP(new Blob([buffer]));
   let nativeDocumentId = null;
   try {
@@ -144,16 +167,16 @@ export async function previewNative({
       try {
         const triangles = raw.getTrianglesSize() / 3;
         if (triangles <= previewTriangleBudget) {
-          const vertices = new Float32Array(
+          const vertices = copyNativeArray(Float32Array,
             oc.wasmMemory.buffer,
             raw.getVerticesPtr(),
             raw.getVerticesSize(),
-          ).slice();
-          const indices = new Uint32Array(
+          );
+          const indices = copyNativeArray(Uint32Array,
             oc.wasmMemory.buffer,
             raw.getTrianglesPtr(),
             raw.getTrianglesSize(),
-          ).slice();
+          );
           onProgress('CAD preview ready.', {
             stage: 3,
             total: 5,
@@ -185,6 +208,7 @@ export async function previewNative({
               ],
             },
             preview: {
+              nativeKernel: nativeKernelInfo(oc),
               deflectionMM: deflection,
               angularDeflection: angle,
               triangles,
@@ -237,11 +261,12 @@ function boolean(kind, a, b) {
     // Inputs are reused for later hole and preservation checks. OCCT must
     // copy topology it needs to modify instead of changing those inputs.
     op.SetNonDestructive(true);
+    if (nativeKernelInfo(OC).threads > 1) op.SetRunParallel(true);
     op.SetFuzzyValue(0.00001);
     op.Build();
     if (!op.IsDone())
       throw Error(`Native CAD ${kind} operation did not finish.`);
-    return ownConversionShape(cad.cast(op.Shape()));
+    return ownConversionShape(castOwned(cad, op.Shape()));
   } finally {
     op.delete();
     argumentsList.delete();
@@ -257,12 +282,12 @@ function union(shapes) {
 // Replicad's getter creates owning wrappers even when only length is needed.
 // Dispose those wrappers immediately so a retained worker does not pin solids.
 function solidCount(shape) {
-  const solids = shape.solids;
+  const solids = ownedSolids(OC, cad, shape);
   try { return solids.length; }
   finally { for (const solid of solids) solid.delete(); }
 }
 function valid(oc, s) {
-  const c = new oc.BRepCheck_Analyzer(s.wrapped, true, false, true);
+  const c = new oc.BRepCheck_Analyzer(s.wrapped, true, nativeKernelInfo(oc).threads > 1, true);
   try {
     return c.IsValid();
   } finally {
@@ -302,7 +327,7 @@ function transform(oc, s, d, inverse = false) {
   if (!inverse && isRigidMatrix(r, t) && cacheMatchesSource(displayFaceCache, s)) {
     // A direct rigid placement preserves native geometry and existing meshes.
     const builder = new oc.BRepBuilderAPI_Transform(s.wrapped, tr, false, false);
-    try { out = cad.cast(builder.Shape()); } finally { builder.delete(); }
+    try { out = castOwned(cad, builder.Shape()); } finally { builder.delete(); }
     const previousCache = displayFaceCache;
     displayFaceCache = null;
     try {
@@ -311,7 +336,11 @@ function transform(oc, s, d, inverse = false) {
     }
     catch { /* Cache mismatch falls back to fresh display meshing. */ }
     finally { if (!retainedDisplayCaches.has(previousCache)) disposeFaceMeshCache(previousCache); }
-  } else out = cad.cast(tf.transform(s.wrapped));
+  } else {
+    const builder = new oc.BRepBuilderAPI_Transform(s.wrapped, tf.wrapped, true, false);
+    try { out = castOwned(cad, builder.ModifiedShape(s.wrapped)); }
+    finally { builder.delete(); }
+  }
   // Orientation changes are rigid, so volume is invariant.
   if (volumeCache.has(s)) volumeCache.set(out, volumeCache.get(s));
   if (signedVolumeCache.has(s)) signedVolumeCache.set(out, signedVolumeCache.get(s));
@@ -369,7 +398,12 @@ export async function tessellateNative(
           tessellation: { attempts: [{ deflectionMM: tolerance, triangles: mesh.triangles.length / 3, elapsedMS: mesh.elapsedMS }],
             elapsedMS: performance.now() - started, reusedFaces: mesh.reusedFaces, changedFaces: mesh.changedFaces },
         };
-      } catch (error) { cacheFallback = error.message; }
+      } catch (error) {
+        // A native trap is not a cache mismatch. Retrying on the same kernel
+        // can obscure the first failure and allocate into damaged memory.
+        if (error instanceof WebAssembly.RuntimeError) throw error;
+        cacheFallback = error.message;
+      }
     }
     // Keep the existing finest-fitting tolerance policy. Reject oversized
     // attempts before copying any buffers; normals/face groups are not used.
@@ -384,8 +418,8 @@ export async function tessellateNative(
       const triangles = raw.getTrianglesSize() / 3;
       attempts.push({ deflectionMM: tolerance, triangles, elapsedMS: performance.now() - attemptStart, ...(cacheFallback ? { cacheFallback } : {}) });
       if (triangles <= triangleBudget) {
-        const vertices = new Float32Array(oc.wasmMemory.buffer, raw.getVerticesPtr(), raw.getVerticesSize()).slice();
-        const indices = new Uint32Array(oc.wasmMemory.buffer, raw.getTrianglesPtr(), raw.getTrianglesSize()).slice();
+        const vertices = copyNativeArray(Float32Array, oc.wasmMemory.buffer, raw.getVerticesPtr(), raw.getVerticesSize());
+        const indices = copyNativeArray(Uint32Array, oc.wasmMemory.buffer, raw.getTrianglesPtr(), raw.getTrianglesSize());
         return {
           vertices, triangles: indices, ...(includeVolume ? { volume: volume(shape) } : {}),
           tessellationDeflectionMM: tolerance,
@@ -400,38 +434,86 @@ export async function tessellateNative(
   }
 }
 
-function createNativeExportChecks(oc, { preferPreservedCurves = false, onProgress = () => {} } = {}) {
+function createNativeExportChecks(oc, { preferPreservedCurves = false, verifier = false, trustedSource = null, parallelSourceBounds = null, onProgress = () => {} } = {}) {
+  const certificates = new WeakMap();
+  const exportBounds=shape=>{
+    if(verifier)return verifierExactBounds(oc,shape.wrapped);
+    const box=shape.boundingBox;
+    try{return box.bounds.map(row=>[...row]);}finally{box.delete();}
+  };
+  const timedMetric=(stage,fn)=>{const t=performance.now();const value=fn();onProgress('Checking STEP geometry…',{diagnostic:'step-export-verifier',stage,elapsedMS:performance.now()-t});return value;};
+  const sourceCertificate = shape => {
+    if (certificates.has(shape)) return certificates.get(shape);
+    const began = performance.now();
+    if (verifier) timedMetric('source-flags',()=>assertVerifierSource(oc, shape.wrapped));
+    const bounds = trustedSource?.shape === shape && trustedSource.metrics.bounds ? trustedSource.metrics.bounds : parallelSourceBounds ? undefined : timedMetric('source-bounds',()=>exportBounds(shape));
+    const metrics = { bounds, volume: trustedSource?.shape === shape ? trustedSource.metrics.signedVolume : timedMetric('source-volume-cached',()=>volume(shape)), tolerances: verifier ? timedMetric('source-tolerances',()=>verifierTolerances(oc, shape.wrapped)) : null };
+    if (bounds) assertFiniteStepMetrics(metrics,verifier);
+    else if (!Number.isFinite(metrics.volume) || !Array.isArray(metrics.tolerances) || metrics.tolerances.length!==3 || !metrics.tolerances.every(v=>Number.isFinite(v)&&v>=0)) throw Error('Invalid STEP source metrics.');
+    certificates.set(shape, metrics);
+    onProgress('Prepared STEP source checks…', { diagnostic:'step-export-verifier', stage:'source-metrics', elapsedMS:performance.now()-began });
+    return metrics;
+  };
   // Validate the serialized file, not only the in-memory boolean result.
-  const serializeAndCheck = async (shape, mode) => {
+  const serializeAndCheck = async (shape, mode, repairPolicy = 'full') => {
+    const expected = sourceCertificate(shape);
+    const serializeStarted = performance.now();
     // Validate both supported representations of optional surface curves.
-    const previousMode = oc.Interface_Static.IVal('write.surfacecurve.mode');
+    const precision=verifier ? Math.max(...expected.tolerances) : undefined;
     let blob;
-    try {
-      oc.Interface_Static.SetIVal('write.surfacecurve.mode', mode);
-      blob = await shape.blobSTEP();
-    } finally {
-      oc.Interface_Static.SetIVal('write.surfacecurve.mode', previousMode);
+    if(verifier)blob=await writeVerifierSTEP(oc,shape.wrapped,precision);
+    else {
+      // Preserve the existing generic export path and its writer initialization.
+      const previousMode=oc.Interface_Static.IVal('write.surfacecurve.mode');
+      try{oc.Interface_Static.SetIVal('write.surfacecurve.mode',mode);blob=await shape.blobSTEP();}
+      finally{oc.Interface_Static.SetIVal('write.surfacecurve.mode',previousMode);}
     }
-    const reopened = await cad.importSTEP(blob);
+    onProgress('STEP writer policy applied…',{diagnostic:'step-export-verifier',stage:'writer-policy',surfaceCurves:mode,precision});
+    onProgress('Reopening exported STEP…', {diagnostic:'step-export-verifier',stage:'serialize',elapsedMS:performance.now()-serializeStarted});
+    const reopenStarted = performance.now();
+    const reopened = verifier ? await readVerifierSTEP(oc, blob, raw => cad.cast(raw), onProgress, {selectiveRepair: repairPolicy === 'selective'}) : await cad.importSTEP(blob);
+    onProgress('Checking exported STEP…', {diagnostic:'step-export-verifier',stage:'reopen',elapsedMS:performance.now()-reopenStarted});
     try {
+      if (!expected.bounds) {
+        try {
+          const outcome=await parallelSourceBounds.task;
+          if(outcome.error)throw Error(outcome.error);
+          const identityOutcome=await parallelSourceBounds.identity;
+          if(identityOutcome.error)throw Error(identityOutcome.error);
+          expected.bounds=validateBoundsReply(outcome.value,identityOutcome.value,nativeKernelInfo(oc));
+          onProgress('Parallel source bounds accepted…',{diagnostic:'parallel-source-bounds',stage:'accepted',capacityBytes:outcome.value.capacityBytes,mainCapacityBytes:oc.wasmMemory.buffer.byteLength});
+        } catch(error) {
+          onProgress('Computing source bounds locally…',{diagnostic:'parallel-source-bounds',stage:'fallback',reason:error.message});
+          expected.bounds=timedMetric('source-bounds',()=>exportBounds(shape));
+        }
+        assertFiniteStepMetrics(expected,verifier);
+      }
+      const checkStarted = performance.now();
       if (!valid(oc, reopened) || solidCount(reopened) !== 1)
         throw Error(
-          'The exported STEP fails strict CAD validation when reopened. Export blocked; this geometry is not currently supported for native export.',
+          'The exported STEP fails strict CAD validation when reopened. STEP export blocked.',
         );
-      const changed = Math.abs(volume(shape) - volume(reopened));
-      const expectedBox = shape.boundingBox;
-      const actualBox = reopened.boundingBox;
-      const boundsChanged = expectedBox.bounds.some((row, i) =>
+      onProgress('Checking exported STEP geometry…', {diagnostic:'step-export-verifier',stage:'exact-check',elapsedMS:performance.now()-checkStarted});
+      const metricsStarted = performance.now();
+      const actualTolerances=verifier ? timedMetric('reopened-tolerances',()=>verifierTolerances(oc,reopened.wrapped)) : null;
+      onProgress('Comparing STEP tolerance ceilings…',{diagnostic:'step-export-verifier',stage:'compare-tolerances',expected:expected.tolerances,actual:actualTolerances});
+      if (verifier) assertFiniteStepMetrics({bounds:expected.bounds,volume:expected.volume,tolerances:actualTolerances},true);
+      if (verifier && actualTolerances.some((value,i)=>value > expected.tolerances[i] + 1e-12)) throw Error('STEP export changed native tolerance ceilings. Export blocked.');
+      const actualVolume=timedMetric('reopened-volume',()=>volume(reopened));
+      const changed = Math.abs(expected.volume - actualVolume);
+      const actualBounds = timedMetric('reopened-bounds',()=>exportBounds(reopened));
+      assertFiniteStepMetrics({bounds:actualBounds,volume:actualVolume,tolerances:actualTolerances},verifier);
+      const boundsChanged = expected.bounds.some((row, i) =>
         row.some(
-          (value, j) => Math.abs(value - actualBox.bounds[i][j]) > 0.00001,
+          (value, j) => Math.abs(value - actualBounds[i][j]) > 0.00001,
         ),
       );
-      expectedBox.delete();
-      actualBox.delete();
-      if (boundsChanged || changed > Math.max(0.001, volume(shape) * 1e-8))
+      onProgress('Comparing STEP geometry…',{diagnostic:'step-export-verifier',stage:'compare-geometry',expectedVolume:expected.volume,actualVolume,volumeDelta:actualVolume-expected.volume,expectedBounds:expected.bounds,actualBounds,expectedTolerances:expected.tolerances,actualTolerances});
+      if (boundsChanged || changed > Math.max(0.001, expected.volume * 1e-8))
         throw Error(
           'STEP export changed the solid geometry when reopened. Export blocked.',
         );
+      onProgress('STEP checks complete…', {diagnostic:'step-export-verifier',stage:'volume-bounds-ceilings',elapsedMS:performance.now()-metricsStarted});
       return await blob.arrayBuffer();
     } finally {
       reopened.delete();
@@ -440,16 +522,17 @@ function createNativeExportChecks(oc, { preferPreservedCurves = false, onProgres
   const checkedStep = async (shape, label) => {
     // Repaired sources need their corrected pcurves retained when possible.
     // Some other shapes serialize more reliably with reconstructed pcurves.
-    const modes = preferPreservedCurves ? [1, 0] : [0, 1];
+    const modes = verifier ? [1] : preferPreservedCurves ? [1, 0] : [0, 1];
     let failure;
     for (const mode of modes) {
       const surfaceCurves = mode ? 'preserved' : 'reconstructed-on-import';
       onProgress(`Validating ${label} STEP (${surfaceCurves} surface curves)…`);
       try {
-        return { buffer: await serializeAndCheck(shape, mode), surfaceCurves };
+        const verified = await withStepRepairFallback({enabled: verifier && typeof oc.nativeSetStepReadFixMode === 'function', attempt: policy => serializeAndCheck(shape, mode, policy), onProgress});
+        return { buffer: verified.value, repairPolicy: verified.repairPolicy, repairRetried: verified.repairRetried, surfaceCurves, precision: verifier ? Math.max(...sourceCertificate(shape).tolerances) : undefined };
       } catch (error) {
         if (
-          !/exported STEP fails strict|STEP export changed/.test(error.message)
+          error instanceof WebAssembly.RuntimeError || !/exported STEP fails strict|STEP export changed/.test(error.message)
         )
           throw error;
         failure = error;
@@ -464,7 +547,7 @@ function createNativeExportChecks(oc, { preferPreservedCurves = false, onProgres
     // triangles into the native file or clearing the viewer cache.
     const text = nativeGeometrySnapshot(oc, shape);
     const serializedMS = performance.now() - checkStarted;
-    const reopened = cad.cast(oc.BRepToolsWrapper.Read(text));
+    const reopened = castOwned(cad, oc.BRepToolsWrapper.Read(text));
     const readMS = performance.now() - checkStarted - serializedMS;
     try {
       if (!valid(oc, reopened) || solidCount(reopened) !== 1)
@@ -511,25 +594,65 @@ function createNativeExportChecks(oc, { preferPreservedCurves = false, onProgres
 /** Independently check an exact candidate while its owner checks the live solid.
  * Unsupported token representations require the original bounds-aware path.
  */
-export async function warmNativeBrepValidator() { await kernel(); }
-export async function validateNativeBrepCandidate({ candidateText, expectedVolume, onProgress = () => {}, onReady = () => {} }) {
+export async function warmNativeBrepValidator({ certificateBounds = false } = {}) { await kernel(certificateBounds ? 'step-export-verifier' : 'model'); }
+export async function validateNativeBrepCandidate({ candidateText, expectedVolume, issueCertificate = false, certificateBounds = false, onProgress = () => {}, onReady = () => {} }) {
   if (typeof candidateText !== 'string' || !candidateText.length || !Number.isFinite(expectedVolume) || expectedVolume <= 0)
     throw Error('Native BREP candidate requires geometry and a positive expected volume.');
-  const oc = await kernel();
+  const oc = await kernel(certificateBounds ? 'step-export-verifier' : 'model');
   const started = performance.now(), startedAtMS = Date.now();
+  const stageMS = {}, wasmCapacitySamples = [];
+  const sample = stage => wasmCapacitySamples.push({ stage, elapsedMS: performance.now() - started, capacityBytes: oc.wasmMemory.buffer.byteLength });
+  sample('before-read');
   onReady({ startedAtMS });
   onProgress('Validating native BREP export in parallel…');
-  const reopened = cad.cast(oc.BRepToolsWrapper.Read(candidateText));
+  let stageStarted = performance.now();
+  const reopened = castOwned(cad, oc.BRepToolsWrapper.Read(candidateText));
+  stageMS.read = performance.now() - stageStarted;
+  sample('after-read');
   try {
-    if (!valid(oc, reopened) || solidCount(reopened) !== 1)
+    stageStarted = performance.now();
+    const exactValid = valid(oc, reopened);
+    stageMS.exactValidity = performance.now() - stageStarted;
+    sample('after-exact-validity');
+    stageStarted = performance.now();
+    const oneSolid = exactValid && solidCount(reopened) === 1;
+    stageMS.solidCount = performance.now() - stageStarted;
+    if (!oneSolid)
       throw Error('Native BREP export fails validation when reopened.');
+    stageStarted = performance.now();
     const actualVolume = volume(reopened);
+    stageMS.volume = performance.now() - stageStarted;
+    sample('after-volume');
     if (!Number.isFinite(actualVolume) || Math.abs(expectedVolume - actualVolume) > Math.max(0.001, expectedVolume * 1e-8))
       throw Error('Native BREP export changed the solid geometry when reopened.');
-    const equivalent = equivalentBrepTokens(candidateText, reopened.serialize());
-    const report = { validationMS: performance.now() - started, startedAtMS, finishedAtMS: Date.now(), equivalence: equivalent };
+    stageStarted = performance.now();
+    const roundTripText = reopened.serialize();
+    stageMS.serialize = performance.now() - stageStarted;
+    sample('after-serialize');
+    stageStarted = performance.now();
+    const equivalent = equivalentBrepTokens(candidateText, roundTripText);
+    stageMS.equivalence = performance.now() - stageStarted;
+    sample('after-equivalence');
+    const report = { validationMS: performance.now() - started, startedAtMS, finishedAtMS: Date.now(), equivalence: equivalent,
+      stageMS, nativeKernel: nativeKernelInfo(oc), candidateCharacters: candidateText.length, wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacitySamples };
     if (!equivalent.equivalent) return { fallbackRequired: true, report };
-    return { buffer: new TextEncoder().encode(candidateText).buffer, report };
+    stageStarted = performance.now();
+    const buffer = new TextEncoder().encode(candidateText).buffer;
+    stageMS.encode = performance.now() - stageStarted;
+    sample('after-encode');
+    let sourceCertificate;
+    if (issueCertificate) {
+      stageStarted=performance.now();
+      const signedVolume=signedVolumeCache.get(reopened);
+      // Negative/unsupported cases keep full export checks; never attest abs(volume).
+      if(Number.isFinite(signedVolume) && signedVolume>0) {
+        const bounds=certificateBounds ? verifierExactBounds(oc,reopened.wrapped) : undefined;
+        sourceCertificate=await issueSourceCertificate({buffer,signedVolume,bounds,strictValid:exactValid,solidCount:1});
+      }
+      stageMS.sourceCertificate=performance.now()-stageStarted;
+      report.validationMS=performance.now()-started;report.finishedAtMS=Date.now();
+    }
+    return { buffer, report, sourceCertificate };
   } finally { reopened.delete(); }
 }
 /** Mesh a validated native export on demand, independently of its display mesh. */
@@ -537,7 +660,7 @@ export async function nativeMeshExport({ buffer, format, onProgress = () => {}, 
   const oc = await kernel();
   onProgress('Opening native geometry for mesh export…');
   const source = format === 'brep' || format === 'brp'
-    ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
+    ? castOwned(cad, oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
     : await cad.importSTEP(new Blob([buffer]));
   try {
     const geometry = await tessellateNative(source, 1000000, { label: 'mesh export', onProgress, includeVolume: false, initialDeflection: displayOnly ? 0.1 : 0.01 });
@@ -560,7 +683,9 @@ export function nativePosesIdentical(detection) {
 }
 /** Validate a requested pose only when it is downloaded; input bytes remain untouched. */
 export async function exportNativeOriginalPose({ buffer, format, transform: pose,
-  requestedFormat = format, preferredSurfaceCurves, onProgress = () => {} }) {
+  requestedFormat = format, outputPose = 'original', preferredSurfaceCurves, sourceCertificate: privateCertificate, sourceBoundsTask = null, onProgress = () => {} }) {
+  if(!['base-down','original'].includes(outputPose)) throw Error('Unsupported output pose.');
+  if(outputPose==='base-down' && !nativePosesIdentical(pose)) throw Error('Base-down export requires an identity transform.');
   const rotation = pose?.rotation, translation = pose?.translation;
   if (!Array.isArray(rotation) || rotation.length !== 9 ||
       !Array.isArray(translation) || translation.length !== 3 ||
@@ -580,41 +705,58 @@ export async function exportNativeOriginalPose({ buffer, format, transform: pose
     throw Error('Original-pose transform must preserve orientation.');
   if (![format, requestedFormat].every(value => ['step', 'brep'].includes(value))) throw Error('Unsupported native export format.');
   onProgress('Opening the validated native export…');
-  const oc = await kernel();
+  const kernelStarted = performance.now();
+  const oc = await kernel(format === 'brep' && requestedFormat === 'step' ? 'step-export-verifier' : 'model');
+  onProgress('Native export engine ready…', {diagnostic:'step-export-verifier',stage:'kernel',elapsedMS:performance.now()-kernelStarted,purpose:kernelPurpose,...nativeKernelInfo(oc)});
+  const readStarted=performance.now();
   const source = format === 'brep'
-    ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
+    ? castOwned(cad, oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
     : await cad.importSTEP(new Blob([buffer]));
+  onProgress('Native source opened…',{diagnostic:'step-export-verifier',stage:'source-read',elapsedMS:performance.now()-readStarted});
   let restored;
   try {
-    onProgress('Checking the native export before restoring its pose…');
-    if (!valid(oc, source) || solidCount(source) !== 1 || !(cad.measureVolume(source) > 0))
+    const certificateStarted=performance.now();
+    const trustedMetrics=await verifySourceCertificate({certificate:privateCertificate,buffer,format,pose});
+    onProgress('Checking saved source validation…',{diagnostic:'step-export-verifier',stage:'source-certificate',reused:!!trustedMetrics,elapsedMS:performance.now()-certificateStarted});
+    onProgress(outputPose==='base-down' ? 'Checking the base-down native export…' : 'Checking the native export before restoring its pose…');
+    const sourceCheckStarted=performance.now();
+    if (!trustedMetrics && (!valid(oc, source) || solidCount(source) !== 1))
       throw Error('Original-pose export requires one valid positive native solid.');
+    onProgress('Native source is valid…',{diagnostic:'step-export-verifier',stage:'source-exact',reused:!!trustedMetrics,elapsedMS:performance.now()-sourceCheckStarted});
+    const sourceVolumeStarted=performance.now();
+    if(trustedMetrics) signedVolumeCache.set(source,trustedMetrics.signedVolume);
+    else volume(source);
+    if (!(Number.isFinite(signedVolumeCache.get(source)) && signedVolumeCache.get(source)>0)) throw Error('Original-pose export requires one valid positive native solid.');
+    onProgress('Native source volume checked…',{diagnostic:'step-export-verifier',stage:'source-volume',reused:!!trustedMetrics,elapsedMS:performance.now()-sourceVolumeStarted});
     const identical = nativePosesIdentical(pose);
     if (identical && requestedFormat === format) return { buffer, format, report: {
-      pose: 'original', nativeValid: true, nativeExportFormat: format,
+      pose: outputPose, nativeKernel: nativeKernelInfo(oc), nativeValid: true, nativeExportFormat: format,
       stepRoundTripValid: format === 'step', brepRoundTripValid: format === 'brep',
       originalPoseExportReused: true,
     } };
     restored = identical ? source : transform(oc, source, pose, true);
     const { checkedStep, checkedBrep } = createNativeExportChecks(oc, {
+      verifier: format === 'brep' && requestedFormat === 'step',
+      trustedSource: trustedMetrics ? {shape:restored,metrics:trustedMetrics} : null,
+      parallelSourceBounds: sourceBoundsTask && format==='brep' && requestedFormat==='step' ? {task:sourceBoundsTask,identity:boundsInputIdentity(buffer,pose).then(value=>({value}),error=>({error:error.message??String(error)}))} : null,
       preferPreservedCurves: preferredSurfaceCurves === 'preserved', onProgress,
     });
-    let bytes, outputFormat = requestedFormat, stepExportError, surfaceCurves;
+    let bytes, outputFormat = requestedFormat, stepExportError, surfaceCurves, stepWriterPrecision, stepRepairPolicy, stepRepairRetried;
     if (requestedFormat === 'step') {
       try {
-        const exported = await checkedStep(restored, 'original-pose');
-        bytes = exported.buffer; surfaceCurves = exported.surfaceCurves;
+        const exported = await checkedStep(restored, outputPose==='base-down' ? 'base-down' : 'original-pose');
+        bytes = exported.buffer; surfaceCurves = exported.surfaceCurves; stepWriterPrecision=exported.precision; stepRepairPolicy=exported.repairPolicy; stepRepairRetried=exported.repairRetried;
       } catch (error) {
-        if (!/exported STEP fails strict|STEP export changed/.test(error.message)) throw error;
+        if (error instanceof WebAssembly.RuntimeError || !/exported STEP fails strict|STEP export changed/.test(error.message)) throw error;
         stepExportError = error.message;
         outputFormat = 'brep';
       }
     }
-    if (outputFormat === 'brep') bytes = checkedBrep(restored, 'original-pose');
+    if (outputFormat === 'brep') bytes = checkedBrep(restored, outputPose==='base-down' ? 'base-down' : 'original-pose');
     return { buffer: bytes, format: outputFormat, report: {
-      pose: 'original', nativeValid: true, nativeExportFormat: outputFormat,
+      pose: outputPose, nativeKernel: nativeKernelInfo(oc), nativeValid: true, nativeExportFormat: outputFormat,
       stepRoundTripValid: outputFormat === 'step', brepRoundTripValid: outputFormat === 'brep',
-      stepExportError, stepSurfaceCurves: surfaceCurves, originalPoseExportReused: false,
+      sourceCertificateReused:!!trustedMetrics, stepExportError, stepRepairPolicy, stepRepairRetried, stepWriterPrecision, stepSurfaceCurves: surfaceCurves, originalPoseExportReused: false,
     } };
   } finally { if (restored !== source) restored?.delete(); source.delete(); }
 }
@@ -622,7 +764,7 @@ export async function exportNativeOriginalPose({ buffer, format, transform: pose
 function nativeGeometryCopy(oc, source) {
   const identity = new oc.gp_Trsf();
   const builder = new oc.BRepBuilderAPI_Transform(source.wrapped, identity, true, false);
-  try { return cad.cast(builder.Shape()); }
+  try { return castOwned(cad, builder.Shape()); }
   finally { builder.delete(); identity.delete(); }
 }
 export function nativeGeometrySnapshot(oc, source) {
@@ -642,7 +784,7 @@ export async function prepareNativeSource(source, onProgress = () => {}) {
   );
   const beforeTolerance = maxTolerance(source);
   let original = null;
-  const originalShape = () => original ??= cad.cast(oc.BRepToolsWrapper.Read(beforeRepresentation));
+  const originalShape = () => original ??= castOwned(cad, oc.BRepToolsWrapper.Read(beforeRepresentation));
   let originalValid;
   const restoreValidOriginal = () => {
     const saved = originalShape();
@@ -713,7 +855,7 @@ export async function prepareNativeDocument({ documentId, bodyIndex = 0, onProgr
   if (!Number.isInteger(bodyIndex) || bodyIndex < 0) throw Error('Invalid native body index.');
   const document = nativeDocuments.get(documentId);
   if (!document) throw Error('The native source document is no longer available.');
-  const bodies = document.solids.sort((a,b) => volume(b)-volume(a));
+  const bodies = ownedSolids(OC, cad, document).sort((a,b) => volume(b)-volume(a));
   const selected = bodies[bodyIndex];
   if (!selected) {
     bodies.forEach(body => body.delete());
@@ -757,6 +899,16 @@ export async function convertNative({
   const oc = await kernel();
   if (conversionShapes) throw Error('Native conversions must run sequentially.');
   const ownedShapes = new Set();
+  const memoryStats = () => {
+    if (oc.nativeAllocatorStats) return { allocator: 'dlmalloc', scope: 'whole allocator', ...oc.nativeAllocatorStats() };
+    return {
+      allocator: 'mimalloc', scope: 'current-thread statistics; backing arena is not live allocation',
+      currentThread: oc.nativeMimallocCurrentThreadStats?.(false),
+      backing: oc.nativeMimallocBackingStats?.(),
+      wasmCapacityBytes: oc.wasmMemory.buffer.byteLength,
+    };
+  };
+  const lifetime = { before: memoryStats() };
   conversionShapes = ownedShapes;
   let retainedRecord = null;
   try {
@@ -782,6 +934,7 @@ export async function convertNative({
       if (boundsCache.has(prepared.source)) boundsCache.set(source, boundsCache.get(prepared.source));
     } else {
       preparedNativeDocuments.delete(resolvedPreparedId);
+      prepared.localClip?.shape.delete();
       source = ownConversionShape(prepared.source);
       retainedDisplayCaches.delete(prepared.displayCache);
     }
@@ -794,9 +947,9 @@ export async function convertNative({
     onProgress('Opening native CAD…');
     const document = (documentId && takeNativeDocument(documentId)) ||
       (format === 'brep' || format === 'brp'
-        ? cad.cast(oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
+        ? castOwned(cad, oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)))
         : await cad.importSTEP(new Blob([buffer])));
-    const bodies = document.solids.sort((a,b) => volume(b)-volume(a));
+    const bodies = ownedSolids(OC, cad, document).sort((a,b) => volume(b)-volume(a));
     source = bodies[bodyIndex];
     if (source) ownConversionShape(source);
     if (!source) {
@@ -813,7 +966,19 @@ export async function convertNative({
   }
   if (scale !== 1) {
     const previousVolume = volumeCache.get(source);
-    source = ownConversionShape(source.scale(scale));
+    const scaling = new oc.gp_Trsf(), origin = new oc.gp_Pnt(0, 0, 0);
+    let builder;
+    try {
+      scaling.SetScale(origin, scale);
+      builder = new oc.BRepBuilderAPI_Transform(source.wrapped, scaling, true, false);
+      const scaled = ownConversionShape(castOwned(cad, builder.Shape()));
+      source.delete();
+      source = scaled;
+    } finally {
+      builder?.delete();
+      origin.delete();
+      scaling.delete();
+    }
     if (previousVolume !== undefined)
       volumeCache.set(source, previousVolume * Math.abs(scale ** 3));
   }
@@ -822,7 +987,12 @@ export async function convertNative({
   // carry no imported display data; any retained polygons came from our mesher.
   const generatedDisplayMesh = hasGeneratedDisplayMesh(source);
   const expected = detection.geometry.bounds;
-  const sourceBoundsCheck = certifyNativeBoundsMatch(oc, source, expected, 0.1);
+  const placementKey = JSON.stringify([scale,detection.rotation,detection.translation]);
+  const boundsKey = JSON.stringify([placementKey,expected]);
+  const savedBounds = retainedRecord?.boundsProof;
+  const sourceBoundsCheck = savedBounds?.key === boundsKey
+    ? {...savedBounds.proof,reused:true,elapsedMS:0}
+    : certifyNativeBoundsMatch(oc, source, expected, 0.1);
   let boundsMismatch = false;
   if (expected && !sourceBoundsCheck.matches) {
     const actual = exactBounds(source);
@@ -832,6 +1002,8 @@ export async function convertNative({
     sourceBoundsCheck.method = 'optimal-bounds';
     sourceBoundsCheck.matches = !boundsMismatch;
   }
+  if (retainedRecord && sourceBoundsCheck.matches)
+    retainedRecord.boundsProof = {key:boundsKey,proof:{...sourceBoundsCheck}};
   onProgress('Matching native CAD to the detected part…', {
     diagnostic: 'native-source-bounds',
     ...sourceBoundsCheck,
@@ -879,10 +1051,26 @@ export async function convertNative({
     ['magnets','both'].includes(style) ? magnetDepth : 0,
     ['screws','both'].includes(style) ? screwDepth : 0,
   );
+  const constructionCheckpoint = new Set(ownedShapes);
+  let reusedLocalSource = false;
+  const clipSource = (shape, box, bounds) => {
+    const key = JSON.stringify([placementKey,bounds]);
+    if (retainedRecord?.localClip?.key === key) {
+      reusedLocalSource = true;
+      return retainedRecord.localClip.shape.clone();
+    }
+    const clipped = intersect(shape,box);
+    if (retainedRecord) {
+      const retained = clipped.clone();
+      retainedRecord.localClip?.shape.delete();
+      retainedRecord.localClip = {key,shape:retained};
+    }
+    return clipped;
+  };
   const localEdit = await prepareNativeLocalEdit({
     cad, source, feet, bottom, height, fit, roof, nativeFoot,
     maximumHoleDepth, maximumHoleRadius: Math.max(magnetDiameter,screwDiameter)/2,
-    cut, fuse, intersect, union, volume, own: ownConversionShape, onProgress,
+    cut, fuse, intersect, union, volume, clipSource, own: ownConversionShape, onProgress,
   });
   const holes = [], regions = [...localEdit.regions];
   const roofBody = localEdit.localPlain;
@@ -971,10 +1159,18 @@ export async function convertNative({
       }
   onProgress('Replacing native CAD feet and hardware…');
   result = localEdit.assemble(holes.length ? union(holes) : null);
-  onProgress('Checking native CAD holes and solid validity…');
+  // Materialize the preservation mask before retiring its individual tools.
+  const allowed = union(regions);
+  const constructionRelease = releaseConstructionShapes(constructionCheckpoint,
+    new Set([result, allowed, localEdit.localSource, localEdit.editBox]));
+  onProgress('Checking native CAD holes and solid validity…', {
+    diagnostic: 'native-construction-release', ...constructionRelease,
+    wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation',
+    wasmCapacityBytes: oc.wasmMemory.buffer.byteLength,
+  });
   // The candidate is immutable; booleans below use non-destructive inputs.
   // Capture failures immediately because this worker's exact checks are synchronous.
-  let parallelBrep, parallelBrepReport, candidateSnapshot, primaryStartedAtMS;
+  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primaryStartedAtMS, primaryExactValidation;
   try {
     if (nativeExportPreference === 'brep' && validateBrepCandidate) {
       candidateSnapshot = nativeGeometryCopy(oc, result);
@@ -988,14 +1184,23 @@ export async function convertNative({
       if (candidateTask?.ready) await candidateTask.ready;
     }
     primaryStartedAtMS = Date.now();
+    const exactStarted = performance.now(), capacityBefore = oc.wasmMemory.buffer.byteLength;
+    let exactSucceeded = false;
     onProgress('Checking exact result geometry…', {
       diagnostic: 'native-validation', meshFreeDisplayCopy: generatedDisplayMesh, primaryStartedAtMS,
+      wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore,
     });
-    if (!(generatedDisplayMesh ? (candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
-      throw Error('Native CAD result is not one valid solid. Export blocked.');
+    try {
+      if (!(generatedDisplayMesh ? (candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
+        throw Error('Native CAD result is not one valid solid. Export blocked.');
+      exactSucceeded = true;
+    } finally {
+      primaryExactValidation = { elapsedMS: performance.now() - exactStarted, startedAtMS: primaryStartedAtMS, finishedAtMS: Date.now(), passed: exactSucceeded,
+        wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore, wasmCapacityAfterBytes: oc.wasmMemory.buffer.byteLength };
+      onProgress('Exact result geometry check finished.', { diagnostic: 'native-validation-complete', ...primaryExactValidation });
+    }
   } finally { candidateSnapshot?.delete(); }
   onProgress('Preparing the exact edit region…');
-  const allowed = union(regions);
   // The shared convex box contains every allowed tool and every roof probe.
   const editBox = localEdit.editBox;
   onProgress('Checking preserved CAD boundary faces…');
@@ -1040,7 +1245,7 @@ export async function convertNative({
       parallelBrepReport = { ...outcome.value?.report, primaryStartedAtMS, primaryFinishedAtMS, fallbackRequired: Boolean(outcome.value?.fallbackRequired) };
       onProgress('Parallel native BREP export validation complete.', { diagnostic: 'parallel-brep', ...parallelBrepReport });
       if (outcome.value?.fallbackRequired) brep = checkedBrep(result, 'base-down');
-      else if (outcome.value?.buffer instanceof ArrayBuffer) brep = outcome.value.buffer;
+      else if (outcome.value?.buffer instanceof ArrayBuffer) { brep = outcome.value.buffer; sourceCertificate = outcome.value.sourceCertificate; }
       else throw Error('Parallel native BREP validation returned no validated export.');
     } else brep = checkedBrep(result, 'base-down');
     sourceBrep = identicalPoses ? brep : deferOriginalPose ? undefined : checkedBrep(restored, 'original-pose');
@@ -1048,7 +1253,7 @@ export async function convertNative({
     stepExport = await checkedStep(result, 'base-down');
     sourceExport = identicalPoses ? stepExport : deferOriginalPose ? null : await checkedStep(restored, 'original-pose');
   } catch (error) {
-    if (!/exported STEP fails strict|STEP export changed/.test(error.message))
+    if (error instanceof WebAssembly.RuntimeError || !/exported STEP fails strict|STEP export changed/.test(error.message))
       throw error;
     stepExportError = error.message;
     stepExport = sourceExport = null;
@@ -1071,6 +1276,7 @@ export async function convertNative({
     sourceStep: sourceExport?.buffer,
     brep,
     sourceBrep,
+    sourceCertificate, // Private trusted worker result; never report/import metadata.
     originalPoseExport: {
       deferred: deferOriginalPose && !identicalPoses,
       transform: { rotation: Array.from(detection.rotation), translation: Array.from(detection.translation) },
@@ -1084,9 +1290,13 @@ export async function convertNative({
       removedVolume: volume(removed),
       outsideChange,
       nativeEditMethod: 'local-hardware-algebra',
+      nativeLifetime: lifetime,
+      constructionRelease,
+      reusedLocalSource,
       preservationMethod: preservationProof.proved ? preservationProof.method : 'full-solid-difference',
       preservationProof,
       representation: 'native-brep',
+      nativeKernel: nativeKernelInfo(oc),
       nativeBooleanToleranceMM: 0.00001,
       sourceCurveRepair,
       sourcePreparationMS,
@@ -1101,6 +1311,7 @@ export async function convertNative({
       stepExportError,
       stepExportDeferred: nativeExportPreference === 'brep',
       parallelBrepValidation: parallelBrepReport,
+      primaryExactValidation,
       originalPoseExportReused: identicalPoses,
       originalPoseExportDeferred: deferOriginalPose && !identicalPoses,
       stepSurfaceCurves: stepExport?.surfaceCurves,
@@ -1129,6 +1340,19 @@ export async function convertNative({
         disposeFaceMeshCache(displayFaceCache);
       displayFaceCache = retainedRecord.displayCache;
     }
+    lifetime.afterCleanup = memoryStats();
   }
   }
+}
+
+/** Bounds-only companion: same source bytes, pose and pinned verifier as export. */
+export async function computeNativeSourceBounds({buffer,pose}) {
+ const started=performance.now(),identity=await boundsInputIdentity(buffer,pose);
+ const oc=await kernel('step-export-verifier'),kernelMS=performance.now()-started;
+ let source,restored;try{
+  const t=performance.now();source=castOwned(cad,oc.BRepToolsWrapper.Read(new TextDecoder().decode(buffer)));const readMS=performance.now()-t;
+  restored=nativePosesIdentical(pose)?source:transform(oc,source,pose,true);
+  const b=performance.now(),bounds=verifierExactBounds(oc,restored.wrapped);
+  return {identity,kernelSHA256:BOUNDS_KERNELS[nativeKernelInfo(oc).engine],bounds,timings:{kernelMS,readMS,boundsMS:performance.now()-b,totalMS:performance.now()-started},capacityBytes:oc.wasmMemory.buffer.byteLength};
+ }finally{if(restored&&restored!==source)restored.delete();source?.delete();}
 }

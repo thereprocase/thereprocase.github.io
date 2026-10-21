@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { Worker } from 'node:worker_threads';
 import { nativeFoot, convertNative, exportNativeOriginalPose } from '../../public/gridfinity-converter/native-cad.js';
 import * as cad from '../../public/gridfinity-converter/vendor/replicad/replicad.js';
 await nativeFoot();
@@ -39,7 +40,21 @@ for (const [format,buffer] of [['step',step],['brep',brep]]) {
   }
 }
 for (const pose of poses) {
-  const output = await exportNativeOriginalPose({ buffer: brep, format: 'brep', requestedFormat: 'step', transform: pose });
+  // The dedicated export reader must never replace a model kernel in place.
+  // Match the application's fresh-worker lifetime for STEP translation.
+  const output = await new Promise((resolve, reject) => {
+    const moduleURL = new URL('../../public/gridfinity-converter/native-cad.js', import.meta.url).href;
+    const source = `import {parentPort,workerData} from 'node:worker_threads';
+      import {exportNativeOriginalPose} from ${JSON.stringify(moduleURL)};
+      parentPort.postMessage(await exportNativeOriginalPose(workerData));`;
+    const worker = new Worker(new URL('data:text/javascript,' + encodeURIComponent(source)), {
+      workerData: { buffer: brep, format: 'brep', requestedFormat: 'step', transform: pose },
+    });
+    let received = false;
+    worker.once('message', result => { received = true; resolve(result); worker.terminate(); });
+    worker.once('error', reject);
+    worker.once('exit', code => { if (!received) reject(Error(`Export worker exited before producing a result (${code})`)); });
+  });
   assert.equal(output.format, 'step');
   await verify(output, pose);
 }

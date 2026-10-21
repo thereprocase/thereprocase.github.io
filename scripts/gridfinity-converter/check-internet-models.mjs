@@ -1,5 +1,6 @@
 // Self-contained capture with installed Node (native WebSocket), Python3, Chromium.
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -93,7 +94,7 @@ try {
     mobile: false,
   });
   await call('Page.navigate', {
-    url: `http://127.0.0.1:${port}/gridfinity-converter/`,
+    url: process.env.AUDIT_URL || `http://127.0.0.1:${port}/gridfinity-converter/`,
   });
   const evaluate = async (expression) => {
     const r = await call('Runtime.evaluate', {
@@ -105,7 +106,7 @@ try {
     return r.result.value;
   };
 
-  const ready = async () => {
+  const ready = async (allowStartupNavigation = false) => {
     let lastStatus = '';
     for (
       let i = 0;
@@ -113,9 +114,17 @@ try {
       i++
     ) {
       await pause(100);
-      const state = await evaluate(
-        "({busy:document.body.dataset.busy,status:document.getElementById('status')?.textContent})",
-      );
+      let state;
+      try {
+        state = await evaluate(
+          "({busy:document.body?.dataset.busy,status:document.getElementById('status')?.textContent})",
+        );
+      } catch (error) {
+        // Isolation may replace the initial document before model selection.
+        // Never hide navigation/errors during an import or conversion.
+        if (allowStartupNavigation && /Inspected target navigated|Execution context was destroyed|Cannot find (?:default execution context|context with specified id)/.test(error.message)) continue;
+        throw error;
+      }
       if (process.env.AUDIT_PROGRESS && state.status !== lastStatus)
         console.log(new Date().toISOString(), state.status);
       lastStatus = state.status;
@@ -123,9 +132,9 @@ try {
     }
     throw Error('Timed out: ' + lastStatus);
   };
-  await ready();
+  await ready(true);
   await evaluate(
-    `window.auditBlobs=[];const create=URL.createObjectURL.bind(URL);URL.createObjectURL=blob=>{window.auditBlobs.push(blob);return create(blob)};`,
+    `window.auditBlobs=[];window.auditDownloads=[];const create=URL.createObjectURL.bind(URL);URL.createObjectURL=blob=>{window.auditBlobs.push(blob);return create(blob)};const anchorClick=HTMLAnchorElement.prototype.click;HTMLAnchorElement.prototype.click=function(){if(this.download)window.auditDownloads.push({filename:this.download,href:this.href});return anchorClick.call(this)};`,
   );
   const manifest = JSON.parse(
     await fs.readFile(process.env.AUDIT_MANIFEST, 'utf8'),
@@ -134,6 +143,9 @@ try {
   for (const item of manifest) {
     const record = { ...item, conversions: [] };
     try {
+      record.sourceSHA256 = createHash('sha256').update(await fs.readFile(item.path)).digest('hex');
+      if (item.sha256 && record.sourceSHA256 !== item.sha256.toLowerCase())
+        throw Error('Input model SHA-256 differs from the benchmark manifest');
       const doc = await call('DOM.getDocument');
       const input = await call('DOM.querySelector', {
         nodeId: doc.root.nodeId,
@@ -171,6 +183,29 @@ try {
           Buffer.from(screenshot.data, 'base64'),
         );
       }
+      if (!record.detection.enabled) throw Error('Import did not enable conversion: ' + record.importStatus);
+      if (process.env.AUDIT_NATIVE_RECOVERY) {
+        await evaluate(`{
+          const post = Worker.prototype.postMessage;
+          Worker.prototype.postMessage = function(data, ...args) {
+            if (data?.type === 'convert' && ['step', 'brep'].includes(data.format)) {
+              Worker.prototype.postMessage = post;
+              queueMicrotask(() => this.dispatchEvent(new MessageEvent('message', {
+                data: {requestId:data.requestId, error:'Injected native runtime failure', stage:'Recovery audit'}
+              })));
+              return;
+            }
+            return post.call(this, data, ...args);
+          };
+          document.getElementById('convert').click();
+        }`);
+        record.recoveryStatus = await ready();
+        record.recoveryRejected = await evaluate("document.getElementById('stl').disabled && !document.getElementById('convert').disabled");
+        if (!record.recoveryStatus.includes('Injected native runtime failure') || !record.recoveryRejected)
+          throw Error('Native failure did not return the model to a retryable state');
+        // The ordinary variants below must succeed using the retained original
+        // file bytes, without another selection or page reload.
+      }
       if (record.detection.enabled)
         for (const [style, fit] of item.variants || [
           ['plain', 0],
@@ -182,7 +217,7 @@ try {
             : []),
           ['both', 0],
           ['plain', -0.5],
-          ['plain', 0.5],
+          ['plain', 0.2],
         ]) {
           const conversionStarted = Date.now();
           await evaluate(
@@ -194,14 +229,27 @@ try {
           attempt.success = await evaluate(
             "!document.getElementById('stl').disabled",
           );
+          record.conversions.push(attempt);
+          if (!attempt.success) process.exitCode = 1;
           if (attempt.success) {
             await evaluate("document.getElementById('report').click()");
             attempt.report = JSON.parse(
               await evaluate('window.auditBlobs.at(-1).text()'),
             );
+            const requiredEngine = process.env.AUDIT_REQUIRE_NATIVE_ENGINE;
+            if (requiredEngine && attempt.report.conversion?.nativeKernel?.engine !== requiredEngine) {
+              attempt.success = false;
+              attempt.status = `Expected native engine ${requiredEngine}; received ${attempt.report.conversion?.nativeKernel?.engine ?? 'none'}.`;
+              process.exitCode = 1;
+              throw Error(attempt.status);
+            }
             if (!process.env.AUDIT_SKIP_DOWNLOADS) {
+            const meshBlobCount = await evaluate('window.auditBlobs.length');
+            const meshExportStarted = Date.now();
             await evaluate("document.getElementById('stl').click()");
-            await ready();
+            attempt.meshExportStatus = await ready();
+            attempt.meshExportElapsedMS = Date.now() - meshExportStarted;
+            if (await evaluate('window.auditBlobs.length') <= meshBlobCount) throw Error('Mesh export produced no download: ' + attempt.meshExportStatus);
             const encoded = await evaluate(
               `new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(window.auditBlobs.at(-1))})`,
             );
@@ -219,13 +267,17 @@ try {
             attempt.success && !process.env.AUDIT_SKIP_DOWNLOADS &&
             (await evaluate("!document.getElementById('step').disabled"))
           ) {
+            const nativeBlobCount = await evaluate('window.auditBlobs.length');
+            const nativeExportStarted = Date.now();
             await evaluate("document.getElementById('step').click()");
-            await ready();
+            attempt.nativeExportStatus = await ready();
+            attempt.nativeExportElapsedMS = Date.now() - nativeExportStarted;
+            if (await evaluate('window.auditBlobs.length') <= nativeBlobCount) throw Error('Native export produced no download: ' + attempt.nativeExportStatus);
             const encoded = await evaluate(
               `new Promise(resolve=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(window.auditBlobs.at(-1))})`,
             );
             const format =
-              attempt.report.conversion.nativeExportFormat || 'step';
+              (await evaluate('window.auditDownloads.at(-1).filename')).split('.').at(-1);
             const exportPath = attempt.exportPath.replace(
               /\.stl$/,
               '.' + format,
@@ -233,7 +285,30 @@ try {
             attempt[format + 'ExportPath'] = exportPath;
             await fs.writeFile(exportPath, Buffer.from(encoded, 'base64'));
           }
-          record.conversions.push(attempt);
+          if (attempt.success && process.env.AUDIT_TRANSLATE_STEP) {
+            const before = await evaluate('window.auditBlobs.length');
+            const started = Date.now();
+            if (await evaluate("document.getElementById('translate-step').disabled"))
+              throw Error('STEP translation is disabled');
+            await evaluate("document.getElementById('translate-step').click()");
+            attempt.stepTranslationStatus = await ready();
+            attempt.stepTranslationElapsedMS = Date.now() - started;
+            attempt.loadToStepReadyMS = Date.now() - loadStarted;
+            attempt.stepTranslationSuccess = await evaluate(`window.auditBlobs.length > ${before} && /\\.step$/i.test(window.auditDownloads.at(-1)?.filename || '')`);
+            if (!attempt.stepTranslationSuccess) {
+              process.exitCode = 1;
+              throw Error('STEP translation produced no STEP download: ' + attempt.stepTranslationStatus);
+            }
+            const encoded = await evaluate('window.auditBlobs.at(-1).text()');
+            if (!encoded.trimStart().startsWith('ISO-10303-21;')) throw Error('STEP download has an invalid file header');
+            attempt.translatedStepExportPath = path.join(path.dirname(output), path.basename(item.path) + '.' + style + '.' + fit + '.translated.step');
+            await fs.writeFile(attempt.translatedStepExportPath, encoded);
+            await evaluate("document.getElementById('report').click()");
+            attempt.report = JSON.parse(await evaluate('window.auditBlobs.at(-1).text()'));
+            const translation = attempt.report.conversion.translatedBaseStep || attempt.report.conversion.translatedSourceStep;
+            if (!translation?.stepRoundTripValid || translation.nativeExportFormat !== 'step')
+              throw Error('STEP download lacks a passing independent reopen report');
+          }
           console.log(path.basename(item.path), style, fit, attempt.status);
           await fs.writeFile(
             output,
@@ -242,6 +317,7 @@ try {
         }
     } catch (error) {
       record.error = error.message;
+      process.exitCode = 1;
     }
     results.push(record);
     await fs.writeFile(output, JSON.stringify(results, null, 2) + '\n');
@@ -249,7 +325,7 @@ try {
       path.basename(item.path),
       record.importStatus,
       record.conversions
-        .map((x) => `${x.style}/${x.fit}: ${x.success ? 'OK' : x.status}`)
+        .map((x) => `${x.style}/${x.fit}: ${!x.success ? x.status : x.stepTranslationSuccess === false ? 'conversion OK; STEP FAILED' : 'OK'}`)
         .join('; '),
     );
   }

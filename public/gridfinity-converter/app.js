@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-local-20261020-1';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-1';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -8,8 +8,8 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-local-20261020-1';
-import { importFile, extensions, export3MF } from './importers.js?v=native-local-20261020-1';
+} from './kernel.js?v=native-step-20261021-1';
+import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-1';
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
@@ -437,7 +437,7 @@ function terminate({ preserveIdleCAD = false } = {}) {
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-local-20261020-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-step-20261021-1', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -911,7 +911,7 @@ function nativeConversion(options) {
     const documentId = cadWorker ? source.nativeDocumentId : null;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-local-20261020-1', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-1', {
       type: 'module',
     });
     nativeWorker = w;
@@ -988,7 +988,7 @@ function adjustFit(direction) {
     ? input.valueAsNumber
     : 0;
   const hundredths = Math.round(current * 100) + direction * 5;
-  input.value = (Math.max(-50, Math.min(50, hundredths)) / 100).toFixed(2);
+  input.value = (Math.max(Math.round(Number(input.min) * 100), Math.min(Math.round(Number(input.max) * 100), hundredths)) / 100).toFixed(2);
   input.dispatchEvent(new Event('input', { bubbles: true }));
 }
 $('fit-down').onclick = () => adjustFit(-1);
@@ -1233,7 +1233,7 @@ function filename(ext) {
 }
 function prepareNativeExport(data) {
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-export-worker.js?v=native-local-20261020-1', { type: 'module' });
+    const w = new Worker('./native-export-worker.js?v=native-step-20261021-1', { type: 'module' });
     exportWorker = w;
     exportReject = reject;
     const finish = () => {
@@ -1336,23 +1336,26 @@ $('translate-step').onclick = async () => {
   const cacheKey = originalPose ? 'translatedSourceStep' : 'translatedBaseStep';
   setBusy(true, 'Translating and validating STEP…');
   try {
-    if (!result[cacheKey]) {
-      const prepared = await prepareNativeExport({
+    let prepared = result[cacheKey];
+    if (!prepared) {
+      prepared = await prepareNativeExport({
         type: 'pose', buffer: result.brep, format: 'brep', requestedFormat: 'step',
+        outputPose: originalPose ? 'original' : 'base-down',
+        sourceCertificate: result.sourceCertificate,
         transform: originalPose ? result.originalPoseExport.transform : {
           rotation: [1, 0, 0, 0, 1, 0, 0, 0, 1], translation: [0, 0, 0],
         },
         preferredSurfaceCurves: result.report.sourceCurveRepair ? 'preserved' : undefined,
       });
       if (result !== target) throw new DOMException('Cancelled', 'AbortError');
-      result[cacheKey] = prepared;
     }
-    const prepared = result[cacheKey];
     result.report[cacheKey] = prepared.report;
     if (prepared.format !== 'step') {
-      status('STEP translation failed validation. Use Download BREP for the validated native CAD body.', true);
+      const reason = prepared.report?.stepExportError || 'The reopened file did not pass validation.';
+      status(`STEP translation failed validation: ${reason} Download BREP remains available for the validated native CAD body.`, true);
       return;
     }
+    result[cacheKey] = prepared;
     download(prepared.buffer, 'application/step', filename('step'));
   } catch (e) {
     if (e.name !== 'AbortError') status(e.message, true);

@@ -173,10 +173,11 @@ try {
     const down = field.value === '0.02';
     document.getElementById('fit-down').click();
     const negative = field.value === '-0.03';
-    field.value = '0.49'; document.getElementById('fit-up').click();
-    const clamped = field.value === '0.50';
+    field.value = '0.19'; document.getElementById('fit-up').click();
+    const clamped = field.value === '0.20';
+    field.value = '0.21'; const tooLargeRejected = !field.checkValidity();
     field.value = '0.02'; field.dispatchEvent(new Event('input'));
-    return typed && up && down && negative && clamped;
+    return typed && up && down && negative && clamped && tooLargeRejected;
   })()`);
   results.directAction = await evaluate(
     "!document.getElementById('confirm')&&!document.getElementById('workflow-action').disabled",
@@ -194,9 +195,10 @@ try {
     behavior: 'allow',
     downloadPath: path.dirname(path.resolve(output)),
   });
-  await evaluate(
-    "document.getElementById('stl').click();document.getElementById('three-mf').click();document.getElementById('report').click()",
-  );
+  for (const id of ['stl', 'three-mf', 'report']) {
+    await evaluate(`document.getElementById('${id}').click()`);
+    await ready();
+  }
   await pause(1000);
   results.downloads =
     (await fs.readdir(path.dirname(path.resolve(output)))).filter((n) =>

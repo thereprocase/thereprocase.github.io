@@ -1,0 +1,57 @@
+{
+  "status": "Verified private candidate 234753; not a declaration of public deployment or speed-target completion.",
+  "occtRevision": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "bindingsRevision": "ebd263f15337b440b391492af073662707e86482",
+  "emscripten": "5.0.1",
+  "optimization": [
+    "-O3",
+    "-msimd128",
+    "-fwasm-exceptions"
+  ],
+  "allocator": "mimalloc",
+  "threadedPool": 4,
+  "modelKernel": "Corrected owning destructors; standard CAD algorithms.",
+  "verifierKernel": "Corrected owning destructors, dedicated STEP reader patch and parallel AddOptimal bounds helper.",
+  "artifacts": {
+    "vendor/replicad/destructor_fixed_mimalloc_multi.js": {
+      "sha256": "134bd7de2ef48a694317622a702aaa617796861278cf61d3a09321c48b2ecf9d",
+      "bytes": 69232
+    },
+    "vendor/replicad/destructor_fixed_mimalloc_multi_pool4.js": {
+      "sha256": "3171563e80ba0407b7e038a4c6be47de0aa3492ca1bda23cb44cbd1d77f26e70",
+      "bytes": 69275
+    },
+    "vendor/replicad/destructor_fixed_mimalloc_multi.wasm": {
+      "sha256": "d5c1c44002eaaa11f1c07b11078041b501271a685c15fe454332d1cdea10003d",
+      "bytes": 22510250
+    },
+    "vendor/replicad/destructor_fixed_single.js": {
+      "sha256": "ccc82b96a318fce77bbfde653e033e4ce5fac8d078f6dd2771295a655cd00b12",
+      "bytes": 60530
+    },
+    "vendor/replicad/destructor_fixed_single.wasm": {
+      "sha256": "91eb2ce3a5ac65030416e6b3f91ad05aad56deaab68c25ec0850af557dd27087",
+      "bytes": 22953057
+    },
+    "vendor/export-verifier/parallel_bounds_mimalloc_verifier.js": {
+      "sha256": "b1684cb3fb2d00d84d055a7d4270a8099b74cd27b52faacddeeb18fac1098f23",
+      "bytes": 69240
+    },
+    "vendor/export-verifier/parallel_bounds_mimalloc_verifier_pool4.js": {
+      "sha256": "4f3d43f931bae9c37a0d716b0ad88ce820176a7868c382759607e6deda149ca5",
+      "bytes": 69283
+    },
+    "vendor/export-verifier/parallel_bounds_mimalloc_verifier.wasm": {
+      "sha256": "e852e5a4b3b38c535dccf14e86bce128a2b600037949e195c6748b356ef23d85",
+      "bytes": 22506714
+    },
+    "vendor/export-verifier/destructor_fixed_single_verifier.js": {
+      "sha256": "b8b5ed4f2634815d291e81dd255a7ab2cc352f2b2f4c194fe94b5fb25b566d13",
+      "bytes": 60557
+    },
+    "vendor/export-verifier/destructor_fixed_single_verifier.wasm": {
+      "sha256": "e15b8822dbc7bde6737e5366faf1e831e702907f4109efc166f78d98cec2e5b3",
+      "bytes": 22949244
+    }
+  }
+}

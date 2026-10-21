@@ -11,6 +11,7 @@ import {
   binarySTL,
   checkMesh,
   fitGrid,
+  conversionParameters,
 } from '../../public/gridfinity-converter/kernel.js';
 import { demo } from '../../public/gridfinity-converter/demo.js';
 const m = await Module();
@@ -232,8 +233,12 @@ fs.writeFileSync(
 );
 console.log('Negative cases and fixed pitch PASS');
 
+for (const fit of [0.21, 0.5, -0.51]) {
+  assert.throws(() => conversionParameters({ feet: [{ x: 0, y: 0 }], fit }), /fit allowance/);
+}
+
 // Both ends of the friction range must produce valid connected geometry.
-for (const fit of [-0.5, 0.5]) {
+for (const fit of [-0.5, 0.2]) {
   const d = detect(m, source);
   const s = align(m, source, d);
   const r = convert(m, s, { feet: d.feet, style: 'plain', fit });

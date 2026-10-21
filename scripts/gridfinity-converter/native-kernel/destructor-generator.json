@@ -1,0 +1,11 @@
+{
+  "upstream": "https://github.com/tauCAD/opencascade.js",
+  "revision": "ebd263f15337b440b391492af073662707e86482",
+  "file": "src/ocjs_bindgen/codegen/embind/class_.py",
+  "patchSHA256": "29eab0cef801333492138c932bd84cf3f71c7ca1abdad43e71ebeb03eea19fa8",
+  "problem": "Classes with ordinary and placement delete received a no-op Embind raw_destructor, retaining native allocations after JS delete().",
+  "change": "Keep suppression for non-public destructors and classes that have only placement delete. Use the ordinary destructor when both delete forms are declared.",
+  "scope": "Binding generation only; CAD algorithms and geometric validation are unchanged.",
+  "validation": "Owning result survives input and builder deletion; independent triangulation handles and face caches survive sibling deletion; source remains strictly valid; repeated cup deep-copy serialization cleanup holds live allocation flat.",
+  "releaseStatus": "Candidate input; shipping artifact hashes are recorded separately in converter provenance."
+}

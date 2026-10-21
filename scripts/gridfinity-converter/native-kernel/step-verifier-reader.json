@@ -1,0 +1,30 @@
+{
+  "upstream": "https://github.com/Open-Cascade-SAS/OCCT",
+  "revision": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "scope": "Dedicated verification of app-generated STEP only; general model import is unchanged.",
+  "files": [
+    {
+      "path": "src/ModelingAlgorithms/TKShHealing/ShapeAnalysis/ShapeAnalysis_Edge.cxx",
+      "upstreamSHA256": "6067b2c56b43a331dba2463ead64fb7a2f4ea37fa35ac654fa7f84e6533010e4",
+      "patchedSHA256": "9c1c29cd23bf2eb84ae921abbe2dfd6e9ad5239afaf2e03b3b94e522ea646e60"
+    },
+    {
+      "path": "src/ModelingAlgorithms/TKShHealing/ShapeAnalysis/ShapeAnalysis_Edge.hxx",
+      "upstreamSHA256": "145aeea6b64658da6f8055dd27b8c2ca3b79a1cdc8aad51aa2f1a30a605adaa9",
+      "patchedSHA256": "ed76401f9f4b6a293803dff66f173249eb1127c1e71271d50c0b11c3034d108e"
+    },
+    {
+      "path": "src/ModelingAlgorithms/TKShHealing/ShapeFix/ShapeFix_Edge.cxx",
+      "upstreamSHA256": "8d03114683f88e1649ff5b160086354a3bcc443fa196055105b3ecbfc89ae380",
+      "patchedSHA256": "ebfa901be643ae3b8a4b8acaf9bc71bdaeeef7184e7d05281c100753435a9d9a"
+    },
+    {
+      "path": "src/DataExchange/TKDESTEP/StepToTopoDS/StepToTopoDS_TranslateEdgeLoop.cxx",
+      "upstreamSHA256": "4294b9d82e444e70c266db1453621033842f442a7da24fe46093d8d743d7059b",
+      "patchedSHA256": "af2004759d45cb9d79a8e96dc93d331ea6024c7081cafa414c24e04a51a9f73c"
+    }
+  ],
+  "patchSHA256": "ce1479dbf2195d0030b57deb4bbd11360d469a6048ca87369991b17fbbca3884",
+  "acceptance": "Strict reopened validity, positive single-solid volume, source tolerance ceilings, bounds; independently audited full-cup pcurves and parameter ranges.",
+  "releaseStatus": "Candidate build input; deployment and artifact hashes are recorded separately."
+}

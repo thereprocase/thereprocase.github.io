@@ -63,7 +63,16 @@ assert.equal(
 const oc = await initOC();
 cad.setOC(oc);
 const box = cad.makeBox([0, 0, 0], [10, 10, 10]);
-assert.equal(certifyNativeBoundsMatch(oc, box, expected).matches, true);
+const certificate = certifyNativeBoundsMatch(oc, box, expected);
+assert.equal(certificate.matches, true);
+assert.equal(certificate.vertexTraversalComplete, false);
+assert.ok(certificate.uniqueVertexCount < certificate.vertexCount);
+const collisions = { ...oc, ReplicadShapeHasher: { HashCode: () => 1 } };
+assert.equal(certifyNativeBoundsMatch(collisions, box, expected).matches, true,
+  'Hash collisions must compare actual vertex identity');
+assert.throws(() => certifyNativeBoundsMatch({
+  ...oc, ReplicadShapeHasher: { HashCode: () => { throw new WebAssembly.RuntimeError('injected trap'); } },
+}, box, expected), WebAssembly.RuntimeError, 'A trapped kernel must not retry an exact fallback');
 assert.equal(
   certifyNativeBoundsMatch(oc, box, { min: [2, 0, 0], max: [12, 10, 10] })
     .matches,
@@ -75,4 +84,4 @@ assert.equal(
   false,
 );
 box.delete();
-console.log(JSON.stringify({ passed: true, checks: 9 }));
+console.log(JSON.stringify({ passed: true, checks: 13 }));

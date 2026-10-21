@@ -1,3 +1,4 @@
+import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-1';
 /** Exact boundary comparison outside a convex box; meshes never participate. */
 export function nativeFaces(oc, cad, shape) {
   const explorer = new oc.TopExp_Explorer(shape.wrapped,
@@ -5,12 +6,15 @@ export function nativeFaces(oc, cad, shape) {
   const faces = [], buckets = new Map();
   try {
     while (explorer.More()) {
-      const face = cad.cast(explorer.Current()), hash = face.hashCode;
+      const face = castOwned(cad, explorer.Current()), hash = face.hashCode;
       const bucket = buckets.get(hash) || [];
       if (bucket.some((other) => face.isEqual(other))) face.delete();
       else { bucket.push(face); buckets.set(hash, bucket); faces.push(face); }
       explorer.Next();
     }
+  } catch (error) {
+    faces.forEach(face => face.delete());
+    throw error;
   } finally { explorer.delete(); }
   return faces;
 }
@@ -38,7 +42,7 @@ export function proveNativePreservation({ oc, cad, source, result, editBox, cut,
     const removed = changed(original, convertedBuckets), added = changed(converted, originalBuckets);
     // Keep multiplicity/orientation meaningful; duplicate oriented faces require full validation.
     const outside = (faces) => faces.length
-      ? keep(cut(keep(cad.makeCompound(faces.map((face) => keep(face.clone())))), editBox))
+      ? keep(cut(keep(ownedCompound(oc, cad, faces)), editBox))
       : null;
     const originalOutside = outside(removed), convertedOutside = outside(added);
     const missingDifference = originalOutside

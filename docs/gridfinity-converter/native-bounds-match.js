@@ -61,6 +61,7 @@ export function certifyNativeBoundsMatch(oc, shape, expected, tolerance = 0.1) {
   const started = performance.now(),
     outer = empty(),
     vertices = empty();
+  let vertexTraversalComplete = true, uniqueVertexCount = 0;
   let faceCount = 0,
     refinedFaces = 0,
     vertexCount = 0;
@@ -109,23 +110,41 @@ export function certifyNativeBoundsMatch(oc, shape, expected, tolerance = 0.1) {
       oc.TopAbs_ShapeEnum.TopAbs_VERTEX,
       oc.TopAbs_ShapeEnum.TopAbs_SHAPE,
     );
+    const seenVertices = new Map();
     try {
       while (explorer.More()) {
-        const raw = explorer.Current(),
-          vertex = oc.TopoDS.Vertex(raw),
-          point = oc.BRep_Tool.Pnt(vertex);
+        const raw = explorer.Current();
+        let vertex, point, newWitness = false;
         try {
-          const xyz = [point.X(), point.Y(), point.Z()];
-          mergeBounds(vertices, [xyz, xyz]);
           vertexCount++;
+          const hash = oc.ReplicadShapeHasher.HashCode(raw, 2147483647);
+          const bucket = seenVertices.get(hash) || [];
+          if (!bucket.some(previous => previous.IsSame(raw))) {
+            bucket.push(raw.clone());
+            seenVertices.set(hash, bucket);
+            uniqueVertexCount++;
+            vertex = oc.TopoDS.Vertex(raw);
+            point = oc.BRep_Tool.Pnt(vertex);
+            const xyz = [point.X(), point.Y(), point.Z()];
+            mergeBounds(vertices, [xyz, xyz]);
+            newWitness = true;
+          }
         } finally {
-          point.delete();
-          vertex.delete();
+          point?.delete();
+          vertex?.delete();
           raw.delete();
+        }
+        // All faces have already supplied conservative outer bounds. Once
+        // actual vertices witness all six extrema, visiting further vertices
+        // cannot improve the required certificate for this validated solid.
+        if (newWitness && extremaBracketMatches(outer, vertices, expected, tolerance)) {
+          vertexTraversalComplete = false;
+          break;
         }
         explorer.Next();
       }
     } finally {
+      for (const bucket of seenVertices.values()) for (const vertex of bucket) vertex.delete();
       explorer.delete();
     }
     const matches =
@@ -138,16 +157,21 @@ export function certifyNativeBoundsMatch(oc, shape, expected, tolerance = 0.1) {
       faceCount,
       refinedFaces,
       vertexCount,
+      vertexTraversalComplete,
+      uniqueVertexCount,
       elapsedMS: performance.now() - started,
       reason: matches ? undefined : 'extrema not enclosed in match tolerance',
     };
   } catch (error) {
+    if (error instanceof WebAssembly.RuntimeError) throw error;
     return {
       matches: false,
       reason: error.message,
       faceCount,
       refinedFaces,
       vertexCount,
+      vertexTraversalComplete,
+      uniqueVertexCount,
       elapsedMS: performance.now() - started,
     };
   }
