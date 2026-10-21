@@ -9,8 +9,8 @@
     "install_scripts_executed": false
   },
   "assets": {
-    "README.md": "7a2300212a7c2cece440df672468547e0788fb477e1d1eb9495022c5beba3f92",
-    "app.js": "fb367f0c6a63d519162a15ed2e459168b3dca7250c1b1be8103d2d4d526665b7",
+    "README.md": "ff8913031c678022321e454f5ef6f32804c8321557dc7255f0d2358227720964",
+    "app.js": "3300ade52b420fc0d4a490efb98853541be74632075ef2052bda68a94e35b737",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -33,7 +33,7 @@
     "checks/diagonal-browser.json": "676d1610a968c163c422cbfa32cf9ec793e112fe77e56493f3f10a07d78ba342",
     "checks/diagonal-placement.json": "2a913edacb42aea0e7d11de5f55f4074acaec490bfc9d70e4c5bbdb9c4b063d0",
     "checks/exported-stl.json": "fe9f06897ba0be8394054f20a82ceca3b28e18370b9ee26b4c07ed477733293f",
-    "checks/layout-revisions.json": "68e203e894ef5fa0c14809eb4b7828aa2d9eb0e13520fc7fa66d48ed9f74533c",
+    "checks/layout-revisions.json": "359c88cd5a94efdbe4316f5813177e0f23b58a38667519023df587ad12378db8",
     "checks/modifier-readback.json": "d8f315e0eae5a7bba4b5e3e5d69d4c6efe307cd9007c50979e1d22f5bad8b8a8",
     "checks/native-comparison.json": "71c59da4dcca6e706f6f2191e6890925482b2fd9d2502af8bcb7f9a634433393",
     "checks/peg-fit-browser.json": "1f35d2f3d52a25515eb1716ca9449d133db5fb3e22ea241e9d95a94b0ce3ea6a",
@@ -53,35 +53,35 @@
     "checks/width-search-controls.json": "ee23a14d784772e73539c8816a720a5bc4e28793b86f79333d75904af81a0bd8",
     "downloads/peg-fit-source.zip": "cd1891f8f055d0fc66bcbffc48704fa3795978d5772e4300d759a71a8b7a8422",
     "downloads/seat-fit-ring.stl": "f2af80f55e9ecf1adff3ccfa9cdccf091ce67ac1a1a600102cabcc639831cd05",
-    "export-worker.js": "24bd7c07c2e67976c5983f95432a650372ea0e1cd89defd19a7fe3b78ebf48af",
+    "export-worker.js": "4ef80339963dff901241e5342bebe06505e3cb30cfb86aecdba24e00c1407f3e",
     "fit-inputs.json": "7b55fdbea9d77a0bc809bbaaab180626f93a1af945594d984e2eb0350d79e0db",
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "1a6ba664f828cd81cb07b3589d1d9f37a601b43b1918d028ddfbd8acb20ec32f",
+    "index.html": "1931ec7d0168b5e517590d7133e83e88b51c6542c281df93b9a3ed1ef7143819",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
-    "kernel.js": "5857df45da559639791a70c4b61752ff703418d26ff0c54809e9d5c7f16506d2",
-    "neighbor-spacing.js": "127466899f570ffdfbb6f6f829833f4882dd668494d8f41147d4db5d0336df3a",
+    "kernel.js": "8993a1e9628a147df219addf1978164dc3189324fcec6c65da7813893f62a073",
+    "neighbor-spacing.js": "025cae48949040ad17087e1d572c6915cd06c3c2235c28b938bc4bed90f32fe8",
     "peg-fit-coupon.png": "66c1adc2ca363ff2066d74d2cea4f410559f527e48121c0397353630ff745c71",
     "peg-fit.js": "a8c3cbf1ce418f15f6da940ef615fe678e30d51083ec0f16e19a33e7d66e27d5",
-    "reinforcement.js": "82ae3ffaa1a99901f07fdd58b622f87243e90d8ae8f0ec206bb023440e50d8b3",
+    "reinforcement.js": "71dc00f61346d6d7ce1a77f476da34f6f7af1c093302334c476c26fdbd5387c8",
     "reinforcement.png": "28231eb8cf49e034fc6d7dd2ff7ac3c8112a43ec78eeca40a3b68e2234641e04",
     "round-board-coupons.png": "a1a518a7564c8f58b31acf95e4ebf04204e47db0b8c2e3cfd4118c0938a87256",
     "screw-board-mounts.png": "f28c53b8fc6698cbb1ac48e05c4c8d5f51f9488adbe6d29630b7abce7cdb0e27",
-    "search-width-worker.js": "d5e00668be8ba92de1680cff80b949d36f826467a6906ef46949dddc4a79e572",
+    "search-width-worker.js": "019e9cee571e92caa4241d38c61bd016ff6f6ef20d1ad56bf30ca1432a1ba73d",
     "seat-fit-ring.png": "0ff7b48f704c6f31796d9fee12eeb6dee690fa14898f94747cd4220b83a1c0a2",
     "shelves.png": "1b00082f2cc3557180b1f15c1e832863d0cc495ec9bb52997b614e91d5311ba3",
     "skadis-shelf.png": "b4f1112ce8ea537e5668c00aa05239e3e5740ba3d28050e19ca17ce956196839",
-    "solid-exports.js": "898f0b5b85fa5973885ead89004d8fa2f563415862cd8a6dd1e72b96ed4acfa2",
+    "solid-exports.js": "3cc8458bb917efec18e2dd3ee4f093e0e22e377f4e8d4def7ea69a7b126706cf",
     "sources/round/LICENSE": "fcf06f213f25db874ab440e80901c3f1715b6c89d4b499e5dc772886c779a9b2",
     "sources/round/pegboard-hook.scad": "198168195eb9d69272236abec464706e09ac78caebd587f691866d4535f23118",
     "sources/skadis/LICENSE": "5099642050615da09e2977c56682595d05eb1361c8762b47efb62dbfe684a8e0",
     "sources/skadis/ikea-skadis.scad": "f2a76b33adc69f701a73fa4090886b39b2fed13906f22d9701549a36410f54d6",
-    "style.css": "1e83a1cb97393f9d0b74e204e32b2907ff934a374f41031a47e45cbcd1b73a3f",
+    "style.css": "4806c5ad98abd7b06dc44b73538c8e27faf6cb02a7cbe471ffbd19a2f9850517",
     "vendor/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "vendor/manifold.js": "9392f8e3b7f9d3cae83c0e7c5a17acaaf017230b8931b3739fb21ea4c852a0b5",
     "vendor/manifold.wasm": "6579d59e4fa4a57b72431c5d35583ef0c6ee0e610ec110d237debb4e85457bce",
-    "worker.js": "c85423ed0c5095296ec61a157dbf97e43932f013561ef63a288457a31a0824c4",
+    "worker.js": "c4bf27ebca6c6e9078d16db6c06f79592b6206da56c2a70bfdc9f2a1471c85a7",
     "checks/runtime-1.json": "aa4cbbb3f142249102fbfe4decbb23c72a6b3bd7c681006f1d0f150c84a910ae",
     "checks/runtime-2.json": "c5fbd237cf66052a4f87308e3d4769edc2a00bc6cee4c6774b1922b08728d2d2",
     "checks/runtime-3.json": "4d9811750f63b05396c19ef313d16ddb35eccb9061de443b9a201e7cca008eee",
@@ -89,9 +89,15 @@
     "checks/six-base-types-remaining.json": "e5217bcc22b58de672e3e73a4ff31cb1f351875af0f2c4b92bbbb3f78608237f",
     "checks/six-base-types-exports.json": "fcb15912c44dbedc7c16277fc3ff06e2b8b0f4afcc04eee66b3134e89ee1eb44",
     "checks/weighted-step-completeness.json": "6cc692f7c8b922243d6768a4cec330f48d9778709d29333d4779f46dbd82a915",
-    "checks/rectangle-fit.json": "d07070c09812fdd802728537aa195b78b15a8be14d1434f1f47164040f78e18b"
+    "checks/rectangle-fit.json": "d07070c09812fdd802728537aa195b78b15a8be14d1434f1f47164040f78e18b",
+    "base-options.js": "4b0caf0f74b053106badc8c8ece37767a306c8de27897f4f47a6b27131ef6de4",
+    "width-cache.js": "cc6a3363c2c2c1bfc0d546647dc97a4aa9a299c4d5326165d0f2f5998cfb4f60",
+    "width-precomputed.json": "ac56ad185c17254e547fcf84fc9847a76fdab5bde930d088995ab486997dc4c9",
+    "checks/base-controls.json": "33fb9810a0d1592db3d27470efa699ede019fe76fc4a809d611db5cc0130050d",
+    "checks/base-controls-browser.json": "bf49a576dc819b738f7fa5bada8e8f4e574c3d7190eb3277a645f2df2befdc77",
+    "checks/width-cache.json": "c0efa7a73b0f42aea296e6bbdbf283d491eeb164182b0a71d3005b9f2e4895ca"
   },
-  "revision": "base-types-1",
+  "revision": "base-controls-1",
   "peg_fit_source": "downloads/peg-fit-source.zip",
   "peg_fit_checks": [
     "checks/peg-fit.json",
@@ -172,5 +178,31 @@
       "checks/six-base-types-exports.json",
       "checks/weighted-step-completeness.json"
     ]
+  },
+  "baseControls": {
+    "revision": "base-controls-1",
+    "floor": [
+      "open",
+      "closed"
+    ],
+    "independentHardware": [
+      "magnets",
+      "screws"
+    ],
+    "ballastRequires": "closed",
+    "combinations": 12,
+    "legacyGeometryPreserved": true,
+    "validation": [
+      "checks/base-controls.json",
+      "checks/base-controls-browser.json"
+    ]
+  },
+  "widthCache": {
+    "revision": "base-controls-1",
+    "precomputed": "width-precomputed.json",
+    "profile": "default original board, one row, zero tilt; all base combinations",
+    "maximumPrecomputedColumns": 11,
+    "completedResultCacheEntries": 32,
+    "validation": "checks/width-cache.json"
   }
 }

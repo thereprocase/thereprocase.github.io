@@ -1,0 +1,57 @@
+{
+  "pass": true,
+  "commonBeds": [
+    {
+      "bed": [
+        180,
+        180
+      ],
+      "columns": 4,
+      "angle": 45
+    },
+    {
+      "bed": [
+        220,
+        220
+      ],
+      "columns": 6,
+      "angle": 45
+    },
+    {
+      "bed": [
+        250,
+        210
+      ],
+      "columns": 6,
+      "angle": 37.27983144464367
+    },
+    {
+      "bed": [
+        256,
+        256
+      ],
+      "columns": 7,
+      "angle": 45
+    },
+    {
+      "bed": [
+        300,
+        300
+      ],
+      "columns": 8,
+      "angle": 45
+    },
+    {
+      "bed": [
+        350,
+        350
+      ],
+      "columns": 10,
+      "angle": 45
+    }
+  ],
+  "allBaseChoices": true,
+  "settingsInvalidation": true,
+  "revisionInvalidation": true,
+  "boundedCache": true
+}

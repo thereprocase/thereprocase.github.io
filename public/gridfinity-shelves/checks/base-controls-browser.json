@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "buttonsAndMutex": true,
+  "openHardwareSTL": true,
+  "presetPreservesBase": true,
+  "legacyWeightedLink": true,
+  "precomputedSeconds": 0.5372270150110126,
+  "cachedSeconds": 0.23668654402717948,
+  "changedAngleDoesNotReuseCache": true,
+  "mobileNoOverflow": true,
+  "errors": []
+}

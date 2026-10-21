@@ -1,0 +1,404 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "config": {},
+      "base_type": "frame",
+      "volume": 30109.389272828954,
+      "triangles": 45850,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793288845e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "plain",
+      "volume": 34120.41336233855,
+      "triangles": 45846,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793299753e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "magnets",
+      "volume": 40527.057718958284,
+      "triangles": 48922,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "screws",
+      "volume": 34043.26068519303,
+      "triangles": 48954,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "both",
+      "volume": 40475.622631518985,
+      "triangles": 52026,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793298899e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "weighted",
+      "volume": 47881.285359303176,
+      "triangles": 56814,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "open-magnets",
+      "volume": 36152.65806923481,
+      "triangles": 49000,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793287797e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "open-screws",
+      "volume": 32402.86033648055,
+      "triangles": 49042,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.22122879327061e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "open-both",
+      "volume": 36101.22301580919,
+      "triangles": 52106,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793287797e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "weighted-plain",
+      "volume": 49276.41251914298,
+      "triangles": 47558,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "weighted-magnets",
+      "volume": 48639.75227288248,
+      "triangles": 50634,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {},
+      "base_type": "weighted-screws",
+      "volume": 48363.64028193035,
+      "triangles": 53742,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 9.221228793281712e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": true
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "open-magnets",
+      "volume": 10768.280515166742,
+      "triangles": 22598,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.821787008739496e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "open-screws",
+      "volume": 9224.11966515813,
+      "triangles": 22640,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.821787003785196e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "open-both",
+      "volume": 10742.563016237455,
+      "triangles": 24154,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.821787008704107e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "weighted-plain",
+      "volume": 16593.835473529925,
+      "triangles": 21860,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.821786965704095e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "weighted-magnets",
+      "volume": 16275.505477673249,
+      "triangles": 23398,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.821787033786462e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "angle": -30,
+        "mount_rows": 1,
+        "backplate": false
+      },
+      "base_type": "weighted-screws",
+      "volume": 16137.947111764259,
+      "triangles": 24970,
+      "pegDelta": 3.429777185294749e-08,
+      "maxFootOverlap": 6.82178699097903e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "open-magnets",
+      "volume": 51961.90907718648,
+      "triangles": 55100,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.511595847403456,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "open-screws",
+      "volume": 44718.41727049441,
+      "triangles": 55172,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.51159583857254,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "open-both",
+      "volume": 51859.038812461,
+      "triangles": 61326,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.51159584740361,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "weighted-plain",
+      "volume": 77505.03335123751,
+      "triangles": 52338,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.51159583959643,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "weighted-magnets",
+      "volume": 76231.71387317112,
+      "triangles": 58490,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.511595839596175,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 2,
+        "rows": 2,
+        "angle": 5,
+        "clearance": -0.1
+      },
+      "base_type": "weighted-screws",
+      "volume": 75679.48950144551,
+      "triangles": 64702,
+      "pegDelta": 5.226124916616612e-08,
+      "maxFootOverlap": 32.51159583959616,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "open-magnets",
+      "volume": 17204.242827796323,
+      "triangles": 7188,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.408049848235847e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "open-screws",
+      "volume": 15663.53684911535,
+      "triangles": 7328,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.40802734403191e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "open-both",
+      "volume": 17178.52528613637,
+      "triangles": 8742,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.408049848214683e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "weighted-plain",
+      "volume": 22960.77952412793,
+      "triangles": 6148,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.408027317533501e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "weighted-magnets",
+      "volume": 22651.619404973353,
+      "triangles": 7694,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.408049824845891e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    },
+    {
+      "config": {
+        "columns": 1,
+        "board_system": "multiboard",
+        "angle": -30
+      },
+      "base_type": "weighted-screws",
+      "volume": 22505.485553319097,
+      "triangles": 9264,
+      "pegDelta": 0,
+      "maxFootOverlap": 6.408319601871603e-05,
+      "hardwareProbes": true,
+      "defaultFootprintMatchesFrame": false
+    }
+  ],
+  "exportReadback": {
+    "pass": true,
+    "reader": "OCP",
+    "validSTEP": true,
+    "solids": 5,
+    "threeMFZipAndXML": true
+  },
+  "legacyVolumesUnchanged": [
+    "frame",
+    "plain",
+    "magnets",
+    "screws",
+    "both",
+    "weighted"
+  ]
+}

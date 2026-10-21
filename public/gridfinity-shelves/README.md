@@ -232,14 +232,14 @@ Settings-link validation: `node scripts/gridfinity/check-settings-links.mjs`. Br
 
 ## Gridfinity base types
 
-Choose **Frame**, **Solid floor**, **Magnets**, **M3 screws**, **Magnets + M3 screws**, or **Weighted**. Frame and Weighted are
-shelf adaptations of the two types in [Zack Freedman's original baseplate
-set](https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925),
-not the unmodified original plates. The four additional floor/hardware choices are adaptations of the same socket profile, not four additional official baseplates. Solid floor and screw-only variants use a 1.2 mm floor; magnets and combined variants use a 3.2 mm floor with 6.5 mm diameter × 2.4 mm pockets. M3 holes pass through the floor. All variants preserve the board connectors and root wall. Magnet-light, skeletonized and screw-together
-bases are community variants, not additional types in that original set.
+Choose **Open** or **Closed** floor, then toggle **Magnets**, **M3 screw holes**, and **Ballast** independently. Magnets and screws work together on either floor. Ballast switches the floor to Closed; choosing Open switches ballast off while retaining the hardware choices. These controls configure the bin-facing Gridfinity interface, separately from pegboard mounting hardware.
 
-Weighted adds 6.4 mm below the frame, a seat floor, four 6.5 mm diameter × 2.4 mm
-deep pockets for 6×2 mm magnets per cell on a 26 mm grid, 3.2 mm M3 clearance
+Open floors with hardware retain four corner gussets per cell around the standard 26 mm hardware grid. Their center is a through-window. Magnet pockets remain 6.5 mm diameter × 2.4 mm deep, with a 0.8 mm bottom and about 2.05 mm material to the diagonal window edge. Screw holes are 3.2 mm through-bores. Closed floors without magnets are 1.2 mm thick; magnet floors are 3.2 mm thick. Ballast uses its existing deeper base, with magnet pockets and screw/head holes only when enabled.
+
+The original `frame`, `plain`, `magnets`, `screws`, `both`, and `weighted` recipe names retain their previous geometry. New names encode the additional combinations; settings links, parameter downloads and export filenames retain the complete choice. Open and weighted layouts are shelf adaptations of [Zack Freedman's original baseplates](https://thangs.com/designer/ZackFreedman/3d-model/Gridfinity%20Baseplates-60925); the other combinations are adaptations, not claims of additional official designs.
+
+Weighted adds 6.4 mm below the frame, a seat floor, optional four 6.5 mm diameter × 2.4 mm
+deep pockets for 6×2 mm magnets per cell on a 26 mm grid, optional 3.2 mm M3 clearance
 bores with 6 mm diameter × 3 mm underside head recesses, a 21.4 mm square × 4 mm
 ballast cavity and four shallow rubber-foot recesses. The weight/foot cavity
 layout and magnet spacing follow the dimensional references in
@@ -291,3 +291,9 @@ Cancellation and errors also record their own outcome and elapsed time. Windows 
 `node scripts/gridfinity/check-rectangle-fit.mjs` checks a tight rotated rectangle requiring more than 90°, degenerate hulls, concavity/hole invariance and 150 deterministic random outlines against 36,000 independent angle samples each. The solver is analytic in angle, using floating-point arithmetic; existing 0.001 mm bed-boundary tolerance remains unchanged.
 
 The support-event construction follows the [rotating-calipers framework described by Toussaint](https://www-cgrl.cs.mcgill.ca/~godfried/research/calipers.html), with the objective above adapted to this fixed rectangular bed. This implementation scans the hull at each event interval, taking O(h²) time for h hull vertices; it does not claim the linear-time complexity of a fully incremental caliper sweep.
+
+## Precomputed width results
+
+The default original-board, one-row, zero-tilt geometry has stored XY convex hulls for widths 1–11. This covers the 180, 220, 250×210, 256, 300 and 350 mm bed presets without generating candidate solids in the browser, and also supports custom beds whose diagonal upper bound is within that range. At zero tilt, all floor/hardware combinations have the same outer XY hull: deeper floors add only along print Z and the pockets remove only interior material. The stored hulls therefore cover every base-button combination for that specific configuration. Different board, depth, tilt, mount height, fit or support settings fall back to actual candidate generation.
+
+Completed searches are also cached locally, with at most 32 entries keyed by the full geometry settings (excluding the current width), bed dimensions and search revision. A settings or revision change prevents reuse of a mismatched result. `node scripts/gridfinity/precompute-widths.mjs` regenerates the table and records source hashes. `check-base-controls.mjs` verifies the open centers, hardware pockets and supporting material, connected bodies, connector preservation, default footprint equivalence and exports. `check-width-cache.mjs` checks table provenance and cache invalidation.

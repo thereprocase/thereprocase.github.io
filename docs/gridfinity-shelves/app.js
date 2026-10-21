@@ -1,11 +1,13 @@
 import {demandRenderer,taskWorker} from '../gridfinity-common/generator-runtime.js?v=runtime-3';
 import {readSettingsLink,settingsURL,copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
 import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
-import {spacingForBed} from './neighbor-spacing.js?v=base-types-1';
+import {spacingForBed} from './neighbor-spacing.js?v=base-controls-1';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
 import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
-import {defaults,baseTypes,parameters,binarySTL} from './kernel.js?v=female-bases-2';
+import {defaults,baseTypes,parameters,binarySTL} from './kernel.js?v=base-controls-1';
+import {widthCacheKey,readWidthCache,saveWidthCache} from './width-cache.js?v=base-controls-1';
+import {baseChoices,baseTypeFor} from './base-options.js?v=base-controls-1';
 const $=id=>document.getElementById(id),form=$('config'),host=$('viewer');
 let worker,result,viewResult,mesh,installed=false,helperObjects=[],helpersVisible=true,installedHelpersVisible=false;
 let widthWorker,widthResult,sharedKind='shelf',busy=false;let ghosts,ghostsEnabled=false,viewHull,fitToBed=false;try{fitToBed=localStorage.getItem('gridfinity-shelf-placement-v1')==='fit';}catch{}
@@ -61,6 +63,20 @@ function applyBed(w,d,preset,syncControls=true){
 $('bed-preset').onchange=()=>{const id=$('bed-preset').value;if(id==='custom'){bedPreset=id;$('bed-width').focus();return;}applyBed(...bedPresets[id],id);};
 for(const id of ['bed-width','bed-depth'])$(id).oninput=()=>{const w=Number($('bed-width').value),d=Number($('bed-depth').value);$('bed-preset').value='custom';applyBed(w,d,'custom',false);};
 rebuildBed();
+form.elements.base_type.replaceChildren(...Object.entries(baseTypes).map(([value,label])=>new Option(label,value)));
+function updateBaseUI(){
+ const p=baseChoices[form.elements.base_type.value];
+ for(const button of document.querySelectorAll('[data-base-floor]'))button.setAttribute('aria-pressed',String(p.closed===(button.dataset.baseFloor==='closed')));
+ for(const button of document.querySelectorAll('[data-base-toggle]'))button.setAttribute('aria-pressed',String(p[button.dataset.baseToggle]));
+ $('base-note').textContent=p.weighted?'Ballast cavities and foot recesses require a closed floor. Hardware remains optional.':!p.closed&&(p.magnets||p.screws)?'Open centers with four corner supports per cell. Magnet and screw positions stay unchanged.':'Open centers or a closed floor. Ballast requires Closed; choosing Open turns ballast off.';
+}
+for(const button of document.querySelectorAll('[data-base-floor],[data-base-toggle]'))button.onclick=()=>{
+ const p={...baseChoices[form.elements.base_type.value]};
+ if(button.dataset.baseFloor){p.closed=button.dataset.baseFloor==='closed';if(!p.closed)p.weighted=false;}
+ else {const key=button.dataset.baseToggle;p[key]=!p[key];if(p.weighted)p.closed=true;}
+ form.elements.base_type.value=baseTypeFor(p);form.dispatchEvent(new Event('input',{bubbles:true}));
+};
+updateBaseUI();
 function values(){return Object.fromEntries(Object.keys(defaults).map(k=>[k,typeof defaults[k]==='boolean'?form.elements[k].checked:typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]));}
 function download(bytes,type,name){const url=URL.createObjectURL(new Blob([bytes],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function updateHelpers(){const visible=installed?installedHelpersVisible:helpersVisible;for(const h of helperObjects)h.visible=visible;$('helpers').setAttribute('aria-pressed',String(visible));$('helpers').textContent=visible?'Hide reinforcement':'Show reinforcement';$('helper-legend-state').textContent=helperObjects.length?(visible?'shown':'hidden'):'unavailable';}
@@ -93,16 +109,16 @@ function show(r){viewLoop.request();clearGhosts();result=r;viewResult=r;viewHull
  if(r.helpers?.length)lines.push(['Reinforcement',`${r.helpers.length} helper bod${r.helpers.length===1?'y':'ies'} · 3.5 mm margin`]);
  bedSummary();
  $('dimensions').replaceChildren(...lines.flatMap(([a,b])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=a;dd.textContent=b;return [dt,dd];}));
- const notes=[];if(r.kind!=='coupon'&&p.base_type==='weighted')notes.push('Weighted shelf: 6×2 mm magnet pockets, M3 clearance and underside head access, 21.4 mm square × 4 mm ballast cavities and shallow foot recesses. Added ballast increases pegboard load; hardware fit and cavity bridging need testing.');if(r.kind==='coupon')notes.push('Try this pair on your board, then keep these peg-fit settings for the shelf.');if(p.board_system!=='original'&&boards[p.board_system].mode!=='bolted')notes.push('Support the hook ledges in the supplied frame-down pose.');if(p.board_system==='original'&&p.mount_rows===1)notes.push('Mini mount: hooks only, without lower locking hoops.');if(p.rows>1)notes.push('For deeper shelves, the mounting-height and gusset controls add support underneath.');if(p.clearance<0)notes.push('A tighter seat can make bins sit slightly higher.');
+ const notes=[];if(r.kind!=='coupon'&&baseChoices[p.base_type].weighted)notes.push('Ballast shelf: 21.4 mm square × 4 mm ballast cavities and shallow foot recesses; enabled hardware retains its standard positions. Added ballast increases pegboard load; hardware fit and cavity bridging need testing.');if(r.kind==='coupon')notes.push('Try this pair on your board, then keep these peg-fit settings for the shelf.');if(p.board_system!=='original'&&boards[p.board_system].mode!=='bolted')notes.push('Support the hook ledges in the supplied frame-down pose.');if(p.board_system==='original'&&p.mount_rows===1)notes.push('Mini mount: hooks only, without lower locking hoops.');if(p.rows>1)notes.push('For deeper shelves, the mounting-height and gusset controls add support underneath.');if(p.clearance<0)notes.push('A tighter seat can make bins sit slightly higher.');
  if(r.reinforcementError)notes.push('Reinforcement export unavailable: '+r.reinforcementError);$('fit-note').textContent=notes.join(' ');$('status').textContent='Geometry ready · choose a download format';$('stl').disabled=false;$('recipe').disabled=false;$('viewer-note').hidden=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=!r.helpers?.length;$('stl').textContent=r.kind==='coupon'?(boards[p.board_system].mode==='bolted'?'Download screw-fit STL':'Download peg-pair STL'):'Download STL';
 }
 function setBusy(b){document.documentElement.dataset.busy=String(b);busy=b;$('use-width').disabled=b;$('find-width').disabled=b||!!widthWorker;for(const id of ['step','three-mf','helpers'])$(id).disabled=b||!result?.helpers?.length;form.elements.board_system.disabled=b;$('coupon').disabled=b;$('generate-preview').disabled=b;$('generate-preview').textContent=b?'Generating…':'Generate preview';$('generate').disabled=b;$('cancel').disabled=!b;}
-function generate(kind='shelf'){if(widthWorker)cancelWidthSearch();if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['base_type','board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
- worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent=mesh?'Previous model · computing new geometry…':'Computing geometry in your browser…';$('viewer-note').hidden=false;worker=taskWorker('./worker.js?v=female-bases-2',$('status'));
+function generate(kind='shelf'){updateBaseUI();if(widthWorker)cancelWidthSearch();if(kind==='shelf'&&!form.reportValidity())return;let p;try{p=kind==='coupon'?{...defaults,columns:1,rows:1,...Object.fromEntries(['base_type','board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))}:values();parameters(p);}catch(e){$('status').textContent=e.message;return;}
+ worker?.terminate();result=null;$('stl').disabled=true;$('recipe').disabled=true;setBusy(true);$('status').textContent=kind==='coupon'?'Building your mount coupon…':'Building your shelf…';$('viewer-note').textContent=mesh?'Previous model · computing new geometry…':'Computing geometry in your browser…';$('viewer-note').hidden=false;worker=taskWorker('./worker.js?v=base-controls-1',$('status'));
  worker.onmessage=({data})=>{setBusy(false);worker.terminate();if(data.error){$('viewer-note').textContent=mesh?'Previous model · generation failed':'No new model generated. See the error below.';$('viewer-note').hidden=false;$('status').textContent=`Generation failed: ${data.error}`;return;}show(data.result);};
  worker.onerror=()=>{setBusy(false);worker.terminate();$('viewer-note').textContent=mesh?'Previous model · geometry engine failed to load':'Geometry engine failed to load.';$('viewer-note').hidden=false;$('status').textContent='Geometry engine could not load. Retry, or use the native CAD generator below.';};worker.postMessage({parameters:p,kind});
 }
-form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{cancelWidthSearch();updateSpacingTable();worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
+form.onsubmit=e=>{e.preventDefault();generate();};form.oninput=()=>{updateBaseUI();cancelWidthSearch();updateSpacingTable();worker?.terminate();setBusy(false);result=null;$('status').textContent='Settings changed · select Generate preview to update the model and downloads';$('viewer-note').textContent=mesh?'Previous model · generate to update':'No model generated · select Generate preview';$('viewer-note').hidden=false;$('stl').disabled=true;$('recipe').disabled=true;for(const id of ['step','three-mf','helpers'])$(id).disabled=true;};
 $('coupon').onclick=()=>generate('coupon');$('reset-fit').onclick=()=>{for(const k of ['peg_clearance','hook_grip','hoop_firmness',...Object.keys(boardDefaults).filter(k=>k!=='board_system')])form.elements[k].value=boardSettings(form.elements.board_system.value)[k]??defaults[k];form.oninput();};
 $('cancel').onclick=()=>{worker?.terminate();setBusy(false);if(result){$('status').textContent='Export cancelled. Your generated shelf is kept; retry export when ready.';return;}$('status').textContent='Generation cancelled. Adjust settings or generate again.';$('viewer-note').textContent=mesh?'Previous model · generation cancelled':'Generation cancelled · select Generate preview';$('viewer-note').hidden=false;};
 for(const button of document.querySelectorAll('[data-preset]'))button.onclick=()=>{cancelWidthSearch();const [x,y]=button.dataset.preset.split('').map(Number),p={...defaults,columns:x,rows:y,beam:x===1?5:10,...Object.fromEntries(['base_type','board_system',...Object.keys(boardDefaults).filter(k=>k!=='board_system'),'peg_clearance','hook_grip','hoop_firmness'].map(k=>[k,typeof defaults[k]==='string'?form.elements[k].value:Number(form.elements[k].value)]))};for(const [k,v] of Object.entries(p)){if(typeof v==='boolean')form.elements[k].checked=v;else form.elements[k].value=v;}generate();};
@@ -110,7 +126,7 @@ for(const [id,fit] of [['fit-bed',true],['straight-bed',false]])$(id).onclick=()
 $('print-pose').onclick=()=>{installed=false;updatePose();reset();};$('installed').onclick=()=>{installed=true;updatePose();reset();};$('reset-view').onclick=reset;
 $('stl').onclick=()=>{if(!result||busy)return;const start=performance.now();download(binarySTL(result),'model/stl',fileStem(result)+'-frame-down.stl');const elapsed=performance.now()-start;document.documentElement.dataset.lastTaskMS=String(elapsed);document.documentElement.dataset.lastTaskOutcome='success';$('status').textContent='Geometry ready · STL downloaded · '+(elapsed/1000).toFixed(2)+' s';};
 $('helpers').onclick=()=>{if(installed)installedHelpersVisible=!installedHelpersVisible;else helpersVisible=!helpersVisible;updateHelpers();};
-function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=rectangle-fit-1',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
+function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=base-controls-1',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
 $('step').onclick=()=>exportSolids('step');$('three-mf').onclick=()=>exportSolids('3mf');
 $('recipe').onclick=()=>{if(result)download(JSON.stringify(Object.fromEntries(Object.keys(defaults).filter(k=>(result.parameters.board_system!=='original'||!(k in boardDefaults))&&(k!=='base_type'||result.parameters.base_type!=='frame')).map(k=>[k,result.parameters[k]])),null,2)+'\n','application/json',fileStem(result)+'-parameters.json');};
 let previousBoard='original';
@@ -143,15 +159,22 @@ function cancelWidthSearch(message='Settings changed · find the largest width a
  if(widthWorker||widthResult){widthWorker?.terminate();widthWorker=null;widthResult=null;$('width-result').textContent=message;}
  $('find-width').disabled=busy;$('cancel-width').disabled=true;$('use-width').hidden=true;
 }
+function showWidthResult(r){
+ widthResult=r;document.documentElement.dataset.widthSearchSource=r.source??'generated';
+ $('find-width').disabled=busy;$('cancel-width').disabled=true;
+ if(!r.columns){$('width-result').textContent=`No supported width fits this bed at ${r.rows} cells deep, including diagonally.`;return;}
+ $('width-result').textContent=`Largest supported width at this depth: ${r.columns} × ${r.rows} · ${r.placement.angle.toFixed(2)}° · ${r.placement.width.toFixed(1)} × ${r.placement.depth.toFixed(1)} mm footprint.`;$('use-width').textContent=`Use ${r.columns} × ${r.rows}`;$('use-width').hidden=false;
+}
 $('find-width').onclick=()=>{
  let input;try{if(!form.reportValidity())return;input=values();parameters({...input,columns:1});}catch(e){$('width-result').textContent=e.message;return;}
  cancelWidthSearch();widthResult=null;$('find-width').disabled=true;$('cancel-width').disabled=false;$('width-result').textContent='Finding the largest width with 2D footprint fitting…';
- const search=widthWorker=new Worker('./search-width-worker.js?v=rectangle-fit-1',{type:'module'});
+ const cacheKey=widthCacheKey(input,{width:bedWidth,depth:bedDepth}),cached=readWidthCache(cacheKey);if(cached){showWidthResult(cached);return;}
+ const search=widthWorker=new Worker('./search-width-worker.js?v=base-controls-1',{type:'module'});
  const finish=()=>{widthWorker?.terminate();widthWorker=null;$('find-width').disabled=busy;$('cancel-width').disabled=true;};
  widthWorker.onmessage=({data})=>{if(widthWorker!==search)return;if(data.progress){$('width-result').textContent=`Checking ${data.progress.columns} × ${data.progress.rows}, ${data.progress.tested + 1} of ${data.progress.total} widths · fitting the footprint at all rotations…`;return;}
  finish();if(data.error){$('width-result').textContent='Width check failed: '+data.error;return;}
- widthResult=data.result;if(!widthResult.columns){$('width-result').textContent=`No supported width fits this bed at ${widthResult.rows} cells deep, including diagonally.`;return;}
- const r=widthResult;$('width-result').textContent=`Largest supported width at this depth: ${r.columns} × ${r.rows} · ${r.placement.angle.toFixed(2)}° · ${r.placement.width.toFixed(1)} × ${r.placement.depth.toFixed(1)} mm footprint.`;$('use-width').textContent=`Use ${r.columns} × ${r.rows}`;$('use-width').hidden=false;
+ widthResult=data.result;saveWidthCache(cacheKey,widthResult);
+ showWidthResult(widthResult);
  };
  widthWorker.onerror=()=>{if(widthWorker!==search)return;finish();$('width-result').textContent='Width check could not complete. Retry.';};widthWorker.postMessage({parameters:input,bed:{width:bedWidth,depth:bedDepth}});
 };
@@ -167,7 +190,7 @@ function restoreSharedSettings(){
  if(v.bed&&!validBed(v.bed.width,v.bed.depth))throw Error('Invalid linked bed size.');
  for(const k of ['fitToBed','installed','ghosts','helpersVisible','installedHelpersVisible'])if(v[k]!==undefined&&typeof v[k]!=='boolean')throw Error('Invalid linked view setting.');
  sharedKind=v.kind??'shelf';cancelWidthSearch();for(const [k,value] of Object.entries(linked.parameters)){const field=form.elements[k];if(typeof value==='boolean')field.checked=value;else field.value=value;}
- previousBoard=form.elements.board_system.value;updateBoardUI();if(v.fitToBed!==undefined)fitToBed=v.fitToBed;if(v.installed!==undefined)installed=v.installed;if(v.ghosts!==undefined)ghostsEnabled=v.ghosts;if(v.helpersVisible!==undefined)helpersVisible=v.helpersVisible;if(v.installedHelpersVisible!==undefined)installedHelpersVisible=v.installedHelpersVisible;
+ previousBoard=form.elements.board_system.value;updateBoardUI();updateBaseUI();if(v.fitToBed!==undefined)fitToBed=v.fitToBed;if(v.installed!==undefined)installed=v.installed;if(v.ghosts!==undefined)ghostsEnabled=v.ghosts;if(v.helpersVisible!==undefined)helpersVisible=v.helpersVisible;if(v.installedHelpersVisible!==undefined)installedHelpersVisible=v.installedHelpersVisible;
  if(v.bed)applyBed(v.bed.width,v.bed.depth,Object.keys(bedPresets).find(k=>bedPresets[k][0]===v.bed.width&&bedPresets[k][1]===v.bed.depth)??'custom');
  $('share-status').textContent='Settings restored from link.';return true;
  }catch(e){$('share-status').textContent='Could not load settings link: '+e.message;return false;}

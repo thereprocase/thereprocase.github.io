@@ -9,7 +9,10 @@
     "checks/diagonal-placement.json",
     "checks/diagonal-3mf.json",
     "checks/diagonal-browser.json",
-    "checks/rectangle-fit.json"
+    "checks/rectangle-fit.json",
+    "checks/base-controls.json",
+    "checks/base-controls-browser.json",
+    "checks/width-cache.json"
   ],
   "historicalBeforeDenseMountLayout": [
     "checks/array-limits.json",
@@ -34,5 +37,6 @@
     "checks/viewer-helpers.json"
   ],
   "scope": "Every usable board hole across width and selected mounting height; bed preview bounds and 3MF placement; existing per-peg interface geometry retained.",
-  "currentPlacementRevision": "rectangle-fit-1"
+  "currentPlacementRevision": "rectangle-fit-1",
+  "baseControlsRevision": "base-controls-1"
 }

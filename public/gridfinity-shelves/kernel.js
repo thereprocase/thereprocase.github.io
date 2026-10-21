@@ -1,7 +1,8 @@
 import {boards,boardSettings,boardDefaults,checkBoard,boardLayout,makeBoardPegs} from './boards.js?v=dense-1';
 import {pegFitDefaults,checkPegFit,makePegs} from './peg-fit.js?v=fit-7';
 /** Parametric shelf mesh kernel. Coordinates match the native FreeCAD generator. */
-export const baseTypes = {frame:'Open frame',plain:'Solid floor',magnets:'Magnets',screws:'Screw holes',both:'Magnets + screws',weighted:'Weighted'};
+import {baseChoices,baseTypes} from './base-options.js?v=base-controls-1';
+export {baseTypes};
 export const defaults = {columns:2, rows:1, clearance:0, web:2.4, beam:10, angle:0, mount_rows:2, backplate:true,base_type:'frame',...pegFitDefaults,...boardDefaults};
 export function parameters(input) {
  const p={...defaults,...boardSettings(input.board_system??'original'),...input};if(p.board_system==='original')checkPegFit(p);else for(const k of Object.keys(pegFitDefaults))p[k]=pegFitDefaults[k];checkBoard(p);
@@ -56,7 +57,7 @@ export function build(module, inputs, input) {
   const tilt=o=>moved(keep(moved(o,[0,-.15,-5.72]).rotate([p.angle,0,0])),[0,.15,hinge]);
   const point=(y,z)=>[.15+(y-.15)*Math.cos(angle)-(z-5.72)*Math.sin(angle),hinge+(y-.15)*Math.sin(angle)+(z-5.72)*Math.cos(angle)];
   const frame=(back,z,height)=>tilt(moved(keep(M.extrude([framePolygon(p.frameWidth,back,p.front)],height)),[0,0,z]));
-  const weighted=p.base_type==='weighted',solid=p.base_type!=='frame',magnets=['magnets','both','weighted'].includes(p.base_type),screws=['screws','both','weighted'].includes(p.base_type),baseBottom=weighted?.72-6.4:solid?.97-(magnets?3.2:1.2):.72;
+  const {closed,magnets,screws,weighted}=baseChoices[p.base_type],solid=closed||magnets||screws,baseBottom=weighted?.72-6.4:solid?.97-(magnets?3.2:1.2):.72;
   const base=frame(5.55,baseBottom,5.72-baseBottom);
   // A deep tilted base can project behind the board. Keep added material
   // forward of the fixed root wall, which is built independently below.
@@ -70,12 +71,19 @@ export function build(module, inputs, input) {
    feet.push(tilt(loft(x,y,[[.97,35.6,.8],[1.77,37.2,1.6],[3.57,37.2,1.6],[5.72,41.5,3.75]])));
    if(solid){
     const hardwareStart=pockets.length;
+    if(!closed){
+     // A central through-window leaves four corner gussets carrying hardware.
+     // The diagonal boundary x+y=18.5 leaves 2.05 mm around a 6.5 mm
+     // magnet pocket at (13,13), with the existing 0.8 mm bottom beneath it.
+     const window=[[-18,-.5],[-.5,-18],[.5,-18],[18,-.5],[18,.5],[.5,18],[-.5,18],[-18,.5]];
+     pockets.push(tilt(moved(keep(M.extrude([window],.97-baseBottom+.2)),[x,y,baseBottom-.1])));
+    }
     // Shelf adaptation of the original weighted base: hardware on a 26 mm grid.
     const bore=(xx,yy,z,h,r)=>tilt(moved(keep(M.cylinder(h,r,r,96)),[xx,yy,z]));
     for(const dx of [-13,13])for(const dy of [-13,13]){
      if(magnets)pockets.push(bore(x+dx,y+dy,.97-2.4,2.5,3.25)); // 6×2 mm magnet recess
      if(screws)pockets.push(bore(x+dx,y+dy,baseBottom-.1,.97-baseBottom+.2,1.6)); // M3 clearance
-     if(weighted)pockets.push(bore(x+dx,y+dy,baseBottom-.1,3.1,3)); // underside head access
+     if(weighted&&screws)pockets.push(bore(x+dx,y+dy,baseBottom-.1,3.1,3)); // underside head access
     }
     if(weighted)pockets.push(tilt(box([21.4,21.4,4.1],[x-10.7,y-10.7,baseBottom-.1])));
     // Shallow radial recesses for rubber feet, matching the weighted layout.
