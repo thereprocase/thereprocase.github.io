@@ -1,0 +1,38 @@
+{
+  "emissive_meshes": [
+    "diffuser-back-a.npz",
+    "diffuser-back-b.npz",
+    "diffuser-front-a.npz",
+    "diffuser-front-b.npz",
+    "diffuser-front-left.npz",
+    "diffuser-front-right.npz",
+    "diffuser-left-a.npz",
+    "diffuser-left-b.npz",
+    "diffuser-rear-left.npz",
+    "diffuser-rear-right.npz",
+    "diffuser-right-a.npz",
+    "diffuser-right-b.npz"
+  ],
+  "light_sample_distance_to_diffuser_mm": [
+    0.17420450850447922,
+    0.09999999999998954,
+    0.09999999999998954,
+    0.1370320074004008,
+    0.09999999999998954,
+    0.09999999999998954,
+    0.08107125032415217,
+    0.09999999999998954,
+    0.09999999999998954,
+    0.1507938501368131,
+    0.09999999999998954,
+    0.09999999999998954,
+    0.1278453791520893,
+    0.19011737697513684,
+    0.19635536099996895,
+    0.17420450850447922
+  ],
+  "only_diffusers_emit": true,
+  "full_model_shadow_maps": 16,
+  "receiver_incidence": "max(dot(normal,toward_light),0)",
+  "shadow_resolution": 768
+}

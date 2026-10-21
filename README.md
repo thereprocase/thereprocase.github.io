@@ -132,7 +132,7 @@ the 10 and 12 mm kits raise the glass seat by 2 and 4 mm. Attribution is kept
 with each kit. Build and export the directory after updating these files.
 
 The riser’s `faux-light/` view uses the actual 8 mm riser on a simplified full
-printer, with light samples taken from the tape route and an approximate
-toolhead shadow. Its on/off comparison illustrates the lighting layout; it is
+printer, with light samples checked against the diffuser surfaces and full-model depth-map
+shadows. Its on/off comparison illustrates the lighting layout; it is
 not a measured lux or diffuser-transmission simulation. The viewer’s scene and
 input hashes accompany the PNG.

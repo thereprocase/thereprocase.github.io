@@ -577,7 +577,7 @@
   },
   {
     "mesh": "/home/repro/lab/p1s-usb-light-riser/faux-light/meshes/x-rod-23.npz",
-    "sha256": "3a390e5f5e1460bcbaecf8cee7bfef06706bbf4ef3c68c55f945aa9f19aa5384",
+    "sha256": "cae227af396632ea4d4f570551e44fc41c98734a6f91376c0df039c2f96fa704",
     "transform": [
       [
         1.0,
@@ -604,12 +604,12 @@
         1.0
       ]
     ],
-    "vertices": 24,
-    "triangles": 12
+    "vertices": 254,
+    "triangles": 248
   },
   {
     "mesh": "/home/repro/lab/p1s-usb-light-riser/faux-light/meshes/x-rod23.npz",
-    "sha256": "7a31aa1490c4539772560a02fdd406832549ebb31880496abe1a5fada1129e28",
+    "sha256": "593a0f3a5d56cdb091d7694dcbe99144cd0c2544ab9d4f385b5b70818bff0d73",
     "transform": [
       [
         1.0,
@@ -636,8 +636,8 @@
         1.0
       ]
     ],
-    "vertices": 24,
-    "triangles": 12
+    "vertices": 254,
+    "triangles": 248
   },
   {
     "mesh": "/home/repro/lab/p1s-usb-light-riser/faux-light/meshes/toolhead.npz",

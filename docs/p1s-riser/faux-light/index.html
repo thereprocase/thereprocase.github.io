@@ -24,11 +24,18 @@ out vec3 vView; out vec3 world; out float vDev;
 void main(){ vec4 p = view*vec4(pos,1.0); vView = p.xyz; world=pos; vDev = dev; gl_Position = mvp*vec4(pos,1.0); }`,
 `in vec3 vView; in vec3 world; in float vDev;
 uniform vec3 base; uniform int useDev; uniform float alpha;
-uniform vec3 lights[48]; uniform vec3 directions[48]; uniform float lightOn; uniform float emission;
-float headShadow(vec3 p,vec3 light){
- vec3 ray=light-p;vec3 a=(vec3(-51.,79.,-28.5)-p)/ray;vec3 b=(vec3(11.,132.,28.5)-p)/ray;
- vec3 nearv=min(a,b),farv=max(a,b);float tn=max(max(nearv.x,nearv.y),nearv.z),tf=min(min(farv.x,farv.y),farv.z);
- return (tn>0.015 && tn<0.98 && tf>tn)?0.08:1.;
+uniform vec3 lights[16]; uniform vec3 directions[16]; uniform mat4 shadowMatrix[16];
+uniform highp sampler2DArray shadowDepth;
+uniform float lightOn; uniform float emission;
+float visibility(int i,vec3 p,vec3 n){
+ vec4 clip=shadowMatrix[i]*vec4(p+n*.55,1.);vec3 q=clip.xyz/clip.w*.5+.5;
+ if(clip.w<=0. || any(lessThan(q,vec3(0.))) || any(greaterThan(q,vec3(1.))))return 0.;
+ float visible=0.;
+ for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++){
+  float depth=texture(shadowDepth,vec3(q.xy+vec2(float(x),float(y))/768.,float(i))).r;
+  visible+=q.z-.00010<=depth?1.:0.;
+ }
+ return visible/9.;
 }
 out vec4 o;
 vec3 devColor(float d){
@@ -45,20 +52,22 @@ void main(){
   float rim = 1.0 - abs(n.z);
   vec3 c = (useDev == 1 ? devColor(vDev) : base) * band;
   if (rim > 0.82) c *= 0.85;
-  
- bool interior=abs(world.x)<184. && abs(world.z)<168. && world.y>0.;
- if(interior){
-  vec3 normal=normalize(cross(dFdx(world),dFdy(world)));float sum=0.;
-  for(int i=0;i<48;i++){
+
+ // Visible-face normal: light must arrive on this side, never through the back.
+ vec3 normal=normalize(cross(dFdx(world),dFdy(world)));
+ bool interior=abs(world.x)<184. && abs(world.z)<168. && world.y> -32.;
+ if(interior && alpha>=1.){
+  float sum=0.;
+  for(int i=0;i<16;i++){
    vec3 ray=world-lights[i];float d2=dot(ray,ray);vec3 dir=normalize(ray);
    float beam=max(dot(dir,directions[i]),0.);
-   float incidence=abs(dot(normal,dir));
-   sum+=beam*incidence*9000./(d2+1600.)*headShadow(world,lights[i]);
+   float incidence=max(dot(normal,-dir),0.);
+   if(beam*incidence>.001)sum+=beam*incidence*27000./(d2+1600.)*visibility(i,world,normal);
   }
-  float fill=1.-exp(-sum*.85);
-  c=base*(.18+lightOn*fill*1.65)+vec3(.015,.025,.035)*lightOn*fill;
+  float fill=1.-exp(-sum*.75);
+  c=base*(.22+lightOn*fill*1.45)+vec3(.01,.016,.024)*lightOn*fill;
  }
- if(emission>0.)c=mix(c,vec3(.94,.98,1.),emission*lightOn);
+ if(emission>0.)c=mix(c,vec3(.98,.99,1.),emission*lightOn);
  o=vec4(c,alpha);
 }`);
 
@@ -148,17 +157,41 @@ function draw(){
  for(const m of models){
  const translucent=(m.info.alpha??1)<1;if(translucent){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);}
   if(!translucent && !m.info.emission){gl.enable(gl.CULL_FACE);gl.cullFace(gl.FRONT);bind(hullProg,m);gl.uniformMatrix4fv(U(hullProg,"mvp"),false,mvp);gl.uniform1f(U(hullProg,"push"),cam.dist*.00038);gl.uniform3f(U(hullProg,"ink"),.114,.106,.094);gl.drawElements(gl.TRIANGLES,m.nTri,gl.UNSIGNED_INT,0);
-  } gl.disable(gl.CULL_FACE);bind(celProg,m);gl.uniformMatrix4fv(U(celProg,"mvp"),false,mvp);gl.uniformMatrix4fv(U(celProg,"view"),false,view);gl.uniform3fv(U(celProg,"base"),m.info.color||[.36,.64,.69]);gl.uniform1i(U(celProg,"useDev"),0);gl.uniform1f(U(celProg,"alpha"),m.info.alpha??1);gl.uniform1f(U(celProg,"emission"),m.info.emission??0);gl.uniform1f(U(celProg,"lightOn"),lightOn);gl.uniform3fv(U(celProg,"lights[0]"),scene.lights.flatMap(l=>l.position));gl.uniform3fv(U(celProg,"directions[0]"),scene.lights.flatMap(l=>l.direction));gl.drawElements(gl.TRIANGLES,m.nTri,gl.UNSIGNED_INT,0);
+  } gl.disable(gl.CULL_FACE);bind(celProg,m);gl.uniformMatrix4fv(U(celProg,"mvp"),false,mvp);gl.uniformMatrix4fv(U(celProg,"view"),false,view);gl.uniform3fv(U(celProg,"base"),m.info.color||[.36,.64,.69]);gl.uniform1i(U(celProg,"useDev"),0);gl.uniform1f(U(celProg,"alpha"),m.info.alpha??1);gl.uniform1f(U(celProg,"emission"),m.info.emission??0);gl.uniform1f(U(celProg,"lightOn"),lightOn);gl.uniform3fv(U(celProg,"lights[0]"),scene.lights.flatMap(l=>l.position));gl.uniform3fv(U(celProg,"directions[0]"),scene.lights.flatMap(l=>l.direction));gl.uniformMatrix4fv(U(celProg,"shadowMatrix[0]"),false,new Float32Array(shadowMatrices.flatMap(m=>Array.from(m))));gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D_ARRAY,shadowTexture);gl.uniform1i(U(celProg,"shadowDepth"),0);gl.drawElements(gl.TRIANGLES,m.nTri,gl.UNSIGNED_INT,0);
   bind(lineProg,m,"edges");gl.uniformMatrix4fv(U(lineProg,"mvp"),false,mvp);gl.uniform4fv(U(lineProg,"col"),[.114,.106,.094,1]);if(!translucent&&!m.info.emission)gl.drawElements(gl.LINES,m.nEdge,gl.UNSIGNED_INT,0);gl.depthMask(true);gl.disable(gl.BLEND);
  }
  if(models.length)window.renderReady=true;requestAnimationFrame(draw);
 }
+
+let shadowTexture,shadowMatrices=[];
+const depthProg=program(`in vec3 pos;uniform mat4 mvp;void main(){gl_Position=mvp*vec4(pos,1.);}`,`void main(){}`);
+function bakeShadows(){
+ shadowTexture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D_ARRAY,shadowTexture);
+ gl.texStorage3D(gl.TEXTURE_2D_ARRAY,1,gl.DEPTH_COMPONENT24,768,768,16);
+ gl.texParameteri(gl.TEXTURE_2D_ARRAY,gl.TEXTURE_MIN_FILTER,gl.NEAREST);gl.texParameteri(gl.TEXTURE_2D_ARRAY,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+ gl.texParameteri(gl.TEXTURE_2D_ARRAY,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D_ARRAY,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+ const fb=gl.createFramebuffer();gl.bindFramebuffer(gl.FRAMEBUFFER,fb);gl.drawBuffers([gl.NONE]);gl.readBuffer(gl.NONE);
+ gl.viewport(0,0,768,768);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);
+ for(let i=0;i<scene.lights.length;i++){
+  const l=scene.lights[i],at=l.position.map((v,k)=>v+l.direction[k]);
+  const vp=mat4mul(persp(2.7,1,.5,1100),lookAt(l.position,at,[0,-1,0]));shadowMatrices.push(vp);
+  gl.framebufferTextureLayer(gl.FRAMEBUFFER,gl.DEPTH_ATTACHMENT,shadowTexture,0,i);
+  if(gl.checkFramebufferStatus(gl.FRAMEBUFFER)!==gl.FRAMEBUFFER_COMPLETE)throw Error('Shadow framebuffer incomplete');
+  gl.clear(gl.DEPTH_BUFFER_BIT);
+  for(const model of models){
+   if((model.info.alpha??1)<1||model.info.emission)continue;
+   bind(depthProg,model);gl.uniformMatrix4fv(U(depthProg,'mvp'),false,vp);gl.drawElements(gl.TRIANGLES,model.nTri,gl.UNSIGNED_INT,0);
+  }
+ }
+ gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.deleteFramebuffer(fb);
+}
+
 async function start(){
  const r=await fetch("scene.json");if(!r.ok)throw Error("Scene unavailable");scene=await r.json();
  for(const k of ["title","subtitle","caption"])$(k).textContent=scene[k]||"";
  cam.yaw=scene.camera?.yaw??-1.05;cam.pitch=scene.camera?.pitch??.87;
  models=await Promise.all(scene.parts.map(async info=>{const r=await fetch(info.file);if(!r.ok)throw Error(info.file+": "+r.status);return upload(await r.arrayBuffer(),info);}));
- home();cam.dist*=scene.camera?.zoom??.8;$("load").style.display="none";draw();
+ bakeShadows();home();cam.dist*=scene.camera?.zoom??.8;$("load").style.display="none";draw();
 }
 
 $('light-toggle').onclick=()=>{lightOn=1-lightOn;$('light-toggle').textContent='Riser light: '+(lightOn?'on':'off');$('light-toggle').setAttribute('aria-pressed',String(!!lightOn));};
