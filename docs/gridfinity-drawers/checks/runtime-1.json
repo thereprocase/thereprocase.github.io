@@ -1,0 +1,33 @@
+{
+  "revision": "runtime-1",
+  "browser": "Local Chromium with software rendering",
+  "scope": "Functional tests; timings are not a Windows benchmark",
+  "checks": {
+    "idleFrames": 0,
+    "viewUpdated": true,
+    "exportCancelRetry": true,
+    "pagehide": true,
+    "repeats": [
+      {
+        "wallMS": 786.3999998569489,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      },
+      {
+        "wallMS": 777.5,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      },
+      {
+        "wallMS": 787.7000000476837,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "application/step",
+        "size": 231315
+      }
+    ]
+  },
+  "geometryRegression": "Six drawer cases byte-identical STL; shelf geometry, STEP writer and Manifold artifacts unchanged",
+  "workerLifecycleUnit": "Progress messages, stale replies after termination and wall time publication passed"
+}

@@ -1,0 +1,33 @@
+{
+  "revision": "runtime-1",
+  "browser": "Local Chromium with software rendering",
+  "scope": "Functional tests; timings are not a Windows benchmark",
+  "checks": {
+    "idleFrames": 0,
+    "viewUpdated": true,
+    "exportCancelRetry": true,
+    "pagehide": true,
+    "repeats": [
+      {
+        "wallMS": 10498.399999856949,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 \u00d7 1Unrotated footprint88.0 \u00d7 62.3 mmShelf tilt0\u00b0Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 \u00b7 Gridfinity boundariesSolid volume30.11 cm\u00b3Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies \u00b7 3.5 mm margin"
+      },
+      {
+        "wallMS": 10050.5,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 \u00d7 1Unrotated footprint88.0 \u00d7 62.3 mmShelf tilt0\u00b0Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 \u00b7 Gridfinity boundariesSolid volume30.11 cm\u00b3Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies \u00b7 3.5 mm margin"
+      },
+      {
+        "wallMS": 10077.700000047684,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 \u00d7 1Unrotated footprint88.0 \u00d7 62.3 mmShelf tilt0\u00b0Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 \u00b7 Gridfinity boundariesSolid volume30.11 cm\u00b3Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies \u00b7 3.5 mm margin"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "application/step",
+        "size": 32639157
+      }
+    ]
+  },
+  "geometryRegression": "Six drawer cases byte-identical STL; shelf geometry, STEP writer and Manifold artifacts unchanged",
+  "workerLifecycleUnit": "Progress messages, stale replies after termination and wall time publication passed"
+}

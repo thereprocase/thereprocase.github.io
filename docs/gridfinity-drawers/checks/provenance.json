@@ -28,5 +28,31 @@
   "bottom_comparison": "bottom-options-v2.png, actual generated 90x90 mm 2x2 grids, X/Y cuts45mm between cells, display-only5mm separation",
   "open_checks": "open-bottoms.json",
   "open_browser_checks": "browser-open.json",
-  "closed_preservation": "closed-preservation.json"
+  "closed_preservation": "closed-preservation.json",
+  "runtime": {
+    "revision": "runtime-3",
+    "sharedModule": "../gridfinity-common/generator-runtime.js",
+    "changes": [
+      "demand-driven visible rendering",
+      "worker progress and wall times",
+      "stale reply suppression",
+      "export cancel retains generated meshes",
+      "pagehide terminates workers",
+      "startup controls gated on attached handlers"
+    ],
+    "geometry": "Unchanged Manifold operations, faceted STEP normalization, STL precision and export checks. Drawer kernel adds progress callbacks only.",
+    "notApplicable": [
+      "OCCT destructor and allocator changes",
+      "OCCT pthread validation overlap",
+      "native source certificates",
+      "OCCT STEP writer and reader optimizations"
+    ],
+    "checks": [
+      "scripts/gridfinity/check-runtime-worker.mjs",
+      "scripts/gridfinity/check-runtime-geometry.mjs",
+      "scripts/gridfinity/check-generator-runtime.mjs"
+    ],
+    "evidence": "runtime-3.json",
+    "outcomes": "running, success, error or cancelled; terminal wall time belongs to that operation"
+  }
 }

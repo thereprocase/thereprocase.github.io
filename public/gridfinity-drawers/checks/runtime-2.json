@@ -1,0 +1,69 @@
+{
+  "revision": "runtime-2",
+  "local": {
+    "idleFrames": 0,
+    "viewUpdated": true,
+    "exportCancelRetry": true,
+    "pagehide": true,
+    "repeats": [
+      {
+        "wallMS": 780.0999999046326,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      },
+      {
+        "wallMS": 797.1999998092651,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      },
+      {
+        "wallMS": 802.3999998569489,
+        "dimensions": "Outline90 \u00d7 90 mmGrid2 \u00d7 2 \u00b7 42 mm pitchHeight6.20 mmBottomClosed \u00b7 continuous floorTiles4 \u00b7 2 across \u00d7 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm\u00b3Reference-foot overlap2.59e-4 mm\u00b3"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "application/step",
+        "size": 231315
+      },
+      {
+        "type": "application/zip",
+        "size": 230153
+      }
+    ]
+  },
+  "windows": {
+    "source": "Quartet message 6741; Windows Edge on Ryzen 7 5800X3D",
+    "candidate": "runtime-1",
+    "drawers": {
+      "freshLoadWallSeconds": 2.55,
+      "smallRepeatsWallSeconds": [
+        0.25,
+        0.25,
+        0.3
+      ],
+      "STEPSeconds": 0.18,
+      "STEPBytes": 231315,
+      "idleFrames": 0,
+      "cancelRetainsGeneratedModel": true,
+      "zipFeedbackGap": "Fixed in runtime-2; focused qualification separate"
+    },
+    "shelves": {
+      "freshLoadWallSeconds": 2.9,
+      "repeatsWallSeconds": [
+        2.49,
+        2.45,
+        2.44
+      ],
+      "STEPSeconds": [
+        3.73,
+        3.71
+      ],
+      "STEPBytes": 32639157,
+      "threeMFSeconds": 0.19,
+      "idleFrames": 0,
+      "cancelRetainsGeneratedModel": true
+    },
+    "exportScope": "STEP ISO framing/entity presence and ZIP package checks; not a new independent CAD readback qualification. Geometry algorithms unchanged."
+  },
+  "geometryRegression": "Six drawer cases byte-identical STL; shelf geometry, STEP writer and Manifold artifacts unchanged",
+  "workerLifecycleUnit": "Progress, stale replies after termination and wall time publication passed"
+}

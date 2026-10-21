@@ -111,5 +111,31 @@
       "checks/base-types-exports.json"
     ],
     "frame_regression": "Three representative current-frame meshes were byte-identical to pre-change vertices and triangles"
+  },
+  "runtime": {
+    "revision": "runtime-3",
+    "sharedModule": "../gridfinity-common/generator-runtime.js",
+    "changes": [
+      "demand-driven visible rendering",
+      "worker progress and wall times",
+      "stale reply suppression",
+      "export cancel retains generated meshes",
+      "pagehide terminates workers",
+      "startup controls gated on attached handlers"
+    ],
+    "geometry": "Unchanged Manifold operations, faceted STEP normalization, STL precision and export checks. Drawer kernel adds progress callbacks only.",
+    "notApplicable": [
+      "OCCT destructor and allocator changes",
+      "OCCT pthread validation overlap",
+      "native source certificates",
+      "OCCT STEP writer and reader optimizations"
+    ],
+    "checks": [
+      "scripts/gridfinity/check-runtime-worker.mjs",
+      "scripts/gridfinity/check-runtime-geometry.mjs",
+      "scripts/gridfinity/check-generator-runtime.mjs"
+    ],
+    "evidence": "checks/runtime-3.json",
+    "outcomes": "running, success, error or cancelled; terminal wall time belongs to that operation"
   }
 }

@@ -274,3 +274,16 @@ For weighted STEP exports, a valid mesh without degenerate triangle faces is
 retained exactly. If normalization is needed, finer tolerances are tried after
 the usual 0.001 mm pass; the same 0.01% material-change limit and mesh checks
 apply. Frame STEP processing retains its previous behavior.
+
+
+## Shared runtime improvements (2026-10-21)
+
+The viewer renders when the scene, camera or size changes and stops while idle, offscreen or hidden. This affects display scheduling only; STL, faceted STEP and 3MF geometry retain their existing precision and validation. The shared runtime is `../gridfinity-common/generator-runtime.js`.
+
+Generation and export report actual operation stages and elapsed wall time. Drawer generation also reports completed tiles. Progress stays indeterminate during operations without a measurable total. Cancel terminates the active worker; cancelling export retains generated mesh data for retry. Cancelled workers cannot publish queued results or downloads. Leaving the page stops generation/export workers, and generation controls remain disabled until their handlers are attached. Each new operation owns a fresh worker, so a failed kernel is never reused.
+
+These generators use Manifold and a faceted STEP writer. The converter's OCCT allocator changes, pthread validation overlap, source certificates and exact-curve STEP reader optimizations do not apply to this architecture. No OCCT kernel or extra thread pool is loaded. Future performance changes must retain geometry/export checks and compare complete user-visible wall time, including cold startup and repeated use.
+
+Drawer ZIP packaging also runs in its export worker, with completed-tile progress, cancellation and completion timing. Cancelling it preserves the generated tiles. Local browser checks verify idle rendering, view updates, repeated generation, STEP cancellation/retry and page-hide cleanup; drawer ZIP cancellation/retry is checked separately. Six drawer geometry cases remain byte-identical to the previous STL output. See `checks/runtime-3.json` for the measured scope.
+
+Cancellation and errors also record their own outcome and elapsed time. Windows Edge checks passed on both generators, including repeated generation, idle rendering and STEP cancel/retry; drawer ZIP contents stayed byte-identical after moving packaging into a worker. These changes reduce idle GPU work; the recorded generation timings are observations, not a measured generation-speed improvement.
