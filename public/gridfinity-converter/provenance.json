@@ -195,7 +195,8 @@
     "checks/female-native-rotated-v3.json": "cdf88f263b831deaac4e14a50dbca62f5093767b340975eb2d49f9e5710168e4",
     "checks/female-faceted-v3.json": "48db0a33561a82e7c0411e052afc223a2307682bceb13c6c58c7036faab20533",
     "checks/female-browser-v3.json": "0b3105f800570288659cccba38ebad771051cd3eed961839afd89401d6898e21",
-    "checks/female-selection-v3.json": "8180d62925c16977eeb7610dd8d8fc460598c1ff057fc11d5f5fdfbce6c4a384"
+    "checks/female-selection-v3.json": "8180d62925c16977eeb7610dd8d8fc460598c1ff057fc11d5f5fdfbce6c4a384",
+    "checks/windows-female-bases-v3.json": "4c7df965ec3a213eb1acc27254e97fb840507df3fe4d733eb5253c198dde92bb"
   },
   "release": "native-step-20261021-5",
   "viewer": "Render skill recipe: three-band cel shading, welded-normal silhouettes, 30-degree feature edges; source geometry unchanged",
@@ -540,10 +541,12 @@
       "checks/female-native-rotated-v3.json",
       "checks/female-faceted-v3.json",
       "checks/female-browser-v3.json",
-      "checks/female-selection-v3.json"
+      "checks/female-selection-v3.json",
+      "checks/windows-female-bases-v3.json"
     ],
     "performance": "Earlier Windows timing qualification above is the male release-5 baseline, not a new female performance guarantee.",
     "appVersion": "female-bases-ui-1",
-    "uiValidation": "Male-only hidden roof and screw depth are excluded from socket validation; weighted hardware fields validated; through-floor holes labelled accurately."
+    "uiValidation": "Male-only hidden roof and screw depth are excluded from socket validation; weighted hardware fields validated; through-floor holes labelled accurately.",
+    "qualification": "Local checks and independent Windows functional matrix pass. Same-origin STL control shows no regression. Timing misses above 20 seconds are preserved in the Windows report; no universal speed guarantee."
   }
 }

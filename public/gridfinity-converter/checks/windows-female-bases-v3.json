@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-21",
+  "build": "female-bases-20261021-3",
+  "status": "Functional qualification complete; timing target not met in every sample",
+  "source": {
+    "type": "independent Windows harness report via Quartet",
+    "messageID": 6782,
+    "reporter": "Claude-F-Code-Relay",
+    "rawHarnessFilesReceived": false,
+    "correctionMessageID": 6784,
+    "pencilCupMatrixMessageID": 6785,
+    "finalMessageID": 6792
+  },
+  "exactOwnerShelf": {
+    "inputBytesApproxMB": 35.4,
+    "loadSeconds": 3.0,
+    "bodies": 5,
+    "defaultBody": "Body_PRINT",
+    "defaultVolumeCM3": 38.87,
+    "helpersKeptSeparate": true,
+    "stylesPassed": 6,
+    "convertSecondsRange": [
+      2.25,
+      2.94
+    ],
+    "stlSecondsRange": [
+      0.04,
+      0.07
+    ],
+    "threeMFSecondsRange": [
+      0.19,
+      0.23
+    ],
+    "route": "mesh; STEP export not offered"
+  },
+  "facetedDrawers": {
+    "fixtures": [
+      "1x1 closed",
+      "2x2 closed",
+      "2x2 open"
+    ],
+    "styleConversionsPassed": 18,
+    "convertSecondsRange": [
+      0.15,
+      1.44
+    ],
+    "route": "mesh",
+    "namedBodies": true
+  },
+  "analyticSockets": {
+    "fixtures": [
+      "1x1",
+      "1x1 rotated"
+    ],
+    "styleConversionsPassed": 12,
+    "stepSecondsRange": [
+      0.78,
+      1.17
+    ],
+    "advancedFaceCountRange": [
+      49,
+      107
+    ],
+    "facetedBREPs": 0
+  },
+  "shelfSTL": {
+    "stylesPassed": 6
+  },
+  "noInterfaceCube": {
+    "clearError": true
+  },
+  "malePencilCup": {
+    "completedLoads": 3,
+    "plannedLoads": 3,
+    "styleOrder": [
+      "plain",
+      "magnets",
+      "screws",
+      "both"
+    ],
+    "loadSeconds": [
+      19.2,
+      20.2,
+      20.1
+    ],
+    "convertSeconds": [
+      [
+        19.41,
+        15.87,
+        20.2,
+        16.68
+      ],
+      [
+        18.85,
+        15.55,
+        17.56,
+        16.59
+      ],
+      [
+        18.94,
+        15.87,
+        17.54,
+        16.68
+      ]
+    ],
+    "stepSeconds": [
+      [
+        19.73,
+        17.94,
+        17.62,
+        17.86
+      ],
+      [
+        19.6,
+        17.49,
+        17.78,
+        17.93
+      ],
+      [
+        20.34,
+        19.8,
+        17.71,
+        17.73
+      ]
+    ],
+    "stlSecondsRange": [
+      15.9,
+      17.1
+    ],
+    "threeMFSecondsRange": [
+      2.5,
+      2.7
+    ],
+    "loadMissesOver20": 2,
+    "convertMissesOver20": 1,
+    "stepMissesOver20": 1,
+    "allStagesUnder20Seconds": false,
+    "exportOrder": [
+      "STL",
+      "3MF",
+      "STEP"
+    ],
+    "comparisonStatus": "Same-harness public control had incomplete worker identity evidence. Subsequent interleaved same-origin STL comparison verified worker builds and found no STL regression. Under-20 target misses remain recorded."
+  },
+  "release5Control": {
+    "messageID": 6787,
+    "workerIdentityVerified": false,
+    "identityEvidence": "Page query only; worker URLs were not captured",
+    "loadSeconds": [
+      21.1,
+      16.2
+    ],
+    "convertSeconds": [
+      [
+        22.14,
+        18.05,
+        17.7,
+        16.59
+      ],
+      [
+        18.83,
+        18.2,
+        17.68,
+        16.57
+      ]
+    ],
+    "stepSeconds": [
+      [
+        19.8,
+        17.77,
+        17.66,
+        17.53
+      ],
+      [
+        19.63,
+        17.83,
+        17.55,
+        17.63
+      ]
+    ],
+    "stlSecondsRange": [
+      13.76,
+      14.12
+    ],
+    "threeMFSecondsRange": [
+      2.52,
+      2.85
+    ],
+    "comparisonConfound": "Public Pages versus private server with Cache-Control: no-store. Same-origin comparison requested; cache/startup explanation remains a hypothesis."
+  },
+  "stlCodeAudit": {
+    "baselineCommit": "9e67231",
+    "unchangedIgnoringBuildQueries": [
+      "native-mesh-export.js",
+      "native-export-worker.js",
+      "native-kernel.js"
+    ],
+    "privateBaselineRoute": "/female-bases-release5-control/gridfinity-converter/",
+    "sameOriginBenchmarkPending": false
+  },
+  "shelfGenerator": {
+    "messageID": 6789,
+    "configuration": "2x1 default",
+    "styles": [
+      "frame",
+      "plain",
+      "magnets",
+      "screws",
+      "both",
+      "weighted"
+    ],
+    "stylesPassed": 6,
+    "generateSeconds": [
+      2.64,
+      2.59,
+      2.69,
+      2.69,
+      2.86,
+      3.02
+    ],
+    "stlDistinctFiles": 6,
+    "stlBinaryLengthsValid": true,
+    "stlTriangleRange": [
+      45846,
+      56814
+    ],
+    "stlStatusFixVerified": true,
+    "stlTiming": "Instant; 10-second harness busy-edge waits are not export times",
+    "stepSeconds": [
+      3.98,
+      4.03,
+      4.19,
+      4.29,
+      4.45,
+      0.96
+    ],
+    "stepDistinctFiles": 6,
+    "stepISOValid": true,
+    "threeMFDistinctValidPackages": 6,
+    "threeMFSecondsRange": [
+      0.23,
+      0.29
+    ],
+    "frameNormalizedSTEPAnd3MFMatchRuntime3": true,
+    "weightedWriterAudit": "Weighted fast path already exists in runtime-3: validateExport and degenerate-face checks, then full writer for every named body; skips simplification and its solid-difference checks. Independent five-body reopen comparison is running against the exported float32 source meshes.",
+    "weightedReopen": {
+      "passed": true,
+      "namedBodies": 5,
+      "stepBytes": 37404663,
+      "maximumSymmetricDifferenceMM3": 5.852355342514056e-08,
+      "comparison": "Reopened STEP versus actual float32 source meshes; pre-float32 generator volume recorded separately."
+    }
+  },
+  "stlSameOriginControl": {
+    "messageID": 6792,
+    "order": [
+      "release5",
+      "v3",
+      "release5",
+      "v3"
+    ],
+    "workerBuildsVerified": true,
+    "totalSeconds": [
+      16.55,
+      15.99,
+      15.98,
+      16.16
+    ],
+    "startupMS": [
+      2797,
+      2322,
+      2295,
+      2379
+    ],
+    "remainingMS": [
+      13753,
+      13668,
+      13685,
+      13781
+    ],
+    "finding": "No STL regression detected in the interleaved same-origin comparison. Earlier public/private comparison was confounded by startup and cache policy."
+  },
+  "releaseScope": [
+    "Female socket detection and conversion, mesh and native analytic input",
+    "Direct faceted STEP polygon import with named bodies kept separate",
+    "No-interface error",
+    "Six shelf base styles",
+    "STL download status",
+    "Socket field validation and labels"
+  ]
+}
