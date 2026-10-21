@@ -1,4 +1,4 @@
-import { computeNativeSourceBounds } from './native-cad.js?v=native-step-20261021-3';
+import { computeNativeSourceBounds } from './native-cad.js?v=native-step-20261021-4';
 self.onmessage=async({data})=>{
  if(data?.type==='warm-module'){self.postMessage({type:'module-ready'});return;}
  const childStartedAtMS=performance.timeOrigin+performance.now();

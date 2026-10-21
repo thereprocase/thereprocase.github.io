@@ -1,0 +1,151 @@
+{
+  "release": "native-step-20261021-4",
+  "status": "combined-small-and-full-cup-correctness-passed",
+  "UIAssertionsPassed": 33,
+  "smallNativeImportConversionSTLBREPStep": true,
+  "recovery": [
+    {
+      "case": "fatal",
+      "lifecycle": {
+        "mode": "fatal",
+        "terminated": true,
+        "terminatedBeforeRetry": true,
+        "fatal": true,
+        "retryFresh": true,
+        "retrySame": false,
+        "bytesRetained": true,
+        "settingsKept": true,
+        "queued": false
+      },
+      "stalePreparationIgnored": true,
+      "strictConversion": true,
+      "strictSTEP": true,
+      "usedPreparedSource": false
+    },
+    {
+      "case": "queued",
+      "lifecycle": {
+        "mode": "queued",
+        "terminated": true,
+        "terminatedBeforeRetry": true,
+        "fatal": true,
+        "retryFresh": true,
+        "retrySame": false,
+        "bytesRetained": true,
+        "settingsKept": true,
+        "queued": true
+      },
+      "stalePreparationIgnored": true,
+      "strictConversion": true,
+      "strictSTEP": true,
+      "usedPreparedSource": false
+    },
+    {
+      "case": "ordinary",
+      "lifecycle": {
+        "mode": "ordinary",
+        "terminated": true,
+        "terminatedBeforeRetry": false,
+        "fatal": false,
+        "retryFresh": false,
+        "retrySame": true,
+        "bytesRetained": true,
+        "settingsKept": true,
+        "queued": false
+      },
+      "stalePreparationIgnored": null,
+      "strictConversion": true,
+      "strictSTEP": true,
+      "usedPreparedSource": false
+    }
+  ],
+  "preservationTrap": {
+    "realNativeLocalProof": true,
+    "trapIdentityPreserved": true,
+    "BooleanCallsBeforeTrapPropagation": 1,
+    "ordinaryFallback": true,
+    "remoteHoleRejected": true,
+    "missingFaceRejected": true,
+    "orientationReversalRejected": true,
+    "unchangedEnclosedCavityAccepted": true,
+    "changedEnclosedCavityRejected": true
+  },
+  "displayCache": {
+    "allReusedMixedChangedLocatedFixtures": "bit-identical mesh arrays",
+    "cupAllReusedFaces": 7924,
+    "cupSerializedShapeUnchanged": true
+  },
+  "WindowsPerformanceClaim": false,
+  "speedGoalComplete": false,
+  "testHooksShipped": false,
+  "fullCup": {
+    "sourceSHA256": "c2b5f0c6051368c21945b47d5ce2dbc83b2dee7acdf1a5b5b2b6b5ad74af5af4",
+    "style": "magnets",
+    "fit": 0,
+    "originalNativeVolumeMM3": 70403.43064425353,
+    "convertedNativeVolumeMM3": 69129.20071101829,
+    "outsideChangeMM3": 0,
+    "nativeValid": true,
+    "brepRoundTripValid": true,
+    "closedMesh": true,
+    "brepSHA256": "000ac6da040b75ae623a64aa55a1d97fc2538eb9838ab6adf91f5d6c9e595a76",
+    "brepByteIdenticalToV7": true,
+    "modelKernel": {
+      "engine": "pthread",
+      "threads": 4,
+      "purpose": "model"
+    },
+    "baseSTEP": {
+      "pose": "base-down",
+      "nativeKernel": {
+        "engine": "pthread",
+        "threads": 4,
+        "purpose": "step-export-verifier"
+      },
+      "nativeValid": true,
+      "nativeExportFormat": "step",
+      "stepRoundTripValid": true,
+      "brepRoundTripValid": false,
+      "sourceCertificateReused": true,
+      "stepRepairPolicy": "selective",
+      "stepRepairRetried": false,
+      "stepWriterPrecision": 0.00595871734215187,
+      "stepValidationPolicy": {
+        "toleranceCeiling": {
+          "enabled": true,
+          "formula": "actual[i] <= source[i] + absoluteAllowanceMM",
+          "absoluteAllowanceMM": 1e-12,
+          "order": [
+            "vertex",
+            "edge",
+            "face"
+          ]
+        },
+        "bounds": {
+          "formula": "abs(actual[i][j] - source[i][j]) <= absoluteAllowanceMM",
+          "absoluteAllowanceMM": 1e-05
+        },
+        "volume": {
+          "formula": "abs(actual - source) <= max(absoluteAllowanceMM3, source * relativeAllowance)",
+          "absoluteAllowanceMM3": 0.001,
+          "relativeAllowance": 1e-08
+        },
+        "strictNativeValidity": true,
+        "requiredSolidCount": 1
+      },
+      "stepSurfaceCurves": "preserved",
+      "originalPoseExportReused": false,
+      "exportWarmup": {
+        "prewarmed": false
+      }
+    },
+    "STLExportPassed": true,
+    "scope": "Actual Chromium browser, combined safe changes; local compiler contention, no timing qualification."
+  },
+  "injectionScope": "Test-only wrapper throws WebAssembly.RuntimeError or ordinary Error from SameParameter binding during actual worker preparation traversal; no intentional WASM memory corruption and no hooks shipped.",
+  "finalWorktreeTests": {
+    "check-native-preservation.mjs": "passed exit0, run by root",
+    "check-native-mesh-cache.mjs": "passed exit0, run by root",
+    "allTopLevelJavaScriptSyntax": "passed"
+  }
+}

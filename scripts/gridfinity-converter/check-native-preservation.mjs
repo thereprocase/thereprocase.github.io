@@ -38,3 +38,15 @@ assert.equal(check(cavityEdit, cavity).proved, true, 'Unchanged enclosed cavity 
 const changedCavity = cut(cavityEdit, cad.makeBox([7, 8, 8], [12, 12, 12]));
 assert.equal(check(changedCavity, cavity).proved, false, 'Changing a remote enclosed cavity must fail');
 console.log('Exact oriented preservation: local edit accepted; remote hole, missing face, reversed orientation rejected.');
+
+// A trapped kernel must not be reused for the full-solid fallback.
+const trap = new WebAssembly.RuntimeError('injected preservation Boolean trap');
+let trapCalls = 0;
+const failureArgs = { oc, cad, source, result, editBox: allowed, validatedSolids: true,
+  sourceSignedVolume: cad.measureVolume(source), resultSignedVolume: cad.measureVolume(result) };
+assert.throws(() => proveNativePreservation({ ...failureArgs, cut() { trapCalls++; throw trap; } }), error => error === trap);
+assert.equal(trapCalls, 1);
+const unsupported = proveNativePreservation({ ...failureArgs, cut() { throw Error('unsupported local proof'); } });
+assert.equal(unsupported.proved, false);
+assert.equal(unsupported.reason, 'unsupported local proof');
+console.log('Native preservation traps propagate; ordinary unsupported proofs retain fallback.');

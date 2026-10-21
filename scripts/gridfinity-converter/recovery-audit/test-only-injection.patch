@@ -1,0 +1,30 @@
+--- a/native-cad.js
++++ b/native-cad.js
+@@ -781,6 +781,16 @@
+ /** Prepare curves before one final exact check; never assume the input is invalid. */
+ export async function prepareNativeSource(source, onProgress = () => {}) {
+   const oc = await kernel();
++  if (globalThis.__testPreparationFailure) {
++    const mode = globalThis.__testPreparationFailure;
++    globalThis.__testPreparationFailure = null;
++    const original = oc.BRep_Tool.SameParameter;
++    oc.BRep_Tool.SameParameter = (...args) => {
++      oc.BRep_Tool.SameParameter = original;
++      throw mode === 'ordinary' ? Error('Injected ordinary preparation failure') : new WebAssembly.RuntimeError('Injected native preparation trap');
++    };
++  }
++
+   // Unmodified, exact-valid CAD needs no parameter reconstruction. Require
+   // matching edge parameter flags as well; validity alone is not that contract.
+   const flags = new oc.TopExp_Explorer(source.wrapped, oc.TopAbs_ShapeEnum.TopAbs_EDGE, oc.TopAbs_ShapeEnum.TopAbs_SHAPE);
+--- a/native-preview-worker.js
++++ b/native-preview-worker.js
+@@ -9,6 +9,8 @@
+ async function handle(data) {
+   if (fatalKernel) return;
+   if (data.type === 'prepare') {
++    self.__testPreparationFailure = data.testPreparationFailure;
++    if (data.testPreparationDelay) await new Promise(resolve => setTimeout(resolve, data.testPreparationDelay));
+     try {
+       const preparation = await prepareNativeDocument({ ...data,
+         onProgress: (progress, progressInfo) => self.postMessage({ preparation: true, progress, progressInfo }),

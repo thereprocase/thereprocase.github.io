@@ -1,5 +1,5 @@
-import { startParallelSourceBounds, createSourceBoundsModuleWarmup } from './native-parallel-source-bounds.js?v=native-step-20261021-3';
-import { exportNativeOriginalPose, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-3';
+import { startParallelSourceBounds, createSourceBoundsModuleWarmup } from './native-parallel-source-bounds.js?v=native-step-20261021-4';
+import { exportNativeOriginalPose, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-4';
 let queue = Promise.resolve();
 let consumed = false;
 let boundsWarmup;
@@ -40,7 +40,7 @@ async function handle(data) {
     let result;
     if (data.type === 'pose') result = await exportNativeOriginalPose({ ...data, sourceBoundsTask:boundsTask?.result, onProgress });
     else if (data.type === 'mesh') {
-      const { runNativeMeshExport } = await import('./native-mesh-export.js?v=native-step-20261021-3');
+      const { runNativeMeshExport } = await import('./native-mesh-export.js?v=native-step-20261021-4');
       result = await runNativeMeshExport({ ...data, onProgress });
     } else throw Error('Unknown native export request.');
     const transfers = new Set();

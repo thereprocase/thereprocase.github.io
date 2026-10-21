@@ -1,6 +1,6 @@
-import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-3';
+import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-4';
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-3';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-4';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -9,8 +9,8 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-step-20261021-3';
-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-3';
+} from './kernel.js?v=native-step-20261021-4';
+import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-4';
 const nativeExportWarmPool = createNativeExportWarmPool();
 addEventListener('pagehide', () => {
   if (cancelNativeExport()) {
@@ -462,7 +462,7 @@ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {})
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-step-20261021-3', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-step-20261021-4', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -916,7 +916,8 @@ function preparationStatus(data) {
   const note = $('cad-preparation');
   note.hidden = false;
   note.textContent = data.error
-    ? 'CAD preparation needs another check during conversion.'
+    ? data.fatalKernel ? 'CAD preparation stopped. Convert again to reload the original model.'
+      : 'CAD preparation needs another check during conversion.'
     : data.done ? 'Native CAD prepared for conversion.'
       : `Preparing native CAD while you review: ${data.progress || 'checking source geometry…'}`;
 }
@@ -925,7 +926,13 @@ function startNativePreparation() {
   const w = cadWorker;
   preparationStatus({ progress: 'checking source geometry…' });
   w.onmessage = ({ data }) => {
-    if (cadWorker === w && data.preparation) preparationStatus(data);
+    if (cadWorker !== w || !data.preparation) return;
+    preparationStatus(data);
+    if (data.fatalKernel) {
+      w.terminate();
+      cadWorker = null;
+      raw.nativeDocumentId = null;
+    }
   };
   w.onerror = () => {
     if (cadWorker !== w) return;
@@ -948,7 +955,7 @@ function nativeConversion(options) {
       typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-3', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-4', {
       type: 'module',
     });
     nativeWorker = w;
@@ -984,6 +991,11 @@ function nativeConversion(options) {
       if (!current()) return;
       if (data.preparation) {
         preparationStatus(data);
+        if (data.fatalKernel) {
+          finish(false);
+          reject(Error('Native CAD preparation failed. Convert again to reload the original model.'));
+          return;
+        }
         if (data.progress) setBusy(true, data.progress);
         return;
       }
@@ -1319,7 +1331,7 @@ function prepareNativeExport(data) {
       if (verifierExport) {
         lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
         w = lease.worker;
-      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-3', { type: 'module' });
+      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-4', { type: 'module' });
       if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
       exportWorker = w;
       w.onmessage = ({ data: reply }) => {

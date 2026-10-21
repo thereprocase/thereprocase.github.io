@@ -1,4 +1,4 @@
-import { validateNativeBrepCandidate, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-3';
+import { validateNativeBrepCandidate, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-4';
 self.onmessage = async ({ data }) => {
   try {
     if (data.type === 'warm') {

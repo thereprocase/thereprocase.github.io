@@ -1,4 +1,4 @@
-import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-3';
+import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-4';
 /** Exact boundary comparison outside a convex box; meshes never participate. */
 export function nativeFaces(oc, cad, shape) {
   const explorer = new oc.TopExp_Explorer(shape.wrapped,
@@ -64,6 +64,8 @@ export function proveNativePreservation({ oc, cad, source, result, editBox, cut,
       changedOriginalFaces: removed.length, changedResultFaces: added.length,
       missingAreaMM2: missingArea, addedAreaMM2: addedArea };
   } catch (error) {
+    // A native trap can invalidate the kernel; never continue with fallback Booleans.
+    if (error instanceof WebAssembly.RuntimeError) throw error;
     return { proved: false, method: 'convex-region-boundary-difference', reason: error.message };
   } finally {
     for (let i = owned.length - 1; i >= 0; i--) owned[i].delete();

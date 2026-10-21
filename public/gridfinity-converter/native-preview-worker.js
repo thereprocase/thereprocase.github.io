@@ -1,11 +1,13 @@
-import { previewNative, prepareNativeDocument } from './native-cad.js?v=native-step-20261021-3';
+import { previewNative, prepareNativeDocument } from './native-cad.js?v=native-step-20261021-4';
 let queued = Promise.resolve();
+let fatalKernel = false;
 self.onmessage = ({ data }) => {
   queued = queued.then(() => handle(data)).catch(error => {
     self.postMessage({ error: error.message ?? String(error), requestId: data.requestId });
   });
 };
 async function handle(data) {
+  if (fatalKernel) return;
   if (data.type === 'prepare') {
     try {
       const preparation = await prepareNativeDocument({ ...data,
@@ -13,19 +15,21 @@ async function handle(data) {
       });
       self.postMessage({ preparation: true, done: true, report: preparation });
     } catch (error) {
-      self.postMessage({ preparation: true, error: error.message ?? String(error) });
+      fatalKernel = error instanceof WebAssembly.RuntimeError;
+      self.postMessage({ preparation: true, error: error.message ?? String(error), fatalKernel });
+      if (fatalKernel) self.close();
     }
     return;
   }
   if (data.type === 'convert') {
     const { runNativeConversion } =
-      await import('./native-worker-run.js?v=native-step-20261021-3');
+      await import('./native-worker-run.js?v=native-step-20261021-4');
     await runNativeConversion(data);
     // Each conversion consumes its validation child. Warm the next child while
     // the user reviews the result, without posting another conversion response.
     if (data.retainDocument) {
       try {
-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-3');
+        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-4');
         await prewarmNativeBrepValidator();
       } catch { /* Optional warming never changes a conversion result. */ }
     }
@@ -44,7 +48,7 @@ async function handle(data) {
     self.postMessage(payload, transfers);
     if (payload.nativeDocumentId || payload.result?.nativeDocumentId) {
       try {
-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-3');
+        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-4');
         await prewarmNativeBrepValidator();
       } catch { /* Optional warming must not invalidate the delivered preview. */ }
     }

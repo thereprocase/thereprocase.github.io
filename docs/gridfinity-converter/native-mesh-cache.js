@@ -160,10 +160,6 @@ export function meshWithFaceCache(oc, shape, cache, tolerance, angle, budget) {
       try {
         mesh = oc.BRep_Tool.Triangulation(face, location, 0);
         if (!mesh) throw Error('Unmeshed result face.');
-        tf = location.Transformation();
-        const matrix = [];
-        for (let r = 1; r <= 3; r++)
-          for (let c = 1; c <= 4; c++) matrix.push(tf.Value(r, c));
         const n = mesh.NbNodes(),
           t = mesh.NbTriangles();
         const cached = (cache.faces.get(hash(oc, face)) || []).find(
@@ -175,20 +171,28 @@ export function meshWithFaceCache(oc, shape, cache, tolerance, angle, budget) {
             t === old.t &&
             mesh.Deflection() === old.deflection,
         );
-        const m = matrix,
-          det =
+        // IsSame includes the face location. A matching cache already stores
+        // transformed vertices and winding, so its matrix is never consumed.
+        let matrix, reverse;
+        if (!cached) {
+          tf = location.Transformation();
+          matrix = [];
+          for (let r = 1; r <= 3; r++)
+            for (let c = 1; c <= 4; c++) matrix.push(tf.Value(r, c));
+          const m = matrix;
+          const det =
             m[0] * (m[5] * m[10] - m[6] * m[9]) -
             m[1] * (m[4] * m[10] - m[6] * m[8]) +
             m[2] * (m[4] * m[9] - m[5] * m[8]);
+          reverse = (face.Orientation() === oc.TopAbs_Orientation.TopAbs_REVERSED) !== det < 0;
+        }
         records.push({
           mesh,
           matrix,
           n,
           t,
           cached,
-          reverse:
-            (face.Orientation() === oc.TopAbs_Orientation.TopAbs_REVERSED) !==
-            det < 0,
+          reverse,
         });
         mesh = null;
         nodes += n;

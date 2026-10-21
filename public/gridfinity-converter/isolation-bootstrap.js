@@ -77,7 +77,7 @@ try {
 document.documentElement.dataset.cadIsolation = isolation;
 if (isolation !== 'reloading') {
   try {
-    await import('./app.js?v=native-step-20261021-3');
+    await import('./app.js?v=native-step-20261021-4');
     for (const gate of gates) if (gate) gate.disabled = false;
   } catch (error) {
     if (status)

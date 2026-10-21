@@ -1,4 +1,4 @@
-import { illustrationGeometry } from './render-geometry.js?v=native-step-20261021-3';
+import { illustrationGeometry } from './render-geometry.js?v=native-step-20261021-4';
 self.onmessage = ({ data: { id, vertices, triangles } }) => {
   try {
     const result = illustrationGeometry(vertices, triangles);

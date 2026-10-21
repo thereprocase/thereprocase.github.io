@@ -1,4 +1,4 @@
-import { meshData, foot } from './kernel.js?v=native-step-20261021-3';
+import { meshData, foot } from './kernel.js?v=native-step-20261021-4';
 export function demo(module) {
   const M = module.Manifold,
     owned = [],
