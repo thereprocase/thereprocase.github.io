@@ -1,0 +1,114 @@
+/* Compact working layout; geometry and application controls keep their identities. */
+.compact-workspace main{max-width:1920px;padding:10px 20px 20px}
+.compact-workspace>header{padding:8px 20px;gap:12px;font-size:.85rem}
+.compact-workspace h1.workspace-title{font-size:1.5rem;line-height:1.15;margin:8px 0 4px;letter-spacing:0}
+.compact-workspace .workspace-intro{font-size:.82rem;line-height:1.4;margin:4px 0 10px;max-width:1100px}
+.compact-workspace .intro{display:block;margin:0}.compact-workspace .intro>div{max-width:none}
+.workspace-actions{position:sticky;top:0;z-index:20;background:#fff;border:2px solid #171717;padding:8px 10px;margin:8px 0 10px}
+.action-buttons{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.compact-workspace .action-buttons button{font-size:.85rem;min-height:36px;padding:6px 12px;flex:0 1 auto;width:auto}
+.compact-workspace .action-buttons #generate{width:auto}
+.compact-workspace #status{font-size:.82rem;margin:6px 0 0;line-height:1.35}
+.compact-workspace #share-status:empty{display:none}.compact-workspace #share-status{margin:4px 0;font-size:.78rem}
+.compact-workspace #task-progress{display:block;width:100%;height:7px;margin-top:5px}
+.compact-workspace .workbench{display:grid;grid-template-columns:minmax(310px,350px) minmax(0,1fr);gap:12px;align-items:stretch;margin-top:0}
+.compact-workspace .pane{padding:12px;margin:0;min-width:0}
+.compact-workspace h2{font-size:.9rem;padding:8px 12px;margin:-12px -12px 10px}
+.compact-workspace .settings-panel{min-width:0;scrollbar-gutter:stable;overscroll-behavior:contain}
+.compact-workspace .settings-panel>.pane{margin-bottom:10px}
+.compact-workspace fieldset{padding:8px;margin:0 0 10px;min-width:0}
+.compact-workspace legend{font-size:.85rem}
+.compact-workspace .compact-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}
+.compact-workspace .compact-fields>legend,.compact-workspace .compact-fields>details,.compact-workspace .compact-fields>p,.compact-workspace .compact-fields>.buttons,.compact-workspace .compact-fields>button{grid-column:1/-1}
+.compact-workspace label{font-size:.8rem;margin:5px 0;gap:4px;min-width:0}
+.compact-workspace .settings-panel label{display:flex;flex-direction:column;align-items:stretch}
+.compact-workspace .settings-panel label:has(input[type=checkbox]){flex-direction:row;align-items:center;justify-content:space-between}
+.compact-workspace input,.compact-workspace select{padding:6px;min-height:34px;font-size:.85rem}
+.compact-workspace input[type=checkbox]{min-height:20px}
+.compact-workspace .settings-panel button{font-size:.8rem;min-height:34px;padding:6px 10px}
+.compact-workspace details{margin:7px 0;padding:0;border:1px solid #aaa;min-width:0}
+.compact-workspace summary{font-size:.82rem;min-height:34px;padding:7px 9px;cursor:pointer;line-height:1.35}
+.compact-workspace details[open]>:not(summary){margin-left:8px;margin-right:8px}
+.compact-workspace .field-help{grid-column:1/-1;border:0;margin:0}
+.compact-workspace .field-help summary{font-weight:400;color:#444;padding-left:0}
+.compact-workspace .hint{font-size:.78rem;line-height:1.4}
+.compact-workspace .notice{font-size:.8rem;padding:8px;margin:6px 0}
+.compact-workspace .preview-stack{min-width:0;display:flex;flex-direction:column;gap:8px}
+.compact-workspace .preview-pane{display:flex;flex-direction:column;min-width:0;min-height:0;flex:1;position:static}
+.compact-workspace .preview-pane>.toolbar,.compact-workspace .preview-pane>.buttons{margin:0 0 8px;gap:5px}
+.compact-workspace .preview-pane button{font-size:.8rem;padding:6px 10px;min-height:34px}
+.compact-workspace #viewer{height:320px;min-height:180px;flex:1 0 180px;width:100%}
+.compact-workspace .viewer-summary{font-size:.78rem;margin:0 0 6px;padding:6px 8px}
+.compact-workspace .viewer-help,.compact-workspace .legend{font-size:.72rem;margin:5px 0}
+.compact-workspace #bed-status{margin:4px 0;font-size:.78rem}
+.compact-workspace .preview-pane>label{display:inline-flex;flex-direction:row;align-items:center}
+.compact-workspace .preview-pane>label select{width:auto;max-width:80%}
+.compact-workspace .workspace-reference{margin:12px 0;background:white}
+.compact-workspace .workspace-reference>summary{font-size:.9rem}
+.compact-workspace .workspace-reference .pane{margin:12px 0}
+.compact-workspace .workflow{margin:8px 0 10px;box-shadow:none}
+.compact-workspace .workflow nav a{font-size:.78rem;padding:7px 10px;min-height:34px}
+.compact-workspace .workflow .status-row{padding:6px 10px;min-height:40px}
+.compact-workspace .workflow>.downloads{padding:6px 10px;border-top:1px solid #aaa}
+.compact-workspace .workflow #workflow-action{min-height:34px;padding:6px 12px;font-size:.85rem}
+.compact-workspace .dropzone{padding:10px}.compact-workspace .dropzone #choose-file{min-height:38px}
+.compact-workspace .file-state{margin:8px 0 3px;font-size:.82rem}
+.compact-workspace .file-info{font-size:.76rem;margin:4px 0}
+.compact-workspace #model-panel>h2{margin-bottom:6px}
+.compact-workspace #model-panel>#demo{float:right;margin:0 0 4px 8px;font-size:.72rem;min-height:28px}
+.compact-workspace #model-panel .dropzone{clear:both}
+.compact-workspace #replacement-panel .pair{gap:8px}
+.compact-workspace #replacement-panel .fit-control button{min-width:32px;padding:4px}
+.compact-workspace #export-panel{padding-top:8px;margin:0}
+.compact-workspace #export-panel h2{display:none}
+.compact-workspace #export-panel #export-format{margin:0 0 5px;padding:5px 8px;font-size:.76rem}
+.compact-workspace #conversion-note{font-size:.78rem;margin:4px 0;line-height:1.3}
+.compact-workspace #selection-panel>summary{font-weight:600}
+.compact-workspace #selection-panel.pane{padding:0}
+.compact-workspace #export-shortcut{display:none}
+@media(min-width:1001px){
+ .compact-workspace .workbench{height:var(--work-height,calc(100dvh - 220px));min-height:440px}
+ .compact-workspace .settings-panel,.compact-workspace .preview-stack,.compact-workspace .workbench>.preview-pane{height:100%;overflow:auto}
+ .compact-workspace .viewer-column{position:static;top:auto}
+ .compact-workspace .preview-pane{overflow:auto}
+ .compact-workspace #viewer{height:auto}
+ .compact-workspace .preview-stack>.preview-pane{flex:1 1 auto}
+ .compact-workspace .preview-stack>details{flex:none;margin:0}
+ .compact-workspace .workflow{display:grid;grid-template-columns:minmax(300px,auto) 1fr}
+ .compact-workspace .workflow>.downloads,.compact-workspace .workflow>.loading{grid-column:1/-1}
+ .compact-workspace .workflow .status-row{border-top:0;border-left:1px solid #aaa}
+}
+@media(min-width:1700px){.compact-workspace .workbench{grid-template-columns:400px minmax(0,1fr)}}
+@media(max-width:1000px){
+ .compact-workspace main{padding:8px 12px}
+ .compact-workspace .workbench{display:flex;flex-direction:column;gap:12px;height:auto}
+ .compact-workspace .settings-panel,.compact-workspace .controls,.compact-workspace .viewer-column{display:block;width:100%;order:initial}
+ .compact-workspace .settings-panel .pane,.compact-workspace .viewer-pane{order:initial}
+ .compact-workspace .workspace-actions{position:sticky;top:0;padding:6px;max-height:38dvh;overflow:auto}
+ .compact-workspace .action-buttons button{min-height:44px;flex:1 1 auto;padding:8px;font-size:.8rem}
+ .compact-workspace .settings-panel input,.compact-workspace .settings-panel select{min-height:44px}
+ .compact-workspace .settings-panel button,.compact-workspace .preview-pane button,.compact-workspace summary{min-height:44px}
+ .compact-workspace .preview-stack{position:static}
+ .compact-workspace #viewer{height:340px;flex:none;min-height:240px}
+ .compact-workspace .workflow{max-height:42dvh;overflow:auto;position:sticky;top:0}
+ .compact-workspace .workflow nav{display:none}
+ .compact-workspace .workflow .status-row{flex-wrap:wrap}
+ .compact-workspace .workflow-actions{width:auto;flex:1}
+ .compact-workspace .workflow #workflow-action{min-height:44px}
+ .compact-workspace .workspace-jumps{display:flex;gap:8px;margin:6px 0}
+ .compact-workspace .workspace-jumps a{padding:8px;background:white;border:1px solid #777;min-height:44px;display:flex;align-items:center;font-size:.85rem}
+}
+@media(min-width:1001px){.workspace-jumps{display:none}}
+.compact-workspace .field-help summary{min-height:24px;padding-top:3px;padding-bottom:3px}
+.compact-workspace #model-panel h2 #demo{font-size:.72rem;min-height:26px;padding:3px 7px;background:white;color:#243c43}
+.compact-workspace #settings-panel,.compact-workspace #preview-panel{scroll-margin-top:calc(var(--action-height,100px) + 16px)}
+.compact-workspace .workspace-intro{margin-bottom:8px}
+.compact-workspace #model-panel .representation{margin:4px 0;padding:5px 8px;font-size:.75rem}
+.compact-workspace[data-tool=gridfinity-drawers] .preview-pane #viewer{min-height:270px}
+@media(min-width:1001px){.compact-workspace .settings-panel .pane{scroll-margin-top:8px}}
+.compact-workspace .compact-fields>label:has(select[name=board_system]),.compact-workspace .compact-fields>.base-type-control{grid-column:1/-1}
+@media(min-width:1001px){.compact-workspace .workflow nav.workspace-jumps{display:none}}
+@media(max-width:1000px){.compact-workspace .workflow nav.workspace-jumps{display:flex;border-top:1px solid #aaa;padding:4px 8px;grid-template-columns:none}}
+.compact-workspace input[type=checkbox]{min-width:24px;min-height:24px}
+.compact-workspace .workflow #convert{min-height:44px;margin:0;width:100%}
+.compact-workspace .workflow #workflow-action[hidden]{display:none}

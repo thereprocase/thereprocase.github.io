@@ -1,0 +1,1043 @@
+{
+  "gridfinity-drawers": [
+    {
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 830,
+      "overflow": false,
+      "viewer": {
+        "top": 343.96875,
+        "bottom": 692,
+        "height": 348.03125
+      },
+      "controls": [
+        {
+          "selector": "[name=width]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=depth]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=columns]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#bed-preset",
+          "top": 644.59375,
+          "bottom": 678.59375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=bottom]",
+          "top": 459.8125,
+          "bottom": 493.8125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#zip",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1142,
+      "overflow": false,
+      "viewer": {
+        "top": 343.96875,
+        "bottom": 1004,
+        "height": 660.03125
+      },
+      "controls": [
+        {
+          "selector": "[name=width]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=depth]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=columns]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#bed-preset",
+          "top": 644.59375,
+          "bottom": 678.59375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=bottom]",
+          "top": 459.8125,
+          "bottom": 493.8125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#zip",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "pageHeight": 1502,
+      "overflow": false,
+      "viewer": {
+        "top": 343.96875,
+        "bottom": 1364,
+        "height": 1020.03125
+      },
+      "controls": [
+        {
+          "selector": "[name=width]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=depth]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=columns]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 386.921875,
+          "bottom": 421.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#bed-preset",
+          "top": 644.59375,
+          "bottom": 678.59375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=bottom]",
+          "top": 459.8125,
+          "bottom": 493.8125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#zip",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pageHeight": 2072,
+      "overflow": false,
+      "viewer": {
+        "top": 1572.21875,
+        "bottom": 1912.21875,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "[name=width]",
+          "top": 481.625,
+          "bottom": 525.625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=depth]",
+          "top": 481.625,
+          "bottom": 525.625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=columns]",
+          "top": 563.453125,
+          "bottom": 607.453125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 563.453125,
+          "bottom": 607.453125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#bed-preset",
+          "top": 847.171875,
+          "bottom": 891.171875,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "[name=bottom]",
+          "top": 645.28125,
+          "bottom": 689.28125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 181.6875,
+          "bottom": 225.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 181.6875,
+          "bottom": 225.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 231.6875,
+          "bottom": 275.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#zip",
+          "top": 231.6875,
+          "bottom": 275.6875,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "pageHeight": 2210,
+      "overflow": false,
+      "viewer": {
+        "top": 1709.625,
+        "bottom": 2049.625,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "[name=width]",
+          "top": 567.71875,
+          "bottom": 611.71875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=depth]",
+          "top": 567.71875,
+          "bottom": 611.71875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=columns]",
+          "top": 649.546875,
+          "bottom": 693.546875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 649.546875,
+          "bottom": 693.546875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#bed-preset",
+          "top": 953.09375,
+          "bottom": 997.09375,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "[name=bottom]",
+          "top": 731.375,
+          "bottom": 775.375,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#generate",
+          "top": 200.0625,
+          "bottom": 244.0625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 200.0625,
+          "bottom": 244.0625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 250.0625,
+          "bottom": 294.0625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#zip",
+          "top": 250.0625,
+          "bottom": 294.0625,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    }
+  ],
+  "gridfinity-shelves": [
+    {
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 830,
+      "overflow": false,
+      "viewer": {
+        "top": 377.3125,
+        "bottom": 654,
+        "height": 276.6875
+      },
+      "controls": [
+        {
+          "selector": "[name=columns]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=base_type]",
+          "top": 430.984375,
+          "bottom": 464.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=board_system]",
+          "top": 582.875,
+          "bottom": 616.875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1142,
+      "overflow": false,
+      "viewer": {
+        "top": 377.3125,
+        "bottom": 966,
+        "height": 588.6875
+      },
+      "controls": [
+        {
+          "selector": "[name=columns]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=base_type]",
+          "top": 430.984375,
+          "bottom": 464.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=board_system]",
+          "top": 582.875,
+          "bottom": 616.875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "pageHeight": 1502,
+      "overflow": false,
+      "viewer": {
+        "top": 377.3125,
+        "bottom": 1326,
+        "height": 948.6875
+      },
+      "controls": [
+        {
+          "selector": "[name=columns]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 314.03125,
+          "bottom": 349.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=base_type]",
+          "top": 430.984375,
+          "bottom": 464.984375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=board_system]",
+          "top": 582.875,
+          "bottom": 616.875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#generate",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 125.03125,
+          "bottom": 162.09375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pageHeight": 2332,
+      "overflow": false,
+      "viewer": {
+        "top": 1807.65625,
+        "bottom": 2147.65625,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "[name=columns]",
+          "top": 531.625,
+          "bottom": 575.625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 531.625,
+          "bottom": 575.625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=base_type]",
+          "top": 657.515625,
+          "bottom": 701.515625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=board_system]",
+          "top": 819.40625,
+          "bottom": 863.40625,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#generate",
+          "top": 181.6875,
+          "bottom": 225.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 231.6875,
+          "bottom": 275.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 231.6875,
+          "bottom": 275.6875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 231.6875,
+          "bottom": 275.6875,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "pageHeight": 2557,
+      "overflow": false,
+      "viewer": {
+        "top": 2032.578125,
+        "bottom": 2372.578125,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "[name=columns]",
+          "top": 620.609375,
+          "bottom": 664.609375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=rows]",
+          "top": 600.78125,
+          "bottom": 644.78125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "[name=base_type]",
+          "top": 746.5,
+          "bottom": 790.5,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "[name=board_system]",
+          "top": 908.390625,
+          "bottom": 952.390625,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#generate",
+          "top": 233.125,
+          "bottom": 277.125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 283.125,
+          "bottom": 327.125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#step",
+          "top": 283.125,
+          "bottom": 327.125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 333.125,
+          "bottom": 377.125,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    }
+  ],
+  "gridfinity-converter": [
+    {
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 846,
+      "overflow": false,
+      "viewer": {
+        "top": 361.875,
+        "bottom": 541.875,
+        "height": 180
+      },
+      "controls": [
+        {
+          "selector": "#choose-file",
+          "top": 294.828125,
+          "bottom": 332.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#style",
+          "top": 595.296875,
+          "bottom": 630.296875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#fit",
+          "top": 684.953125,
+          "bottom": 720.015625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#convert",
+          "top": 121.03125,
+          "bottom": 167.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1158,
+      "overflow": false,
+      "viewer": {
+        "top": 361.875,
+        "bottom": 844.828125,
+        "height": 482.953125
+      },
+      "controls": [
+        {
+          "selector": "#choose-file",
+          "top": 294.828125,
+          "bottom": 332.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#style",
+          "top": 595.296875,
+          "bottom": 630.296875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#fit",
+          "top": 684.953125,
+          "bottom": 720.015625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#convert",
+          "top": 121.03125,
+          "bottom": 167.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "pageHeight": 1518,
+      "overflow": false,
+      "viewer": {
+        "top": 361.875,
+        "bottom": 1204.828125,
+        "height": 842.953125
+      },
+      "controls": [
+        {
+          "selector": "#choose-file",
+          "top": 294.828125,
+          "bottom": 332.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#style",
+          "top": 595.296875,
+          "bottom": 630.296875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#fit",
+          "top": 684.953125,
+          "bottom": 720.015625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#convert",
+          "top": 121.03125,
+          "bottom": 167.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 180.828125,
+          "bottom": 216.828125,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pageHeight": 1991,
+      "overflow": false,
+      "viewer": {
+        "top": 1295.78125,
+        "bottom": 1635.78125,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "#choose-file",
+          "top": 426.953125,
+          "bottom": 464.953125,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#style",
+          "top": 737.421875,
+          "bottom": 781.421875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#fit",
+          "top": 836.078125,
+          "bottom": 880.078125,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#convert",
+          "top": 188.8125,
+          "bottom": 235.609375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 248.609375,
+          "bottom": 292.609375,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 248.609375,
+          "bottom": 292.609375,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 740,
+      "pageHeight": 2056,
+      "overflow": false,
+      "viewer": {
+        "top": 1349.625,
+        "bottom": 1689.625,
+        "height": 340
+      },
+      "controls": [
+        {
+          "selector": "#choose-file",
+          "top": 472.265625,
+          "bottom": 510.265625,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#style",
+          "top": 782.734375,
+          "bottom": 826.734375,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#fit",
+          "top": 881.390625,
+          "bottom": 925.390625,
+          "visible": true,
+          "inViewport": false
+        },
+        {
+          "selector": "#convert",
+          "top": 234.125,
+          "bottom": 280.921875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#stl",
+          "top": 293.921875,
+          "bottom": 337.921875,
+          "visible": true,
+          "inViewport": true
+        },
+        {
+          "selector": "#three-mf",
+          "top": 293.921875,
+          "bottom": 337.921875,
+          "visible": true,
+          "inViewport": true
+        }
+      ]
+    }
+  ]
+}

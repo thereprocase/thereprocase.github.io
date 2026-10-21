@@ -182,7 +182,7 @@ try {
   results.directAction = await evaluate(
     "!document.getElementById('confirm')&&!document.getElementById('workflow-action').disabled",
   );
-  await evaluate("document.getElementById('workflow-action').click()");
+  await evaluate("document.getElementById('convert').click()");
   await ready();
   results.converted = await evaluate(
     "!document.getElementById('stl').disabled&&document.getElementById('status').textContent.startsWith('Conversion ready')",
@@ -275,8 +275,9 @@ try {
     "document.getElementById('replacement-panel').scrollIntoView();document.getElementById('convert').click()",
   );
   await ready();
+  await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))');
   results.mobilePreview = await evaluate(
-    "document.getElementById('preview-panel').getBoundingClientRect().top>=document.getElementById('workflow').getBoundingClientRect().bottom && document.getElementById('preview-panel').getBoundingClientRect().top<250 && !document.getElementById('export-shortcut').hidden && document.body.dataset.view==='converted'",
+    "document.getElementById('preview-panel').getBoundingClientRect().top>=document.getElementById('workflow').getBoundingClientRect().bottom && document.getElementById('preview-panel').getBoundingClientRect().top<document.getElementById('workflow').getBoundingClientRect().bottom+40 && document.getElementById('preview-panel').getBoundingClientRect().top<innerHeight/2 && document.getElementById('stl').getBoundingClientRect().bottom<=document.getElementById('workflow').getBoundingClientRect().bottom && document.body.dataset.view==='converted'",
   );
   const completed = await call('Page.captureScreenshot', { format: 'png' });
   await fs.writeFile(
@@ -291,14 +292,14 @@ try {
   });
 
   await evaluate(
-    "document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('grid-x').value='0.1234';document.getElementById('grid-y').value='-0.5678';document.getElementById('column').value='0.5';document.getElementById('workflow-action').click()",
+    "document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('grid-x').value='0.1234';document.getElementById('grid-y').value='-0.5678';document.getElementById('column').value='0.5';document.getElementById('convert').click()",
   );
   await ready();
   results.unappliedGridIgnored = await evaluate(
     "!document.getElementById('stl').disabled && document.getElementById('status').textContent.startsWith('Conversion ready')",
   );
   await evaluate(
-    "document.getElementById('height').value='2';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('workflow-action').click()",
+    "document.getElementById('height').value='2';document.getElementById('height').dispatchEvent(new Event('input'));document.getElementById('convert').click()",
   );
   results.visibleValidation = await evaluate(
     "document.getElementById('status').classList.contains('error') && document.getElementById('status').textContent.includes('Replacement height')",
@@ -324,7 +325,7 @@ try {
       `document.querySelectorAll('#feet tr').length===${Number(process.env.CUSTOM_FEET || 2)} && !document.getElementById('workflow-action').disabled`,
     );
     await evaluate(
-      "document.getElementById('style').value='both';document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('workflow-action').click()",
+      "document.getElementById('style').value='both';document.getElementById('style').dispatchEvent(new Event('input'));document.getElementById('convert').click()",
     );
     await ready();
     if (process.env.CUSTOM_FEET === '1')

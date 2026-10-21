@@ -93,7 +93,7 @@
     "demo.js": "64dcc86d38cb8d75bf59d02252bade64158ca04246ae7b9304eea5e91ce78d68",
     "illustration-view.js": "3571f9818ebb18727d0b3014313ac192f7f5b034a7c218939cbd2b3fdd01b631",
     "importers.js": "3f71e90e33e9b8a6ad12c0dd61f95d3dc9fede4bde766b7d1469046c4e1d58e8",
-    "index.html": "cd11678985a2b4b2da2732a8f0db563ad33a013a5605a44b41364bd6d23404a1",
+    "index.html": "35c8b3784e1be1c41db7f6c6fb14dd7695a5ac51ede36cd226dffd404a077df2",
     "isolation-bootstrap.js": "5f95f32098895bf98ab2d9c9de02574d3768354b57a51c629bcd98f4e3329e26",
     "isolation-service-worker.js": "536920e1932d302fdb9edc93db3e97a94b3dfa70e10702ed3fee679289f11b47",
     "kernel.js": "141297499beede4188ea65dcdb3bc0b66739b2493f225fbacc1efa86964ec02a",
@@ -501,5 +501,14 @@
     "acceptance": "strict primary pass plus independent BREP and preservation; provisional proof cannot publish",
     "tests": "Local full-cup/lifecycle tests and Windows 17 conversions / 11 STEP exports passed",
     "timing": "native background elapsed is separate from conversion wall time"
+  },
+  "workspaceLayout": {
+    "version": "workspace-1",
+    "date": "2026-10-21",
+    "geometryChanges": false,
+    "sharedAssets": {
+      "/gridfinity-common/workspace-layout.css": "481791a565a4a8f2769857010b510031eb066997a6ed7b2caef9345201334848",
+      "/gridfinity-common/workspace-layout.js": "d204884f6c358c1f190348cd1666cf9769afb6757f0a54d4025a680b908cf58a"
+    }
   }
 }

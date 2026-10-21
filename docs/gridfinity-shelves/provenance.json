@@ -10,7 +10,7 @@
   },
   "assets": {
     "README.md": "2c2d90eb6ecbfabcada829419a522003668476d837ef1d61319c77d7f57045ad",
-    "app.js": "733bd0ada7bcab724dd979f264c7b4a02816060515daee063ec9234fb98d5faf",
+    "app.js": "b04d9c2d052d16054a3c93c0629d1b4a7e3565ae610d1cd6f06821f793f0ba05",
     "backplate-angles.png": "c2bfba4d938cec178a1a98fd56d66b89617ecf94989a327cc96dbca04e1e84bd",
     "backplate-default.png": "3596952c6b5153f71561429619f767b1b4dd58f41086ba57bfb48955bb3a7221",
     "backplate-heights.png": "7fb1453dd6a308f0f4b33ce4e0c6629ed80f5ab57ff9a9df1df6de2244b5f378",
@@ -58,7 +58,7 @@
     "frame-plan.png": "ba6d9128b9bca0b941160d62692c5898d54fbd4d26dfe760b055e9c10eb8e685",
     "front-underside.png": "fe0a4ca22e9edc2d3119c9a17f84b62cc9401905b4dd4f0f2c96d3178d18c21d",
     "generator-angles.png": "44b723edfb7432cd977fe2cd520627c9d35865f17929cc393d2ebe9f0a46fffc",
-    "index.html": "b3b47881f57f167525c0f8250f539c9869e36d2e1c0e1a862205d174703d38d5",
+    "index.html": "0cf50e488fe727facd7f8952c19a57888e37d3ff71e5e16cb1967bd1295b8ac3",
     "inputs.json": "768033e23879b586f23603185972fb93c5ce6b17b31ccb721672951d15ca27e3",
     "kernel.js": "e251ee904e4e68011a3bd23917ac3607062c9dc970ae2f94d3915e7238c9470d",
     "neighbor-spacing.js": "d4a96d6598e1977f4991878ed7a3f10b684dd0e924212d3fee8346bce8fcfb1b",
@@ -137,5 +137,14 @@
     ],
     "evidence": "checks/runtime-3.json",
     "outcomes": "running, success, error or cancelled; terminal wall time belongs to that operation"
+  },
+  "workspaceLayout": {
+    "version": "workspace-1",
+    "date": "2026-10-21",
+    "geometryChanges": false,
+    "sharedAssets": {
+      "/gridfinity-common/workspace-layout.css": "481791a565a4a8f2769857010b510031eb066997a6ed7b2caef9345201334848",
+      "/gridfinity-common/workspace-layout.js": "d204884f6c358c1f190348cd1666cf9769afb6757f0a54d4025a680b908cf58a"
+    }
   }
 }

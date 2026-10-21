@@ -1,0 +1,58 @@
+{
+  "gridfinity-drawers": {
+    "idleFrames": 0,
+    "viewUpdated": true,
+    "exportCancelRetry": true,
+    "pagehide": true,
+    "repeats": [
+      {
+        "wallMS": 978.0999999046326,
+        "dimensions": "Outline90 × 90 mmGrid2 × 2 · 42 mm pitchHeight6.20 mmBottomClosed · continuous floorTiles4 · 2 across × 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm³Reference-foot overlap2.59e-4 mm³"
+      },
+      {
+        "wallMS": 846.5,
+        "dimensions": "Outline90 × 90 mmGrid2 × 2 · 42 mm pitchHeight6.20 mmBottomClosed · continuous floorTiles4 · 2 across × 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm³Reference-foot overlap2.59e-4 mm³"
+      },
+      {
+        "wallMS": 924.7000000476837,
+        "dimensions": "Outline90 × 90 mmGrid2 × 2 · 42 mm pitchHeight6.20 mmBottomClosed · continuous floorTiles4 · 2 across × 2 deepX cuts45.00Y cuts45.00Solid volume20.8 cm³Reference-foot overlap2.59e-4 mm³"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "application/step",
+        "size": 231315
+      },
+      {
+        "type": "application/zip",
+        "size": 230153
+      }
+    ]
+  },
+  "gridfinity-shelves": {
+    "idleFrames": 0,
+    "viewUpdated": true,
+    "exportCancelRetry": true,
+    "pagehide": true,
+    "repeats": [
+      {
+        "wallMS": 11114.300000190735,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 × 1Unrotated footprint88.0 × 62.3 mmShelf tilt0°Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 · Gridfinity boundariesSolid volume30.11 cm³Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies · 3.5 mm margin"
+      },
+      {
+        "wallMS": 10763.799999952316,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 × 1Unrotated footprint88.0 × 62.3 mmShelf tilt0°Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 · Gridfinity boundariesSolid volume30.11 cm³Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies · 3.5 mm margin"
+      },
+      {
+        "wallMS": 11298.700000047684,
+        "dimensions": "Base typeFrameBoardOriginal round-hole pegboardArray2 × 1Unrotated footprint88.0 × 62.3 mmShelf tilt0°Mount columns4Total mounts8Mount height2 peg rowsBackplateSolidGussets3 · Gridfinity boundariesSolid volume30.11 cm³Mesh triangles45,850Export poseFrame face on bedPeg clearance / side0.00 mmHook grip0.00 mmHoop firmness0.00 mmReinforcement4 helper bodies · 3.5 mm margin"
+      }
+    ],
+    "downloads": [
+      {
+        "type": "application/step",
+        "size": 32639157
+      }
+    ]
+  }
+}
