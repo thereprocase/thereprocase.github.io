@@ -19,7 +19,7 @@ for w in (8,10,12):
    nodes.append(str(node))
   sections[heading.get_text()]=''.join(nodes)
  def pane(title,body,id):return f'<section class="gl-pane" id="{id}"><h2 class="gl-pane-title">{title}</h2><div class="pane-body">{body}</div></section>'
- nav=str(main.find('nav'));iframe=str(main.find('iframe'));controls=str(main.find('iframe').find_next_sibling('p'))
+ nav=str(main.find('nav')).replace('</nav>','<button data-view="../../faux-light" aria-pressed="false">Full-printer light preview · 8 mm</button></nav>');iframe=str(main.find('iframe'));controls=str(main.find('iframe').find_next_sibling('p'))
  options=''.join(f'<option value="{n}"'+(' selected' if n==w else '')+f'>{n} mm strip</option>' for n in (8,10,12))
  lead=f'Eight PETG frame pieces raise the P1S glass lid and carry a continuous USB COB light strip. The light angles down into the enclosure; removable white diffusers sit in bottom slots and are held by quarter-turn keepers.'
  downloads=f'''<div class="downloads"><a class="button primary" href="p1s-riser-{w}mm-led-cad.zip">Download {w} mm kit · STEP + STL</a><a class="button" href="p1s-riser-{w}mm-led-assembly.step">Assembly STEP</a><a class="button" href="PRINT-AND-ASSEMBLY.txt">Assembly guide</a></div><p>Includes the eight frame pieces, keepers, cable plug, matching diffusers, vase blanks, fit coupons and geometry-only plate layouts. Choose your own filament and printer settings before slicing.</p><p><a href="SHA256SUMS">Download checksums</a> · <a href="REFERENCE-ATTRIBUTION.txt">Attribution and license</a></p>'''

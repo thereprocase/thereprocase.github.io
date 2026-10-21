@@ -1,0 +1,1 @@
+Actual Draft11 8mm riser meshes are unchanged. Printer body, bed, rods, toolhead and sample cup are illustrative mock geometry. Forty-eight light samples use the actual tape route and face normals, displaced to the diffuser surface. Lambert-style falloff plus an approximate box occluder for the toolhead; no measured lumen, lux, thermal or diffuser-transmission claims.
