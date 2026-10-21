@@ -1,0 +1,21 @@
+{
+  "purpose": "Combined single verifier: existing faithful full-repair reader/dlmalloc/corrected owning bindings, analytic torus bounds, safe17-digit STEP writer",
+  "image": "ghcr.io/taucad/opencascade.js:canary-ebd263f1-single-threaded",
+  "bindings": "/home/repro/occt-destructor-single-audit/repaired-objects",
+  "readerObjects": {
+    "ShapeAnalysis_Edge.cxx.o": "353bc76b4660eb82f91b3ef28b8f101dfc62cba8734c922e320a23a92d90d0fc",
+    "ShapeFix_Edge.cxx.o": "41af205a3868ea67d9540ced3e3dbc9072f75f1b503ee7c78cfcad3773e0f7be",
+    "StepToTopoDS_TranslateEdgeLoop.cxx.o": "256c9c12923fe1201a0bcff3d4fa2451b129b5ea0676a00a802f9a110e0fb72f"
+  },
+  "sourceHashes": {
+    "native-analytic-optimal-bounds.cpp": "da57a7f844ec8542bc5ed56c821679056805e93b1db69641c86a10c51026c93d",
+    "native-parallel-optimal-bounds.cpp": "aa378f8569d216f5cf104fa0adf73edadd690e127cf4f95487f06fcb7486e1dc",
+    "torus-rectangle.hxx": "e7dcfe6ffb978d85f4ce630e30f8bee2168a148e2cad53ef23620ebb1723c363",
+    "torus-proof.txt": "a384b8f40982824c780d6a3d9011e69be83fa695a47df9a54d39e4505e25ca9d",
+    "provenance.json": "87f9d097b8a01e6855a0adb803f1d955ba3c56a4e71b5da20de32c4d1057dae6",
+    "native-step-writer17.cpp": "233b909d2d1c4de1b632df06dc106aff990f9fb9f501384d45bdcf77342afeb5",
+    "StepData_StepWriter.cxx": "ac55121282e1c1d860a3ecc4966ed183b80ef8bce90d8429c0b148ba1825cb87",
+    "writer17-provenance.json": "168eccff16961edd82b569db2bdf1edfbf3b9be0844ec01a2a77b6d289eca5e1",
+    "build.sh": "bbd7633be9d88ac142f92a8f6ba1a1076c923f9855105ef2cd3faba4c4e31a21"
+  }
+}

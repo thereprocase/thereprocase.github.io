@@ -24,11 +24,14 @@ export async function readVerifierSTEP(oc, blob, wrap, onProgress = () => {}, {s
     if (selectiveApplied) phase('reopen-processing-policy', () => {
       oc.nativeSetStepReadFixMode(reader, 'FixSameParameterMode', 0);
       oc.nativeSetStepReadFixMode(reader, 'FixEdgeSameParameterMode', 0);
+      // Valid application exports retain face orientation; failed strict checks
+      // retry with the complete default repair policy.
+      oc.nativeSetStepReadFixMode(reader, 'FixOrientationMode', 0);
     });
     onProgress('Reopening exported STEP…', {
       diagnostic: 'step-export-verifier', stage: 'reopen-processing-mode', elapsedMS: performance.now() - policyStarted,
       selectiveRequested: selectiveRepair, selectiveApplied,
-      processing: selectiveApplied ? 'selective-same-parameter' : 'default',
+      processing: selectiveApplied ? 'selective-same-parameter-orientation' : 'default',
     });
     const roots = phase('reopen-transfer', () => reader.TransferRoots());
     if (!(roots > 0)) throw Error('The exported STEP fails strict root transfer. STEP export blocked.');

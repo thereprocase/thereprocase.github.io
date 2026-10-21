@@ -1,19 +1,19 @@
-import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-1';
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-1';
-import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-1';
-import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-1';
-import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-1';
-import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-1';
-import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-1';
-import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-1';
-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-1';
-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-1';
-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-1';
-import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-1';
-import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-1';
-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-1';
+import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-2';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-2';
+import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-2';
+import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-2';
+import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-2';
+import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-2';
+import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-2';
+import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-2';
+import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-2';
+import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-2';
+import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-2';
+import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-2';
+import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-2';
+import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-2';
 /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
-import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-1';
+import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-2';
 import * as cad from './vendor/replicad/replicad.js';
 let ready, OC, kernelPurpose;
 let displayFaceCache = null;
@@ -741,11 +741,17 @@ export async function exportNativeOriginalPose({ buffer, format, transform: pose
       parallelSourceBounds: sourceBoundsTask && format==='brep' && requestedFormat==='step' ? {task:sourceBoundsTask,identity:boundsInputIdentity(buffer,pose).then(value=>({value}),error=>({error:error.message??String(error)}))} : null,
       preferPreservedCurves: preferredSurfaceCurves === 'preserved', onProgress,
     });
-    let bytes, outputFormat = requestedFormat, stepExportError, surfaceCurves, stepWriterPrecision, stepRepairPolicy, stepRepairRetried;
+    let bytes, outputFormat = requestedFormat, stepExportError, surfaceCurves, stepWriterPrecision, stepRepairPolicy, stepRepairRetried, stepValidationPolicy;
     if (requestedFormat === 'step') {
       try {
         const exported = await checkedStep(restored, outputPose==='base-down' ? 'base-down' : 'original-pose');
         bytes = exported.buffer; surfaceCurves = exported.surfaceCurves; stepWriterPrecision=exported.precision; stepRepairPolicy=exported.repairPolicy; stepRepairRetried=exported.repairRetried;
+        stepValidationPolicy = {
+          toleranceCeiling: { enabled: format === 'brep', formula: 'actual[i] <= source[i] + absoluteAllowanceMM', absoluteAllowanceMM: 1e-12, order: ['vertex', 'edge', 'face'] },
+          bounds: { formula: 'abs(actual[i][j] - source[i][j]) <= absoluteAllowanceMM', absoluteAllowanceMM: 1e-5 },
+          volume: { formula: 'abs(actual - source) <= max(absoluteAllowanceMM3, source * relativeAllowance)', absoluteAllowanceMM3: 0.001, relativeAllowance: 1e-8 },
+          strictNativeValidity: true, requiredSolidCount: 1,
+        };
       } catch (error) {
         if (error instanceof WebAssembly.RuntimeError || !/exported STEP fails strict|STEP export changed/.test(error.message)) throw error;
         stepExportError = error.message;
@@ -756,7 +762,7 @@ export async function exportNativeOriginalPose({ buffer, format, transform: pose
     return { buffer: bytes, format: outputFormat, report: {
       pose: outputPose, nativeKernel: nativeKernelInfo(oc), nativeValid: true, nativeExportFormat: outputFormat,
       stepRoundTripValid: outputFormat === 'step', brepRoundTripValid: outputFormat === 'brep',
-      sourceCertificateReused:!!trustedMetrics, stepExportError, stepRepairPolicy, stepRepairRetried, stepWriterPrecision, stepSurfaceCurves: surfaceCurves, originalPoseExportReused: false,
+      sourceCertificateReused:!!trustedMetrics, stepExportError, stepRepairPolicy, stepRepairRetried, stepWriterPrecision, stepValidationPolicy, stepSurfaceCurves: surfaceCurves, originalPoseExportReused: false,
     } };
   } finally { if (restored !== source) restored?.delete(); source.delete(); }
 }
@@ -775,6 +781,29 @@ export function nativeGeometrySnapshot(oc, source) {
 /** Prepare curves before one final exact check; never assume the input is invalid. */
 export async function prepareNativeSource(source, onProgress = () => {}) {
   const oc = await kernel();
+  // Unmodified, exact-valid CAD needs no parameter reconstruction. Require
+  // matching edge parameter flags as well; validity alone is not that contract.
+  const flags = new oc.TopExp_Explorer(source.wrapped, oc.TopAbs_ShapeEnum.TopAbs_EDGE, oc.TopAbs_ShapeEnum.TopAbs_SHAPE);
+  let consistent = true;
+  try {
+    while (flags.More()) {
+      const raw = flags.Current(); let edge;
+      try {
+        edge = oc.TopoDS.Edge(raw);
+        if (!oc.BRep_Tool.Degenerated(edge) && (!oc.BRep_Tool.SameParameter(edge) || !oc.BRep_Tool.SameRange(edge))) { consistent = false; break; }
+      } finally { edge?.delete(); raw.delete(); }
+      flags.Next();
+    }
+  } finally { flags.delete(); }
+  if (consistent) {
+    onProgress('Checking original native CAD before preparation…');
+    const sourceValid = hasGeneratedDisplayMesh(source)
+      ? validateNativeGeometryWithoutDisplay(oc, source) : valid(oc, source);
+    if (sourceValid) {
+      onProgress('Original native CAD is already valid; preserving its curves unchanged.', { diagnostic: 'source-preparation', originalValid: true, repairSkipped: true });
+      return { source, sourceCurveRepair: null };
+    }
+  }
   onProgress('Preparing native curve consistency…');
   const beforeVolume = volume(source);
   const beforeRepresentation = nativeGeometrySnapshot(oc, source);

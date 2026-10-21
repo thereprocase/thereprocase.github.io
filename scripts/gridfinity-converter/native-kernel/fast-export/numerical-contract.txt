@@ -1,0 +1,23 @@
+Scope and integration
+---------------------
+Only verifier face bounds for finite ring tori R>r>0 may replace generic nonlinear rectangular surface extrema. Pinned FindExactUVBounds, native edge boxes, AdjustFaceBox, face-order reduction, free edges/vertices, and every STEP validity/volume/tolerance comparison remain unchanged. Unsupported inputs execute the original surface-bound routine. No CAD curves, surfaces, trim ranges or tolerances are modified.
+
+Mathematical extrema
+--------------------
+For each world coordinate f=C+(R+r*cos(v))*(x*cos(u)+y*sin(u))+r*z*sin(v). Because R>r>0, the coefficient of q(u) is strictly positive. Thus a rectangular-domain extremum has u at an endpoint or q'(u)=0. At each such u, v is an endpoint or the derivative of q*cos(v)+z*sin(v) vanishes. Enumerating those candidates is complete, including edges and corners. Full-period intervals may be covered by one complete period; partial intervals keep their original endpoints (no remainder reduction).
+
+Numerical contract
+------------------
+The production target is pinned Emscripten5.0.1 musl. Its sin.c/cos.c explicitly document nearly-rounded values; __sin.c/__cos.c state polynomial approximation error<=2^-58 before floating arithmetic. Reserve64 binary64 eps absolute per sin/cos on accepted angles |angle|<=128*pi, rather than assuming exact trig. Native glibc runs are performance/regression evidence, not the production error contract. Current generated WASM glue does not replace these calls with JavaScript Math trig.
+
+atan2 is only a candidate generator. Its phase is verified using a positive dot lower bound and cross residual upper bound, including trig/arithmetic/input-coefficient errors. On the accepted half-circle, 2*cross/max-component safely overbounds phase error (coefficient error is subtracted from the denominator; residual/denominator is restricted). Candidate construction phi+k*pi adds its arithmetic error explicitly; near-boundary candidates are included in an expanded interval and clamped to endpoints. Missing an extremum near a trim boundary is therefore covered, rather than assuming rounded interval tests are exact.
+
+Root-location errors are multiplied by global coordinate derivative bounds and added to the outward pad. Tiny u/v amplitudes use a full2*amplitude enclosure instead of a poorly conditioned phase solve. Nonfinite, unsupported, ill-conditioned and large-error cases fall back. Rounded point arithmetic and ElSLib's near-zero coefficient snapping receive an additional gamma256 budget. The final envelope adds the same1e-7mm Confusion as pinned BoxOptimal, is rounded outward with nextafter, and must have total padding<=5e-7mm. This does not change the export comparison threshold1e-5mm.
+
+Qualification
+-------------
+Mathematical candidate completeness reviewed independently by swap_under30. Native96-case90-digit oracle covers near-horn radii, tiny axis projections, adjacent-double phase boundaries/full periods, negative/multi-period intervals, +/-128*pi and large coordinate/radius cutoffs. Directional undercoverage must be zero. Native actual cup compares all7,924faces*6extrema with existing tolerance and tests source byte immutability. WASM single/pthread fixture and actual-cup qualification remains required before deployment; no timing claim transfers directly from the native harness to Windows.
+
+Qualification addendum
+---------------------
+Combined pthread WASM tests and fresh-cup export now pass; see evidence/. Single full-cup now also passes with identical STEP DATA/readback BREP. Windows qualification remains a separate gate. This document is a numerical contract with explicit assumptions, not a formal floating-point proof. The 64-epsilon musl trig envelope is an implementation assumption supported by source inspection and oracle tests, not an exhaustively machine-checked bound.

@@ -1,0 +1,386 @@
+{
+  "passed": true,
+  "oraclePrecisionDigits": 90,
+  "accepted": 94,
+  "fallback": 2,
+  "worstUndercoverageMM": 0.0,
+  "minimumOutwardMarginMM": 1.0000046275013172e-07,
+  "cases": [
+    {
+      "i": 0,
+      "maxUndercoverageMM": -1.0000082374261471e-07
+    },
+    {
+      "i": 1,
+      "maxUndercoverageMM": -1.0000088882505554e-07
+    },
+    {
+      "i": 2,
+      "maxUndercoverageMM": -1.0000093666968393e-07
+    },
+    {
+      "i": 3,
+      "maxUndercoverageMM": -1.0000101178773386e-07
+    },
+    {
+      "i": 4,
+      "maxUndercoverageMM": -1.0000119162013982e-07
+    },
+    {
+      "i": 5,
+      "maxUndercoverageMM": -1.000012535879673e-07
+    },
+    {
+      "i": 6,
+      "maxUndercoverageMM": -1.0000147044522881e-07
+    },
+    {
+      "i": 7,
+      "maxUndercoverageMM": -1.0000128086422077e-07
+    },
+    {
+      "i": 8,
+      "maxUndercoverageMM": -1.0000128133459139e-07
+    },
+    {
+      "i": 9,
+      "maxUndercoverageMM": -1.000014859740271e-07
+    },
+    {
+      "i": 10,
+      "maxUndercoverageMM": -1.000011731299225e-07
+    },
+    {
+      "i": 11,
+      "maxUndercoverageMM": -1.0000117558886815e-07
+    },
+    {
+      "i": 12,
+      "maxUndercoverageMM": -1.0000144642907803e-07
+    },
+    {
+      "i": 13,
+      "maxUndercoverageMM": -1.0000175327778581e-07
+    },
+    {
+      "i": 14,
+      "maxUndercoverageMM": -1.0000125142938957e-07
+    },
+    {
+      "i": 15,
+      "maxUndercoverageMM": -1.0000124679944725e-07
+    },
+    {
+      "i": 16,
+      "maxUndercoverageMM": -1.0000129604812919e-07
+    },
+    {
+      "i": 17,
+      "maxUndercoverageMM": -1.0000140092904275e-07
+    },
+    {
+      "i": 18,
+      "maxUndercoverageMM": -1.0000165213951601e-07
+    },
+    {
+      "i": 19,
+      "maxUndercoverageMM": -1.0000191027423556e-07
+    },
+    {
+      "i": 20,
+      "maxUndercoverageMM": -1.000020224948914e-07
+    },
+    {
+      "i": 21,
+      "maxUndercoverageMM": -1.0000115738526111e-07
+    },
+    {
+      "i": 22,
+      "maxUndercoverageMM": -1.0000114863067129e-07
+    },
+    {
+      "i": 23,
+      "maxUndercoverageMM": -1.0000136289674936e-07
+    },
+    {
+      "i": 24,
+      "maxUndercoverageMM": -1.000014116062972e-07
+    },
+    {
+      "i": 25,
+      "maxUndercoverageMM": -1.0000178505430708e-07
+    },
+    {
+      "i": 26,
+      "maxUndercoverageMM": -1.000021670361661e-07
+    },
+    {
+      "i": 27,
+      "maxUndercoverageMM": -1.0000256603251975e-07
+    },
+    {
+      "i": 28,
+      "maxUndercoverageMM": -1.0000222859680516e-07
+    },
+    {
+      "i": 29,
+      "maxUndercoverageMM": -1.000026144196708e-07
+    },
+    {
+      "i": 30,
+      "maxUndercoverageMM": -1.0000112162306397e-07
+    },
+    {
+      "i": 31,
+      "maxUndercoverageMM": -1.0000151779065141e-07
+    },
+    {
+      "i": 32,
+      "maxUndercoverageMM": -1.0000208421881796e-07
+    },
+    {
+      "i": 33,
+      "maxUndercoverageMM": -1.00002506833814e-07
+    },
+    {
+      "i": 34,
+      "maxUndercoverageMM": -1.000029296315621e-07
+    },
+    {
+      "i": 35,
+      "maxUndercoverageMM": -1.0000170165250695e-07
+    },
+    {
+      "i": 36,
+      "maxUndercoverageMM": -1.0000210340459954e-07
+    },
+    {
+      "i": 37,
+      "maxUndercoverageMM": -1.0000244299665118e-07
+    },
+    {
+      "i": 38,
+      "maxUndercoverageMM": -1.0000278878377967e-07
+    },
+    {
+      "i": 39,
+      "maxUndercoverageMM": -1.0000318098708874e-07
+    },
+    {
+      "i": 40,
+      "maxUndercoverageMM": -1.0000269251614873e-07
+    },
+    {
+      "i": 41,
+      "maxUndercoverageMM": -1.0000330963235275e-07
+    },
+    {
+      "i": 42,
+      "maxUndercoverageMM": -1.000011063873555e-07
+    },
+    {
+      "i": 43,
+      "maxUndercoverageMM": -1.0000152829469172e-07
+    },
+    {
+      "i": 44,
+      "maxUndercoverageMM": -1.0000188291700648e-07
+    },
+    {
+      "i": 45,
+      "maxUndercoverageMM": -1.0000226549802142e-07
+    },
+    {
+      "i": 46,
+      "maxUndercoverageMM": -1.0000277260460012e-07
+    },
+    {
+      "i": 47,
+      "maxUndercoverageMM": -1.0000325006324355e-07
+    },
+    {
+      "i": 48,
+      "maxUndercoverageMM": -1.0000373520742626e-07
+    },
+    {
+      "i": 49,
+      "maxUndercoverageMM": -1.0000371363784926e-07
+    },
+    {
+      "i": 50,
+      "maxUndercoverageMM": -1.0000145728014426e-07
+    },
+    {
+      "i": 51,
+      "maxUndercoverageMM": -1.0000194039491923e-07
+    },
+    {
+      "i": 52,
+      "maxUndercoverageMM": -1.0000243335080378e-07
+    },
+    {
+      "i": 53,
+      "maxUndercoverageMM": -1.000029407297903e-07
+    },
+    {
+      "i": 54,
+      "maxUndercoverageMM": -1.0000344959297672e-07
+    },
+    {
+      "i": 55,
+      "maxUndercoverageMM": -1.0000415664822487e-07
+    },
+    {
+      "i": 56,
+      "maxUndercoverageMM": -1.000031263368916e-07
+    },
+    {
+      "i": 57,
+      "maxUndercoverageMM": -1.0000353431224634e-07
+    },
+    {
+      "i": 58,
+      "maxUndercoverageMM": -1.0000403250148804e-07
+    },
+    {
+      "i": 59,
+      "maxUndercoverageMM": -1.0000445469394189e-07
+    },
+    {
+      "i": 60,
+      "maxUndercoverageMM": -1.0000303589181998e-07
+    },
+    {
+      "i": 61,
+      "maxUndercoverageMM": -1.0000062017695176e-07
+    },
+    {
+      "i": 62,
+      "maxUndercoverageMM": -1.0000440609584925e-07
+    },
+    {
+      "i": 63,
+      "maxUndercoverageMM": -1.000047240307422e-07
+    },
+    {
+      "i": 64,
+      "maxUndercoverageMM": -1.0000475942494931e-07
+    },
+    {
+      "i": 65,
+      "maxUndercoverageMM": -1.0025579190278504e-07
+    },
+    {
+      "i": 66,
+      "maxUndercoverageMM": -1.0025763275815615e-07
+    },
+    {
+      "i": 67,
+      "maxUndercoverageMM": -1.0000074861956125e-07
+    },
+    {
+      "i": 70,
+      "maxUndercoverageMM": -1.0000297662182689e-07
+    },
+    {
+      "i": 71,
+      "maxUndercoverageMM": -1.0000158887599368e-07
+    },
+    {
+      "i": 72,
+      "maxUndercoverageMM": -1.0000263140321126e-07
+    },
+    {
+      "i": 73,
+      "maxUndercoverageMM": -1.0000050911127484e-07
+    },
+    {
+      "i": 74,
+      "maxUndercoverageMM": -1.0000413568252353e-07
+    },
+    {
+      "i": 75,
+      "maxUndercoverageMM": -1.0000521919181403e-07
+    },
+    {
+      "i": 76,
+      "maxUndercoverageMM": -1.0000553531731854e-07
+    },
+    {
+      "i": 77,
+      "maxUndercoverageMM": -1.0027879281171703e-07
+    },
+    {
+      "i": 78,
+      "maxUndercoverageMM": -1.0028072345479637e-07
+    },
+    {
+      "i": 79,
+      "maxUndercoverageMM": -1.0000092656829193e-07
+    },
+    {
+      "i": 80,
+      "maxUndercoverageMM": -3.6918893640737276e-07
+    },
+    {
+      "i": 81,
+      "maxUndercoverageMM": -4.6104963158074474e-07
+    },
+    {
+      "i": 82,
+      "maxUndercoverageMM": -1.000031982223426e-07
+    },
+    {
+      "i": 83,
+      "maxUndercoverageMM": -1.0000425708231141e-07
+    },
+    {
+      "i": 84,
+      "maxUndercoverageMM": -1.0000376179512932e-07
+    },
+    {
+      "i": 85,
+      "maxUndercoverageMM": -1.0000057769673157e-07
+    },
+    {
+      "i": 86,
+      "maxUndercoverageMM": -1.0000367259318894e-07
+    },
+    {
+      "i": 87,
+      "maxUndercoverageMM": -1.0000559122661972e-07
+    },
+    {
+      "i": 88,
+      "maxUndercoverageMM": -1.0000565544859194e-07
+    },
+    {
+      "i": 89,
+      "maxUndercoverageMM": -1.0030208609815069e-07
+    },
+    {
+      "i": 90,
+      "maxUndercoverageMM": -1.0030403852856743e-07
+    },
+    {
+      "i": 91,
+      "maxUndercoverageMM": -1.0000046275013172e-07
+    },
+    {
+      "i": 92,
+      "maxUndercoverageMM": -3.596671020749265e-07
+    },
+    {
+      "i": 93,
+      "maxUndercoverageMM": -4.064674575123125e-07
+    },
+    {
+      "i": 94,
+      "maxUndercoverageMM": -1.0000342309801624e-07
+    },
+    {
+      "i": 95,
+      "maxUndercoverageMM": -1.0000420868226635e-07
+    }
+  ]
+}

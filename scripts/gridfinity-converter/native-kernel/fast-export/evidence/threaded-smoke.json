@@ -1,0 +1,1223 @@
+{
+  "ownership": {
+    "passed": true,
+    "reusedFaces": [
+      6,
+      6
+    ],
+    "triangulationAliasesSafe": true,
+    "nodeTriangleReturnDisposalSafe": true,
+    "cacheDoubleDisposalSafe": true
+  },
+  "bounds": {
+    "passed": true,
+    "invalidInputRejected": true,
+    "invalidInputTargetUnchanged": true,
+    "results": [
+      {
+        "name": "box",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 2.0076610000000983,
+        "parallelMS": 0.2194889999998395,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              0,
+              0,
+              0,
+              3,
+              5,
+              7
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              0,
+              0,
+              0,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "box",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.11051799999995637,
+        "parallelMS": 0.13663799999994808,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1.25,
+              -2.25,
+              -3.25,
+              3.25,
+              5.25,
+              7.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1.25,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "box",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.11967200000003686,
+        "parallelMS": 0.20430800000008276,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              3.25,
+              5.25,
+              7.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "rotated-box",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.14649600000007013,
+        "parallelMS": 0.24425700000006145,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1.80807715982481,
+              0,
+              0,
+              2.7969820368181035,
+              5.746483023925059,
+              7
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1.80807715982481,
+              0,
+              0,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "rotated-box",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.12937299999998686,
+        "parallelMS": 0.5821040000000721,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -2.05807715982481,
+              -2.25,
+              -3.25,
+              3.0469820368181035,
+              5.996483023925059,
+              7.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -2.05807715982481,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "rotated-box",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.12006300000007286,
+        "parallelMS": 0.12937200000010307,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              3.0469820368181035,
+              5.996483023925059,
+              7.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "cylinder-seam",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.48963899999989735,
+        "parallelMS": 0.19734399999993002,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -3,
+              -3,
+              0,
+              3,
+              3,
+              8
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -3,
+              -3,
+              0,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "cylinder-seam",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.07918700000004719,
+        "parallelMS": 0.9994490000001406,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -3.25,
+              -3.25,
+              -3.25,
+              3.25,
+              3.25,
+              8.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -3.25,
+              -3.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "cylinder-seam",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.08362299999998868,
+        "parallelMS": 0.18056400000000394,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -3.25,
+              -3.25,
+              3.25,
+              3.25,
+              8.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -3.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "sphere-degenerate",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 1.0286639999999352,
+        "parallelMS": 0.022410999999920023,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -4,
+              -4,
+              -4,
+              4,
+              4,
+              4
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -4,
+              -4,
+              -4,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "sphere-degenerate",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.06243499999982305,
+        "parallelMS": 0.01971000000003187,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -4.25,
+              -4.25,
+              -4.25,
+              4.25,
+              4.25,
+              4.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -4.25,
+              -4.25,
+              -4.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "sphere-degenerate",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.051969000000099186,
+        "parallelMS": 0.02080900000009933,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -4.25,
+              -4.25,
+              4.25,
+              4.25,
+              4.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -4.25,
+              -4.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "shared-shape-locations",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.23624800000015966,
+        "parallelMS": 0.4295120000001589,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -20,
+              -30,
+              -40,
+              23,
+              35,
+              47
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -20,
+              -30,
+              -40,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "shared-shape-locations",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.2297030000001996,
+        "parallelMS": 0.5080290000000787,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -20.25,
+              -30.25,
+              -40.25,
+              23.25,
+              35.25,
+              47.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -20.25,
+              -30.25,
+              -40.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "shared-shape-locations",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.24549899999988156,
+        "parallelMS": 0.22933999999986554,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -30.25,
+              -40.25,
+              23.25,
+              35.25,
+              47.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -30.25,
+              -40.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "free-edge-and-vertex",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.23898399999984576,
+        "parallelMS": 0.03015300000015486,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -120,
+              -130,
+              -140,
+              110,
+              25,
+              35
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -120,
+              -130,
+              -140,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "free-edge-and-vertex",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.08808199999998578,
+        "parallelMS": 0.028002999999898748,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -120.25,
+              -130.25,
+              -140.25,
+              110.25,
+              25.25,
+              35.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -120.25,
+              -130.25,
+              -140.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "free-edge-and-vertex",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.06222600000000966,
+        "parallelMS": 0.025306000000000495,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -130.25,
+              -140.25,
+              110.25,
+              25.25,
+              35.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -130.25,
+              -140.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "nested-placements",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.7963039999999637,
+        "parallelMS": 0.3529599999999391,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -113,
+              -119,
+              -127,
+              117,
+              36,
+              48
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -113,
+              -119,
+              -127,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "nested-placements",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.2571379999999408,
+        "parallelMS": 0.5138460000000578,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -113.25,
+              -119.25,
+              -127.25,
+              117.25,
+              36.25,
+              48.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -113.25,
+              -119.25,
+              -127.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "nested-placements",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.2911070000000109,
+        "parallelMS": 1.0178229999999076,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -119.25,
+              -127.25,
+              117.25,
+              36.25,
+              48.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -119.25,
+              -127.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "empty-compound",
+        "mode": 0,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.045691000000033455,
+        "parallelMS": 0.004121999999824766,
+        "state": {
+          "current": {
+            "void": true
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              1000000,
+              2000000,
+              3000000,
+              1000000,
+              2000000,
+              3000000
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "empty-compound",
+        "mode": 1,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.01905799999985902,
+        "parallelMS": 0.003874000000223532,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1.25,
+              -2.25,
+              -3.25,
+              1.25,
+              2.25,
+              3.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1.25,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      },
+      {
+        "name": "empty-compound",
+        "mode": 2,
+        "geometryUnchanged": true,
+        "exactEqual": true,
+        "serialMS": 0.017881999999872278,
+        "parallelMS": 0.003911000000016429,
+        "state": {
+          "current": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              1.25,
+              2.25,
+              3.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          },
+          "afterWitness": {
+            "void": false,
+            "bounds": [
+              -1e+100,
+              -2.25,
+              -3.25,
+              1000000.25,
+              2000000.25,
+              3000000.25
+            ],
+            "open": [
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "faces": [
+    {
+      "id": 3,
+      "strictValid": true
+    },
+    {
+      "id": 4,
+      "strictValid": true
+    },
+    {
+      "id": 15,
+      "strictValid": true
+    }
+  ],
+  "analytic": [
+    {
+      "filename": "/tmp/torus-wasm-0.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-1.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-2.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-3.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-4.brep",
+      "maxDeltaMM": 3.3586466940960236e-12
+    },
+    {
+      "filename": "/tmp/torus-wasm-5.brep",
+      "maxDeltaMM": 3.914202295618452e-12
+    },
+    {
+      "filename": "/tmp/torus-wasm-6.brep",
+      "maxDeltaMM": 4.515499085755437e-12
+    },
+    {
+      "filename": "/tmp/torus-wasm-7.brep",
+      "maxDeltaMM": 1.9929613515046185e-12
+    },
+    {
+      "filename": "/tmp/torus-wasm-8.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-9.brep",
+      "maxDeltaMM": 2.0481394358284888e-12
+    },
+    {
+      "filename": "/tmp/torus-wasm-10.brep",
+      "maxDeltaMM": 0
+    },
+    {
+      "filename": "/tmp/torus-wasm-11.brep",
+      "maxDeltaMM": 3.623767952376511e-12
+    }
+  ],
+  "writer17": {
+    "strictValid": true,
+    "precisionPreserved": true
+  }
+}

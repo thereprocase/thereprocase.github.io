@@ -1,0 +1,40 @@
+{
+  "build": "fast-export-20261021-014000",
+  "purpose": "Local correctness regression; concurrent host load, not Windows speed evidence",
+  "sourceSHA256": "dd64d5c632ce6b106bc35a121ee03f5dc49fc062615612e4c11c689e4fb98bae",
+  "fit": 0,
+  "results": [
+    {
+      "style": "plain",
+      "nativeValid": true,
+      "outsideChange": 0,
+      "stepRoundTripValid": true,
+      "convertMS": 17898,
+      "stepMS": 5199
+    },
+    {
+      "style": "magnets",
+      "nativeValid": true,
+      "outsideChange": 0,
+      "stepRoundTripValid": true,
+      "convertMS": 26820,
+      "stepMS": 5647
+    },
+    {
+      "style": "screws",
+      "nativeValid": true,
+      "outsideChange": 0,
+      "stepRoundTripValid": true,
+      "convertMS": 50912,
+      "stepMS": 4128
+    },
+    {
+      "style": "both",
+      "nativeValid": true,
+      "outsideChange": 0,
+      "stepRoundTripValid": true,
+      "convertMS": 76159,
+      "stepMS": 7758
+    }
+  ]
+}

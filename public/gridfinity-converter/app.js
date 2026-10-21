@@ -1,5 +1,6 @@
+import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-2';
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-1';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-2';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -8,8 +9,15 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-step-20261021-1';
-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-1';
+} from './kernel.js?v=native-step-20261021-2';
+import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-2';
+const nativeExportWarmPool = createNativeExportWarmPool();
+addEventListener('pagehide', () => {
+  if (cancelNativeExport()) {
+    setBusy(false);
+    status('Download preparation cancelled. Your conversion is still available.');
+  }
+});
 const $ = (id) => document.getElementById(id),
   host = $('viewer');
 let worker,
@@ -18,6 +26,7 @@ let worker,
   nativeReject,
   exportWorker,
   exportReject,
+  exportAbort,
   nativePreparation,
   importAbort,
   sequence = 0,
@@ -405,8 +414,22 @@ function invalidate(
   controls();
   draw();
 }
-function terminate({ preserveIdleCAD = false } = {}) {
+function cancelNativeExport() {
+  const abort = exportAbort, activeWorker = exportWorker, reject = exportReject;
+  const active = Boolean(abort || activeWorker || reject);
+  // Clear ownership before abort callbacks or a pending acquire resumes.
+  exportAbort = exportWorker = exportReject = null;
+  abort?.abort();
+  activeWorker?.terminate();
+  reject?.(new DOMException('Cancelled', 'AbortError'));
+  nativeExportWarmPool.dispose();
+  return active;
+}
+function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {}) {
   const keepCAD = preserveIdleCAD && cadWorker && !nativeWorker && raw?.nativeDocumentId;
+  // During native conversion the mesh worker is idle and still owns detection
+  // input. Keep that input, but always discard the cancelled native workers.
+  const keepMesh = preserveLoadedMesh && loaded && pending.size === 0;
   if (!keepCAD) {
     nativePreparation = null;
     $('cad-preparation').hidden = true;
@@ -415,8 +438,10 @@ function terminate({ preserveIdleCAD = false } = {}) {
   delete host.dataset.preview;
   importAbort?.abort();
   importAbort = null;
-  worker?.terminate();
-  worker = null;
+  if (!keepMesh) {
+    worker?.terminate();
+    worker = null;
+  }
   if (!keepCAD) {
     if (cadWorker !== nativeWorker) cadWorker?.terminate();
     cadWorker = null;
@@ -426,18 +451,15 @@ function terminate({ preserveIdleCAD = false } = {}) {
   nativeWorker = null;
   nativeReject?.(new DOMException('Cancelled', 'AbortError'));
   nativeReject = null;
-  exportWorker?.terminate();
-  exportWorker = null;
-  exportReject?.(new DOMException('Cancelled', 'AbortError'));
-  exportReject = null;
+  cancelNativeExport();
   for (const { reject } of pending.values())
     reject(new DOMException('Cancelled', 'AbortError'));
   pending.clear();
-  loaded = false;
+  if (!keepMesh) loaded = false;
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-step-20261021-1', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-step-20261021-2', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -814,6 +836,7 @@ async function runConversion() {
   try {
     let r;
     if (raw?.nativeBuffer) {
+      void nativeExportWarmPool.prewarm();
       const options = conversionParameters(inputOptions());
       options.originalVolume = detection.geometry.volume;
       setBusy(
@@ -911,7 +934,7 @@ function nativeConversion(options) {
     const documentId = cadWorker ? source.nativeDocumentId : null;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-1', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-2', {
       type: 'module',
     });
     nativeWorker = w;
@@ -1144,29 +1167,31 @@ $('add-cell').onclick = () => {
   renderFeet();
 };
 $('cancel').onclick = () => {
-  if (exportWorker) {
-    exportWorker.terminate();
-    exportWorker = null;
-    exportReject?.(new DOMException('Cancelled', 'AbortError'));
-    exportReject = null;
+  if (exportWorker || exportAbort) {
+    cancelNativeExport();
     setBusy(false);
     status('Download preparation cancelled. Your conversion is still available.');
     return;
   }
-  fileState = 'cancelled';
+  const retryNative = Boolean(nativeWorker && raw?.nativeBuffer?.byteLength && loaded && detection);
+  fileState = retryNative ? 'loaded' : 'cancelled';
   epoch++;
-  terminate();
+  terminate({ preserveLoadedMesh: retryNative });
   setBusy(false);
   result = null;
-  detection = null;
-  feet = [];
-  selection.clear();
+  if (!retryNative) {
+    detection = null;
+    feet = [];
+    selection.clear();
+  }
   view = 'original';
   draw();
   renderFeet();
   controls();
   status(
-    'Cancelled. Reload the example or choose the model again to continue.',
+    retryNative
+      ? 'Conversion cancelled. Your model and settings are kept. Click Convert feet to retry; native CAD will be prepared again.'
+      : 'Cancelled. Reload the example or choose the model again to continue.',
   );
 };
 for (const key of ['original', 'converted', 'changes'])
@@ -1232,32 +1257,51 @@ function filename(ext) {
   return sourceName + '-' + result.report.style + '-42mm.' + ext;
 }
 function prepareNativeExport(data) {
+  const abort = new AbortController();
+  exportAbort = abort;
   return new Promise((resolve, reject) => {
-    const w = new Worker('./native-export-worker.js?v=native-step-20261021-1', { type: 'module' });
-    exportWorker = w;
     exportReject = reject;
+    let w, lease;
+    const verifierExport = data.type === 'pose' && data.format === 'brep' && data.requestedFormat === 'step';
     const finish = () => {
-      w.terminate();
-      if (exportWorker === w) {
+      if (lease) lease.release();
+      else w?.terminate();
+      if (exportAbort === abort) {
         exportWorker = null;
         exportReject = null;
+        exportAbort = null;
       }
     };
-    w.onmessage = ({ data }) => {
-      if (exportWorker !== w) return;
-      if (data.progress) {
-        setBusy(true, data.progress);
-        return;
-      }
-      finish();
-      if (data.error) reject(Error(data.stage ? `${data.stage}: ${data.error}` : data.error));
-      else resolve(data.result);
-    };
-    w.onerror = () => {
-      finish();
-      reject(Error('Native export preparation could not run.'));
-    };
-    w.postMessage(data);
+    (async () => {
+      if (verifierExport) {
+        lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
+        w = lease.worker;
+      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-2', { type: 'module' });
+      if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
+      exportWorker = w;
+      w.onmessage = ({ data: reply }) => {
+        if (exportWorker !== w || abort.signal.aborted) return;
+        if (reply.warm) return;
+        if (reply.progress) {
+          setBusy(true, reply.progress);
+          return;
+        }
+        if (reply.result?.report && lease) reply.result.report.exportWarmup = {
+          prewarmed: lease.prewarmed, warmupMS: lease.warmupMS,
+        };
+        finish();
+        if (reply.error) reject(Error(reply.stage ? `${reply.stage}: ${reply.error}` : reply.error));
+        else {
+          resolve(reply.result);
+          if (verifierExport && raw?.nativeBuffer) void nativeExportWarmPool.prewarm();
+        }
+      };
+      w.onerror = w.onmessageerror = () => {
+        finish();
+        reject(Error('Native export preparation could not run.'));
+      };
+      w.postMessage(data);
+    })().catch(error => { finish(); reject(error); });
   });
 }
 async function exportMesh() {

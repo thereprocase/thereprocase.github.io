@@ -1,0 +1,49 @@
+{
+  "purpose": "Dedicated STEP export verifier; no ordinary model import changes",
+  "features": [
+    "Explicit17-significant-digit STEP writer, zero-suppression disabled",
+    "Pinned StepData_StepWriter Send(double)64-byte local buffer",
+    "Residual-certified analytic torus rectangle bound with pinned general AddOptimal fallback",
+    "Existing selective repair reader and strict validation semantics",
+    "Corrected owning destructors, mimalloc, bounded pthreadpool4"
+  ],
+  "inputHashes": {
+    "native-step-writer17.cpp": "233b909d2d1c4de1b632df06dc106aff990f9fb9f501384d45bdcf77342afeb5",
+    "StepData_StepWriter.cxx": "ac55121282e1c1d860a3ecc4966ed183b80ef8bce90d8429c0b148ba1825cb87",
+    "native-analytic-optimal-bounds.cpp": "da57a7f844ec8542bc5ed56c821679056805e93b1db69641c86a10c51026c93d",
+    "native-parallel-optimal-bounds.cpp": "aa378f8569d216f5cf104fa0adf73edadd690e127cf4f95487f06fcb7486e1dc",
+    "torus-rectangle.hxx": "e7dcfe6ffb978d85f4ce630e30f8bee2168a148e2cad53ef23620ebb1723c363",
+    "build.sh": "5d95f707abbad7cfb31fe453000a976c1d208a3b677a22f2c06f1202e8ebdad5",
+    "build-config/writer17_torus_verifier.yml": "0bd6744a19643e0a91efd59213893a1347ce34285f1937d8d0ccc2bf27a70104"
+  },
+  "generatedJSPatches": {
+    "originalJS_SHA256": "9bee47352faa9b98c00b50cd44820f3895bec8d170f788843b930a94c8f9efb1",
+    "patches": [
+      "Report created pthread through h.onPthreadWorker",
+      "Pool4 derivative bounds h.pthreadPoolSize1..4"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "/home/repro/occt-writer17-torus-audit/build-config/writer17_torus_verifier.js",
+      "sha256": "eec0763e3ffe6c4e2477b3ffb28d361fabe22c8d4342c79a4064ec6d62988e29",
+      "bytes": 69223
+    },
+    {
+      "path": "/home/repro/occt-writer17-torus-audit/build-config/writer17_torus_verifier_pool4.js",
+      "sha256": "45f10b61636cd0ed498e4c8201ec0e430f3ebca5beaf620feb5f727a824789fd",
+      "bytes": 69266
+    },
+    {
+      "path": "/home/repro/occt-writer17-torus-audit/build-config/writer17_torus_verifier.wasm",
+      "sha256": "79477510c543664107816a9eea318c08e678251a1601d6b9f26a73550e317200",
+      "bytes": 22531453
+    }
+  ],
+  "qualification": {
+    "smallKernel": "/home/repro/cup-writer17-torus-qualification/kernel-check.json",
+    "smallExport": "/home/repro/cup-writer17-torus-qualification/small/report.json",
+    "cup": "/home/repro/cup-writer17-torus-qualification/report.json",
+    "geometryEquivalence": "/home/repro/cup-writer17-torus-qualification/data-equivalence.json"
+  }
+}

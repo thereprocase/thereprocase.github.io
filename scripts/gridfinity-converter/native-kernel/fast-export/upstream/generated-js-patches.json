@@ -1,0 +1,7 @@
+{
+  "originalJS_SHA256": "9bee47352faa9b98c00b50cd44820f3895bec8d170f788843b930a94c8f9efb1",
+  "patches": [
+    "Report created pthread through h.onPthreadWorker",
+    "Pool4 derivative bounds h.pthreadPoolSize1..4"
+  ]
+}

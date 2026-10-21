@@ -1,0 +1,14 @@
+{
+  "publicFilesChanged": false,
+  "threadedCandidateWASM": "79477510c543664107816a9eea318c08e678251a1601d6b9f26a73550e317200",
+  "singleCandidateWASM": "febfd8038cb03abddcfe457d48c1112c45d2dc152f9567067f884d9b028bf667",
+  "threadedFreshCup": "passed unchanged native validation gates",
+  "stepDATAIdenticalToAuditedWriter17": true,
+  "readbackBREPIdenticalToAuditedWriter17": true,
+  "singleFullCup": "passed full general repair; STEP DATA/readback BREP byte-identical to audited threaded result",
+  "windowsPerformance": "014000 three fresh runs: conversion18.31\u201318.53s, six validSTEP exports17.90\u201319.13s; cancellation retry35.04s. Full workflow target incomplete; see windows-014000-qualification.json.",
+  "numericalProof": "not formal; pinned musl trig-envelope assumption remains explicit",
+  "privateModelsIncluded": false,
+  "compiledBinariesIncluded": false,
+  "releaseStatus": "Held; staged runtime remains011800 pending next candidate qualification."
+}

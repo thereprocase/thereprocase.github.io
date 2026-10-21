@@ -15,3 +15,5 @@ These files record the changes used by the private STEP export candidate. They d
 Acceptance still requires strict independent reopened validity, one positive-volume solid, source tolerance ceilings, and geometry-preservation checks. The full cup also received an independent pcurve/control-data/parameter-range comparison and tight adaptive volume comparison. A skipped-general-repair experiment failed validity and is excluded from this candidate.
 
 Windows build 234753 completed foot conversion in 17.61 seconds, base-pose STEP export in 33.40 seconds, and original-pose STEP export in 37.37 seconds in one fresh-process run. This evidence does not establish reliable exports under 20 seconds. Further optimization and repeated Windows qualification remain required.
+
+Current fast-export candidate sources and evidence are in `fast-export/`. It retains already-valid source curves, uses the 17-digit STEP writer and qualified analytic torus bounds, and reports the unchanged numerical acceptance allowances. See its Windows qualification file for stage times and total workflow time.

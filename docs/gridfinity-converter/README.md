@@ -118,7 +118,7 @@ Native mesh reads interpret C++ pointer returns as unsigned wasm32 addresses and
 
 App-generated STEP is independently reopened with a dedicated reader that preserves the writer's pcurves and parameter intervals. Imported models still use the standard CAD reader. The export reader requires valid source geometry, positive single-solid volume, and consistent edge parameterization; the reopened STEP must pass strict validity, volume, bounds and per-kind tolerance ceilings.
 
-On the threaded export path, selective processing omits two later SameParameter passes while retaining the earlier exact edge normalization and wire/face repairs. The pencil-cup readback is byte-for-byte identical to the independently audited full-repair readback. A rejected selective result is retried with a fresh reader and full repair. Native memory traps are terminal and never trigger another attempt on the damaged kernel. Single-thread export retains full repair.
+On the threaded export path, selective processing omits two later SameParameter passes and the redundant orientation repair while retaining the earlier exact edge normalization and wire/face repairs. The pencil-cup readback is byte-for-byte identical to the independently audited full-repair readback. A rejected selective result is retried with a fresh reader and full repair. Native memory traps are terminal and never trigger another attempt on the damaged kernel. Single-thread export retains full repair.
 
 A private source certificate binds previously verified validity and signed volume to the exact BREP bytes and selected kernel build. Proper rigid orientation changes can reuse these two metrics; bounds are recomputed in the requested pose. Missing or mismatched certificates retain the original checks. Imported metadata cannot supply this certificate.
 
@@ -126,6 +126,25 @@ Exact source bounds can run in a separate worker while the STEP writer and reade
 
 The native binding generator now releases owning wrappers for classes that declare both ordinary and placement delete. Corrected threaded model and verifier kernels use mimalloc; reports distinguish linear-memory capacity from current-thread allocation statistics. Ten consecutive Windows conversions passed after the ownership fix without the former multi-gigabyte capacity growth.
 
-This release uses the owner-tested import-fix build with guarded curve preparation. A Windows Ryzen 7 5800X3D / Edge 155 run completed preview in 0.65 seconds, import in 15.96 seconds, preparation in 21.91 seconds, conversion in 17.48 seconds, and STEP exports in 23.25/23.63 seconds. Both STEP poses passed independent reopen validation. These results do not establish reliable completion under 20 seconds.
+Already-valid sources with consistent edge parameters retain their original curves; invalid or inconsistent sources still use guarded preparation. The dedicated STEP writer uses 17 significant digits, preserving values that previously accumulated enough decimal-rounding error to trip the tolerance gate. Trimmed ring-torus bounds use analytic extrema with residual checks, an outward numerical allowance and generic fallback; the documented error budget depends on the pinned musl implementation.
+
+Build `native-step-20261021-2` matches private candidate 015800. Three fresh Windows Ryzen 7 5800X3D / Edge 155 flows and a separate ten-swap load passed: preview 0.58–0.66 seconds, preparation 17.55–18.12 seconds, conversion 15.40–18.79 seconds, and all nine STEP exports 16.41–17.88 seconds. Every STEP export passed independent reopening checks. Selection to converted remains about 36 seconds, with STEP export afterward. These are measurements on that machine, not a universal timing guarantee.
+
+Export reports state the unchanged acceptance rules: strict validity and one solid, per-kind tolerance no greater than source plus 1e-12 mm, bounds difference at most 1e-5 mm, and volume difference at most max(0.001 mm³, source volume × 1e-8). These are numerical checks with explicit allowances, not exact arithmetic. Single/full and threaded/selective readers produce the same independently audited cup BREP.
 
 Positive fit is limited to +0.20 mm per side; negative fit remains available to −0.50 mm. The supplied 3×4 solid passed all four styles at zero fit, including STEP exports. Its positive-fit variants passed native conversion and BREP validation but STEP translation was rejected by tolerance-preservation checks at +0.05, +0.10 and +0.20 mm. The UI exposes the rejection reason and retains validated BREP export.
+
+### Additional private qualification
+
+Private build `fast-export-20261021-014000` completed three fresh Windows conversions in 18.31–18.53 seconds and all six STEP exports in 17.90–19.13 seconds. Preparation completed 17.31–17.85 seconds after selection. The complete selection-to-converted path remains about 36 seconds, with STEP export afterward; these phase timings do not meet a sub-20-second complete-workflow target. Cancelling at 4.05 seconds allowed retry without choosing the file again, but retry took 35.04 seconds because native source preparation repeated.
+
+The earlier 011800 ten-swap run retained flat 1866 MB WASM capacity while current-thread allocated-block statistics increased 60.5→99.6 MB. This limited allocator statistic is not total-process live memory. The monotonic residue remains unexplained, so the run does not establish indefinite bounded memory. These results belong to separate private builds and do not qualify a later candidate automatically.
+
+The already-valid source path differs from the older repaired source by about 0.00064 mm³ because it preserves the original valid geometry instead of applying an unnecessary parameter reconstruction. Preservation and STEP checks use the new validated source as their reference. No byte-identical-to-the-old-result claim or relaxed validation threshold follows from that change.
+
+
+### Export startup and cancellation
+
+A fresh export verifier is warmed during conversion and consumed once. Source-bounds work acknowledges startup before synchronous parent work begins; its reply still requires matching source bytes, pose and kernel. A failed or late startup falls back to local bounds without dropping checks. Leaving the page cancels pending export promises and retires owned workers.
+
+Cancelling native conversion retains the input and settings, enabling retry without reselection. It currently discards the native worker and repeats source preparation; the preceding 014000 Windows recovery test took 35.04 seconds. Cooperative cancellation remains a separate, unpublished candidate. In the 015800 ten-swap run, capacity was 1734 MB then flat at 1866 MB, while current-thread live allocation grew from 60.3 to 99.4 MB. Remaining allocation residue is unresolved.

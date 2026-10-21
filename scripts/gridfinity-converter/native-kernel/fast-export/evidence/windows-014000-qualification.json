@@ -1,0 +1,51 @@
+{
+  "build": "fast-export-20261021-014000",
+  "source": "Quartet6667 plus diagnostics",
+  "freshRuns": [
+    {
+      "preview": 0.62,
+      "import": 16.7,
+      "prepared": 17.85,
+      "convert": 18.53,
+      "baseStep": 18.34,
+      "originalStep": 17.9
+    },
+    {
+      "preview": 0.62,
+      "import": 15.89,
+      "prepared": 17.31,
+      "convert": 18.35,
+      "baseStep": 18.47,
+      "originalStep": 19.13
+    },
+    {
+      "preview": 0.58,
+      "import": 16.18,
+      "prepared": 17.44,
+      "convert": 18.31,
+      "baseStep": 18.35,
+      "originalStep": 17.96
+    }
+  ],
+  "allStepsValid": true,
+  "primaryCapacityMB": 1734,
+  "cancelRecovery": {
+    "cancel": 4.05,
+    "retry": 35.04,
+    "step": 18.53,
+    "passed": true,
+    "requiresRepeatedSourcePrep": true
+  },
+  "goalComplete": false,
+  "remaining": "Reliable repeateduse + checkpoint recovery timing + deploy verified candidate",
+  "diagnosticSessions": [
+    "407a4c64-93e1-4098-816f-395b6ca95926",
+    "2d21a2a6-1e94-4c3a-86c9-57ab728fd224",
+    "75e9431f-78aa-40e5-a7d6-eb4dca05aa67"
+  ],
+  "recoveryDiagnosticSession": "2025a8c2-5375-4378-b584-baa227b8bcd1",
+  "timingUnits": "seconds",
+  "endToEnd": "Selection through preparation and conversion remains approximately36seconds; STEP adds approximately18\u201319seconds. Per-stage results do not establish a sub20second complete workflow.",
+  "runtimeStagedInThisWorktree": "fast-export-20261021-011800; not replaced by this documentation update",
+  "releaseDisposition": "Held pending next candidate qualification; no publish or commit performed."
+}

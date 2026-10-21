@@ -1,0 +1,84 @@
+{
+  "build": "fast-export-20261021-011800",
+  "hardware": "AMD Ryzen7 5800X3D, Windows11 Balanced, Edge155, idle host",
+  "freshRuns": [
+    {
+      "importSeconds": 15.94,
+      "preparedSeconds": 17.25,
+      "convertSeconds": 18.29,
+      "baseStepSeconds": 19.14,
+      "originalStepSeconds": 18.97
+    },
+    {
+      "importSeconds": 16.5,
+      "preparedSeconds": 17.74,
+      "convertSeconds": 18.4,
+      "baseStepSeconds": 19.84,
+      "originalStepSeconds": 18.83
+    },
+    {
+      "importSeconds": 16.0,
+      "preparedSeconds": 17.29,
+      "convertSeconds": 18.13,
+      "baseStepSeconds": 18.84,
+      "originalStepSeconds": 19.08
+    }
+  ],
+  "repeatedCycles": {
+    "convertSeconds": [
+      18.17,
+      15.57,
+      16.18,
+      15.48
+    ],
+    "baseStepSeconds": [
+      19.33,
+      19.14,
+      19.04,
+      19.05
+    ]
+  },
+  "allNativeValid": true,
+  "allStepRoundTripValid": true,
+  "outsideChange": 0,
+  "source": "Quartet relay6657 and6661, matching private diagnostic sessions79fd5b21/9488c620/21b7dd3f",
+  "durability": {
+    "swapsSeconds": [
+      18.85,
+      16.69,
+      18.19,
+      15.94,
+      17.51,
+      16.58,
+      16.94,
+      16.44,
+      17.26,
+      16.59
+    ],
+    "baseStepSeconds": [
+      19.05,
+      20.24,
+      19.16
+    ],
+    "allConversionsPass": true,
+    "allExportsValid": true,
+    "capacityMB": 1866,
+    "capacityFlat": true,
+    "cancelRetryWithoutReload": false,
+    "previewSeconds": 0.66,
+    "currentThreadLiveBlockBytesMB": {
+      "start": 60.5,
+      "end": 99.6,
+      "approximateIncreasePerSwap": 4.3,
+      "source": "Quartet6663, build011800; not014000",
+      "interpretation": "Current-thread allocator statistic, not total process live memory. Monotonic residue unresolved despite flat capacity; ten successful swaps do not prove indefinite bounded memory."
+    }
+  },
+  "endToEnd": "Selection to converted about35.5\u201336s, then about19s per STEP export; stage target is not total-workflow target.",
+  "initialPreviewsSeconds": [
+    0.62,
+    0.61,
+    0.59
+  ],
+  "releaseStatus": "HELD: one of13 exports exceeds20s; UIcancel disablesretry pendingfix."
+}

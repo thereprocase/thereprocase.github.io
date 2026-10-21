@@ -1,0 +1,18 @@
+{
+  "pose": "base-down",
+  "nativeKernel": {
+    "engine": "single",
+    "threads": 1,
+    "purpose": "step-export-verifier"
+  },
+  "nativeValid": true,
+  "nativeExportFormat": "step",
+  "stepRoundTripValid": true,
+  "brepRoundTripValid": false,
+  "sourceCertificateReused": false,
+  "stepRepairPolicy": "full",
+  "stepRepairRetried": false,
+  "stepWriterPrecision": 0.00595871734215187,
+  "stepSurfaceCurves": "preserved",
+  "originalPoseExportReused": false
+}

@@ -1,5 +1,5 @@
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-1';
-import { properRigidPose } from './native-source-certificate.js?v=native-step-20261021-1';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-2';
+import { properRigidPose } from './native-source-certificate.js?v=native-step-20261021-2';
 export async function boundsInputIdentity(buffer,pose){
  if(!(buffer instanceof ArrayBuffer)||!properRigidPose(pose))throw Error('Invalid bounds request.');
  const digest=await crypto.subtle.digest('SHA-256',buffer);
@@ -11,17 +11,30 @@ export function validateBoundsReply(reply,input,kernelInfo){
  return b;
 }
 export function startParallelSourceBounds({buffer,transform:pose},onProgress){
- let child,settled=false,timer,resolve;const started=performance.now();
- const result=new Promise(r=>resolve=r);
+ let child,settled=false,timer,startTimer,resolve,resolveStarted,startSettled=false;
+ const parentStartedAtMS=performance.timeOrigin+performance.now(), began=performance.now();
+ const result=new Promise(r=>resolve=r), started=new Promise(r=>resolveStarted=r);
  const report=(...args)=>{try{onProgress(...args);}catch{/* Diagnostic observers cannot disrupt worker cleanup. */}};
- const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);child?.terminate();resolve(value);};
+ const markStarted=value=>{if(startSettled)return;startSettled=true;clearTimeout(startTimer);resolveStarted(value);};
+ const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);clearTimeout(startTimer);child?.terminate();markStarted(value);resolve(value);};
  try{
-  child=new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-1',import.meta.url),{type:'module'});
-  child.onmessage=({data})=>{const payload=data&&typeof data==='object'?data:{error:'Malformed bounds worker response'};try{report('Parallel source bounds finished…',{diagnostic:'parallel-source-bounds',...payload.result?.timings,capacityBytes:payload.result?.capacityBytes,error:payload.error,totalMS:performance.now()-started});}finally{finish(payload.result?{value:payload.result}:{error:payload.error||'Missing bounds result'});}};
+  child=new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-2',import.meta.url),{type:'module'});
+  child.onmessage=({data})=>{
+   if(settled)return;
+   const payload=data&&typeof data==='object'?data:{error:'Malformed bounds worker response'};
+   if(payload.type==='started'){
+    if(!Number.isFinite(payload.childStartedAtMS)){finish({error:'Invalid bounds startup acknowledgment'});return;}
+    report('Parallel source bounds started…',{diagnostic:'parallel-source-bounds',stage:'started',parentStartedAtMS,childStartedAtMS:payload.childStartedAtMS,parentAckAtMS:performance.timeOrigin+performance.now(),startupWaitMS:performance.now()-began});
+    markStarted({ready:true,childStartedAtMS:payload.childStartedAtMS});return;
+   }
+   try{report('Parallel source bounds finished…',{diagnostic:'parallel-source-bounds',...payload.result?.timings,childTotalMS:payload.result?.timings?.totalMS,childStartedAtMS:payload.childStartedAtMS,childFinishedAtMS:payload.childFinishedAtMS,parentStartedAtMS,parentReceivedAtMS:performance.timeOrigin+performance.now(),capacityBytes:payload.result?.capacityBytes,error:payload.error,parentTotalMS:performance.now()-began});}
+   finally{finish(payload.result?{value:payload.result}:{error:payload.error||'Missing bounds result'});}
+  };
   child.onerror=e=>finish({error:e.message||'Bounds worker failed'});child.onmessageerror=()=>finish({error:'Bounds worker response unreadable'});
   const copy=buffer.slice(0);child.postMessage({buffer:copy,pose},[copy]);
   timer=setTimeout(()=>finish({error:'Bounds worker timed out'}),120000);
-  report('Computing source bounds in parallel…',{diagnostic:'parallel-source-bounds',stage:'start',inputBytes:buffer.byteLength});
+  startTimer=setTimeout(()=>finish({error:'Bounds worker startup timed out'}),3000);
+  report('Computing source bounds in parallel…',{diagnostic:'parallel-source-bounds',stage:'start',parentStartedAtMS,inputBytes:buffer.byteLength});
  }catch(e){finish({error:e.message});}
- return {result,cancel:()=>finish({error:'Bounds task cancelled'})};
+ return {result,started,cancel:()=>finish({error:'Bounds task cancelled'})};
 }

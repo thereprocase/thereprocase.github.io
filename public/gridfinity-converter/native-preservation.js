@@ -1,4 +1,4 @@
-import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-1';
+import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-2';
 /** Exact boundary comparison outside a convex box; meshes never participate. */
 export function nativeFaces(oc, cad, shape) {
   const explorer = new oc.TopExp_Explorer(shape.wrapped,

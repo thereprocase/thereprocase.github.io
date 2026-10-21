@@ -14,7 +14,7 @@ function presentation(data) {
   const promise = new Promise((resolve, reject) => {
     if (!worker) {
       worker = new Worker(
-        new URL('./render-geometry-worker.js?v=native-step-20261021-1', import.meta.url),
+        new URL('./render-geometry-worker.js?v=native-step-20261021-2', import.meta.url),
         { type: 'module' },
       );
       const createdWorker = worker;

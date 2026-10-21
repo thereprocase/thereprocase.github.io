@@ -19,5 +19,5 @@
       "patchedSha256": "834854125e4b1a033d624ec614e6f67e0ac12d6c72718bec65c26b5dd4eaa6a5"
     }
   },
-  "status": "Released with guarded curve-consistency preparation; default-fit 3x4 model and pencil-cup conversion and STEP round trips validated. Experimental valid-first preparation is excluded."
+  "status": "Exact model reader retained; valid-first source preparation qualified with the precise17-digit dedicated export verifier. See fast-export bundle for runtime source, numerical assumptions and Windows qualification."
 }

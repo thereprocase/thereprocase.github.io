@@ -116,12 +116,12 @@ try {
     if (r.exceptionDetails) throw Error(JSON.stringify(r.exceptionDetails));
     return r.result.value;
   };
-  const ready = async () => {
+  const ready = async (startup = false) => {
     for (let i = 0; i < 900; i++) {
       await pause(100);
-      const state = await evaluate(
-        "({busy:document.body.dataset.busy,status:document.getElementById('status')?.textContent})",
-      );
+      let state;
+      try { state = await evaluate("({busy:document.body?.dataset.busy,status:document.getElementById('status')?.textContent})"); }
+      catch(error) { if(startup && /context|target navigated/.test(error.message))continue;throw error; }
       if (state.busy === 'false') {
         if (/failed|could not|not a closed|invalid/i.test(state.status))
           throw Error(state.status);
@@ -130,7 +130,7 @@ try {
     }
     throw Error('Timeout');
   };
-  await ready();
+  await ready(true);
   await evaluate('document.fonts.ready.then(() => true)');
   const startsWithModel = await evaluate(
     "document.querySelector('[aria-current=step]').dataset.stage==='1' && document.getElementById('file-state').textContent==='No model selected' && document.querySelectorAll('#feet tr').length===0 && document.getElementById('convert').disabled && document.getElementById('workflow-action').textContent==='Choose your model…'",

@@ -1,0 +1,130 @@
+{
+  "build": "fast-export-20261021-015800",
+  "release": "native-step-20261021-2",
+  "source": "Quartet6673 timings; independently checked diagnostic reports",
+  "hardware": "Ryzen7 5800X3D / Windows11 / Edge155",
+  "freshRuns": [
+    {
+      "preview": 0.66,
+      "import": 16.3,
+      "prepared": 17.55,
+      "convert": 18.41,
+      "baseSTEP": 16.72,
+      "originalSTEP": 17.47
+    },
+    {
+      "preview": 0.63,
+      "import": 16.68,
+      "prepared": 17.96,
+      "convert": 18.79,
+      "baseSTEP": 17.88,
+      "originalSTEP": 16.41
+    },
+    {
+      "preview": 0.58,
+      "import": 16.95,
+      "prepared": 18.12,
+      "convert": 18.15,
+      "baseSTEP": 17.56,
+      "originalSTEP": 17.17
+    }
+  ],
+  "repeatedSwaps": [
+    18.41,
+    15.53,
+    16.9,
+    15.4,
+    16.9,
+    17.26,
+    16.76,
+    16.46,
+    16.85,
+    16.39
+  ],
+  "repeatedSTEP": [
+    17.13,
+    16.46,
+    17.53
+  ],
+  "diagnostics": [
+    {
+      "session": "5240eb64-d87b-462d-bb2f-b598b2a46757",
+      "conversions": 1,
+      "exports": [
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        },
+        {
+          "pose": "original",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        }
+      ],
+      "diagnosticsSHA256": "8092862c0990c73b98e7d35ededf22584e08605c7b0aa00bdda66f43bd59c92d"
+    },
+    {
+      "session": "1d22ea65-d867-4e76-9e76-592876a7c596",
+      "conversions": 1,
+      "exports": [
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        },
+        {
+          "pose": "original",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        }
+      ],
+      "diagnosticsSHA256": "84dd580aa5a171f08347667cfdc03a2e4019ec0f123e03b5d2fb5d5c02974a60"
+    },
+    {
+      "session": "29c20723-007e-497b-89a0-fe1ae41fd187",
+      "conversions": 1,
+      "exports": [
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        },
+        {
+          "pose": "original",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        }
+      ],
+      "diagnosticsSHA256": "4e6f39b1516e32f04220b4c727c01fa38d600e100b391930d55833c4fe41f2aa"
+    },
+    {
+      "session": "b407ff46-c3c0-47f9-b642-f697af860ad6",
+      "conversions": 10,
+      "exports": [
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        },
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        },
+        {
+          "pose": "base-down",
+          "nativeValid": true,
+          "stepRoundTripValid": true
+        }
+      ],
+      "diagnosticsSHA256": "eb1e53f69b57e322da72320068577a829c826cc7e5d52ce06fb3cd157ff7f7ca"
+    }
+  ],
+  "limitations": [
+    "Selection to converted about36s, STEP additional",
+    "Cancel retry rebuilds source; preceding014000 measured35.04s",
+    "Live current-thread allocation60.3 to99.4MB over10swaps; capacity1734 then1866MBflat",
+    "No universal hardware timing guarantee"
+  ]
+}

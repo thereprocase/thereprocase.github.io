@@ -1,0 +1,25 @@
+{
+  "scope": "Isolated verifier-only analytic ring-torus rectangular bounds, generic fallback preserved",
+  "pinnedSourceSHA256": "6b4985eb864a1f1a1783d831d7cf6529579530d9a761859a9c3d88e7cc9d7b7f",
+  "files": {
+    "torus-proof.txt": "a384b8f40982824c780d6a3d9011e69be83fa695a47df9a54d39e4505e25ca9d",
+    "native-parallel-optimal-bounds.cpp": "aa378f8569d216f5cf104fa0adf73edadd690e127cf4f95487f06fcb7486e1dc",
+    "torus-rectangle.hxx": "e7dcfe6ffb978d85f4ce630e30f8bee2168a148e2cad53ef23620ebb1723c363",
+    "native-analytic-optimal-bounds.cpp": "da57a7f844ec8542bc5ed56c821679056805e93b1db69641c86a10c51026c93d"
+  },
+  "libmSourceSHA256": {
+    "__rem_pio2.c": "938329e0939cd83ee2185a52154b41242f618d4a6df1b08395f344da33d4f1e6",
+    "__cos.c": "3f0f774aab60a18d7ef935ffdf121bcda17cbadabff14096c614da22e31a42c1",
+    "__sin.c": "f3a37ef9bcfb8a2f9c809d8c7f1aa2c17c8c3319ad7fb2fe7c0a6284ea8859d2",
+    "atan.c": "1cffb67a65456ae0bc5f07a94df04a4f18ebc1ac0bffe3219250c4e0555ee01d",
+    "atan2.c": "a5f94b09b10b4e72bb15d94ae403c9dfd27d7ad881ecd729000004429acfca63",
+    "cos.c": "3a74e054057d636fa494bdd76a53a40db5cee618264f6ab31cb0538ba63c6bda",
+    "sin.c": "24e53a9d85f196f66919cc19247be5480bb607ef38844b1a24bc47c4fe4974ef"
+  },
+  "evidence": [
+    "analytic-fixtures-final.jsonl",
+    "torus-oracle-result.json",
+    "profile-torus-stages-final.jsonl"
+  ],
+  "pending": "Native final gates passed. WASM single/pthread qualification and Windows timing remain pending; not deployed."
+}

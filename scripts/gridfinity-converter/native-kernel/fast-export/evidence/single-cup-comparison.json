@@ -1,0 +1,24 @@
+{
+  "sameStepDATA": true,
+  "dataSHA256": "47ac61b2e5b91a1082a43b9bb7afe4338ebd078e139406897965f9769b6078d7",
+  "sameReadbackBREP": true,
+  "readbackSHA256": "d7d3e0d590119a307e8e9f0918e683b7d8554aabc0a44482b054a67067e5f0e9",
+  "report": {
+    "pose": "base-down",
+    "nativeKernel": {
+      "engine": "single",
+      "threads": 1,
+      "purpose": "step-export-verifier"
+    },
+    "nativeValid": true,
+    "nativeExportFormat": "step",
+    "stepRoundTripValid": true,
+    "brepRoundTripValid": false,
+    "sourceCertificateReused": false,
+    "stepRepairPolicy": "full",
+    "stepRepairRetried": false,
+    "stepWriterPrecision": 0.00595871734215187,
+    "stepSurfaceCurves": "preserved",
+    "originalPoseExportReused": false
+  }
+}

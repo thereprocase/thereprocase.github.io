@@ -1,0 +1,88 @@
+{
+  "sourceVolume": {
+    "stage": "adaptive-volume-tight",
+    "name": "valid-first-source",
+    "path": "/home/repro/cup-valid-first-qualification/outer-pencil-cup.step.magnets.0.brep",
+    "sha256": "000ac6da040b75ae623a64aa55a1d97fc2538eb9838ab6adf91f5d6c9e595a76",
+    "volume": 69129.15603725334,
+    "relativeError": 2.3215506275022285e-11,
+    "seconds": 144.92536234855652
+  },
+  "readbackVolume": {
+    "stage": "adaptive-volume-tight",
+    "name": "valid-first-writer17-selective-readback",
+    "path": "/home/repro/cup-valid-first-qualification/writer17/selective.brep",
+    "sha256": "d7d3e0d590119a307e8e9f0918e683b7d8554aabc0a44482b054a67067e5f0e9",
+    "volume": 69129.15603725205,
+    "relativeError": 2.3218969396823563e-11,
+    "seconds": 105.7212598323822
+  },
+  "volumeDelta": -1.2951204553246498e-09,
+  "pcurveAudit": {
+    "stage": "direct-double-pcurve-parameters",
+    "contexts": 40468,
+    "curveTypes": {
+      "Geom2d_Line": 31758,
+      "Geom2d_BSplineCurve": 5562,
+      "Geom2d_Circle": 3148
+    },
+    "unsupported": {},
+    "periodShifted": 401,
+    "maxCurveParameterDifference": 1.4210854715202004e-14,
+    "maxRangeDifference": 5.300648808770347e-12,
+    "badCount": 0,
+    "badExamples": [],
+    "note": "All control points/weights/knots or analytic parameters compared, allowing only a single integer periodic surface translation per curve. This is a numerical representation check, not symbolic exact equality."
+  },
+  "surfaceAudit": {
+    "stage": "direct-surface-parameters",
+    "faces": 7924,
+    "types": {
+      "GeomAbs_SurfaceType.GeomAbs_BSplineSurface": 1362,
+      "GeomAbs_SurfaceType.GeomAbs_Cylinder": 3254,
+      "GeomAbs_SurfaceType.GeomAbs_Plane": 1728,
+      "GeomAbs_SurfaceType.GeomAbs_Torus": 1544,
+      "GeomAbs_SurfaceType.GeomAbs_Cone": 36
+    },
+    "maxDifference": 2.220446049250313e-16,
+    "badCount": 0,
+    "badExamples": [],
+    "note": "All analytic surface parameters or spline poles, weights, knots and multiplicities compared in located coordinates; numerical rather than symbolic equality."
+  },
+  "topologyMetrics": [
+    {
+      "path": "/home/repro/cup-valid-first-qualification/outer-pencil-cup.step.magnets.0.brep",
+      "solids": 1,
+      "faces": 7924,
+      "edges": 20246,
+      "vertices": 12242,
+      "maxTolerances": {
+        "TopAbs_ShapeEnum.TopAbs_FACE": 1e-07,
+        "TopAbs_ShapeEnum.TopAbs_EDGE": 0.00595871734215187,
+        "TopAbs_ShapeEnum.TopAbs_VERTEX": 0.00595871734215187
+      }
+    },
+    {
+      "path": "/home/repro/cup-valid-first-qualification/writer17/selective.brep",
+      "solids": 1,
+      "faces": 7924,
+      "edges": 20246,
+      "vertices": 12242,
+      "maxTolerances": {
+        "TopAbs_ShapeEnum.TopAbs_FACE": 1e-07,
+        "TopAbs_ShapeEnum.TopAbs_EDGE": 0.00595871734216373,
+        "TopAbs_ShapeEnum.TopAbs_VERTEX": 0.00595871734216373
+      }
+    }
+  ],
+  "stepArtifact": {
+    "path": "/home/repro/cup-valid-first-qualification/writer17/selective.step",
+    "bytes": 51338512,
+    "sha256": "d8f168a36c67f4a4c21f17bcbe5f4c16ba4699a8c026d1adf75bc9cbce3b4a42"
+  },
+  "limitations": [
+    "GK estimates are not rigorous error bounds.",
+    "All analytic/control-data/range comparisons are numerical, not symbolic equality."
+  ],
+  "nativeValidation": "Dedicated export worker separately passed strict validity, single solid, default volume/bounds/tolerance gates without threshold relaxation."
+}

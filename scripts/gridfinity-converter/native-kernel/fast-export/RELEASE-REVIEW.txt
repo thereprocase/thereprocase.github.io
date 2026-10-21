@@ -1,0 +1,28 @@
+Release review, 2026-10-21
+
+Disposition
+Runtime now matches qualified private015800, normalized only for public cache token and omission of private diagnostics. Source evidence windows-015800-qualification.json records13 successful conversions and9 independently valid STEP exports. Cancellation retry still repeats preparation; cooperative recovery and vendor ownership follow-ups are excluded. Final public/docs consistency, browser regression and deployed-hash checks remain release gates.
+
+Performance and recovery
+Quartet 6667 and the named private diagnostic sessions support three fresh 014000 runs. Conversion 18.31–18.53 s and six valid STEP exports 17.90–19.13 s meet the stage target in those samples. Selection through preparation plus conversion remains approximately 36 s; export is additional. Cancellation recovery succeeds without reselecting the model, but its 35.04 s retry includes repeated preparation and misses 20 s. These facts do not support marking the complete-workflow goal achieved.
+
+The separate 011800 ten-swap run had flat 1866 MB primary WASM capacity but current-thread liveBlockBytes increased 60.5→99.6 MB. This is a scoped allocator counter, not total live memory. The remaining roughly 4.3 MB/swap increase is unresolved. Do not call this indefinite plateau or attribute the old series to 014000. Its thirteen-export matrix also included 20.24 s; the newer six-export sample does not erase that historical result.
+
+Numerical qualification
+The unchanged acceptance gates are strict native validity, one solid, per-kind tolerance <= source+1e-12mm, each bound coordinate within1e-5mm, and volume difference <= max(0.001mm3, sourceVolume*1e-8). Writer17 addresses decimal serialization error; it does not relax the gates.
+
+Analytic ring-torus bounds depend on the pinned Emscripten5.0.1 musl nearly-rounded sin/cos contract interpreted with a 64eps envelope, ordinary IEEE arithmetic, residual-certified atan2 candidates, bounded angle/conditioning domain, outward padding and generic fallback. No fast-math flag is used. The 96-case 90-digit oracle and actual WASM cases support this engineering error budget; they are not a formal floating-point proof or universal-libm guarantee. Exact AddOptimal bit identity is not claimed for all surfaces. Source geometry is unchanged by the bounds helper.
+
+Valid-first preparation preserves a strictly valid, consistently parameterized imported source instead of reconstructing its pcurves unnecessarily. The resulting converted body differs from the previous guarded-preparation baseline by about 0.00064 mm3. The correct export comparison is against the current validated source; the new single/full and threaded/selective readbacks are byte-identical to the independently audited new body. Do not conflate this baseline change with the roughly 1e-9 mm3 STEP serialization/readback delta or claim identity with the old body.
+
+Artifact audit
+- Staged changes are confined to converter runtime, documentation and converter build/evidence scripts; no unrelated project paths were found.
+- Public/docs WASM bytes match. Keep raw threaded JS alongside pool4 JS: pthread self-loading requires the raw basename, so it is not unused.
+- Three legacy kernels are no longer referenced by application JS: vendor/export-verifier/destructor_fixed_single_verifier.wasm, vendor/export-verifier/step_selective_verifier.wasm, and vendor/replicad/replicad_single.wasm. Their JS companions remain too. These total 68,446,950 WASM bytes per public/docs tree, about 136.9 MB duplicated. They are historical tracked assets, not newly introduced private data. They can be removed only with corresponding manifests/hash tables/documentation updated and import/fallback checks; this review did not delete runtime files.
+- Source bundle includes unused allocator wrappers for the opposite build configuration. They are small provenance inputs; not a runtime dependency. Removing them is optional cleanup, not a correctness gate.
+- No private STEP/BREP model was added to the source/evidence bundle. Evidence contains local path labels and hashes, not geometry contents.
+
+Reproducibility
+Pinned images, OCCT patches, custom sources, selected-object hashes, linker flags, allocator choices and JS patching are recorded. The build-reference scripts are historical references that consume corrected-binding and reader-object caches; they are not a turnkey clean-checkout bootstrap. README describes regeneration from pinned images, but a clean-cache rebuild has not been reproduced from this packaged bundle. A reproducibility claim should retain that limitation. In particular, rebuild reader objects with the patched ShapeAnalysis header first, true single/pthread flags respectively, and compile the threaded native-step-processing/mimalloc-diagnostics objects before linking. The source bundle has no opaque new CAD library dependency.
+
+The previous checksum file omitted windows-qualification.json added after the source bundle. This review regenerated SHA256SUMS to cover every current bundled file except itself, including both historical 011800 and newer 014000 qualification summaries. Regenerate it again if any evidence or source changes during final assembly.

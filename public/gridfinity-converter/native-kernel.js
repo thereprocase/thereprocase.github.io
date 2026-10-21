@@ -21,7 +21,7 @@ export async function initNativeKernel({purpose='model'} = {}) {
     try {
       const attempt = (async () => {
         const { default: initMulti } =
-          await import(verifier ? './vendor/export-verifier/step_selective_verifier_pool4.js' : './vendor/replicad/model_exact_multi_pool4.js');
+          await import(verifier ? './vendor/export-verifier/writer17_torus_verifier_pool4.js' : './vendor/replicad/model_exact_multi_pool4.js');
         return initMulti({
           pthreadPoolSize: threads,
           onPthreadWorker: (worker) => {
@@ -61,7 +61,7 @@ export async function initNativeKernel({purpose='model'} = {}) {
       fallbackReason = error.message ?? String(error);
     }
   }
-  const initializeSingle = verifier ? (await import('./vendor/export-verifier/destructor_fixed_single_verifier.js')).default : initSingle;
+  const initializeSingle = verifier ? (await import('./vendor/export-verifier/analytic_writer17_single_verifier.js')).default : initSingle;
   const oc = await initializeSingle();
   runtime.set(oc, {
     engine: 'single',

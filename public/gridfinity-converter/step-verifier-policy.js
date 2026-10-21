@@ -49,7 +49,7 @@ export async function writeVerifierSTEP(oc, shape, precision) {
     return await withStepWriterPolicy(oc,{surfaceCurves:1,precision},()=>{
       const transferred=writer.Transfer(shape,oc.STEPControl_StepModelType.STEPControl_AsIs,true,progress);
       if(transferred!==oc.IFSelect_ReturnStatus.IFSelect_RetDone)throw Error('STEP export changed the source representation during transfer. Export blocked.');
-      if(writer.Write(filename)!==oc.IFSelect_ReturnStatus.IFSelect_RetDone)throw Error('STEP export changed the source representation during write. Export blocked.');
+      if(oc.nativeWriteStep17(writer,filename)!==oc.IFSelect_ReturnStatus.IFSelect_RetDone)throw Error('STEP export changed the source representation during write. Export blocked.');
       return new Blob([oc.FS.readFile(filename)],{type:'application/STEP'});
     });
   } finally {

@@ -1,0 +1,11 @@
+--- a/src/DataExchange/TKDESTEP/StepData/StepData_StepWriter.cxx
++++ b/src/DataExchange/TKDESTEP/StepData/StepData_StepWriter.cxx
+@@ -900,7 +900,7 @@
+ void StepData_StepWriter::Send(const double val)
+ {
+   //    Floating point value, cleaned of trailing "0000" and "E+00"
+-  char lval[24] = {};
++  char lval[64] = {};
+   int  lng      = thefloatw.Write(val, lval);
+   AddParam();
+   AddString(lval, lng); // handles specific format: if needed

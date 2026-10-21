@@ -1,0 +1,47 @@
+{
+  "images": {
+    "threaded": "ghcr.io/taucad/opencascade.js@sha256:5cb67064edc903ae50c254e32417da9662fa88ec2e734386c28a3806949862ce",
+    "single": "ghcr.io/taucad/opencascade.js@sha256:215198af0e2ca4c5f308e5540869f2419784dc290062d3eb03d34e4f22e0188c"
+  },
+  "emscripten": "5.0.1",
+  "baseWriterSHA256": "62ec22515889598e62561a21689485b27e94ac3083930a263a5fd92ec2a91195",
+  "patchedWriterSHA256": "ac55121282e1c1d860a3ecc4966ed183b80ef8bce90d8429c0b148ba1825cb87",
+  "allocators": {
+    "threaded": "mimalloc",
+    "single": "dlmalloc"
+  },
+  "singlePolicy": "Existing full general repair, no selective override",
+  "threadedPolicy": "Existing selective reader with full-repair fallback enforced in JS",
+  "requiredExternalCompiledCaches": {
+    "threadedCorrectedBindings": "/home/repro/occt-destructor-audit/repaired-objects",
+    "singleCorrectedBindings": "/home/repro/occt-destructor-single-audit/repaired-objects",
+    "threadedReaderObjects": "/home/repro/occt-reader-range-preserve/out-multi",
+    "singleReaderObjects": "/home/repro/occt-destructor-single-verifier/out-single"
+  },
+  "artifactsNotIncluded": {
+    "threaded": {
+      "js": {
+        "name": "writer17_torus_verifier.js",
+        "sha256": "eec0763e3ffe6c4e2477b3ffb28d361fabe22c8d4342c79a4064ec6d62988e29",
+        "bytes": 69223
+      },
+      "wasm": {
+        "name": "writer17_torus_verifier.wasm",
+        "sha256": "79477510c543664107816a9eea318c08e678251a1601d6b9f26a73550e317200",
+        "bytes": 22531453
+      }
+    },
+    "single": {
+      "js": {
+        "name": "analytic_writer17_single_verifier.js",
+        "sha256": "2eabdb19356bcfef3e1885d7aa5d29fba4a434fdaab5899ee707ff277f1a3fa6",
+        "bytes": 60560
+      },
+      "wasm": {
+        "name": "analytic_writer17_single_verifier.wasm",
+        "sha256": "febfd8038cb03abddcfe457d48c1112c45d2dc152f9567067f884d9b028bf667",
+        "bytes": 22963499
+      }
+    }
+  }
+}

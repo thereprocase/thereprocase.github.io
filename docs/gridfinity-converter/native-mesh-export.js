@@ -1,6 +1,6 @@
-import { nativeMeshExport } from './native-cad.js?v=native-step-20261021-1';
+import { nativeMeshExport } from './native-cad.js?v=native-step-20261021-2';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import { importSolid, meshData, checkMesh } from './kernel.js?v=native-step-20261021-1';
+import { importSolid, meshData, checkMesh } from './kernel.js?v=native-step-20261021-2';
 /** Build the original-quality export mesh and independently check connectivity. */
 export async function runNativeMeshExport(data) {
   const result = await nativeMeshExport(data);
