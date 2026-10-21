@@ -1,0 +1,104 @@
+P1S USB light riser — 12 mm LED strip variant — Draft 11
+
+Use this kit together: 12 mm LED frame, 14.3 mm tall diffusers.
+Glass-seat height: 34 mm above the original seat; overall lip height: 36.5 mm.
+Do not mix frames and diffusers from different strip-width kits.
+The 24 keepers and rear cable plug are shared across all three sizes.
+Nominal tape thickness is 0.8 mm. Verify your strip, connector and cut pitch.
+Lower support ramps are 30 degrees from vertical / 60 degrees above the bed.
+Upper roof, receiver and mating geometry are retained; supports are still needed.
+
+Feed the power cable through the rear tunnel before fitting diffusers and the removable plug. The rear diffuser obstructs the connector insertion envelope once installed.
+
+Draft 10: LED channel clearance corrected. See clearance/ for reference checker solids; do not print them.
+
+P1S USB light riser — Draft 09, PETG
+
+PRINT THE COUPONS FIRST
+Use fit-coupon-keeper, fit-coupon-diffuser, one retaining-peg-print,
+fit-coupon-joint-side and fit-coupon-joint-corner. The keeper coupon is
+an actual 24 mm section of the frame. Check support removal, quarter-turn
+feel and the 0.15 mm-per-side glue joint before the full frame.
+The keys should slide home until the broad shoulders meet, without force.
+Clean first-layer flare from the keys if necessary; do not shorten the stops.
+Try the vase-diffuser-coupon in white PETG to judge transmission and trimming.
+
+FRAME AND KEEPERS
+0.4 mm nozzle, 0.2 mm layers, 3 walls, 15% rectilinear infill.
+Print each frame upright, original seating face on the bed. Do not auto-orient.
+The overlapping roof seat and receiver details REQUIRE supports in this orientation.
+The checked recipe uses normal automatic supports, 40-degree threshold,
+0.4 mm XY clearance, 0.25 mm top/bottom gap, 3 top interface layers,
+0.5 mm interface spacing, 60 mm/s support and 40 mm/s interface speed.
+Supports may start on the part. Critical-only and remove-small-overhang
+options are OFF. The recipe uses PETG for both part and supports.
+Remove supports while each frame piece is separate, before glue-up. The
+inner channel and open-topped receiver wells provide access. Check each
+well with one keeper; do not glue the frame until all 24 work freely.
+Use retaining-peg-print (flat-sided orientation) for all 24 keepers.
+Use rear-cable-plug-print with its flange on the bed. Its open-bottom,
+rounded cable notch fits a provisional 3.6 mm cable; two 3 mm holes accept
+a small cable tie around the lead. Check the real cable before tightening.
+
+The audit used the owner's regular Polymaker PETG profile, with retraction
+guards OFF and XY shrink compensation temporarily at 100% for dimensional
+inspection. It does not replace the calibrated material profile. The audit
+is not a printer-ready job: select the actual filament, plate and calibrated
+compensation when preparing a print. No printer or stored profile changed.
+
+DIFFUSERS
+Eight straight strips: four 125.85 x 10.3 x 0.6 mm and four 109.85 x 10.3 x
+0.6 mm. The -flat files are the flat-print option.
+Vase alternative: print TWO vase-diffuser-front-back sleeves and TWO
+vase-diffuser-sides sleeves. Each yields two strips after cutting off the
+round returns at their tangent points. Print FOUR vase-corner-diffuser
+blanks, one at a time in spiral vase mode.
+Vase recipe: 0.2 mm layers, 0.6 mm wall, 25 mm/s outer wall, no infill,
+no top or bottom, no supports, 3 mm outside brim with zero brim gap.
+Snip the returns, then the brim. On the corner blanks, shallow witness
+grooves mark the upper and lower cut lines; trim down their centres.
+The corner back surface follows the actual twisted seat. Horizontal bead
+width is 0.6 mm; normal thickness varies about 0.544–0.600 mm with tilt.
+The upper 1.3 mm laps the sloped roof seat; the raised cam bears opposite
+this face. The assembled CAD shows nominal 0.6 mm diffusers. Physical fit and optical
+appearance remain to be checked; start with a single corner and keeper.
+
+PARTS
+1 each: front, back, left, right, front-left, front-right, rear-left,
+rear-right. 24 retaining-peg-print. 1 rear-cable-plug-print.
+4 corner diffuser pieces and 8 straight diffuser strips.
+Assembly-pose files are references; use the explicit -print or -flat files
+where supplied. Print vase blanks only with the vase recipe above.
+
+ASSEMBLY
+1. Remove supports and try the keys, all receivers, the cable plug and one
+   diffuser. Lightly smooth glass-contact and cable-contact edges.
+2. Dry-assemble all eight frame pieces on a flat surface. Close the broad
+   joint shoulders, check square, and check the lower seat and glass fit.
+3. CA-glue the frame joints sparingly, keeping glue off the LED channel,
+   diffuser slots and keeper wells. Let it cure before fitting the tape.
+4. Pass the USB lead through the rear tunnel, then install the continuous
+   strip. It twists upright over 32 mm approaching each R16 corner.
+   Start and cut end meet at the rear recess. Cut only at a marked cut point;
+   insulate the exposed cut end. Keep the inline dimmer outside the riser.
+5. Fit the slotted rear plug around the lead; use its tie holes for strain
+   relief. The 18 x 10 mm tunnel and plug sit 0.5 mm lower than Draft 08
+   to clear the roof seat; connector fit is still provisional.
+6. Fit FOUR corner diffusers first, then the EIGHT straight sections.
+   Move each inward while lowering into the bottom slot, then seat
+   it back against the sloped roof. The straight pieces must lower earlier
+   as the top edge passes the roof; do not force the taller sheet upward. Insert keepers sideways and turn down to lock.
+   They retain the diffuser, not the LED. Do not force a tight keeper.
+7. Set the glass on the Z30 seat. The upper lip locates it with nominal
+   0.5 mm clearance per side. The glass/seat depth and rear radius still need
+   comparison with the physical printer; the viewer body is a reference mock.
+
+EVIDENCE
+All eight frame pieces and accessories slice with zero reported warnings.
+See dfm-report.json for the updated frame estimates including supports.
+Actual material settings will change those estimates.
+All four vase input types slice with only outer-wall/brim extrusion and
+continuous rising wall paths above 1 mm, with no intervening travel moves.
+All eight frames are valid single solids; no frame pairs overlap. Sampled
+insertion/keeper checks pass. These are CAD and slicer checks, not a printed
+fit test. Nothing has been sent to the printer.

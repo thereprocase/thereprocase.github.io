@@ -1,0 +1,264 @@
+{
+  "title": "Frame and removable inserts",
+  "subtitle": "Parts separated for assembly review",
+  "caption": "Frame pieces move outward; diffusers are lifted 38 mm. These are display positions.",
+  "camera": {
+    "yaw": -0.9,
+    "pitch": 0.9,
+    "zoom": 0.9
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 9956,
+      "triangles": 8740,
+      "edges": 3397,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 9948,
+      "triangles": 8732,
+      "edges": 3393,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 10154,
+      "triangles": 8876,
+      "edges": 3493,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 9960,
+      "triangles": 8744,
+      "edges": 3399,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 5712,
+      "triangles": 4010,
+      "edges": 1918,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 5708,
+      "triangles": 4006,
+      "edges": 1916,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 5881,
+      "triangles": 4300,
+      "edges": 2045,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 5887,
+      "triangles": 4306,
+      "edges": 2048,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-16.bin",
+      "vertices": 680,
+      "triangles": 340,
+      "edges": 176,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-17.bin",
+      "vertices": 680,
+      "triangles": 340,
+      "edges": 176,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-18.bin",
+      "vertices": 680,
+      "triangles": 340,
+      "edges": 176,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-19.bin",
+      "vertices": 680,
+      "triangles": 340,
+      "edges": 176,
+      "color": [
+        0.94,
+        0.93,
+        0.86
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-20.bin",
+      "vertices": 1344,
+      "triangles": 1316,
+      "edges": 668,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1
+    }
+  ]
+}

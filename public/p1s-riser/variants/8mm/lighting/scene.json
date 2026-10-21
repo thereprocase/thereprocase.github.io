@@ -1,0 +1,120 @@
+{
+  "title": "Continuous light route",
+  "subtitle": "Frame cut away at Z18 mm \u00b7 LED tape shown gold",
+  "caption": "The tape twists upright through each rounded corner. Rear start/end gap sits beside the cable exit.",
+  "camera": {
+    "yaw": -0.9,
+    "pitch": 0.8,
+    "zoom": 0.9
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 246,
+      "triangles": 160,
+      "edges": 120,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 246,
+      "triangles": 160,
+      "edges": 120,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 402,
+      "triangles": 264,
+      "edges": 192,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 246,
+      "triangles": 160,
+      "edges": 120,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 2604,
+      "triangles": 1704,
+      "edges": 763,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 2604,
+      "triangles": 1704,
+      "edges": 763,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 2566,
+      "triangles": 1728,
+      "edges": 770,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 2566,
+      "triangles": 1728,
+      "edges": 770,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 2016,
+      "triangles": 3960,
+      "edges": 1988,
+      "color": [
+        1,
+        0.82,
+        0.3
+      ],
+      "alpha": 1
+    }
+  ]
+}

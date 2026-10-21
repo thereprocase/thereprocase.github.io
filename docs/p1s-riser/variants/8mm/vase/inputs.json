@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/vase-corner-shell-preview.npz",
+    "sha256": "0fab50ed78454860cb303d5e6144f651c020e5019dfd2071378b1c9ef365bf0c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 37907,
+    "triangles": 23242
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/vase-sleeve-coupon.npz",
+    "sha256": "40c3299b290a1e97476f48882cee6c6ac1f500b211b429c9ae9b9c0a77435585",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        75.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 872,
+    "triangles": 856
+  }
+]

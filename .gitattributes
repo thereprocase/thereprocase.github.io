@@ -6,3 +6,6 @@ docs/p1s-feet/**/*.step binary
 
 public/paver-feet/*.step binary
 docs/paver-feet/*.step binary
+
+public/p1s-riser/**/*.step binary
+docs/p1s-riser/**/*.step binary

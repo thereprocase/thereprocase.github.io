@@ -1,0 +1,119 @@
+{
+  "basis": "Nominal straight 0.6 mm diffuser against roof seat; q5.5 cam contact",
+  "samples": [
+    {
+      "angle": 0,
+      "led_clearance_mm": 0.854400374531753,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.965068306494546e-16
+    },
+    {
+      "angle": 5,
+      "led_clearance_mm": 0.7525419214209482,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 5.551115123125783e-16
+    },
+    {
+      "angle": 10,
+      "led_clearance_mm": 0.6757511562480004,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.440892098500626e-16
+    },
+    {
+      "angle": 15,
+      "led_clearance_mm": 0.6235949915764202,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.577566798522237e-16
+    },
+    {
+      "angle": 20,
+      "led_clearance_mm": 0.5952779086624332,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.965068306494546e-16
+    },
+    {
+      "angle": 25,
+      "led_clearance_mm": 0.5900982372802188,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.577566798522237e-16
+    },
+    {
+      "angle": 30,
+      "led_clearance_mm": 0.6079008735580625,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 4.577566798522237e-16
+    },
+    {
+      "angle": 35,
+      "led_clearance_mm": 0.6491824963438491,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 9.474252079677368e-05
+    },
+    {
+      "angle": 40,
+      "led_clearance_mm": 0.7147609507385704,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.016155690134551846
+    },
+    {
+      "angle": 45,
+      "led_clearance_mm": 0.8052766309381215,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.07201363025178327
+    },
+    {
+      "angle": 50,
+      "led_clearance_mm": 0.9208554213586627,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.17202276972668704
+    },
+    {
+      "angle": 55,
+      "led_clearance_mm": 1.0610371723597212,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.24999999999999956
+    },
+    {
+      "angle": 60,
+      "led_clearance_mm": 1.2248711305964282,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.24999999999999956
+    },
+    {
+      "angle": 65,
+      "led_clearance_mm": 1.4110505609999828,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.24999999999999956
+    },
+    {
+      "angle": 70,
+      "led_clearance_mm": 1.6180208512079914,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.24999999999999956
+    },
+    {
+      "angle": 75,
+      "led_clearance_mm": 1.8440493538054583,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.24999999999999956
+    },
+    {
+      "angle": 80,
+      "led_clearance_mm": 2.087266779794856,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.37134251673826957
+    },
+    {
+      "angle": 85,
+      "led_clearance_mm": 2.3456922444152197,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.6783089630992843
+    },
+    {
+      "angle": 90,
+      "led_clearance_mm": 2.5999999999999996,
+      "diffuser_overlap_mm3": 0,
+      "diffuser_distance_mm": 0.9999999999999991
+    }
+  ]
+}

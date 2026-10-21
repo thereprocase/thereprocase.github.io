@@ -1,0 +1,120 @@
+{
+  "title": "Reserved LED clearance",
+  "subtitle": "Gold volumes are CAD checkers, not printed parts",
+  "caption": "Continuous 12.2 mm wide clearance envelope, including twist transitions and rounded corners. Teal frame shown transparent.",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 0.8
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 9936,
+      "triangles": 8728,
+      "edges": 3387,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 9928,
+      "triangles": 8720,
+      "edges": 3383,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 10098,
+      "triangles": 8840,
+      "edges": 3465,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 9940,
+      "triangles": 8732,
+      "edges": 3389,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 5318,
+      "triangles": 3738,
+      "edges": 1770,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 5310,
+      "triangles": 3730,
+      "edges": 1766,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 5563,
+      "triangles": 4078,
+      "edges": 1915,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 5571,
+      "triangles": 4086,
+      "edges": 1919,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 0.18
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 1792,
+      "triangles": 1312,
+      "edges": 772,
+      "color": [
+        1,
+        0.82,
+        0.3
+      ],
+      "alpha": 0.85
+    }
+  ]
+}

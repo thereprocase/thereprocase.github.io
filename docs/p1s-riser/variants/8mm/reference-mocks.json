@@ -1,0 +1,13 @@
+{
+  "glass_mm": [
+    384,
+    352,
+    3
+  ],
+  "glass_thickness": "3 mm assumed for visualization",
+  "glass_underside_z": 30,
+  "diffuser_shade_lip_projection_mm": 1.0,
+  "retainer_top_z": 32.5,
+  "body": "Simplified cropped upper enclosure, 394 x 362 x 80 mm; not measured printer geometry",
+  "purpose": "Seat/height reference only; not an interference certification"
+}

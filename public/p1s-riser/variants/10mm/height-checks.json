@@ -1,0 +1,10 @@
+{
+  "translation_mm": 2,
+  "base_extension_max_z_mm": 2.03,
+  "lowest_installed_moving_part_z_mm": 12.32178833224,
+  "negative_intersections": {
+    "led-clearance-negative": [],
+    "rear-cable-passage-negative": [],
+    "corner-entry-relief-negative": []
+  }
+}

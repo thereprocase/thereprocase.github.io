@@ -1,0 +1,1333 @@
+{
+  "toolpaths": [
+    {
+      "plate": "11-10mm-corners",
+      "extrusion_segments": 245490,
+      "xy_bounds_mm": [
+        19.905,
+        17.905,
+        220.095,
+        215.34
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "653076aec4d8ef473773b441925447524533c1ad6ec002ed5524b82ad1156e7c"
+    },
+    {
+      "plate": "11-10mm-coupon",
+      "extrusion_segments": 14389,
+      "xy_bounds_mm": [
+        111.676,
+        112.553,
+        144.324,
+        142.324
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "933a9649253eeb36e303edfc83f63ba41ad0a0d6e64319e72815f260e706a1f1"
+    },
+    {
+      "plate": "11-10mm-flat-diffusers",
+      "extrusion_segments": 9188,
+      "xy_bounds_mm": [
+        2.285,
+        32.06,
+        253.715,
+        203.94
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "85a1266e80c754a57c3f4d76e51ffccb532cb2fefb73802d84588fe2404e92fc"
+    },
+    {
+      "plate": "11-10mm-sides",
+      "extrusion_segments": 245023,
+      "xy_bounds_mm": [
+        8.101,
+        29.553,
+        247.899,
+        206.447
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "beb187ca364142722f1ba39539e62f2c3a43a9013e2042abe1142a70e71699b6"
+    },
+    {
+      "plate": "11-10mm-vase-corner-diffuser",
+      "extrusion_segments": 5608,
+      "xy_bounds_mm": [
+        103.579,
+        101.579,
+        152.6,
+        150.6
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "438a41d711cb1a114bf5b29f1cf5ba334f1e9b713e39f07eb28fce38adaba513",
+      "outer_wall_z_drops_above_1mm": [],
+      "travel_between_wall_extrusions_above_1mm": []
+    },
+    {
+      "plate": "11-10mm-vase-diffuser-coupon",
+      "extrusion_segments": 3840,
+      "xy_bounds_mm": [
+        100.802,
+        121.3,
+        155.198,
+        130.7
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "647f734e187425342001a71aadbd02ba522d83b3c2aff24e8546471e8c8dbd29",
+      "outer_wall_z_drops_above_1mm": [],
+      "travel_between_wall_extrusions_above_1mm": []
+    },
+    {
+      "plate": "11-10mm-vase-diffuser-front-back",
+      "extrusion_segments": 3842,
+      "xy_bounds_mm": [
+        60.377,
+        121.306,
+        195.623,
+        130.694
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "7f29e829a2215757ca9c594078a49931e30119b6f56bb63f093c920a1e82e49b",
+      "outer_wall_z_drops_above_1mm": [],
+      "travel_between_wall_extrusions_above_1mm": []
+    },
+    {
+      "plate": "11-10mm-vase-diffuser-sides",
+      "extrusion_segments": 3842,
+      "xy_bounds_mm": [
+        68.377,
+        121.306,
+        187.623,
+        130.694
+      ],
+      "inside_256mm": true,
+      "gcode_sha256": "de27a89ff536e72326b50ebacc15b3fba54199b9244fa2b206f320ffc013b4b2",
+      "outer_wall_z_drops_above_1mm": [],
+      "travel_between_wall_extrusions_above_1mm": []
+    }
+  ],
+  "revision": "11",
+  "led_width_mm": 10,
+  "dfm_ramps_degrees_from_vertical": 30,
+  "dfm_ramps_degrees_from_bed": 60,
+  "scope": "Lower diffuser-rail support ramps; mating surfaces and upper retention features retained. Supports still required.",
+  "slices": [
+    {
+      "name": "11-10mm-corners",
+      "summary": {
+        "estimated_time_s": 24988.0,
+        "feature_types": [
+          "Inner wall",
+          "Outer wall",
+          "Overhang wall",
+          "Sparse infill",
+          "Internal solid infill",
+          "Top surface",
+          "Bottom surface",
+          "Bridge",
+          "Internal Bridge",
+          "Support",
+          "Support interface",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 47.558,
+            "type": "PETG",
+            "weight_g": 145.275
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  107.55,
+                  107.55
+                ],
+                "min": [
+                  24.55,
+                  24.55
+                ],
+                "size": [
+                  83.0,
+                  83.0
+                ]
+              },
+              "contact_area_mm2": 2381.004,
+              "flags": [],
+              "island_count": 1,
+              "name": "front-left",
+              "nearest_exclusion_mm": 6.55,
+              "small_islands": [],
+              "smallest_island_mm2": 2381.004
+            },
+            {
+              "bbox": {
+                "max": [
+                  215.45000000000002,
+                  107.55
+                ],
+                "min": [
+                  132.45,
+                  24.55
+                ],
+                "size": [
+                  83.0,
+                  83.0
+                ]
+              },
+              "contact_area_mm2": 2381.004,
+              "flags": [],
+              "island_count": 1,
+              "name": "front-right",
+              "nearest_exclusion_mm": 114.45,
+              "small_islands": [],
+              "smallest_island_mm2": 2381.004
+            },
+            {
+              "bbox": {
+                "max": [
+                  107.55,
+                  215.45000000000002
+                ],
+                "min": [
+                  24.55,
+                  132.45
+                ],
+                "size": [
+                  83.0,
+                  83.0
+                ]
+              },
+              "contact_area_mm2": 2260.2870000000003,
+              "flags": [],
+              "island_count": 1,
+              "name": "rear-left",
+              "nearest_exclusion_mm": 104.76,
+              "small_islands": [],
+              "smallest_island_mm2": 2260.2870000000003
+            },
+            {
+              "bbox": {
+                "max": [
+                  215.45000000000002,
+                  215.45000000000002
+                ],
+                "min": [
+                  132.45,
+                  132.45
+                ],
+                "size": [
+                  83.0,
+                  83.0
+                ]
+              },
+              "contact_area_mm2": 2260.2870000000003,
+              "flags": [],
+              "island_count": 1,
+              "name": "rear-right",
+              "nearest_exclusion_mm": 209.46800000000002,
+              "small_islands": [],
+              "smallest_island_mm2": 2260.2870000000003
+            }
+          ]
+        },
+        "has_brim": false,
+        "has_skirt": false,
+        "has_support": true,
+        "objects": [
+          "front-left",
+          "front-right",
+          "rear-left",
+          "rear-right"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "front-left",
+          "source_sha256": "c7e97ebdfee8fc1e2eb82fd91a42f7d440a44b06755d955d26f3c6fdf84a00ce",
+          "bounds": [
+            [
+              22.449996948242188,
+              22.449996948242188,
+              0.0
+            ],
+            [
+              107.55000305175781,
+              107.55000305175781,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "front-right",
+          "source_sha256": "2c511d9a6f8c36ef647b091c39866fd7d2bbcc706f18a8d0c35f4fa0fca232c6",
+          "bounds": [
+            [
+              132.4499969482422,
+              22.449996948242188,
+              0.0
+            ],
+            [
+              217.5500030517578,
+              107.55000305175781,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "rear-left",
+          "source_sha256": "f34ba18b83dfcad4da53c23eace6bee2ee751992e670120340edcca8da8b6979",
+          "bounds": [
+            [
+              22.449996948242188,
+              132.4499969482422,
+              0.0
+            ],
+            [
+              107.55000305175781,
+              217.5500030517578,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "rear-right",
+          "source_sha256": "6f274adf7d189e2586768626a0e6f564f179f0947b1aa39f9f636303979a3dd7",
+          "bounds": [
+            [
+              132.4499969482422,
+              132.4499969482422,
+              0.0
+            ],
+            [
+              217.5500030517578,
+              217.5500030517578,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-coupon",
+      "summary": {
+        "estimated_time_s": 2723.0,
+        "feature_types": [
+          "Inner wall",
+          "Outer wall",
+          "Overhang wall",
+          "Sparse infill",
+          "Internal solid infill",
+          "Top surface",
+          "Bottom surface",
+          "Bridge",
+          "Internal Bridge",
+          "Support",
+          "Support interface",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 2.737,
+            "type": "PETG",
+            "weight_g": 8.361
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  140.0,
+                  134.64000000000001
+                ],
+                "min": [
+                  116.0,
+                  117.14
+                ],
+                "size": [
+                  24.0,
+                  17.5
+                ]
+              },
+              "contact_area_mm2": 396.24,
+              "flags": [],
+              "island_count": 1,
+              "name": "fit-coupon-keeper",
+              "nearest_exclusion_mm": 132.476,
+              "small_islands": [],
+              "smallest_island_mm2": 396.24
+            }
+          ]
+        },
+        "has_brim": false,
+        "has_skirt": false,
+        "has_support": true,
+        "objects": [
+          "fit-coupon-keeper"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "fit-coupon-keeper",
+          "source_sha256": "246737b59f7b275445a6c45d8f939d61db60451d32de2f0c39671d3a6c8e0591",
+          "bounds": [
+            [
+              116.0,
+              115.03980255126953,
+              0.0
+            ],
+            [
+              140.0,
+              140.96019744873047,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-flat-diffusers",
+      "summary": {
+        "estimated_time_s": 1948.0,
+        "feature_types": [
+          "Inner wall",
+          "Outer wall",
+          "Internal solid infill",
+          "Top surface",
+          "Bottom surface",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 2.849,
+            "type": "PETG",
+            "weight_g": 8.704
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  127.925,
+                  46.15
+                ],
+                "min": [
+                  2.075,
+                  33.85
+                ],
+                "size": [
+                  125.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1547.955,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-front-a-flat",
+              "nearest_exclusion_mm": 5.8500000000000005,
+              "small_islands": [],
+              "smallest_island_mm2": 1547.955
+            },
+            {
+              "bbox": {
+                "max": [
+                  253.925,
+                  46.15
+                ],
+                "min": [
+                  128.075,
+                  33.85
+                ],
+                "size": [
+                  125.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1547.955,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-front-b-flat",
+              "nearest_exclusion_mm": 110.23,
+              "small_islands": [],
+              "smallest_island_mm2": 1547.955
+            },
+            {
+              "bbox": {
+                "max": [
+                  127.925,
+                  81.15
+                ],
+                "min": [
+                  2.075,
+                  68.85000000000001
+                ],
+                "size": [
+                  125.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1547.955,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-back-a-flat",
+              "nearest_exclusion_mm": 40.85,
+              "small_islands": [],
+              "smallest_island_mm2": 1547.955
+            },
+            {
+              "bbox": {
+                "max": [
+                  253.925,
+                  81.15
+                ],
+                "min": [
+                  128.075,
+                  68.85000000000001
+                ],
+                "size": [
+                  125.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1547.955,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-back-b-flat",
+              "nearest_exclusion_mm": 117.411,
+              "small_islands": [],
+              "smallest_island_mm2": 1547.955
+            },
+            {
+              "bbox": {
+                "max": [
+                  119.925,
+                  116.15
+                ],
+                "min": [
+                  10.075000000000001,
+                  103.85000000000001
+                ],
+                "size": [
+                  109.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1351.155,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-left-a-flat",
+              "nearest_exclusion_mm": 75.85000000000001,
+              "small_islands": [],
+              "smallest_island_mm2": 1351.155
+            },
+            {
+              "bbox": {
+                "max": [
+                  245.925,
+                  116.15
+                ],
+                "min": [
+                  136.075,
+                  103.85000000000001
+                ],
+                "size": [
+                  109.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1351.155,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-left-b-flat",
+              "nearest_exclusion_mm": 140.339,
+              "small_islands": [],
+              "smallest_island_mm2": 1351.155
+            },
+            {
+              "bbox": {
+                "max": [
+                  119.925,
+                  151.15
+                ],
+                "min": [
+                  10.075000000000001,
+                  138.85
+                ],
+                "size": [
+                  109.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1351.154,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-right-a-flat",
+              "nearest_exclusion_mm": 110.85000000000001,
+              "small_islands": [],
+              "smallest_island_mm2": 1351.154
+            },
+            {
+              "bbox": {
+                "max": [
+                  245.925,
+                  151.15
+                ],
+                "min": [
+                  136.075,
+                  138.85
+                ],
+                "size": [
+                  109.85000000000001,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 1351.154,
+              "flags": [],
+              "island_count": 1,
+              "name": "diffuser-right-b-flat",
+              "nearest_exclusion_mm": 161.955,
+              "small_islands": [],
+              "smallest_island_mm2": 1351.154
+            },
+            {
+              "bbox": {
+                "max": [
+                  139.8,
+                  206.15
+                ],
+                "min": [
+                  116.2,
+                  193.85
+                ],
+                "size": [
+                  23.6,
+                  12.3
+                ]
+              },
+              "contact_area_mm2": 290.28000000000003,
+              "flags": [],
+              "island_count": 1,
+              "name": "fit-coupon-diffuser",
+              "nearest_exclusion_mm": 192.742,
+              "small_islands": [],
+              "smallest_island_mm2": 290.28000000000003
+            }
+          ]
+        },
+        "has_brim": false,
+        "has_skirt": false,
+        "has_support": false,
+        "objects": [
+          "diffuser-front-a-flat",
+          "diffuser-front-b-flat",
+          "diffuser-back-a-flat",
+          "diffuser-back-b-flat",
+          "diffuser-left-a-flat",
+          "diffuser-left-b-flat",
+          "diffuser-right-a-flat",
+          "diffuser-right-b-flat",
+          "fit-coupon-diffuser"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "diffuser-front-a-flat",
+          "source_sha256": "e3bee32f6e3f99ffd445444d0ecf869123007b1191b338c2540770ddebfb060a",
+          "bounds": [
+            [
+              2.075000762939453,
+              33.84999990463257,
+              0.0
+            ],
+            [
+              127.92499923706055,
+              46.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-front-b-flat",
+          "source_sha256": "e3bee32f6e3f99ffd445444d0ecf869123007b1191b338c2540770ddebfb060a",
+          "bounds": [
+            [
+              128.07500076293945,
+              33.84999990463257,
+              0.0
+            ],
+            [
+              253.92499923706055,
+              46.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-back-a-flat",
+          "source_sha256": "e3bee32f6e3f99ffd445444d0ecf869123007b1191b338c2540770ddebfb060a",
+          "bounds": [
+            [
+              2.075000762939453,
+              68.84999990463257,
+              0.0
+            ],
+            [
+              127.92499923706055,
+              81.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-back-b-flat",
+          "source_sha256": "e3bee32f6e3f99ffd445444d0ecf869123007b1191b338c2540770ddebfb060a",
+          "bounds": [
+            [
+              128.07500076293945,
+              68.84999990463257,
+              0.0
+            ],
+            [
+              253.92499923706055,
+              81.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-left-a-flat",
+          "source_sha256": "17d17d8992711f3ca1122fc1477487ed6ff1f98c0102bdc73adf5f0191facbd7",
+          "bounds": [
+            [
+              10.075000762939453,
+              103.84999990463257,
+              0.0
+            ],
+            [
+              119.92499923706055,
+              116.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-left-b-flat",
+          "source_sha256": "17d17d8992711f3ca1122fc1477487ed6ff1f98c0102bdc73adf5f0191facbd7",
+          "bounds": [
+            [
+              136.07500076293945,
+              103.84999990463257,
+              0.0
+            ],
+            [
+              245.92499923706055,
+              116.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-right-a-flat",
+          "source_sha256": "17d17d8992711f3ca1122fc1477487ed6ff1f98c0102bdc73adf5f0191facbd7",
+          "bounds": [
+            [
+              10.075000762939453,
+              138.84999990463257,
+              0.0
+            ],
+            [
+              119.92499923706055,
+              151.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "diffuser-right-b-flat",
+          "source_sha256": "17d17d8992711f3ca1122fc1477487ed6ff1f98c0102bdc73adf5f0191facbd7",
+          "bounds": [
+            [
+              136.07500076293945,
+              138.84999990463257,
+              0.0
+            ],
+            [
+              245.92499923706055,
+              151.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "fit-coupon-diffuser",
+          "source_sha256": "9af89388e6a3855792bd1008307b603b488d2ff6b0d67b5c8a3e6dd541ec11ad",
+          "bounds": [
+            [
+              116.19999980926514,
+              193.84999990463257,
+              0.0
+            ],
+            [
+              139.80000019073486,
+              206.15000009536743,
+              0.6000000238418579
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-sides",
+      "summary": {
+        "estimated_time_s": 40879.0,
+        "feature_types": [
+          "Inner wall",
+          "Outer wall",
+          "Overhang wall",
+          "Sparse infill",
+          "Internal solid infill",
+          "Top surface",
+          "Bottom surface",
+          "Bridge",
+          "Internal Bridge",
+          "Support",
+          "Support interface",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 80.557,
+            "type": "PETG",
+            "weight_g": 246.078
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  245.0,
+                  51.64
+                ],
+                "min": [
+                  11.0,
+                  34.14
+                ],
+                "size": [
+                  234.0,
+                  17.5
+                ]
+              },
+              "contact_area_mm2": 4040.88,
+              "flags": [],
+              "island_count": 1,
+              "name": "front",
+              "nearest_exclusion_mm": 6.140000000000001,
+              "small_islands": [],
+              "smallest_island_mm2": 4040.88
+            },
+            {
+              "bbox": {
+                "max": [
+                  245.0,
+                  105.86
+                ],
+                "min": [
+                  11.0,
+                  88.36
+                ],
+                "size": [
+                  234.0,
+                  17.5
+                ]
+              },
+              "contact_area_mm2": 4040.88,
+              "flags": [],
+              "island_count": 1,
+              "name": "back",
+              "nearest_exclusion_mm": 60.36,
+              "small_islands": [],
+              "smallest_island_mm2": 4040.88
+            },
+            {
+              "bbox": {
+                "max": [
+                  229.0,
+                  151.64000000000001
+                ],
+                "min": [
+                  27.0,
+                  134.14000000000001
+                ],
+                "size": [
+                  202.0,
+                  17.5
+                ]
+              },
+              "contact_area_mm2": 3480.88,
+              "flags": [],
+              "island_count": 1,
+              "name": "left",
+              "nearest_exclusion_mm": 106.521,
+              "small_islands": [],
+              "smallest_island_mm2": 3480.88
+            },
+            {
+              "bbox": {
+                "max": [
+                  229.0,
+                  205.86
+                ],
+                "min": [
+                  27.0,
+                  188.36
+                ],
+                "size": [
+                  202.0,
+                  17.5
+                ]
+              },
+              "contact_area_mm2": 3480.88,
+              "flags": [],
+              "island_count": 1,
+              "name": "right",
+              "nearest_exclusion_mm": 160.613,
+              "small_islands": [],
+              "smallest_island_mm2": 3480.88
+            }
+          ]
+        },
+        "has_brim": false,
+        "has_skirt": false,
+        "has_support": true,
+        "objects": [
+          "front",
+          "back",
+          "left",
+          "right"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "front",
+          "source_sha256": "7cd239c778fab869ceae978d4801eaa1ecdb8dc41a6726e251918dc0ad64a7f3",
+          "bounds": [
+            [
+              11.0,
+              32.03980255126953,
+              0.0
+            ],
+            [
+              245.0,
+              57.96019744873047,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "back",
+          "source_sha256": "2b734552305b28d9e9ff2abfa879616eb35b2218f6772a7c13d812888632bf58",
+          "bounds": [
+            [
+              11.0,
+              82.03980255126953,
+              0.0
+            ],
+            [
+              245.0,
+              107.96019744873047,
+              34.5
+            ]
+          ],
+          "rotation_z": 0
+        },
+        {
+          "name": "left",
+          "source_sha256": "11bc58dc1daff52a958ea0079b4123289d137483a0cc5a56df407360257afdc2",
+          "bounds": [
+            [
+              26.999999999999986,
+              132.03980255126953,
+              0.0
+            ],
+            [
+              229.0,
+              157.96019744873047,
+              34.5
+            ]
+          ],
+          "rotation_z": 90
+        },
+        {
+          "name": "right",
+          "source_sha256": "2341d3a8b9e5fabcbbaaec2310ea9c47db1c55c0081a8eeb85624695ba426a9a",
+          "bounds": [
+            [
+              27.0,
+              182.03980255126953,
+              0.0
+            ],
+            [
+              229.0,
+              207.96019744873047,
+              34.5
+            ]
+          ],
+          "rotation_z": 90
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-vase-corner-diffuser",
+      "summary": {
+        "estimated_time_s": 1105.0,
+        "feature_types": [
+          "Outer wall",
+          "Brim",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 0.631,
+            "type": "PETG",
+            "weight_g": 1.929
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  152.9,
+                  152.9
+                ],
+                "min": [
+                  103.147,
+                  103.147
+                ],
+                "size": [
+                  49.753,
+                  49.753
+                ]
+              },
+              "contact_area_mm2": 690.97,
+              "flags": [],
+              "island_count": 1,
+              "name": "vase-corner-diffuser",
+              "nearest_exclusion_mm": 123.57300000000001,
+              "small_islands": [],
+              "smallest_island_mm2": 690.97
+            }
+          ]
+        },
+        "has_brim": true,
+        "has_skirt": false,
+        "has_support": false,
+        "objects": [
+          "vase-corner-diffuser"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "vase-corner-diffuser",
+          "source_sha256": "4adc911eae5a8c7cc02754a9c6ee1c642bd41d18673453b01bc3ddd30e93cafe",
+          "bounds": [
+            [
+              103.10017490386963,
+              103.10017490386963,
+              0.0
+            ],
+            [
+              152.89982509613037,
+              152.89982509613037,
+              14.399999618530273
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-vase-diffuser-coupon",
+      "summary": {
+        "estimated_time_s": 832.0,
+        "feature_types": [
+          "Outer wall",
+          "Brim",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 0.384,
+            "type": "PETG",
+            "weight_g": 1.173
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  155.498,
+                  133.0
+                ],
+                "min": [
+                  100.502,
+                  123.0
+                ],
+                "size": [
+                  54.997,
+                  10.0
+                ]
+              },
+              "contact_area_mm2": 528.5070000000001,
+              "flags": [],
+              "island_count": 1,
+              "name": "vase-diffuser-coupon",
+              "nearest_exclusion_mm": 127.878,
+              "small_islands": [],
+              "smallest_island_mm2": 528.5070000000001
+            }
+          ]
+        },
+        "has_brim": true,
+        "has_skirt": false,
+        "has_support": false,
+        "objects": [
+          "vase-diffuser-coupon"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "vase-diffuser-coupon",
+          "source_sha256": "232364a3416f7aa049ac289a50d53afa3f460c9451cae3012cb3bb0bc98ffcb0",
+          "bounds": [
+            [
+              100.50155448913574,
+              123.0,
+              0.0
+            ],
+            [
+              155.49844551086426,
+              133.0,
+              12.300000190734863
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-vase-diffuser-front-back",
+      "summary": {
+        "estimated_time_s": 1220.0,
+        "feature_types": [
+          "Outer wall",
+          "Brim",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 0.854,
+            "type": "PETG",
+            "weight_g": 2.608
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  195.923,
+                  133.0
+                ],
+                "min": [
+                  60.077,
+                  123.0
+                ],
+                "size": [
+                  135.847,
+                  10.0
+                ]
+              },
+              "contact_area_mm2": 1337.007,
+              "flags": [],
+              "island_count": 1,
+              "name": "vase-diffuser-front-back",
+              "nearest_exclusion_mm": 105.526,
+              "small_islands": [],
+              "smallest_island_mm2": 1337.007
+            }
+          ]
+        },
+        "has_brim": true,
+        "has_skirt": false,
+        "has_support": false,
+        "objects": [
+          "vase-diffuser-front-back"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "vase-diffuser-front-back",
+          "source_sha256": "ea3b83bab7a62bf5f7d629f6f55726f7bf00fbab975dff3fe66aec5388d6555e",
+          "bounds": [
+            [
+              60.07655334472656,
+              123.0,
+              0.0
+            ],
+            [
+              195.92344665527344,
+              133.0,
+              12.300000190734863
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    },
+    {
+      "name": "11-10mm-vase-diffuser-sides",
+      "summary": {
+        "estimated_time_s": 1215.0,
+        "feature_types": [
+          "Outer wall",
+          "Brim",
+          "Custom"
+        ],
+        "filaments": [
+          {
+            "color": "#F2754E",
+            "id": 1,
+            "length_m": 0.761,
+            "type": "PETG",
+            "weight_g": 2.324
+          }
+        ],
+        "first_layer": {
+          "min_exclusion_mm": 2.0,
+          "min_island_mm2": 2.0,
+          "objects": [
+            {
+              "bbox": {
+                "max": [
+                  187.923,
+                  133.0
+                ],
+                "min": [
+                  68.077,
+                  123.0
+                ],
+                "size": [
+                  119.84700000000001,
+                  10.0
+                ]
+              },
+              "contact_area_mm2": 1177.007,
+              "flags": [],
+              "island_count": 1,
+              "name": "vase-diffuser-sides",
+              "nearest_exclusion_mm": 109.163,
+              "small_islands": [],
+              "smallest_island_mm2": 1177.007
+            }
+          ]
+        },
+        "has_brim": true,
+        "has_skirt": false,
+        "has_support": false,
+        "objects": [
+          "vase-diffuser-sides"
+        ],
+        "plate": 1
+      },
+      "warnings": [],
+      "source_manifest": [
+        {
+          "name": "vase-diffuser-sides",
+          "source_sha256": "7490eda5b3a3697648bdacefbeb959117464993ce7efda3183dbcdc4a0051ee3",
+          "bounds": [
+            [
+              68.07655334472656,
+              123.0,
+              0.0
+            ],
+            [
+              187.92344665527344,
+              133.0,
+              12.300000190734863
+            ]
+          ],
+          "rotation_z": 0
+        }
+      ]
+    }
+  ],
+  "physical_checks_pending": [
+    "PETG fit and support removal",
+    "Actual tape thickness and bend radius",
+    "Vase wall and cam grip"
+  ],
+  "print_sent": false
+}

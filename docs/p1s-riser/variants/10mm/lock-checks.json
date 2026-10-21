@@ -1,0 +1,126 @@
+{
+  "note": "Retention check at 3 mm withdrawal; existing axial free play is not a clamp-force test.",
+  "pegs": [
+    {
+      "name": "retaining-peg-1",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423963921175,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-2",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423963978125,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-3",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423964032784,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-4",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423963960397,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-5",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966830532,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-6",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966818737,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-7",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966830675,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-8",
+      "locked_3mm_withdrawal_overlap_mm3": 2.493342396683071,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-9",
+      "locked_3mm_withdrawal_overlap_mm3": 2.493342396682923,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-10",
+      "locked_3mm_withdrawal_overlap_mm3": 2.493342396683068,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-11",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966822814,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-12",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966885373,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-13",
+      "locked_3mm_withdrawal_overlap_mm3": 2.493342396404344,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-14",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423964041905,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-15",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423964064843,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-16",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423964064225,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-17",
+      "locked_3mm_withdrawal_overlap_mm3": 2.493342396637581,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-18",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423929359733,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-19",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966536714,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-20",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423929402623,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-21",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966522867,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-22",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423929464107,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-23",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423966382455,
+      "unlocked_3mm_overlap_mm3": 0
+    },
+    {
+      "name": "retaining-peg-24",
+      "locked_3mm_withdrawal_overlap_mm3": 2.4933423929432204,
+      "unlocked_3mm_overlap_mm3": 0
+    }
+  ],
+  "height_transform_note": "Optical assembly translated rigidly +2 mm; base extension is below moving parts. See height-checks.json."
+}

@@ -1,0 +1,244 @@
+{
+  "parts": [
+    {
+      "name": "front",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 134030.70348876208,
+      "bbox_mm": [
+        234.00000020000004,
+        25.92039017549999,
+        36.5000002
+      ]
+    },
+    {
+      "name": "right",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 115552.89539655761,
+      "bbox_mm": [
+        25.920390175469976,
+        202.00000020000004,
+        36.5000002
+      ]
+    },
+    {
+      "name": "back",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 128668.73076874709,
+      "bbox_mm": [
+        234.00000020000002,
+        25.92039007546998,
+        36.5
+      ]
+    },
+    {
+      "name": "left",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 115552.89539658741,
+      "bbox_mm": [
+        25.92039017549999,
+        202.0000002,
+        36.5000002
+      ]
+    },
+    {
+      "name": "front-left",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 80101.95047093545,
+      "bbox_mm": [
+        85.10000019999998,
+        85.10000020000001,
+        36.5000002
+      ]
+    },
+    {
+      "name": "front-right",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 80101.9504682407,
+      "bbox_mm": [
+        85.10000019999998,
+        85.10000019999998,
+        36.5000002
+      ]
+    },
+    {
+      "name": "rear-right",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 75980.63745472359,
+      "bbox_mm": [
+        85.10000019999998,
+        85.10000019999998,
+        36.5000002
+      ]
+    },
+    {
+      "name": "rear-left",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 75980.63745680086,
+      "bbox_mm": [
+        85.10000019999998,
+        85.10000019999998,
+        36.5000002
+      ]
+    },
+    {
+      "name": "diffuser-front-a",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1079.7929999677976,
+      "bbox_mm": [
+        125.8500002,
+        6.587226015107831,
+        13.21377251167348
+      ]
+    },
+    {
+      "name": "diffuser-front-b",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1079.7929999677974,
+      "bbox_mm": [
+        125.8500002,
+        6.587226015107831,
+        13.21377251167348
+      ]
+    },
+    {
+      "name": "diffuser-right-a",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 942.5129999951292,
+      "bbox_mm": [
+        6.587226015110701,
+        109.8500002,
+        13.213772511669001
+      ]
+    },
+    {
+      "name": "diffuser-right-b",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 942.5129999951292,
+      "bbox_mm": [
+        6.587226015110701,
+        109.8500002,
+        13.213772511669001
+      ]
+    },
+    {
+      "name": "diffuser-back-a",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1079.79299999442,
+      "bbox_mm": [
+        125.8500002,
+        6.587226015110701,
+        13.213772511669001
+      ]
+    },
+    {
+      "name": "diffuser-back-b",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1079.79299999442,
+      "bbox_mm": [
+        125.8500002,
+        6.587226015110701,
+        13.213772511669001
+      ]
+    },
+    {
+      "name": "diffuser-left-a",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 942.5129999718916,
+      "bbox_mm": [
+        6.587226015107831,
+        109.8500002,
+        13.21377251167348
+      ]
+    },
+    {
+      "name": "diffuser-left-b",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 942.5129999718916,
+      "bbox_mm": [
+        6.587226015107831,
+        109.8500002,
+        13.21377251167348
+      ]
+    },
+    {
+      "name": "diffuser-front-right",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 744.693317537092,
+      "bbox_mm": [
+        50.37659415862052,
+        50.37659415860412,
+        15.093583440807214
+      ]
+    },
+    {
+      "name": "diffuser-rear-right",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 744.693317532083,
+      "bbox_mm": [
+        50.37659415862052,
+        50.37659415862052,
+        15.093583440807214
+      ]
+    },
+    {
+      "name": "diffuser-rear-left",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 744.6933175370464,
+      "bbox_mm": [
+        50.37659415860412,
+        50.37659415862052,
+        15.093583440807214
+      ]
+    },
+    {
+      "name": "diffuser-front-left",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 744.693317542053,
+      "bbox_mm": [
+        50.37659415860412,
+        50.37659415860412,
+        15.093583440807002
+      ]
+    },
+    {
+      "name": "rear-cable-plug",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1310.1663860482654,
+      "bbox_mm": [
+        21.0,
+        8.800000000000011,
+        13.0
+      ]
+    }
+  ],
+  "frame_overlap": [],
+  "min_z": -1.0000000131492039e-07,
+  "basis": "384 x 352 glass, R24 rear; 17.5 mm seat band",
+  "stage": "Draft 11: 12 mm strip, 30-degree lower rail supports and matching diffusers",
+  "pending": [
+    "Physical keeper and trimmed diffuser fit",
+    "Support removal and printed PETG fit",
+    "Strip thickness, minimum bend radius, cut marks and connector fit"
+  ]
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-10mm-tall/meshes/retention-frame.npz",
+    "sha256": "817681c82fac4c71bd2eddd3f7425a384a27f70d0f91b9735e5e0b41af8b58f1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 624,
+    "triangles": 486
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-10mm-tall/meshes/retention-led.npz",
+    "sha256": "0bac9047554c3f7896a56d02e8921ecfc6f6126d72253abaf8a3bbbe4fb5060c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-10mm-tall/meshes/retention-peg.npz",
+    "sha256": "1e10f97e7d1d1fcbd7f191398480e0d3eca6105d1e09e79fb974edc48a1436ee",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 628,
+    "triangles": 584
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-10mm-tall/meshes/retention-diffuser.npz",
+    "sha256": "64cc70db4d1e5768322a92764e9faaa2e836156b1a7c173641b35dc65a34f45b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  }
+]

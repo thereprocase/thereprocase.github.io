@@ -120,3 +120,13 @@ evidence live in [`public/gridfinity-build-tray/`](public/gridfinity-build-tray/
 mirrored in `docs/gridfinity-build-tray/`. The carrier uses two bonded prints;
 physical fit and joint strength remain untested. Keep both static copies and
 the release provenance synchronized.
+
+## P1S USB light riser
+
+`public/p1s-riser/` contains the Gridline review, interactive CAD views and the
+8/10/12 mm Draft 11 kits. `scripts/sync-p1s-riser.py <checked-review-directory>`
+copies the checked models without changing their bytes and applies the site
+layout. It needs BeautifulSoup. The manifest in `provenance.json` records the
+ZIP and assembly STEP hashes. Keep matching frames and diffusers together;
+the 10 and 12 mm kits raise the glass seat by 2 and 4 mm. Attribution is kept
+with each kit. Build and export the directory after updating these files.

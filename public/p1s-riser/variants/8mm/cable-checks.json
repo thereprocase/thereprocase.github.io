@@ -1,0 +1,9 @@
+{
+  "tunnel_bottom_z_mm": 10.5,
+  "tunnel_clear_mm": [
+    18,
+    10
+  ],
+  "passage_obstruction_mm3": 0,
+  "plug_interference_mm3": 0
+}

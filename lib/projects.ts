@@ -17,6 +17,16 @@ const allCategories = [
 
 export const projects: Project[] = [
   {
+    slug: 'p1s-riser', name: 'P1S USB light riser', category: 'hardware', sitePath: '/p1s-riser/',
+    summary: 'An eight-piece PETG glass riser for 8, 10 or 12 mm USB COB light strips, with removable white diffusers.',
+    description: 'The strip angles down into the enclosure and twists upright around the corners. Bottom slots and quarter-turn keepers hold the diffusers. Wider strip kits raise the glass seat by 2 or 4 mm while keeping the same footprint.',
+    status: 'Draft 11 · CAD and slicing checks passed; start with the fit coupons',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-riser',
+    image: { src: '/p1s-riser/variants/8mm/installed.png', alt: 'Actual P1S light riser CAD with reference glass and printer body' },
+    highlights: ['Three labeled STEP/STL kits with matching diffusers and vase blanks.', 'Interactive assembly, cutaways and negative-space clearance checkers.', 'Upright PETG frame, CA-glued joints and a removable rear cable plug.'],
+    links: [{ label: 'Explore the riser', href: '/p1s-riser/' }, { label: 'Download the kits', href: '/p1s-riser/#downloads' }],
+  },
+  {
     slug: 'kraken', name: 'Kraken AMS remix', category: 'hardware',
     summary: 'Locally reinforced ASA bodies and removable front bars: about 562 g for both print plates.',
     description: 'A remix of humebeam’s Kraken for the original Bambu Lab AMS, with gear-clearance pockets, removable front bars and printable underside ramps. Download P1S ASA projects with editable reinforcement, fit coupons and assembly instructions.',

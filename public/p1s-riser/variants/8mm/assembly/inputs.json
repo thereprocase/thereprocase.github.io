@@ -1,0 +1,1442 @@
+[
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/front.npz",
+    "sha256": "ed0384da846a9f36d43f006d9117ae05f780954457c551c3bc324204465cb11d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 9984,
+    "triangles": 8760
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/right.npz",
+    "sha256": "48ca5c895daebdc93df48b997bb6ae6eb5b45e8723a4698a995cf4b8ff58ebce",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 9976,
+    "triangles": 8752
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/back.npz",
+    "sha256": "fe90d71a9ce6598acb8fb7601009f69f1fb5dd341252dab184cb5079676f1f39",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 10236,
+    "triangles": 8932
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/left.npz",
+    "sha256": "95d7042e4997921876e4b9f05e50d336a6bcd0db45eb619c0f2135f1137ea820",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 9984,
+    "triangles": 8760
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/front-left.npz",
+    "sha256": "e20a46a946fb9945062e0a049ec84af5df38e8ea5b7e01181588ab63c27dda75",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5584,
+    "triangles": 3952
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/front-right.npz",
+    "sha256": "0ce446476bf53c0ab5dd8da1c75643f0935d940c03ef77e5c39ad3f89e86e8f3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5576,
+    "triangles": 3944
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/rear-right.npz",
+    "sha256": "7fe4e3f772c35bfb09ab5929d7288bba5d98e20edb87834c232427de7619c58c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5989,
+    "triangles": 4434
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/rear-left.npz",
+    "sha256": "3a0a14fc6cba45b3d4b447723c4ed81d4c2bd0e45f90c8417f257d222c520174",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5995,
+    "triangles": 4440
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-front-a.npz",
+    "sha256": "77656914b44f1bafa5c85acad72c9a8a17fcfbe2d229a91e4183e40fe3f14d4f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-front-b.npz",
+    "sha256": "2f5c84f9ad0b617c20c321dc5cccf4d54aca4d00eb1a1037eeaaea1ba1a1c333",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-right-a.npz",
+    "sha256": "5200fda5b5f1978c88cfcf770259ff7561938e8f903e456d5e8531ebd19928a0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-right-b.npz",
+    "sha256": "a57217f11069ff65996bd238327004953211e66f0883248603cfc98d4b58a549",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-back-a.npz",
+    "sha256": "c16d3267a6885417ee8647cc5bf83cba9badb96842aa4a1d620f82729fca4ce6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-back-b.npz",
+    "sha256": "50969f4e705fd12fe99d38ea6bd27514aede47f7727c6fa65a9aefeebe91c834",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-left-a.npz",
+    "sha256": "ccb05bcb5c7f243c84c9c4e3285541c8086e1e587e0705e06291550a88701af3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-left-b.npz",
+    "sha256": "c10f8051fa4b6549236c015fa53def2075b4c43e4f6fb6cfc62ff95e946d4403",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24,
+    "triangles": 12
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-front-right.npz",
+    "sha256": "6fe813d1b380e71d3c2c106026d86db5ff0710eeb9714589878e9a28e2ad3de9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 680,
+    "triangles": 340
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-rear-right.npz",
+    "sha256": "fb6a6f35138dd31e27f39f6281d98ef14c0281cba44db8b942c020ed2852b44a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 680,
+    "triangles": 340
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-rear-left.npz",
+    "sha256": "b1df872ad1c58fecdb69d75abb0177a1d3ef6d6ab323603a86e8881d3592d77b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 680,
+    "triangles": 340
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/diffuser-front-left.npz",
+    "sha256": "c7b92bf44180ddd83591bc478dc89978aec702dee639ead660d49c17198dad9b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 680,
+    "triangles": 340
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/rear-cable-plug.npz",
+    "sha256": "321d5830de38b40bc7890655e9038b364889f8f6141637cc598b44f0528f82df",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1344,
+    "triangles": 1316
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-1.npz",
+    "sha256": "ef47787f5b06d046bd848b410604e6eea30dcb7f30118ab6e5fde562b6d3b8a6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-2.npz",
+    "sha256": "57591b056602ed52a2522fc0ca0508143f6c7397197d62532297ab10071db291",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-3.npz",
+    "sha256": "4c78c29727cff73343d089da95bb7144f5d468f833479ee2f8b93d03c2293b89",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-4.npz",
+    "sha256": "b0aedf123a70c2380177f38a370d650f62d37377280c65c0b90d23a0deb86356",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-5.npz",
+    "sha256": "8d6a8357b506d01f8097c18a42c1cca9f971bfdd0d7e4e2a10e3b60dc019e69a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-6.npz",
+    "sha256": "dd20ce08fe59f91a1748fd063760b740a31fced35f3ba36e8d5946655afe8b67",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-7.npz",
+    "sha256": "f4c7cf3762e4a908410b95775de59fc87fa2ffec6229b6d636d77a2d6c1c3041",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-8.npz",
+    "sha256": "5a50b4ea21f89c3a44ab4a3f0674dd22a748a3427ddf1e6f06fe1dc88cebc064",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-9.npz",
+    "sha256": "ceb1cce2f83e24250a918fc861a32696941f08626c18f92acc9fe62d1a137cd6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-10.npz",
+    "sha256": "36fe5c95e145cea63f79bce41439882d01faa561b2c937a5f376c977beba026b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-11.npz",
+    "sha256": "f690d6419f46b44dbc4992a0ac3864146b5668fd4efd02dbc27e8f5daad1983d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-12.npz",
+    "sha256": "1cf8919ef441a9b429f5ba3e12cc9e4963b77d1951a9a25a23ba4c7a88360d87",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-13.npz",
+    "sha256": "49e8e9f9a46957a018df0bb76e6857af029f72271dd72357a847edff5a74da0a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-14.npz",
+    "sha256": "b97252ad9713330ed40023faa64e82d4b2fe79196557e0443974f2891b29fa3a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-15.npz",
+    "sha256": "9b526b653a1a2f8ac07885141907fb37d9671570ef42c080a23ed32635591e5c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-16.npz",
+    "sha256": "11f97119a91ad315f7a95def0a6cd1f642544f1c082cc86d2327a133d32843c2",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-17.npz",
+    "sha256": "17a94e810415266edc23576d28e981d1bfb1ee71fb7b8dc8887dbf722a6e1104",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-18.npz",
+    "sha256": "dde9cea941f69be613b9f37842d4b66a1bc2d21079d50a2a2edeee3c2d55587e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-19.npz",
+    "sha256": "3f682c6d79bc95e5c21e947b7c480cb0dd343f4d597072da10b0f86f86d8d713",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-20.npz",
+    "sha256": "52f4350743991abb60f45580ac00164342417c20771ab02acd26865414a76048",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-21.npz",
+    "sha256": "d4e36e34e7c28f5847952076137fc30aafcb034b2fc0e0e2eff5a2afb27a3580",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-22.npz",
+    "sha256": "c3bf73853870e18b02c373a16d2f8a0dd3821524e029d4c7c373fb34b4b8f2c0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-23.npz",
+    "sha256": "cd0ba6dd1929fe413c5feb1126128e82d12a8100b07146603072d88f17a42764",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  },
+  {
+    "mesh": "/home/repro/lab/p1s-usb-light-riser/draft-11-8mm/meshes/retaining-peg-24.npz",
+    "sha256": "a648dff311ee30b12bdca01dd6e52a5157a9bcb655d0df1dfe444620b30cf791",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 990,
+    "triangles": 942
+  }
+]
