@@ -1,0 +1,52 @@
+--- a/public/gridfinity-converter/native-cad.js
++++ b/public/gridfinity-converter/native-cad.js
+@@ -1047,14 +1047,40 @@
+     diagnostic: 'native-source-bounds',
+     ...sourceBoundsCheck,
+   });
++  // The retained source is immutable. Reuse measurements only for this exact
++  // scale and placement; a different document/body owns a different record.
++  const volumeStarted = performance.now();
++  const placementIsFinite = Number.isFinite(scale) && scale > 0 &&
++    detection.rotation?.length === 9 && detection.translation?.length === 3 &&
++    [...detection.rotation, ...detection.translation].every(Number.isFinite);
++  const savedVolume = placementIsFinite ? retainedRecord?.sourceVolume : null;
++  const reusedSourceVolume = savedVolume?.key === placementKey &&
++    Number.isFinite(savedVolume.signed) && Number.isFinite(savedVolume.absolute) &&
++    savedVolume.absolute === Math.abs(savedVolume.signed);
++  if (reusedSourceVolume) {
++    signedVolumeCache.set(source, savedVolume.signed);
++    volumeCache.set(source, savedVolume.absolute);
++  }
++  const measuredSourceVolume = volume(source);
++  const sourceVolumeCheck = {
++    reused: Boolean(reusedSourceVolume),
++    elapsedMS: performance.now() - volumeStarted,
++    method: reusedSourceVolume ? 'retained-exact-placement' : 'native-volume',
++  };
+   if (
+     boundsMismatch ||
+-    Math.abs(volume(source) - p.originalVolume) >
++    Math.abs(measuredSourceVolume - p.originalVolume) >
+       Math.max(0.1, p.originalVolume * 0.005)
+   )
+     throw Error(
+       'Native CAD part does not match the detected mesh part. Export the selected solid separately and retry.',
+     );
++  if (retainedRecord && placementIsFinite && Number.isFinite(measuredSourceVolume) &&
++      Number.isFinite(signedVolumeCache.get(source))) {
++    retainedRecord.sourceVolume = { key: placementKey, absolute: measuredSourceVolume,
++      signed: signedVolumeCache.get(source) };
++  }
++  onProgress('Native source volume checked.', { diagnostic: 'native-source-volume', ...sourceVolumeCheck });
+   checkCancelled();
+   // Mesh detection uses float32 coordinates. Remove sub-tolerance noise before
+   // native booleans so nominally coincident edges do not create sliver faces.
+@@ -1355,6 +1381,7 @@
+       sourcePreparationMS,
+       usedPreparedSource: Boolean(resolvedPreparedId),
+       sourceBoundsCheck,
++      sourceVolumeCheck,
+       nativeCoordinateResolutionMM: 0.00001,
+       nativeCoordinateAdjustmentMM,
+       nativeValid: true,

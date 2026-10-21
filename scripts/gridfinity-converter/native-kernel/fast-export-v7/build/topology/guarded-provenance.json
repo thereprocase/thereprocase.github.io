@@ -1,0 +1,24 @@
+{
+  "status": "guarded build and actual WASM runtime qualification passed",
+  "image": "ghcr.io/taucad/opencascade.js:canary-ebd263f1-multi-threaded",
+  "imageID": "sha256:5cb67064edc903ae50c254e32417da9662fa88ec2e734386c28a3806949862ce",
+  "correctedBindings": "/home/repro/occt-destructor-audit/repaired-objects",
+  "exactReaderObjects": "copied unchanged from occt-model-exact-audit/out-multi",
+  "limits": "Reuses pinned image CMake libraries/metadata and corrected binding object cache; not demonstrated clean-cache reconstruction. No CAD algorithm library changes.",
+  "allocator": "mimalloc; inherited undefined mallinfo link warning is not a callable diagnostic API; runtime asserts nativeAllocatorStats absent and scoped mimalloc stats callable",
+  "files": {
+    "native-topology-copy.cpp": "6574136137f2530eb0082dbea53c7990008e86e580633b85de3d0951c01ff955",
+    "build-guarded.sh": "e7e3efa540ec713878904c8d2714406f5568df278a619a0d7de940a1e1c3de7b",
+    "patch-pool4.py": "380688ee3e61132b57ba684e466e1f808dfa2068ecf72c9bb1f95fbfb06d6147",
+    "build-config/topology_copy_guarded_multi.yml": "e17036ed8861b75504a6f8a41401bbc27a0c2e0f866adad22a4b12a398711fa4",
+    "build-config/topology_copy_guarded_multi.js": "65bfaf17cc7298893e4beabc81c4915e6fee722092131621c1bc3cbf5a113a3f",
+    "build-config/topology_copy_guarded_multi_pool4.js": "ae7e894f64b66f0fd0cf488f7e9a15e7b30ab72bf6d141a80c11df9969574ab3",
+    "build-config/topology_copy_guarded_multi.wasm": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc",
+    "mimalloc-diagnostics.o": "9926212c9e64ab9ded8d526afa8be90219728a2bd6e7a0d54e537fd2e605c9c8",
+    "out-multi/ShapeAnalysis_Edge.cxx.o": "943cb80bbd65bd800cb30688b894ca792883adbd3109206ff1cf90ecb25a23ff",
+    "out-multi/ShapeFix_Edge.cxx.o": "347106347ec23bae6d6c47e85e35f92db5bc02f4b2a33cf7df8a4a1f4076ef30",
+    "fixtures.cpp": "9ff2b6b31ff6bcc88616a083f056afad077a8bf6347ed0491908ca39678977fa",
+    "fixtures-v2.log": "288242eaad174a18c47a26d662c26bb782788424129621249fd608513fea1ca9",
+    "guarded-check.json": "7096ebe0fd3370f2f6006ed476b86277aefd858caf37adfd5e786d65e456af39"
+  }
+}

@@ -1,0 +1,1042 @@
+--- a/public/gridfinity-converter/app.js
++++ b/public/gridfinity-converter/app.js
+@@ -1,6 +1,6 @@
+-import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-2';
++import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=fast-export-20261021-025000';
+ import * as THREE from 'three';
+-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-2';
++import { illustrationMesh, PALETTE } from './illustration-view.js?v=fast-export-20261021-025000';
+ import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
+ import {
+   STYLES,
+@@ -9,8 +9,8 @@
+   binarySTL,
+   restoreCoordinates,
+   checkMesh,
+-} from './kernel.js?v=native-step-20261021-2';
+-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-2';
++} from './kernel.js?v=fast-export-20261021-025000';
++import { importFile, extensions, export3MF } from './importers.js?v=fast-export-20261021-025000';
+ const nativeExportWarmPool = createNativeExportWarmPool();
+ addEventListener('pagehide', () => {
+   if (cancelNativeExport()) {
+@@ -24,6 +24,7 @@
+   cadWorker,
+   nativeWorker,
+   nativeReject,
++  nativeCancellation,
+   exportWorker,
+   exportReject,
+   exportAbort,
+@@ -426,6 +427,8 @@
+   return active;
+ }
+ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {}) {
++  clearTimeout(nativeCancellation?.timer);
++  nativeCancellation = null;
+   const keepCAD = preserveIdleCAD && cadWorker && !nativeWorker && raw?.nativeDocumentId;
+   // During native conversion the mesh worker is idle and still owns detection
+   // input. Keep that input, but always discard the cancelled native workers.
+@@ -459,7 +462,7 @@
+ }
+ function rpc(type, data = {}) {
+   if (!worker) {
+-    worker = new Worker('./worker.js?v=native-step-20261021-2', { type: 'module' });
++    worker = new Worker('./worker.js?v=fast-export-20261021-025000', { type: 'module' });
+     worker.onmessage = ({ data }) => {
+       const p = pending.get(data.id);
+       if (!p) return;
+@@ -898,6 +901,13 @@
+   } catch (e) {
+     if (turn !== epoch) return;
+     setBusy(false);
++    if (e.cleanNativeCancellation) {
++      view = 'original';
++      draw();
++      renderFeet();
++      status('Conversion cancelled. Prepared CAD and settings are kept; you can retry now.');
++      return;
++    }
+     status(e.message, true);
+   }
+ }
+@@ -932,15 +942,23 @@
+     const source = raw;
+     const requestId = ++sequence;
+     const documentId = cadWorker ? source.nativeDocumentId : null;
++    const bodyIndex = Number($('body').value || 0);
++    const cancelBuffer = documentId && nativePreparation?.done &&
++      nativePreparation.report?.bodyIndex === bodyIndex && crossOriginIsolated &&
++      typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
+     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
+       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
+-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-2', {
++    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=fast-export-20261021-025000', {
+       type: 'module',
+     });
+     nativeWorker = w;
+     nativeReject = reject;
++    const cancellation = cancelBuffer ? { token: new Int32Array(cancelBuffer), requested: false, timer: null } : null;
++    nativeCancellation = cancellation;
+     const current = () => nativeWorker === w && epoch === turn && raw === source;
+     const finish = (retain) => {
++      clearTimeout(cancellation?.timer);
++      if (nativeCancellation === cancellation) nativeCancellation = null;
+       if (nativeWorker === w) nativeWorker = null;
+       if (nativeReject === reject) nativeReject = null;
+       w.onmessage = null;
+@@ -971,9 +989,20 @@
+       }
+       if (data.requestId !== requestId) return;
+       if (data.progress) {
+-        setBusy(true, data.progress);
++        if (!cancellation?.requested) setBusy(true, data.progress);
+         return;
+       }
++      if (data.cancelled) {
++        const retain = cancellation?.requested && data.clean && documentId && data.nativeDocumentId === documentId;
++        finish(retain);
++        const error = new DOMException(retain ? 'Conversion cancelled.' : 'Cancellation required a fresh CAD worker.', 'AbortError');
++        error.cleanNativeCancellation = Boolean(retain);
++        reject(error);
++        return;
++      }
++      // A result already queued when Cancel was clicked must not be published.
++      // Without a clean acknowledgment, the cancellation timeout discards it.
++      if (cancellation?.requested && data.result) return;
+       const retain = !data.error && documentId && data.result?.nativeDocumentId === documentId;
+       finish(retain);
+       if (data.error)
+@@ -989,6 +1018,7 @@
+       w.postMessage({
+         type: 'convert',
+         requestId,
++        cancelBuffer,
+         documentId,
+         retainDocument: Boolean(documentId),
+         deferOriginalPose: true,
+@@ -997,7 +1027,7 @@
+         buffer: source.nativeBuffer,
+         format: source.format,
+         scale: unitScale(),
+-        bodyIndex: Number($('body').value || 0),
++        bodyIndex,
+         detection,
+         options,
+       });
+@@ -1173,6 +1203,19 @@
+     status('Download preparation cancelled. Your conversion is still available.');
+     return;
+   }
++  if (nativeCancellation) {
++    if (nativeCancellation.requested) return;
++    const cancellation = nativeCancellation;
++    cancellation.requested = true;
++    Atomics.store(cancellation.token, 0, 1);
++    setBusy(true, 'Cancelling the current CAD step and cleaning up…');
++    cancellation.timer = setTimeout(() => {
++      if (nativeCancellation !== cancellation) return;
++      nativeCancellation = null;
++      $('cancel').onclick();
++    }, 8000);
++    return;
++  }
+   const retryNative = Boolean(nativeWorker && raw?.nativeBuffer?.byteLength && loaded && detection);
+   fileState = retryNative ? 'loaded' : 'cancelled';
+   epoch++;
+@@ -1276,7 +1319,7 @@
+       if (verifierExport) {
+         lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
+         w = lease.worker;
+-      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-2', { type: 'module' });
++      } else w = new Worker('./native-export-worker.js?v=fast-export-20261021-025000', { type: 'module' });
+       if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
+       exportWorker = w;
+       w.onmessage = ({ data: reply }) => {
+--- a/public/gridfinity-converter/demo.js
++++ b/public/gridfinity-converter/demo.js
+@@ -1,4 +1,4 @@
+-import { meshData, foot } from './kernel.js?v=native-step-20261021-2';
++import { meshData, foot } from './kernel.js?v=fast-export-20261021-025000';
+ export function demo(module) {
+   const M = module.Manifold,
+     owned = [],
+--- a/public/gridfinity-converter/illustration-view.js
++++ b/public/gridfinity-converter/illustration-view.js
+@@ -14,7 +14,7 @@
+   const promise = new Promise((resolve, reject) => {
+     if (!worker) {
+       worker = new Worker(
+-        new URL('./render-geometry-worker.js?v=native-step-20261021-2', import.meta.url),
++        new URL('./render-geometry-worker.js?v=fast-export-20261021-025000', import.meta.url),
+         { type: 'module' },
+       );
+       const createdWorker = worker;
+--- a/public/gridfinity-converter/importers.js
++++ b/public/gridfinity-converter/importers.js
+@@ -1,5 +1,5 @@
+ import * as THREE from 'three';
+-import { LIMITS } from './kernel.js?v=native-step-20261021-2';
++import { LIMITS } from './kernel.js?v=fast-export-20261021-025000';
+ import {
+   unzipSync,
+   strFromU8,
+@@ -372,8 +372,8 @@
+       'No reliable units in this format; defaulting to millimetres. Check the dimensions.';
+   if (['step', 'stp', 'iges', 'igs', 'brep', 'brp'].includes(ext)) {
+     const worker = ['iges', 'igs'].includes(ext)
+-      ? new Worker('./cad-worker.js?v=native-step-20261021-2')
+-      : new Worker('./native-preview-worker.js?v=native-step-20261021-2', {
++      ? new Worker('./cad-worker.js?v=fast-export-20261021-025000')
++      : new Worker('./native-preview-worker.js?v=fast-export-20261021-025000', {
+           type: 'module',
+         });
+     onCADWorker?.(worker);
+@@ -389,7 +389,7 @@
+     };
+     if (format === 'step' && onEarlyPreview && !signal?.aborted) {
+       try {
+-        earlyWorker = new Worker('./step-wire-worker.js?v=native-step-20261021-2', {
++        earlyWorker = new Worker('./step-wire-worker.js?v=fast-export-20261021-025000', {
+           type: 'module',
+         });
+         earlyWorker.onmessage = ({ data }) => {
+--- a/public/gridfinity-converter/index.html
++++ b/public/gridfinity-converter/index.html
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gridfinity base converter</title><meta name="description" content="Detect and replace male Gridfinity feet on an uploaded part, with a fixed 42 mm grid, local 3D preview and STL or 3MF export."><link rel="stylesheet" href="/gridline/gridline.css"><link rel="stylesheet" href="style.css?v=native-step-20261021-2"><script type="importmap">{"imports":{"three":"/p1s-feet/vendor/three.module.js"}}</script></head>
++<html lang="en"><head><script src="/diagnostics-fast-export-v7.js?v=fast-export-20261021-025000"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gridfinity base converter</title><meta name="description" content="Detect and replace male Gridfinity feet on an uploaded part, with a fixed 42 mm grid, local 3D preview and STL or 3MF export."><link rel="stylesheet" href="/gridline/gridline.css"><link rel="stylesheet" href="style.css?v=fast-export-20261021-025000"><script type="importmap">{"imports":{"three":"/p1s-feet/vendor/three.module.js"}}</script></head>
+ <body><header><a href="/">thereprocase / projects</a><nav aria-label="Related tools"><a href="/gridfinity-shelves/">Shelf generator</a><a href="/gridfinity-drawers/">Drawer inserts</a></nav></header>
+ <main><div class="intro"><div><h1>Gridfinity base converter</h1><p>Replace the male feet on a bin, holder or other part. Detection matches the foot profile to a fixed <strong>42 mm grid</strong>. Review the highlighted cells before converting.</p></div><div class="intro-tools"><p class="local-note">Files are processed in your browser.<br>No model upload to a server.</p><button id="demo" type="button" disabled aria-describedby="example-help">Try example bin</button><p id="example-help" class="hint">Use the built-in 2 × 1 sample instead of a file.</p></div></div>
+ <div class="workflow" id="workflow"><nav aria-label="Conversion steps"><a href="#model-panel" data-stage="1">1 · Model</a><a href="#selection-panel" data-stage="2">2 · Review feet</a><a href="#replacement-panel" data-stage="3">3 · Replace</a><a href="#export-panel" data-stage="4">4 · Export</a></nav><div class="status-row"><p id="status" role="status" aria-live="polite">Starting CAD support…</p><div class="workflow-actions"><button id="workflow-action" disabled>Convert feet</button><button id="cancel" disabled>Cancel</button></div></div><div id="loading" class="loading" hidden><div id="loading-stage" class="hint"></div><progress aria-label="Model processing" aria-describedby="status"></progress><span id="loading-elapsed" class="hint"></span></div></div><div class="workspace"><aside class="controls">
+@@ -10,4 +10,4 @@
+ </aside>
+ <div class="viewer-column"><section class="pane viewer-pane" id="preview-panel"><h2>Model and selected feet <span id="part-badge">No model</span></h2><div class="toolbar" role="group" aria-label="Model display"><button id="view-original" aria-pressed="true">Original</button><button id="view-converted" aria-pressed="false" disabled>Converted</button><button id="view-changes" aria-pressed="false" disabled>Show changes</button><button id="underside">Underside</button><button id="reset-view">Reset view</button><a id="export-shortcut" href="#export-panel" hidden>Export result →</a></div><p id="viewer-summary" class="viewer-summary">Choose a model to detect its male feet</p><div id="viewer" aria-label="Interactive model. Drag to orbit, scroll or pinch to zoom, click a highlighted foot to select it."><p id="viewer-message">Choose a model to preview it here.</p></div><p class="hint viewer-help">Drag to orbit · scroll or pinch to zoom · select feet in Original view</p><div class="legend" id="legend"><span><i class="teal"></i><span id="legend-selected">Selected foot</span></span><span><i class="orange"></i><span id="legend-unselected">Unselected foot</span></span></div><div class="section-control"><label class="check"><input id="section" type="checkbox">Clipping view (open cut)</label><label>Show below Z · mm <input id="section-z" type="range" min="0" max="30" step="0.1" value="7"><output id="section-value">7.0</output></label></div><details class="detection-details"><summary>Detection measurements</summary><p id="summary" class="hint"></p></details></section>
+ <section class="pane" id="export-panel"><h2>4 · Export</h2><p id="export-format" class="representation">Mesh output · STL and 3MF</p><p id="conversion-note">Review the highlighted feet, then generate a conversion preview. Export buttons become available after geometry checks pass.</p><dl id="conversion-metrics" class="metrics"></dl><label class="check"><input id="source-pose" type="checkbox">Export in the imported orientation and position (millimetres)</label><div class="downloads"><button id="step" disabled>Download BREP</button><button id="translate-step" disabled>Prepare STEP download</button><button id="stl" disabled>Download STL</button><button id="three-mf" disabled>Download 3MF</button><button id="report" disabled>Download conversion report</button></div><p class="hint">Default export uses the detected base-down orientation. 3MF contains the selected part and a conversion report, without printer settings. STEP and BREP inputs preserve CAD surfaces through native solid operations and provide validated BREP export. STEP translation is validated separately when requested. CAD mesh exports start at 0.01 mm deviation and adapt automatically for large models; the actual value is recorded in the conversion report. Source colors, textures, assembly structure and CAD feature history are not retained.</p></section>
+-<section class="pane scope"><details><summary>How detection works and its limits</summary><p>This first version handles <strong>male Gridfinity feet on individual parts</strong>. Female sockets, baseplates, grids and racks are outside this converter’s scope.</p><p>The detector compares three horizontal cross-sections with the 0.8 mm chamfer, 1.8 mm straight section and 2.15 mm upper chamfer. It fits matching centers to a 42 mm lattice. A single foot can be recognized from its profile, but cannot independently establish grid pitch. Low-confidence or off-grid features need review; a regular flat block is not automatically treated as a Gridfinity foot.</p><p>The conversion replaces selected foot regions and cuts the requested hardware holes. It verifies a connected, closed mesh and measures any change outside those regions. Existing geometry above the seam is retained, except for the requested hole depths; old blind cavities above the seam can remain enclosed. Check the preview and slicer toolpaths, and print a fit test before converting important parts.</p><p>STEP and BREP stay as native boundary representations during conversion; tessellation is used for detection and display. IGES currently follows the mesh conversion path. Open, self-intersecting or inconsistently wound surfaces can be viewed but must be repaired before conversion. Check units on STL, OBJ, PLY, OFF and FBX. Skinned models need a baked static export. Proprietary project files such as .blend, .f3d and .sldprt must first be exported to a supported format.</p><p>Profile references: <a href="https://github.com/Stu142/Gridfinity-Documentation">Gridfinity dimensional documentation</a> and <a href="https://github.com/kennetek/gridfinity-rebuilt-openscad">Gridfinity Rebuilt</a>. <a href="README.md">Implementation and checks</a> · <a href="provenance.json">Dependencies and evidence</a>.</p></details></section></div></div></main><footer>Gridfinity male base conversion · 42 mm pitch · Dimensions in millimetres</footer><script type="module" src="isolation-bootstrap.js?v=native-step-20261021-2"></script></body></html>
++<section class="pane scope"><details><summary>How detection works and its limits</summary><p>This first version handles <strong>male Gridfinity feet on individual parts</strong>. Female sockets, baseplates, grids and racks are outside this converter’s scope.</p><p>The detector compares three horizontal cross-sections with the 0.8 mm chamfer, 1.8 mm straight section and 2.15 mm upper chamfer. It fits matching centers to a 42 mm lattice. A single foot can be recognized from its profile, but cannot independently establish grid pitch. Low-confidence or off-grid features need review; a regular flat block is not automatically treated as a Gridfinity foot.</p><p>The conversion replaces selected foot regions and cuts the requested hardware holes. It verifies a connected, closed mesh and measures any change outside those regions. Existing geometry above the seam is retained, except for the requested hole depths; old blind cavities above the seam can remain enclosed. Check the preview and slicer toolpaths, and print a fit test before converting important parts.</p><p>STEP and BREP stay as native boundary representations during conversion; tessellation is used for detection and display. IGES currently follows the mesh conversion path. Open, self-intersecting or inconsistently wound surfaces can be viewed but must be repaired before conversion. Check units on STL, OBJ, PLY, OFF and FBX. Skinned models need a baked static export. Proprietary project files such as .blend, .f3d and .sldprt must first be exported to a supported format.</p><p>Profile references: <a href="https://github.com/Stu142/Gridfinity-Documentation">Gridfinity dimensional documentation</a> and <a href="https://github.com/kennetek/gridfinity-rebuilt-openscad">Gridfinity Rebuilt</a>. <a href="README.md">Implementation and checks</a> · <a href="provenance.json">Dependencies and evidence</a>.</p></details></section></div></div></main><footer>Gridfinity male base conversion · 42 mm pitch · Dimensions in millimetres</footer><script type="module" src="isolation-bootstrap.js?v=fast-export-20261021-025000"></script></body></html>
+--- a/public/gridfinity-converter/isolation-bootstrap.js
++++ b/public/gridfinity-converter/isolation-bootstrap.js
+@@ -77,7 +77,7 @@
+ document.documentElement.dataset.cadIsolation = isolation;
+ if (isolation !== 'reloading') {
+   try {
+-    await import('./app.js?v=native-step-20261021-2');
++    await import('./app.js?v=fast-export-20261021-025000');
+     for (const gate of gates) if (gate) gate.disabled = false;
+   } catch (error) {
+     if (status)
+--- a/public/gridfinity-converter/native-brep-worker.js
++++ b/public/gridfinity-converter/native-brep-worker.js
+@@ -1,4 +1,4 @@
+-import { validateNativeBrepCandidate, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-2';
++import { validateNativeBrepCandidate, warmNativeBrepValidator } from './native-cad.js?v=fast-export-20261021-025000';
+ self.onmessage = async ({ data }) => {
+   try {
+     if (data.type === 'warm') {
+--- a/public/gridfinity-converter/native-cad.js
++++ b/public/gridfinity-converter/native-cad.js
+@@ -1,20 +1,20 @@
+-import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-2';
+-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-2';
+-import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-2';
+-import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-2';
+-import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-2';
+-import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-2';
+-import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-2';
+-import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-2';
+-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-2';
+-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-2';
+-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-2';
+-import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-2';
+-import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-2';
+-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-2';
++import { withStepRepairFallback } from './step-repair-fallback.js?v=fast-export-20261021-025000';
++import { BOUNDS_KERNELS } from './native-bounds-build.js?v=fast-export-20261021-025000';
++import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=fast-export-20261021-025000';
++import { readVerifierSTEP } from './step-verifier-reader.js?v=fast-export-20261021-025000';
++import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=fast-export-20261021-025000';
++import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=fast-export-20261021-025000';
++import { castOwned, ownedSolids } from './native-owned-shape.js?v=fast-export-20261021-025000';
++import { copyNativeArray } from './native-buffer.js?v=fast-export-20261021-025000';
++import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=fast-export-20261021-025000';
++import { prepareNativeLocalEdit } from './native-local-edit.js?v=fast-export-20261021-025000';
++import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=fast-export-20261021-025000';
++import { preservedRepairGeometry } from './repair-signature.js?v=fast-export-20261021-025000';
++import { proveNativePreservation } from './native-preservation.js?v=fast-export-20261021-025000';
++import { equivalentBrepTokens } from './brep-equivalence.js?v=fast-export-20261021-025000';
+ /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
+-import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-2';
+-import * as cad from './vendor/replicad/replicad.js';
++import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=fast-export-20261021-025000';
++import * as cad from './vendor/replicad/replicad.js?v=fast-export-20261021-025000';
+ let ready, OC, kernelPurpose;
+ let displayFaceCache = null;
+ const retainedDisplayCaches = new Set();
+@@ -869,6 +869,7 @@
+       volumeChange, beforeToleranceMM: beforeTolerance, afterToleranceMM: afterTolerance, strictValid: true,
+     }};
+   } catch (error) {
++    if (error instanceof WebAssembly.RuntimeError) throw error;
+     onProgress('Checking the original native CAD after preparation could not be used…');
+     const restored = restoreValidOriginal();
+     if (restored) return restored;
+@@ -909,6 +910,11 @@
+     throw error;
+   }
+ }
++/** Only immutable, strictly prepared source entries can survive a clean cancellation. */
++export function hasPreparedNativeDocument(documentId, bodyIndex = 0) {
++  return conversionShapes === null && [...preparedNativeDocuments.values()].some(record =>
++    record.documentId === documentId && record.bodyIndex === bodyIndex);
++}
+ export async function convertNative({
+   buffer,
+   preparedDocumentId,
+@@ -917,7 +923,10 @@
+   fastDisplay = false,
+   deferOriginalPose = false,
+   nativeExportPreference = 'auto',
++  topologyCopyPrimary = false,
+   validateBrepCandidate,
++  checkCancelled = () => {},
++  waitForCancellation = promise => promise,
+   format,
+   scale = 1,
+   bodyIndex = 0,
+@@ -969,10 +978,12 @@
+     }
+     sourceCurveRepair = prepared.sourceCurveRepair;
+     sourcePreparationMS = prepared.preparationMS;
++    checkCancelled();
+     onProgress('Using the prepared native CAD source…', { diagnostic: 'prepared-native-source', sourcePreparationMS });
+   } else {
+     if (documentId && !buffer && [...preparedNativeDocuments.values()].some(record => record.documentId === documentId))
+       throw Error('The selected body has no prepared native source. Reload the model to select another body.');
++    checkCancelled();
+     onProgress('Opening native CAD…');
+     const document = (documentId && takeNativeDocument(documentId)) ||
+       (format === 'brep' || format === 'brp'
+@@ -1033,18 +1044,46 @@
+   }
+   if (retainedRecord && sourceBoundsCheck.matches)
+     retainedRecord.boundsProof = {key:boundsKey,proof:{...sourceBoundsCheck}};
++  checkCancelled();
+   onProgress('Matching native CAD to the detected part…', {
+     diagnostic: 'native-source-bounds',
+     ...sourceBoundsCheck,
+   });
++  // The retained source is immutable. Reuse measurements only for this exact
++  // scale and placement; a different document/body owns a different record.
++  const volumeStarted = performance.now();
++  const placementIsFinite = Number.isFinite(scale) && scale > 0 &&
++    detection.rotation?.length === 9 && detection.translation?.length === 3 &&
++    [...detection.rotation, ...detection.translation].every(Number.isFinite);
++  const savedVolume = placementIsFinite ? retainedRecord?.sourceVolume : null;
++  const reusedSourceVolume = savedVolume?.key === placementKey &&
++    Number.isFinite(savedVolume.signed) && Number.isFinite(savedVolume.absolute) &&
++    savedVolume.absolute === Math.abs(savedVolume.signed);
++  if (reusedSourceVolume) {
++    signedVolumeCache.set(source, savedVolume.signed);
++    volumeCache.set(source, savedVolume.absolute);
++  }
++  const measuredSourceVolume = volume(source);
++  const sourceVolumeCheck = {
++    reused: Boolean(reusedSourceVolume),
++    elapsedMS: performance.now() - volumeStarted,
++    method: reusedSourceVolume ? 'retained-exact-placement' : 'native-volume',
++  };
+   if (
+     boundsMismatch ||
+-    Math.abs(volume(source) - p.originalVolume) >
++    Math.abs(measuredSourceVolume - p.originalVolume) >
+       Math.max(0.1, p.originalVolume * 0.005)
+   )
+     throw Error(
+       'Native CAD part does not match the detected mesh part. Export the selected solid separately and retry.',
+     );
++  if (retainedRecord && placementIsFinite && Number.isFinite(measuredSourceVolume) &&
++      Number.isFinite(signedVolumeCache.get(source))) {
++    retainedRecord.sourceVolume = { key: placementKey, absolute: measuredSourceVolume,
++      signed: signedVolumeCache.get(source) };
++  }
++  onProgress('Native source volume checked.', { diagnostic: 'native-source-volume', ...sourceVolumeCheck });
++  checkCancelled();
+   // Mesh detection uses float32 coordinates. Remove sub-tolerance noise before
+   // native booleans so nominally coincident edges do not create sliver faces.
+   // Source CAD curves and surfaces are unchanged; preservation is checked below.
+@@ -1097,7 +1136,7 @@
+     return clipped;
+   };
+   const localEdit = await prepareNativeLocalEdit({
+-    cad, source, feet, bottom, height, fit, roof, nativeFoot,
++    cad, source, feet, bottom, height, fit, roof, nativeFoot, checkCancelled,
+     maximumHoleDepth, maximumHoleRadius: Math.max(magnetDiameter,screwDiameter)/2,
+     cut, fuse, intersect, union, volume, clipSource, own: ownConversionShape, onProgress,
+   });
+@@ -1128,6 +1167,7 @@
+     if (!fits(screwDepth)) {
+       let candidate = Math.floor((screwDepth - 0.001) * 10) / 10;
+       while (candidate >= 2 && !fits(candidate)) {
++        checkCancelled();
+         onProgress(`Fitting native screw depth: ${candidate.toFixed(1)} mm…`);
+         candidate = Math.round((candidate - 0.1) * 10) / 10;
+       }
+@@ -1167,6 +1207,7 @@
+         if (['screws', 'both'].includes(style))
+           dims.push([screwDiameter / 2, screwDepth]);
+         for (const [radius, depth] of dims) {
++          checkCancelled();
+           onProgress(`Checking hole roof ${++roofIndex} of ${holes.length}…`);
+           const cover = nativeCylinder(radius, roof, [
+             f.x + dx,
+@@ -1186,12 +1227,14 @@
+           }
+         }
+       }
++  checkCancelled();
+   onProgress('Replacing native CAD feet and hardware…');
+   result = localEdit.assemble(holes.length ? union(holes) : null);
+   // Materialize the preservation mask before retiring its individual tools.
+   const allowed = union(regions);
+   const constructionRelease = releaseConstructionShapes(constructionCheckpoint,
+     new Set([result, allowed, localEdit.localSource, localEdit.editBox]));
++  checkCancelled();
+   onProgress('Checking native CAD holes and solid validity…', {
+     diagnostic: 'native-construction-release', ...constructionRelease,
+     wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation',
+@@ -1199,7 +1242,7 @@
+   });
+   // The candidate is immutable; booleans below use non-destructive inputs.
+   // Capture failures immediately because this worker's exact checks are synchronous.
+-  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primaryStartedAtMS, primaryExactValidation;
++  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primarySnapshot, primaryStartedAtMS, primaryExactValidation;
+   try {
+     if (nativeExportPreference === 'brep' && validateBrepCandidate) {
+       candidateSnapshot = nativeGeometryCopy(oc, result);
+@@ -1210,28 +1253,38 @@
+         .then(value => ({ value }), error => ({ error }));
+       // A nested worker may not finish starting until this worker yields.
+       // Await its kernel-ready acknowledgement before entering synchronous checks.
+-      if (candidateTask?.ready) await candidateTask.ready;
++      if (candidateTask?.ready) await waitForCancellation(candidateTask.ready);
+     }
+     primaryStartedAtMS = Date.now();
+     const exactStarted = performance.now(), capacityBefore = oc.wasmMemory.buffer.byteLength;
+-    let exactSucceeded = false;
++    let exactSucceeded = false, primaryCopyElapsedMS = 0, primaryCopyMethod = !generatedDisplayMesh ? 'original-result' : topologyCopyPrimary && !oc.nativeTopologyCopyWithoutMesh ? 'missing-helper-deep-fallback' : candidateSnapshot ? 'existing-deep-snapshot' : 'fresh-deep-copy';
++    checkCancelled();
+     onProgress('Checking exact result geometry…', {
+       diagnostic: 'native-validation', meshFreeDisplayCopy: generatedDisplayMesh, primaryStartedAtMS,
+       wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore,
+     });
+     try {
+-      if (!(generatedDisplayMesh ? (candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
++      if (topologyCopyPrimary && generatedDisplayMesh && oc.nativeTopologyCopyWithoutMesh) {
++        const copyStarted = performance.now();
++        const raw = oc.nativeTopologyCopyWithoutMesh(result.wrapped);
++        if (raw.IsNull()) { raw.delete(); primaryCopyMethod = 'unsupported-deep-fallback'; }
++        else { primarySnapshot = castOwned(cad, raw); primaryCopyMethod = 'topology-only'; }
++        primaryCopyElapsedMS = performance.now() - copyStarted;
++      }
++      if (!(generatedDisplayMesh ? (primarySnapshot ? valid(oc, primarySnapshot) : candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
+         throw Error('Native CAD result is not one valid solid. Export blocked.');
+       exactSucceeded = true;
+     } finally {
+-      primaryExactValidation = { elapsedMS: performance.now() - exactStarted, startedAtMS: primaryStartedAtMS, finishedAtMS: Date.now(), passed: exactSucceeded,
++      primaryExactValidation = { copyMethod: primaryCopyMethod, copyElapsedMS: primaryCopyElapsedMS, elapsedMS: performance.now() - exactStarted, startedAtMS: primaryStartedAtMS, finishedAtMS: Date.now(), passed: exactSucceeded,
+         wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore, wasmCapacityAfterBytes: oc.wasmMemory.buffer.byteLength };
+       onProgress('Exact result geometry check finished.', { diagnostic: 'native-validation-complete', ...primaryExactValidation });
+     }
+-  } finally { candidateSnapshot?.delete(); }
++  } finally { try { primarySnapshot?.delete(); } finally { candidateSnapshot?.delete(); } }
++  checkCancelled();
+   onProgress('Preparing the exact edit region…');
+   // The shared convex box contains every allowed tool and every roof probe.
+   const editBox = localEdit.editBox;
++  checkCancelled();
+   onProgress('Checking preserved CAD boundary faces…');
+   const preservationProof = proveNativePreservation({
+     oc, cad, source, result, editBox, cut, validatedSolids: true,
+@@ -1240,6 +1293,7 @@
+   });
+   let added, removed;
+   if (preservationProof.proved) {
++    checkCancelled();
+     onProgress('Measuring changes within the local CAD region…');
+     const localSource = localEdit.localSource;
+     const localResult = intersect(result, editBox);
+@@ -1248,11 +1302,13 @@
+       removed = cut(localSource, localResult);
+     } finally { localSource.delete(); localResult.delete(); }
+   } else {
++    checkCancelled();
+     onProgress('Checking preserved CAD geometry with full solid differences…');
+     added = cut(result, source);
+     removed = cut(source, result);
+   }
+   editBox.delete();
++  checkCancelled();
+   onProgress('Checking material changes outside the allowed edit…');
+   const outsideAdded = volume(cut(added, allowed));
+   const outsideChange = outsideAdded + volume(cut(removed, allowed));
+@@ -1269,9 +1325,10 @@
+   let stepExport, sourceExport, brep, sourceBrep, stepExportError;
+   if (nativeExportPreference === 'brep') {
+     if (parallelBrep) {
+-      const outcome = await parallelBrep;
++      const outcome = await waitForCancellation(parallelBrep);
+       if (outcome.error) throw outcome.error;
+       parallelBrepReport = { ...outcome.value?.report, primaryStartedAtMS, primaryFinishedAtMS, fallbackRequired: Boolean(outcome.value?.fallbackRequired) };
++      checkCancelled();
+       onProgress('Parallel native BREP export validation complete.', { diagnostic: 'parallel-brep', ...parallelBrepReport });
+       if (outcome.value?.fallbackRequired) brep = checkedBrep(result, 'base-down');
+       else if (outcome.value?.buffer instanceof ArrayBuffer) { brep = outcome.value.buffer; sourceCertificate = outcome.value.sourceCertificate; }
+@@ -1292,10 +1349,12 @@
+     brep = checkedBrep(result, 'base-down');
+     sourceBrep = identicalPoses ? brep : deferOriginalPose ? undefined : checkedBrep(restored, 'original-pose');
+   }
++  checkCancelled();
+   onProgress('Preparing CAD preview…');
+   const geometry = await tessellateNative(result, 1000000, { label: 'converted body', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01, useFaceCache: fastDisplay });
+   const addedMesh = await tessellateNative(added, 1000000, { label: 'added material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
+   const removedMesh = await tessellateNative(removed, 1000000, { label: 'removed material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
++  checkCancelled();
+   return {
+     nativeDocumentId: retainedRecord?.documentId,
+     geometry,
+@@ -1331,6 +1390,7 @@
+       sourcePreparationMS,
+       usedPreparedSource: Boolean(resolvedPreparedId),
+       sourceBoundsCheck,
++      sourceVolumeCheck,
+       nativeCoordinateResolutionMM: 0.00001,
+       nativeCoordinateAdjustmentMM,
+       nativeValid: true,
+--- /dev/null
++++ b/public/gridfinity-converter/native-cancellation.js
+@@ -0,0 +1,18 @@
++/** Shared cancellation is checked only at normal-flow boundaries, never in finally. */
++export function createNativeCancellation(buffer, enabled) {
++  const token = enabled && typeof SharedArrayBuffer !== 'undefined' &&
++    buffer instanceof SharedArrayBuffer && buffer.byteLength === 4 ? new Int32Array(buffer) : null;
++  const aborted = new DOMException('Conversion cancelled after native cleanup.', 'AbortError');
++  const check = () => { if (token && Atomics.load(token, 0)) throw aborted; };
++  const wait = async promise => {
++    check();
++    if (!token) return promise;
++    let timer;
++    try {
++      return await Promise.race([promise, new Promise((_, reject) => {
++        timer = setInterval(() => { if (Atomics.load(token, 0)) reject(aborted); }, 25);
++      })]);
++    } finally { clearInterval(timer); }
++  };
++  return { check, wait, enabled: Boolean(token), isCancellation: error => error === aborted };
++}
+--- a/public/gridfinity-converter/native-display-check.js
++++ b/public/gridfinity-converter/native-display-check.js
+@@ -1,4 +1,4 @@
+-import { checkMesh } from './kernel.js?v=native-step-20261021-2';
++import { checkMesh } from './kernel.js?v=fast-export-20261021-025000';
+ 
+ /** The same exact-coordinate, opposite-edge check as checkMesh, with packed
+  * numeric edges instead of repeated coordinate strings for every half-edge. */
+--- a/public/gridfinity-converter/native-export-warm-pool.js
++++ b/public/gridfinity-converter/native-export-warm-pool.js
+@@ -1,6 +1,6 @@
+ /** One unused export kernel; every acquired worker is consumed once. */
+ export function createNativeExportWarmPool({
+-  createWorker = () => new Worker(new URL('./native-export-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' }),
++  createWorker = () => new Worker(new URL('./native-export-worker.js?v=fast-export-20261021-025000', import.meta.url), { type: 'module' }),
+   startupMS = 30000,
+   idleMS = 60000,
+ } = {}) {
+@@ -49,6 +49,13 @@
+         try { const entry = make(true); if (!entry.closed) slot = entry; return entry.ready; }
+         catch (error) { return Promise.resolve({ ready: false, error: String(error) }); }
+       }
++      // Recent conversion activity renews the unused slot's idle lifetime.
++      // Never renew an acquired worker or create a second speculative kernel.
++      if (slot.idleTimer) {
++        const entry = slot;
++        clearTimeout(entry.idleTimer);
++        entry.idleTimer = setTimeout(() => stop(entry), idleMS);
++      }
+       return slot.ready;
+     },
+     async acquire({ signal } = {}) {
+--- a/public/gridfinity-converter/native-export-worker.js
++++ b/public/gridfinity-converter/native-export-worker.js
+@@ -1,9 +1,11 @@
+-import { startParallelSourceBounds } from './native-parallel-source-bounds.js?v=native-step-20261021-2';
+-import { exportNativeOriginalPose, warmNativeBrepValidator } from './native-cad.js?v=native-step-20261021-2';
++import { startParallelSourceBounds, createSourceBoundsModuleWarmup } from './native-parallel-source-bounds.js?v=fast-export-20261021-025000';
++import { exportNativeOriginalPose, warmNativeBrepValidator } from './native-cad.js?v=fast-export-20261021-025000';
+ let queue = Promise.resolve();
+ let consumed = false;
++let boundsWarmup;
+ self.onmessage = ({ data }) => {
+   queue = queue.then(() => handle(data)).catch(error => {
++    boundsWarmup?.dispose();boundsWarmup=undefined;
+     self.postMessage({ error: error.message ?? String(error), errorName: error.name });
+   });
+ };
+@@ -11,7 +13,8 @@
+   if (data?.type === 'warm') {
+     if (consumed) throw Error('An export worker cannot be warmed after use.');
+     const started = performance.now();
+-    await warmNativeBrepValidator({ certificateBounds: true });
++    boundsWarmup ??= createSourceBoundsModuleWarmup();
++    await Promise.all([warmNativeBrepValidator({ certificateBounds: true }),boundsWarmup.ready]);
+     self.postMessage({ warm: true, elapsedMS: performance.now() - started });
+     return;
+   }
+@@ -25,12 +28,19 @@
+   };
+   let boundsTask;
+   try {
+-    if(data.type==='pose'&&data.format==='brep'&&data.requestedFormat==='step') boundsTask=startParallelSourceBounds(data,onProgress);
+-    if(boundsTask)await boundsTask.started;
++    if(data.type==='pose'&&data.format==='brep'&&data.requestedFormat==='step') {
++      // Start independent engines together; keep the real child-start handshake.
++      const startupStarted=performance.now();
++      const mainReady=warmNativeBrepValidator({certificateBounds:true}).then(()=>performance.now()-startupStarted);
++      const preparedWorker=boundsWarmup?.take();boundsWarmup?.dispose();boundsWarmup=undefined;
++      boundsTask=startParallelSourceBounds(data,onProgress,{worker:preparedWorker});
++      const [mainKernelMS]=await Promise.all([mainReady,boundsTask.started]);
++      onProgress('STEP export engines ready…',{diagnostic:'step-export-startup',elapsedMS:performance.now()-startupStarted,mainKernelMS,boundsModulePrewarmed:Boolean(preparedWorker)});
++    } else {boundsWarmup?.dispose();boundsWarmup=undefined;}
+     let result;
+     if (data.type === 'pose') result = await exportNativeOriginalPose({ ...data, sourceBoundsTask:boundsTask?.result, onProgress });
+     else if (data.type === 'mesh') {
+-      const { runNativeMeshExport } = await import('./native-mesh-export.js?v=native-step-20261021-2');
++      const { runNativeMeshExport } = await import('./native-mesh-export.js?v=fast-export-20261021-025000');
+       result = await runNativeMeshExport({ ...data, onProgress });
+     } else throw Error('Unknown native export request.');
+     const transfers = new Set();
+@@ -47,5 +57,5 @@
+     boundsTask = undefined;
+     self.postMessage({ error: error.message ?? String(error), stage,
+       stack: error.stack, errorName: error.name });
+-  } finally { boundsTask?.cancel(); }
++  } finally { boundsTask?.cancel();boundsWarmup?.dispose();boundsWarmup=undefined; }
+ };
+--- a/public/gridfinity-converter/native-kernel.js
++++ b/public/gridfinity-converter/native-kernel.js
+@@ -21,7 +21,7 @@
+     try {
+       const attempt = (async () => {
+         const { default: initMulti } =
+-          await import(verifier ? './vendor/export-verifier/writer17_torus_verifier_pool4.js' : './vendor/replicad/model_exact_multi_pool4.js');
++          await import(verifier ? './vendor/export-verifier/writer17_torus_verifier_pool4.js' : './vendor/replicad/topology_copy_guarded_multi_pool4.js');
+         return initMulti({
+           pthreadPoolSize: threads,
+           onPthreadWorker: (worker) => {
+--- a/public/gridfinity-converter/native-local-edit.js
++++ b/public/gridfinity-converter/native-local-edit.js
+@@ -3,7 +3,8 @@
+  */
+ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height,
+   fit, maximumHoleDepth, maximumHoleRadius, roof, nativeFoot,
+-  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {} }) {
++  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {}, checkCancelled = () => {} }) {
++  checkCancelled();
+   if (!feet.length) throw Error('Select at least one foot before converting.');
+   const made = new Set();
+   const keep = shape => { made.add(shape); return own(shape); };
+@@ -18,9 +19,11 @@
+       bottom+Math.max(4.75, height+.02, maximumHoleDepth+roof)+.1];
+     const editBox = box(clipMin, clipMax);
+     onProgress('Preparing the shared native edit region…');
++    checkCancelled();
+     const localSource = keep(clipSource(source, editBox, {min:clipMin,max:clipMax}));
+     const cuts = [], newFeet = [];
+     for (const [index, f] of feet.entries()) {
++      checkCancelled();
+       const sx=f.sourceX ?? f.x, sy=f.sourceY ?? f.y;
+       cuts.push(box([Math.min(sx,f.x)-20.99,Math.min(sy,f.y)-20.99,bottom-.02],
+         [Math.max(sx,f.x)+20.99,Math.max(sy,f.y)+20.99,bottom+height]));
+@@ -43,11 +46,14 @@
+       regions:[...cuts,...newFeet], dispose(){for(const shape of made)shape.delete();},
+       /** ((S\C) union F)\H = (S\(C union H)) union (F\H). */
+       assemble(holes) {
++        checkCancelled();
+         let combined, drilled, remainder;
+         try {
+           combined=holes ? keep(union([cutsUnion,holes])) : cutsUnion;
+           drilled=holes ? keep(cut(feetUnion,holes)) : feetUnion;
++          checkCancelled();
+           remainder=keep(cut(source,combined));
++          checkCancelled();
+           // Returned final solid belongs to the caller, not dispose().
+           return own(fuse(remainder,drilled));
+         } finally {
+--- a/public/gridfinity-converter/native-mesh-export.js
++++ b/public/gridfinity-converter/native-mesh-export.js
+@@ -1,6 +1,6 @@
+-import { nativeMeshExport } from './native-cad.js?v=native-step-20261021-2';
++import { nativeMeshExport } from './native-cad.js?v=fast-export-20261021-025000';
+ import Module from '../gridfinity-shelves/vendor/manifold.js';
+-import { importSolid, meshData, checkMesh } from './kernel.js?v=native-step-20261021-2';
++import { importSolid, meshData, checkMesh } from './kernel.js?v=fast-export-20261021-025000';
+ /** Build the original-quality export mesh and independently check connectivity. */
+ export async function runNativeMeshExport(data) {
+   const result = await nativeMeshExport(data);
+--- a/public/gridfinity-converter/native-parallel-source-bounds.js
++++ b/public/gridfinity-converter/native-parallel-source-bounds.js
+@@ -1,5 +1,5 @@
+-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-2';
+-import { properRigidPose } from './native-source-certificate.js?v=native-step-20261021-2';
++import { BOUNDS_KERNELS } from './native-bounds-build.js?v=fast-export-20261021-025000';
++import { properRigidPose } from './native-source-certificate.js?v=fast-export-20261021-025000';
+ export async function boundsInputIdentity(buffer,pose){
+  if(!(buffer instanceof ArrayBuffer)||!properRigidPose(pose))throw Error('Invalid bounds request.');
+  const digest=await crypto.subtle.digest('SHA-256',buffer);
+@@ -10,7 +10,7 @@
+  if(!reply || !reply.identity || reply.identity.sha256!==input.sha256 || reply.identity.bytes!==input.bytes || reply.identity.pose!==input.pose || reply.kernelSHA256!==BOUNDS_KERNELS[kernelInfo.engine] || !Array.isArray(b)||b.length!==2||!b.every(row=>Array.isArray(row)&&row.length===3&&row.every(Number.isFinite))||!b[0].every((v,i)=>v<=b[1][i]))throw Error('Parallel source bounds identity or metrics mismatch.');
+  return b;
+ }
+-export function startParallelSourceBounds({buffer,transform:pose},onProgress){
++export function startParallelSourceBounds({buffer,transform:pose},onProgress,{worker:preparedWorker}={}){
+  let child,settled=false,timer,startTimer,resolve,resolveStarted,startSettled=false;
+  const parentStartedAtMS=performance.timeOrigin+performance.now(), began=performance.now();
+  const result=new Promise(r=>resolve=r), started=new Promise(r=>resolveStarted=r);
+@@ -18,7 +18,7 @@
+  const markStarted=value=>{if(startSettled)return;startSettled=true;clearTimeout(startTimer);resolveStarted(value);};
+  const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);clearTimeout(startTimer);child?.terminate();markStarted(value);resolve(value);};
+  try{
+-  child=new Worker(new URL('./native-source-bounds-worker.js?v=native-step-20261021-2',import.meta.url),{type:'module'});
++  child=preparedWorker ?? new Worker(new URL('./native-source-bounds-worker.js?v=fast-export-20261021-025000',import.meta.url),{type:'module'});
+   child.onmessage=({data})=>{
+    if(settled)return;
+    const payload=data&&typeof data==='object'?data:{error:'Malformed bounds worker response'};
+@@ -38,3 +38,27 @@
+  }catch(e){finish({error:e.message});}
+  return {result,started,cancel:()=>finish({error:'Bounds task cancelled'})};
+ }
++
++/** One module-only child. Ownership transfers once, or disposal terminates it. */
++export function createSourceBoundsModuleWarmup({createWorker=()=>new Worker(new URL('./native-source-bounds-worker.js?v=fast-export-20261021-025000',import.meta.url),{type:'module'}),timeoutMS=30000}={}) {
++ let child, timer, closed=false, ready=false, settle;
++ const result=new Promise(resolve=>settle=resolve);
++ const dispose=()=>{if(closed)return;closed=true;clearTimeout(timer);child?.terminate();child=null;settle(false);};
++ try {
++  child=createWorker();
++  child.onmessage=({data})=>{
++   if(closed)return;
++   if(data?.type==='module-ready'){ready=true;clearTimeout(timer);settle(true);}
++   else dispose();
++  };
++  child.onerror=child.onmessageerror=dispose;
++  timer=setTimeout(dispose,timeoutMS);
++  child.postMessage({type:'warm-module'});
++ } catch {dispose();}
++ return {ready:result,dispose,take(){
++  if(closed||!ready)return null;
++  const owned=child;child=null;closed=true;clearTimeout(timer);
++  owned.onmessage=owned.onerror=owned.onmessageerror=null;
++  return owned;
++ }};
++}
+--- a/public/gridfinity-converter/native-preservation.js
++++ b/public/gridfinity-converter/native-preservation.js
+@@ -1,4 +1,4 @@
+-import { castOwned, ownedCompound } from './native-owned-shape.js?v=native-step-20261021-2';
++import { castOwned, ownedCompound } from './native-owned-shape.js?v=fast-export-20261021-025000';
+ /** Exact boundary comparison outside a convex box; meshes never participate. */
+ export function nativeFaces(oc, cad, shape) {
+   const explorer = new oc.TopExp_Explorer(shape.wrapped,
+--- a/public/gridfinity-converter/native-preview-worker.js
++++ b/public/gridfinity-converter/native-preview-worker.js
+@@ -1,4 +1,4 @@
+-import { previewNative, prepareNativeDocument } from './native-cad.js?v=native-step-20261021-2';
++import { previewNative, prepareNativeDocument } from './native-cad.js?v=fast-export-20261021-025000';
+ let queued = Promise.resolve();
+ self.onmessage = ({ data }) => {
+   queued = queued.then(() => handle(data)).catch(error => {
+@@ -19,13 +19,13 @@
+   }
+   if (data.type === 'convert') {
+     const { runNativeConversion } =
+-      await import('./native-worker-run.js?v=native-step-20261021-2');
++      await import('./native-worker-run.js?v=fast-export-20261021-025000');
+     await runNativeConversion(data);
+     // Each conversion consumes its validation child. Warm the next child while
+     // the user reviews the result, without posting another conversion response.
+     if (data.retainDocument) {
+       try {
+-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-2');
++        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=fast-export-20261021-025000');
+         await prewarmNativeBrepValidator();
+       } catch { /* Optional warming never changes a conversion result. */ }
+     }
+@@ -44,7 +44,7 @@
+     self.postMessage(payload, transfers);
+     if (payload.nativeDocumentId || payload.result?.nativeDocumentId) {
+       try {
+-        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=native-step-20261021-2');
++        const { prewarmNativeBrepValidator } = await import('./native-worker-run.js?v=fast-export-20261021-025000');
+         await prewarmNativeBrepValidator();
+       } catch { /* Optional warming must not invalidate the delivered preview. */ }
+     }
+--- a/public/gridfinity-converter/native-source-bounds-worker.js
++++ b/public/gridfinity-converter/native-source-bounds-worker.js
+@@ -1,5 +1,6 @@
+-import { computeNativeSourceBounds } from './native-cad.js?v=native-step-20261021-2';
++import { computeNativeSourceBounds } from './native-cad.js?v=fast-export-20261021-025000';
+ self.onmessage=async({data})=>{
++ if(data?.type==='warm-module'){self.postMessage({type:'module-ready'});return;}
+  const childStartedAtMS=performance.timeOrigin+performance.now();
+  self.postMessage({type:'started',childStartedAtMS});
+  try{const result=await computeNativeSourceBounds(data);self.postMessage({result,childStartedAtMS,childFinishedAtMS:performance.timeOrigin+performance.now()});}
+--- a/public/gridfinity-converter/native-source-certificate-build.js
++++ b/public/gridfinity-converter/native-source-certificate-build.js
+@@ -8,8 +8,8 @@
+       "sha256": "1569b1da4f75f7bcebddf8e18f1f32bd44388c8c00972cdb45923dc389f9078d"
+     },
+     "issuer-threaded": {
+-      "filename": "vendor/replicad/model_exact_multi.wasm",
+-      "sha256": "5deffc2a6307310bf54f161cf5f862ad72f0ddfcc14cb010258d2432a82a0a2c"
++      "filename": "vendor/replicad/topology_copy_guarded_multi.wasm",
++      "sha256": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc"
+     },
+     "verifier-single": {
+       "filename": "vendor/export-verifier/analytic_writer17_single_verifier.wasm",
+@@ -21,4 +21,4 @@
+     }
+   }
+ });
+-export const CERTIFICATE_BUILD = "native-certificate-kernel-set-sha256:e2838b27229fc9a9cfcc1058a31dbb64e214a91d6212da7c27a56707b8a400f5";
++export const CERTIFICATE_BUILD = "native-certificate-kernel-set-sha256:4cdda3034cd0ac26127b77a0a1b426b5105f9d0af0eb011c150ffa8172d7783f";
+--- a/public/gridfinity-converter/native-source-certificate.js
++++ b/public/gridfinity-converter/native-source-certificate.js
+@@ -1,8 +1,8 @@
+ // PRIVATE worker-result protocol: callers must obtain certificates only from the
+ // independent validator result, never imported metadata, report fields, or files.
+ // SHA binds bytes; it does not authenticate user-supplied metadata.
+-import { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=native-step-20261021-2';
+-export { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=native-step-20261021-2';
++import { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=fast-export-20261021-025000';
++export { CERTIFICATE_BUILD } from './native-source-certificate-build.js?v=fast-export-20261021-025000';
+ const SCHEMA = 2;
+ const hex = bytes => Array.from(new Uint8Array(bytes), x=>x.toString(16).padStart(2,'0')).join('');
+ const identity = pose => Array.isArray(pose?.rotation) && pose.rotation.length===9 && pose.rotation.every((x,i)=>x===[1,0,0,0,1,0,0,0,1][i]) && Array.isArray(pose?.translation) && pose.translation.length===3 && pose.translation.every(x=>x===0);
+--- a/public/gridfinity-converter/native-worker-run.js
++++ b/public/gridfinity-converter/native-worker-run.js
+@@ -1,7 +1,8 @@
+-import { convertNative, nativeMeshExport } from './native-cad.js?v=native-step-20261021-2';
++import { convertNative, nativeMeshExport, hasPreparedNativeDocument } from './native-cad.js?v=fast-export-20261021-025000';
++import { createNativeCancellation } from './native-cancellation.js?v=fast-export-20261021-025000';
+ import Module from '../gridfinity-shelves/vendor/manifold.js';
+-import { importSolid, meshData } from './kernel.js?v=native-step-20261021-2';
+-import { checkNativeDisplayMesh } from './native-display-check.js?v=native-step-20261021-2';
++import { importSolid, meshData } from './kernel.js?v=fast-export-20261021-025000';
++import { checkNativeDisplayMesh } from './native-display-check.js?v=fast-export-20261021-025000';
+ let warmedValidator;
+ let displayModule;
+ function preparedDisplayModule() {
+@@ -16,7 +17,7 @@
+   let markStarted;
+   const started = new Promise(resolve => { markStarted = resolve; });
+   let child;
+-  try { child = new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' }); }
++  try { child = new Worker(new URL('./native-brep-worker.js?v=fast-export-20261021-025000', import.meta.url), { type: 'module' }); }
+   catch { markStarted(); return started; }
+   const entry = { child, started, startedAtMS: Date.now(), warmedAtMS: undefined };
+   warmedValidator = entry;
+@@ -35,6 +36,11 @@
+   const post = (payload, transfers) => self.postMessage({ ...payload, requestId: data.requestId }, transfers);
+   let stage = 'Starting native CAD conversion';
+   const validators = new Set();
++  const pendingValidators = new Set();
++  const cancellation = createNativeCancellation(data.cancelBuffer,
++    data.retainDocument && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0));
++  let cancelled = false;
++  let validationChildrenStopped = 0;
+   // Compile the display validator while the native conversion is running.
+   // Handle rejection immediately; it is rethrown when the module is needed.
+   const modulePending = preparedDisplayModule();
+@@ -46,7 +52,7 @@
+     warmedValidator = undefined;
+     let child;
+     try {
+-      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' });
++      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=fast-export-20261021-025000', import.meta.url), { type: 'module' });
+     } catch {
+       markReady();
+       resolve({ fallbackRequired: true });
+@@ -54,7 +60,9 @@
+     }
+     const candidatePostedAtMS = Date.now();
+     validators.add(child);
+-    const finish = () => { child.terminate(); validators.delete(child); };
++    const finish = () => { child.terminate(); validators.delete(child); pendingValidators.delete(stop); };
++    const stop = () => { markReady(); finish(); reject(new DOMException('Validator cancelled', 'AbortError')); };
++    pendingValidators.add(stop);
+     child.onmessage = ({ data }) => {
+       if (data.warming) return;
+       if (data.warm) { if (warmed) warmed.warmedAtMS = data.warmedAtMS; return; }
+@@ -88,14 +96,18 @@
+   try {
+     const result = await convertNative({
+         ...data,
++        topologyCopyPrimary: true,
++        checkCancelled: cancellation.check,
++        waitForCancellation: cancellation.wait,
+         validateBrepCandidate,
+         onProgress: (progress, progressInfo) => {
+           stage = progress;
+           post({ progress, progressInfo });
+         },
+       }),
+-      moduleResult = await modulePending;
++      moduleResult = await cancellation.wait(modulePending);
+     if (moduleResult.error) throw moduleResult.error;
++    cancellation.check();
+     const m = moduleResult.value;
+     stage = 'Checking the CAD display mesh';
+     post({ progress: stage });
+@@ -109,6 +121,7 @@
+     } catch (error) {
+       bodies?.forEach((body) => body.delete());
+       bodies = null;
++      if (error instanceof WebAssembly.RuntimeError) throw error;
+       if (!result.report.meshTessellation?.converted?.reusedFaces) throw error;
+       stage = 'Rebuilding the CAD display mesh';
+       post({ progress: stage });
+@@ -151,17 +164,30 @@
+       result.sourceBrep,
+     ])
+       if (bytes) transfers.add(bytes);
++    cancellation.check();
+     post({ result }, [...transfers]);
+   } catch (e) {
+-    post({
++    if (cancellation.isCancellation(e)) cancelled = true;
++    else post({
+       error: e.message ?? String(e),
+       stage,
+       stack: e.stack,
+       errorName: e.name,
+     });
+   } finally {
++    validationChildrenStopped = validators.size;
++    for (const stop of pendingValidators) stop();
++    pendingValidators.clear();
+     for (const child of validators) child.terminate();
+     validators.clear();
+     if (warmedValidator) { warmedValidator.child.terminate(); warmedValidator = undefined; }
+   }
++  // A native trap or any cleanup exception bypasses this acknowledgment.
++  // The preview worker may subsequently warm a new validator for the next task;
++  // clean means this cancelled task and its children have been retired.
++  if (cancelled) {
++    const clean = cancellation.enabled && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0);
++    post({ cancelled: true, clean, nativeDocumentId: clean ? data.documentId : undefined,
++      validationChildrenStopped, pendingValidationTasks: pendingValidators.size });
++  }
+ }
+--- a/public/gridfinity-converter/native-worker.js
++++ b/public/gridfinity-converter/native-worker.js
+@@ -1,2 +1,2 @@
+-import { runNativeConversion } from './native-worker-run.js?v=native-step-20261021-2';
++import { runNativeConversion } from './native-worker-run.js?v=fast-export-20261021-025000';
+ self.onmessage = ({ data }) => runNativeConversion(data);
+--- a/public/gridfinity-converter/render-geometry-worker.js
++++ b/public/gridfinity-converter/render-geometry-worker.js
+@@ -1,4 +1,4 @@
+-import { illustrationGeometry } from './render-geometry.js?v=native-step-20261021-2';
++import { illustrationGeometry } from './render-geometry.js?v=fast-export-20261021-025000';
+ self.onmessage = ({ data: { id, vertices, triangles } }) => {
+   try {
+     const result = illustrationGeometry(vertices, triangles);
+--- a/public/gridfinity-converter/step-wire-worker.js
++++ b/public/gridfinity-converter/step-wire-worker.js
+@@ -1,4 +1,4 @@
+-import { fastStepWire } from './step-wire.js?v=native-step-20261021-2';
++import { fastStepWire } from './step-wire.js?v=fast-export-20261021-025000';
+ self.onmessage = ({ data }) => {
+   try {
+     const result = fastStepWire(data.buffer);
+--- a/public/gridfinity-converter/vendor/replicad/replicad.js
++++ b/public/gridfinity-converter/vendor/replicad/replicad.js
+@@ -3566,15 +3566,23 @@
+ var loft = (wires, { ruled = true, startPoint, endPoint } = {}, returnShell = false) => {
+ 	const oc = getOC();
+ 	const [r, gc] = localGC();
+-	const loftBuilder = r(new oc.BRepOffsetAPI_ThruSections(!returnShell, ruled, 1e-6));
+-	if (startPoint) loftBuilder.AddVertex(r(makeVertex(startPoint)).wrapped);
+-	wires.forEach((w) => loftBuilder.AddWire(w.wrapped));
+-	if (endPoint) loftBuilder.AddVertex(r(makeVertex(endPoint)).wrapped);
+-	loftBuilder.Build();
+-	const shape = cast(loftBuilder.Shape());
+-	gc();
+-	if (!isShape3D(shape)) throw new Error("Could not loft to a 3d shape");
+-	return shape;
++	let raw, shape;
++	try {
++		const loftBuilder = r(new oc.BRepOffsetAPI_ThruSections(!returnShell, ruled, 1e-6));
++		if (startPoint) loftBuilder.AddVertex(r(makeVertex(startPoint)).wrapped);
++		wires.forEach((w) => loftBuilder.AddWire(w.wrapped));
++		if (endPoint) loftBuilder.AddVertex(r(makeVertex(endPoint)).wrapped);
++		loftBuilder.Build();
++		raw = loftBuilder.Shape();
++		shape = cast(raw);
++		if (!isShape3D(shape)) throw new Error("Could not loft to a 3d shape");
++		return shape;
++	} catch (error) {
++		shape?.delete();
++		throw error;
++	} finally {
++		try { raw?.delete(); } finally { gc(); }
++	}
+ };
+ //#endregion
+ //#region src/sketches/Sketch.ts
+@@ -3992,12 +4000,21 @@
+ 	const [r, gc] = localGC();
+ 	const ax = r(makeAx2(plane.origin, plane.zDir, plane.xDir));
+ 	const oc = getOC();
+-	const edges = curves.map((curve) => {
+-		const curve3d = oc.GeomLib.To3d(ax, curve.wrapped);
+-		return new Edge(new oc.BRepBuilderAPI_MakeEdge(curve3d).Edge());
+-	});
+-	gc();
+-	return edges;
++	const edges = [];
++	try {
++		for (const curve of curves) {
++			const curve3d = oc.GeomLib.To3d(ax, curve.wrapped);
++			let builder;
++			try {
++				builder = new oc.BRepBuilderAPI_MakeEdge(curve3d);
++				edges.push(new Edge(builder.Edge()));
++			} finally { builder?.delete(); curve3d.delete(); }
++		}
++		return edges;
++	} catch (error) {
++		edges.forEach(edge => edge.delete());
++		throw error;
++	} finally { gc(); }
+ }
+ var curvesAsEdgesOnSurface = (curves, geomSurf) => {
+ 	const [r, gc] = localGC();
+--- a/public/gridfinity-converter/worker.js
++++ b/public/gridfinity-converter/worker.js
+@@ -1,4 +1,4 @@
+-import { demo } from './demo.js?v=native-step-20261021-2';
++import { demo } from './demo.js?v=fast-export-20261021-025000';
+ import Module from '../gridfinity-shelves/vendor/manifold.js';
+ import {
+   importSolid,
+@@ -6,7 +6,7 @@
+   detect,
+   align,
+   convert,
+-} from './kernel.js?v=native-step-20261021-2';
++} from './kernel.js?v=fast-export-20261021-025000';
+ const ready = Module().then((m) => {
+   m.setup();
+   return m;

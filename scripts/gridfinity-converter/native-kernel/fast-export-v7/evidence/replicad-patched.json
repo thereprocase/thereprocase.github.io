@@ -1,0 +1,269 @@
+{
+  "mode": "patched",
+  "before": {
+    "liveBlockBytes": 54720,
+    "liveBlocks": 5815,
+    "reservedBytes": 549540,
+    "committedBytes": 112504,
+    "areas": 10,
+    "wasmCapacityBytes": 104857600,
+    "heapIdentity": 3094332,
+    "complete": true
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "immediate": {
+        "liveBlockBytes": 164368,
+        "liveBlocks": 8145,
+        "reservedBytes": 1780916,
+        "committedBytes": 710696,
+        "areas": 28,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 80592,
+        "liveBlocks": 6397,
+        "reservedBytes": 1748372,
+        "committedBytes": 702632,
+        "areas": 27,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 1,
+      "immediate": {
+        "liveBlockBytes": 183568,
+        "liveBlocks": 8641,
+        "reservedBytes": 1715380,
+        "committedBytes": 722152,
+        "areas": 33,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 99792,
+        "liveBlocks": 6893,
+        "reservedBytes": 1715380,
+        "committedBytes": 722152,
+        "areas": 33,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 2,
+      "immediate": {
+        "liveBlockBytes": 202768,
+        "liveBlocks": 9137,
+        "reservedBytes": 1715380,
+        "committedBytes": 754824,
+        "areas": 33,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 118992,
+        "liveBlocks": 7389,
+        "reservedBytes": 1715380,
+        "committedBytes": 754824,
+        "areas": 33,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 3,
+      "immediate": {
+        "liveBlockBytes": 221968,
+        "liveBlocks": 9633,
+        "reservedBytes": 1748052,
+        "committedBytes": 779400,
+        "areas": 34,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 138192,
+        "liveBlocks": 7885,
+        "reservedBytes": 1748052,
+        "committedBytes": 779400,
+        "areas": 34,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 4,
+      "immediate": {
+        "liveBlockBytes": 241168,
+        "liveBlocks": 10129,
+        "reservedBytes": 1748052,
+        "committedBytes": 787496,
+        "areas": 34,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 157392,
+        "liveBlocks": 8381,
+        "reservedBytes": 1748052,
+        "committedBytes": 787496,
+        "areas": 34,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 5,
+      "immediate": {
+        "liveBlockBytes": 260368,
+        "liveBlocks": 10625,
+        "reservedBytes": 1780724,
+        "committedBytes": 803880,
+        "areas": 35,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 176592,
+        "liveBlocks": 8877,
+        "reservedBytes": 1748052,
+        "committedBytes": 787496,
+        "areas": 34,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 6,
+      "immediate": {
+        "liveBlockBytes": 279568,
+        "liveBlocks": 11121,
+        "reservedBytes": 1780724,
+        "committedBytes": 820168,
+        "areas": 35,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 195792,
+        "liveBlocks": 9373,
+        "reservedBytes": 1780724,
+        "committedBytes": 820168,
+        "areas": 35,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 7,
+      "immediate": {
+        "liveBlockBytes": 298768,
+        "liveBlocks": 11617,
+        "reservedBytes": 1780724,
+        "committedBytes": 820168,
+        "areas": 35,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 214992,
+        "liveBlocks": 9869,
+        "reservedBytes": 1780724,
+        "committedBytes": 820168,
+        "areas": 35,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 8,
+      "immediate": {
+        "liveBlockBytes": 317968,
+        "liveBlocks": 12113,
+        "reservedBytes": 1827956,
+        "committedBytes": 848840,
+        "areas": 36,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 234192,
+        "liveBlocks": 10365,
+        "reservedBytes": 1827956,
+        "committedBytes": 848840,
+        "areas": 36,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    },
+    {
+      "round": 9,
+      "immediate": {
+        "liveBlockBytes": 337168,
+        "liveBlocks": 12609,
+        "reservedBytes": 970260,
+        "committedBytes": 551848,
+        "areas": 23,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      },
+      "afterGC": {
+        "liveBlockBytes": 253392,
+        "liveBlocks": 10861,
+        "reservedBytes": 970260,
+        "committedBytes": 551848,
+        "areas": 23,
+        "wasmCapacityBytes": 104857600,
+        "heapIdentity": 3094332,
+        "complete": true
+      }
+    }
+  ],
+  "geometry": [
+    {
+      "volume": 6864.573602165414,
+      "brepSHA256": "d8b7191f8bd3cd1f5220c368fe3ac8ac31eb1c40b1ba3c5df8f8e644ccaef738"
+    },
+    {
+      "volume": 6864.573602165414,
+      "brepSHA256": "2f86c18d4618e36c2148d13dc9d5ff513377bd5620ac57a77535deeaece4e8c4"
+    },
+    {
+      "volume": 6864.573602165413,
+      "brepSHA256": "8e4155f7ef0994ffaab19c9c7590a541f7798e737414e3ccea3a4b2f073a67c0"
+    },
+    {
+      "volume": 6864.573602165413,
+      "brepSHA256": "773551793177205c3c7a63a3fef9db1a9eb24a5d41ed562bf2d5e4848b5f51ad"
+    }
+  ],
+  "ownership": {
+    "rawReturns": 40,
+    "rawDeletes": 40,
+    "builderCreates": 1280,
+    "builderDeletes": 1280
+  }
+}

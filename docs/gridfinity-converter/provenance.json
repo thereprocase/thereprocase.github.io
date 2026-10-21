@@ -61,11 +61,12 @@
     "checks/native-coordinate-models.json",
     "checks/native-consistency-independent.json",
     "checks/native-preview.json",
-    "checks/loading-progress.json"
+    "checks/loading-progress.json",
+    "checks/windows-native-step-3.json"
   ],
   "sha256": {
-    "README.md": "0455ef39d2d7284f13186c0914979a5d09cfba66b49d55d3290b43802624d556",
-    "app.js": "d8670f09c57f0b8fe41d0b36fa7cd13a365b24b8f89aca65fd4a500c9643d4b2",
+    "README.md": "083da7443d660c03d3b56b14e2135582362bb737b2b2b50380aa38b2fe7e7a96",
+    "app.js": "89095b3c9930e7d8aa42bd11be582e9cec4e1f165ea4342d057a38a05fa2d8b0",
     "brep-equivalence.js": "9e2b5f15702a88c61497a678f6eda9cc9871e8fbd0da535516806f77e094adfc",
     "cad-worker.js": "4b31e7315c586aa283f887b8c5eea39ede4651cb7ef3783e73a1232c0d0b7ca6",
     "checks/browser.json": "7527e309ad248553e490ce58d7399905a965c2fef757046ba3787194f09b3e17",
@@ -83,41 +84,44 @@
     "checks/native-preview.json": "9f796fb4596731b2ecd8ea1ae7a98367a73199982a218ae6b07499d1d6f267ea",
     "checks/ux-browser-short.json": "54e6b0e871917b8e4f65055fda3c4828895ce749d2f4a4a5f6748e0817afbdcc",
     "checks/ux-browser.json": "4e9ca6db0658a05bc31007a801d51dd2af785a45bc1ded5e5da5ee49458cfaa6",
-    "demo.js": "f2dad7d056efaf4d8be93caf358da1c2f76cff253669a5fb068ee69585a81111",
-    "illustration-view.js": "5d83771e492c0d90e0451dc5cf6f4b03cb73d69a0438856639648aa3efcef7b1",
-    "importers.js": "e1e234cefd13b41494de4d6202bdd3ec08daa78ab87dd704ea22f92c5c0f28b8",
-    "index.html": "fb181130d4715eea4977f8951f531cd3401cf6aa2b0678235ee0fb4c9e114b60",
-    "isolation-bootstrap.js": "e881102aeca4cf422c7e3a3c2e6adf45853b6249dff076c02e401190a74a02a1",
+    "checks/windows-native-step-3.json": "36c47cae5005f705387db6c20f5bea8f4adbcb0d7b16f6c830520882edaaba3b",
+    "demo.js": "53e460a3c3ae3330c54ec0cde453fb6f552d66296629b6dae04caf663df8f2de",
+    "illustration-view.js": "6a60812edace1d66dc3c6c841bef064faa61d4cfc50558edb56300d0c92c1cac",
+    "importers.js": "01fe43f25691cc4e393164ef334de7a17c7301944bcb4955999358a491a2e919",
+    "index.html": "bc20fbef20ce31df3600156a47c8398cec4fcb5b2b963a1e0baf8637d9feaca1",
+    "isolation-bootstrap.js": "08ec6cc5e5d9cc57e094bf475fc8355f38117245a4876f3c3b392141809526f4",
     "isolation-service-worker.js": "536920e1932d302fdb9edc93db3e97a94b3dfa70e10702ed3fee679289f11b47",
     "kernel.js": "141297499beede4188ea65dcdb3bc0b66739b2493f225fbacc1efa86964ec02a",
     "native-bounds-build.js": "f41a75c7f5e63661066f713c970ee57091a2f030f727ee20be036a24a4a41963",
     "native-bounds-match.js": "2bab2055953b12629b706e972abf5184957919fc3b91e8a5ec1d3b9f658ef2d6",
-    "native-brep-worker.js": "abb89d1117e9e16cd937b3aaeb4723ce79570a9d7b81778295249d5a3afb8a6a",
+    "native-brep-worker.js": "5ee259e652d2a8a51cfc2b4cb364c57cb28325b39bc3c63a4ea032d5ff41d649",
     "native-buffer.js": "aa1e0d9290c0395c617809ab9cc742bf6dd32ea6d05ce7d79063fa7bdef0461e",
-    "native-cad.js": "9d556104f31fb3e440cb79109d9a88f48d373bcb369cb8f5575a26b06a93c22b",
+    "native-cad.js": "71e312b0411dec8d537d97fae4a6b492ced97f8340d21ac09d996157875f8341",
+    "native-cancellation.js": "0d658e754ddc1f6919175be5aff804da621a8da7ca7cd0a95d189d38054fd3bb",
     "native-contact.js": "0f3df01540ee6d59f38c8ec7c7a102e5ccb5de2f36b9f170c76d2a2b971cb327",
-    "native-display-check.js": "cb0b540d9ef5849c49eb4d76a8b7768ac3492ca91c75f8f40daeb6b2e68e7518",
-    "native-export-worker.js": "e235f43de879543831e4c655ce0ef4d53831e9c97c1e73e9368221231b26dedb",
-    "native-kernel.js": "358a06404d632dff9c9e72663b8e0d521f39b577fe0c72c8e5f20f3f1d4b65f2",
-    "native-local-edit.js": "e6cce3b23eaa0b6da215d87575471959ad3f330d866bccc867fe71160427ee56",
+    "native-display-check.js": "f5f275f0e02c277eca46112743c8210770c63543266a64d18dbdfe2b78c8ed11",
+    "native-export-warm-pool.js": "326889d8380255b1130172c1897fd9d97af9b7b8325c32c00e641bbcc9b40262",
+    "native-export-worker.js": "a7b8809b2663ffde7ccd02b1220e37adcdb4ab92c531d9e1e953802b65795870",
+    "native-kernel.js": "a62efc44155cdad595c39e0222b47dc9c9361ccc0206f42a1d8166159598c963",
+    "native-local-edit.js": "cca899724610325c84526af5469171d72885cf8a7b10520f6a151cbe23d527e5",
     "native-mesh-cache.js": "9bb773846491107fa10a5d0a8d33a45f866b34365a56780369b7c0486aff65c0",
-    "native-mesh-export.js": "d34c9477194839a89d055d68623555ebef208633d36f27deeaa12d4d123244df",
+    "native-mesh-export.js": "da5b5c4a09e287d623bd17a40205f3da167d41400a2fc87e2d54757b81b70384",
     "native-owned-shape.js": "0c994060728d3377a1f20748e8cac7e0b60c151bf21501d6c5bbb781abad4117",
-    "native-parallel-source-bounds.js": "780e53ee70f5abebd0b9105c0bbcbaad76917ba821a70fa2042df0159b15a939",
-    "native-preservation.js": "a9b843585a0cfd0ec41239c75c72661afc3a3e338cdb725871c1f3def9bae4d4",
-    "native-preview-worker.js": "61200e5d400a9796821ca36f367ada9fe29ac2bb595d50b825e4d75ae867291f",
-    "native-source-bounds-worker.js": "173679ce3b73935a96189c4742b3d8a0e7626c162a6d8bbd5ae3d3bca95ce912",
-    "native-source-certificate-build.js": "da3034c39d57e821c4228ff0021eccfd3daaf487dd3bba1824af06eaca7c9e12",
-    "native-source-certificate.js": "a408bd1e6ccbdff3a1d75767f8cf6b041a659b26fae5dfe17092ebf283bd0c70",
-    "native-worker-run.js": "959ba4f05b9fb898a4f1fa59118951bfc4e97a237cb65677ee0569adef7318d4",
-    "native-worker.js": "58c120b5153dfcdffcc1e247f5a4b1f6d959536e39876788cc87c7935ee1d31a",
-    "render-geometry-worker.js": "cf9db0d1454a9f851b8e110c84a68faf70bdb9c61409b4eb6a0691ac76639fc1",
+    "native-parallel-source-bounds.js": "247200803533896373afcb1ddb5b3b344e4fea6a9142aa2247702778e10c2155",
+    "native-preservation.js": "71925ac505fffdd1422f96cd15387417f6fc8cb8d2a5d0be56850b37042e0ee5",
+    "native-preview-worker.js": "f11aac1d0549ea6da2b0c9cdacb92c7b7b7f12a7a188db5ba737463aa934e9d7",
+    "native-source-bounds-worker.js": "adb026623d3855bfeed9fc694b461f968a6a7731ef4ac31095f584feef6b5e0b",
+    "native-source-certificate-build.js": "d50a039dfec4e459f111d61aeda862cbaf2ac56756e52966bcfc8d85c061bb14",
+    "native-source-certificate.js": "1faa82bbc9d66b0e3a5aed9f427461afcaac72fa5c7e0bbace42d564e984369c",
+    "native-worker-run.js": "6146c95d820de5db1534c80a426207e6213f93eec18444177f0cbb6c2b0d81ed",
+    "native-worker.js": "b7d12c7bc4abac95b500eb189467ceeafd0d4e48ccc05170f87cb5cedbf6a03f",
+    "render-geometry-worker.js": "1f2f0b82333d08dc25af9a9702805f5503f2f93ecbaf46d41b753863819d62e9",
     "render-geometry.js": "a9ef85950973fd8f287f8342a09e9a4ed65b818a2e26e52263f090bc3a88f55a",
     "repair-signature.js": "0d951c33b9a667de26ef728c2f8cdf4edd6cb4ebded10bbe95b519295ac84ad3",
     "step-repair-fallback.js": "c7483b577434d5ba47f870faedc8cf73b9a890e6d75580a0b2eb977912da0e30",
     "step-verifier-policy.js": "8db42bd4cae6c84a3f40be7a4852979b933ff4a2f6e7cf75cb5e5f647a2757c1",
-    "step-verifier-reader.js": "74aeb34412fd7df9c5043d62957df5e55c5b9e810877045a2c9e927dd2ac2f96",
-    "step-wire-worker.js": "f8c1e6d63802a716d5e85e9cda31703eba3d6662ab7604eb6199a490871698da",
+    "step-verifier-reader.js": "e4a042eef20db9b889d241b653c5a9a557a07e35bea5db8c6abba6761fdc86fe",
+    "step-wire-worker.js": "b5b1e0940a7349b964416f61c433e9ad5fef96213e0e1b3836fb2f878db44507",
     "step-wire.js": "6d3610dd5b0160e11509a845443d66d07404587828002b555241404bffb05bb1",
     "style.css": "dc2a6c6a92c47bb9cff2bb588a3ce0e422caf22278548be37bba389c97c9808f",
     "vendor/dependencies.json": "c5870f3282426b7f1c73991e9f5984c49f3135397b0bcdedde6c73b0471e6a30",
@@ -146,9 +150,12 @@
     "vendor/replicad/model_exact_multi_pool4.js": "053e0528dcf4ee912e8f398a10a58a6e6209449bf1c3776648551c51098a6634",
     "vendor/replicad/model_exact_single.js": "68f05513e7060a3921ce7a36995ea5d686691046ee74b1b7478ace6946b1a279",
     "vendor/replicad/model_exact_single.wasm": "1569b1da4f75f7bcebddf8e18f1f32bd44388c8c00972cdb45923dc389f9078d",
-    "vendor/replicad/replicad.js": "9692db9461fd9f598df2c7f4da33849b8ddd03df9163d8d70e0b9270117c3a6d",
+    "vendor/replicad/replicad.js": "e882ed69101e23937e159f5c2c5362264de6922141602bb1fd25cf2a650fe651",
     "vendor/replicad/replicad_single.js": "018e57538fcb773f0124eae60aee4de693d3aae01c55b2b883a874911ab121c3",
     "vendor/replicad/replicad_single.wasm": "4c9f22e9f3828dca6f3c95405934cdbe624e593c35266f47f392ab337478dbde",
+    "vendor/replicad/topology_copy_guarded_multi.js": "65bfaf17cc7298893e4beabc81c4915e6fee722092131621c1bc3cbf5a113a3f",
+    "vendor/replicad/topology_copy_guarded_multi.wasm": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc",
+    "vendor/replicad/topology_copy_guarded_multi_pool4.js": "ae7e894f64b66f0fd0cf488f7e9a15e7b30ab72bf6d141a80c11df9969574ab3",
     "vendor/three/LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
     "vendor/three/curves/NURBSCurve.js": "34dee297704432358680934a8d5acae35f05c71aa59ce7a8e97decb0ac38e452",
     "vendor/three/curves/NURBSUtils.js": "0abeeab213f423c6ea7170abe045e6d27d63c0a1164e67de1da881e0e5c7480f",
@@ -168,9 +175,9 @@
     "vendor/three/loaders/STLLoader.js": "896d006a48b8f125385a485ccae154dadee801a953f0b45ceffe7ddd8a29ca93",
     "vendor/three/loaders/TGALoader.js": "ce938459ed99d5234f9665270cca8552464d0d1703a094e49760631e6b14c7a3",
     "vendor/three/utils/BufferGeometryUtils.js": "b0c64fe6f3b9907262921b73fafc4ade874c07ba6b4876e164c87a830c2c2113",
-    "worker.js": "9de7e4535ea50115e7e305b4b99e0a15d85c124b246f8ea872c5472d43eb61ce"
+    "worker.js": "565a61349a3e506223ba2ebbf0cbb3fe8b247f4656a1f1e02b005c10be2fef2a"
   },
-  "release": "native-step-20261021-2",
+  "release": "native-step-20261021-3",
   "viewer": "Render skill recipe: three-band cel shading, welded-normal silhouettes, 30-degree feature edges; source geometry unchanged",
   "threadedKernel": {
     "basePackage": "replicad-opencascadejs@1.1.0",
@@ -186,9 +193,10 @@
       "Bounded pool4 configuration",
       "onPthreadWorker callback for deterministic initialization-failure cleanup"
     ],
-    "validation": "Ownership, repeated source/copy cleanup, serial/threaded equivalence, actual browser cancellation with zero surviving descendants."
+    "validation": "Ownership, repeated source/copy cleanup, serial/threaded equivalence, actual browser cancellation with zero surviving descendants.",
+    "primaryCheck": "Guarded topology-only snapshot preserves immutable exact curves and surfaces for primary strict validity; export deep snapshot and independent reopening unchanged. Unsupported/no-face/free-edge inputs use the existing path. Inclusive timing includes extra copy."
   },
-  "candidateStatus": "Qualified for deployment:015800 three fresh Windows flows and ten repeated swaps;13 conversions and9 independent STEP reopen checks passed. Cancellation retry repeats source preparation.",
+  "candidateStatus": "Correctness/recovery qualified:025000 seven Windows loads,17 completed conversions and11 strict STEP exports. One quiet fresh conversion21.040s remains above20s; speed objective not complete.",
   "stepVerifier": {
     "purpose": "Independent verification of application-generated STEP only; never used as the general model importer.",
     "precision": "Preserved surface pcurves and intervals, source-derived writer tolerance ceiling, strict independent reopened validity, volume, bounds and per-kind tolerances.",
@@ -198,7 +206,7 @@
     "parallelBounds": "Identity-bound source bounds in a separate worker; trimmed ring-torus extrema use residual-checked analytic candidates and outward numerical allowance with pinned musl assumptions; unsupported inputs use generic AddOptimal.",
     "sourceCertificate": "Private validator-issued exact BREP byte hash and kernel-set binding; valid positive single-solid volume reuse across proper rigid poses; no bounds reuse across changed pose.",
     "cupPreservation": "Combined single/full and threaded/selective readback BREP byte-identical to independently audited17-digit output d7d3e0d590119a307e8e9f0918e683b7d8554aabc0a44482b054a67067e5f0e9. Valid-first preparation preserves an already-valid source and differs from the previous guarded-preparation body by about0.00064mm3; no bit-identical-to-previous-body claim.",
-    "performance": "Windows Ryzen7 5800X3D / Edge155 build015800: preview0.58–0.66s, prepared17.55–18.12s,13 conversions15.40–18.79s,9 STEP exports16.41–17.88s, allvalid. Selection to converted about36s. Cancel retry can repeat preparation (~35s on014000).",
+    "performance": "Windows Ryzen7 5800X3D / Edge155 build015800: preview0.58\u20130.66s, prepared17.55\u201318.12s,13 conversions15.40\u201318.79s,9 STEP exports16.41\u201317.88s, allvalid. Selection to converted about36s. Cancel retry can repeat preparation (~35s on014000).",
     "writer": "17 significant digits with exponent-safe formatting and 64-byte numeric buffer; original schema and uncertainty policy retained.",
     "validationAllowances": {
       "toleranceMM": 1e-12,
@@ -208,12 +216,13 @@
       "strictValidity": true,
       "singleSolid": true
     },
-    "exportStartup": "Fresh one-use verifier prewarmed during conversion; source-bounds child startup acknowledgment precedes parent synchronous work, with3s bounded local fallback. Pagehide settles active export promises and terminates owned children."
+    "exportStartup": "Fresh one-use verifier prewarmed during conversion; source-bounds child startup acknowledgment precedes parent synchronous work, with3s bounded local fallback. Pagehide settles active export promises and terminates owned children.",
+    "startup": "One unused verifier with renewed60-second idle lifetime, module-only bounds child prewarm and concurrent cold main-kernel/child startup; cancellation/pagehide disposes owned workers."
   },
   "nativeKernelArtifacts": {
     "modelThreaded": {
-      "path": "vendor/replicad/model_exact_multi.wasm",
-      "sha256": "5deffc2a6307310bf54f161cf5f862ad72f0ddfcc14cb010258d2432a82a0a2c"
+      "path": "vendor/replicad/topology_copy_guarded_multi.wasm",
+      "sha256": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc"
     },
     "modelSingle": {
       "path": "vendor/replicad/model_exact_single.wasm",
@@ -237,10 +246,35 @@
     "preparation": "Preserve an already strict-valid source with consistent SameParameter/SameRange flags; otherwise use preservation-guarded curve consistency repair.",
     "openIssue": "Supplied3x4 positive-fit variants at +0.05,+0.10,+0.20 pass conversion and BREP but STEP is rejected by unchanged tolerance ceilings. Default-fit allstyles and pencilcup both STEP poses pass."
   },
-  "build": "native-step-20261021-2",
+  "build": "native-step-20261021-3",
   "fitRangeMMPerSide": [
     -0.5,
     0.2
   ],
-  "repeatedUseLimit": "Ten swaps passed; capacity1734MB then1866MBflat, current-thread live allocation60.3→99.4MB. Remaining residue unresolved; not an indefinite-use guarantee."
+  "repeatedUseLimit": "Private025000 ten swaps andclean retry passed; capacity1734MiB then1866MiB. Current-thread allocation residue remains; no indefinite-use guarantee.",
+  "cooperativeCancellation": {
+    "scope": "Prepared native conversions at explicit operation boundaries",
+    "clean": "Prepared source and settings retained; pending validation children stopped and tasks settled",
+    "fallback": "Eight-second missing-ack timeout terminates worker; retains original input/settings for fresh preparation",
+    "nativeErrors": "Not swallowed by cancellation or repair fallback"
+  },
+  "sourceVolumeCache": "Signed/absolute volume for retained immutable source and exact finite scale/rotation/translation; different document/body owns separate record; existing bounds/volume match gates remain.",
+  "vendorModifications": {
+    "replicad": "Release temporary owning loft Shape handles and curve-to-edge builders/curves; seven matched operation outputs byte-identical in ownership audit. Original package integrity describes upstream source, not modified vendor bytes."
+  },
+  "windowsQualification": {
+    "candidate": "fast-export-20261021-025000",
+    "hardware": "AMD Ryzen 7 5800X3D, Windows 11, Edge 155",
+    "completedConversions": 17,
+    "strictSTEPExports": 11,
+    "conversionAbove20s": 1,
+    "maxConversionUISeconds": 21.04,
+    "maxSTEPUISeconds": 19.733,
+    "coldSTEPUISeconds": 18.295,
+    "selectionToConvertedUISeconds": [
+      35.391,
+      40.568
+    ],
+    "timingLimit": "Quiet-host outlier remains unexplained; repeated/cold/recovery checks passed; not a universal timing guarantee."
+  }
 }

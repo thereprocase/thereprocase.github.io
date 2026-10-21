@@ -1,0 +1,9 @@
+{
+  "isolated": true,
+  "files": {
+    "/home/repro/replicad-ownership-audit/baseline/replicad.js": "9692db9461fd9f598df2c7f4da33849b8ddd03df9163d8d70e0b9270117c3a6d",
+    "/home/repro/replicad-ownership-audit/patched/replicad.js": "e882ed69101e23937e159f5c2c5362264de6922141602bb1fd25cf2a650fe651",
+    "/home/repro/code/thereprocase.github.io/public/gridfinity-converter/vendor/replicad/model_exact_multi.wasm": "5deffc2a6307310bf54f161cf5f862ad72f0ddfcc14cb010258d2432a82a0a2c"
+  },
+  "scope": "Two nativeFoot vendor ownership paths only; no main/runtime edits"
+}

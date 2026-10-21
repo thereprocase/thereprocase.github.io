@@ -1,0 +1,215 @@
+{
+  "site": "/tmp/source-volume-cache-site",
+  "baseline": "/home/repro/fast-export-v5-site",
+  "patch": "/tmp/source-volume-cache.diff",
+  "scope": "Only native-cad.js; no first-conversion or preparation work shifted",
+  "test": "/tmp/check-source-volume-cache.mjs",
+  "log": "/tmp/source-volume-cache-tests.log",
+  "results": [
+    {
+      "index": 0,
+      "style": "plain",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 12.57805899999994,
+        "method": "native-volume"
+      }
+    },
+    {
+      "index": 1,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": true,
+        "elapsedMS": 0.03140799999982846,
+        "method": "retained-exact-placement"
+      }
+    },
+    {
+      "index": 2,
+      "style": "both",
+      "sourceVolumeCheck": {
+        "reused": true,
+        "elapsedMS": 0.06941200000073877,
+        "method": "retained-exact-placement"
+      }
+    },
+    {
+      "index": 3,
+      "style": "plain",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 7.859543999999005,
+        "method": "native-volume"
+      }
+    },
+    {
+      "index": 4,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 7.268458000000464,
+        "method": "native-volume"
+      }
+    },
+    {
+      "index": 5,
+      "style": "plain",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 7.205105000000913,
+        "method": "native-volume"
+      }
+    },
+    {
+      "index": 6,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": true,
+        "elapsedMS": 0.013831000000209315,
+        "method": "retained-exact-placement"
+      }
+    },
+    {
+      "index": 7,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": true,
+        "elapsedMS": 0.014222000001609558,
+        "method": "retained-exact-placement"
+      }
+    },
+    {
+      "index": 8,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 7.148434999999154,
+        "method": "native-volume"
+      }
+    },
+    {
+      "index": 9,
+      "style": "magnets",
+      "sourceVolumeCheck": {
+        "reused": false,
+        "elapsedMS": 7.247111999997287,
+        "method": "native-volume"
+      }
+    },
+    {
+      "passed": true,
+      "conversions": 10,
+      "volumeCache": true,
+      "coldCachedEmptyBooleanDifferences": true,
+      "cancelRecovery": true,
+      "scaledRepeat": true,
+      "rotatedRepeat": true,
+      "wrongBodyRecovery": true,
+      "conversionErrorRecovery": true,
+      "freshMeshCachePreserved": true
+    }
+  ],
+  "checks": [
+    "exact placement key, retained record per document/body",
+    "style and fit reuse",
+    "scale, rotation and translation misses",
+    "cold versus cached outputs have empty bidirectional exact Boolean differences",
+    "canonical source unchanged except OCCT Checked inspection flag",
+    "cancel after volume then same document retry",
+    "wrong body and injected conversion error recovery"
+  ],
+  "limitations": [
+    "Small native fixtures, no Windows timing or full cup benchmark performed",
+    "Cold/cached serialized BREP differs in location bookkeeping; numerical topology comparison used instead"
+  ],
+  "patchSHA256": "7f6218a20f2d6d98e5d1137dd11344a2ffea4992a840378e46808eb10f7af9e5",
+  "baselineSequenceComparison": {
+    "baselineSite": "/home/repro/fast-export-v5-site",
+    "baselineLog": "/tmp/volume-sequence-baseline.log",
+    "patchedLog": "/tmp/volume-sequence-patched.log",
+    "allTenByteIdentical": true,
+    "outputs": [
+      {
+        "index": 0,
+        "baseline": "/tmp/volume-sequence-baseline-0.brep",
+        "patched": "/tmp/volume-sequence-patched-0.brep",
+        "byteIdentical": true,
+        "bytes": 22044,
+        "sha256": "c066298257dda3c3d20436e8513680bf89dcefcaa8faac0c576e070ebe3db3ca"
+      },
+      {
+        "index": 1,
+        "baseline": "/tmp/volume-sequence-baseline-1.brep",
+        "patched": "/tmp/volume-sequence-patched-1.brep",
+        "byteIdentical": true,
+        "bytes": 25424,
+        "sha256": "3bb4d8490b1cea98123d92e0670e7038571dcaef2257504975da6571b80131dc"
+      },
+      {
+        "index": 2,
+        "baseline": "/tmp/volume-sequence-baseline-2.brep",
+        "patched": "/tmp/volume-sequence-patched-2.brep",
+        "byteIdentical": true,
+        "bytes": 32742,
+        "sha256": "37f2060e3e61ce491a6d1ea8ad848060f55d30fef39a2175fe2ad47dca76456f"
+      },
+      {
+        "index": 3,
+        "baseline": "/tmp/volume-sequence-baseline-3.brep",
+        "patched": "/tmp/volume-sequence-patched-3.brep",
+        "byteIdentical": true,
+        "bytes": 28550,
+        "sha256": "c380394a3652638e199adc17565bf30b52097755a90e08d78bd1d8fa38451e16"
+      },
+      {
+        "index": 4,
+        "baseline": "/tmp/volume-sequence-baseline-4.brep",
+        "patched": "/tmp/volume-sequence-patched-4.brep",
+        "byteIdentical": true,
+        "bytes": 25497,
+        "sha256": "fa7a7a5152016b190a4d7366c3a1f31358de1627459d77ebc572f9f87ec6a4c6"
+      },
+      {
+        "index": 5,
+        "baseline": "/tmp/volume-sequence-baseline-5.brep",
+        "patched": "/tmp/volume-sequence-patched-5.brep",
+        "byteIdentical": true,
+        "bytes": 22044,
+        "sha256": "ebeba1049b6294ea823573ee4cb08a03991cc2e6b4965798c1bb0238ccaca8f7"
+      },
+      {
+        "index": 6,
+        "baseline": "/tmp/volume-sequence-baseline-6.brep",
+        "patched": "/tmp/volume-sequence-patched-6.brep",
+        "byteIdentical": true,
+        "bytes": 25424,
+        "sha256": "3bb4d8490b1cea98123d92e0670e7038571dcaef2257504975da6571b80131dc"
+      },
+      {
+        "index": 7,
+        "baseline": "/tmp/volume-sequence-baseline-7.brep",
+        "patched": "/tmp/volume-sequence-patched-7.brep",
+        "byteIdentical": true,
+        "bytes": 34363,
+        "sha256": "3c036f78b7907f5b7f0838795901655ccbe834a3b4d3de0f1f76ad916faee43c"
+      },
+      {
+        "index": 8,
+        "baseline": "/tmp/volume-sequence-baseline-8.brep",
+        "patched": "/tmp/volume-sequence-patched-8.brep",
+        "byteIdentical": true,
+        "bytes": 25418,
+        "sha256": "6a3dee0292a2802101dd6dc95b8f944c2b826523965792fd1e70ead8cc753361"
+      },
+      {
+        "index": 9,
+        "baseline": "/tmp/volume-sequence-baseline-9.brep",
+        "patched": "/tmp/volume-sequence-patched-9.brep",
+        "byteIdentical": true,
+        "bytes": 25475,
+        "sha256": "96cbd2053c47188e129f38d50f0f92385f4c341a2ce15c60154383273daeba9c"
+      }
+    ],
+    "failedMatchCachePoisoningTests": "different-placement invalid source volume and mismatched bounds reject; former successful placement remains reusable"
+  }
+}

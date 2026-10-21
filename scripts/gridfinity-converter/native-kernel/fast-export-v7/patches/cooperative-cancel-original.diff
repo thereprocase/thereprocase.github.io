@@ -1,0 +1,419 @@
+--- a/public/gridfinity-converter/app.js
++++ b/public/gridfinity-converter/app.js
+@@ -24,6 +24,7 @@
+   cadWorker,
+   nativeWorker,
+   nativeReject,
++  nativeCancellation,
+   exportWorker,
+   exportReject,
+   exportAbort,
+@@ -426,6 +427,8 @@
+   return active;
+ }
+ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {}) {
++  clearTimeout(nativeCancellation?.timer);
++  nativeCancellation = null;
+   const keepCAD = preserveIdleCAD && cadWorker && !nativeWorker && raw?.nativeDocumentId;
+   // During native conversion the mesh worker is idle and still owns detection
+   // input. Keep that input, but always discard the cancelled native workers.
+@@ -898,6 +901,13 @@
+   } catch (e) {
+     if (turn !== epoch) return;
+     setBusy(false);
++    if (e.cleanNativeCancellation) {
++      view = 'original';
++      draw();
++      renderFeet();
++      status('Conversion cancelled. Prepared CAD and settings are kept; you can retry now.');
++      return;
++    }
+     status(e.message, true);
+   }
+ }
+@@ -932,6 +942,10 @@
+     const source = raw;
+     const requestId = ++sequence;
+     const documentId = cadWorker ? source.nativeDocumentId : null;
++    const bodyIndex = Number($('body').value || 0);
++    const cancelBuffer = documentId && nativePreparation?.done &&
++      nativePreparation.report?.bodyIndex === bodyIndex && crossOriginIsolated &&
++      typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
+     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
+       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
+     const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-local-20261020-1', {
+@@ -939,8 +953,12 @@
+     });
+     nativeWorker = w;
+     nativeReject = reject;
++    const cancellation = cancelBuffer ? { token: new Int32Array(cancelBuffer), requested: false, timer: null } : null;
++    nativeCancellation = cancellation;
+     const current = () => nativeWorker === w && epoch === turn && raw === source;
+     const finish = (retain) => {
++      clearTimeout(cancellation?.timer);
++      if (nativeCancellation === cancellation) nativeCancellation = null;
+       if (nativeWorker === w) nativeWorker = null;
+       if (nativeReject === reject) nativeReject = null;
+       w.onmessage = null;
+@@ -971,9 +989,20 @@
+       }
+       if (data.requestId !== requestId) return;
+       if (data.progress) {
+-        setBusy(true, data.progress);
++        if (!cancellation?.requested) setBusy(true, data.progress);
++        return;
++      }
++      if (data.cancelled) {
++        const retain = cancellation?.requested && data.clean && documentId && data.nativeDocumentId === documentId;
++        finish(retain);
++        const error = new DOMException(retain ? 'Conversion cancelled.' : 'Cancellation required a fresh CAD worker.', 'AbortError');
++        error.cleanNativeCancellation = Boolean(retain);
++        reject(error);
+         return;
+       }
++      // A result already queued when Cancel was clicked must not be published.
++      // Without a clean acknowledgment, the cancellation timeout discards it.
++      if (cancellation?.requested && data.result) return;
+       const retain = !data.error && documentId && data.result?.nativeDocumentId === documentId;
+       finish(retain);
+       if (data.error)
+@@ -989,6 +1018,7 @@
+       w.postMessage({
+         type: 'convert',
+         requestId,
++        cancelBuffer,
+         documentId,
+         retainDocument: Boolean(documentId),
+         deferOriginalPose: true,
+@@ -997,7 +1027,7 @@
+         buffer: source.nativeBuffer,
+         format: source.format,
+         scale: unitScale(),
+-        bodyIndex: Number($('body').value || 0),
++        bodyIndex,
+         detection,
+         options,
+       });
+@@ -1173,6 +1203,19 @@
+     status('Download preparation cancelled. Your conversion is still available.');
+     return;
+   }
++  if (nativeCancellation) {
++    if (nativeCancellation.requested) return;
++    const cancellation = nativeCancellation;
++    cancellation.requested = true;
++    Atomics.store(cancellation.token, 0, 1);
++    setBusy(true, 'Cancelling the current CAD step and cleaning up…');
++    cancellation.timer = setTimeout(() => {
++      if (nativeCancellation !== cancellation) return;
++      nativeCancellation = null;
++      $('cancel').onclick();
++    }, 8000);
++    return;
++  }
+   const retryNative = Boolean(nativeWorker && raw?.nativeBuffer?.byteLength && loaded && detection);
+   fileState = retryNative ? 'loaded' : 'cancelled';
+   epoch++;
+--- a/public/gridfinity-converter/native-cad.js
++++ b/public/gridfinity-converter/native-cad.js
+@@ -909,6 +909,11 @@
+     throw error;
+   }
+ }
++/** Only immutable, strictly prepared source entries can survive a clean cancellation. */
++export function hasPreparedNativeDocument(documentId, bodyIndex = 0) {
++  return conversionShapes === null && [...preparedNativeDocuments.values()].some(record =>
++    record.documentId === documentId && record.bodyIndex === bodyIndex);
++}
+ export async function convertNative({
+   buffer,
+   preparedDocumentId,
+@@ -918,6 +923,8 @@
+   deferOriginalPose = false,
+   nativeExportPreference = 'auto',
+   validateBrepCandidate,
++  checkCancelled = () => {},
++  waitForCancellation = promise => promise,
+   format,
+   scale = 1,
+   bodyIndex = 0,
+@@ -969,10 +976,12 @@
+     }
+     sourceCurveRepair = prepared.sourceCurveRepair;
+     sourcePreparationMS = prepared.preparationMS;
++    checkCancelled();
+     onProgress('Using the prepared native CAD source…', { diagnostic: 'prepared-native-source', sourcePreparationMS });
+   } else {
+     if (documentId && !buffer && [...preparedNativeDocuments.values()].some(record => record.documentId === documentId))
+       throw Error('The selected body has no prepared native source. Reload the model to select another body.');
++    checkCancelled();
+     onProgress('Opening native CAD…');
+     const document = (documentId && takeNativeDocument(documentId)) ||
+       (format === 'brep' || format === 'brp'
+@@ -1033,6 +1042,7 @@
+   }
+   if (retainedRecord && sourceBoundsCheck.matches)
+     retainedRecord.boundsProof = {key:boundsKey,proof:{...sourceBoundsCheck}};
++  checkCancelled();
+   onProgress('Matching native CAD to the detected part…', {
+     diagnostic: 'native-source-bounds',
+     ...sourceBoundsCheck,
+@@ -1097,7 +1107,7 @@
+     return clipped;
+   };
+   const localEdit = await prepareNativeLocalEdit({
+-    cad, source, feet, bottom, height, fit, roof, nativeFoot,
++    cad, source, feet, bottom, height, fit, roof, nativeFoot, checkCancelled,
+     maximumHoleDepth, maximumHoleRadius: Math.max(magnetDiameter,screwDiameter)/2,
+     cut, fuse, intersect, union, volume, clipSource, own: ownConversionShape, onProgress,
+   });
+@@ -1128,6 +1138,7 @@
+     if (!fits(screwDepth)) {
+       let candidate = Math.floor((screwDepth - 0.001) * 10) / 10;
+       while (candidate >= 2 && !fits(candidate)) {
++        checkCancelled();
+         onProgress(`Fitting native screw depth: ${candidate.toFixed(1)} mm…`);
+         candidate = Math.round((candidate - 0.1) * 10) / 10;
+       }
+@@ -1167,6 +1178,7 @@
+         if (['screws', 'both'].includes(style))
+           dims.push([screwDiameter / 2, screwDepth]);
+         for (const [radius, depth] of dims) {
++          checkCancelled();
+           onProgress(`Checking hole roof ${++roofIndex} of ${holes.length}…`);
+           const cover = nativeCylinder(radius, roof, [
+             f.x + dx,
+@@ -1186,12 +1198,14 @@
+           }
+         }
+       }
++  checkCancelled();
+   onProgress('Replacing native CAD feet and hardware…');
+   result = localEdit.assemble(holes.length ? union(holes) : null);
+   // Materialize the preservation mask before retiring its individual tools.
+   const allowed = union(regions);
+   const constructionRelease = releaseConstructionShapes(constructionCheckpoint,
+     new Set([result, allowed, localEdit.localSource, localEdit.editBox]));
++  checkCancelled();
+   onProgress('Checking native CAD holes and solid validity…', {
+     diagnostic: 'native-construction-release', ...constructionRelease,
+     wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation',
+@@ -1210,11 +1224,12 @@
+         .then(value => ({ value }), error => ({ error }));
+       // A nested worker may not finish starting until this worker yields.
+       // Await its kernel-ready acknowledgement before entering synchronous checks.
+-      if (candidateTask?.ready) await candidateTask.ready;
++      if (candidateTask?.ready) await waitForCancellation(candidateTask.ready);
+     }
+     primaryStartedAtMS = Date.now();
+     const exactStarted = performance.now(), capacityBefore = oc.wasmMemory.buffer.byteLength;
+     let exactSucceeded = false;
++    checkCancelled();
+     onProgress('Checking exact result geometry…', {
+       diagnostic: 'native-validation', meshFreeDisplayCopy: generatedDisplayMesh, primaryStartedAtMS,
+       wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore,
+@@ -1229,9 +1244,11 @@
+       onProgress('Exact result geometry check finished.', { diagnostic: 'native-validation-complete', ...primaryExactValidation });
+     }
+   } finally { candidateSnapshot?.delete(); }
++  checkCancelled();
+   onProgress('Preparing the exact edit region…');
+   // The shared convex box contains every allowed tool and every roof probe.
+   const editBox = localEdit.editBox;
++  checkCancelled();
+   onProgress('Checking preserved CAD boundary faces…');
+   const preservationProof = proveNativePreservation({
+     oc, cad, source, result, editBox, cut, validatedSolids: true,
+@@ -1240,6 +1257,7 @@
+   });
+   let added, removed;
+   if (preservationProof.proved) {
++    checkCancelled();
+     onProgress('Measuring changes within the local CAD region…');
+     const localSource = localEdit.localSource;
+     const localResult = intersect(result, editBox);
+@@ -1248,11 +1266,13 @@
+       removed = cut(localSource, localResult);
+     } finally { localSource.delete(); localResult.delete(); }
+   } else {
++    checkCancelled();
+     onProgress('Checking preserved CAD geometry with full solid differences…');
+     added = cut(result, source);
+     removed = cut(source, result);
+   }
+   editBox.delete();
++  checkCancelled();
+   onProgress('Checking material changes outside the allowed edit…');
+   const outsideAdded = volume(cut(added, allowed));
+   const outsideChange = outsideAdded + volume(cut(removed, allowed));
+@@ -1269,9 +1289,10 @@
+   let stepExport, sourceExport, brep, sourceBrep, stepExportError;
+   if (nativeExportPreference === 'brep') {
+     if (parallelBrep) {
+-      const outcome = await parallelBrep;
++      const outcome = await waitForCancellation(parallelBrep);
+       if (outcome.error) throw outcome.error;
+       parallelBrepReport = { ...outcome.value?.report, primaryStartedAtMS, primaryFinishedAtMS, fallbackRequired: Boolean(outcome.value?.fallbackRequired) };
++      checkCancelled();
+       onProgress('Parallel native BREP export validation complete.', { diagnostic: 'parallel-brep', ...parallelBrepReport });
+       if (outcome.value?.fallbackRequired) brep = checkedBrep(result, 'base-down');
+       else if (outcome.value?.buffer instanceof ArrayBuffer) { brep = outcome.value.buffer; sourceCertificate = outcome.value.sourceCertificate; }
+@@ -1292,10 +1313,12 @@
+     brep = checkedBrep(result, 'base-down');
+     sourceBrep = identicalPoses ? brep : deferOriginalPose ? undefined : checkedBrep(restored, 'original-pose');
+   }
++  checkCancelled();
+   onProgress('Preparing CAD preview…');
+   const geometry = await tessellateNative(result, 1000000, { label: 'converted body', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01, useFaceCache: fastDisplay });
+   const addedMesh = await tessellateNative(added, 1000000, { label: 'added material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
+   const removedMesh = await tessellateNative(removed, 1000000, { label: 'removed material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
++  checkCancelled();
+   return {
+     nativeDocumentId: retainedRecord?.documentId,
+     geometry,
+--- a/public/gridfinity-converter/native-local-edit.js
++++ b/public/gridfinity-converter/native-local-edit.js
+@@ -3,7 +3,7 @@
+  */
+ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height,
+   fit, maximumHoleDepth, maximumHoleRadius, roof, nativeFoot,
+-  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {} }) {
++  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {}, checkCancelled = () => {} }) {
+   if (!feet.length) throw Error('Select at least one foot before converting.');
+   const made = new Set();
+   const keep = shape => { made.add(shape); return own(shape); };
+@@ -21,6 +21,7 @@
+     const localSource = keep(clipSource(source, editBox, {min:clipMin,max:clipMax}));
+     const cuts = [], newFeet = [];
+     for (const [index, f] of feet.entries()) {
++      checkCancelled();
+       const sx=f.sourceX ?? f.x, sy=f.sourceY ?? f.y;
+       cuts.push(box([Math.min(sx,f.x)-20.99,Math.min(sy,f.y)-20.99,bottom-.02],
+         [Math.max(sx,f.x)+20.99,Math.max(sy,f.y)+20.99,bottom+height]));
+@@ -43,11 +44,14 @@
+       regions:[...cuts,...newFeet], dispose(){for(const shape of made)shape.delete();},
+       /** ((S\C) union F)\H = (S\(C union H)) union (F\H). */
+       assemble(holes) {
++        checkCancelled();
+         let combined, drilled, remainder;
+         try {
+           combined=holes ? keep(union([cutsUnion,holes])) : cutsUnion;
+           drilled=holes ? keep(cut(feetUnion,holes)) : feetUnion;
++          checkCancelled();
+           remainder=keep(cut(source,combined));
++          checkCancelled();
+           // Returned final solid belongs to the caller, not dispose().
+           return own(fuse(remainder,drilled));
+         } finally {
+--- a/public/gridfinity-converter/native-worker-run.js
++++ b/public/gridfinity-converter/native-worker-run.js
+@@ -1,4 +1,5 @@
+-import { convertNative, nativeMeshExport } from './native-cad.js?v=native-local-20261020-1';
++import { convertNative, nativeMeshExport, hasPreparedNativeDocument } from './native-cad.js?v=native-local-20261020-1';
++import { createNativeCancellation } from './native-cancellation.js?v=native-local-20261020-1';
+ import Module from '../gridfinity-shelves/vendor/manifold.js';
+ import { importSolid, meshData } from './kernel.js?v=native-local-20261020-1';
+ import { checkNativeDisplayMesh } from './native-display-check.js?v=native-local-20261020-1';
+@@ -35,6 +36,11 @@
+   const post = (payload, transfers) => self.postMessage({ ...payload, requestId: data.requestId }, transfers);
+   let stage = 'Starting native CAD conversion';
+   const validators = new Set();
++  const pendingValidators = new Set();
++  const cancellation = createNativeCancellation(data.cancelBuffer,
++    data.retainDocument && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0));
++  let cancelled = false;
++  let validationChildrenStopped = 0;
+   // Compile the display validator while the native conversion is running.
+   // Handle rejection immediately; it is rethrown when the module is needed.
+   const modulePending = preparedDisplayModule();
+@@ -54,7 +60,9 @@
+     }
+     const candidatePostedAtMS = Date.now();
+     validators.add(child);
+-    const finish = () => { child.terminate(); validators.delete(child); };
++    const finish = () => { child.terminate(); validators.delete(child); pendingValidators.delete(stop); };
++    const stop = () => { markReady(); finish(); reject(new DOMException('Validator cancelled', 'AbortError')); };
++    pendingValidators.add(stop);
+     child.onmessage = ({ data }) => {
+       if (data.warming) return;
+       if (data.warm) { if (warmed) warmed.warmedAtMS = data.warmedAtMS; return; }
+@@ -88,14 +96,17 @@
+   try {
+     const result = await convertNative({
+         ...data,
++        checkCancelled: cancellation.check,
++        waitForCancellation: cancellation.wait,
+         validateBrepCandidate,
+         onProgress: (progress, progressInfo) => {
+           stage = progress;
+           post({ progress, progressInfo });
+         },
+       }),
+-      moduleResult = await modulePending;
++      moduleResult = await cancellation.wait(modulePending);
+     if (moduleResult.error) throw moduleResult.error;
++    cancellation.check();
+     const m = moduleResult.value;
+     stage = 'Checking the CAD display mesh';
+     post({ progress: stage });
+@@ -109,6 +120,7 @@
+     } catch (error) {
+       bodies?.forEach((body) => body.delete());
+       bodies = null;
++      if (error instanceof WebAssembly.RuntimeError) throw error;
+       if (!result.report.meshTessellation?.converted?.reusedFaces) throw error;
+       stage = 'Rebuilding the CAD display mesh';
+       post({ progress: stage });
+@@ -151,17 +163,30 @@
+       result.sourceBrep,
+     ])
+       if (bytes) transfers.add(bytes);
++    cancellation.check();
+     post({ result }, [...transfers]);
+   } catch (e) {
+-    post({
++    if (cancellation.isCancellation(e)) cancelled = true;
++    else post({
+       error: e.message ?? String(e),
+       stage,
+       stack: e.stack,
+       errorName: e.name,
+     });
+   } finally {
++    validationChildrenStopped = validators.size;
++    for (const stop of pendingValidators) stop();
++    pendingValidators.clear();
+     for (const child of validators) child.terminate();
+     validators.clear();
+     if (warmedValidator) { warmedValidator.child.terminate(); warmedValidator = undefined; }
+   }
++  // A native trap or any cleanup exception bypasses this acknowledgment.
++  // The preview worker may subsequently warm a new validator for the next task;
++  // clean means this cancelled task and its children have been retired.
++  if (cancelled) {
++    const clean = cancellation.enabled && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0);
++    post({ cancelled: true, clean, nativeDocumentId: clean ? data.documentId : undefined,
++      validationChildrenStopped, pendingValidationTasks: pendingValidators.size });
++  }
+ }
+--- /dev/null
++++ b/public/gridfinity-converter/native-cancellation.js
+@@ -0,0 +1,18 @@
++/** Shared cancellation is checked only at normal-flow boundaries, never in finally. */
++export function createNativeCancellation(buffer, enabled) {
++  const token = enabled && typeof SharedArrayBuffer !== 'undefined' &&
++    buffer instanceof SharedArrayBuffer && buffer.byteLength === 4 ? new Int32Array(buffer) : null;
++  const aborted = new DOMException('Conversion cancelled after native cleanup.', 'AbortError');
++  const check = () => { if (token && Atomics.load(token, 0)) throw aborted; };
++  const wait = async promise => {
++    check();
++    if (!token) return promise;
++    let timer;
++    try {
++      return await Promise.race([promise, new Promise((_, reject) => {
++        timer = setInterval(() => { if (Atomics.load(token, 0)) reject(aborted); }, 25);
++      })]);
++    } finally { clearInterval(timer); }
++  };
++  return { check, wait, enabled: Boolean(token), isCancellation: error => error === aborted };
++}

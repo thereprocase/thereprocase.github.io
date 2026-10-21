@@ -1,0 +1,15 @@
+{
+  "sourceLogSHA256": "288242eaad174a18c47a26d662c26bb782788424129621249fd608513fea1ca9",
+  "results": [
+    "located box: same strict validity, independent topology, source unchanged",
+    "sphere degenerate edges: same strict validity, independent topology, source unchanged",
+    "empty edge: fallback",
+    "empty face: fallback",
+    "mixed polygon type 4: fallback, source unchanged",
+    "mixed polygon type 6: fallback, source unchanged",
+    "mixed free geometric pcurve edge: fallback, source unchanged",
+    "empty invalid solid: conservative fallback",
+    "open invalid solid: same strict validity, independent topology, source unchanged"
+  ],
+  "scope": "Synthetic native Linux fixtures; no browser/Windows timing claim"
+}

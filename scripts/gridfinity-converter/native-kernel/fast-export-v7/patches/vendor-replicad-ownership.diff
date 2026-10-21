@@ -1,0 +1,63 @@
+--- a/public/gridfinity-converter/vendor/replicad/replicad.js
++++ b/public/gridfinity-converter/vendor/replicad/replicad.js
+@@ -3566,15 +3566,23 @@
+ var loft = (wires, { ruled = true, startPoint, endPoint } = {}, returnShell = false) => {
+ 	const oc = getOC();
+ 	const [r, gc] = localGC();
+-	const loftBuilder = r(new oc.BRepOffsetAPI_ThruSections(!returnShell, ruled, 1e-6));
+-	if (startPoint) loftBuilder.AddVertex(r(makeVertex(startPoint)).wrapped);
+-	wires.forEach((w) => loftBuilder.AddWire(w.wrapped));
+-	if (endPoint) loftBuilder.AddVertex(r(makeVertex(endPoint)).wrapped);
+-	loftBuilder.Build();
+-	const shape = cast(loftBuilder.Shape());
+-	gc();
+-	if (!isShape3D(shape)) throw new Error("Could not loft to a 3d shape");
+-	return shape;
++	let raw, shape;
++	try {
++		const loftBuilder = r(new oc.BRepOffsetAPI_ThruSections(!returnShell, ruled, 1e-6));
++		if (startPoint) loftBuilder.AddVertex(r(makeVertex(startPoint)).wrapped);
++		wires.forEach((w) => loftBuilder.AddWire(w.wrapped));
++		if (endPoint) loftBuilder.AddVertex(r(makeVertex(endPoint)).wrapped);
++		loftBuilder.Build();
++		raw = loftBuilder.Shape();
++		shape = cast(raw);
++		if (!isShape3D(shape)) throw new Error("Could not loft to a 3d shape");
++		return shape;
++	} catch (error) {
++		shape?.delete();
++		throw error;
++	} finally {
++		try { raw?.delete(); } finally { gc(); }
++	}
+ };
+ //#endregion
+ //#region src/sketches/Sketch.ts
+@@ -3992,12 +4000,21 @@
+ 	const [r, gc] = localGC();
+ 	const ax = r(makeAx2(plane.origin, plane.zDir, plane.xDir));
+ 	const oc = getOC();
+-	const edges = curves.map((curve) => {
+-		const curve3d = oc.GeomLib.To3d(ax, curve.wrapped);
+-		return new Edge(new oc.BRepBuilderAPI_MakeEdge(curve3d).Edge());
+-	});
+-	gc();
+-	return edges;
++	const edges = [];
++	try {
++		for (const curve of curves) {
++			const curve3d = oc.GeomLib.To3d(ax, curve.wrapped);
++			let builder;
++			try {
++				builder = new oc.BRepBuilderAPI_MakeEdge(curve3d);
++				edges.push(new Edge(builder.Edge()));
++			} finally { builder?.delete(); curve3d.delete(); }
++		}
++		return edges;
++	} catch (error) {
++		edges.forEach(edge => edge.delete());
++		throw error;
++	} finally { gc(); }
+ }
+ var curvesAsEdgesOnSurface = (curves, geomSurf) => {
+ 	const [r, gc] = localGC();

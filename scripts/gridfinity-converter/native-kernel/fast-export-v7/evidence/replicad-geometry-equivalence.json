@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "fullConversions": 7,
+  "allNativeValid": true,
+  "allIndependentBrepValid": true,
+  "allOutsideChangeZero": true,
+  "allOutputBrepSHA256Identical": true,
+  "footGeometryIdentical": true
+}

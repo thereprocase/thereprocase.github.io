@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "outcomes": [
+    {
+      "name": "allocator diagnostics",
+      "nativeAllocatorStatsAbsent": true,
+      "mimallocStatsCallable": true
+    },
+    {
+      "name": "mixed-polygon-4",
+      "fallback": true,
+      "sourceUnchanged": true
+    },
+    {
+      "name": "mixed-polygon-6",
+      "fallback": true,
+      "sourceUnchanged": true
+    },
+    {
+      "name": "mixed-free-pcurve",
+      "fallback": true,
+      "sourceUnchanged": true
+    },
+    {
+      "name": "meshed box",
+      "strictValid": true,
+      "sourceUnchanged": true
+    },
+    {
+      "name": "actual cup",
+      "strictValid": true,
+      "sourceUnchanged": true
+    }
+  ]
+}

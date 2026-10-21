@@ -1,0 +1,16 @@
+--- a/public/gridfinity-converter/native-export-warm-pool.js
++++ b/public/gridfinity-converter/native-export-warm-pool.js
+@@ -49,6 +49,13 @@
+         try { const entry = make(true); if (!entry.closed) slot = entry; return entry.ready; }
+         catch (error) { return Promise.resolve({ ready: false, error: String(error) }); }
+       }
++      // Recent conversion activity renews the unused slot's idle lifetime.
++      // Never renew an acquired worker or create a second speculative kernel.
++      if (slot.idleTimer) {
++        const entry = slot;
++        clearTimeout(entry.idleTimer);
++        entry.idleTimer = setTimeout(() => stop(entry), idleMS);
++      }
+       return slot.ready;
+     },
+     async acquire({ signal } = {}) {

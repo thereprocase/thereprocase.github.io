@@ -1,0 +1,19 @@
+{
+  "cooperativeCancellation": {
+    "sixBoundaryChecks": true,
+    "successfulNativeRetries": 6,
+    "canonicalGeometryUnchanged": true,
+    "nativeTrapPriority": true,
+    "smallBrowserCleanAckMS": 90.7,
+    "smallBrowserStrictSTEPAfterRetry": true,
+    "beforePreparedHardFallback": true,
+    "timeoutHardFallback": true,
+    "localFullCup4SecondCancel": "Hard timeout fallback; fresh-worker retry and strict STEP passed. Not a clean cancellation success.",
+    "WindowsV4OwnerEvidence": "Parent reports clean cancellation and16.72s retry; raw diagnostics excluded, not independently reproduced here."
+  },
+  "limitations": [
+    "No claims of universal under20s timing.",
+    "Cold export after legitimate idle expiry remains required Windows qualification.",
+    "Small-fixture source cache baseline outputs byte-identical; old cold-versus-retained representation bookkeeping differs independently of cache."
+  ]
+}

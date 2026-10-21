@@ -1,0 +1,1 @@
+{"passed":true,"edgeFailure":{"made":3,"deleted":3,"curves":3,"curvesDeleted":3},"loftFailures":[{"mode":"build-error","builders":1,"disposed":1,"raws":0,"rawsDisposed":0},{"mode":"build-trap","builders":1,"disposed":1,"raws":0,"rawsDisposed":0},{"mode":"cast-error","builders":1,"disposed":1,"raws":1,"rawsDisposed":1}]}

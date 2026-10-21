@@ -1,0 +1,71 @@
+{
+  "site": "/tmp/export-startup-site",
+  "baseline": "/home/repro/fast-export-v6-site",
+  "patch": "/tmp/export-startup-integration.diff",
+  "patchSHA256": "3ad23fa436df91efd0bc27cb1e4d2891732e4d1dbe01d14b90c8930b7ad1f835",
+  "fixture": "small native solid; all actual STEP reopen gates retained",
+  "WindowsCause": {
+    "session": "535ab089-d88d-461f-802b-2837d24d764c",
+    "slowExportMS": 24146,
+    "warmWorkerReadyElapsedMS": 196940,
+    "subsequentPrewarmConversionElapsedMS": [
+      215608,
+      236620
+    ],
+    "workerExpiredElapsedMS": 256948,
+    "stepClickElapsedMS": 257747,
+    "avoidableColdMainKernelMS": 1212.805,
+    "serialChildStartupMS": 1258.8
+  },
+  "timing": {
+    "baseline-cold": {
+      "elapsedMS": 1693.6699998378754,
+      "warmupMS": 0.07500004768371582,
+      "strictSTEP": true,
+      "path": "/tmp/export-startup-baseline-cold.json"
+    },
+    "patched-cold": {
+      "elapsedMS": 1559.6549999713898,
+      "warmupMS": 0.06500005722045898,
+      "strictSTEP": true,
+      "path": "/tmp/export-startup-patched-cold.json"
+    },
+    "baseline-warm": {
+      "elapsedMS": 1053.8450000286102,
+      "warmupMS": 625.7549998760223,
+      "strictSTEP": true,
+      "path": "/tmp/export-startup-baseline-warm.json"
+    },
+    "patched-warm": {
+      "elapsedMS": 931.0199999809265,
+      "warmupMS": 639.7749998569489,
+      "strictSTEP": true,
+      "path": "/tmp/export-startup-patched-warm.json"
+    }
+  },
+  "lifecycle": {
+    "passed": true,
+    "idleRefresh": true,
+    "boundedOneSlot": true,
+    "acquiredNeverExpired": true,
+    "disposeClearsTimers": true,
+    "moduleOnlyWarmup": true,
+    "transferOnce": true,
+    "taskCancellationSettles": true,
+    "lateReplyIgnored": true,
+    "warmTimeoutAndError": true
+  },
+  "limitations": [
+    "One local sample per timing condition, no Windows or full-cup speed claim",
+    "Warm module parsing now overlaps conversion; added small-fixture warmup14ms, actual cup conversion impact requires Windows qualification",
+    "Legitimate export after >60 seconds without activity still cold; concurrent startup handles that path but unchanged geometry work remains",
+    "Pagehide worker subtree drained by2.7seconds polling; no surviving workers"
+  ],
+  "browserLifecycle": {
+    "threeWarmDisposeRounds": true,
+    "workersRemaining": 0,
+    "actualAppPagehideCancellation": true,
+    "strictStepRetry": true,
+    "subtreeDrainUpperObservedMS": 2700
+  }
+}

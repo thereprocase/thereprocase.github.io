@@ -1,0 +1,26 @@
+{
+  "state": "reviewable-source-bundle-complete",
+  "published": false,
+  "committed": false,
+  "baselineCommit": "9379c78024488dad947cce729ebfc363700b572a",
+  "candidateBuild": "fast-export-20261021-025000",
+  "guardedArtifactBasename": "topology_copy_guarded_multi",
+  "guardedWasmSHA256": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc",
+  "stagedRuntimeManifestSHA256": "f7754c6910ed2afb77443d30c16f8425565a6044764c36cdb4e8006a1aafc248",
+  "aggregateExactPatchAppliesToBaseline": true,
+  "browserNormalAndCancelRetryStrictSTEP": "passed small fixture",
+  "WindowsV7Qualification": "pending: requested5 fresh runs,70-second idle export,10 swaps/cancellation matrix",
+  "cleanCacheBuild": "not demonstrated; requires external pinned object caches and image",
+  "excludedPayloads": [
+    "private-model-files",
+    "STEP",
+    "BREP",
+    "STL",
+    "3MF",
+    "WASM",
+    "object-cache-binaries",
+    "raw-diagnostic-logs"
+  ],
+  "candidatePrivateDeployment": true,
+  "bundlePublished": false
+}

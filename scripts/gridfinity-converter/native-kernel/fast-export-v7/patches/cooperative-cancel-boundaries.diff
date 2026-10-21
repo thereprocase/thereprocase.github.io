@@ -1,0 +1,28 @@
+--- a/public/gridfinity-converter/native-cad.js
++++ b/public/gridfinity-converter/native-cad.js
+@@ -1055,6 +1055,7 @@
+     throw Error(
+       'Native CAD part does not match the detected mesh part. Export the selected solid separately and retry.',
+     );
++  checkCancelled();
+   // Mesh detection uses float32 coordinates. Remove sub-tolerance noise before
+   // native booleans so nominally coincident edges do not create sliver faces.
+   // Source CAD curves and surfaces are unchanged; preservation is checked below.
+--- a/public/gridfinity-converter/native-local-edit.js
++++ b/public/gridfinity-converter/native-local-edit.js
+@@ -4,6 +4,7 @@
+ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height,
+   fit, maximumHoleDepth, maximumHoleRadius, roof, nativeFoot,
+   cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {}, checkCancelled = () => {} }) {
++  checkCancelled();
+   if (!feet.length) throw Error('Select at least one foot before converting.');
+   const made = new Set();
+   const keep = shape => { made.add(shape); return own(shape); };
+@@ -18,6 +19,7 @@
+       bottom+Math.max(4.75, height+.02, maximumHoleDepth+roof)+.1];
+     const editBox = box(clipMin, clipMax);
+     onProgress('Preparing the shared native edit region…');
++    checkCancelled();
+     const localSource = keep(clipSource(source, editBox, {min:clipMin,max:clipMax}));
+     const cuts = [], newFeet = [];
+     for (const [index, f] of feet.entries()) {

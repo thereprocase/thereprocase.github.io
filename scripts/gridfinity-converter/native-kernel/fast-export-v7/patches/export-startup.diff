@@ -1,0 +1,123 @@
+--- a/public/gridfinity-converter/native-export-warm-pool.js
++++ b/public/gridfinity-converter/native-export-warm-pool.js
+@@ -49,6 +49,13 @@
+         try { const entry = make(true); if (!entry.closed) slot = entry; return entry.ready; }
+         catch (error) { return Promise.resolve({ ready: false, error: String(error) }); }
+       }
++      // Recent conversion activity renews the unused slot's idle lifetime.
++      // Never renew an acquired worker or create a second speculative kernel.
++      if (slot.idleTimer) {
++        const entry = slot;
++        clearTimeout(entry.idleTimer);
++        entry.idleTimer = setTimeout(() => stop(entry), idleMS);
++      }
+       return slot.ready;
+     },
+     async acquire({ signal } = {}) {
+--- a/public/gridfinity-converter/native-export-worker.js
++++ b/public/gridfinity-converter/native-export-worker.js
+@@ -1,9 +1,11 @@
+-import { startParallelSourceBounds } from './native-parallel-source-bounds.js?v=fast-export-20261021-022900';
++import { startParallelSourceBounds, createSourceBoundsModuleWarmup } from './native-parallel-source-bounds.js?v=fast-export-20261021-022900';
+ import { exportNativeOriginalPose, warmNativeBrepValidator } from './native-cad.js?v=fast-export-20261021-022900';
+ let queue = Promise.resolve();
+ let consumed = false;
++let boundsWarmup;
+ self.onmessage = ({ data }) => {
+   queue = queue.then(() => handle(data)).catch(error => {
++    boundsWarmup?.dispose();boundsWarmup=undefined;
+     self.postMessage({ error: error.message ?? String(error), errorName: error.name });
+   });
+ };
+@@ -11,7 +13,8 @@
+   if (data?.type === 'warm') {
+     if (consumed) throw Error('An export worker cannot be warmed after use.');
+     const started = performance.now();
+-    await warmNativeBrepValidator({ certificateBounds: true });
++    boundsWarmup ??= createSourceBoundsModuleWarmup();
++    await Promise.all([warmNativeBrepValidator({ certificateBounds: true }),boundsWarmup.ready]);
+     self.postMessage({ warm: true, elapsedMS: performance.now() - started });
+     return;
+   }
+@@ -25,8 +28,15 @@
+   };
+   let boundsTask;
+   try {
+-    if(data.type==='pose'&&data.format==='brep'&&data.requestedFormat==='step') boundsTask=startParallelSourceBounds(data,onProgress);
+-    if(boundsTask)await boundsTask.started;
++    if(data.type==='pose'&&data.format==='brep'&&data.requestedFormat==='step') {
++      // Start independent engines together; keep the real child-start handshake.
++      const startupStarted=performance.now();
++      const mainReady=warmNativeBrepValidator({certificateBounds:true}).then(()=>performance.now()-startupStarted);
++      const preparedWorker=boundsWarmup?.take();boundsWarmup?.dispose();boundsWarmup=undefined;
++      boundsTask=startParallelSourceBounds(data,onProgress,{worker:preparedWorker});
++      const [mainKernelMS]=await Promise.all([mainReady,boundsTask.started]);
++      onProgress('STEP export engines ready…',{diagnostic:'step-export-startup',elapsedMS:performance.now()-startupStarted,mainKernelMS,boundsModulePrewarmed:Boolean(preparedWorker)});
++    } else {boundsWarmup?.dispose();boundsWarmup=undefined;}
+     let result;
+     if (data.type === 'pose') result = await exportNativeOriginalPose({ ...data, sourceBoundsTask:boundsTask?.result, onProgress });
+     else if (data.type === 'mesh') {
+@@ -47,5 +57,5 @@
+     boundsTask = undefined;
+     self.postMessage({ error: error.message ?? String(error), stage,
+       stack: error.stack, errorName: error.name });
+-  } finally { boundsTask?.cancel(); }
++  } finally { boundsTask?.cancel();boundsWarmup?.dispose();boundsWarmup=undefined; }
+ };
+--- a/public/gridfinity-converter/native-source-bounds-worker.js
++++ b/public/gridfinity-converter/native-source-bounds-worker.js
+@@ -1,5 +1,6 @@
+ import { computeNativeSourceBounds } from './native-cad.js?v=fast-export-20261021-022900';
+ self.onmessage=async({data})=>{
++ if(data?.type==='warm-module'){self.postMessage({type:'module-ready'});return;}
+  const childStartedAtMS=performance.timeOrigin+performance.now();
+  self.postMessage({type:'started',childStartedAtMS});
+  try{const result=await computeNativeSourceBounds(data);self.postMessage({result,childStartedAtMS,childFinishedAtMS:performance.timeOrigin+performance.now()});}
+--- a/public/gridfinity-converter/native-parallel-source-bounds.js
++++ b/public/gridfinity-converter/native-parallel-source-bounds.js
+@@ -10,7 +10,7 @@
+  if(!reply || !reply.identity || reply.identity.sha256!==input.sha256 || reply.identity.bytes!==input.bytes || reply.identity.pose!==input.pose || reply.kernelSHA256!==BOUNDS_KERNELS[kernelInfo.engine] || !Array.isArray(b)||b.length!==2||!b.every(row=>Array.isArray(row)&&row.length===3&&row.every(Number.isFinite))||!b[0].every((v,i)=>v<=b[1][i]))throw Error('Parallel source bounds identity or metrics mismatch.');
+  return b;
+ }
+-export function startParallelSourceBounds({buffer,transform:pose},onProgress){
++export function startParallelSourceBounds({buffer,transform:pose},onProgress,{worker:preparedWorker}={}){
+  let child,settled=false,timer,startTimer,resolve,resolveStarted,startSettled=false;
+  const parentStartedAtMS=performance.timeOrigin+performance.now(), began=performance.now();
+  const result=new Promise(r=>resolve=r), started=new Promise(r=>resolveStarted=r);
+@@ -18,7 +18,7 @@
+  const markStarted=value=>{if(startSettled)return;startSettled=true;clearTimeout(startTimer);resolveStarted(value);};
+  const finish=value=>{if(settled)return;settled=true;clearTimeout(timer);clearTimeout(startTimer);child?.terminate();markStarted(value);resolve(value);};
+  try{
+-  child=new Worker(new URL('./native-source-bounds-worker.js?v=fast-export-20261021-022900',import.meta.url),{type:'module'});
++  child=preparedWorker ?? new Worker(new URL('./native-source-bounds-worker.js?v=fast-export-20261021-022900',import.meta.url),{type:'module'});
+   child.onmessage=({data})=>{
+    if(settled)return;
+    const payload=data&&typeof data==='object'?data:{error:'Malformed bounds worker response'};
+@@ -38,3 +38,27 @@
+  }catch(e){finish({error:e.message});}
+  return {result,started,cancel:()=>finish({error:'Bounds task cancelled'})};
+ }
++
++/** One module-only child. Ownership transfers once, or disposal terminates it. */
++export function createSourceBoundsModuleWarmup({createWorker=()=>new Worker(new URL('./native-source-bounds-worker.js?v=fast-export-20261021-022900',import.meta.url),{type:'module'}),timeoutMS=30000}={}) {
++ let child, timer, closed=false, ready=false, settle;
++ const result=new Promise(resolve=>settle=resolve);
++ const dispose=()=>{if(closed)return;closed=true;clearTimeout(timer);child?.terminate();child=null;settle(false);};
++ try {
++  child=createWorker();
++  child.onmessage=({data})=>{
++   if(closed)return;
++   if(data?.type==='module-ready'){ready=true;clearTimeout(timer);settle(true);}
++   else dispose();
++  };
++  child.onerror=child.onmessageerror=dispose;
++  timer=setTimeout(dispose,timeoutMS);
++  child.postMessage({type:'warm-module'});
++ } catch {dispose();}
++ return {ready:result,dispose,take(){
++  if(closed||!ready)return null;
++  const owned=child;child=null;closed=true;clearTimeout(timer);
++  owned.onmessage=owned.onerror=owned.onmessageerror=null;
++  return owned;
++ }};
++}

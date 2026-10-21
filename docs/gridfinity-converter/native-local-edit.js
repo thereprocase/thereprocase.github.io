@@ -3,7 +3,8 @@
  */
 export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height,
   fit, maximumHoleDepth, maximumHoleRadius, roof, nativeFoot,
-  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {} }) {
+  cut, fuse, intersect, union, volume, clipSource = intersect, own = shape => shape, onProgress = () => {}, checkCancelled = () => {} }) {
+  checkCancelled();
   if (!feet.length) throw Error('Select at least one foot before converting.');
   const made = new Set();
   const keep = shape => { made.add(shape); return own(shape); };
@@ -18,9 +19,11 @@ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height
       bottom+Math.max(4.75, height+.02, maximumHoleDepth+roof)+.1];
     const editBox = box(clipMin, clipMax);
     onProgress('Preparing the shared native edit region…');
+    checkCancelled();
     const localSource = keep(clipSource(source, editBox, {min:clipMin,max:clipMax}));
     const cuts = [], newFeet = [];
     for (const [index, f] of feet.entries()) {
+      checkCancelled();
       const sx=f.sourceX ?? f.x, sy=f.sourceY ?? f.y;
       cuts.push(box([Math.min(sx,f.x)-20.99,Math.min(sy,f.y)-20.99,bottom-.02],
         [Math.max(sx,f.x)+20.99,Math.max(sy,f.y)+20.99,bottom+height]));
@@ -43,11 +46,14 @@ export async function prepareNativeLocalEdit({ cad, source, feet, bottom, height
       regions:[...cuts,...newFeet], dispose(){for(const shape of made)shape.delete();},
       /** ((S\C) union F)\H = (S\(C union H)) union (F\H). */
       assemble(holes) {
+        checkCancelled();
         let combined, drilled, remainder;
         try {
           combined=holes ? keep(union([cutsUnion,holes])) : cutsUnion;
           drilled=holes ? keep(cut(feetUnion,holes)) : feetUnion;
+          checkCancelled();
           remainder=keep(cut(source,combined));
+          checkCancelled();
           // Returned final solid belongs to the caller, not dispose().
           return own(fuse(remainder,drilled));
         } finally {

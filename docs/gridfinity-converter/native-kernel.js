@@ -21,7 +21,7 @@ export async function initNativeKernel({purpose='model'} = {}) {
     try {
       const attempt = (async () => {
         const { default: initMulti } =
-          await import(verifier ? './vendor/export-verifier/writer17_torus_verifier_pool4.js' : './vendor/replicad/model_exact_multi_pool4.js');
+          await import(verifier ? './vendor/export-verifier/writer17_torus_verifier_pool4.js' : './vendor/replicad/topology_copy_guarded_multi_pool4.js');
         return initMulti({
           pthreadPoolSize: threads,
           onPthreadWorker: (worker) => {

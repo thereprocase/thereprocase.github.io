@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "build": "fast-export-20261021-025000",
+  "inputSHA256": "c2b5f0c6051368c21945b47d5ce2dbc83b2dee7acdf1a5b5b2b6b5ad74af5af4",
+  "matrixComplete": true,
+  "counts": {
+    "freshFlows": 5,
+    "idleExportFlows": 1,
+    "repeatSwaps": 10,
+    "successfulRetries": 1,
+    "validatedConversions": 17,
+    "validatedSTEPExports": 11
+  },
+  "timingDefinition": "Client Convert action to Conversion ready; STEP action to Download requested. File-save completion is not measured.",
+  "environment": {
+    "platform": "Win32",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+    "hardwareConcurrency": 16,
+    "deviceMemory": 32,
+    "crossOriginIsolated": true
+  },
+  "freshFlows": [
+    {
+      "convertMS": [
+        18211
+      ],
+      "stepMS": [
+        16278
+      ],
+      "preparedFromSelectionMS": 17241,
+      "selectionToConvertedMS": 35712
+    },
+    {
+      "convertMS": [
+        18018
+      ],
+      "stepMS": [
+        16005
+      ],
+      "preparedFromSelectionMS": 17153,
+      "selectionToConvertedMS": 35419
+    },
+    {
+      "convertMS": [
+        18028
+      ],
+      "stepMS": [
+        16015
+      ],
+      "preparedFromSelectionMS": 17545,
+      "selectionToConvertedMS": 35782
+    },
+    {
+      "convertMS": [
+        21040
+      ],
+      "stepMS": [
+        19733
+      ],
+      "preparedFromSelectionMS": 19246,
+      "selectionToConvertedMS": 40568
+    },
+    {
+      "convertMS": [
+        17862
+      ],
+      "stepMS": [
+        15913
+      ],
+      "preparedFromSelectionMS": 17439,
+      "selectionToConvertedMS": 35510
+    }
+  ],
+  "coldIdleFlow": {
+    "convertMS": [
+      18044
+    ],
+    "stepMS": [
+      18295,
+      15720
+    ],
+    "preparedFromSelectionMS": 17408,
+    "selectionToConvertedMS": 35703,
+    "idleAfterConversionMS": 70364,
+    "startup": {
+      "diagnostic": "step-export-startup",
+      "elapsedMS": 1153.5049999952316,
+      "mainKernelMS": 1151.0200000107288,
+      "boundsModulePrewarmed": false
+    },
+    "mainWorkerPrewarmed": false
+  },
+  "repeatedFlow": {
+    "convertMS": [
+      17888,
+      14068,
+      15410,
+      13787,
+      15197,
+      15863,
+      15293,
+      14712,
+      15430,
+      14852,
+      15593
+    ],
+    "stepMS": [
+      16032,
+      15048,
+      15204,
+      14917
+    ],
+    "preparedFromSelectionMS": 17297,
+    "selectionToConvertedMS": 35391,
+    "cancel": [
+      {
+        "requestedAfterConvertMS": 4003,
+        "ackMS": 1026,
+        "clean": true,
+        "pendingValidationTasks": 0,
+        "validationChildrenStopped": 0,
+        "worker": 1,
+        "readyMS": 1031
+      }
+    ],
+    "postCleanupWasmCapacityBytes": [
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352,
+      1956708352
+    ],
+    "postCleanupCurrentThreadLiveBlockBytes": [
+      63318668,
+      67632628,
+      72328780,
+      76650764,
+      81337868,
+      85659476,
+      90372732,
+      94694476,
+      99402172,
+      103750900,
+      109301092
+    ],
+    "sourceVolumeCacheReused": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "sourceVolumeCacheElapsedMS": [
+      1274.1599999964237,
+      0.014999985694885254,
+      0.004999995231628418,
+      0.009999990463256836,
+      0.009999990463256836,
+      0.009999990463256836,
+      0.005000025033950806,
+      0.009999990463256836,
+      0.004999995231628418,
+      0,
+      0.010000020265579224
+    ],
+    "sameConversionWorker": true,
+    "nativeVolumesByStyle": {
+      "plain": [
+        70403.43065801165
+      ],
+      "magnets": [
+        69129.20071101829
+      ]
+    }
+  },
+  "validation": {
+    "allNativeValid": true,
+    "allSTEPStrictValid": true,
+    "allPrimaryCopyMethods": [
+      "topology-only"
+    ],
+    "sourceNativeVolumesMM3": [
+      70403.43064425353
+    ],
+    "unchangedAcceptancePolicy": {
+      "toleranceCeiling": {
+        "enabled": true,
+        "formula": "actual[i] <= source[i] + absoluteAllowanceMM",
+        "absoluteAllowanceMM": 1e-12,
+        "order": [
+          "vertex",
+          "edge",
+          "face"
+        ]
+      },
+      "bounds": {
+        "formula": "abs(actual[i][j] - source[i][j]) <= absoluteAllowanceMM",
+        "absoluteAllowanceMM": 1e-05
+      },
+      "volume": {
+        "formula": "abs(actual - source) <= max(absoluteAllowanceMM3, source * relativeAllowance)",
+        "absoluteAllowanceMM3": 0.001,
+        "relativeAllowance": 1e-08
+      },
+      "strictNativeValidity": true,
+      "requiredSolidCount": 1
+    },
+    "independentlyRecomputedGeometryGates": [
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.8899812270767313e-15,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.8480932340025902e-09,
+        "pose": "original"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 2.4010660126805305e-09,
+        "pose": "base-down"
+      },
+      {
+        "maximumToleranceIncreaseMM": 1.186030440525343e-14,
+        "maximumBoundsDifferenceMM": 0.0,
+        "volumeDifferenceMM3": 1.5425030142068863e-09,
+        "pose": "base-down"
+      }
+    ],
+    "recordedErrors": 0
+  },
+  "performanceTarget": {
+    "allConversionsBelow20Seconds": false,
+    "allSTEPBelow20Seconds": true,
+    "conversionMissesMS": [
+      21040
+    ],
+    "goalAchieved": false
+  },
+  "caveats": [
+    "The fourth fresh conversion took21.040seconds; it is retained as a target miss, not excluded as noise.",
+    "Fresh pages do not imply cold browser or OS caches; machine load is not independently controlled by these diagnostics.",
+    "WASM capacity is not live allocation. Current-thread allocation statistics omit other heaps; increasing residue does not establish indefinite bounded memory or identify leak cause.",
+    "These are internal strict reopen checks, not compatibility certification for every external CAD application."
+  ],
+  "ownerHarnessSupplement": {
+    "provenance": "Final relay values supplied by parent; separate endpoint from raw worker preparation completion.",
+    "freshVisualPreviewMS": [
+      680,
+      570,
+      570,
+      550,
+      580
+    ],
+    "freshPreparedMS": [
+      17280,
+      17190,
+      17550,
+      19310,
+      17440
+    ],
+    "R4HarnessConvertMS": 21060
+  }
+}

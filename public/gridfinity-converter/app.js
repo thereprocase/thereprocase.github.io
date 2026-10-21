@@ -1,6 +1,6 @@
-import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-2';
+import { createNativeExportWarmPool } from './native-export-warm-pool.js?v=native-step-20261021-3';
 import * as THREE from 'three';
-import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-2';
+import { illustrationMesh, PALETTE } from './illustration-view.js?v=native-step-20261021-3';
 import { OrbitControls } from '/p1s-feet/vendor/OrbitControls.js';
 import {
   STYLES,
@@ -9,8 +9,8 @@ import {
   binarySTL,
   restoreCoordinates,
   checkMesh,
-} from './kernel.js?v=native-step-20261021-2';
-import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-2';
+} from './kernel.js?v=native-step-20261021-3';
+import { importFile, extensions, export3MF } from './importers.js?v=native-step-20261021-3';
 const nativeExportWarmPool = createNativeExportWarmPool();
 addEventListener('pagehide', () => {
   if (cancelNativeExport()) {
@@ -24,6 +24,7 @@ let worker,
   cadWorker,
   nativeWorker,
   nativeReject,
+  nativeCancellation,
   exportWorker,
   exportReject,
   exportAbort,
@@ -426,6 +427,8 @@ function cancelNativeExport() {
   return active;
 }
 function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {}) {
+  clearTimeout(nativeCancellation?.timer);
+  nativeCancellation = null;
   const keepCAD = preserveIdleCAD && cadWorker && !nativeWorker && raw?.nativeDocumentId;
   // During native conversion the mesh worker is idle and still owns detection
   // input. Keep that input, but always discard the cancelled native workers.
@@ -459,7 +462,7 @@ function terminate({ preserveIdleCAD = false, preserveLoadedMesh = false } = {})
 }
 function rpc(type, data = {}) {
   if (!worker) {
-    worker = new Worker('./worker.js?v=native-step-20261021-2', { type: 'module' });
+    worker = new Worker('./worker.js?v=native-step-20261021-3', { type: 'module' });
     worker.onmessage = ({ data }) => {
       const p = pending.get(data.id);
       if (!p) return;
@@ -898,6 +901,13 @@ async function runConversion() {
   } catch (e) {
     if (turn !== epoch) return;
     setBusy(false);
+    if (e.cleanNativeCancellation) {
+      view = 'original';
+      draw();
+      renderFeet();
+      status('Conversion cancelled. Prepared CAD and settings are kept; you can retry now.');
+      return;
+    }
     status(e.message, true);
   }
 }
@@ -932,15 +942,23 @@ function nativeConversion(options) {
     const source = raw;
     const requestId = ++sequence;
     const documentId = cadWorker ? source.nativeDocumentId : null;
+    const bodyIndex = Number($('body').value || 0);
+    const cancelBuffer = documentId && nativePreparation?.done &&
+      nativePreparation.report?.bodyIndex === bodyIndex && crossOriginIsolated &&
+      typeof SharedArrayBuffer !== 'undefined' ? new SharedArrayBuffer(4) : undefined;
     if (documentId && nativePreparation && !nativePreparation.done && !nativePreparation.error)
       setBusy(true, 'Finishing native CAD preparation before replacing feet…');
-    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-2', {
+    const w = (documentId && cadWorker) || new Worker('./native-worker.js?v=native-step-20261021-3', {
       type: 'module',
     });
     nativeWorker = w;
     nativeReject = reject;
+    const cancellation = cancelBuffer ? { token: new Int32Array(cancelBuffer), requested: false, timer: null } : null;
+    nativeCancellation = cancellation;
     const current = () => nativeWorker === w && epoch === turn && raw === source;
     const finish = (retain) => {
+      clearTimeout(cancellation?.timer);
+      if (nativeCancellation === cancellation) nativeCancellation = null;
       if (nativeWorker === w) nativeWorker = null;
       if (nativeReject === reject) nativeReject = null;
       w.onmessage = null;
@@ -971,9 +989,20 @@ function nativeConversion(options) {
       }
       if (data.requestId !== requestId) return;
       if (data.progress) {
-        setBusy(true, data.progress);
+        if (!cancellation?.requested) setBusy(true, data.progress);
         return;
       }
+      if (data.cancelled) {
+        const retain = cancellation?.requested && data.clean && documentId && data.nativeDocumentId === documentId;
+        finish(retain);
+        const error = new DOMException(retain ? 'Conversion cancelled.' : 'Cancellation required a fresh CAD worker.', 'AbortError');
+        error.cleanNativeCancellation = Boolean(retain);
+        reject(error);
+        return;
+      }
+      // A result already queued when Cancel was clicked must not be published.
+      // Without a clean acknowledgment, the cancellation timeout discards it.
+      if (cancellation?.requested && data.result) return;
       const retain = !data.error && documentId && data.result?.nativeDocumentId === documentId;
       finish(retain);
       if (data.error)
@@ -989,6 +1018,7 @@ function nativeConversion(options) {
       w.postMessage({
         type: 'convert',
         requestId,
+        cancelBuffer,
         documentId,
         retainDocument: Boolean(documentId),
         deferOriginalPose: true,
@@ -997,7 +1027,7 @@ function nativeConversion(options) {
         buffer: source.nativeBuffer,
         format: source.format,
         scale: unitScale(),
-        bodyIndex: Number($('body').value || 0),
+        bodyIndex,
         detection,
         options,
       });
@@ -1173,6 +1203,19 @@ $('cancel').onclick = () => {
     status('Download preparation cancelled. Your conversion is still available.');
     return;
   }
+  if (nativeCancellation) {
+    if (nativeCancellation.requested) return;
+    const cancellation = nativeCancellation;
+    cancellation.requested = true;
+    Atomics.store(cancellation.token, 0, 1);
+    setBusy(true, 'Cancelling the current CAD step and cleaning up…');
+    cancellation.timer = setTimeout(() => {
+      if (nativeCancellation !== cancellation) return;
+      nativeCancellation = null;
+      $('cancel').onclick();
+    }, 8000);
+    return;
+  }
   const retryNative = Boolean(nativeWorker && raw?.nativeBuffer?.byteLength && loaded && detection);
   fileState = retryNative ? 'loaded' : 'cancelled';
   epoch++;
@@ -1276,7 +1319,7 @@ function prepareNativeExport(data) {
       if (verifierExport) {
         lease = await nativeExportWarmPool.acquire({ signal: abort.signal });
         w = lease.worker;
-      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-2', { type: 'module' });
+      } else w = new Worker('./native-export-worker.js?v=native-step-20261021-3', { type: 'module' });
       if (abort.signal.aborted) throw new DOMException('Cancelled', 'AbortError');
       exportWorker = w;
       w.onmessage = ({ data: reply }) => {

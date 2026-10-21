@@ -1,0 +1,94 @@
+{
+  "cooperative-cancellation": {
+    "files": [
+      "app.js",
+      "native-cancellation.js",
+      "native-worker-run.js",
+      "native-cad.js",
+      "native-local-edit.js"
+    ],
+    "patches": [
+      "cooperative-cancel-original.diff",
+      "cooperative-cancel-boundaries.diff"
+    ],
+    "tests": [
+      "check-cooperative-boundaries-native.mjs",
+      "check-cooperative-cancel-app.mjs",
+      "check-cooperative-cancel-timeout-app.mjs",
+      "check-cooperative-before-prepared-app.mjs"
+    ]
+  },
+  "vendor-ownership": {
+    "files": [
+      "vendor/replicad/replicad.js"
+    ],
+    "patches": [
+      "vendor-replicad-ownership.diff"
+    ],
+    "tests": [
+      "replicad-probe.mjs",
+      "replicad-check-failures.mjs",
+      "replicad-check-conversions-baseline.mjs",
+      "replicad-check-conversions-patched.mjs"
+    ]
+  },
+  "source-volume-cache": {
+    "files": [
+      "native-cad.js"
+    ],
+    "patches": [
+      "source-volume-cache.diff"
+    ],
+    "tests": [
+      "check-source-volume-cache.mjs",
+      "check-source-volume-sequence.mjs",
+      "check-source-volume-sequence-baseline.mjs"
+    ]
+  },
+  "preparation-native-trap-priority": {
+    "files": [
+      "native-cad.js"
+    ],
+    "patches": [
+      "public-v3-to-v7-logical-review.diff"
+    ],
+    "tests": [
+      "check-real-repair-trap.mjs"
+    ],
+    "reviewAnchor": "prepareNativeSource catch: WebAssembly.RuntimeError rethrown before original-shape fallback"
+  },
+  "export-startup": {
+    "files": [
+      "native-export-warm-pool.js",
+      "native-export-worker.js",
+      "native-parallel-source-bounds.js",
+      "native-source-bounds-worker.js"
+    ],
+    "patches": [
+      "export-startup.diff",
+      "export-startup-ttl.diff"
+    ],
+    "tests": [
+      "check-export-startup-lifecycle.mjs",
+      "check-export-startup-browser.mjs",
+      "check-export-startup-pagehide.mjs",
+      "check-export-warm-dispose-browser.mjs"
+    ]
+  },
+  "guarded-topology-snapshot": {
+    "files": [
+      "native-cad.js",
+      "native-kernel.js"
+    ],
+    "build": [
+      "build/topology/native-topology-copy.cpp",
+      "build/topology/build-guarded.sh",
+      "build/topology/topology_copy_guarded_multi.yml"
+    ],
+    "tests": [
+      "topology-fixtures.cpp",
+      "check-guarded.mjs"
+    ],
+    "status": "guarded source and actual WASM small fixture qualification passed; combined v7 browser/Windows gates tracked separately"
+  }
+}

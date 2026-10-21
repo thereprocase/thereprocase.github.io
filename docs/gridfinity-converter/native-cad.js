@@ -1,20 +1,20 @@
-import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-2';
-import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-2';
-import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-2';
-import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-2';
-import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-2';
-import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-2';
-import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-2';
-import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-2';
-import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-2';
-import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-2';
-import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-2';
-import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-2';
-import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-2';
-import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-2';
+import { withStepRepairFallback } from './step-repair-fallback.js?v=native-step-20261021-3';
+import { BOUNDS_KERNELS } from './native-bounds-build.js?v=native-step-20261021-3';
+import { boundsInputIdentity, validateBoundsReply } from './native-parallel-source-bounds.js?v=native-step-20261021-3';
+import { readVerifierSTEP } from './step-verifier-reader.js?v=native-step-20261021-3';
+import { issueSourceCertificate, verifySourceCertificate } from './native-source-certificate.js?v=native-step-20261021-3';
+import { assertVerifierSource, verifierTolerances, claimKernelPurpose, writeVerifierSTEP, verifierExactBounds, assertFiniteStepMetrics } from './step-verifier-policy.js?v=native-step-20261021-3';
+import { castOwned, ownedSolids } from './native-owned-shape.js?v=native-step-20261021-3';
+import { copyNativeArray } from './native-buffer.js?v=native-step-20261021-3';
+import { createFaceMeshCache, disposeFaceMeshCache, cacheMatchesSource, isRigidMatrix, transformFaceMeshCache, meshWithFaceCache } from './native-mesh-cache.js?v=native-step-20261021-3';
+import { prepareNativeLocalEdit } from './native-local-edit.js?v=native-step-20261021-3';
+import { certifyNativeBoundsMatch } from './native-bounds-match.js?v=native-step-20261021-3';
+import { preservedRepairGeometry } from './repair-signature.js?v=native-step-20261021-3';
+import { proveNativePreservation } from './native-preservation.js?v=native-step-20261021-3';
+import { equivalentBrepTokens } from './brep-equivalence.js?v=native-step-20261021-3';
 /** Preserve STEP/BREP boundary representations; meshes are display/export derivatives. */
-import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-2';
-import * as cad from './vendor/replicad/replicad.js';
+import { initNativeKernel, nativeKernelInfo } from './native-kernel.js?v=native-step-20261021-3';
+import * as cad from './vendor/replicad/replicad.js?v=native-step-20261021-3';
 let ready, OC, kernelPurpose;
 let displayFaceCache = null;
 const retainedDisplayCaches = new Set();
@@ -869,6 +869,7 @@ export async function prepareNativeSource(source, onProgress = () => {}) {
       volumeChange, beforeToleranceMM: beforeTolerance, afterToleranceMM: afterTolerance, strictValid: true,
     }};
   } catch (error) {
+    if (error instanceof WebAssembly.RuntimeError) throw error;
     onProgress('Checking the original native CAD after preparation could not be used…');
     const restored = restoreValidOriginal();
     if (restored) return restored;
@@ -909,6 +910,11 @@ export async function prepareNativeDocument({ documentId, bodyIndex = 0, onProgr
     throw error;
   }
 }
+/** Only immutable, strictly prepared source entries can survive a clean cancellation. */
+export function hasPreparedNativeDocument(documentId, bodyIndex = 0) {
+  return conversionShapes === null && [...preparedNativeDocuments.values()].some(record =>
+    record.documentId === documentId && record.bodyIndex === bodyIndex);
+}
 export async function convertNative({
   buffer,
   preparedDocumentId,
@@ -917,7 +923,10 @@ export async function convertNative({
   fastDisplay = false,
   deferOriginalPose = false,
   nativeExportPreference = 'auto',
+  topologyCopyPrimary = false,
   validateBrepCandidate,
+  checkCancelled = () => {},
+  waitForCancellation = promise => promise,
   format,
   scale = 1,
   bodyIndex = 0,
@@ -969,10 +978,12 @@ export async function convertNative({
     }
     sourceCurveRepair = prepared.sourceCurveRepair;
     sourcePreparationMS = prepared.preparationMS;
+    checkCancelled();
     onProgress('Using the prepared native CAD source…', { diagnostic: 'prepared-native-source', sourcePreparationMS });
   } else {
     if (documentId && !buffer && [...preparedNativeDocuments.values()].some(record => record.documentId === documentId))
       throw Error('The selected body has no prepared native source. Reload the model to select another body.');
+    checkCancelled();
     onProgress('Opening native CAD…');
     const document = (documentId && takeNativeDocument(documentId)) ||
       (format === 'brep' || format === 'brp'
@@ -1033,18 +1044,46 @@ export async function convertNative({
   }
   if (retainedRecord && sourceBoundsCheck.matches)
     retainedRecord.boundsProof = {key:boundsKey,proof:{...sourceBoundsCheck}};
+  checkCancelled();
   onProgress('Matching native CAD to the detected part…', {
     diagnostic: 'native-source-bounds',
     ...sourceBoundsCheck,
   });
+  // The retained source is immutable. Reuse measurements only for this exact
+  // scale and placement; a different document/body owns a different record.
+  const volumeStarted = performance.now();
+  const placementIsFinite = Number.isFinite(scale) && scale > 0 &&
+    detection.rotation?.length === 9 && detection.translation?.length === 3 &&
+    [...detection.rotation, ...detection.translation].every(Number.isFinite);
+  const savedVolume = placementIsFinite ? retainedRecord?.sourceVolume : null;
+  const reusedSourceVolume = savedVolume?.key === placementKey &&
+    Number.isFinite(savedVolume.signed) && Number.isFinite(savedVolume.absolute) &&
+    savedVolume.absolute === Math.abs(savedVolume.signed);
+  if (reusedSourceVolume) {
+    signedVolumeCache.set(source, savedVolume.signed);
+    volumeCache.set(source, savedVolume.absolute);
+  }
+  const measuredSourceVolume = volume(source);
+  const sourceVolumeCheck = {
+    reused: Boolean(reusedSourceVolume),
+    elapsedMS: performance.now() - volumeStarted,
+    method: reusedSourceVolume ? 'retained-exact-placement' : 'native-volume',
+  };
   if (
     boundsMismatch ||
-    Math.abs(volume(source) - p.originalVolume) >
+    Math.abs(measuredSourceVolume - p.originalVolume) >
       Math.max(0.1, p.originalVolume * 0.005)
   )
     throw Error(
       'Native CAD part does not match the detected mesh part. Export the selected solid separately and retry.',
     );
+  if (retainedRecord && placementIsFinite && Number.isFinite(measuredSourceVolume) &&
+      Number.isFinite(signedVolumeCache.get(source))) {
+    retainedRecord.sourceVolume = { key: placementKey, absolute: measuredSourceVolume,
+      signed: signedVolumeCache.get(source) };
+  }
+  onProgress('Native source volume checked.', { diagnostic: 'native-source-volume', ...sourceVolumeCheck });
+  checkCancelled();
   // Mesh detection uses float32 coordinates. Remove sub-tolerance noise before
   // native booleans so nominally coincident edges do not create sliver faces.
   // Source CAD curves and surfaces are unchanged; preservation is checked below.
@@ -1097,7 +1136,7 @@ export async function convertNative({
     return clipped;
   };
   const localEdit = await prepareNativeLocalEdit({
-    cad, source, feet, bottom, height, fit, roof, nativeFoot,
+    cad, source, feet, bottom, height, fit, roof, nativeFoot, checkCancelled,
     maximumHoleDepth, maximumHoleRadius: Math.max(magnetDiameter,screwDiameter)/2,
     cut, fuse, intersect, union, volume, clipSource, own: ownConversionShape, onProgress,
   });
@@ -1128,6 +1167,7 @@ export async function convertNative({
     if (!fits(screwDepth)) {
       let candidate = Math.floor((screwDepth - 0.001) * 10) / 10;
       while (candidate >= 2 && !fits(candidate)) {
+        checkCancelled();
         onProgress(`Fitting native screw depth: ${candidate.toFixed(1)} mm…`);
         candidate = Math.round((candidate - 0.1) * 10) / 10;
       }
@@ -1167,6 +1207,7 @@ export async function convertNative({
         if (['screws', 'both'].includes(style))
           dims.push([screwDiameter / 2, screwDepth]);
         for (const [radius, depth] of dims) {
+          checkCancelled();
           onProgress(`Checking hole roof ${++roofIndex} of ${holes.length}…`);
           const cover = nativeCylinder(radius, roof, [
             f.x + dx,
@@ -1186,12 +1227,14 @@ export async function convertNative({
           }
         }
       }
+  checkCancelled();
   onProgress('Replacing native CAD feet and hardware…');
   result = localEdit.assemble(holes.length ? union(holes) : null);
   // Materialize the preservation mask before retiring its individual tools.
   const allowed = union(regions);
   const constructionRelease = releaseConstructionShapes(constructionCheckpoint,
     new Set([result, allowed, localEdit.localSource, localEdit.editBox]));
+  checkCancelled();
   onProgress('Checking native CAD holes and solid validity…', {
     diagnostic: 'native-construction-release', ...constructionRelease,
     wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation',
@@ -1199,7 +1242,7 @@ export async function convertNative({
   });
   // The candidate is immutable; booleans below use non-destructive inputs.
   // Capture failures immediately because this worker's exact checks are synchronous.
-  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primaryStartedAtMS, primaryExactValidation;
+  let sourceCertificate, parallelBrep, parallelBrepReport, candidateSnapshot, primarySnapshot, primaryStartedAtMS, primaryExactValidation;
   try {
     if (nativeExportPreference === 'brep' && validateBrepCandidate) {
       candidateSnapshot = nativeGeometryCopy(oc, result);
@@ -1210,28 +1253,38 @@ export async function convertNative({
         .then(value => ({ value }), error => ({ error }));
       // A nested worker may not finish starting until this worker yields.
       // Await its kernel-ready acknowledgement before entering synchronous checks.
-      if (candidateTask?.ready) await candidateTask.ready;
+      if (candidateTask?.ready) await waitForCancellation(candidateTask.ready);
     }
     primaryStartedAtMS = Date.now();
     const exactStarted = performance.now(), capacityBefore = oc.wasmMemory.buffer.byteLength;
-    let exactSucceeded = false;
+    let exactSucceeded = false, primaryCopyElapsedMS = 0, primaryCopyMethod = !generatedDisplayMesh ? 'original-result' : topologyCopyPrimary && !oc.nativeTopologyCopyWithoutMesh ? 'missing-helper-deep-fallback' : candidateSnapshot ? 'existing-deep-snapshot' : 'fresh-deep-copy';
+    checkCancelled();
     onProgress('Checking exact result geometry…', {
       diagnostic: 'native-validation', meshFreeDisplayCopy: generatedDisplayMesh, primaryStartedAtMS,
       wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore,
     });
     try {
-      if (!(generatedDisplayMesh ? (candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
+      if (topologyCopyPrimary && generatedDisplayMesh && oc.nativeTopologyCopyWithoutMesh) {
+        const copyStarted = performance.now();
+        const raw = oc.nativeTopologyCopyWithoutMesh(result.wrapped);
+        if (raw.IsNull()) { raw.delete(); primaryCopyMethod = 'unsupported-deep-fallback'; }
+        else { primarySnapshot = castOwned(cad, raw); primaryCopyMethod = 'topology-only'; }
+        primaryCopyElapsedMS = performance.now() - copyStarted;
+      }
+      if (!(generatedDisplayMesh ? (primarySnapshot ? valid(oc, primarySnapshot) : candidateSnapshot ? valid(oc, candidateSnapshot) : validateNativeGeometryWithoutDisplay(oc, result)) : valid(oc, result)) || solidCount(result) !== 1 || volume(result) <= 0)
         throw Error('Native CAD result is not one valid solid. Export blocked.');
       exactSucceeded = true;
     } finally {
-      primaryExactValidation = { elapsedMS: performance.now() - exactStarted, startedAtMS: primaryStartedAtMS, finishedAtMS: Date.now(), passed: exactSucceeded,
+      primaryExactValidation = { copyMethod: primaryCopyMethod, copyElapsedMS: primaryCopyElapsedMS, elapsedMS: performance.now() - exactStarted, startedAtMS: primaryStartedAtMS, finishedAtMS: Date.now(), passed: exactSucceeded,
         wasmMemoryMetric: 'linear-memory-capacity-not-live-allocation', wasmCapacityBeforeBytes: capacityBefore, wasmCapacityAfterBytes: oc.wasmMemory.buffer.byteLength };
       onProgress('Exact result geometry check finished.', { diagnostic: 'native-validation-complete', ...primaryExactValidation });
     }
-  } finally { candidateSnapshot?.delete(); }
+  } finally { try { primarySnapshot?.delete(); } finally { candidateSnapshot?.delete(); } }
+  checkCancelled();
   onProgress('Preparing the exact edit region…');
   // The shared convex box contains every allowed tool and every roof probe.
   const editBox = localEdit.editBox;
+  checkCancelled();
   onProgress('Checking preserved CAD boundary faces…');
   const preservationProof = proveNativePreservation({
     oc, cad, source, result, editBox, cut, validatedSolids: true,
@@ -1240,6 +1293,7 @@ export async function convertNative({
   });
   let added, removed;
   if (preservationProof.proved) {
+    checkCancelled();
     onProgress('Measuring changes within the local CAD region…');
     const localSource = localEdit.localSource;
     const localResult = intersect(result, editBox);
@@ -1248,11 +1302,13 @@ export async function convertNative({
       removed = cut(localSource, localResult);
     } finally { localSource.delete(); localResult.delete(); }
   } else {
+    checkCancelled();
     onProgress('Checking preserved CAD geometry with full solid differences…');
     added = cut(result, source);
     removed = cut(source, result);
   }
   editBox.delete();
+  checkCancelled();
   onProgress('Checking material changes outside the allowed edit…');
   const outsideAdded = volume(cut(added, allowed));
   const outsideChange = outsideAdded + volume(cut(removed, allowed));
@@ -1269,9 +1325,10 @@ export async function convertNative({
   let stepExport, sourceExport, brep, sourceBrep, stepExportError;
   if (nativeExportPreference === 'brep') {
     if (parallelBrep) {
-      const outcome = await parallelBrep;
+      const outcome = await waitForCancellation(parallelBrep);
       if (outcome.error) throw outcome.error;
       parallelBrepReport = { ...outcome.value?.report, primaryStartedAtMS, primaryFinishedAtMS, fallbackRequired: Boolean(outcome.value?.fallbackRequired) };
+      checkCancelled();
       onProgress('Parallel native BREP export validation complete.', { diagnostic: 'parallel-brep', ...parallelBrepReport });
       if (outcome.value?.fallbackRequired) brep = checkedBrep(result, 'base-down');
       else if (outcome.value?.buffer instanceof ArrayBuffer) { brep = outcome.value.buffer; sourceCertificate = outcome.value.sourceCertificate; }
@@ -1292,10 +1349,12 @@ export async function convertNative({
     brep = checkedBrep(result, 'base-down');
     sourceBrep = identicalPoses ? brep : deferOriginalPose ? undefined : checkedBrep(restored, 'original-pose');
   }
+  checkCancelled();
   onProgress('Preparing CAD preview…');
   const geometry = await tessellateNative(result, 1000000, { label: 'converted body', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01, useFaceCache: fastDisplay });
   const addedMesh = await tessellateNative(added, 1000000, { label: 'added material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
   const removedMesh = await tessellateNative(removed, 1000000, { label: 'removed material', onProgress, initialDeflection: fastDisplay ? 0.1 : 0.01 });
+  checkCancelled();
   return {
     nativeDocumentId: retainedRecord?.documentId,
     geometry,
@@ -1331,6 +1390,7 @@ export async function convertNative({
       sourcePreparationMS,
       usedPreparedSource: Boolean(resolvedPreparedId),
       sourceBoundsCheck,
+      sourceVolumeCheck,
       nativeCoordinateResolutionMM: 0.00001,
       nativeCoordinateAdjustmentMM,
       nativeValid: true,

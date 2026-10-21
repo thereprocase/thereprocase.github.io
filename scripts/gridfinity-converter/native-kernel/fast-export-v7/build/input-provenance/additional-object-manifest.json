@@ -1,0 +1,10 @@
+[
+  {
+    "path": "/opencascade.js/build/link-work/5117b6b40f05/additionalBindCode/destructor_fixed_multi.js.cpp.o",
+    "sha256": "56a7a964a185b0fc93a99f7901f2b8abbd84ef043a79e23b5c9b8f270c3c9cab"
+  },
+  {
+    "path": "/src/allocator-stats.o",
+    "sha256": "a3e6fdd7df90eee718b6b73034785e772f5f7b1e143471134ab18e004f9a52f9"
+  }
+]

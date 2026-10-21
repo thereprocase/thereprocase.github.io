@@ -8,8 +8,8 @@ export const CERTIFICATE_KERNEL_SET = Object.freeze({
       "sha256": "1569b1da4f75f7bcebddf8e18f1f32bd44388c8c00972cdb45923dc389f9078d"
     },
     "issuer-threaded": {
-      "filename": "vendor/replicad/model_exact_multi.wasm",
-      "sha256": "5deffc2a6307310bf54f161cf5f862ad72f0ddfcc14cb010258d2432a82a0a2c"
+      "filename": "vendor/replicad/topology_copy_guarded_multi.wasm",
+      "sha256": "b1fa5b3f65abe307f285b16c62f470b602778c2d8c3f15275b78d53aef1187fc"
     },
     "verifier-single": {
       "filename": "vendor/export-verifier/analytic_writer17_single_verifier.wasm",
@@ -21,4 +21,4 @@ export const CERTIFICATE_KERNEL_SET = Object.freeze({
     }
   }
 });
-export const CERTIFICATE_BUILD = "native-certificate-kernel-set-sha256:e2838b27229fc9a9cfcc1058a31dbb64e214a91d6212da7c27a56707b8a400f5";
+export const CERTIFICATE_BUILD = "native-certificate-kernel-set-sha256:4cdda3034cd0ac26127b77a0a1b426b5105f9d0af0eb011c150ffa8172d7783f";

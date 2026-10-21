@@ -1,4 +1,4 @@
-import { demo } from './demo.js?v=native-step-20261021-2';
+import { demo } from './demo.js?v=native-step-20261021-3';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
 import {
   importSolid,
@@ -6,7 +6,7 @@ import {
   detect,
   align,
   convert,
-} from './kernel.js?v=native-step-20261021-2';
+} from './kernel.js?v=native-step-20261021-3';
 const ready = Module().then((m) => {
   m.setup();
   return m;

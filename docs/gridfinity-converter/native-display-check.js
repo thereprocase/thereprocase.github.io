@@ -1,4 +1,4 @@
-import { checkMesh } from './kernel.js?v=native-step-20261021-2';
+import { checkMesh } from './kernel.js?v=native-step-20261021-3';
 
 /** The same exact-coordinate, opposite-edge check as checkMesh, with packed
  * numeric edges instead of repeated coordinate strings for every half-edge. */

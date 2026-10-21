@@ -1,6 +1,6 @@
 /** One unused export kernel; every acquired worker is consumed once. */
 export function createNativeExportWarmPool({
-  createWorker = () => new Worker(new URL('./native-export-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' }),
+  createWorker = () => new Worker(new URL('./native-export-worker.js?v=native-step-20261021-3', import.meta.url), { type: 'module' }),
   startupMS = 30000,
   idleMS = 60000,
 } = {}) {
@@ -48,6 +48,13 @@ export function createNativeExportWarmPool({
       if (!slot) {
         try { const entry = make(true); if (!entry.closed) slot = entry; return entry.ready; }
         catch (error) { return Promise.resolve({ ready: false, error: String(error) }); }
+      }
+      // Recent conversion activity renews the unused slot's idle lifetime.
+      // Never renew an acquired worker or create a second speculative kernel.
+      if (slot.idleTimer) {
+        const entry = slot;
+        clearTimeout(entry.idleTimer);
+        entry.idleTimer = setTimeout(() => stop(entry), idleMS);
       }
       return slot.ready;
     },

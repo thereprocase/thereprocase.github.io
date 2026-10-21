@@ -1,7 +1,8 @@
-import { convertNative, nativeMeshExport } from './native-cad.js?v=native-step-20261021-2';
+import { convertNative, nativeMeshExport, hasPreparedNativeDocument } from './native-cad.js?v=native-step-20261021-3';
+import { createNativeCancellation } from './native-cancellation.js?v=native-step-20261021-3';
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import { importSolid, meshData } from './kernel.js?v=native-step-20261021-2';
-import { checkNativeDisplayMesh } from './native-display-check.js?v=native-step-20261021-2';
+import { importSolid, meshData } from './kernel.js?v=native-step-20261021-3';
+import { checkNativeDisplayMesh } from './native-display-check.js?v=native-step-20261021-3';
 let warmedValidator;
 let displayModule;
 function preparedDisplayModule() {
@@ -16,7 +17,7 @@ export function prewarmNativeBrepValidator() {
   let markStarted;
   const started = new Promise(resolve => { markStarted = resolve; });
   let child;
-  try { child = new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' }); }
+  try { child = new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-3', import.meta.url), { type: 'module' }); }
   catch { markStarted(); return started; }
   const entry = { child, started, startedAtMS: Date.now(), warmedAtMS: undefined };
   warmedValidator = entry;
@@ -35,6 +36,11 @@ export async function runNativeConversion(data) {
   const post = (payload, transfers) => self.postMessage({ ...payload, requestId: data.requestId }, transfers);
   let stage = 'Starting native CAD conversion';
   const validators = new Set();
+  const pendingValidators = new Set();
+  const cancellation = createNativeCancellation(data.cancelBuffer,
+    data.retainDocument && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0));
+  let cancelled = false;
+  let validationChildrenStopped = 0;
   // Compile the display validator while the native conversion is running.
   // Handle rejection immediately; it is rethrown when the module is needed.
   const modulePending = preparedDisplayModule();
@@ -46,7 +52,7 @@ export async function runNativeConversion(data) {
     warmedValidator = undefined;
     let child;
     try {
-      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-2', import.meta.url), { type: 'module' });
+      child = warmed?.child || new Worker(new URL('./native-brep-worker.js?v=native-step-20261021-3', import.meta.url), { type: 'module' });
     } catch {
       markReady();
       resolve({ fallbackRequired: true });
@@ -54,7 +60,9 @@ export async function runNativeConversion(data) {
     }
     const candidatePostedAtMS = Date.now();
     validators.add(child);
-    const finish = () => { child.terminate(); validators.delete(child); };
+    const finish = () => { child.terminate(); validators.delete(child); pendingValidators.delete(stop); };
+    const stop = () => { markReady(); finish(); reject(new DOMException('Validator cancelled', 'AbortError')); };
+    pendingValidators.add(stop);
     child.onmessage = ({ data }) => {
       if (data.warming) return;
       if (data.warm) { if (warmed) warmed.warmedAtMS = data.warmedAtMS; return; }
@@ -88,14 +96,18 @@ export async function runNativeConversion(data) {
   try {
     const result = await convertNative({
         ...data,
+        topologyCopyPrimary: true,
+        checkCancelled: cancellation.check,
+        waitForCancellation: cancellation.wait,
         validateBrepCandidate,
         onProgress: (progress, progressInfo) => {
           stage = progress;
           post({ progress, progressInfo });
         },
       }),
-      moduleResult = await modulePending;
+      moduleResult = await cancellation.wait(modulePending);
     if (moduleResult.error) throw moduleResult.error;
+    cancellation.check();
     const m = moduleResult.value;
     stage = 'Checking the CAD display mesh';
     post({ progress: stage });
@@ -109,6 +121,7 @@ export async function runNativeConversion(data) {
     } catch (error) {
       bodies?.forEach((body) => body.delete());
       bodies = null;
+      if (error instanceof WebAssembly.RuntimeError) throw error;
       if (!result.report.meshTessellation?.converted?.reusedFaces) throw error;
       stage = 'Rebuilding the CAD display mesh';
       post({ progress: stage });
@@ -151,17 +164,30 @@ export async function runNativeConversion(data) {
       result.sourceBrep,
     ])
       if (bytes) transfers.add(bytes);
+    cancellation.check();
     post({ result }, [...transfers]);
   } catch (e) {
-    post({
+    if (cancellation.isCancellation(e)) cancelled = true;
+    else post({
       error: e.message ?? String(e),
       stage,
       stack: e.stack,
       errorName: e.name,
     });
   } finally {
+    validationChildrenStopped = validators.size;
+    for (const stop of pendingValidators) stop();
+    pendingValidators.clear();
     for (const child of validators) child.terminate();
     validators.clear();
     if (warmedValidator) { warmedValidator.child.terminate(); warmedValidator = undefined; }
+  }
+  // A native trap or any cleanup exception bypasses this acknowledgment.
+  // The preview worker may subsequently warm a new validator for the next task;
+  // clean means this cancelled task and its children have been retired.
+  if (cancelled) {
+    const clean = cancellation.enabled && hasPreparedNativeDocument(data.documentId, data.bodyIndex ?? 0);
+    post({ cancelled: true, clean, nativeDocumentId: clean ? data.documentId : undefined,
+      validationChildrenStopped, pendingValidationTasks: pendingValidators.size });
   }
 }
