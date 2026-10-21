@@ -1,4 +1,4 @@
-import {footprintHull,placementAtAngle} from './bed-placement.js?v=diagonal-1';
+import {footprintHull,placementAtAngle} from './bed-placement.js?v=rectangle-fit-1';
 import {validateExport} from './kernel.js?v=female-bases-2';
 const enc=new TextEncoder();
 const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));

@@ -1,3 +1,3 @@
 import Module from './vendor/manifold.js';
-import {facetedSTEP,modifier3MF} from './solid-exports.js?v=base-types-1';
+import {facetedSTEP,modifier3MF} from './solid-exports.js?v=rectangle-fit-1';
 self.onmessage=async({data})=>{try{self.postMessage({progress:{label:'Preparing '+data.format.toUpperCase()+' export'}});let module;if(data.format==='step'){module=await Module();module.setup();}self.postMessage({progress:{label:data.format==='step'?'Validating and writing faceted STEP':'Packaging exact mesh bodies'}});const bytes=data.format==='step'?new TextEncoder().encode(facetedSTEP(data.result,module)):modifier3MF(data.result,data.bed);self.postMessage({bytes},[bytes.buffer]);}catch(e){self.postMessage({error:e.message});}};

@@ -1,6 +1,6 @@
 import Module from './vendor/manifold.js';
 import {build,parameters} from './kernel.js?v=female-bases-2';
-import {footprintHull,bestPlacement} from './bed-placement.js?v=diagonal-1';
+import {footprintHull,bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
 self.onmessage=async({data})=>{try{
  const p=parameters({...data.parameters,columns:1}),{width,depth}=data.bed;
  if(!Number.isFinite(width)||!Number.isFinite(depth)||width<25||depth<25||width>2000||depth>2000)throw Error('Invalid bed dimensions.');

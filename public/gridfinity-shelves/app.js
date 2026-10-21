@@ -1,6 +1,6 @@
 import {demandRenderer,taskWorker} from '../gridfinity-common/generator-runtime.js?v=runtime-3';
 import {readSettingsLink,settingsURL,copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
-import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=diagonal-1';
+import {footprintHull,placementAtAngle,bestPlacement} from './bed-placement.js?v=rectangle-fit-1';
 import {spacingForBed} from './neighbor-spacing.js?v=base-types-1';
 import {boards,boardDefaults,boardSettings} from './boards.js?v=dense-1';
 import * as THREE from 'three';
@@ -110,7 +110,7 @@ for(const [id,fit] of [['fit-bed',true],['straight-bed',false]])$(id).onclick=()
 $('print-pose').onclick=()=>{installed=false;updatePose();reset();};$('installed').onclick=()=>{installed=true;updatePose();reset();};$('reset-view').onclick=reset;
 $('stl').onclick=()=>{if(!result||busy)return;const start=performance.now();download(binarySTL(result),'model/stl',fileStem(result)+'-frame-down.stl');const elapsed=performance.now()-start;document.documentElement.dataset.lastTaskMS=String(elapsed);document.documentElement.dataset.lastTaskOutcome='success';$('status').textContent='Geometry ready · STL downloaded · '+(elapsed/1000).toFixed(2)+' s';};
 $('helpers').onclick=()=>{if(installed)installedHelpersVisible=!installedHelpersVisible;else helpersVisible=!helpersVisible;updateHelpers();};
-function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=female-bases-2',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
+function exportSolids(format){if(!result?.helpers?.length)return;const exportResult=result,exportBed={width:bedWidth,depth:bedDepth,rotationDeg:printPlacement().angle},exportName=fileStem(exportResult)+'-reinforced'+(format==='3mf'?'-bed'+exportBed.rotationDeg.toFixed(2).replace('.','p')+'deg':'')+'.'+(format==='step'?'step':'3mf');setBusy(true);$('status').textContent='Preparing '+format.toUpperCase()+' download…';worker=taskWorker('./export-worker.js?v=rectangle-fit-1',$('status'));worker.onmessage=({data})=>{worker.terminate();setBusy(false);if(data.error){$('status').textContent='Export failed: '+data.error;return;}download(data.bytes,format==='step'?'application/step':'model/3mf',exportName);$('status').textContent='Geometry ready · '+format.toUpperCase()+' downloaded';};worker.onerror=()=>{worker.terminate();setBusy(false);$('status').textContent='Export failed. Generate again or retry.';};worker.postMessage({format,result:exportResult,bed:exportBed});}
 $('step').onclick=()=>exportSolids('step');$('three-mf').onclick=()=>exportSolids('3mf');
 $('recipe').onclick=()=>{if(result)download(JSON.stringify(Object.fromEntries(Object.keys(defaults).filter(k=>(result.parameters.board_system!=='original'||!(k in boardDefaults))&&(k!=='base_type'||result.parameters.base_type!=='frame')).map(k=>[k,result.parameters[k]])),null,2)+'\n','application/json',fileStem(result)+'-parameters.json');};
 let previousBoard='original';
@@ -145,10 +145,10 @@ function cancelWidthSearch(message='Settings changed · find the largest width a
 }
 $('find-width').onclick=()=>{
  let input;try{if(!form.reportValidity())return;input=values();parameters({...input,columns:1});}catch(e){$('width-result').textContent=e.message;return;}
- cancelWidthSearch();widthResult=null;$('find-width').disabled=true;$('cancel-width').disabled=false;$('width-result').textContent='Checking supported widths in your browser…';
- const search=widthWorker=new Worker('./search-width-worker.js?v=female-bases-2',{type:'module'});
+ cancelWidthSearch();widthResult=null;$('find-width').disabled=true;$('cancel-width').disabled=false;$('width-result').textContent='Finding the largest width with 2D footprint fitting…';
+ const search=widthWorker=new Worker('./search-width-worker.js?v=rectangle-fit-1',{type:'module'});
  const finish=()=>{widthWorker?.terminate();widthWorker=null;$('find-width').disabled=busy;$('cancel-width').disabled=true;};
- widthWorker.onmessage=({data})=>{if(widthWorker!==search)return;if(data.progress){$('width-result').textContent=`Checking ${data.progress.columns} × ${data.progress.rows}, including diagonal placement…`;return;}
+ widthWorker.onmessage=({data})=>{if(widthWorker!==search)return;if(data.progress){$('width-result').textContent=`Checking ${data.progress.columns} × ${data.progress.rows}, ${data.progress.tested + 1} of ${data.progress.total} widths · fitting the footprint at all rotations…`;return;}
  finish();if(data.error){$('width-result').textContent='Width check failed: '+data.error;return;}
  widthResult=data.result;if(!widthResult.columns){$('width-result').textContent=`No supported width fits this bed at ${widthResult.rows} cells deep, including diagonally.`;return;}
  const r=widthResult;$('width-result').textContent=`Largest supported width at this depth: ${r.columns} × ${r.rows} · ${r.placement.angle.toFixed(2)}° · ${r.placement.width.toFixed(1)} × ${r.placement.depth.toFixed(1)} mm footprint.`;$('use-width').textContent=`Use ${r.columns} × ${r.rows}`;$('use-width').hidden=false;
