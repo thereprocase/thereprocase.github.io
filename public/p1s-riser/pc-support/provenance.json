@@ -1,8 +1,8 @@
 {
-  "revision": "PC support prototype 1",
+  "revision": "PC support prototype 2",
   "frame_revision": "R13 update 8",
-  "file": "p1s-r13-pc-support-u1-step-stl.zip",
-  "sha256": "5462bacdc98f012c5e77825ba604fc213b8c6fcdafa31a729c702c44c5daa4c6",
+  "file": "p1s-r13-pc-support-u2-step-stl.zip",
+  "sha256": "93a37850b8039f95b16c78f12200e88af44fb58a661f27656de83f02513eed23",
   "geometry_modified_for_publication": false,
   "frame_source_sha256": {
     "front-right": "ab75bc89b71b97d32e9fb33ab4b555316ae64e39dd5f892a90972f94b79832fc",

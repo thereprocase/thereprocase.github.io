@@ -1,7 +1,7 @@
 [
   {
     "mesh": "joint-socket.npz",
-    "sha256": "d660313e6946e748865f1efdf7da46b55003bc301cbdf94adf72b39b1a167bfa",
+    "sha256": "0e483a4ef34fbf58503f3f558dc1d6dd4a643a514bbd470d6ec9d71c6bea39cf",
     "transform": [
       [
         1.0,
@@ -28,12 +28,12 @@
         1.0
       ]
     ],
-    "vertices": 466,
-    "triangles": 442
+    "vertices": 478,
+    "triangles": 450
   },
   {
     "mesh": "joint-key.npz",
-    "sha256": "769446aaceb7305cab4e508328684a54a13f8353311f6e471a8a68d834f69aff",
+    "sha256": "4355524266abd5b05d0d43fc2eb7ff489ba96a2ab4f1ec241ff1b66c7fd2a998",
     "transform": [
       [
         1.0,

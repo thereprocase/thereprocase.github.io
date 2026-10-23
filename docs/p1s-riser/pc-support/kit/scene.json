@@ -1,6 +1,6 @@
 {
   "title": "Three-piece reusable PC support",
-  "subtitle": "One corner, one long rail and one short rail \u00b7 tapered puzzle joints",
+  "subtitle": "Wider rails and filled corner \u00b7 2 mm design border around the visor",
   "caption": "Rails swap legs for mirrored frame quarters. Low feet locate against the printed rim; coated fit is still a trial.",
   "camera": {
     "yaw": -0.7,
@@ -32,9 +32,9 @@
     },
     {
       "file": "part-2.bin",
-      "vertices": 1512,
-      "triangles": 1236,
-      "edges": 579,
+      "vertices": 1818,
+      "triangles": 1392,
+      "edges": 583,
       "color": [
         0.98,
         0.63,

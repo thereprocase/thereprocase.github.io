@@ -1,7 +1,7 @@
 {
   "title": "Support contact and locating foot",
   "subtitle": "Actual 6 mm CAD section through a registering foot",
-  "caption": "Teal: frame. Orange: PC. Nominal bare top gap 0.06 mm; locating clearance about 0.20 mm. Gap is not enlarged.",
+  "caption": "Teal: frame. Orange: PC. Full visor width plus at least 1.5 mm padding; bare height gap remains 0.06 mm.",
   "camera": {
     "yaw": 0.15,
     "pitch": 0.08,

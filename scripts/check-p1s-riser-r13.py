@@ -64,7 +64,7 @@ with sync_playwright() as p:
         page.set_viewport_size({'width': width, 'height': 1000})
         page.goto(base + '/p1s-riser/pc-support/')
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
-        for view in ['kit', 'pause', 'placed', 'section', 'joint']:
+        for view in ['kit', 'coverage', 'pause', 'placed', 'section', 'joint']:
             page.locator(f'[data-view="{view}"]').click()
             page.frame_locator('#viewer').locator('#load').wait_for(state='hidden')
             assert page.frame_locator('#viewer').locator('#title').inner_text()
@@ -104,4 +104,4 @@ with zipfile.ZipFile(support / record['file']) as z:
     assert len([n for n in z.namelist() if n.startswith('pc-parts/') and n.endswith('.stl')]) == 3
     assert len([n for n in z.namelist() if n.startswith('coupons/') and n.endswith('.stl')]) == 2
 server.shutdown()
-print('PASS: four viewport widths, 13 CAD views + five support views at three widths and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)
+print('PASS: four viewport widths, 13 CAD views + six support views at three widths and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)

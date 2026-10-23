@@ -1,5 +1,6 @@
 {
-  "status": "CAD prototype; glue-coated height, print schedule and release trial pending",
+  "revision": "PC support prototype 2",
+  "status": "CAD prototype; coated release and sliced height pending",
   "material": "PolyMax PC",
   "pieces": 3,
   "reusable_for": [
@@ -12,10 +13,11 @@
   "visor_CAD_underside_mm": 14.5,
   "bare_vertical_gap_mm": 0.0600000000000005,
   "joint_radial_clearance_mm": 0.1,
-  "registration_nominal_gap_mm": 0.1973181507840386,
-  "registration": "Four low symmetric foot ends reference the printed lower rim. Outer toes locate; inner toes stabilize. Chamfered entrances.",
-  "coating": "Owner-selected heavy glue stick; dried film thickness not included in 0.06 mm bare gap.",
-  "layer_warning": "Final support height and insertion pause must be reconciled with actual sliced roof-layer underside; 0.2 mm layer quantization is larger than the requested bare gap.",
+  "perimeter_padding_design_mm": 2.0,
+  "perimeter_padding_minimum_mm": 1.5,
+  "registration_nominal_gap_mm": 0.197318150784,
+  "coating": "Heavy glue stick; dried thickness not included in bare 0.06 mm gap.",
+  "layer_warning": "Reconcile final tool height and insertion pause with sliced underside.",
   "source_sha256": {
     "front-right": "ab75bc89b71b97d32e9fb33ab4b555316ae64e39dd5f892a90972f94b79832fc",
     "rear-right": "56117ea2247bc943d3620aedc20a668a301efff07350ab1b8d751e7a6bedc857",
@@ -26,32 +28,32 @@
     "corner": {
       "valid": true,
       "solids": 1,
+      "volume_mm3": 14400.648755171951,
       "bounds_mm": [
-        56.600000200000004,
-        56.600000200000004,
+        58.99948851873064,
+        58.99948851873064,
         14.440000199999998
-      ],
-      "volume_mm3": 7898.8894262096155
+      ]
     },
     "long-rail": {
       "valid": true,
       "solids": 1,
+      "volume_mm3": 17807.75955185581,
       "bounds_mm": [
         123.3000002,
-        23.700000199999998,
-        14.4400002
-      ],
-      "volume_mm3": 9460.940031855815
+        23.8000002,
+        14.440000199999998
+      ]
     },
     "short-rail": {
       "valid": true,
       "solids": 1,
+      "volume_mm3": 15500.239551855762,
       "bounds_mm": [
         107.3000002,
-        23.700000199999998,
-        14.4400002
-      ],
-      "volume_mm3": 8285.516031855772
+        23.8000002,
+        14.440000199999998
+      ]
     }
   },
   "checks": [
@@ -437,1149 +439,6 @@
       "overlap_mm3": 0
     },
     {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "assembled",
-      "distance_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 0.5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 12,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "diagonal-removal",
-      "distance_mm": 50,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 0,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 2,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 5,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 10,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 16,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "lower-in-opening",
-      "inward_offset_axis_mm": 12,
-      "lift_mm": 25,
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        0
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "corner",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "registration-play",
-      "offset_local_xy_mm": [
-        0.19,
-        -0.19
-      ],
-      "overlap_mm3": 0
-    },
-    {
       "kind": "tool-joint",
       "a": 0,
       "b": 1,
@@ -1596,67 +455,1155 @@
       "a": 1,
       "b": 2,
       "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-right",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "rear-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "assembled",
+      "distance_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 0.5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 12,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "diagonal-removal",
+      "distance_mm": 50,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 2,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 5,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 10,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 16,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "lower-in-opening",
+      "inward_offset_axis_mm": 12,
+      "lift_mm": 25,
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        0
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "corner",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "incoming",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
+    },
+    {
+      "frame": "front-left",
+      "part": "outgoing",
+      "kind": "registration-play",
+      "offset_local_xy_mm": [
+        0.19,
+        -0.19
+      ],
+      "overlap_mm3": 0
     }
   ],
   "all_clear": true,
-  "rejected_direct_drop": [
-    {
-      "frame": "front-right",
-      "part": "incoming",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000001045295
-    },
-    {
-      "frame": "front-right",
-      "part": "outgoing",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000000073287
-    },
-    {
-      "frame": "rear-right",
-      "part": "incoming",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000000071862
-    },
-    {
-      "frame": "rear-right",
-      "part": "outgoing",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000000073653
-    },
-    {
-      "frame": "rear-left",
-      "part": "incoming",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000000071912
-    },
-    {
-      "frame": "rear-left",
-      "part": "outgoing",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000001045928
-    },
-    {
-      "frame": "front-left",
-      "part": "incoming",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000001045604
-    },
-    {
-      "frame": "front-left",
-      "part": "outgoing",
-      "kind": "vertical-insertion",
-      "lift_mm": 10,
-      "overlap_mm3": 29.385000001044588
-    }
-  ],
+  "check_method": "Reimport exported STEP, extract located solids, then transform and Boolean. Avoid build123d imported Compound intersection location bug.",
+  "insertion_path": "Lower 12 mm per axis diagonally inward from nominal position; at the bed, slide outward to the locating feet. Do not drop vertically in final position.",
+  "removal_path": "Slide diagonally inward toward the open centre before lifting. Coating adhesion/removal force untested.",
   "foot_distances": [
     {
       "frame": "front-right",
@@ -1666,7 +1613,7 @@
     {
       "frame": "front-right",
       "part": "outgoing",
-      "minimum_lower_foot_distance_mm": 0.19731815077997794
+      "minimum_lower_foot_distance_mm": 0.19731815078000636
     },
     {
       "frame": "rear-right",
@@ -1676,7 +1623,7 @@
     {
       "frame": "rear-right",
       "part": "outgoing",
-      "minimum_lower_foot_distance_mm": 0.19731815077994952
+      "minimum_lower_foot_distance_mm": 0.19731815077997794
     },
     {
       "frame": "rear-left",
@@ -1699,7 +1646,28 @@
       "minimum_lower_foot_distance_mm": 0.19731815069999925
     }
   ],
-  "insertion_path": "Lower 12 mm per axis diagonally inward from nominal position; at the bed, slide outward to the locating feet. Do not drop vertically in final position.",
-  "removal_path": "Slide diagonally inward toward the open centre before lifting. Coating adhesion/removal force untested.",
-  "check_method": "Reimport exported STEP, extract located solids, then transform and Boolean. Avoid build123d imported Compound intersection location bug."
+  "coverage_all_pass": true,
+  "coverage_file": "coverage-checks.json",
+  "minimum_perimeter_margin_mm": 1.9924680776884995,
+  "minimum_margin_with_placement_play_mm": 1.716086462478102,
+  "corner_base_relief": "0.5 mm perimeter relief up to Z6; widens to full padded footprint by Z7. Top unchanged.",
+  "export_sha256": {
+    "corner.step": "7c2fe298f6ab0008a6294159b4d040d7d432a3d2247026e540c214630f900974",
+    "front-left-corner-placed.step": "354b6fa62ecb91111a9631ca218a8f6b5cb183d81db66cf85c2f35a60e33b11e",
+    "front-left-incoming-placed.step": "f9c0b8ec718299681694b2db557866b72bfeb97f5d233efa9ed802f8d5513d54",
+    "front-left-outgoing-placed.step": "a74b3c46024336867e1db3a759886688979d036ad6ec130499956dfacf529b87",
+    "front-right-corner-placed.step": "5ca8aaf2508fe30b1e2fafb8ab7f3310866e03095f7c037e43b71ce6f0d6b5d2",
+    "front-right-incoming-placed.step": "864603fec9b9f1b99210aa539cc0aef89600f79c86d8efe0f41b154b00674a55",
+    "front-right-outgoing-placed.step": "6af5d328c025cc8411a3cd6143d06792b121ee594d7c9b221ffeee4f822244f2",
+    "long-rail.step": "3e006f9f98e3a73fd51696dca86564af3ec53fd68c947de7dd0d65fa6282c873",
+    "pc-support-coupon.step": "b750cc9d4163da506ea3ecaa976069ebf261b623d54ff20902b907b88f7fcbcd",
+    "pet-gf15-visor-coupon.step": "3a8b6695d81d20739aa24bce609a4d49e5583663d0b4b90c8aba567ae608eac1",
+    "rear-left-corner-placed.step": "d6b1f56a117e253265f0bb8ccd19884004553c184d2e4ab9309ea789b9140581",
+    "rear-left-incoming-placed.step": "59300b92a67390d897334fb98db189a3a6b4b5c938656f0ab2b7901e84d3595c",
+    "rear-left-outgoing-placed.step": "0efba878c0db5c21589de332b1321467b4aeb2d2bcf5566935d0309f9b903718",
+    "rear-right-corner-placed.step": "50defbc136736ea4bafab14bd9b545138056c27598abf54ce36a648c29992499",
+    "rear-right-incoming-placed.step": "d76b5eddfa936535819d7f4c2de4def780498586c48f52e09b57ccb51d3a6db9",
+    "rear-right-outgoing-placed.step": "37cf371d76bdb372a280a4dc779fc41390d3be99a929815b7a6794e084b96707",
+    "short-rail.step": "1170f486f910d5f329ceef0382ef57103089ad741bb1858476ff3c9aa539d896"
+  }
 }

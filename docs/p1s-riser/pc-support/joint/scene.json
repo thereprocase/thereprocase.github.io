@@ -10,9 +10,9 @@
   "parts": [
     {
       "file": "part-0.bin",
-      "vertices": 466,
-      "triangles": 442,
-      "edges": 231,
+      "vertices": 478,
+      "triangles": 450,
+      "edges": 235,
       "color": [
         0.36,
         0.64,

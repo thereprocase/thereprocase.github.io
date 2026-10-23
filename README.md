@@ -139,9 +139,14 @@ are still pending for R13 update 8; no toolpath checks from Draft 11 carry over.
 `scripts/check-p1s-riser-r13.py` checks current responsive layouts, all 13
 viewers and the light toggle, legacy redirects, download hashes and local links in the exported site.
 
-The reusable PC visor support prototype has its own five-view page at
-`/p1s-riser/pc-support/`. Run `scripts/sync-p1s-support.py <support-u1-directory>`
+The reusable PC visor support prototype has its own six-view page at
+`/p1s-riser/pc-support/`. Run `scripts/sync-p1s-support.py <support-u2-directory>`
 before the main R13 sync. Three puzzle-keyed pieces fit all four quarters in
 CAD; the package includes a small release-test coupon pair. The 0.06 mm bare
 gap must be reconciled with coating thickness and the actual sliced layer
 underside. Release, repeated use and printhead clearance remain untested.
+
+PC support prototype 2 adds a 2 mm design border around the full visor
+footprint. The exported-mesh coverage check measures at least 1.5 mm with ±0.2 mm placement play at the
+assembled perimeter on all four quarters and separately checks the narrow
+puzzle seams. The top-down overlay shows the actual visor projection.

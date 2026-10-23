@@ -1,9 +1,14 @@
-Reusable PC visor support — prototype 1 for R13 update 8
+Reusable PC visor support — prototype 2 for R13 update 8
 
 Print the corner, long rail and short rail in PC, feet down. The rails use
 vertical tapered puzzle keys. Swap the two rails between corner legs for the
 mirrored quarters: the long rail follows the printer's left/right dimension.
 The same three parts are intended to serve all four quarter prints.
+
+Full visor footprint plus 2 mm design padding. Measured perimeter margin
+is at least 1.5 mm with ±0.2 mm placement play on all four quarters. Intentional sliding puzzle joints
+leave narrow seams (checked within 0.11 mm of support); these are not
+continuous contact surfaces.
 
 Bare tool top: 14.44 mm. CAD visor underside: 14.50 mm. Bare gap: 0.06 mm.
 Registration feet: approximately 0.20 mm nominal side clearance.

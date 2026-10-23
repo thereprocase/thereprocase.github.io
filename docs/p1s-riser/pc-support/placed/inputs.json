@@ -33,7 +33,7 @@
   },
   {
     "mesh": "front-right-corner-placed.npz",
-    "sha256": "d46cb62404b50b87f07965958c322032ccad2943417564d4ab8628132dda9d08",
+    "sha256": "6a136ff8aeda23feee82a2980ec7f514bd136274b4dff2ffc58fa33476103dae",
     "transform": [
       [
         1.0,
@@ -60,12 +60,12 @@
         1.0
       ]
     ],
-    "vertices": 1512,
-    "triangles": 1236
+    "vertices": 1818,
+    "triangles": 1392
   },
   {
     "mesh": "front-right-incoming-placed.npz",
-    "sha256": "d8f20bccbbe2a918cc95161c08b004ef19ce2fd55e9932c3f58a3bc4d1c60542",
+    "sha256": "f4801f9903750d9b1cf8dcaf8f1bdd068c4e49b08f795f132472c4573ac5a3b5",
     "transform": [
       [
         1.0,
@@ -97,7 +97,7 @@
   },
   {
     "mesh": "front-right-outgoing-placed.npz",
-    "sha256": "d6f3ed08bb05d49c656f3f319115fcdc6586e620f4f016a612a635383b6f23f4",
+    "sha256": "43458263954fc867d4dcf18a5fde24847ed3e99641a2cfe9227e6373a86849ca",
     "transform": [
       [
         1.0,

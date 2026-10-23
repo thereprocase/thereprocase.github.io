@@ -1,0 +1,56 @@
+{
+  "title": "Full visor footprint and support border",
+  "subtitle": "Teal: actual visor projection \u00b7 orange: PC support",
+  "caption": "At least 1.5 mm padding with \u00b10.2 mm placement play on all four quarters. Small puzzle-joint clearances remain between tool pieces.",
+  "camera": {
+    "yaw": 0,
+    "pitch": 1.5,
+    "zoom": 0.85
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 858,
+      "triangles": 568,
+      "edges": 296,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1818,
+      "triangles": 1392,
+      "edges": 583,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}
