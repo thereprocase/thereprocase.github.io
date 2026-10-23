@@ -3,8 +3,8 @@
   "downloads": [
     {
       "file": "p1s-riser-r13-u8-8mm-cad.zip",
-      "bytes": 7098939,
-      "sha256": "efaa8fed5d528a78329f5d9bd7ff58507a7fbabe0bdfef9aecb56ba38c5c9ae7"
+      "bytes": 7099012,
+      "sha256": "071cecda4e5123652775af5feaef3c6708239d3539ac85215e7964456a5d6b13"
     },
     {
       "file": "p1s-riser-r13-u8-8mm-review.step",
@@ -13,8 +13,8 @@
     },
     {
       "file": "ASSEMBLY-R13-U8.txt",
-      "bytes": 2087,
-      "sha256": "552375b79faf7768a7a29730b0bc96ceeaac4ce494f3a0384de19f4b887e0a6f"
+      "bytes": 2236,
+      "sha256": "f07edff16773d2ba7e6057fe1434b3d4306e9a0f172510192f94f59d096bf536"
     },
     {
       "file": "REFERENCE-ATTRIBUTION.txt",

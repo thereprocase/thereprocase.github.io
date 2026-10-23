@@ -1,6 +1,8 @@
 P1S USB light riser — R13 update 8 — 8 mm LED strip
 
 Four frame quarters, four 0.6 mm diffusers and one rear cable plug.
+Current material plan: PET-GF15 frame, with a reusable support fixture under
+evaluation. PETG remains an alternative; no fit has been qualified in either.
 Overall frame height: 24.5 mm. Glass seat: 22 mm. Glass pocket: 387 x 355 mm.
 LED aim: 45 degrees down on straight sections, twisting upright at corners.
 
@@ -8,7 +10,7 @@ This is the current CAD review. It has not yet been printed or sliced.
 Physical puzzle-joint fit, diffuser insertion and printer-lip clearance still
 need a fitting trial. The 10/12 mm sections are not complete downloadable kits.
 
-Frame: PETG, installed seat down on the print bed. Use a maintained machine,
+Frame: installed seat down on the print bed. Use a maintained machine,
 filament and process profile as the starting point. Plan organic supports from
 the build plate only beneath the broad visor underside. Inspect support contacts
 and removal access in the sliced preview; do not substitute supports everywhere.

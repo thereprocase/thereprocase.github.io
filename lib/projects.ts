@@ -18,7 +18,7 @@ const allCategories = [
 export const projects: Project[] = [
   {
     slug: 'p1s-riser', name: 'P1S USB light riser', category: 'hardware', sitePath: '/p1s-riser/',
-    summary: 'A four-piece PETG glass riser with downward-facing USB LEDs, tapered puzzle joints and lift-in diffusers.',
+    summary: 'A four-piece glass riser with downward-facing USB LEDs, tapered puzzle joints and lift-in diffusers.',
     description: 'An 8 mm LED strip aims down into the enclosure and twists upright around the corners. A rounded shade limits overhead glare; thin diffusers lift into an upper pocket and drop into their seats.',
     status: 'R13 update 8 · CAD checks passed; physical fit and slicing next',
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-riser',

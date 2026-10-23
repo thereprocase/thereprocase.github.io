@@ -132,9 +132,9 @@ paths from public viewer metadata. The current complete model is for an 8 mm
 strip; 10/12 mm optical sections are checked but are not complete kits.
 
 The earlier Draft 11 downloads remain at their existing URLs. Its entry pages,
-viewers and old full-printer light simulation redirect to the current review.
+viewers and old full-printer light simulation redirect to their current replacements.
 Do not republish them as current geometry. Physical fitting and fresh slicing
 are still pending for R13 update 8; no toolpath checks from Draft 11 carry over.
 
-`scripts/check-p1s-riser-r13.py` checks current responsive layouts, all five
-viewers, legacy redirects, download hashes and local links in the exported site.
+`scripts/check-p1s-riser-r13.py` checks current responsive layouts, all 12
+viewers and the light toggle, legacy redirects, download hashes and local links in the exported site.

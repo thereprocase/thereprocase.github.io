@@ -36,7 +36,7 @@ with sync_playwright() as p:
             page.wait_for_function("document.querySelector('#beam img').naturalWidth > 0")
             page.evaluate('scrollTo(0,0)')
             page.screenshot(path=str(output / f'page-{width}.png'), full_page=True)
-    for view in ['installed', 'exploded', 'section', 'lifted', 'joint']:
+    for view in ['installed', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'full-printer']:
         page.locator(f'[data-view="{view}"]').click()
         frame = page.frame_locator('#viewer')
         frame.locator('#load').wait_for(state='hidden')
@@ -44,6 +44,11 @@ with sync_playwright() as p:
         assert page.locator('#viewer').get_attribute('src') == f'{view}-u8/'
         assert page.locator('#png').get_attribute('href') == f'{view}-u8.png'
         assert page.locator('#full').get_attribute('href') == f'{view}-u8/'
+    frame = page.frame_locator('#viewer')
+    frame.locator('#light-toggle').click()
+    assert frame.locator('#light-toggle').get_attribute('aria-pressed') == 'false'
+    frame.locator('#light-toggle').click()
+    assert frame.locator('#light-toggle').get_attribute('aria-pressed') == 'true'
     # Exercise the carried-over right-button panning implementation.
     page.locator('[data-view="section"]').click()
     page.frame_locator('#viewer').locator('#load').wait_for(state='hidden')
@@ -55,11 +60,13 @@ with sync_playwright() as p:
     page.mouse.move(box['x'] + 350, box['y'] + 275, steps=5)
     page.mouse.up(button='right')
     assert frame.evaluate('JSON.stringify(cam)') != before
-    for route in ['variants/8mm/', 'variants/10mm/', 'variants/12mm/', 'faux-light/']:
+    for route in ['variants/8mm/', 'variants/10mm/', 'variants/12mm/']:
         page.goto(base + '/p1s-riser/' + route)
         page.wait_for_url(base + '/p1s-riser/')
+    page.goto(base + '/p1s-riser/faux-light/')
+    page.wait_for_url(base + '/p1s-riser/full-printer-u8/')
     page.goto(base + '/')
-    assert page.locator('body').inner_text().find('four-piece PETG') >= 0
+    assert page.locator('body').inner_text().find('four-piece glass') >= 0
     assert not errors, errors
     browser.close()
 for path in [root / 'p1s-riser/index.html']:
@@ -77,4 +84,4 @@ with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u8-8mm-cad.zip') as z:
     assert z.testzip() is None
     assert len([n for n in z.namelist() if n.endswith('.stl')]) == 11
 server.shutdown()
-print('PASS: four viewport widths, five CAD views, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)
+print('PASS: four viewport widths, 12 CAD views and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)

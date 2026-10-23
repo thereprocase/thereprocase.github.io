@@ -1,0 +1,726 @@
+{
+  "title": "P1S with the current light riser",
+  "subtitle": "R13 update 8 on a simplified printer \u00b7 switch the light on or off",
+  "caption": "Illustrative light and model shadows. Brightness and diffuser transmission are not calibrated.",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.26,
+    "zoom": 0.91
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.26,
+        0.29,
+        0.31
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.19,
+        0.22,
+        0.23
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.43,
+        0.46,
+        0.43
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.43,
+        0.46,
+        0.43
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.48,
+        0.52,
+        0.55
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.48,
+        0.52,
+        0.55
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.19,
+        0.21,
+        0.22
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-16.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.19,
+        0.21,
+        0.22
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-17.bin",
+      "vertices": 254,
+      "triangles": 248,
+      "edges": 126,
+      "color": [
+        0.1,
+        0.12,
+        0.13
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-18.bin",
+      "vertices": 254,
+      "triangles": 248,
+      "edges": 126,
+      "color": [
+        0.1,
+        0.12,
+        0.13
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-19.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.18,
+        0.21,
+        0.23
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-20.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.36,
+        0.4,
+        0.42
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-21.bin",
+      "vertices": 419,
+      "triangles": 568,
+      "edges": 126,
+      "color": [
+        0.7,
+        0.5,
+        0.24
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-22.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-23.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.12,
+        0.22,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-24.bin",
+      "vertices": 576,
+      "triangles": 540,
+      "edges": 272,
+      "color": [
+        0.55,
+        0.72,
+        0.72
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-25.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.09,
+        0.1,
+        0.11
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-26.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.09,
+        0.1,
+        0.11
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-27.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-28.bin",
+      "vertices": 14365,
+      "triangles": 11926,
+      "edges": 1399,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-29.bin",
+      "vertices": 14230,
+      "triangles": 11698,
+      "edges": 1387,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-30.bin",
+      "vertices": 15184,
+      "triangles": 12854,
+      "edges": 1598,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-31.bin",
+      "vertices": 15295,
+      "triangles": 12790,
+      "edges": 1681,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-32.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.91,
+        0.96,
+        1
+      ],
+      "alpha": 1,
+      "emission": 1
+    },
+    {
+      "file": "part-33.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.91,
+        0.96,
+        1
+      ],
+      "alpha": 1,
+      "emission": 1
+    },
+    {
+      "file": "part-34.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.91,
+        0.96,
+        1
+      ],
+      "alpha": 1,
+      "emission": 1
+    },
+    {
+      "file": "part-35.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.91,
+        0.96,
+        1
+      ],
+      "alpha": 1,
+      "emission": 1
+    },
+    {
+      "file": "part-36.bin",
+      "vertices": 392,
+      "triangles": 368,
+      "edges": 188,
+      "color": [
+        0.3,
+        0.34,
+        0.36
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-37.bin",
+      "vertices": 392,
+      "triangles": 368,
+      "edges": 188,
+      "color": [
+        0.1,
+        0.12,
+        0.13
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-38.bin",
+      "vertices": 196,
+      "triangles": 180,
+      "edges": 94,
+      "color": [
+        0.65,
+        0.83,
+        0.88
+      ],
+      "alpha": 0.08,
+      "emission": 0
+    },
+    {
+      "file": "part-39.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.64,
+        0.81,
+        0.86
+      ],
+      "alpha": 0.035,
+      "emission": 0
+    }
+  ],
+  "lights": [
+    {
+      "position": [
+        -84.31666666666668,
+        -4.242471625854458,
+        -157.67218439869572
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844387,
+        0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        -42.23333333333334,
+        -6.659129601389611,
+        -153.48641000055227
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844387,
+        0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        42.23333333333333,
+        -4.242471625854458,
+        -157.67218439869572
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844388,
+        0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        84.31666666666665,
+        -6.659129601389611,
+        -153.48641000055227
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844388,
+        0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        173.67218439869572,
+        -4.242471625854458,
+        -73.65
+      ],
+      "direction": [
+        -0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        169.48641000055227,
+        -6.659129601389611,
+        -36.900000000000006
+      ],
+      "direction": [
+        -0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        173.67218439869572,
+        -4.242471625854458,
+        36.900000000000006
+      ],
+      "direction": [
+        -0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        169.48641000055227,
+        -6.659129601389611,
+        73.65
+      ],
+      "direction": [
+        -0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        -84.31666666666665,
+        -6.659129601389611,
+        153.48641000055227
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844388,
+        -0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        -42.23333333333333,
+        -4.242471625854458,
+        157.67218439869572
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844388,
+        -0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        42.23333333333334,
+        -6.659129601389611,
+        153.48641000055227
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844387,
+        -0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        84.31666666666668,
+        -4.242471625854458,
+        157.67218439869572
+      ],
+      "direction": [
+        0.0,
+        0.8660254037844387,
+        -0.49999999999999983
+      ]
+    },
+    {
+      "position": [
+        -169.48641000055227,
+        -6.659129601389611,
+        -73.65
+      ],
+      "direction": [
+        0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        -173.67218439869572,
+        -4.242471625854458,
+        -36.900000000000006
+      ],
+      "direction": [
+        0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        -169.48641000055227,
+        -6.659129601389611,
+        36.900000000000006
+      ],
+      "direction": [
+        0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    },
+    {
+      "position": [
+        -173.67218439869572,
+        -4.242471625854458,
+        73.65
+      ],
+      "direction": [
+        0.49999999999999983,
+        0.8660254037844388,
+        0.0
+      ]
+    }
+  ]
+}

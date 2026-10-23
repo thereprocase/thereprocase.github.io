@@ -1,0 +1,168 @@
+{
+  "title": "Riser, glass and printer seat",
+  "subtitle": "Current four-piece frame \u00b7 nominal glass and ledge references",
+  "caption": "Grey: reference printer seat. Tinted glass is illustrative; hardware fit still needs checking.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.75,
+    "zoom": 0.83
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 14365,
+      "triangles": 11926,
+      "edges": 1399,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 14230,
+      "triangles": 11698,
+      "edges": 1387,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 15184,
+      "triangles": 12854,
+      "edges": 1598,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 15295,
+      "triangles": 12790,
+      "edges": 1681,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 1828,
+      "triangles": 1524,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 2816,
+      "triangles": 1408,
+      "edges": 752,
+      "color": [
+        0.94,
+        0.82,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 392,
+      "triangles": 368,
+      "edges": 188,
+      "color": [
+        0.3,
+        0.34,
+        0.36
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 392,
+      "triangles": 368,
+      "edges": 188,
+      "color": [
+        0.12,
+        0.15,
+        0.16
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 196,
+      "triangles": 180,
+      "edges": 94,
+      "color": [
+        0.65,
+        0.83,
+        0.88
+      ],
+      "alpha": 0.12,
+      "emission": 0
+    }
+  ]
+}
