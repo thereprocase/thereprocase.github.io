@@ -1,36 +1,36 @@
 {
-  "revision": 11,
+  "revision": "R13 update 8",
   "downloads": [
     {
-      "file": "variants/8mm/p1s-riser-8mm-led-cad.zip",
-      "sha256": "a57e896135e1d2e65dad46eee616a9e86726a8bf09085d76dcfce09e1304fc1e",
-      "bytes": 30922216
+      "file": "p1s-riser-r13-u8-8mm-cad.zip",
+      "bytes": 7098939,
+      "sha256": "efaa8fed5d528a78329f5d9bd7ff58507a7fbabe0bdfef9aecb56ba38c5c9ae7"
     },
     {
-      "file": "variants/8mm/p1s-riser-8mm-led-assembly.step",
-      "sha256": "925d6db588f1daf06a48c813e9077e2da05dc77954d1e7c63b768803f64d4c3d",
-      "bytes": 30416270
+      "file": "p1s-riser-r13-u8-8mm-review.step",
+      "bytes": 38071026,
+      "sha256": "a6c00beba471eb2f55e182ab28930bac9e54bc1218245fd8abfaedbcd1f3060e"
     },
     {
-      "file": "variants/10mm/p1s-riser-10mm-led-cad.zip",
-      "sha256": "444024b5d551d40fc361acac267c08a469b3baa6a2ef87d51af1b45ed8ecd91d",
-      "bytes": 31946137
+      "file": "ASSEMBLY-R13-U8.txt",
+      "bytes": 2087,
+      "sha256": "552375b79faf7768a7a29730b0bc96ceeaac4ce494f3a0384de19f4b887e0a6f"
     },
     {
-      "file": "variants/10mm/p1s-riser-10mm-led-assembly.step",
-      "sha256": "6214b31f3e20e9db44de5bbe4479b0de71f6e3915f53b125496ee7a8a481523b",
-      "bytes": 31135119
-    },
-    {
-      "file": "variants/12mm/p1s-riser-12mm-led-cad.zip",
-      "sha256": "634bff4bc2f8deb4ef482ec91716499ae10dc564220e16da1ac10379c2d1b42e",
-      "bytes": 32414235
-    },
-    {
-      "file": "variants/12mm/p1s-riser-12mm-led-assembly.step",
-      "sha256": "0d9d2944a62fd4c93645fe32f945d62c94699b4191ff72424fea476091ed5916",
-      "bytes": 29409283
+      "file": "REFERENCE-ATTRIBUTION.txt",
+      "bytes": 1562,
+      "sha256": "ce8d505f3560b49bbd2e8ae66f81b7ec7dd5ca377484f666afd1af23d4a21c8d"
     }
   ],
-  "geometry_modified": false
+  "geometry_modified": false,
+  "sources_sha256": {
+    "optical_profile_v8.py": "d6960207bdd0721f91f4af078ec80f8f05995575b11a3b896bbf303f4bc566b1",
+    "section_v8.py": "74e8a9ae84444185c0e1c8eda7eeb7516b9039bb343067b22eb0e2fcbb9b00d4",
+    "build_v8.py": "c6e124ece146df6813d62a883adb520a09bdccb293c2fc13c817ea3d1ddf4b8a",
+    "joints_v8.py": "ffe13549c1f08459a419a04d1e5c0945923ac192cc70a4ebdec744e7689892f4",
+    "masks_v8.py": "b3601d9eb5e12101635ef81b3c5045f555ec2751caaa6bde21372548dcd107c7",
+    "masks-v8.json": "b64bb5adfe617b6c54349946d6dd4a27dc25031db2de26fb0d8be8f50960a7c8",
+    "render_sections_v8.py": "27e604a11d0ea01314f8420b77df8db73610148386fd1e3d2826b48b00a6d648",
+    "beam_sections_v8.py": "86e2e39ec63dae8c93d57111efac73a9b96881938bcd4e1aa779ed913a62a953"
+  }
 }

@@ -123,16 +123,18 @@ the release provenance synchronized.
 
 ## P1S USB light riser
 
-`public/p1s-riser/` contains the Gridline review, interactive CAD views and the
-8/10/12 mm Draft 11 kits. `scripts/sync-p1s-riser.py <checked-review-directory>`
-copies the checked models without changing their bytes and applies the site
-layout. It needs BeautifulSoup. The manifest in `provenance.json` records the
-ZIP and assembly STEP hashes. Keep matching frames and diffusers together;
-the 10 and 12 mm kits raise the glass seat by 2 and 4 mm. Attribution is kept
-with each kit. Build and export the directory after updating these files.
+`public/p1s-riser/` contains the current R13 update 8 four-piece frame,
+lift-in diffusers, actual CAD viewers, STEP/STL parts and assembly notes.
+Run `python scripts/sync-p1s-riser-r13.py <greenfield-13-directory>` against
+checked source geometry, then build and export `docs/`. The sync checks CAD
+results, copies geometry unchanged, records hashes and strips local machine
+paths from public viewer metadata. The current complete model is for an 8 mm
+strip; 10/12 mm optical sections are checked but are not complete kits.
 
-The riser’s `faux-light/` view uses the actual 8 mm riser on a simplified full
-printer, with light samples checked against the diffuser surfaces and full-model depth-map
-shadows. Its on/off comparison illustrates the lighting layout; it is
-not a measured lux or diffuser-transmission simulation. The viewer’s scene and
-input hashes accompany the PNG.
+The earlier Draft 11 downloads remain at their existing URLs. Its entry pages,
+viewers and old full-printer light simulation redirect to the current review.
+Do not republish them as current geometry. Physical fitting and fresh slicing
+are still pending for R13 update 8; no toolpath checks from Draft 11 carry over.
+
+`scripts/check-p1s-riser-r13.py` checks current responsive layouts, all five
+viewers, legacy redirects, download hashes and local links in the exported site.
