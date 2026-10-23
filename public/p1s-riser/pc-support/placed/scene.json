@@ -1,0 +1,56 @@
+{
+  "title": "Support placed beneath the visor",
+  "subtitle": "Current front-right quarter \u00b7 reusable PC tooling in orange",
+  "caption": "Bare tool is 0.06 mm below the CAD visor. Glue thickness, sliced contact height and release still need checking.",
+  "camera": {
+    "yaw": 2.3,
+    "pitch": -0.12,
+    "zoom": 0.86
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 14230,
+      "triangles": 11698,
+      "edges": 1387,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1512,
+      "triangles": 1236,
+      "edges": 579,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

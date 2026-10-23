@@ -32,6 +32,9 @@ def public_data(value):
 
 views = ['installed', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'full-printer']
 labels = ['Assembled', 'Glass + seat', 'Installed cutaway', 'Exploded', 'Light section', 'Diffuser lifted', 'Puzzle joint', 'LED route', 'Diffusers', 'Clearance bodies', 'Print orientation', 'Full-printer lighting']
+if (review / 'support-u8').exists():
+    views.insert(-1, 'support')
+    labels.insert(-1, 'PC support')
 for view in views:
     dest = out / f'{view}-u8'
     shutil.copytree(review / dest.name, dest, dirs_exist_ok=True)
@@ -109,7 +112,7 @@ content = pane('Assembly and cutaways', f'''<nav aria-label="Design views">{butt
 content += pane('Download the 8 mm model', '''<div class="downloads">
 <a class="button primary" href="p1s-riser-r13-u8-8mm-cad.zip">Individual parts · STEP + STL</a>
 <a class="button" href="p1s-riser-r13-u8-8mm-review.step">Assembly STEP</a>
-<a class="button" href="ASSEMBLY-R13-U8.txt">Assembly notes</a></div>
+<a class="button" href="ASSEMBLY-R13-U8.txt">Assembly notes</a><a class="button" href="pc-support/">Reusable PC support kit</a></div>
 <p>Four frame quarters, four diffusers, a cable plug and a joint-fit coupon. The assembly STEP shows the frame, diffusers and cable plug together.</p>
 <p>This revision has passed CAD checks; a physical fitting trial and fresh slice are next. The 10 and 12 mm versions have checked sections, but complete kits are not ready.</p>
 <p><a href="SHA256SUMS-R13-U8">Checksums</a> · <a href="REFERENCE-ATTRIBUTION.txt">Attribution and license</a></p>''', 'downloads')
@@ -118,7 +121,7 @@ content += pane('A lower, simpler frame', '''<p>Four quarters meet at tapered pu
 <ul><li>24.5 mm overall height; glass seat at 22 mm.</li><li>387 × 355 mm glass pocket.</li><li>8 mm LED strip, aimed 45° down on straight runs and upright around the corners.</li><li>Rear cable tunnel with a removable plug.</li></ul>''', 'geometry')
 content += pane('Lift-in diffusers', '''<p>Lift the diffuser into the upper pocket, move the bottom over the rounded slot entrance, then lower it into the seat. The entrance has no flat shelf to catch the thin edge. Small CA dots at the hidden upper contact are optional.</p>
 <p>The straight diffuser face lies at 30° above horizontal, flatter than the LED backing. It is 0.6 mm thick, with 1.6 mm of insertion lift. Assemble the frame before fitting the strip and diffusers.</p>''', 'assembly')
-content += pane('Printing', '''<p>The frame prints seat-down. PET-GF15 is the current material choice; PETG is an alternative. A reusable visor-support fixture is being evaluated. Bed-starting edges use 30° chamfers from vertical (60° from the bed). The higher edges that the PTFE tube touches stay rounded.</p>
+content += pane('Printing', '''<p>The frame prints seat-down. PET-GF15 is the current material choice; PETG is an alternative. A <a href="pc-support/">three-piece PC support prototype</a> fits beneath the visor, with tapered puzzle joints and low locating feet. Its glue-stick release surface still needs a coupon trial. Bed-starting edges use 30° chamfers from vertical (60° from the bed). The higher edges that the PTFE tube touches stay rounded.</p>
 <p>Use your tuned machine, filament and process profiles. Plan organic supports from the build plate only under the broad, flat visor underside. Check the support contacts in the preview before printing.</p>
 <p>The new frame and thin diffusers still need a fresh slice and fitting trial. The download contains geometry, not a pre-sliced print job.</p>''', 'printing')
 content += pane('Light into the enclosure', '''<p>The shade hides the LEDs from steep overhead views while allowing shallow upward spill around 20–25°. Opening the lower edge gives more of the downward beam a clear path.</p>

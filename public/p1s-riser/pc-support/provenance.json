@@ -1,0 +1,13 @@
+{
+  "revision": "PC support prototype 1",
+  "frame_revision": "R13 update 8",
+  "file": "p1s-r13-pc-support-u1-step-stl.zip",
+  "sha256": "5462bacdc98f012c5e77825ba604fc213b8c6fcdafa31a729c702c44c5daa4c6",
+  "geometry_modified_for_publication": false,
+  "frame_source_sha256": {
+    "front-right": "ab75bc89b71b97d32e9fb33ab4b555316ae64e39dd5f892a90972f94b79832fc",
+    "rear-right": "56117ea2247bc943d3620aedc20a668a301efff07350ab1b8d751e7a6bedc857",
+    "rear-left": "6569c56806d7739e3a25db86d27547ea18383b1e635ead801a14feee9f7a0f58",
+    "front-left": "014e796738e3bf14fef94c4a394a558675e4e918924bef835281c5635d539f7b"
+  }
+}

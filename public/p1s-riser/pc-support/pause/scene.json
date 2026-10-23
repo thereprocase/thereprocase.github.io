@@ -1,0 +1,56 @@
+{
+  "title": "Locating the support before the visor",
+  "subtitle": "Frame shown as a CAD height cut \u00b7 not an established pause command",
+  "caption": "Lower the tool inward of the rim, then slide it outward until the low feet register. Verify the sliced pause first.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.8,
+    "zoom": 0.85
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 9174,
+      "triangles": 7908,
+      "edges": 965,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1512,
+      "triangles": 1236,
+      "edges": 579,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

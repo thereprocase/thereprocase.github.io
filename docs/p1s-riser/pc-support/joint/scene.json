@@ -1,0 +1,34 @@
+{
+  "title": "Tapered puzzle joint in the PC tool",
+  "subtitle": "Real key and socket crop \u00b7 key lifted 6 mm for clarity",
+  "caption": "The three support pieces assemble vertically; 0.10 mm radial key clearance is a starting fit, not a measured result.",
+  "camera": {
+    "yaw": -1.1,
+    "pitch": 0.75,
+    "zoom": 0.9
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 466,
+      "triangles": 442,
+      "edges": 231,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 472,
+      "triangles": 448,
+      "edges": 234,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Three-piece reusable PC support",
+  "subtitle": "One corner, one long rail and one short rail \u00b7 tapered puzzle joints",
+  "caption": "Rails swap legs for mirrored frame quarters. Low feet locate against the printed rim; coated fit is still a trial.",
+  "camera": {
+    "yaw": -0.7,
+    "pitch": 0.9,
+    "zoom": 0.84
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 672,
+      "triangles": 592,
+      "edges": 326,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 1512,
+      "triangles": 1236,
+      "edges": 579,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

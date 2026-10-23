@@ -36,7 +36,7 @@ with sync_playwright() as p:
             page.wait_for_function("document.querySelector('#beam img').naturalWidth > 0")
             page.evaluate('scrollTo(0,0)')
             page.screenshot(path=str(output / f'page-{width}.png'), full_page=True)
-    for view in ['installed', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'full-printer']:
+    for view in ['installed', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'support', 'full-printer']:
         page.locator(f'[data-view="{view}"]').click()
         frame = page.frame_locator('#viewer')
         frame.locator('#load').wait_for(state='hidden')
@@ -60,6 +60,19 @@ with sync_playwright() as p:
     page.mouse.move(box['x'] + 350, box['y'] + 275, steps=5)
     page.mouse.up(button='right')
     assert frame.evaluate('JSON.stringify(cam)') != before
+    for width in [320, 390, 1600]:
+        page.set_viewport_size({'width': width, 'height': 1000})
+        page.goto(base + '/p1s-riser/pc-support/')
+        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), width
+        for view in ['kit', 'pause', 'placed', 'section', 'joint']:
+            page.locator(f'[data-view="{view}"]').click()
+            page.frame_locator('#viewer').locator('#load').wait_for(state='hidden')
+            assert page.frame_locator('#viewer').locator('#title').inner_text()
+            assert page.locator('#viewer').get_attribute('src') == f'{view}/'
+        if width == 390:
+            page.locator('[data-view="kit"]').click()
+            page.frame_locator('#viewer').locator('#load').wait_for(state='hidden')
+            page.screenshot(path=str(output / 'support-mobile.png'), full_page=True)
     for route in ['variants/8mm/', 'variants/10mm/', 'variants/12mm/']:
         page.goto(base + '/p1s-riser/' + route)
         page.wait_for_url(base + '/p1s-riser/')
@@ -69,11 +82,11 @@ with sync_playwright() as p:
     assert page.locator('body').inner_text().find('four-piece glass') >= 0
     assert not errors, errors
     browser.close()
-for path in [root / 'p1s-riser/index.html']:
+for path in [root / 'p1s-riser/index.html', root / 'p1s-riser/pc-support/index.html']:
     soup = BeautifulSoup(path.read_text(), 'html.parser')
     for element in soup.select('[href],[src]'):
         url = element.get('href') or element.get('src')
-        parts = urllib.parse.urlsplit(urllib.parse.urljoin('/p1s-riser/', url))
+        parts = urllib.parse.urlsplit(urllib.parse.urljoin('/' + str(path.parent.relative_to(root)) + '/', url))
         if not parts.scheme and not parts.netloc:
             assert (root / parts.path.lstrip('/')).exists(), url
 manifest = json.loads((root / 'p1s-riser/provenance.json').read_text())
@@ -83,5 +96,12 @@ for record in manifest['downloads']:
 with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u8-8mm-cad.zip') as z:
     assert z.testzip() is None
     assert len([n for n in z.namelist() if n.endswith('.stl')]) == 11
+support = root / 'p1s-riser/pc-support'
+record = json.loads((support / 'provenance.json').read_text())
+assert hashlib.sha256((support / record['file']).read_bytes()).hexdigest() == record['sha256']
+with zipfile.ZipFile(support / record['file']) as z:
+    assert z.testzip() is None
+    assert len([n for n in z.namelist() if n.startswith('pc-parts/') and n.endswith('.stl')]) == 3
+    assert len([n for n in z.namelist() if n.startswith('coupons/') and n.endswith('.stl')]) == 2
 server.shutdown()
-print('PASS: four viewport widths, 12 CAD views and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)
+print('PASS: four viewport widths, 13 CAD views + five support views at three widths and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)
