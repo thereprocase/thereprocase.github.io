@@ -21,7 +21,7 @@ export const ringDefaults = Object.freeze({hole: 53.4, bite: 0.7, clearance: 0.1
 export const nutDefaults = Object.freeze({flange: 3.5});
 export const ringLimits = Object.freeze({hole: [45, 95], bite: [0, 1.5], clearance: [0, 0.5]});
 export const nutLimits = Object.freeze({flange: [NUT.original_flange, NUT.original_flange + NUT.maximum_added]});
-export const CREDIT = 'remix of Kraken by humebeam, CC BY-NC 4.0';
+export const CREDIT = 'Repro remix of Kraken by humebeam, CC BY-NC 4.0';
 
 const onStep = (x, step) => Math.abs(x / step - Math.round(x / step)) < 1e-6;
 /** Shortest decimal for a 0.01 mm grid value: 53.4 -> "53.4", 55 -> "55". */
@@ -185,5 +185,88 @@ export function binarySTL({vertices: v, triangles: t}, header) {
   }
   return b;
 }
-export const ringHeader = (p, side) => `Kraken spool ring ${mm(p.hole)} mm ${side.startsWith('gear') ? 'gear side' : 'cap side'}; ${CREDIT}`;
-export const nutHeader = p => `Kraken spool nut ${mm(p.flange)} mm flange; ${CREDIT}`;
+// STL headers are 80 bytes; every one ends with the full credit.
+export const ringHeader = (p, side) => `Kraken ring ${mm(p.hole)} ${side.startsWith('gear') ? 'gear side' : 'cap side'}; ${CREDIT}`;
+export const nutHeader = p => `Kraken nut ${mm(p.flange)} mm flange; ${CREDIT}`;
+
+/*
+ * Spoked spool gear. The asset is humebeam's gear with its web made solid (gear_web.py 'plain':
+ * retained teeth, hub, shaft and bearing-seat facets plus planar disc caps). Windows are cut
+ * from the Z0-4 disc only, inside R90; the hub above the disc ends at R18.13.
+ * Window outline as gear_web_taper.window_face: spoke edges run from root_width/2 at the hub
+ * pad radius to tip_width/2 at the window outer radius, measured from the spoke centre line;
+ * arcs at both radii; convex corners rounded by an opening offset(-r).offset(+r).
+ */
+export const GEAR = Object.freeze({disc_thickness: 4, web_inner_radius: 18, change_limit_radius: 90, protected_tooth_band_radius: 95,
+  hub_above_disc_radius: 18.13, minimum_feature: 1.35, minimum_opening: 4, minimum_rim_band: 3, petg_density: 1.26});
+export const gearPresets = Object.freeze({
+  spokes: {count: 8, pad: 42, root: 26, tip: 26, outer: 88, fillet: 3},
+  r54t12: {count: 8, pad: 54, root: 35.25, tip: 12, outer: 88, fillet: 3},
+  n6r42t12: {count: 6, pad: 42, root: 36.24, tip: 12, outer: 88, fillet: 3},
+});
+export const gearDefaults = Object.freeze({plain: false, ...gearPresets.spokes});
+const ARC_SAG = 1e-4;
+export const gearLimits = Object.freeze({count: [3, 12], pad: [25, 80], root: [1.35, 60], tip: [1.35, 60], outer: [40, 90], fillet: [0, 8]});
+
+export function gearParameters(input = {}) {
+  for (const k of Object.keys(input)) if (!(k in gearDefaults)) throw Error(`Unknown gear setting: ${k}`);
+  const p = {...gearDefaults, ...input}, G = GEAR, names = {count: 'Spoke count', pad: 'Hub pad radius', root: 'Root width', tip: 'Tip width', outer: 'Window outer radius', fillet: 'Corner fillet'};
+  if (typeof p.plain !== 'boolean') throw Error('Plain must be on or off.');
+  for (const [k, [lo, hi]] of Object.entries(gearLimits)) {
+    if (!Number.isFinite(p[k]) || p[k] < lo - 1e-9 || p[k] > hi + 1e-9) throw Error(`${names[k]}: enter ${lo} to ${hi}${k === 'count' ? '' : ' mm'}.`);
+    if (k === 'count' ? !Number.isInteger(p[k]) : !onStep(p[k], 0.01)) throw Error(`${names[k]}: use ${k === 'count' ? 'a whole number' : '0.01 mm steps'}.`);
+  }
+  if (p.plain) return {...p, windows: 0};
+  const pitch = 2 * Math.PI / p.count, ri = p.pad, ro = p.outer;
+  // Plain-English guards; each says what to change.
+  if (ro - ri < 2 * p.fillet + 4) throw Error(`The hub pad (R${mm(ri)}) must stay inside the window: leave at least ${mm(2 * p.fillet + 4)} mm between pad radius and window outer radius (2 × fillet + 4). Shrink the pad or enlarge the window radius.`);
+  if (p.root / 2 >= ri || p.tip / 2 >= ro) throw Error('A spoke is wider than its radius allows. Reduce the root or tip width.');
+  const ai = Math.asin(p.root / 2 / ri), ao = Math.asin(p.tip / 2 / ro);
+  const hubGap = 2 * ri * Math.sin(pitch / 2 - ai), rimGap = 2 * ro * Math.sin(pitch / 2 - ao);
+  if (!(hubGap >= G.minimum_opening)) throw Error(`The windows close off at the hub: the opening between spoke roots is ${hubGap > 0 ? hubGap.toFixed(2) : 0} mm, the minimum is ${G.minimum_opening} mm. Use fewer spokes, a narrower root, or a larger hub pad radius.`);
+  if (!(rimGap >= G.minimum_opening)) throw Error(`The windows close off at the rim: the opening between spoke tips is ${rimGap > 0 ? rimGap.toFixed(2) : 0} mm, the minimum is ${G.minimum_opening} mm. Use fewer spokes or a narrower tip.`);
+  if (Math.min(p.root, p.tip) < G.minimum_feature) throw Error(`Spokes narrower than ${G.minimum_feature} mm (about three 0.45 mm lines) print unreliably. Widen the root or tip.`);
+  const rim = G.protected_tooth_band_radius - ro;
+  if (rim < G.minimum_rim_band || ro > G.change_limit_radius) throw Error(`Keep the window outer radius at or below ${G.change_limit_radius} mm so a solid rim of at least ${G.minimum_rim_band} mm stays inside the teeth at R${G.protected_tooth_band_radius}.`);
+  if (p.fillet > 0 && 2 * p.fillet > Math.min(hubGap, ro - ri)) throw Error(`The ${mm(p.fillet)} mm fillet does not fit the hub-side opening (${hubGap.toFixed(2)} mm). Reduce the fillet.`);
+  return {...p, windows: p.count, pitch, hubGap, rimGap, rim, narrowest: Math.min(p.root, p.tip)};
+}
+export const gearStem = p => p.plain ? 'kraken-spool-gear-plain-web' : `kraken-spool-gear-${p.count}-spokes-pad${mm(p.pad)}-root${mm(p.root)}-tip${mm(p.tip)}-outer${mm(p.outer)}-fillet${mm(p.fillet)}`;
+export const gearHeader = p => `Kraken gear ${p.plain ? 'plain web' : p.count + ' spokes'}; ${CREDIT}`;
+
+/** Window outline before rounding, for spoke 0 at +X and the window counter-clockwise from it. */
+export function gearWindowPolygon(p) {
+  const ri = p.pad, ro = p.outer, pitch = 2 * Math.PI / p.count, ai = Math.asin(p.root / 2 / ri), ao = Math.asin(p.tip / 2 / ro);
+  // Sampled arcs deviate from the true arc by at most 0.1 µm (sag = r·θ²/8).
+  const arc = (r, a0, a1) => { const n = Math.max(2, Math.ceil(Math.abs(a1 - a0) / Math.sqrt(8 * ARC_SAG / r))); return Array.from({length: n + 1}, (_, i) => { const a = a0 + (a1 - a0) * i / n; return [r * Math.cos(a), r * Math.sin(a)]; }); };
+  return [...arc(ro, ao, pitch - ao), ...arc(ri, pitch - ai, ai)];
+}
+
+/** Cut the windows from the plain gear asset. Faces outside the disc web are left untouched by the Boolean. */
+export function buildGear(module, plain, input) {
+  const p = gearParameters(input), s = scope(module), {Manifold, CrossSection, keep} = s, G = GEAR;
+  try {
+    const gear = s.solid(plain);
+    let out = gear, windowArea = 0;
+    if (!p.plain) {
+      let window = keep(CrossSection.ofPolygons([gearWindowPolygon(p)]));
+      if (p.fillet > 0) {
+        const segments = Math.ceil(2 * Math.PI / Math.sqrt(8 * ARC_SAG / p.fillet));
+        window = keep(keep(window.offset(-p.fillet, 'Round', 2, segments)).offset(p.fillet, 'Round', 2, segments));
+      }
+      windowArea = window.area();
+      if (!(windowArea > 1) || window.decompose().length !== 1) throw Error('The fillet closes the window. Reduce the fillet or widen the window.');
+      const prism = keep(keep(window.extrude(G.disc_thickness + 2)).translate([0, 0, -1]));
+      let cutters = prism;
+      for (let i = 1; i < p.count; i++) cutters = keep(cutters.add(keep(prism.rotate([0, 0, 360 / p.count * i]))));
+      const reach = Math.max(...window.toPolygons().flat().map(([x, y]) => Math.hypot(x, y)));
+      if (reach > G.change_limit_radius + 1e-6) throw Error('A window reaches beyond R90.');
+      out = keep(gear.subtract(cutters));
+      const pieces = out.decompose(); pieces.forEach(keep);
+      if (out.status() !== 'NoError' || pieces.length !== 1) throw Error('The spoked gear is not one closed solid.');
+    }
+    const part = exportSolid(s, out, 'gear');
+    return {parameters: p, part: {...part, stem: gearStem(p)}, plainVolume: gear.volume(), windowArea,
+      grams: part.volume * G.petg_density / 1000, gramsSaved: (gear.volume() - part.volume) * G.petg_density / 1000};
+  } finally { s.release(); }
+}

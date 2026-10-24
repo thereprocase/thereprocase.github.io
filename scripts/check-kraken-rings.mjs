@@ -1,17 +1,18 @@
 // Kraken ring and nut kernel checks under node, against the Python generators' output.
-// Usage: node scripts/check-kraken-rings.mjs [--rings DIR] [--sizes 55,53.4,45] [--nut NUT_STL --nut-flange 3]
+// Usage: node scripts/check-kraken-rings.mjs [--rings DIR] [--sizes 55,53.4,45] [--nut NUT_STL --nut-flange 3] [--gears DIR]
 //   --rings: a generate_family.py output (models/*.3mf and *.stl) or a published models directory.
 //   --nut:   build_nut.py output (outer face at Z = -(flange - 1.5)).
+//   --gears: directory with gear-spokes.stl, gear-taper-r54t12.stl, gear-n6r42t12.stl (gear_web*.py output).
 // Without reference paths it checks the kernel's own invariants, limits and file names.
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
-import {inflateRawSync} from 'node:zlib';
+import {inflateRawSync, gunzipSync} from 'node:zlib';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import Module from '../public/gridfinity-shelves/vendor/manifold.js';
-import {ringDiagram} from '../public/kraken-rings/diagram.js';
-import {buildRings, buildNut, readKRM, ringParameters, nutParameters, ringStem, binarySTL, ringHeader, RING} from '../public/kraken-rings/kernel.js';
+import {ringDiagram, gearDiagram} from '../public/kraken-rings/diagram.js';
+import {buildRings, buildNut, buildGear, readKRM, ringParameters, nutParameters, gearParameters, gearPresets, ringStem, binarySTL, ringHeader, nutHeader, gearHeader, RING} from '../public/kraken-rings/kernel.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assets = path.join(root, 'public/kraken-rings/assets');
@@ -65,14 +66,18 @@ assert.equal(ringStem(ringParameters({hole: 55, bite: 0.8}), 'cap-side'), 'krake
 assert.throws(() => nutParameters({flange: 1.4})); assert.throws(() => nutParameters({flange: 7.6})); assert.equal(nutParameters({flange: 7.5}).added, 6);
 assert.equal(nutParameters({}).flange, 3.5);
 const header = new TextDecoder().decode(new Uint8Array(binarySTL({vertices: [0, 0, 0, 1, 0, 0, 0, 1, 0], triangles: [0, 1, 2]}, ringHeader(ringParameters({hole: 95}), 'gear-side-1.5mm-flange')), 0, 80));
-assert.match(header, /remix of Kraken by humebeam, CC BY-NC 4\.0/); assert.ok(!header.startsWith('solid'));
+assert.match(header, /Repro remix of Kraken by humebeam, CC BY-NC 4\.0/); assert.ok(!header.startsWith('solid'));
+for (const h of [ringHeader(ringParameters({hole: 95, bite: 1.25}), 'gear-side-1.5mm-flange'), nutHeader(nutParameters({flange: 7.5})), gearHeader(gearParameters({count: 12, root: 10, tip: 10})), gearHeader(gearParameters({plain: true}))])
+  assert.ok(new TextEncoder().encode(h).length <= 80 && h.endsWith('Repro remix of Kraken by humebeam, CC BY-NC 4.0'), 'STL header too long: ' + h);
 console.log('Limits, stock-interface selection, file names and STL credit header: PASS');
 for (const input of [{hole: 45}, {hole: 53.4}, {hole: 95}, {hole: 60, bite: 0, clearance: 0}, {hole: 70, bite: 1.5, clearance: 0.5}]) for (const narrow of [false, true]) {
   const p = ringParameters(input), svg = ringDiagram(p, {narrow});
   assert.ok(!/NaN|undefined|Infinity/.test(svg), `diagram ${input.hole} narrow=${narrow}`);
   for (const value of [p.hole, p.flangeOD, 2 * p.corner, 2 * p.support]) assert.ok(svg.includes(`Ø${Number(value.toFixed(2))}`), `diagram label ${value}`);
 }
-console.log('Fit diagram, wide and narrow, five parameter sets: PASS');
+for (const input of [gearPresets.spokes, gearPresets.r54t12, gearPresets.n6r42t12, {...gearPresets.spokes, plain: true}, {...gearPresets.spokes, count: 12}]) for (const narrow of [false, true])
+  assert.ok(!/NaN|undefined|Infinity/.test(gearDiagram(input, {narrow})), 'gear diagram');
+console.log('Fit diagrams (rings and gear), wide and narrow: PASS');
 
 const sizes = (opt('--sizes') ?? '55,53.4,45').split(',').map(Number), refs = opt('--rings'), rows = [];
 for (const hole of sizes) {
@@ -112,4 +117,45 @@ if (nutRef) {
   console.log(`nut ${flange} mm vs ${path.basename(nutRef)}: JS ${ours.volume().toFixed(4)} mm3, Python ${ref.volume().toFixed(4)} mm3, symmetric difference ${d.toExponential(3)} mm3, ${Math.round(performance.now() - t1)} ms total`);
   assert.ok(d < 0.05, 'nut symmetric difference above 0.05 mm3');
 }
-console.log('Kraken ring and nut kernel checks: PASS');
+
+// Gear: guards, exact retention of facets outside the cut zone, and the Python presets.
+assert.throws(() => gearParameters({count: 12, root: 26}), /close off at the hub/);
+assert.throws(() => gearParameters({tip: 1}), /enter 1.35/);
+assert.throws(() => gearParameters({pad: 80, outer: 88}), /must stay inside the window/);
+assert.throws(() => gearParameters({outer: 91}), /enter 40 to 90/);
+assert.throws(() => gearParameters({fillet: 8, count: 12, root: 10, tip: 10}), /fillet|close off/);
+assert.equal(gearParameters({plain: true}).windows, 0);
+const gb = gunzipSync(await readFile(path.join(assets, 'gear-plain.bin.gz'))), plain = readKRM(gb.buffer.slice(gb.byteOffset, gb.byteOffset + gb.byteLength));
+const facetKeys = ({vertices: v, triangles: t}, keepTri) => {
+  const keys = new Set();
+  for (let i = 0; i < t.length; i += 3) {
+    const pts = [0, 1, 2].map(j => [v[3 * t[i + j]], v[3 * t[i + j] + 1], v[3 * t[i + j] + 2]]);
+    if (keepTri(pts)) keys.add(pts.map(q => q.join(',')).sort().join('|'));
+  }
+  return keys;
+};
+const untouched = pts => pts.some(q => q[2] > 4 + 1e-6) || Math.min(...pts.map(q => Math.hypot(q[0], q[1]))) > 90.01;
+const before = facetKeys(plain, untouched), gearRows = [], gearRefs = opt('--gears');
+for (const [name, preset] of [['spokes', gearPresets.spokes], ['taper-r54t12', gearPresets.r54t12], ['n6r42t12', gearPresets.n6r42t12], ['plain', {plain: true}]]) {
+  const t0 = performance.now(), g = buildGear(m, plain, preset), ms = Math.round(performance.now() - t0);
+  const after = facetKeys(g.part, untouched); let missing = 0; for (const k of before) if (!after.has(k)) missing++;
+  assert.equal(missing, 0, name + ': retained facets changed');
+  // Analytic window areas from gear_web_taper.geometry_report (OCCT face.area of the filleted window).
+  const area = {spokes: 1135.6231758100107, 'taper-r54t12': 1085.6884108826948, n6r42t12: 2017.3165616093586, plain: 0}[name];
+  const analytic = g.plainVolume - (preset.count ?? 0) * area * 4;
+  assert.ok(Math.abs(g.part.volume - analytic) < 0.3, name + ': volume differs from the analytic design by 0.3 mm3 or more');
+  const row = {preset: name, js_volume_mm3: +g.part.volume.toFixed(3), js_minus_analytic_mm3: +(g.part.volume - analytic).toFixed(4), solid_g: +g.grams.toFixed(2), retained_facets: `${before.size}/${before.size}`, build_ms: ms};
+  const ref = gearRefs && path.join(gearRefs, `gear-${name}.stl`);
+  if (ref && existsSync(ref)) {
+    const theirs = await readSTL(ref), ours = solid(g.part.vertices, g.part.triangles);
+    row.py_minus_analytic_mm3 = +(theirs.volume() - analytic).toFixed(4); row.volume_diff_mm3 = +(ours.volume() - theirs.volume()).toFixed(4); row.symdiff_mm3 = +symmetric(ours, theirs).toFixed(4);
+    theirs.delete(); ours.delete();
+    // The Python meshes tessellate window arcs with OCCT at 0.005 mm deflection; the
+    // remaining difference is that chord sag, so require < 2 mm3 here and judge accuracy
+    // against the analytic volume below.
+    assert.ok(row.symdiff_mm3 < 2, name + ': symmetric difference above 2 mm3');
+  }
+  gearRows.push(row);
+}
+console.table(gearRows);
+console.log('Kraken ring, nut and gear kernel checks: PASS');

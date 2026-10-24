@@ -1,15 +1,49 @@
 {
   "renderer": "~/.claude/skills/render (prepare.py + capture.mjs)",
   "scene": {
-    "title": "Kraken spool rings and nut",
-    "subtitle": "53.4 mm gear-side and cap-side centering rings · spool nut with a 3.5 mm flange",
-    "caption": "Rendered from the generator's STL files. Remix of Kraken by humebeam, CC BY-NC 4.0.",
+    "title": "Kraken spool rings, nut and gear · Repro remix",
+    "subtitle": "r54t12 spoked gear · 53.4 mm gear-side and cap-side rings · nut with a 3.5 mm flange",
+    "caption": "Rendered from the generator's STL files. Repro's remix of Kraken by humebeam, CC BY-NC 4.0.",
     "camera": {
       "yaw": -1.5708,
       "pitch": 0.95,
-      "zoom": 0.66
+      "zoom": 0.62
     },
     "parts": [
+      {
+        "mesh": "kraken-spool-gear-8-spokes-pad54-root35.25-tip12-outer88-fillet3.stl",
+        "color": [
+          0.36,
+          0.64,
+          0.69
+        ],
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            -120
+          ],
+          [
+            0,
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
       {
         "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange.stl",
         "color": [
@@ -22,13 +56,13 @@
             1,
             0,
             0,
-            -92
+            30
           ],
           [
             0,
             0,
             -1,
-            0
+            -45
           ],
           [
             0,
@@ -56,13 +90,13 @@
             1,
             0,
             0,
-            -16
+            30
           ],
           [
             0,
             0,
             -1,
-            0
+            45
           ],
           [
             0,
@@ -90,7 +124,7 @@
             1,
             0,
             0,
-            78
+            128
           ],
           [
             0,
@@ -116,20 +150,52 @@
   },
   "inputs": [
     {
-      "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange.stl",
-      "sha256": "256b55d03b5a33a980711a71cb8ce295cf871a98edab6bb952faa9cff384daec",
+      "mesh": "kraken-spool-gear-8-spokes-pad54-root35.25-tip12-outer88-fillet3.stl",
+      "sha256": "4c1a7679e8a03aacfd693aca58ee7f616128000a0c60f5a590e0e1dbeed992e2",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          -92.0
+          -120.0
         ],
         [
           0.0,
           0.0,
           -1.0,
           0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 39775,
+      "triangles": 79582
+    },
+    {
+      "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange.stl",
+      "sha256": "70482d7af6a0adf29ea6c80406eefd530b1c312bee2177fa1cb9b9ff232ac6ba",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          30.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -45.0
         ],
         [
           0.0,
@@ -149,19 +215,19 @@
     },
     {
       "mesh": "kraken-spool-ring-53.4-mm-pentagon-cap-side.stl",
-      "sha256": "af229ba4c3f27ec43ff145a7bc809155edeeedd36f4914a770708e2a9fc9ef19",
+      "sha256": "35e34de3fccdcedaea508ca6a1f28fcd60d44f2d5ccda540490c4f46d743acfb",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          -16.0
+          30.0
         ],
         [
           0.0,
           0.0,
           -1.0,
-          0.0
+          45.0
         ],
         [
           0.0,
@@ -181,13 +247,13 @@
     },
     {
       "mesh": "kraken-spool-nut-3.5mm-flange.stl",
-      "sha256": "6e9b215a5415dccae76c92c443d83047c6a26209e0fd9443786a1c6c66da6c47",
+      "sha256": "ed0170738d7a223af94efa716a129b776b08954f9fad3e22dda8e7f55075a27d",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          78.0
+          128.0
         ],
         [
           0.0,

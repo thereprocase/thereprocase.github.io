@@ -1,7 +1,7 @@
 // Live fit diagram for the ring generator. Pure string output so node checks can render it.
 // Wide layout: top view with leaders, detail and legend to the right, sections below.
 // Narrow layout (phones): the same parts stacked, with numbered markers and a legend.
-import {RING, mm} from './kernel.js?v=rings-1';
+import {RING, mm} from './kernel.js?v=rings-2';
 import {coreOutline} from './core-outline.js';
 
 const C = {ink: '#101010', rule: '#666', blue: '#0000a8', gear: '#e8a45f', gearLine: '#9a5a17', ring: '#5da3ad', ringLine: '#243c40',
@@ -134,4 +134,43 @@ export function ringDiagram(p, {narrow = false} = {}) {
   section(out, p, 28, 680, 440, true, kk); section(out, p, 530, 680, 440, false, kk);
   out.push(text(24, H - 14, 'Hatched: humebeam\'s holder core. Teal: support circle and pentagon. Dashed red: pentagon points. Dashed brown: spool hole. Millimetres.', 'class="dg-sub"'));
   return wrap(W, H, p, out, false);
+}
+
+/** Live gear top view: windows from the kernel outline (corners shown sharp; the model rounds them). */
+export function gearDiagram(input, {narrow = false, error = ''} = {}) {
+  const p = {...input}, out = [], W = narrow ? 480 : 1000, cx = narrow ? 240 : 290, cy = narrow ? 290 : 334, s = (narrow ? 222 : 268) / 100.5;
+  const X = x => cx + x * s, Y = y => cy - y * s, bad = !!error, G = {teeth: 99.32, band: 95, limit: 90, hub: 18.13, web: 18};
+  out.push(text(16, 26, 'GEAR TOP VIEW · TO SCALE', 'class="dg-head"'), text(16, 46, p.plain ? 'Plain web' : `${p.count} spokes`, 'class="dg-sub"'));
+  out.push(circle(cx, cy, G.teeth * s, `fill="${C.core}" stroke="${C.coreLine}" stroke-width="1"`), circle(cx, cy, G.band * s, `fill="${C.ring}" stroke="${C.ringLine}" stroke-width="1"`));
+  out.push(circle(cx, cy, G.limit * s, `fill="none" stroke="${C.bite}" stroke-width="1" stroke-dasharray="2 4"`));
+  const pitch = 2 * Math.PI / p.count, ai = Math.asin(p.root / 2 / p.pad), ao = Math.asin(p.tip / 2 / p.outer);
+  const drawable = !p.plain && [ai, ao, pitch].every(Number.isFinite) && p.outer > p.pad && 2 * ai < pitch && 2 * ao < pitch;
+  if (drawable) {
+    const ri = p.pad, ro = p.outer, arc = (r, a0, a1) => Array.from({length: 41}, (_, i) => { const a = a0 + (a1 - a0) * i / 40; return [r * Math.cos(a), r * Math.sin(a)]; });
+    const poly = [...arc(ro, ao, pitch - ao), ...arc(ri, pitch - ai, ai)];
+    for (let i = 0; i < p.count; i++) { const c = Math.cos(i * pitch), sn = Math.sin(i * pitch);
+      out.push(path(poly.map(([x, y]) => [X(x * c - y * sn), Y(x * sn + y * c)]), `fill="${bad ? '#fde3dc' : C.paper}" stroke="${bad ? C.bite : C.ink}" stroke-width="1.2" stroke-linejoin="round"`)); }
+    out.push(circle(cx, cy, ri * s, `fill="none" stroke="${C.blue}" stroke-width="1" stroke-dasharray="6 4"`), circle(cx, cy, ro * s, `fill="none" stroke="${C.blue}" stroke-width="1" stroke-dasharray="6 4"`));
+    // Root and tip width across spoke 1 (+X), measured perpendicular to its centre line.
+    const xr = Math.sqrt(ri * ri - p.root * p.root / 4), xt = Math.sqrt(ro * ro - p.tip * p.tip / 4);
+    out.push(line(X(xr), Y(p.root / 2), X(xr), Y(-p.root / 2), `stroke="${C.bite}" stroke-width="2.5"`), line(X(xt), Y(p.tip / 2), X(xt), Y(-p.tip / 2), `stroke="${C.bite}" stroke-width="2.5"`));
+    out.push(text(X(xr) + 4, Y(-p.root / 2) + 16, `root ${mm(p.root)}`, 'class="dg-note dg-halo"'), text(X(xt) - 4, Y(-p.tip / 2) + 16, `tip ${mm(p.tip)}`, 'class="dg-note dg-halo" text-anchor="end"'));
+  }
+  out.push(circle(cx, cy, G.hub * s, `fill="${C.core}" stroke="${C.coreLine}" stroke-width="1"`), circle(cx, cy, 12 * s, `fill="${C.paper}" stroke="${C.coreLine}" stroke-width="1"`));
+  const hubGap = 2 * p.pad * Math.sin(pitch / 2 - ai), rimGap = 2 * p.outer * Math.sin(pitch / 2 - ao), narrowest = Math.min(p.root, p.tip), rim = G.band - p.outer;
+  const fmt = x => Number.isFinite(x) && x > 0 ? `${x.toFixed(2)} mm` : 'closed';
+  const rows = p.plain ? [['Web', 'solid, as humebeam\'s outline', '', true]] : [
+    ['Hub pad radius', `R${mm(p.pad)}`, 'windows start here', true], ['Window outer radius', `R${mm(p.outer)}`, 'changes stay inside R90', p.outer <= 90],
+    ['Root / tip width', `${mm(p.root)} / ${mm(p.tip)}`, 'linear taper', true], ['Corner fillet', `${mm(p.fillet)} mm`, 'drawn sharp here', true],
+    ['Narrowest spoke', `${mm(narrowest)} mm`, 'minimum 1.35', narrowest >= 1.35], ['Hub-side opening', fmt(hubGap), 'minimum 4', hubGap >= 4],
+    ['Rim-side opening', fmt(rimGap), 'minimum 4', rimGap >= 4], ['Rim inside teeth', `${mm(Math.round(rim * 100) / 100)} mm`, 'minimum 3', rim >= 3]];
+  const lx = narrow ? 16 : 590, ly = narrow ? 540 : 110, step = narrow ? 44 : 50;
+  rows.forEach(([n, v, note, ok], i) => {
+    const y = ly + i * step;
+    out.push(text(lx, y, n, `class="dg-name"${ok ? '' : ` fill="${C.bite}"`}`), text(lx + (narrow ? 250 : 200), y, v, `class="dg-value"${ok ? '' : ` fill="${C.bite}"`}`), text(lx, y + 18, note, 'class="dg-note"'));
+  });
+  const H = narrow ? ly + rows.length * step + 30 : 2 * cy + 30;
+  out.push(text(16, H - 12, narrow ? 'Grey: humebeam teeth and hub. Red dots: R90 limit.' : 'Grey: humebeam\'s teeth (R95 and out) and hub. Teal: web. Dotted red: R90 change limit.', 'class="dg-sub"'));
+  const desc = p.plain ? 'Plain gear web.' : `${p.count} spokes, hub pad R${mm(p.pad)}, root ${mm(p.root)} mm, tip ${mm(p.tip)} mm, window outer R${mm(p.outer)}, fillet ${mm(p.fillet)} mm.`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc('Kraken spool gear spoke layout. ' + desc)}" class="ring-diagram${narrow ? ' narrow' : ''}"><rect x="0" y="0" width="${W}" height="${H}" fill="${C.paper}"/>${out.join('')}</svg>`;
 }

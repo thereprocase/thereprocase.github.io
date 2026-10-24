@@ -1,15 +1,19 @@
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import {buildRings, buildNut, readKRM, ringParameters, binarySTL, ringHeader, nutHeader} from './kernel.js?v=rings-1';
+import {buildRings, buildNut, buildGear, readKRM, ringParameters, binarySTL, ringHeader, nutHeader, gearHeader} from './kernel.js?v=rings-2';
 import {zip} from '../gridfinity-drawers/zip.js';
 
 const ready = Module().then(m => { m.setup(); return m; });
 async function asset(name) {
   const response = await fetch(new URL(`assets/${name}`, import.meta.url));
   if (!response.ok) throw Error(`Could not download ${name} (HTTP ${response.status}). Check the connection and retry.`);
-  return readKRM(await response.arrayBuffer());
+  let bytes = await response.arrayBuffer();
+  // .gz assets: decompress here unless the server already did (gzip magic 1f 8b).
+  const head = new Uint8Array(bytes, 0, 2);
+  if (head[0] === 0x1f && head[1] === 0x8b) bytes = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+  return readKRM(bytes);
 }
 const credits = p => `Kraken spool centering rings, ${p.hole} mm spool hole
-Remix of Kraken by humebeam: https://www.printables.com/model/1788417-kraken-revolutionary-bambu-lab-ams
+Remixed by Repro (https://github.com/thereprocase) from Kraken by humebeam: https://www.printables.com/model/1788417-kraken-revolutionary-bambu-lab-ams
 The holder core (bore and snap ribs) comes unchanged from humebeam's kraken-spool-ring-${p.stock}-mm-100.3mf.
 License: CC BY-NC 4.0 https://creativecommons.org/licenses/by-nc/4.0/ (credit humebeam; non-commercial use).
 Generated at https://thereprocase.github.io/kraken-rings/
@@ -36,6 +40,12 @@ self.onmessage = async ({data}) => {
       self.postMessage({progress: {label: 'Extending the flange and thread'}});
       const result = buildNut(m, nut, data.parameters);
       result.part.stl = binarySTL(result.part, nutHeader(result.parameters));
+      self.postMessage({result}, [result.part.vertices.buffer, result.part.triangles.buffer]);
+    } else if (data.kind === 'gear') {
+      const [m, plain] = await Promise.all([ready, asset('gear-plain.bin.gz')]);
+      self.postMessage({progress: {label: 'Cutting the spoke windows'}});
+      const result = buildGear(m, plain, data.parameters);
+      result.part.stl = binarySTL(result.part, gearHeader(result.parameters));
       self.postMessage({result}, [result.part.vertices.buffer, result.part.triangles.buffer]);
     } else throw Error('Unknown job.');
   } catch (e) { self.postMessage({error: e.message}); }

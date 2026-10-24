@@ -85,3 +85,9 @@ footer{padding:20px 0}footer p{max-width:none}
 
 @media(max-width:900px){.workbench{grid-template-columns:1fr}}
 @media(max-width:680px){.num{white-space:normal}.frame{margin:0}.columns{grid-template-columns:1fr}nav{position:static}nav a{padding:10px;font-size:14px}.lead{font-size:18px}.gl-titlebar{flex-wrap:wrap;gap:8px}.stock-wrap{max-height:420px}th,td{padding:8px}}
+.byline{font-size:18px;font-weight:600;margin:-4px 0 18px}
+.presets{border:1px solid #999;margin:0 0 12px;padding:8px 10px}.presets legend{font-weight:600;padding:0 4px}
+.preset-buttons{display:flex;flex-wrap:wrap;gap:6px}.preset-buttons button{flex:1 1 130px;min-height:40px;font-size:14px}
+.preset-buttons button[aria-pressed=true]{background:#0000a8;color:#fff;border-color:#000078}
+.gear-fields{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:6px 10px;align-items:center}
+.gear-fields label{margin:0;font-weight:600;font-size:14px}.gear-fields input{font-size:1rem;padding:7px 8px}

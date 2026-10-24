@@ -477,5 +477,22 @@
   ],
   "source": "nut.stl (humebeam, Kraken)",
   "source_sha256": "05ae08765d7d8e6ee5e03ea6fefc6ab912d8aafd9a8bf1ef8ecee6ae4f922cd0"
+ },
+ "gear": {
+  "file": "gear-plain.bin.gz",
+  "sha256": "cee53e1d5a84d3ef882af6e9f05fad68c31618561395f0edce498d6bcbf227e5",
+  "bytes": 474197,
+  "volume_mm3": 139585.66102701242,
+  "bounds_mm": [
+   -99.31660461425781,
+   -99.31484985351562,
+   0.0,
+   99.31660461425781,
+   99.31484985351562,
+   71.89999389648438
+  ],
+  "source": "gear-plain.stl from gear/source/gear_web.py 'plain' (humebeam's Kraken gear, web made solid)",
+  "source_sha256": "0755982a63c40202b2cce0ed23dc044ef42bc7913f5e96c0b62344ff5786fb76",
+  "original_gear_sha256": "e56cd06d14cc3cfb552dd9d6584f5049298e3480ca1ba61dfe9e44b1dbd09a9d"
  }
 }

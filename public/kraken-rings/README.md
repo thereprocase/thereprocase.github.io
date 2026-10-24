@@ -1,19 +1,20 @@
-# Kraken spool ring generator and nut remixer
+# Kraken spool rings, nut and gear generator
 
-`/kraken-rings/` generates Kraken spool centering rings (cardboard spool adapters for the Bambu Lab AMS) for any spool hole from 45.0 to 95.0 mm in 0.1 mm steps, and thickens the Kraken spool nut flange. It also lists the published ready-made pairs from [thereprocase/kraken-remix-ogAMS](https://github.com/thereprocase/kraken-remix-ogAMS/tree/main/rings).
+`/kraken-rings/` is Repro's (thereprocase) generator for Kraken spool centering rings (cardboard spool adapters for the Bambu Lab AMS) for any spool hole from 45.0 to 95.0 mm in 0.1 mm steps. It also thickens the Kraken spool nut flange and cuts custom spoke windows into the Kraken spool gear. The page lists the published ready-made pairs from [thereprocase/kraken-remix-ogAMS](https://github.com/thereprocase/kraken-remix-ogAMS/tree/main/rings).
 
-Kraken is designed by [humebeam](https://www.printables.com/model/1788417-kraken-revolutionary-bambu-lab-ams). The rings and the nut are remixes of humebeam's original files under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Keep that credit in the page header, beside every download block, in the footer, in the STL headers and in the ZIP's `CREDITS-AND-LICENSE.txt`.
+Kraken is designed by [humebeam](https://www.printables.com/model/1788417-kraken-revolutionary-bambu-lab-ams). The rings, nut and gear are Repro's remixes of humebeam's original files under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Keep that credit in the page header, beside every download block, in the footer, in the STL headers and in the ZIP's `CREDITS-AND-LICENSE.txt`.
 
 ## Files
 
 | File | Role |
 | --- | --- |
-| `kernel.js` | Ring and nut construction with Manifold; parameter limits, file names, STL writer |
+| `kernel.js` | Ring, nut and gear construction with Manifold; parameter limits and guards, file names, STL writer |
 | `worker.js` | Module worker: loads Manifold and one geometry asset, builds, writes STL and the pair ZIP |
 | `app.js` | Form handling, live diagram, downloads, settings link, toon-shaded bed previews |
-| `diagram.js`, `core-outline.js` | Fit diagram (wide and phone layouts); holder-bore outline sliced from the 55 mm core |
+| `diagram.js`, `core-outline.js` | Ring fit diagram and gear spoke layout (wide and phone layouts); holder-bore outline sliced from the 55 mm core |
 | `assets/core-NN.bin` | For each stock size 45–95: humebeam's ring inside the 22.5 mm core cylinder plus its 0.4 mm lip slab |
 | `assets/nut.bin` | humebeam's `nut.stl`, exact duplicate vertices merged |
+| `assets/gear-plain.bin.gz` | humebeam's gear with a solid web (`gear_web.py plain`), gzip; fetched only when the gear section opens |
 | `assets/provenance.json` | Source names and SHA-256, asset hashes, volumes |
 | `kraken-rings*.png`, `kraken-rings-render.json` | Render-skill illustration of generated STLs; hero and Open Graph crops |
 
@@ -27,18 +28,23 @@ The 51 source rings share one core design but are tessellated differently (1.3�
 
 The nut follows `gear-taper-2026-10-24/nut/build_nut.py` with the added thickness as input (0–6 mm, so 1.5–7.5 mm total). The added slab's bore is the nut's own thread one 6 mm pitch lower; the lead-in cone and the bed-edge chamfer are re-applied at the new face, which is placed on Z0.
 
+## Gear
+
+The gear tool subtracts N window prisms (Z −1 to 5) from the plain gear asset. The window outline matches `gear_web_taper.window_face`: spoke edges run linearly from root width/2 at the pad radius to tip width/2 at the window outer radius, measured from the spoke centre line, with arcs at both radii sampled to 0.1 µm. Corners are rounded by `offset(−r).offset(+r)`, which equals the 2D fillet on these convex corners. Guards: spokes ≥ 1.35 mm, hub- and rim-side openings ≥ 4 mm, windows inside R90 (rim ≥ 5 mm inside the R95 tooth band), and pad radius + 2 × fillet + 4 ≤ window radius. The hub above the disc ends at R18.13, so the pad radius floor of 25 mm keeps the prisms clear of it.
+
 ## Checks
 
 ```sh
 node scripts/check-kraken-rings.mjs                       # limits, names, headers, diagram, kernel builds
 node scripts/check-kraken-rings.mjs --rings <generate_family output>/models --sizes 55,53.4,45 \
-  --nut <nut-stiff-3mm.stl> --nut-flange 3                # compare with the Python meshes
+  --nut <nut-stiff-3mm.stl> --nut-flange 3 \
+  --gears <dir with gear-spokes.stl, gear-taper-r54t12.stl, gear-n6r42t12.stl>   # compare with the Python meshes
 ```
 
-Results on 2026-10-24: largest ring symmetric difference 7.4 × 10⁻⁵ mm³ (45, 46, 50, 53.4, 55, 55.5, 60, 70, 80, 95 mm, both sides, against `generate_family.py` output and the published STL/3MF); nut 3.0 mm 1.5 × 10⁻⁴ mm³ against `nut-stiff-3mm.stl`. A 53.4 mm pair and a 3.5 mm nut sliced in OrcaSlicer (P1S, PETG, no supports or brim) without errors. Physical fit of generated fractional sizes has not been measured.
+Results on 2026-10-24: largest ring symmetric difference 7.4 × 10⁻⁵ mm³ (45, 46, 50, 53.4, 55, 55.5, 60, 70, 80, 95 mm, both sides, against `generate_family.py` output and the published STL/3MF); nut 3.0 mm 1.5 × 10⁻⁴ mm³ against `nut-stiff-3mm.stl`. Gear presets: all 53,083 source facets outside R90 or above the disc are bit-identical; volumes are within 0.16 mm³ of the analytic CAD (window areas from `geometry_report`); against the Python STLs the symmetric difference is 0.82 (published spokes), 1.09 (r54t12) and 1.18 mm³ (n6r42t12), the Python meshes' OCCT arc chord sag. A 53.4 mm pair, a 3.5 mm nut and the r54t12 gear sliced in OrcaSlicer (P1S, PETG, no supports or brim) without errors. Physical fit of generated fractional sizes has not been measured.
 
 Rebuild the assets from a kraken-remix-ogAMS checkout with the CAD venv:
 
 ```sh
-python scripts/build-kraken-ring-assets.py <kraken-remix-ogAMS> <humebeam nut.stl>
+python scripts/build-kraken-ring-assets.py <kraken-remix-ogAMS> <humebeam nut.stl> <gear_web.py plain output gear-plain.stl>
 ```

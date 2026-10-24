@@ -2,12 +2,13 @@ import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
 import {demandRenderer, taskWorker} from '../gridfinity-common/generator-runtime.js?v=runtime-3';
 import {readSettingsLink, settingsURL, copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
-import {ringParameters, nutParameters, ringDefaults, nutDefaults, ringStem, mm} from './kernel.js?v=rings-1';
-import {ringDiagram} from './diagram.js?v=rings-1';
+import {ringParameters, nutParameters, gearParameters, ringDefaults, nutDefaults, gearDefaults, gearPresets, ringStem, mm} from './kernel.js?v=rings-2';
+import {ringDiagram, gearDiagram} from './diagram.js?v=rings-2';
 
 const $ = id => document.getElementById(id);
-const WORKER = './worker.js?v=rings-1', PETG = 1.26;
-const linkDefaults = {...ringDefaults, flange: nutDefaults.flange};
+const WORKER = './worker.js?v=rings-2', PETG = 1.26;
+const gearKeys = ['plain', 'count', 'pad', 'root', 'tip', 'outer', 'fillet'];
+const linkDefaults = {...ringDefaults, flange: nutDefaults.flange, ...Object.fromEntries(gearKeys.map(k => ['gear_' + k, gearDefaults[k]]))};
 const state = {ring: null, nut: null, ringJob: null, nutJob: null, nutStarted: false};
 
 function download(bytes, type, name) {
@@ -23,7 +24,7 @@ const dia = x => `Ø${mm(Math.round(x * 100) / 100)} mm`;
 // ---- Preview: toon shading on a 10 mm bed grid, as the gridfinity generators.
 const bands = new THREE.DataTexture(new Uint8Array([90, 155, 220, 255]), 4, 1, THREE.RedFormat);
 bands.needsUpdate = true; bands.magFilter = bands.minFilter = THREE.NearestFilter;
-function viewer(host, note, elevation = .95) {
+function viewer(host, note, elevation = .95, distance = 1) {
   let renderer;
   try { renderer = new THREE.WebGLRenderer({antialias: true}); } catch { note.textContent = '3D preview unavailable in this browser. The diagram and downloads still work.'; return null; }
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); host.append(renderer.domElement);
@@ -56,7 +57,7 @@ function viewer(host, note, elevation = .95) {
       const grid = new THREE.BufferGeometry(); grid.setAttribute('position', new THREE.Float32BufferAttribute(lines, 3));
       group.add(new THREE.LineSegments(grid, new THREE.LineBasicMaterial({color: 0x9aa5a3})));
       scene.add(group);
-      if (pose) { const r = Math.max(size.x, size.y) * .95 * Math.max(1, 1.5 / camera.aspect); /* narrow viewers need more distance */ controls.target.copy(c); camera.position.set(c.x + r * .2, c.y - r * 1.1, c.z + r * elevation); camera.far = r * 20; camera.updateProjectionMatrix(); controls.update(); }
+      if (pose) { const r = Math.max(size.x, size.y) * .95 * distance * Math.max(1, 1.5 / camera.aspect); /* narrow viewers need more distance */ controls.target.copy(c); camera.position.set(c.x + r * .2, c.y - r * 1.1, c.z + r * elevation); camera.far = r * 20; camera.updateProjectionMatrix(); controls.update(); }
       note.hidden = true; loop.request();
     },
     note(text) { note.textContent = text; note.hidden = !text; },
@@ -65,6 +66,7 @@ function viewer(host, note, elevation = .95) {
 const ringView = viewer($('ring-viewer'), $('ring-note'));
 // A lower camera shows the added slab's edge under the original flange.
 const nutView = viewer($('nut-viewer'), $('nut-note'), .45);
+const gearView = viewer($('gear-viewer'), $('gear-note'), .8, 1.25);
 const viewNote = (view, el, text) => { if (view) view.note(text); else if (!el.textContent.includes('unavailable')) el.textContent = text; };
 
 // Colour the nut's added slab (below the original outer face) orange.
@@ -204,7 +206,8 @@ new IntersectionObserver(entries => { nutVisible = entries.some(e => e.isInterse
 // ---- Settings link (URL fragment only)
 $('share').onclick = async () => {
   try {
-    const input = {...ringInput(), ...nutInput()}; ringParameters({hole: input.hole, bite: input.bite, clearance: input.clearance}); nutParameters({flange: input.flange});
+    const g = gearInput(); gearParameters(g);
+    const input = {...ringInput(), ...nutInput(), ...Object.fromEntries(gearKeys.map(k => ['gear_' + k, g[k]]))}; ringParameters({hole: input.hole, bite: input.bite, clearance: input.clearance}); nutParameters({flange: input.flange});
     const url = settingsURL(location.href, 'kraken-rings', input); $('share-url').value = url;
     const copied = await copySettingsLink(url); $('share-url').hidden = copied;
     $('share-status').textContent = copied ? 'Settings link copied.' : 'Copy the settings link below.';
@@ -214,13 +217,74 @@ $('share').onclick = async () => {
 function restore() {
   try {
     const linked = readSettingsLink(location.href, 'kraken-rings', linkDefaults); if (!linked) return false;
-    const {flange, ...ring} = linked.parameters; ringParameters(ring); nutParameters({flange});
+    const {flange, ...rest} = linked.parameters, ring = {hole: rest.hole, bite: rest.bite, clearance: rest.clearance}, gear = Object.fromEntries(gearKeys.map(k => [k, rest['gear_' + k]]));
+    ringParameters(ring); nutParameters({flange}); gearParameters(gear); setGearInputs(gear);
     $('hole').value = ring.hole.toFixed(1); $('bite').value = ring.bite; $('clearance').value = ring.clearance; $('flange').value = flange.toFixed(1);
     if (ring.bite !== ringDefaults.bite || ring.clearance !== ringDefaults.clearance) $('advanced').open = true;
     $('share-status').textContent = 'Settings restored from link.'; return true;
   } catch (e) { $('share-status').textContent = 'Could not load settings link: ' + e.message + ' Showing defaults.'; return false; }
 }
-addEventListener('hashchange', () => { if (restore()) { ringChanged({immediate: true}); if (state.nutStarted) nutChanged({immediate: true}); } });
+addEventListener('hashchange', () => { if (restore()) { ringChanged({immediate: true}); if (state.nutStarted) nutChanged({immediate: true}); gearChanged({immediate: true, build: state.gearOpen}); } });
+// ---- Gear spoker: the 474 kB gear asset loads only once this section is near the viewport.
+const gearForm = $('gear-form'), gearFields = ['count', 'pad', 'root', 'tip', 'outer', 'fillet'];
+let gearPlain = false, gearTimer, gearDiagramNarrow;
+function gearInput() { return {plain: gearPlain, ...Object.fromEntries(gearFields.map(k => [k, Number($('g-' + k).value)]))}; }
+function setGearInputs(g) { gearPlain = g.plain; for (const k of gearFields) $('g-' + k).value = g[k]; }
+function markPreset() {
+  const g = gearInput(), match = g.plain ? 'plain' : Object.entries(gearPresets).find(([, v]) => gearFields.every(k => v[k] === g[k]))?.[0];
+  for (const b of gearForm.querySelectorAll('[data-preset]')) b.setAttribute('aria-pressed', String(b.dataset.preset === match));
+  for (const k of gearFields) $('g-' + k).disabled = g.plain;
+}
+function drawGear(error = '') {
+  gearDiagramNarrow = $('gear-diagram').clientWidth < 640;
+  $('gear-diagram').innerHTML = gearDiagram(gearInput(), {narrow: gearDiagramNarrow, error});
+}
+new ResizeObserver(() => { if (($('gear-diagram').clientWidth < 640) !== gearDiagramNarrow) drawGear($('gear-error').hidden ? '' : 'x'); }).observe($('gear-diagram'));
+function gearFacts(p, r) {
+  const rows = r ? [['Gear · solid PETG', `${r.grams.toFixed(1)} g`], ['Saved vs plain web · solid', `${r.gramsSaved.toFixed(1)} g`]] : [];
+  if (!p.plain) rows.push(['Hub-side opening', `${p.hubGap.toFixed(2)} mm`], ['Narrowest spoke', `${mm(p.narrowest)} mm`], ['Rim inside teeth', `${mm(Math.round(p.rim * 100) / 100)} mm`]);
+  facts($('gear-facts'), rows);
+}
+function gearChanged({immediate = false, build = true} = {}) {
+  clearTimeout(gearTimer); state.gearJob?.terminate(); state.gear = null; $('dl-gear-stl').disabled = true; markPreset();
+  let p;
+  try { p = gearParameters(gearInput()); } catch (e) {
+    drawGear(e.message);
+    gearTimer = setTimeout(() => { $('gear-error').hidden = false; $('gear-error').textContent = e.message; $('gear-status').textContent = 'Adjust the highlighted value to generate.'; }, immediate ? 0 : 700);
+    return;
+  }
+  $('gear-error').hidden = true; drawGear(); gearFacts(p);
+  if (!build) return;
+  $('gear-status').textContent = 'Generating gear…';
+  gearTimer = setTimeout(() => generateGear(p), immediate ? 0 : 400);
+}
+function generateGear(p) {
+  state.gearStarted = true; state.gearJob?.terminate();
+  viewNote(gearView, $('gear-note'), state.gearShown ? 'Previous gear shown · cutting the new windows…' : 'Loading the gear and cutting windows in your browser…');
+  const progress = document.getElementById('task-progress'); if (progress) $('gear-status').after(progress);
+  const job = state.gearJob = taskWorker(WORKER, $('gear-status'));
+  job.onmessage = ({data}) => {
+    job.terminate(); if (state.gearJob !== job) return;
+    if (data.error) { $('gear-status').textContent = 'Generation failed: ' + data.error; viewNote(gearView, $('gear-note'), 'Generation failed · see the message beside the settings.'); return; }
+    const r = state.gear = data.result; $('dl-gear-stl').disabled = false;
+    $('gear-status').textContent = `${r.parameters.plain ? 'Plain' : r.parameters.count + '-spoke'} gear ready · one closed solid, teeth and hub unchanged`;
+    gearFacts(r.parameters, r);
+    gearView?.show([{...r.part, color: 0x5da3ad, offset: 0}], !state.gearShown); state.gearShown = true;
+  };
+  job.onerror = () => { job.terminate(); $('gear-status').textContent = 'The geometry engine could not start. Reload the page; this needs a browser with WebAssembly and module workers.'; };
+  job.postMessage({kind: 'gear', parameters: p.plain ? {plain: true} : Object.fromEntries(['plain', ...gearFields].map(k => [k, p[k]]))});
+}
+gearForm.addEventListener('input', () => gearChanged({build: state.gearOpen}));
+gearForm.addEventListener('change', e => { if (e.target.type === 'number') gearChanged({immediate: true, build: state.gearOpen}); });
+gearForm.addEventListener('submit', e => { e.preventDefault(); gearChanged({immediate: true}); });
+for (const b of gearForm.querySelectorAll('[data-preset]')) b.onclick = () => {
+  if (b.dataset.preset === 'plain') gearPlain = true; else setGearInputs({plain: false, ...gearPresets[b.dataset.preset]});
+  gearChanged({immediate: true, build: state.gearOpen});
+};
+$('dl-gear-stl').onclick = () => { if (state.gear) download(state.gear.part.stl, 'model/stl', state.gear.part.stem + '.stl'); };
+new IntersectionObserver(entries => { if (entries.some(e => e.isIntersecting) && !state.gearOpen) { state.gearOpen = true; gearChanged({immediate: true}); } }, {rootMargin: '200px'}).observe($('gear'));
+
 restore();
 nutFacts(nutParameters(nutInput()));
+gearChanged({build: false});
 ringChanged({immediate: true});

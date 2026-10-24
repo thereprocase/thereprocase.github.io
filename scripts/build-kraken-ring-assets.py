@@ -1,7 +1,11 @@
 """Write the browser inputs for /kraken-rings/ from humebeam's original Kraken files.
 
 Usage (CAD venv with manifold3d 2.5 and NumPy):
-    python scripts/build-kraken-ring-assets.py KRAKEN_REMIX_CHECKOUT NUT_STL
+    python scripts/build-kraken-ring-assets.py KRAKEN_REMIX_CHECKOUT NUT_STL GEAR_PLAIN_STL
+
+GEAR_PLAIN_STL is gear/source/gear_web.py 'plain' output (artifacts/gear-plain.stl): humebeam's
+gear with the web made solid, teeth, hub and bearing seats retained as source facets. It is
+stored gzip-compressed (gear-plain.bin.gz) and loaded only when the gear tool opens.
 
 For each stock ring 45..95 mm the asset holds only what generate_family.build_pair
 reads from the source mesh: the source solid inside the 22.5 mm preserved-core
@@ -13,6 +17,7 @@ core cannot reproduce every published size.
 The nut asset is humebeam's nut.stl with exact duplicate vertices merged, as
 build_nut.read_stl does; coordinates keep their original float32 values.
 """
+import gzip
 import hashlib
 import json
 import re
@@ -61,7 +66,15 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def main(checkout, nut_stl):
+def read_stl(path):
+    raw = Path(path).read_bytes()
+    count = int.from_bytes(raw[80:84], 'little')
+    facets = np.frombuffer(raw, dtype=np.dtype([('n', '<f4', 3), ('v', '<f4', (3, 3)), ('a', '<u2')]), count=count, offset=84)
+    v, t = np.unique(facets['v'].reshape(-1, 3), axis=0, return_inverse=True)
+    return raw, v, t.reshape(-1, 3)
+
+
+def main(checkout, nut_stl, gear_stl):
     reference = Path(checkout) / 'rings' / 'source' / 'reference'
     SITE.mkdir(parents=True, exist_ok=True)
     record = dict(
@@ -89,18 +102,24 @@ def main(checkout, nut_stl):
                                           volume_mm3=region.volume(), source=source.name,
                                           source_sha256=sha(source.read_bytes()))
         print(size, len(data), flush=True)
-    raw = Path(nut_stl).read_bytes()
-    count = int.from_bytes(raw[80:84], 'little')
-    facets = np.frombuffer(raw, dtype=np.dtype([('n', '<f4', 3), ('v', '<f4', (3, 3)), ('a', '<u2')]), count=count, offset=84)
-    v, t = np.unique(facets['v'].reshape(-1, 3), axis=0, return_inverse=True)
-    nut = manifold_of(v.astype(float), t.reshape(-1, 3))
+    raw, v, t = read_stl(nut_stl)
+    nut = manifold_of(v.astype(float), t)
     assert nut.status() == mf.Error.NoError
-    data = pack(v, t.reshape(-1, 3))
+    data = pack(v, t)
     (SITE / 'nut.bin').write_bytes(data)
     record['nut'] = dict(file='nut.bin', sha256=sha(data), bytes=len(data), volume_mm3=nut.volume(),
                          bounds_mm=list(nut.bounding_box()), source='nut.stl (humebeam, Kraken)', source_sha256=sha(raw))
+    raw, v, t = read_stl(gear_stl)
+    gear = manifold_of(v.astype(float), t)
+    assert gear.status() == mf.Error.NoError and len(gear.decompose()) == 1
+    data = gzip.compress(pack(v, t), 9, mtime=0)
+    (SITE / 'gear-plain.bin.gz').write_bytes(data)
+    record['gear'] = dict(file='gear-plain.bin.gz', sha256=sha(data), bytes=len(data), volume_mm3=gear.volume(),
+                          bounds_mm=list(gear.bounding_box()),
+                          source="gear-plain.stl from gear/source/gear_web.py 'plain' (humebeam's Kraken gear, web made solid)",
+                          source_sha256=sha(raw), original_gear_sha256='e56cd06d14cc3cfb552dd9d6584f5049298e3480ca1ba61dfe9e44b1dbd09a9d')
     (SITE / 'provenance.json').write_text(json.dumps(record, indent=1) + '\n')
 
 
 if __name__ == '__main__':
-    main(*sys.argv[1:3])
+    main(*sys.argv[1:4])
