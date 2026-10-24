@@ -26,7 +26,7 @@ for name, _ in views:
     shutil.copy2(source / f'{name}.png', dest / f'{name}.png')
 shutil.copy2(source / 'checks.json', dest / 'checks.json')
 shutil.copy2(source / 'coverage-checks.json', dest / 'coverage-checks.json')
-instructions = '''Reusable PC visor support — prototype 2 for R13 update 8
+instructions = '''Reusable PC visor support — prototype 2 for R13 update 9
 
 Print the corner, long rail and short rail in PC, feet down. The rails use
 vertical tapered puzzle keys. Swap the two rails between corner legs for the
@@ -75,7 +75,7 @@ All parts are millimetres, with their print datum at Z0. No G-code is included.
 '''
 (dest / 'ASSEMBLY.txt').write_text(instructions)
 shutil.copy2(root / 'public/p1s-riser/REFERENCE-ATTRIBUTION.txt', dest / 'REFERENCE-ATTRIBUTION.txt')
-archive = dest / 'p1s-r13-pc-support-u2-step-stl.zip'
+archive = dest / 'p1s-r13-u9-pc-support-u2-step-stl.zip'
 with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
     for name in ['corner', 'long-rail', 'short-rail', 'pc-support-coupon', 'pet-gf15-visor-coupon']:
         folder = 'coupons' if name.endswith('coupon') else 'pc-parts'
@@ -84,7 +84,7 @@ with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as z:
     z.writestr('ASSEMBLY.txt', instructions)
     z.write(source / 'coverage-checks.json', 'coverage-checks.json')
     z.write(dest / 'REFERENCE-ATTRIBUTION.txt', 'REFERENCE-ATTRIBUTION.txt')
-manifest = {'revision': 'PC support prototype 2', 'frame_revision': 'R13 update 8',
+manifest = {'revision': 'PC support prototype 2', 'frame_revision': 'R13 update 9',
     'file': archive.name, 'sha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
     'geometry_modified_for_publication': False, 'frame_source_sha256': report['source_sha256']}
 (dest / 'provenance.json').write_text(json.dumps(manifest, indent=2) + '\n')
@@ -95,22 +95,22 @@ html = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name=
 <header class="intro"><h1>Reusable visor support</h1><p>A PC corner and two straight rails join with tapered puzzle keys. Swap the rails between the legs to use the same set for all four frame quarters. Low feet locate the tool against the frame already on the bed. The wider rails and filled corner extend at least 1.5 mm past the complete visor footprint.</p></header>
 <section class="gl-pane"><h2 class="gl-pane-title">Support and contact surfaces</h2><div class="pane-body"><nav aria-label="Design views">''' + buttons + '''</nav><iframe id="viewer" src="kit/" title="PC support CAD"></iframe>
 <p class="note">Drag to orbit. Right-drag or two fingers to pan. Scroll or pinch to zoom. <a id="full" href="kit/">Full-size viewer</a> · <a id="png" href="kit.png">Image</a></p></div></section>
-<section class="gl-pane"><h2 class="gl-pane-title">Download the prototype</h2><div class="pane-body"><div class="downloads"><a class="button primary" href="p1s-r13-pc-support-u2-step-stl.zip">Three PC parts + test coupons · STEP/STL</a><a class="button" href="ASSEMBLY.txt">Placement notes</a></div><p>The kit includes a small PET-GF15 visor coupon and matching PC support coupon for testing the glue-stick release surface before a full frame print.</p><p><a href="coverage-checks.json">Visor coverage checks</a> · <a href="checks.json">Clearance checks</a> · <a href="provenance.json">Download hash</a> · <a href="REFERENCE-ATTRIBUTION.txt">Attribution</a></p></div></section>
+<section class="gl-pane"><h2 class="gl-pane-title">Download the prototype</h2><div class="pane-body"><div class="downloads"><a class="button primary" href="p1s-r13-u9-pc-support-u2-step-stl.zip">Three PC parts + test coupons · STEP/STL</a><a class="button" href="ASSEMBLY.txt">Placement notes</a></div><p>The kit includes a small PET-GF15 visor coupon and matching PC support coupon for testing the glue-stick release surface before a full frame print.</p><p><a href="coverage-checks.json">Visor coverage checks</a> · <a href="checks.json">Clearance checks</a> · <a href="provenance.json">Download hash</a> · <a href="REFERENCE-ATTRIBUTION.txt">Attribution</a></p></div></section>
 <div class="detail-grid"><section class="gl-pane"><h2 class="gl-pane-title">Locate it, then slide it home</h2><div class="pane-body"><p>At the insertion pause, lower the assembled tool into the opening about 12 mm inward along each axis. Rest the feet on the bed, then slide outward until they register against the printed rim. Removal reverses that movement.</p><p>Lowering straight into the final position would catch the feet on the LED backing. The checked route enters farther inward first.</p></div></section>
 <section class="gl-pane"><h2 class="gl-pane-title">Height and release coating</h2><div class="pane-body"><p>The support follows the full visor footprint with a 2 mm design border. The checked minimum stays above 1.5 mm with ±0.2 mm placement play across all four quarters. The small sliding clearances at the puzzle joints remain.</p><p>The bare tool is 14.44 mm tall, 0.06 mm below the CAD visor. The feet have about 0.20 mm side clearance; puzzle keys have 0.10 mm radial clearance.</p><p>Use heavy glue stick on the top contact faces, let it dry, and check the coated height. The film can be thicker than the bare gap.</p><p>The final height and insertion pause need checking against the sliced layers and printhead travel. The geometry checks pass; coated release and reuse still need the coupon trial. No probing or re-zeroing is part of this method.</p></div></section></div>
 </main></div><script>for(const b of document.querySelectorAll('[data-view]'))b.onclick=()=>{for(const x of document.querySelectorAll('[data-view]'))x.setAttribute('aria-pressed',String(x===b));const v=b.dataset.view;document.getElementById('viewer').src=v+'/';document.getElementById('full').href=v+'/';document.getElementById('png').href=v+'.png';};</script></body></html>'''
 (dest / 'index.html').write_text(html)
 # The main review gets one support tab; the dedicated page holds all six views.
-shutil.copytree(dest / 'section', dest.parent / 'support-u8', dirs_exist_ok=True)
-shutil.copy2(dest / 'section.png', dest.parent / 'support-u8.png')
+shutil.copytree(dest / 'section', dest.parent / 'support-u9', dirs_exist_ok=True)
+shutil.copy2(dest / 'section.png', dest.parent / 'support-u9.png')
 # Same review is available privately beside the working model.
 private = source.parent / 'review-site'
 shutil.copytree(dest, private / 'pc-support', dirs_exist_ok=True)
 p = private / 'pc-support/index.html'
 s = p.read_text().replace('href="/gridline/', 'href="https://thereprocase.github.io/gridline/').replace('href="/p1s-riser/riser.css"', 'href="https://thereprocase.github.io/p1s-riser/riser.css"').replace('href="/p1s-riser/"', 'href="../"')
 p.write_text(s)
-shutil.copytree(dest / 'section', private / 'support-u8', dirs_exist_ok=True)
-shutil.copy2(dest / 'section.png', private / 'support-u8.png')
+shutil.copytree(dest / 'section', private / 'support-u9', dirs_exist_ok=True)
+shutil.copy2(dest / 'section.png', private / 'support-u9.png')
 p = private / 'index.html';s = p.read_text()
 if 'data-view="support"' not in s:
     s = s.replace('</nav>', '<button data-view="support" aria-pressed="false">PC support</button></nav>', 1)

@@ -141,7 +141,7 @@
     },
     {
       "frame": "rear-left",
-      "visor_projection_mm2": 1906.8722024365609,
+      "visor_projection_mm2": 1906.8722024365645,
       "required_padded_mm2": 2897.4756085910026,
       "support_top_mm2": 3300.08157884881,
       "minimum_perimeter_margin_mm": 1.9924680776884998,
@@ -209,8 +209,8 @@
     },
     {
       "frame": "front-left",
-      "visor_projection_mm2": 1871.138849764937,
-      "required_padded_mm2": 2843.4184478428547,
+      "visor_projection_mm2": 1871.1388497649357,
+      "required_padded_mm2": 2843.4184478428533,
       "support_top_mm2": 3300.0815788488103,
       "minimum_perimeter_margin_mm": 1.9924680776884998,
       "missing_padded_envelope_mm2": 0.0,

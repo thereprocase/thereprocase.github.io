@@ -41,9 +41,9 @@ with sync_playwright() as p:
         frame = page.frame_locator('#viewer')
         frame.locator('#load').wait_for(state='hidden')
         assert frame.locator('#title').inner_text()
-        assert page.locator('#viewer').get_attribute('src') == f'{view}-u8/'
-        assert page.locator('#png').get_attribute('href') == f'{view}-u8.png'
-        assert page.locator('#full').get_attribute('href') == f'{view}-u8/'
+        assert page.locator('#viewer').get_attribute('src') == f'{view}-u9/'
+        assert page.locator('#png').get_attribute('href') == f'{view}-u9.png'
+        assert page.locator('#full').get_attribute('href') == f'{view}-u9/'
     frame = page.frame_locator('#viewer')
     frame.locator('#light-toggle').click()
     assert frame.locator('#light-toggle').get_attribute('aria-pressed') == 'false'
@@ -77,7 +77,7 @@ with sync_playwright() as p:
         page.goto(base + '/p1s-riser/' + route)
         page.wait_for_url(base + '/p1s-riser/')
     page.goto(base + '/p1s-riser/faux-light/')
-    page.wait_for_url(base + '/p1s-riser/full-printer-u8/')
+    page.wait_for_url(base + '/p1s-riser/full-printer-u9/')
     page.goto(base + '/')
     assert page.locator('body').inner_text().find('four-piece glass') >= 0
     assert not errors, errors
@@ -93,7 +93,7 @@ manifest = json.loads((root / 'p1s-riser/provenance.json').read_text())
 for record in manifest['downloads']:
     data = (root / 'p1s-riser' / record['file']).read_bytes()
     assert hashlib.sha256(data).hexdigest() == record['sha256']
-with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u8-8mm-cad.zip') as z:
+with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u9-8mm-cad.zip') as z:
     assert z.testzip() is None
     assert len([n for n in z.namelist() if n.endswith('.stl')]) == 11
 support = root / 'p1s-riser/pc-support'

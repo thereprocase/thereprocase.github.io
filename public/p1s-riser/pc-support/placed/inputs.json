@@ -1,7 +1,7 @@
 [
   {
     "mesh": "front-right.npz",
-    "sha256": "984dcbbd2c5c3c7fe09a07615105a13c2e9f82bba26fad79d00a474e6ae2fe57",
+    "sha256": "9af2fad5c0c67586d12969f0126b1fdded4794afd5d6131981e37d8565ccb012",
     "transform": [
       [
         1.0,
@@ -28,8 +28,8 @@
         1.0
       ]
     ],
-    "vertices": 14230,
-    "triangles": 11698
+    "vertices": 14422,
+    "triangles": 12082
   },
   {
     "mesh": "front-right-corner-placed.npz",

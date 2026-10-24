@@ -19,10 +19,10 @@
   "coating": "Heavy glue stick; dried thickness not included in bare 0.06 mm gap.",
   "layer_warning": "Reconcile final tool height and insertion pause with sliced underside.",
   "source_sha256": {
-    "front-right": "ab75bc89b71b97d32e9fb33ab4b555316ae64e39dd5f892a90972f94b79832fc",
-    "rear-right": "56117ea2247bc943d3620aedc20a668a301efff07350ab1b8d751e7a6bedc857",
-    "rear-left": "6569c56806d7739e3a25db86d27547ea18383b1e635ead801a14feee9f7a0f58",
-    "front-left": "014e796738e3bf14fef94c4a394a558675e4e918924bef835281c5635d539f7b"
+    "front-right": "d0f6c7a66a689a99f15402d6b5cd88bd7d0b2921a7cfeaa78800600e3643a642",
+    "rear-right": "b3ac20d08873e4a1f76292fe701a4ca7c8dddec6ee9fc236656921e2933e29c6",
+    "rear-left": "c0acf8e8228eba220e9bdd2045422e51866e664b34544e7182ff5d9adfa0fe99",
+    "front-left": "55954c7a90dac6bdb0aa68e8745512b4a6218464cbe0fbc9b78f8ac8dbefc439"
   },
   "parts": {
     "corner": {
@@ -1651,6 +1651,17 @@
   "minimum_perimeter_margin_mm": 1.9924680776884995,
   "minimum_margin_with_placement_play_mm": 1.716086462478102,
   "corner_base_relief": "0.5 mm perimeter relief up to Z6; widens to full padded footprint by Z7. Top unchanged.",
+  "frame_revision": "R13 update 9",
+  "unchanged_pc_export_files": {
+    "corner.step": "7c2fe298f6ab0008a6294159b4d040d7d432a3d2247026e540c214630f900974",
+    "corner.stl": "75038b9eb6e8ecf7a6c0b627c4017cca56f21038fff6b3843259daf36547399a",
+    "long-rail.step": "3e006f9f98e3a73fd51696dca86564af3ec53fd68c947de7dd0d65fa6282c873",
+    "long-rail.stl": "b6553b17b7716fe7e8fbad43f84dcd5f261267ed2c6c8f603812ab0be3567b21",
+    "short-rail.step": "1170f486f910d5f329ceef0382ef57103089ad741bb1858476ff3c9aa539d896",
+    "short-rail.stl": "9e9a862eea312302c93f0317db011d450bc3c0bb0b195806946f9d6618e34dd8",
+    "pc-support-coupon.step": "b750cc9d4163da506ea3ecaa976069ebf261b623d54ff20902b907b88f7fcbcd",
+    "pc-support-coupon.stl": "404519ebf39ae0c6a6cc00209acd63b1a041213c777023d8772b179d5838ecbb"
+  },
   "export_sha256": {
     "corner.step": "7c2fe298f6ab0008a6294159b4d040d7d432a3d2247026e540c214630f900974",
     "front-left-corner-placed.step": "354b6fa62ecb91111a9631ca218a8f6b5cb183d81db66cf85c2f35a60e33b11e",
@@ -1661,7 +1672,7 @@
     "front-right-outgoing-placed.step": "6af5d328c025cc8411a3cd6143d06792b121ee594d7c9b221ffeee4f822244f2",
     "long-rail.step": "3e006f9f98e3a73fd51696dca86564af3ec53fd68c947de7dd0d65fa6282c873",
     "pc-support-coupon.step": "b750cc9d4163da506ea3ecaa976069ebf261b623d54ff20902b907b88f7fcbcd",
-    "pet-gf15-visor-coupon.step": "3a8b6695d81d20739aa24bce609a4d49e5583663d0b4b90c8aba567ae608eac1",
+    "pet-gf15-visor-coupon.step": "95fc1779fdad336bf891bdc55753ef80236c019a7e212b856135c857017a247b",
     "rear-left-corner-placed.step": "d6b1f56a117e253265f0bb8ccd19884004553c184d2e4ab9309ea789b9140581",
     "rear-left-incoming-placed.step": "59300b92a67390d897334fb98db189a3a6b4b5c938656f0ab2b7901e84d3595c",
     "rear-left-outgoing-placed.step": "0efba878c0db5c21589de332b1321467b4aeb2d2bcf5566935d0309f9b903718",

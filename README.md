@@ -123,7 +123,7 @@ the release provenance synchronized.
 
 ## P1S USB light riser
 
-`public/p1s-riser/` contains the current R13 update 8 four-piece frame,
+`public/p1s-riser/` contains the current R13 update 9 four-piece frame,
 lift-in diffusers, actual CAD viewers, STEP/STL parts and assembly notes.
 Run `python scripts/sync-p1s-riser-r13.py <greenfield-13-directory>` against
 checked source geometry, then build and export `docs/`. The sync checks CAD
@@ -134,7 +134,7 @@ strip; 10/12 mm optical sections are checked but are not complete kits.
 The earlier Draft 11 downloads remain at their existing URLs. Its entry pages,
 viewers and old full-printer light simulation redirect to their current replacements.
 Do not republish them as current geometry. Physical fitting and fresh slicing
-are still pending for R13 update 8; no toolpath checks from Draft 11 carry over.
+are still pending for R13 update 9; no toolpath checks from Draft 11 carry over.
 
 `scripts/check-p1s-riser-r13.py` checks current responsive layouts, all 13
 viewers and the light toggle, legacy redirects, download hashes and local links in the exported site.
@@ -150,3 +150,9 @@ PC support prototype 2 adds a 2 mm design border around the full visor
 footprint. The exported-mesh coverage check measures at least 1.5 mm with ±0.2 mm placement play at the
 assembled perimeter on all four quarters and separately checks the narrow
 puzzle seams. The top-down overlay shows the actual visor projection.
+
+R13 update 9 raises the roof and glass seat by 1.5 mm. The bridge above the
+diffuser lift pocket is 3.1 mm; glass seat Z23.5 and overall height 26 mm.
+LED/diffuser geometry, visor underside Z14.5 and PC tooling are unchanged.
+The support archive includes the updated visor coupon. Hot creep and release
+still need physical checks.
