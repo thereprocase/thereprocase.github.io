@@ -113,7 +113,7 @@ showcase images; it never touches the PNGs or `tuner/provenance.json` itself).
 
 ## Kraken spool rings and nut
 
-`public/kraken-rings/` is a static generator for Kraken spool centering rings (45–95 mm in 0.1 mm steps) and a thicker-flange spool nut, remixed from humebeam's Kraken under CC BY-NC 4.0. It reuses the gridfinity generators' Manifold worker, settings link, ZIP helper and Three.js preview. `scripts/build-kraken-ring-assets.py` writes its geometry inputs from the kraken-remix-ogAMS checkout; `scripts/check-kraken-rings.mjs` checks the kernel and compares it with the Python generators. See its README. The published copy is `docs/kraken-rings/`; update both copies together.
+`public/kraken-rings/` is a static generator for Kraken spool centering rings (45–95 mm in 0.1 mm steps), a thicker-flange spool nut and a custom spoked spool gear, remixed by Repro from humebeam's Kraken under CC BY-NC 4.0. It reuses the gridfinity generators' Manifold worker, settings link, ZIP helper and Three.js preview. `scripts/build-kraken-ring-assets.py` writes its geometry inputs from the kraken-remix-ogAMS checkout; `scripts/check-kraken-rings.mjs` checks the kernel and compares it with the Python generators. See its README. The published copy is `docs/kraken-rings/`; update both copies together.
 
 ## Gridfinity build tray
 

@@ -34,7 +34,7 @@ export const projects: Project[] = [
     sourceHref: 'https://github.com/thereprocase/kraken-remix-ogAMS', sitePath: '/kraken/',
     image: { src: '/media/render/kraken.png', alt: 'Kraken split-body assembly with teal bodies and lifted orange front bars; actual CAD' },
     highlights: ['2 walls / 15% body infill, with dense seat, fastener and key roots.', 'Separate left and right body/bar plates; about 12h45m each.', 'Fit coupons, full assembly checklist and geometry/toolpath evidence.'],
-    links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Spool ring generator and nut remixer', href: '/kraken-rings/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
+    links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Spool rings, nut and gear generator', href: '/kraken-rings/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
   },
   {
     slug: 'thermal-field', name: 'Thermal Field', category: 'hardware', sitePath: '/projects/thermal-field/',
