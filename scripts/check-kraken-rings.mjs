@@ -1,0 +1,115 @@
+// Kraken ring and nut kernel checks under node, against the Python generators' output.
+// Usage: node scripts/check-kraken-rings.mjs [--rings DIR] [--sizes 55,53.4,45] [--nut NUT_STL --nut-flange 3]
+//   --rings: a generate_family.py output (models/*.3mf and *.stl) or a published models directory.
+//   --nut:   build_nut.py output (outer face at Z = -(flange - 1.5)).
+// Without reference paths it checks the kernel's own invariants, limits and file names.
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
+import {inflateRawSync} from 'node:zlib';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import Module from '../public/gridfinity-shelves/vendor/manifold.js';
+import {ringDiagram} from '../public/kraken-rings/diagram.js';
+import {buildRings, buildNut, readKRM, ringParameters, nutParameters, ringStem, binarySTL, ringHeader, RING} from '../public/kraken-rings/kernel.js';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const assets = path.join(root, 'public/kraken-rings/assets');
+const args = process.argv.slice(2), opt = k => { const i = args.indexOf(k); return i < 0 ? undefined : args[i + 1]; };
+const m = await Module(); m.setup();
+const {Manifold, Mesh} = m;
+const load = async name => { const b = await readFile(path.join(assets, name)); return readKRM(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength)); };
+const solid = (vertices, triangles) => { const mesh = new Mesh({numProp: 3, vertProperties: Float32Array.from(vertices), triVerts: Uint32Array.from(triangles)}); mesh.merge(); return new Manifold(mesh); };
+const symmetric = (a, b) => { const x = a.subtract(b), y = b.subtract(a), v = Math.abs(x.volume()) + Math.abs(y.volume()); x.delete(); y.delete(); return v; };
+
+function indexed(points) { // exact duplicate merge, as numpy.unique in the Python readers
+  const ids = new Map(), vertices = [], triangles = new Uint32Array(points.length / 3);
+  for (let i = 0; i < points.length / 3; i++) {
+    const key = `${points[3 * i]},${points[3 * i + 1]},${points[3 * i + 2]}`;
+    let id = ids.get(key); if (id === undefined) { id = vertices.length / 3; ids.set(key, id); vertices.push(points[3 * i], points[3 * i + 1], points[3 * i + 2]); }
+    triangles[i] = id;
+  }
+  return {vertices, triangles};
+}
+async function readSTL(file, dz = 0) {
+  const b = await readFile(file), d = new DataView(b.buffer, b.byteOffset, b.byteLength), n = d.getUint32(80, true), pts = new Float32Array(n * 9);
+  for (let i = 0; i < n; i++) for (let j = 0; j < 9; j++) pts[9 * i + j] = d.getFloat32(84 + 50 * i + 12 + 4 * j, true) + (j % 3 === 2 ? dz : 0);
+  const {vertices, triangles} = indexed(pts); return solid(vertices, triangles);
+}
+async function read3MF(file) { // stored or deflated entries; 3D/3dmodel.model only
+  const b = await readFile(file);
+  for (let o = 0; o < b.length - 30;) {
+    if (b.readUInt32LE(o) !== 0x04034b50) break;
+    const method = b.readUInt16LE(o + 8), size = b.readUInt32LE(o + 18), nl = b.readUInt16LE(o + 26), el = b.readUInt16LE(o + 28);
+    const name = b.toString('utf8', o + 30, o + 30 + nl), start = o + 30 + nl + el, raw = b.subarray(start, start + size);
+    if (name.endsWith('.model')) {
+      const xml = (method === 8 ? inflateRawSync(raw) : raw).toString('utf8');
+      const v = [...xml.matchAll(/<vertex x="([^"]+)" y="([^"]+)" z="([^"]+)"/g)].flatMap(x => [+x[1], +x[2], +x[3]]);
+      const t = [...xml.matchAll(/<triangle v1="(\d+)" v2="(\d+)" v3="(\d+)"/g)].flatMap(x => [+x[1], +x[2], +x[3]]);
+      // Manifold's JS mesh is float32, so the 3MF reference is compared at float32 resolution.
+      const mesh = new Mesh({numProp: 3, vertProperties: Float32Array.from(v), triVerts: Uint32Array.from(t)}); mesh.merge();
+      return new Manifold(mesh);
+    }
+    o = start + size;
+  }
+  throw Error('No 3D model in ' + file);
+}
+
+// Limits, names and parameter derivations.
+assert.throws(() => ringParameters({hole: 44.9})); assert.throws(() => ringParameters({hole: 95.1})); assert.throws(() => ringParameters({hole: 53.45}));
+assert.equal(ringParameters({hole: 95}).hole, 95); assert.equal(ringParameters({hole: 45}).stock, 45); assert.equal(ringParameters({hole: 53.4}).stock, 53);
+assert.throws(() => ringParameters({hole: 45, bite: 0, clearance: 0.5}), /holder core/);
+assert.equal(ringStem(ringParameters({hole: 53.4}), 'gear-side-1.5mm-flange'), 'kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange');
+assert.equal(ringStem(ringParameters({hole: 55}), 'cap-side'), 'kraken-spool-ring-55-mm-pentagon-cap-side');
+assert.equal(ringStem(ringParameters({hole: 55, bite: 0.8}), 'cap-side'), 'kraken-spool-ring-55-mm-pentagon-cap-side-bite0.8-under0.1');
+assert.throws(() => nutParameters({flange: 1.4})); assert.throws(() => nutParameters({flange: 7.6})); assert.equal(nutParameters({flange: 7.5}).added, 6);
+assert.equal(nutParameters({}).flange, 3.5);
+const header = new TextDecoder().decode(new Uint8Array(binarySTL({vertices: [0, 0, 0, 1, 0, 0, 0, 1, 0], triangles: [0, 1, 2]}, ringHeader(ringParameters({hole: 95}), 'gear-side-1.5mm-flange')), 0, 80));
+assert.match(header, /remix of Kraken by humebeam, CC BY-NC 4\.0/); assert.ok(!header.startsWith('solid'));
+console.log('Limits, stock-interface selection, file names and STL credit header: PASS');
+for (const input of [{hole: 45}, {hole: 53.4}, {hole: 95}, {hole: 60, bite: 0, clearance: 0}, {hole: 70, bite: 1.5, clearance: 0.5}]) for (const narrow of [false, true]) {
+  const p = ringParameters(input), svg = ringDiagram(p, {narrow});
+  assert.ok(!/NaN|undefined|Infinity/.test(svg), `diagram ${input.hole} narrow=${narrow}`);
+  for (const value of [p.hole, p.flangeOD, 2 * p.corner, 2 * p.support]) assert.ok(svg.includes(`Ø${Number(value.toFixed(2))}`), `diagram label ${value}`);
+}
+console.log('Fit diagram, wide and narrow, five parameter sets: PASS');
+
+const sizes = (opt('--sizes') ?? '55,53.4,45').split(',').map(Number), refs = opt('--rings'), rows = [];
+for (const hole of sizes) {
+  const p = ringParameters({hole}), t0 = performance.now();
+  const r = buildRings(m, await load(`core-${p.stock}.bin`), {hole});
+  const ms = performance.now() - t0;
+  for (const [side, part] of Object.entries(r.parts)) {
+    const top = 10.4; // every stock core is 10.4 mm tall
+    assert.ok(Math.abs(part.bounds[2]) < 1e-5 && Math.abs(part.bounds[5] - (top + (side.startsWith('gear') ? RING.gear_flange_thickness - RING.lip_thickness : 0))) < 1e-3, 'bounds ' + side);
+    const row = {hole, side, js_volume_mm3: +part.volume.toFixed(4), build_ms: Math.round(ms)};
+    if (refs) {
+      const stem = path.join(refs, part.stem), ours = solid(part.vertices, part.triangles);
+      for (const ext of ['3mf', 'stl']) {
+        if (!existsSync(`${stem}.${ext}`)) continue;
+        const ref = ext === '3mf' ? await read3MF(`${stem}.${ext}`) : await readSTL(`${stem}.${ext}`);
+        row[`py_${ext}_volume_mm3`] = +ref.volume().toFixed(4);
+        row[`symdiff_vs_py_${ext}_mm3`] = +symmetric(ours, ref).toExponential(3);
+        ref.delete();
+      }
+      ours.delete();
+      assert.ok((row.symdiff_vs_py_3mf_mm3 ?? row.symdiff_vs_py_stl_mm3) < 0.05, `${part.stem}: symmetric difference above 0.05 mm3`);
+    }
+    rows.push(row);
+  }
+}
+console.table(rows);
+
+const nutRef = opt('--nut'), t1 = performance.now(), nutSource = await load('nut.bin');
+for (const flange of [1.5, 3.5, 7.5]) {
+  const n = buildNut(m, nutSource, {flange});
+  assert.ok(Math.abs(n.part.bounds[2]) < 1e-5);
+  console.log(`nut ${flange} mm: volume ${n.part.volume.toFixed(2)} mm3, added ${n.addedGrams.toFixed(2)} g PETG, height ${(n.part.bounds[5] - n.part.bounds[2]).toFixed(3)} mm`);
+}
+if (nutRef) {
+  const flange = Number(opt('--nut-flange') ?? 3), n = buildNut(m, nutSource, {flange}), ours = solid(n.part.vertices, n.part.triangles);
+  const ref = await readSTL(nutRef, flange - 1.5), d = symmetric(ours, ref);
+  console.log(`nut ${flange} mm vs ${path.basename(nutRef)}: JS ${ours.volume().toFixed(4)} mm3, Python ${ref.volume().toFixed(4)} mm3, symmetric difference ${d.toExponential(3)} mm3, ${Math.round(performance.now() - t1)} ms total`);
+  assert.ok(d < 0.05, 'nut symmetric difference above 0.05 mm3');
+}
+console.log('Kraken ring and nut kernel checks: PASS');

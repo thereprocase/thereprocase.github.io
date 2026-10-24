@@ -1,0 +1,481 @@
+{
+ "description": "Inputs for the Kraken spool ring generator and nut remixer. Derived from humebeam's original Kraken files (CC BY-NC 4.0): https://www.printables.com/model/1788417-kraken-revolutionary-bambu-lab-ams",
+ "format": "KRM1 little-endian: \"KRM1\", uint32 vertices, uint32 triangles, uint32 index bytes, float32 xyz, indices",
+ "cores": {
+  "45": {
+   "file": "core-45.bin",
+   "sha256": "d681387d699f8592f58a800140ddadb2e02a9692853139fd16fa0780eb50871f",
+   "bytes": 282160,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5517.195278715655,
+   "source": "kraken-spool-ring-45-mm-100.3mf",
+   "source_sha256": "e737b0c46ed63064137d2d728a71cbd6dab4859194e901eabc6b27a4ef31956f"
+  },
+  "46": {
+   "file": "core-46.bin",
+   "sha256": "9827b2d96aaaa009df6f0c362396c39d745a5c46dd5bd0541da8d4593dbc48c8",
+   "bytes": 212344,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5636.108849228236,
+   "source": "kraken-spool-ring-46-mm-100.3mf",
+   "source_sha256": "fa381dcce354ad8b92bbc8e5e8e99a393e83869bfeceb1e8778d89565ac7fdcc"
+  },
+  "47": {
+   "file": "core-47.bin",
+   "sha256": "b7b25075ff3911089ca35d3eec222b949b7c09d1a12467e76f3e9c4e4b1d789e",
+   "bytes": 157504,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5682.811469418042,
+   "source": "kraken-spool-ring-47-mm-100.3mf",
+   "source_sha256": "d2c39fe5d6095490d1887e1c26a4e3ca0ce0fa9c77d95de538b2cfe82d9f9dd3"
+  },
+  "48": {
+   "file": "core-48.bin",
+   "sha256": "7d4e3332f0822cf2ebeecbd18bbc8b1387f37e402796503c771e095868887f08",
+   "bytes": 157936,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5715.8278973484985,
+   "source": "kraken-spool-ring-48-mm-100.3mf",
+   "source_sha256": "908a7b811d051eeae02d9b2bd5628a54581ce23f15b43c85c057cb48187b8ce2"
+  },
+  "49": {
+   "file": "core-49.bin",
+   "sha256": "4e9e43176641b7367f8a56770846dcc6b7964f225068601d0b777c03a95027ea",
+   "bytes": 156856,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5749.567651144424,
+   "source": "kraken-spool-ring-49-mm-100.3mf",
+   "source_sha256": "36aa3af62a5fcb759eed350c856cb597702f681025a79efe593d54767b1d8230"
+  },
+  "50": {
+   "file": "core-50.bin",
+   "sha256": "4d03b50a1a941a30e1de13506bc370086010c7a913bdf43d50b996e9bd252b97",
+   "bytes": 157216,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5783.842011374307,
+   "source": "kraken-spool-ring-50-mm-100.3mf",
+   "source_sha256": "e74069daff0eea9af0df013a2c13127ce090d1cadf82d8c5083d41be13af2c98"
+  },
+  "51": {
+   "file": "core-51.bin",
+   "sha256": "0707cd124b244fe6b857e6de1781f4d95592eea62cd22052e9c0b25f127f6938",
+   "bytes": 156472,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5818.638730982819,
+   "source": "kraken-spool-ring-51-mm-100.3mf",
+   "source_sha256": "0388c7945c5b60727b248f7bcc77d3014c7a0650b924ab62e9da63c926e868de"
+  },
+  "52": {
+   "file": "core-52.bin",
+   "sha256": "24522a34a79722e056099fc78f32347e8d5a438d7888b20e921673a069863a55",
+   "bytes": 157456,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5854.340572341043,
+   "source": "kraken-spool-ring-52-mm-100.3mf",
+   "source_sha256": "bc123f2ad9baf75d370381434c11c60c254031a3d0be5004b7ca253b137ffa8f"
+  },
+  "53": {
+   "file": "core-53.bin",
+   "sha256": "1c51b933dc7f0a38d52aff4871219bf08790ff6960ddd5d409881db03769536b",
+   "bytes": 157456,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5890.462000991565,
+   "source": "kraken-spool-ring-53-mm-100.3mf",
+   "source_sha256": "2c8ebc1c810a91d741183d50ca780147a187ec3c7fad00661a39acb2d668c100"
+  },
+  "54": {
+   "file": "core-54.bin",
+   "sha256": "1a5f75522f5d6f8852aa8924333e180c1634018bdaf9351d1169d15f1243d269",
+   "bytes": 157912,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5927.341218789954,
+   "source": "kraken-spool-ring-54-mm-100.3mf",
+   "source_sha256": "1066c0dd7f65370ae5305f94d2c6ebdeb5fb9dd49db0338308c3ac245d02c749"
+  },
+  "55": {
+   "file": "core-55.bin",
+   "sha256": "ef77e3470fd9649ce564b97820533d659d3e9423d24b547407d4816d29828284",
+   "bytes": 158344,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 5964.719081784548,
+   "source": "kraken-spool-ring-55-mm-100.3mf",
+   "source_sha256": "4107e23567976c87801373636546ecbc94dc4919c85f1e3ef1aa8c26a04a7c34"
+  },
+  "56": {
+   "file": "core-56.bin",
+   "sha256": "834330367f7d66ec0ed2ba37f4c113f08563e1c14bc7de67d26afd8571a7f5f1",
+   "bytes": 159376,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6002.725129422146,
+   "source": "kraken-spool-ring-56-mm-100.3mf",
+   "source_sha256": "57d0f2456d79738f88befe76469af248f0d1a6038566acb28f194f97b4032f23"
+  },
+  "57": {
+   "file": "core-57.bin",
+   "sha256": "6bf629b0507739b316a80f0c4f21c2e9cbbf2b57152ed2b5b4ae91ea1b42031b",
+   "bytes": 158704,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6041.269080287594,
+   "source": "kraken-spool-ring-57-mm-100.3mf",
+   "source_sha256": "800370d3d5c90d5fe705dc480f6e5dd0bbca11d46765687b79fc97483730e98b"
+  },
+  "58": {
+   "file": "core-58.bin",
+   "sha256": "69be7c5743a8ce6c4b2c4a14daac178aa7921580eff2adcf23b6bcbaf4cbffc0",
+   "bytes": 159832,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6080.761799544285,
+   "source": "kraken-spool-ring-58-mm-100.3mf",
+   "source_sha256": "161259af709c4e55efd888c4159b2c8ecb8c5f5c6303d006ca1ad37ff9473af1"
+  },
+  "59": {
+   "file": "core-59.bin",
+   "sha256": "063e750820a7b0b6d475da117f6f321cc49747db8526be223af2d56b84fa072f",
+   "bytes": 159736,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6120.652463703353,
+   "source": "kraken-spool-ring-59-mm-100.3mf",
+   "source_sha256": "f4f7331f15835cef0692eab1cbda43707666f914c9a5074c663468c5f935aa72"
+  },
+  "60": {
+   "file": "core-60.bin",
+   "sha256": "981d0fd0826c1e9b564bce46a0842d70ccc0628cbc055b1a2908f8dee444f30e",
+   "bytes": 161104,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6161.147287136638,
+   "source": "kraken-spool-ring-60-mm-100.3mf",
+   "source_sha256": "8853edf3e440ade33793b13a3cf960f3ebe36bbedfcca1fce9fd4089e2a3aba1"
+  },
+  "61": {
+   "file": "core-61.bin",
+   "sha256": "3f51be0310fc85105cf8654e42c08d8f57b2c272aa24167ddbcd572a2142efc2",
+   "bytes": 160648,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6202.469067125227,
+   "source": "kraken-spool-ring-61-mm-100.3mf",
+   "source_sha256": "a28aa18684f7d67cc51048e5520ccda13c625c8257196b711e6c16cafc3d8e54"
+  },
+  "62": {
+   "file": "core-62.bin",
+   "sha256": "2355d9fe07ca8a3770e7ae475a395c5104cb3690a6588169c6ace3891daf3779",
+   "bytes": 161416,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6244.244307012011,
+   "source": "kraken-spool-ring-62-mm-100.3mf",
+   "source_sha256": "994dce0598e4881105cae210cd0a691a488f8f24e06de4ddff4f555210b51bde"
+  },
+  "63": {
+   "file": "core-63.bin",
+   "sha256": "79f20d20c33d83273ebd058c2254754098d86ab2f7dd7a0f4ed14bb94d9c0f06",
+   "bytes": 161416,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6286.626509077896,
+   "source": "kraken-spool-ring-63-mm-100.3mf",
+   "source_sha256": "def0c484db99ff9a9b169240605d4e3e01f2353d5660f4c3287a141618d73d0f"
+  },
+  "64": {
+   "file": "core-64.bin",
+   "sha256": "72d4a0665af8f4192a2fb500c81e904cfea27b435b731604e2b361b070ee9510",
+   "bytes": 162904,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6329.590072303696,
+   "source": "kraken-spool-ring-64-mm-100.3mf",
+   "source_sha256": "55b2492ef786646b9018da11950a7be9a9b9a465098e58a3410ae94ff5a9b783"
+  },
+  "65": {
+   "file": "core-65.bin",
+   "sha256": "9a5599bbd1ed8e2665318c45f475877a413ed1da6bb8ebc102c046b40bb304a5",
+   "bytes": 162448,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6373.50559123434,
+   "source": "kraken-spool-ring-65-mm-100.3mf",
+   "source_sha256": "8e55e52ef1fe3da0a7976d64b0be24a9f613c8b8b9a352e49a80468ba6a39f16"
+  },
+  "66": {
+   "file": "core-66.bin",
+   "sha256": "a9c129d738cd14fa346bd9f8d42a70eee0d772221813197ffeed3a0a380a96ca",
+   "bytes": 163552,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6417.793740096951,
+   "source": "kraken-spool-ring-66-mm-100.3mf",
+   "source_sha256": "cb8bb4dc97a98e5b0005161c006ba2385173e87f1249c8cb39b4418d33fb02ae"
+  },
+  "67": {
+   "file": "core-67.bin",
+   "sha256": "4eedac9cba5270f5daf03e8c73ad4af695ba56b8d4e82bab996a703b6b0c395e",
+   "bytes": 163816,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6462.685475761737,
+   "source": "kraken-spool-ring-67-mm-100.3mf",
+   "source_sha256": "ddbb712c3e96e198cf758ea00359eb3adde3f5e0dcd1fbb25030d2b1f3746ac9"
+  },
+  "68": {
+   "file": "core-68.bin",
+   "sha256": "3d64b648eb78c8e475cdbfb8e7d44450f5f8acfac5b014ee0d9e055528271324",
+   "bytes": 165208,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6508.431998017607,
+   "source": "kraken-spool-ring-68-mm-100.3mf",
+   "source_sha256": "0be5916e56b9da88fdc125bd5b7d6cb1c1817d39fecd6cd6f27b4a8cf8c2224d"
+  },
+  "69": {
+   "file": "core-69.bin",
+   "sha256": "e9714405ae37c836ac93e7059b1fecd31e68b9b3f4c892ea2810ecf9d59df2c4",
+   "bytes": 164656,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6554.604695615354,
+   "source": "kraken-spool-ring-69-mm-100.3mf",
+   "source_sha256": "a90ffd640a9ac72f6943e67375515e0fbfe070a8499d4fc05c09b8ea8ce2c82a"
+  },
+  "70": {
+   "file": "core-70.bin",
+   "sha256": "4344a086241b45bc4338bfc56d189f881a005a2a8d6c227a499f053242488fca",
+   "bytes": 166072,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6601.40558178098,
+   "source": "kraken-spool-ring-70-mm-100.3mf",
+   "source_sha256": "dcdfcfe371f74049eec06ca116ab50676f784c53b3a1fac61eb43ff1bed5e013"
+  },
+  "71": {
+   "file": "core-71.bin",
+   "sha256": "1ac259db8b576088a4106f215fc717b85fe95226f9e6472e13f066fb42cb1121",
+   "bytes": 166432,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6648.809865124197,
+   "source": "kraken-spool-ring-71-mm-100.3mf",
+   "source_sha256": "74a940f1b528ac7fa807f7cf6bd26e353a0130168db36229187199c4e93ed79d"
+  },
+  "72": {
+   "file": "core-72.bin",
+   "sha256": "25a9d05cd7616d6c9a15b298752a780aaa7e91b2c1ff6b8accd3468c021bbde6",
+   "bytes": 167632,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6696.798858701114,
+   "source": "kraken-spool-ring-72-mm-100.3mf",
+   "source_sha256": "c9f94f5b2afae2185bc7d773ec503261eca7b7664313a9fadadce8ab07f3bd87"
+  },
+  "73": {
+   "file": "core-73.bin",
+   "sha256": "4f2e26d4e5eb8b4a69675e1575592bcca428ba5c350a3786f21227eebc9eba8d",
+   "bytes": 167080,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6745.770113490403,
+   "source": "kraken-spool-ring-73-mm-100.3mf",
+   "source_sha256": "3bb1e5fa97bb8450d413e0e1d229a1c8d3ca770aca0075d70bcffdcda8a8a95d"
+  },
+  "74": {
+   "file": "core-74.bin",
+   "sha256": "e6f190b98f6633717b03b176f617aef76d8ad2e8a49c787e1197c502c7f7a17c",
+   "bytes": 168616,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6795.0838298767585,
+   "source": "kraken-spool-ring-74-mm-100.3mf",
+   "source_sha256": "55196cfa656a5f93b7c2dce2835644bcaabc4307e484d3df1cc067de980302bc"
+  },
+  "75": {
+   "file": "core-75.bin",
+   "sha256": "2a09fc5cb04ee470bd92ae842183e1f5df1b2958370a5e9faf3f693877af5369",
+   "bytes": 168352,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6845.0005529207065,
+   "source": "kraken-spool-ring-75-mm-100.3mf",
+   "source_sha256": "d544b591af58c7e23e92c0bac13f5b3c8c2778f5bdbd1abbe2eac34c186d5cb7"
+  },
+  "76": {
+   "file": "core-76.bin",
+   "sha256": "9355f38cc195b5ae70aa3583b5310cb3885ce1fe2e3a9c00f6f6954eab092c4a",
+   "bytes": 170056,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6895.570682236321,
+   "source": "kraken-spool-ring-76-mm-100.3mf",
+   "source_sha256": "4f2d974dc12ceb24a8de1088047172c1327e13410693a84cfbe7a9642c3184a2"
+  },
+  "77": {
+   "file": "core-77.bin",
+   "sha256": "bb6bae96b9ca64bf052d71e16d5f90e67b39d20a3fc53cdfc2250bf5d84b5e4a",
+   "bytes": 169672,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6947.003911891011,
+   "source": "kraken-spool-ring-77-mm-100.3mf",
+   "source_sha256": "99b2a4dd3f537502e2ed7c8189f574fbc22fb50fda5cc3e583a19d49b58b7697"
+  },
+  "78": {
+   "file": "core-78.bin",
+   "sha256": "14e310180e3ffd4d48ac575d8c38a535c74a679963965c13e79439a1f554545f",
+   "bytes": 170872,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 6998.830439312858,
+   "source": "kraken-spool-ring-78-mm-100.3mf",
+   "source_sha256": "ba8fd4048c7e08e99b1faf3db9697eba3674875530c908a070accc6679df9642"
+  },
+  "79": {
+   "file": "core-79.bin",
+   "sha256": "6f51c5e051b923c7b1061892073ae5104264974ec00ec57aacb51be9f47b70b2",
+   "bytes": 170944,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7051.28515747759,
+   "source": "kraken-spool-ring-79-mm-100.3mf",
+   "source_sha256": "edefc72e75f1ef6261a1d5426030bf805581119d1d8a237c53d149b9a85a5ed5"
+  },
+  "80": {
+   "file": "core-80.bin",
+   "sha256": "04da74d825a4eb091b1b05aa872be7642f371ba2483a0d23a07e334565c17c30",
+   "bytes": 172432,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7104.34267514035,
+   "source": "kraken-spool-ring-80-mm-100.3mf",
+   "source_sha256": "2bd7532225f0d514728714b918237433172ddf46d81d1412164b2bc8f02d70b7"
+  },
+  "81": {
+   "file": "core-81.bin",
+   "sha256": "4b1da091bc3bd6c72f7a91859d7c0d3680427b4a7e3877cb4088165eed9fcaed",
+   "bytes": 166096,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7158.053745851804,
+   "source": "kraken-spool-ring-81-mm-100.3mf",
+   "source_sha256": "b06ea71798b57a332d0280e82003c1b53b9eacbc4d9840aa5b3ad3e3eb52ed42"
+  },
+  "82": {
+   "file": "core-82.bin",
+   "sha256": "4d9f33bbb968d550a47cfb014db110fd49b392bdc0092bede148e96c5b7d862e",
+   "bytes": 167176,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7212.647591566512,
+   "source": "kraken-spool-ring-82-mm-100.3mf",
+   "source_sha256": "0b504119ac013d9bce032a6e494013128f2647951fbde22c6a83ac48935467ac"
+  },
+  "83": {
+   "file": "core-83.bin",
+   "sha256": "6819c8467416a1d09132e928b6afe8427be5a40f2ab8f552132f7d7083f5297b",
+   "bytes": 167416,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7267.615128422812,
+   "source": "kraken-spool-ring-83-mm-100.3mf",
+   "source_sha256": "82885a1edd4d3790d373f86a38fca3071dabc07ee649d4464666592975e5c8c0"
+  },
+  "84": {
+   "file": "core-84.bin",
+   "sha256": "2eada899ed3fd63427a1a9a55b7c46799cdfe52108991ec8673d71f58ff7327b",
+   "bytes": 169120,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7323.210850950677,
+   "source": "kraken-spool-ring-84-mm-100.3mf",
+   "source_sha256": "c47633ad65d0ce42662de096ae029285b9e4f660006c0d5f122506213802e71d"
+  },
+  "85": {
+   "file": "core-85.bin",
+   "sha256": "8237b455c6febac00e00a921c7f471317a0c7c4edc29b54b4aef4e585fbc308b",
+   "bytes": 168640,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7379.409130341943,
+   "source": "kraken-spool-ring-85-mm-100.3mf",
+   "source_sha256": "750df5fff7da2afe6ca3827f8c69b8ae1359ce49ce02b32ef0febfaa790792ef"
+  },
+  "86": {
+   "file": "core-86.bin",
+   "sha256": "64db67216143638de506906f7a3fe13d637720227770f810f3ed09b759e6c6cd",
+   "bytes": 170608,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7436.261230708454,
+   "source": "kraken-spool-ring-86-mm-100.3mf",
+   "source_sha256": "7eb490377a93d8fdbdae16f267ed412e0fb86d541042ab0a9a125462a40405ec"
+  },
+  "87": {
+   "file": "core-87.bin",
+   "sha256": "e8b305a79a84e794f7d79cdecc3a93c79e4f105d45b133c94419a1a567469c8a",
+   "bytes": 170536,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7493.675840376599,
+   "source": "kraken-spool-ring-87-mm-100.3mf",
+   "source_sha256": "b4fad08e089d097d1a443f0eff0d9619d881da10888ad6236ecb47f5e1cfda27"
+  },
+  "88": {
+   "file": "core-88.bin",
+   "sha256": "a12cfe4351429ba2915a74d89d594158a25a1bc138f3e8b357fa0cdb70ac23da",
+   "bytes": 171808,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7552.126724676829,
+   "source": "kraken-spool-ring-88-mm-100.3mf",
+   "source_sha256": "de588177445a957a86422e9f958af77cf56a0bc403b43272c8b1c2006f1a8db2"
+  },
+  "89": {
+   "file": "core-89.bin",
+   "sha256": "d52ae691716f5f097b0b2b42bdbe1c1d9403f250000241d9859cca94cafcd9c6",
+   "bytes": 171592,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7610.863462321948,
+   "source": "kraken-spool-ring-89-mm-100.3mf",
+   "source_sha256": "7dcd19692cf498de2dafde7a33b578eea5cf687414203db2addf1ac04237cdb0"
+  },
+  "90": {
+   "file": "core-90.bin",
+   "sha256": "98d203fd70339dc2af6acf348f9ddaa341af404f45b32fde03f4edecb541b44e",
+   "bytes": 173512,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7670.228359260788,
+   "source": "kraken-spool-ring-90-mm-100.3mf",
+   "source_sha256": "a429def11c2f000f2a2e2a80b839b50a835a6ab5b24856922d678ab8e5fbd663"
+  },
+  "91": {
+   "file": "core-91.bin",
+   "sha256": "fd0203cea0b0f3d20bf2c5bf6bce1f513023b3ccceed1230eb8771736d4c0dee",
+   "bytes": 173176,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7730.195676085857,
+   "source": "kraken-spool-ring-91-mm-100.3mf",
+   "source_sha256": "d4683e3495aedb35a5bc3e45343b91eac8067f0757bdd6a27e03dfd66602030f"
+  },
+  "92": {
+   "file": "core-92.bin",
+   "sha256": "61b954a5bbc666f0b191b7f194ad936c18d9b3e13f30c30bcd92e3de241afe64",
+   "bytes": 175840,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7790.817024828367,
+   "source": "kraken-spool-ring-92-mm-100.3mf",
+   "source_sha256": "7aa91d415fff384ae1f213f4579959103b7b332ea2843f1d4a7e82bd4f68bb5a"
+  },
+  "93": {
+   "file": "core-93.bin",
+   "sha256": "dbf4e15e8942825b4b4dd5ad92b6b60c3d4c54a5eddd5d44737cbea624b7b95b",
+   "bytes": 175240,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7852.066529598194,
+   "source": "kraken-spool-ring-93-mm-100.3mf",
+   "source_sha256": "c33c5d882cab5d3d0a2fa493a293440ce53528aaaa4f876ae3011d41e8f59263"
+  },
+  "94": {
+   "file": "core-94.bin",
+   "sha256": "02171e8069202804d05fdde9e0a3311c3bd4ff9d848d954c392ab606e4d4691a",
+   "bytes": 176656,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7914.2455871867605,
+   "source": "kraken-spool-ring-94-mm-100.3mf",
+   "source_sha256": "faf2b389f8fc867818557d0b8ca2e86c23ebdef79043a1da1b94000fd759b9f2"
+  },
+  "95": {
+   "file": "core-95.bin",
+   "sha256": "7b7403883da587be24f71f91864498e95d01c8e8cac28895549a6836ae54222a",
+   "bytes": 176584,
+   "height_mm": 10.400001000000001,
+   "volume_mm3": 7976.751535001193,
+   "source": "kraken-spool-ring-95-mm-100.3mf",
+   "source_sha256": "f2a4187fce0d9f9ae71725ffcd7a434e664babcb4cfe9f5c0f241e147b09c8b7"
+  }
+ },
+ "nut": {
+  "file": "nut.bin",
+  "sha256": "21d08edf16cb31e67931e4f9e767e50308e9d24690f12f7a89df3df5bd18b328",
+  "bytes": 478144,
+  "volume_mm3": 11623.271985437354,
+  "bounds_mm": [
+   -47.636348724365234,
+   -47.0390625,
+   0.0,
+   47.636348724365234,
+   47.0390625,
+   11.900010108947754
+  ],
+  "source": "nut.stl (humebeam, Kraken)",
+  "source_sha256": "05ae08765d7d8e6ee5e03ea6fefc6ab912d8aafd9a8bf1ef8ecee6ae4f922cd0"
+ }
+}
