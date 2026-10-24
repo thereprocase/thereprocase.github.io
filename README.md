@@ -147,6 +147,13 @@ CAD; the package includes a small release-test coupon pair. The 0.06 mm bare
 gap must be reconciled with coating thickness and the actual sliced layer
 underside. Release, repeated use and printhead clearance remain untested.
 
+The vase-printed diffuser prototype has its own five-view page at
+`/p1s-riser/vase/`. Run `scripts/sync-p1s-vase.py <vase-u5-directory>` after
+the private review is packaged. Four straights print tilted 30° about their
+lower edge in two paired vases; four corners print upright in one vase. The
+sync requires passing fit and G-code checks and strips local paths from viewer
+metadata. Trimming, fit and print quality remain physically untested.
+
 PC support prototype 3 retains a 2 mm design border around the full visor
 footprint. The exported-mesh coverage check measures at least 1.5 mm with ±0.2 mm placement play at the
 assembled perimeter on all four quarters and separately checks the narrow

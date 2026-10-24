@@ -1,0 +1,100 @@
+{
+  "title": "Eight diffuser pieces, installed",
+  "subtitle": "Teal straights \u00b7 orange corners \u00b7 frame hidden",
+  "caption": "Each corner meets its straights with a 0.15 mm gap. All eight clear the frame and LED backing at 0, 0.8 and 1.6 mm lift.",
+  "camera": {
+    "yaw": -0.7,
+    "pitch": 0.85,
+    "zoom": 0.75
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 28507,
+      "triangles": 28610,
+      "edges": 1007,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 28510,
+      "triangles": 28616,
+      "edges": 1007,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 28507,
+      "triangles": 28610,
+      "edges": 1007,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 28510,
+      "triangles": 28616,
+      "edges": 1007,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

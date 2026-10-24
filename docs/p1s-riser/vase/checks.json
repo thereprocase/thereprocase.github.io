@@ -1,0 +1,625 @@
+{
+  "build": {
+    "blanks": {
+      "straights-front-back": {
+        "finished_parts": 2,
+        "finished_length_mm": 252.5,
+        "height_mm": 21.461236,
+        "finished_top_print_z_mm": 20.66123566278655,
+        "bounds_mm": [
+          197.77776669787735,
+          197.77776669787733,
+          21.461236
+        ],
+        "useful_wall_area_fraction": 0.8966780098053514,
+        "watertight": true,
+        "rings": 47,
+        "tilt_about_lower_edge_deg": 30.0,
+        "print_pitch_from_vertical_deg": [
+          30.000000000000004,
+          -23.122134634695595,
+          -30.00000000000001
+        ],
+        "placed_on_bed_diagonal": true
+      },
+      "straights-left-right": {
+        "finished_parts": 2,
+        "finished_length_mm": 220.5,
+        "height_mm": 21.461236,
+        "finished_top_print_z_mm": 20.66123566278655,
+        "bounds_mm": [
+          175.15034969990782,
+          175.15034969990782,
+          21.461236
+        ],
+        "useful_wall_area_fraction": 0.8883070709197367,
+        "watertight": true,
+        "rings": 47,
+        "tilt_about_lower_edge_deg": 30.0,
+        "print_pitch_from_vertical_deg": [
+          30.000000000000004,
+          -23.122134634695595,
+          -30.00000000000001
+        ],
+        "placed_on_bed_diagonal": true
+      },
+      "corners-four": {
+        "finished_parts": 4,
+        "height_mm": 14.399999999999999,
+        "finished_top_print_z_mm": 13.599999999999998,
+        "bounds_mm": [
+          106.41303385602873,
+          106.41303385602873,
+          14.399999999999999
+        ],
+        "useful_wall_area_fraction": 0.8658864192232585,
+        "watertight": true,
+        "rings": 22,
+        "max_face_angle_from_vertical_deg": 60.00000000000011,
+        "mid_corner_face_angle_from_vertical_deg": 30.000000000001403
+      }
+    },
+    "status": "Prototype: not physically printed",
+    "frame_changed": false,
+    "bead_width_mm": 0.6,
+    "end_waste_mm": 3.0,
+    "top_waste_mm": 0.8,
+    "straight_pair_gap_mm": 20.0,
+    "corner_bridge_mm": 1.0,
+    "required_slicer_settings": {
+      "spiral_mode": 1,
+      "wall_loops": 1,
+      "bottom_shell_layers": 0,
+      "top_shell_layers": 0,
+      "sparse_infill_density": "0%",
+      "outer_wall_line_width": 0.6
+    }
+  },
+  "fit": {
+    "all_clear": true,
+    "checks": [
+      {
+        "part": "straight-front",
+        "frame": "front-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "frame": "front-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "frame": "front-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "frame": "front-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "frame": "front-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "frame": "front-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-front",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "front-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "front-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "front-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "rear-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "rear-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "frame": "rear-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-right",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "frame": "rear-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-back",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "rear-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "rear-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "rear-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "front-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "front-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "frame": "front-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "straight-left",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-right",
+        "frame": "front-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-right",
+        "frame": "front-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-right",
+        "frame": "front-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-right",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-right",
+        "frame": "rear-right",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-right",
+        "frame": "rear-right",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-right",
+        "frame": "rear-right",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-right",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-left",
+        "frame": "rear-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-left",
+        "frame": "rear-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-left",
+        "frame": "rear-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-rear-left",
+        "led_backing": true,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-left",
+        "frame": "front-left",
+        "lift_mm": 0,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-left",
+        "frame": "front-left",
+        "lift_mm": 0.8,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-left",
+        "frame": "front-left",
+        "lift_mm": 1.6,
+        "intersection_mm3": 0
+      },
+      {
+        "part": "corner-front-left",
+        "led_backing": true,
+        "intersection_mm3": 0
+      }
+    ],
+    "joints": [
+      {
+        "corner": "front-right",
+        "straight": "front",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.14999999999997726
+      },
+      {
+        "corner": "front-right",
+        "straight": "right",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      },
+      {
+        "corner": "rear-right",
+        "straight": "right",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      },
+      {
+        "corner": "rear-right",
+        "straight": "back",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      },
+      {
+        "corner": "rear-left",
+        "straight": "back",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.14999999999997726
+      },
+      {
+        "corner": "rear-left",
+        "straight": "left",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      },
+      {
+        "corner": "front-left",
+        "straight": "left",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      },
+      {
+        "corner": "front-left",
+        "straight": "front",
+        "intersection_mm3": 0,
+        "min_gap_mm": 0.15000000000000568
+      }
+    ],
+    "scope": "Nominal finished parts: tilted 0.6 mm straight bead returned to its installed pose; corner 0.6 mm horizontal bead. Physical trimming and fit untested."
+  },
+  "toolpath": {
+    "straights-front-back": {
+      "blank": "straights-front-back",
+      "filament_shrink": 0.9951000000000001,
+      "gcode_sha256": "3a7c387d2e46430ee9e6390462f43571888a4af13736a5c0ff23715477b4348a",
+      "layer_height_mm": 0.2,
+      "spiral_layers": 106,
+      "finishing_turn_in_top_waste": [
+        {
+          "zero_flow_moves": 1,
+          "max_zero_flow_mm": 6.956516513313253,
+          "z_min_mm": 21.4,
+          "z_max_mm": 21.4,
+          "layer": 108,
+          "moves": 16,
+          "xy_travels": 0,
+          "retractions": 0,
+          "features": [
+            "Outer wall"
+          ],
+          "z_monotonic": true,
+          "z_span_mm": 0.0,
+          "max_distance_to_previous_loop_mm": 0.0
+        }
+      ],
+      "all_outer_only": true,
+      "no_travel_or_retraction": true,
+      "continuous_z": true,
+      "max_layer_shift_mm": 0.11667476162394055,
+      "max_layer_shift_fraction_of_bead": 0.19445793603990094,
+      "centreline_samples": 36848,
+      "centreline_error_mm": {
+        "p50": 0.02387549004303935,
+        "p95": 0.05244306003548681,
+        "p99": 0.05673107273489086,
+        "max": 0.09838101663877663
+      },
+      "object_offset_mm": [
+        128.0,
+        126.0
+      ],
+      "extrusion_xy_bounds_mm": [
+        [
+          29.172,
+          27.172
+        ],
+        [
+          226.828,
+          224.828
+        ]
+      ],
+      "on_bed": true,
+      "pass": true
+    },
+    "straights-left-right": {
+      "blank": "straights-left-right",
+      "filament_shrink": 0.9951000000000001,
+      "gcode_sha256": "0d2d3c6d4baeba9f2da2ff5a301da51544b7cec5578ed6fb616fca811d48cd63",
+      "layer_height_mm": 0.2,
+      "spiral_layers": 106,
+      "finishing_turn_in_top_waste": [
+        {
+          "zero_flow_moves": 1,
+          "max_zero_flow_mm": 6.95651651331325,
+          "z_min_mm": 21.4,
+          "z_max_mm": 21.4,
+          "layer": 108,
+          "moves": 16,
+          "xy_travels": 0,
+          "retractions": 0,
+          "features": [
+            "Outer wall"
+          ],
+          "z_monotonic": true,
+          "z_span_mm": 0.0,
+          "max_distance_to_previous_loop_mm": 0.0
+        }
+      ],
+      "all_outer_only": true,
+      "no_travel_or_retraction": true,
+      "continuous_z": true,
+      "max_layer_shift_mm": 0.1166747616239408,
+      "max_layer_shift_fraction_of_bead": 0.19445793603990136,
+      "centreline_samples": 32713,
+      "centreline_error_mm": {
+        "p50": 0.02367707855148934,
+        "p95": 0.052303397804749005,
+        "p99": 0.05655875380689159,
+        "max": 0.09849549866239153
+      },
+      "object_offset_mm": [
+        128.0,
+        126.0
+      ],
+      "extrusion_xy_bounds_mm": [
+        [
+          40.541,
+          38.541
+        ],
+        [
+          215.459,
+          213.459
+        ]
+      ],
+      "on_bed": true,
+      "pass": true
+    },
+    "corners-four": {
+      "blank": "corners-four",
+      "filament_shrink": 0.9951000000000001,
+      "gcode_sha256": "620fbaf32a1c3259c863ced7eab30b8e6d38bf74fcfacd4d27f3fcfca8cbebe1",
+      "layer_height_mm": 0.12,
+      "spiral_layers": 118,
+      "finishing_turn_in_top_waste": [
+        {
+          "zero_flow_moves": 1,
+          "max_zero_flow_mm": 0.48040087427064626,
+          "z_min_mm": 14.36,
+          "z_max_mm": 14.36,
+          "layer": 120,
+          "moves": 123,
+          "xy_travels": 0,
+          "retractions": 0,
+          "features": [
+            "Outer wall"
+          ],
+          "z_monotonic": true,
+          "z_span_mm": 0.0,
+          "max_distance_to_previous_loop_mm": 0.0
+        }
+      ],
+      "all_outer_only": true,
+      "no_travel_or_retraction": true,
+      "continuous_z": true,
+      "max_layer_shift_mm": 0.24473046398027368,
+      "max_layer_shift_fraction_of_bead": 0.4078841066337895,
+      "centreline_samples": 77598,
+      "centreline_error_mm": {
+        "p50": 0.015412690564305748,
+        "p95": 0.056214967883535256,
+        "p99": 0.07930941617019124,
+        "max": 0.11415362674458336
+      },
+      "object_offset_mm": [
+        128.0,
+        126.00050000000002
+      ],
+      "extrusion_xy_bounds_mm": [
+        [
+          75.152,
+          73.153
+        ],
+        [
+          180.848,
+          178.848
+        ]
+      ],
+      "on_bed": true,
+      "pass": true
+    }
+  },
+  "slices": {
+    "straights-front-back": {
+      "estimated_time_s": 1609.0,
+      "feature_types": [
+        "Outer wall",
+        "Brim",
+        "Custom"
+      ],
+      "filaments": [
+        {
+          "color": "#F2754E",
+          "id": 1,
+          "length_m": 2.684,
+          "type": "PC",
+          "weight_g": 7.682
+        }
+      ],
+      "has_brim": true,
+      "has_skirt": false,
+      "has_support": false,
+      "objects": [
+        "straights-front-back-vase.stl"
+      ],
+      "plate": 1
+    },
+    "straights-left-right": {
+      "estimated_time_s": 1472.0,
+      "feature_types": [
+        "Outer wall",
+        "Brim",
+        "Custom"
+      ],
+      "filaments": [
+        {
+          "color": "#F2754E",
+          "id": 1,
+          "length_m": 2.371,
+          "type": "PC",
+          "weight_g": 6.7860000000000005
+        }
+      ],
+      "has_brim": true,
+      "has_skirt": false,
+      "has_support": false,
+      "objects": [
+        "straights-left-right-vase.stl"
+      ],
+      "plate": 1
+    },
+    "corners-four": {
+      "estimated_time_s": 1411.0,
+      "feature_types": [
+        "Outer wall",
+        "Brim",
+        "Custom"
+      ],
+      "filaments": [
+        {
+          "color": "#F2754E",
+          "id": 1,
+          "length_m": 1.282,
+          "type": "PC",
+          "weight_g": 3.668
+        }
+      ],
+      "has_brim": true,
+      "has_skirt": false,
+      "has_support": false,
+      "objects": [
+        "corners-four-vase.stl"
+      ],
+      "plate": 1
+    }
+  }
+}

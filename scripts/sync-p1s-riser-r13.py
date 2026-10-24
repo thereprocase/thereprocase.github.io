@@ -117,7 +117,7 @@ content = pane('Assembly and cutaways', f'''<nav aria-label="Design views">{butt
 content += pane('Download the 8 mm model', '''<div class="downloads">
 <a class="button primary" href="p1s-riser-r13-u10-8mm-cad.zip">Individual parts · STEP + STL</a>
 <a class="button" href="p1s-riser-r13-u10-8mm-review.step">Assembly STEP</a>
-<a class="button" href="ASSEMBLY-R13-U10.txt">Assembly notes</a><a class="button" href="pc-support/">Reusable PC support kit</a></div>
+<a class="button" href="ASSEMBLY-R13-U10.txt">Assembly notes</a><a class="button" href="pc-support/">Reusable PC support kit</a><a class="button" href="vase/">Vase-printed diffuser prototype</a></div>
 <p>Four frame quarters, four diffusers, a cable plug and a joint-fit coupon. The assembly STEP shows the frame, diffusers and cable plug together.</p>
 <p>This revision has passed CAD checks; a physical fitting trial and fresh slice are next. The 10 and 12 mm versions have checked sections, but complete kits are not ready.</p>
 <p><a href="SHA256SUMS-R13-U10">Checksums</a> · <a href="REFERENCE-ATTRIBUTION.txt">Attribution and license</a></p>''', 'downloads')

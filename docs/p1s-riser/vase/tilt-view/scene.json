@@ -1,0 +1,45 @@
+{
+  "title": "Straight section in its print pose",
+  "subtitle": "Full lower edge on the bed \u00b7 pitches balanced either side of vertical",
+  "caption": "30 mm sample of the actual straight blank section, viewed along its length; the orange end closure and top strip trim away. Grey slab marks the bed.",
+  "camera": {
+    "yaw": -0.18,
+    "pitch": 0.12,
+    "zoom": 0.9
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 96,
+      "triangles": 8,
+      "edges": 14,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 96,
+      "triangles": 152,
+      "edges": 92,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 8,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.82,
+        0.8,
+        0.74
+      ]
+    }
+  ]
+}

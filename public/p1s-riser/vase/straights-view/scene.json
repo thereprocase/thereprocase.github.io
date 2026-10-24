@@ -1,0 +1,34 @@
+{
+  "title": "Straight diffusers: two per vase",
+  "subtitle": "Tilted 30\u00b0 about the lower edge \u00b7 faces at +30\u00b0 and \u221230\u00b0 from vertical",
+  "caption": "Front and back pair shown; left and right use the same section at 220.5 mm. Teal stays, orange trims away.",
+  "camera": {
+    "yaw": -0.55,
+    "pitch": 0.55,
+    "zoom": 0.75
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 752,
+      "triangles": 172,
+      "edges": 178,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 752,
+      "triangles": 1300,
+      "edges": 584,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

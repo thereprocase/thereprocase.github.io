@@ -1,0 +1,29 @@
+Original model: Riser for Bambulab P1S with ventilation and light
+Creator: Andys1957 (@Andys1957)
+Source: https://www.printables.com/model/642957-riser-for-bambulab-p1s-with-ventilation-and-light
+Printables model ID: 642957
+Model updated: December 1, 2023 (source-page text supplied by owner)
+Model files dated: November 10, 2023
+
+License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+SPDX identifier: CC-BY-NC-SA-4.0
+License deed: https://creativecommons.org/licenses/by-nc-sa/4.0/
+License text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+
+License evidence: Owner supplied the Printables model-page text in this
+conversation on 2026-10-21. It states:
+"The author marked this model as their own original creation."
+"Creative Commons (4.0 International License)
+Attribution—Noncommercial—Share Alike"
+
+Keep this attribution with redistributed source and remix files. Attribute the
+original author, link the license, and indicate modifications. Distribute a
+shared adaptation under CC BY-NC-SA 4.0; commercial use is not granted.
+No endorsement by the original author is implied.
+
+Current revision: R13 update 10, October 24, 2026.
+Changes by thereprocase: four-piece frame, tapered puzzle joints and overlapping
+seams, downward-facing LED backing, lift-in diffusers, rounded contact edges,
+bed-starting chamfers and a rear cable plug. The original riser was used as a
+reference for the printer/glass interface. This package contains the revised
+geometry, not the original author's files. CC BY-NC-SA 4.0 applies.

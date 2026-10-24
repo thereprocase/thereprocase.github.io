@@ -1,0 +1,23 @@
+{
+  "title": "Actual corner toolpath",
+  "subtitle": "0.12 mm layers \u00b7 0.6 mm line \u00b7 one continuous spiral",
+  "caption": "118 rising turns, no travel or retraction. The steepest step between loops is 0.245 mm, at the corner ends.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.75,
+    "zoom": 0.8
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 243640,
+      "triangles": 243640,
+      "edges": 352317,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

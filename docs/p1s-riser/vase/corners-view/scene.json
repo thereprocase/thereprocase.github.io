@@ -1,0 +1,34 @@
+{
+  "title": "Four corners in one vase",
+  "subtitle": "Upright \u00b7 flat lower rim on the bed \u00b7 \u00b130\u00b0 faces",
+  "caption": "Short straight links join the corners. Teal stays, orange trims away at the guide ridges.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.75,
+    "zoom": 0.8
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 11000,
+      "triangles": 17936,
+      "edges": 2184,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 11000,
+      "triangles": 3064,
+      "edges": 1220,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}
