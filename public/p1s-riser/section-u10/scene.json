@@ -1,0 +1,56 @@
+{
+  "title": "Slimmer lower foot and glass seat",
+  "subtitle": "34.2 mm straight section \u00b7 14.8 mm foot \u00b7 3.1 mm visor bridge",
+  "caption": "Yellow: LED. Orange: diffuser. Grey: glass section. Cut from the actual assembly; no geometric enlargement of gaps.",
+  "camera": {
+    "yaw": 0.15,
+    "pitch": 0.08,
+    "zoom": 0.8
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 420,
+      "triangles": 276,
+      "edges": 157,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.98,
+        0.9,
+        0.4
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.64,
+        0.72,
+        0.74
+      ]
+    }
+  ]
+}

@@ -36,14 +36,14 @@ with sync_playwright() as p:
             page.wait_for_function("document.querySelector('#beam img').naturalWidth > 0")
             page.evaluate('scrollTo(0,0)')
             page.screenshot(path=str(output / f'page-{width}.png'), full_page=True)
-    for view in ['installed', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'support', 'full-printer']:
+    for view in ['installed', 'comparison', 'context', 'installed-section', 'exploded', 'section', 'lifted', 'joint', 'led-route', 'diffusers', 'clearance', 'print-pose', 'support', 'full-printer']:
         page.locator(f'[data-view="{view}"]').click()
         frame = page.frame_locator('#viewer')
         frame.locator('#load').wait_for(state='hidden')
         assert frame.locator('#title').inner_text()
-        assert page.locator('#viewer').get_attribute('src') == f'{view}-u9/'
-        assert page.locator('#png').get_attribute('href') == f'{view}-u9.png'
-        assert page.locator('#full').get_attribute('href') == f'{view}-u9/'
+        assert page.locator('#viewer').get_attribute('src') == f'{view}-u10/'
+        assert page.locator('#png').get_attribute('href') == f'{view}-u10.png'
+        assert page.locator('#full').get_attribute('href') == f'{view}-u10/'
     frame = page.frame_locator('#viewer')
     frame.locator('#light-toggle').click()
     assert frame.locator('#light-toggle').get_attribute('aria-pressed') == 'false'
@@ -77,7 +77,7 @@ with sync_playwright() as p:
         page.goto(base + '/p1s-riser/' + route)
         page.wait_for_url(base + '/p1s-riser/')
     page.goto(base + '/p1s-riser/faux-light/')
-    page.wait_for_url(base + '/p1s-riser/full-printer-u9/')
+    page.wait_for_url(base + '/p1s-riser/full-printer-u10/')
     page.goto(base + '/')
     assert page.locator('body').inner_text().find('four-piece glass') >= 0
     assert not errors, errors
@@ -93,7 +93,7 @@ manifest = json.loads((root / 'p1s-riser/provenance.json').read_text())
 for record in manifest['downloads']:
     data = (root / 'p1s-riser' / record['file']).read_bytes()
     assert hashlib.sha256(data).hexdigest() == record['sha256']
-with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u9-8mm-cad.zip') as z:
+with zipfile.ZipFile(root / 'p1s-riser/p1s-riser-r13-u10-8mm-cad.zip') as z:
     assert z.testzip() is None
     assert len([n for n in z.namelist() if n.endswith('.stl')]) == 11
 support = root / 'p1s-riser/pc-support'
@@ -104,4 +104,4 @@ with zipfile.ZipFile(support / record['file']) as z:
     assert len([n for n in z.namelist() if n.startswith('pc-parts/') and n.endswith('.stl')]) == 3
     assert len([n for n in z.namelist() if n.startswith('coupons/') and n.endswith('.stl')]) == 2
 server.shutdown()
-print('PASS: four viewport widths, 13 CAD views + six support views at three widths and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)
+print('PASS: four viewport widths, 14 CAD views + six support views at three widths and light toggle, right-drag pan, legacy redirects, local links, download hashes and ZIP. Screenshots:', output)

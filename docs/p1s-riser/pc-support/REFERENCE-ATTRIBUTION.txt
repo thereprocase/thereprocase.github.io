@@ -21,7 +21,7 @@ original author, link the license, and indicate modifications. Distribute a
 shared adaptation under CC BY-NC-SA 4.0; commercial use is not granted.
 No endorsement by the original author is implied.
 
-Current revision: R13 update 9, October 24, 2026.
+Current revision: R13 update 10, October 24, 2026.
 Changes by thereprocase: four-piece frame, tapered puzzle joints and overlapping
 seams, downward-facing LED backing, lift-in diffusers, rounded contact edges,
 bed-starting chamfers and a rear cable plug. The original riser was used as a

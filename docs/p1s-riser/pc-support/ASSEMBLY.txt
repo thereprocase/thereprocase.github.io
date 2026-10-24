@@ -1,4 +1,4 @@
-Reusable PC visor support — prototype 2 for R13 update 9
+Reusable PC visor support — prototype 3 for R13 update 10
 
 Print the corner, long rail and short rail in PC, feet down. The rails use
 vertical tapered puzzle keys. Swap the two rails between corner legs for the

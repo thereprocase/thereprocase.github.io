@@ -1,0 +1,34 @@
+{
+  "title": "Overlapping frame joint",
+  "subtitle": "Vertical assembly \u00b7 tapered puzzle keys \u00b7 overlapping light baffles",
+  "caption": "Vertical tapered puzzle joint with overlapping wall and roof. Physical fit coupon still needed.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.85,
+    "zoom": 0.83
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 2676,
+      "triangles": 3814,
+      "edges": 410,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 2541,
+      "triangles": 3580,
+      "edges": 400,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

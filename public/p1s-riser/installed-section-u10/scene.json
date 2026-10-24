@@ -1,0 +1,77 @@
+{
+  "title": "Installed corner cutaway",
+  "subtitle": "Capped cut through the current frame, diffuser, glass and seat",
+  "caption": "Teal: frame. Orange: diffuser. Yellow: LED. Grey: nominal printer/glass references.",
+  "camera": {
+    "yaw": 2.3,
+    "pitch": 0.4,
+    "zoom": 0.85
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 9380,
+      "triangles": 4972,
+      "edges": 737,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1187,
+      "triangles": 722,
+      "edges": 298,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 636,
+      "triangles": 364,
+      "edges": 200,
+      "color": [
+        0.94,
+        0.82,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 54,
+      "triangles": 32,
+      "edges": 27,
+      "color": [
+        0.3,
+        0.34,
+        0.36
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.65,
+        0.75,
+        0.77
+      ],
+      "alpha": 1,
+      "emission": 0
+    }
+  ]
+}

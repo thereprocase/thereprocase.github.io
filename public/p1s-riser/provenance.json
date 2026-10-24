@@ -1,36 +1,36 @@
 {
-  "revision": "R13 update 9",
+  "revision": "R13 update 10",
   "downloads": [
     {
-      "file": "p1s-riser-r13-u9-8mm-cad.zip",
-      "bytes": 7117724,
-      "sha256": "027bfb346eef4e0941d847c9312a1fa0b333e8db9ce3953dff0a5174eec6bd62"
+      "file": "p1s-riser-r13-u10-8mm-cad.zip",
+      "bytes": 6609103,
+      "sha256": "d0c6d4c42cf1822f40653494da57f48a97d1dd5f7e015d8ffdce1194e11519a2"
     },
     {
-      "file": "p1s-riser-r13-u9-8mm-review.step",
-      "bytes": 38072457,
-      "sha256": "8ee0c40468ebf9b121b661ed343cda67204823512fa93d3eb78f1bb5f31ec4a2"
+      "file": "p1s-riser-r13-u10-8mm-review.step",
+      "bytes": 35291757,
+      "sha256": "526280e21c7d564a7963b88c2467700bc8e3caf8a5be84dbddcdf576b7320084"
     },
     {
-      "file": "ASSEMBLY-R13-U9.txt",
-      "bytes": 2272,
-      "sha256": "ffb5f08bbc6708f1dcba4a9c1f833a788c06bcd4cf6c897a859b4793c2c8d07a"
+      "file": "ASSEMBLY-R13-U10.txt",
+      "bytes": 2570,
+      "sha256": "f68e8ba66e7d2ece85d0f794a4897aec488085d5126c6cc7d1b113f60b71f7df"
     },
     {
       "file": "REFERENCE-ATTRIBUTION.txt",
-      "bytes": 1562,
-      "sha256": "1d2cfdd27c45876260980f346b20a659a091ded6a7fd070bb580e1b4b0aba85d"
+      "bytes": 1563,
+      "sha256": "0e58f5cbd859746163df2ed7913d19a0e857453d400674613fa49649b5788e98"
     }
   ],
   "geometry_modified": false,
   "sources_sha256": {
-    "optical_profile_v9.py": "fa8ffca88fa860f25f26ac6774718645cddb4f2ddbcfbdc0fb95ceb38c316637",
-    "section_v9.py": "5e24336ae43b45c8c6f8c316e3ea670206f971a04eabf4a6e6005eec61e74afe",
-    "build_v9.py": "18018eac94ca7b8d8cb56062386578d0e0a65c5bac0e1fac9ef869864acfa9d0",
-    "joints_v9.py": "dc0239c7c16336d9b5ad1f09de1856b6b886a8510fad1a385df4102f4b44c2a7",
-    "masks_v9.py": "290e5b8e49dd61c388c966ef91ec7e7519b011cf286cda0d43da995b2c99f75d",
-    "masks-v9.json": "b64bb5adfe617b6c54349946d6dd4a27dc25031db2de26fb0d8be8f50960a7c8",
-    "render_sections_v9.py": "407b41be9322a1bcd082a73f7d7b789a07aa3770642f6bcbabbb708f29e20803",
-    "beam_sections_v9.py": "64c04d2bc6071aa3783ec0008826f5915f9ab92a9169afa11352dd27272a993b"
+    "optical_profile_v10.py": "6a443418851d9d04f7cd8cc3b1a1455de0621d4d13a7f5ce1b802fcc9f4c9769",
+    "section_v10.py": "0c7cdb4c50ed7cbfd39aa89be2713e93625243b899dd5bf48e35ae7ed59ddda6",
+    "build_v10.py": "1ee271b3624b613ab712705b0f9d17a8902eea09f0ee01b453b910f14d78581a",
+    "joints_v10.py": "71f7aca73a9ad29b42af936509e6b96cf4ddd509c40e12eb6bda366fa87f7c81",
+    "masks_v10.py": "2812ed532110a6ba70c23a9d2490464fbb82de18b680bc2dfbc7030af5dcaf80",
+    "masks-v10.json": "b64bb5adfe617b6c54349946d6dd4a27dc25031db2de26fb0d8be8f50960a7c8",
+    "render_sections_v10.py": "4e366faef6773b983aeafdb937c00617fb2555e00053447ed7ae2fe33097800d",
+    "beam_sections_v10.py": "ae8f5e02efd0d28ce87b50498678db4e800f15523edbdcdae08c5254d713d6cc"
   }
 }

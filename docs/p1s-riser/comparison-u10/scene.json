@@ -1,0 +1,78 @@
+{
+  "title": "Previous section and slimmer section",
+  "subtitle": "Grey: previous \u00b7 teal: slimmer \u00b7 same glass clearance and 3.1 mm visor bridge",
+  "caption": "Straight section: 38 \u2192 34.2 mm wide. Lower foot: 17.3 \u2192 14.8 mm. Overall height: 26 \u2192 25 mm. No hollowing pockets.",
+  "camera": {
+    "yaw": 0.15,
+    "pitch": 0.08,
+    "zoom": 0.88
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 438,
+      "triangles": 288,
+      "edges": 161,
+      "color": [
+        0.58,
+        0.63,
+        0.65
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.82,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 420,
+      "triangles": 276,
+      "edges": 157,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 24,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.94,
+        0.82,
+        0.28
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 48,
+      "triangles": 28,
+      "edges": 22,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

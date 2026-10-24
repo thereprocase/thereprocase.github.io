@@ -1,0 +1,34 @@
+{
+  "title": "Support contact and locating foot",
+  "subtitle": "Actual 6 mm CAD section through a registering foot",
+  "caption": "Teal: frame. Orange: PC. Full visor width plus at least 1.5 mm padding; bare height gap remains 0.06 mm.",
+  "camera": {
+    "yaw": 0.15,
+    "pitch": 0.08,
+    "zoom": 0.8
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 420,
+      "triangles": 276,
+      "edges": 157,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 72,
+      "triangles": 44,
+      "edges": 34,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

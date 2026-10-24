@@ -5,154 +5,18 @@
   "checks": [
     {
       "frame": "front-right",
-      "visor_projection_mm2": 1835.405497093316,
-      "required_padded_mm2": 2789.361287094707,
-      "support_top_mm2": 3300.0815788488103,
-      "minimum_perimeter_margin_mm": 1.9924680776884995,
-      "missing_padded_envelope_mm2": 0.0,
-      "joint_clearance_uncovered_mm2": 3.0009401483329547,
-      "uncovered_more_than_0_11mm_from_support_mm2": 0.0,
-      "placement_play": [
-        {
-          "dx_mm": -0.2,
-          "dy_mm": -0.2,
-          "margin_mm": 1.785030038271562,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": -0.2,
-          "dy_mm": 0,
-          "margin_mm": 1.7924680776885114,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": -0.2,
-          "dy_mm": 0.2,
-          "margin_mm": 1.716086462478102,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": -0.2,
-          "margin_mm": 1.7924680776885114,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": 0,
-          "margin_mm": 1.9924680776884995,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": 0.2,
-          "margin_mm": 1.792468077688511,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": -0.2,
-          "margin_mm": 1.792468077688511,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": 0,
-          "margin_mm": 1.7924680776885114,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": 0.2,
-          "margin_mm": 1.7850300382715636,
-          "missing_padded_mm2": 0.0
-        }
-      ],
-      "minimum_margin_with_play_mm": 1.716086462478102,
-      "pass": true
-    },
-    {
-      "frame": "rear-right",
-      "visor_projection_mm2": 1871.1388497649357,
-      "required_padded_mm2": 2843.4184478428556,
-      "support_top_mm2": 3300.081578848807,
-      "minimum_perimeter_margin_mm": 1.9924680776884995,
-      "missing_padded_envelope_mm2": 0.0,
-      "joint_clearance_uncovered_mm2": 3.000940148332954,
-      "uncovered_more_than_0_11mm_from_support_mm2": 0.0,
-      "placement_play": [
-        {
-          "dx_mm": -0.2,
-          "dy_mm": -0.2,
-          "margin_mm": 1.716086462478102,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": -0.2,
-          "dy_mm": 0,
-          "margin_mm": 1.792468077688511,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": -0.2,
-          "dy_mm": 0.2,
-          "margin_mm": 1.785030038271545,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": -0.2,
-          "margin_mm": 1.792468077688511,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": 0,
-          "margin_mm": 1.9924680776884995,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0,
-          "dy_mm": 0.2,
-          "margin_mm": 1.7924680776885114,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": -0.2,
-          "margin_mm": 1.7850300382715725,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": 0,
-          "margin_mm": 1.7924680776885111,
-          "missing_padded_mm2": 0.0
-        },
-        {
-          "dx_mm": 0.2,
-          "dy_mm": 0.2,
-          "margin_mm": 1.792468077688511,
-          "missing_padded_mm2": 0.0
-        }
-      ],
-      "minimum_margin_with_play_mm": 1.716086462478102,
-      "pass": true
-    },
-    {
-      "frame": "rear-left",
-      "visor_projection_mm2": 1906.8722024365645,
-      "required_padded_mm2": 2897.4756085910026,
-      "support_top_mm2": 3300.08157884881,
+      "visor_projection_mm2": 1834.6054970933026,
+      "required_padded_mm2": 2810.8493018038803,
+      "support_top_mm2": 3299.4227437710992,
       "minimum_perimeter_margin_mm": 1.9924680776884998,
       "missing_padded_envelope_mm2": 0.0,
-      "joint_clearance_uncovered_mm2": 3.0009401483329405,
+      "joint_clearance_uncovered_mm2": 3.0009401483329583,
       "uncovered_more_than_0_11mm_from_support_mm2": 0.0,
       "placement_play": [
         {
           "dx_mm": -0.2,
           "dy_mm": -0.2,
-          "margin_mm": 1.7850300382715636,
+          "margin_mm": 1.792468077688511,
           "missing_padded_mm2": 0.0
         },
         {
@@ -164,7 +28,7 @@
         {
           "dx_mm": -0.2,
           "dy_mm": 0.2,
-          "margin_mm": 1.792468077688511,
+          "margin_mm": 1.716086462478102,
           "missing_padded_mm2": 0.0
         },
         {
@@ -182,6 +46,142 @@
         {
           "dx_mm": 0,
           "dy_mm": 0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": -0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": 0,
+          "margin_mm": 1.7924680776885114,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": 0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        }
+      ],
+      "minimum_margin_with_play_mm": 1.716086462478102,
+      "pass": true
+    },
+    {
+      "frame": "rear-right",
+      "visor_projection_mm2": 1870.7388497649338,
+      "required_padded_mm2": 2853.608437095446,
+      "support_top_mm2": 3299.422743771098,
+      "minimum_perimeter_margin_mm": 1.9924680776884998,
+      "missing_padded_envelope_mm2": 0.0,
+      "joint_clearance_uncovered_mm2": 3.0009401483329574,
+      "uncovered_more_than_0_11mm_from_support_mm2": 0.0,
+      "placement_play": [
+        {
+          "dx_mm": -0.2,
+          "dy_mm": -0.2,
+          "margin_mm": 1.716086462478102,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": -0.2,
+          "dy_mm": 0,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": -0.2,
+          "dy_mm": 0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "margin_mm": 1.9924680776884998,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0.2,
+          "margin_mm": 1.7924680776885114,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": -0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": 0,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0.2,
+          "dy_mm": 0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        }
+      ],
+      "minimum_margin_with_play_mm": 1.716086462478102,
+      "pass": true
+    },
+    {
+      "frame": "rear-left",
+      "visor_projection_mm2": 1906.872202436561,
+      "required_padded_mm2": 2896.3687124741095,
+      "support_top_mm2": 3299.422743771099,
+      "minimum_perimeter_margin_mm": 1.9924680776884995,
+      "missing_padded_envelope_mm2": 0.0,
+      "joint_clearance_uncovered_mm2": 3.0009401483329405,
+      "uncovered_more_than_0_11mm_from_support_mm2": 0.0,
+      "placement_play": [
+        {
+          "dx_mm": -0.2,
+          "dy_mm": -0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": -0.2,
+          "dy_mm": 0,
+          "margin_mm": 1.7924680776885111,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": -0.2,
+          "dy_mm": 0.2,
+          "margin_mm": 1.792468077688511,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": -0.2,
+          "margin_mm": 1.7924680776885114,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "margin_mm": 1.9924680776884995,
+          "missing_padded_mm2": 0.0
+        },
+        {
+          "dx_mm": 0,
+          "dy_mm": 0.2,
           "margin_mm": 1.7924680776885111,
           "missing_padded_mm2": 0.0
         },
@@ -200,7 +200,7 @@
         {
           "dx_mm": 0.2,
           "dy_mm": 0.2,
-          "margin_mm": 1.785030038271562,
+          "margin_mm": 1.792468077688511,
           "missing_padded_mm2": 0.0
         }
       ],
@@ -209,9 +209,9 @@
     },
     {
       "frame": "front-left",
-      "visor_projection_mm2": 1871.1388497649357,
-      "required_padded_mm2": 2843.4184478428533,
-      "support_top_mm2": 3300.0815788488103,
+      "visor_projection_mm2": 1870.7388497649351,
+      "required_padded_mm2": 2853.6095771825426,
+      "support_top_mm2": 3299.4227437710992,
       "minimum_perimeter_margin_mm": 1.9924680776884998,
       "missing_padded_envelope_mm2": 0.0,
       "joint_clearance_uncovered_mm2": 3.0009401483329414,
@@ -232,13 +232,13 @@
         {
           "dx_mm": -0.2,
           "dy_mm": 0.2,
-          "margin_mm": 1.7850300382715538,
+          "margin_mm": 1.792468077688511,
           "missing_padded_mm2": 0.0
         },
         {
           "dx_mm": 0,
           "dy_mm": -0.2,
-          "margin_mm": 1.792468077688511,
+          "margin_mm": 1.7924680776885111,
           "missing_padded_mm2": 0.0
         },
         {
@@ -256,13 +256,13 @@
         {
           "dx_mm": 0.2,
           "dy_mm": -0.2,
-          "margin_mm": 1.7850300382715687,
+          "margin_mm": 1.792468077688511,
           "missing_padded_mm2": 0.0
         },
         {
           "dx_mm": 0.2,
           "dy_mm": 0,
-          "margin_mm": 1.7924680776885114,
+          "margin_mm": 1.7924680776885111,
           "missing_padded_mm2": 0.0
         },
         {

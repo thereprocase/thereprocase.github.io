@@ -1,0 +1,100 @@
+{
+  "title": "Frame and lift-in diffusers",
+  "subtitle": "Parts lifted vertically for clarity",
+  "caption": "Rounded slot entrances replace the flat landing shelves. Optional CA on the hidden upper contact.",
+  "camera": {
+    "yaw": -0.8,
+    "pitch": 0.85,
+    "zoom": 0.84
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 13779,
+      "triangles": 11854,
+      "edges": 1234,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 13644,
+      "triangles": 11620,
+      "edges": 1224,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 14306,
+      "triangles": 12558,
+      "edges": 1383,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 14405,
+      "triangles": 12480,
+      "edges": 1464,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

@@ -32,9 +32,9 @@
     },
     {
       "file": "part-2.bin",
-      "vertices": 1818,
-      "triangles": 1392,
-      "edges": 583,
+      "vertices": 1622,
+      "triangles": 1280,
+      "edges": 555,
       "color": [
         0.98,
         0.63,

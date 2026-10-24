@@ -1,0 +1,16 @@
+[
+  {
+    "version": "v9",
+    "section_width_mm": 38.00000020006516,
+    "foot_width_mm": 17.302739784326917,
+    "height_mm": 26.00000020000001,
+    "source_sha256": "ab73d3588c905c7ef9d298dc0e35f8131ca3fda637087a6fa5d3a7bb4cbcb964"
+  },
+  {
+    "version": "v10",
+    "section_width_mm": 34.200000000065586,
+    "foot_width_mm": 14.802739784326945,
+    "height_mm": 25.000000100000015,
+    "source_sha256": "740e21d5e05ad901fa88db375e39e8628259ddd7861ce3b6f9533bbae03284af"
+  }
+]

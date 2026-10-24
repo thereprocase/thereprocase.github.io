@@ -1,5 +1,5 @@
 {
-  "revision": "PC support prototype 2",
+  "revision": "PC support prototype 3",
   "status": "CAD prototype; coated release and sliced height pending",
   "material": "PolyMax PC",
   "pieces": 3,
@@ -19,19 +19,19 @@
   "coating": "Heavy glue stick; dried thickness not included in bare 0.06 mm gap.",
   "layer_warning": "Reconcile final tool height and insertion pause with sliced underside.",
   "source_sha256": {
-    "front-right": "d0f6c7a66a689a99f15402d6b5cd88bd7d0b2921a7cfeaa78800600e3643a642",
-    "rear-right": "b3ac20d08873e4a1f76292fe701a4ca7c8dddec6ee9fc236656921e2933e29c6",
-    "rear-left": "c0acf8e8228eba220e9bdd2045422e51866e664b34544e7182ff5d9adfa0fe99",
-    "front-left": "55954c7a90dac6bdb0aa68e8745512b4a6218464cbe0fbc9b78f8ac8dbefc439"
+    "front-right": "ef18886b9ad5e15e175d9379261c7dc9c69c0bf53515fd657ca69f3e5d7714e2",
+    "rear-right": "f269abff24aaab7f531def8cba7b99935b5973999a889390fa8df684b5cc0729",
+    "rear-left": "df5e4539b6b22a6450ceec7566a27f7a5d0b415a052f312e4ef447745e3ceb08",
+    "front-left": "7c1322b760288bd9dd8cb7916531feddf097d9ea47dd678b481d7c9cc2c7620c"
   },
   "parts": {
     "corner": {
       "valid": true,
       "solids": 1,
-      "volume_mm3": 14400.648755171951,
+      "volume_mm3": 14391.893094293171,
       "bounds_mm": [
-        58.99948851873064,
-        58.99948851873064,
+        59.0000002,
+        59.0000002,
         14.440000199999998
       ]
     },
@@ -1651,34 +1651,23 @@
   "minimum_perimeter_margin_mm": 1.9924680776884995,
   "minimum_margin_with_placement_play_mm": 1.716086462478102,
   "corner_base_relief": "0.5 mm perimeter relief up to Z6; widens to full padded footprint by Z7. Top unchanged.",
-  "frame_revision": "R13 update 9",
-  "unchanged_pc_export_files": {
-    "corner.step": "7c2fe298f6ab0008a6294159b4d040d7d432a3d2247026e540c214630f900974",
-    "corner.stl": "75038b9eb6e8ecf7a6c0b627c4017cca56f21038fff6b3843259daf36547399a",
-    "long-rail.step": "3e006f9f98e3a73fd51696dca86564af3ec53fd68c947de7dd0d65fa6282c873",
-    "long-rail.stl": "b6553b17b7716fe7e8fbad43f84dcd5f261267ed2c6c8f603812ab0be3567b21",
-    "short-rail.step": "1170f486f910d5f329ceef0382ef57103089ad741bb1858476ff3c9aa539d896",
-    "short-rail.stl": "9e9a862eea312302c93f0317db011d450bc3c0bb0b195806946f9d6618e34dd8",
-    "pc-support-coupon.step": "b750cc9d4163da506ea3ecaa976069ebf261b623d54ff20902b907b88f7fcbcd",
-    "pc-support-coupon.stl": "404519ebf39ae0c6a6cc00209acd63b1a041213c777023d8772b179d5838ecbb"
-  },
   "export_sha256": {
-    "corner.step": "7c2fe298f6ab0008a6294159b4d040d7d432a3d2247026e540c214630f900974",
-    "front-left-corner-placed.step": "354b6fa62ecb91111a9631ca218a8f6b5cb183d81db66cf85c2f35a60e33b11e",
-    "front-left-incoming-placed.step": "f9c0b8ec718299681694b2db557866b72bfeb97f5d233efa9ed802f8d5513d54",
-    "front-left-outgoing-placed.step": "a74b3c46024336867e1db3a759886688979d036ad6ec130499956dfacf529b87",
-    "front-right-corner-placed.step": "5ca8aaf2508fe30b1e2fafb8ab7f3310866e03095f7c037e43b71ce6f0d6b5d2",
-    "front-right-incoming-placed.step": "864603fec9b9f1b99210aa539cc0aef89600f79c86d8efe0f41b154b00674a55",
-    "front-right-outgoing-placed.step": "6af5d328c025cc8411a3cd6143d06792b121ee594d7c9b221ffeee4f822244f2",
-    "long-rail.step": "3e006f9f98e3a73fd51696dca86564af3ec53fd68c947de7dd0d65fa6282c873",
-    "pc-support-coupon.step": "b750cc9d4163da506ea3ecaa976069ebf261b623d54ff20902b907b88f7fcbcd",
-    "pet-gf15-visor-coupon.step": "95fc1779fdad336bf891bdc55753ef80236c019a7e212b856135c857017a247b",
-    "rear-left-corner-placed.step": "d6b1f56a117e253265f0bb8ccd19884004553c184d2e4ab9309ea789b9140581",
-    "rear-left-incoming-placed.step": "59300b92a67390d897334fb98db189a3a6b4b5c938656f0ab2b7901e84d3595c",
-    "rear-left-outgoing-placed.step": "0efba878c0db5c21589de332b1321467b4aeb2d2bcf5566935d0309f9b903718",
-    "rear-right-corner-placed.step": "50defbc136736ea4bafab14bd9b545138056c27598abf54ce36a648c29992499",
-    "rear-right-incoming-placed.step": "d76b5eddfa936535819d7f4c2de4def780498586c48f52e09b57ccb51d3a6db9",
-    "rear-right-outgoing-placed.step": "37cf371d76bdb372a280a4dc779fc41390d3be99a929815b7a6794e084b96707",
-    "short-rail.step": "1170f486f910d5f329ceef0382ef57103089ad741bb1858476ff3c9aa539d896"
+    "corner.step": "718885f740bb0095b2e142b8830b7ee217bd32fb5ee904634c4d4f78ca8a168f",
+    "front-left-corner-placed.step": "05b5fb92cc3e86075eb3bed97a875732bb3739f69f99e1615f7f7791c543897a",
+    "front-left-incoming-placed.step": "7673b501b6415ee94dafb9df5e5354722c45392e25d7f51f088d785b5ffa7d8e",
+    "front-left-outgoing-placed.step": "50f6d76e47a150ff9a239c400edc438f75e2337b82dbef89bf17728259eda96b",
+    "front-right-corner-placed.step": "550f543011512a80ca15110a2c66957575c4ac8368483a4bb77794ee11ae887b",
+    "front-right-incoming-placed.step": "e706fbeaec2b6326f78c831110f2a69fcc814e0d3a9e44ce0d85857f803fece1",
+    "front-right-outgoing-placed.step": "5abd924b7449d55a6b76630ec41caf343302c74caf5a231cbe9bad281ca51006",
+    "long-rail.step": "62e1f52917578a2cf2ec9454edea9aeecc8e6b1b38bb1267fd46474c3f1d772e",
+    "pc-support-coupon.step": "c545c087dd24d942b02ff2790d2ced3a69173dcb4d91695a5f19256d223af78c",
+    "pet-gf15-visor-coupon.step": "b40131956359538acb6398ccc8c416a91819d514308f86ebea878da29fc48b90",
+    "rear-left-corner-placed.step": "63c7c0ea572080e920b998513e1dd26505c60f2577c34f86951f624273223020",
+    "rear-left-incoming-placed.step": "8470852dca461c6d0d1cf4d65a1a63d78c7714a222ed792156b7cfb9928bcb5a",
+    "rear-left-outgoing-placed.step": "dfd6fc494ac3d9d8b7d55ab72aee536edfd88e6db11730941e998a06b0988d8e",
+    "rear-right-corner-placed.step": "572887a4159f51ad0927a3ae3a6e8ba9619d7f21eb965ab970539f718940350c",
+    "rear-right-incoming-placed.step": "c804cc59d46e82e588607e2f4c2a6ab733fdde5763e79dcabad8e2e20a6b67c7",
+    "rear-right-outgoing-placed.step": "a3fb64d6ad776b549eb51f4e7a9e9652c8fc03e1cffd7c95714d12066d61148e",
+    "short-rail.step": "3ace5d6ac89e62435ab088a3dffe9bf6910de1ab26f8c1b87589cc998a16f558"
   }
 }

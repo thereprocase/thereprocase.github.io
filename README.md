@@ -123,7 +123,7 @@ the release provenance synchronized.
 
 ## P1S USB light riser
 
-`public/p1s-riser/` contains the current R13 update 9 four-piece frame,
+`public/p1s-riser/` contains the current R13 update 10 four-piece frame,
 lift-in diffusers, actual CAD viewers, STEP/STL parts and assembly notes.
 Run `python scripts/sync-p1s-riser-r13.py <greenfield-13-directory>` against
 checked source geometry, then build and export `docs/`. The sync checks CAD
@@ -134,25 +134,31 @@ strip; 10/12 mm optical sections are checked but are not complete kits.
 The earlier Draft 11 downloads remain at their existing URLs. Its entry pages,
 viewers and old full-printer light simulation redirect to their current replacements.
 Do not republish them as current geometry. Physical fitting and fresh slicing
-are still pending for R13 update 9; no toolpath checks from Draft 11 carry over.
+are still pending for R13 update 10; no toolpath checks from Draft 11 carry over.
 
-`scripts/check-p1s-riser-r13.py` checks current responsive layouts, all 13
+`scripts/check-p1s-riser-r13.py` checks current responsive layouts, all 14
 viewers and the light toggle, legacy redirects, download hashes and local links in the exported site.
 
 The reusable PC visor support prototype has its own six-view page at
-`/p1s-riser/pc-support/`. Run `scripts/sync-p1s-support.py <support-u2-directory>`
-before the main R13 sync. Three puzzle-keyed pieces fit all four quarters in
+`/p1s-riser/pc-support/`. Run `scripts/sync-p1s-support.py <support-u3-directory>`
+after syncing the frame assets. If the support tab was not already staged in
+the private review, rerun the main sync to include it. Three puzzle-keyed pieces fit all four quarters in
 CAD; the package includes a small release-test coupon pair. The 0.06 mm bare
 gap must be reconciled with coating thickness and the actual sliced layer
 underside. Release, repeated use and printhead clearance remain untested.
 
-PC support prototype 2 adds a 2 mm design border around the full visor
+PC support prototype 3 retains a 2 mm design border around the full visor
 footprint. The exported-mesh coverage check measures at least 1.5 mm with ±0.2 mm placement play at the
 assembled perimeter on all four quarters and separately checks the narrow
 puzzle seams. The top-down overlay shows the actual visor projection.
 
-R13 update 9 raises the roof and glass seat by 1.5 mm. The bridge above the
-diffuser lift pocket is 3.1 mm; glass seat Z23.5 and overall height 26 mm.
-LED/diffuser geometry, visor underside Z14.5 and PC tooling are unchanged.
-The support archive includes the updated visor coupon. Hot creep and release
+R13 update 10 narrows the lower foot from 17.3 to 14.8 mm and the straight
+section from 38 to 34.2 mm. Outside dimensions are 390.4 × 358.4 mm; the glass
+pocket stays 387 × 355 mm. The retaining rim is 1.7 mm thick and 1.5 mm high,
+for 25 mm overall height. The 3.1 mm bridge, glass seat Z23.5 and visor
+underside Z14.5 remain. The light channel moves 2.5 mm outward on straight
+runs; the diffuser and PC support corner are updated to match. The exterior
+flare starts at Z3.7, above an assumed 3.5 mm printer lip whose actual height
+still needs measuring. The comparison viewer shows both actual CAD sections.
+The support archive includes matching test coupons. Hot creep and release
 still need physical checks.

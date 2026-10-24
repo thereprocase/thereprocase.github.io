@@ -1,7 +1,7 @@
 [
   {
     "mesh": "frame-section.npz",
-    "sha256": "232cb813dfb48618d945940c6fd1aa2bb98608f54315899a668b5a6c81f38a4c",
+    "sha256": "0d8506c9f97db41f1d1bc0c31c36373e753846a654f078ae21d2966dd8de56c7",
     "transform": [
       [
         1.0,
@@ -28,12 +28,12 @@
         1.0
       ]
     ],
-    "vertices": 438,
-    "triangles": 288
+    "vertices": 420,
+    "triangles": 276
   },
   {
     "mesh": "support-section.npz",
-    "sha256": "9fb831ef342697474d7916ef20714cc5162bd91c375c89a0d8f387d1f7770ab8",
+    "sha256": "954530d8eefcd27f28a24766e3c64115469e3bbdaebf2f96fd8562d3c83bdc41",
     "transform": [
       [
         1.0,

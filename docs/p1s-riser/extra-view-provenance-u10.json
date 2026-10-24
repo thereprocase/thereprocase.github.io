@@ -1,0 +1,22 @@
+{
+  "revision": "R13 update 10",
+  "source_sha256": {
+    "uncut-frame.step": "740e21d5e05ad901fa88db375e39e8628259ddd7861ce3b6f9533bbae03284af",
+    "led-negative.step": "ad9df4466f6c7dc088a622a7bc68bc1656d3efbe82bdbc5c9b6d4b7f78345be2",
+    "parts/diffuser-front-right.step": "a624fbefe65e4eadf8f5e959fe9a6351bd4761d45c4dfc19c2c5b82b495f6918",
+    "diffuser-lift-clearance-negative.step": "465a68779a7cac4c9f438e269a077d9b1c840a4449cdc4014772d665b03963bb",
+    "LED-backing-required.step": "b8cdf1cf0da0f3d9ebd6076137a1c26911dc71daaeb946314184f40afc9cee24",
+    "parts/front-right.step": "ef18886b9ad5e15e175d9379261c7dc9c69c0bf53515fd657ca69f3e5d7714e2"
+  },
+  "geometry_changed": false,
+  "reference_printer": "Simplified display mock; not measured hardware",
+  "views": [
+    "context",
+    "installed-section",
+    "led-route",
+    "diffusers",
+    "clearance",
+    "print-pose",
+    "full-printer"
+  ]
+}

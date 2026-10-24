@@ -1,0 +1,64 @@
+{
+  "title": "Four lift-in diffusers",
+  "subtitle": "Current curved 0.6 mm sheets \u00b7 no separate keeper hardware",
+  "caption": "Assembled positions shown. These are curved CAD parts, not vase-mode print blanks.",
+  "camera": {
+    "yaw": -0.85,
+    "pitch": 0.65,
+    "zoom": 0.85
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 1864,
+      "triangles": 1596,
+      "edges": 331,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ],
+      "alpha": 1,
+      "emission": 0
+    }
+  ]
+}

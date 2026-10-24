@@ -65,7 +65,7 @@
   },
   {
     "mesh": "corner.npz",
-    "sha256": "8635018e2281de38ffac813d3bd5c9cc458191fabaa26c705fe4a269f00618a2",
+    "sha256": "bab5f7a143c698da5421a609a8d5d1e714e56cbb61d0976bfce9db84c5d9d153",
     "transform": [
       [
         1.0,
@@ -92,7 +92,7 @@
         1.0
       ]
     ],
-    "vertices": 1818,
-    "triangles": 1392
+    "vertices": 1622,
+    "triangles": 1280
   }
 ]
