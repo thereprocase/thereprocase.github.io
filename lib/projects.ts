@@ -6,13 +6,13 @@ export type Project = {
 };
 
 const allCategories = [
-  { id: 'agent-collaboration', name: 'Agent collaboration', description: 'Tools for coordinating and reviewing coding-agent sessions.' },
-  { id: 'hardware', name: 'Hardware & mechanisms', description: 'Printable parts with CAD, analysis and downloads.' },
-  { id: 'cad-tools', name: 'Fonts & CAD tools', description: 'Typefaces and tools for 3D-print design.' },
-  { id: 'developer-tools', name: 'Developer tools', description: 'Terminal utilities for Claude Code.' },
-  { id: 'home-automation', name: 'Home automation', description: 'Local integrations for 3D printers and home devices.' },
-  { id: 'self-hosted-models', name: 'Self-hosted models', description: 'Guides and tooling for serving open-weight models on local hardware.' },
-  { id: 'upstream-work', name: 'Forks & upstream work', description: 'Separate working copies of open-source projects. Original projects are credited on each page.' },
+  { id: 'hardware', name: 'Printable parts', description: 'Parts with STEP or STL downloads, print settings and assembly notes.', aliases: [] as string[] },
+  { id: 'generators', name: 'Browser generators', description: 'Set the dimensions, preview the part and download an STL. Runs in your browser.', aliases: ['cad-tools'] },
+  { id: 'fonts-methods', name: 'Fonts and methods', description: 'Typefaces for printed labels and the reinforcement method used across these parts.', aliases: [] as string[] },
+  { id: 'apps', name: 'Apps and integrations', description: 'An Android thermal camera viewer and a local Bambu printer bridge.', aliases: ['home-automation'] },
+  { id: 'agent-collaboration', name: 'Coding-agent tools', description: 'Channels, review agents and a status line for Claude Code and Codex sessions.', aliases: ['developer-tools'] },
+  { id: 'self-hosted-models', name: 'Self-hosted models', description: 'Guides and tooling for serving open-weight models on local hardware.', aliases: [] as string[] },
+  { id: 'upstream-work', name: 'Forks & upstream work', description: 'Separate working copies of open-source projects. Original projects are credited on each page.', aliases: [] as string[] },
 ];
 
 export const projects: Project[] = [
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-riser',
     image: { src: '/p1s-riser/installed-u8.png', alt: 'Current four-piece P1S light riser CAD with overlapping puzzle joints' },
     highlights: ['Four frame quarters with tapered puzzle joints and overlapping seams.', 'Interactive assembly and cutaways, including diffuser insertion.', '8 mm STEP/STL parts, assembly CAD and a small joint-fit coupon.'],
-    links: [{ label: 'Explore the riser', href: '/p1s-riser/' }, { label: 'Download the model', href: '/p1s-riser/#downloads' }],
+    links: [{ label: 'Explore the riser', href: '/p1s-riser/' }, { label: 'Download the model', href: '/p1s-riser/#downloads' }, { label: 'Vase-printed diffuser prototype', href: '/p1s-riser/vase/' }],
   },
   {
     slug: 'kraken', name: 'Kraken AMS remix', category: 'hardware',
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     links: [{ label: 'Print and assembly guide', href: '/kraken/' }, { label: 'Spool rings, nut and gear generator', href: '/kraken-rings/' }, { label: 'Download ASA package', href: 'https://github.com/thereprocase/kraken-remix-ogAMS/releases/tag/asa-print-2026-10-16' }],
   },
   {
-    slug: 'thermal-field', name: 'Thermal Field', category: 'hardware', sitePath: '/projects/thermal-field/',
+    slug: 'thermal-field', name: 'Thermal Field', category: 'apps', sitePath: '/projects/thermal-field/',
     summary: 'An independent open-source Android thermal viewer with lossless radiometry and a Gridline interface.',
     description: 'A native arm64 Android app for the USB 0bda:5830 thermal device used by the P2 Pro. Capture runs through UsbManager, libusb and libuvc; the app renders the original radiometric plane with its own GPU palettes. No proprietary camera SDK is included.',
     status: '0.1.3-rc1 · experimental release candidate; physical lifecycle/baseline/bath gates remain open',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     links: [{ label: 'Explore the designs', href: '/dell-5560-wall-mount/' }, { label: 'Print & assembly guide', href: '/dell-5560-wall-mount/minimalist-guide.html' }, { label: 'CFD startup evidence', href: '/dell-5560-wall-mount/simulation/revh-transient/' }],
   },
   {
-    slug: 'fillaprint', name: 'Fillaprint', category: 'cad-tools',
+    slug: 'fillaprint', name: 'Fillaprint', category: 'fonts-methods',
     summary: 'Nominal strokes and minimum clear gaps are both two extrusion widths.',
     description: 'Three TrueType families designed around extrusion width. Try your own lettering, calculate a reference print size, and download proportional, tabular-figure, and monospace fonts.',
     status: 'v0.1.3 beta · SIL Open Font License 1.1 · commercial use welcome',
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     links: [{ label: 'Install & usage', href: 'https://github.com/thereprocase/lord-of-the-code#installation' }, { label: 'Review formations', href: 'https://github.com/thereprocase/lord-of-the-code#council-formations' }],
   },
   {
-    slug: 'claude-statusline', name: 'Claude Code status line', category: 'developer-tools',
+    slug: 'claude-statusline', name: 'Claude Code status line', category: 'agent-collaboration',
     summary: 'Context, rate limits, and workspace information in a compact, themeable terminal status line.',
     description: 'Keep useful session details visible while you work. Choose from fourteen themes and monitor context and rate limits.',
     status: 'Terminal utility · Bash required',
@@ -163,7 +163,7 @@ export const projects: Project[] = [
   },
   {
     image: { src: '/media/bambu-bridge/dashboard.webp', alt: 'Earlier Bambu Bridge browser dashboard with synthetic demonstration data' },
-    slug: 'bambu-bridge', name: 'Bambu Bridge', category: 'home-automation',
+    slug: 'bambu-bridge', name: 'Bambu Bridge', category: 'apps',
     summary: 'A local P1S printer bridge with a browser dashboard, 3D print-progress viewer, and Home Assistant integration.',
     description: 'Connect to your own printer over the LAN with its access code. The bridge shares MQTT, file-transfer, and camera connections among browser and API clients. The AGPL source release includes installation instructions, upstream notices, and firmware compatibility limits.',
     status: 'AGPL source release · mock-tested; current firmware acceptance remains',
@@ -179,6 +179,65 @@ export const projects: Project[] = [
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/deepseek-spark',
     image: { src: '/deepseek-spark/assets/interventions.png', alt: 'Bar charts comparing how often each setting drafted code inside the thinking and how often it started the tool call' },
     links: [{ label: 'Read the guide', href: '/deepseek-spark/' }, { label: 'Recommendations', href: '/deepseek-spark/#recommendations' }, { label: 'Hook and tools', href: '/deepseek-spark/#files' }],
+  },
+  {
+    slug: 'gridfinity-build-tray', name: 'Gridfinity build tray', category: 'hardware', sitePath: '/gridfinity-build-tray/',
+    summary: 'A portable 4×4 Gridfinity carrier with magnetic bases, stacking, a slim lid and a receiver lid.',
+    description: 'A 176 mm square carrier on the standard 42 mm grid. The grid deck and carrying wall print separately and bond together with optional alignment gauges. Six bin layouts are included.',
+    status: 'V5 · STL and CAD downloads',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-build-tray',
+    image: { src: '/gridfinity-build-tray/preview.png', alt: 'Gridfinity build tray carrier deck and wall separated for assembly' },
+    highlights: ['Interactive preview with loaded, stacked and lid views.', 'Full STL and CAD package, plus a lids-only package.', 'Design and fit notes.'],
+    links: [{ label: 'Open the build tray', href: '/gridfinity-build-tray/' }, { label: 'Full STL + CAD download', href: '/gridfinity-build-tray/gridfinity-workspace-v5.zip' }],
+  },
+  {
+    slug: 'gridfinity-shelves', name: 'Gridfinity pegboard shelf generator', category: 'generators', sitePath: '/gridfinity-shelves/',
+    summary: 'Configure a Gridfinity shelf for quarter-inch pegboard and download the STL.',
+    description: 'Choose the Gridfinity array, seat clearance, reinforcement and angle from 5° up to 30° down. The mounting pegs and board-contact faces stay fixed. Native FreeCAD source is available for editable CAD.',
+    status: 'Browser generator · STL in your browser, FreeCAD source',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-shelves',
+    image: { src: '/gridfinity-shelves/generator-angles.png?v=frame-3', alt: 'Gridfinity shelves at upward and downward angles with fixed pegboard interfaces' },
+    highlights: ['Array size, clearance, reinforcement and angle controls.', 'STL generated locally in the browser.', 'A small fit ring for dialing in bin clearance.'],
+    links: [{ label: 'Open the shelf generator', href: '/gridfinity-shelves/' }],
+  },
+  {
+    slug: 'gridfinity-drawers', name: 'Gridfinity drawer insert generator', category: 'generators', sitePath: '/gridfinity-drawers/',
+    summary: 'Fit a Gridfinity grid to a drawer outline and split it into printable tiles.',
+    description: 'Choose the drawer outline, grid quantity and X/Y placement. Divide larger inserts automatically or at selected cuts. Shallow V faces register the glued tiles, with independent X/Y corrections for cross-seam pitch.',
+    status: 'Browser generator · STL tiles in your browser',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-drawers',
+    image: { src: '/gridfinity-drawers/overview.png', alt: 'Four printable tiles of a Gridfinity drawer insert' },
+    highlights: ['Drawer outline, grid quantity and placement controls.', 'Automatic or manual tile splitting.', 'Print flat side down and glue the seams with a bin holding the grid.'],
+    links: [{ label: 'Open the drawer generator', href: '/gridfinity-drawers/' }],
+  },
+  {
+    slug: 'gridfinity-converter', name: 'Gridfinity base converter', category: 'generators', sitePath: '/gridfinity-converter/',
+    summary: 'Load an existing part and convert its Gridfinity male feet or female sockets.',
+    description: 'Automatic detection checks male feet and female sockets at several depths. Only complete cells on a 42 mm grid are selected. Review the orientation and selected cells before converting.',
+    status: 'Browser tool · STL and STEP input',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-converter',
+    highlights: ['Automatic foot and socket detection on a 42 mm grid.', 'Orientation and cell review before conversion.', 'Runs in your browser.'],
+    links: [{ label: 'Open the converter', href: '/gridfinity-converter/' }],
+  },
+  {
+    slug: 'kraken-rings', name: 'Kraken spool rings, nut and gear generator', category: 'generators', sitePath: '/kraken-rings/',
+    summary: 'Cardboard spool adapter rings for any hole from 45 to 95 mm, plus the Kraken nut and gear.',
+    description: 'Generate spool adapter rings in 0.1 mm steps for the Kraken AMS remix, or download ready-made sizes. The nut and gear parts are on the same page.',
+    status: 'Browser generator · STL downloads',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/kraken-rings',
+    image: { src: '/kraken-rings/kraken-rings.png', alt: 'Kraken spool adapter rings' },
+    highlights: ['Any spool hole from 45 to 95 mm in 0.1 mm steps.', 'Ready-made common sizes.', 'Nut and gear parts for the Kraken remix.'],
+    links: [{ label: 'Open the ring generator', href: '/kraken-rings/' }, { label: 'Kraken AMS remix', href: '/kraken/' }],
+  },
+  {
+    slug: 'fdm-reinforcement', name: 'FDM reinforcement method', category: 'fonts-methods', sitePath: '/fdm-reinforcement/',
+    summary: 'Reconstruct editable CAD from STL measurements, add local solid infill with helper bodies, and check the sliced paths.',
+    description: 'An aligned helper body can turn a small region of a print into solid infill, add walls around a fastening point, or create a continuous internal plate. The method page walks through reconstruction, helper bodies and the analysis checks.',
+    status: 'Method write-up · used by the spool rack and Kraken parts',
+    sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/fdm-reinforcement',
+    image: { src: '/spool-wall-rack/assets/modifier-stack.png', alt: 'E13 bracket section showing solid reinforcement plates created with aligned infill helpers' },
+    highlights: ['From STL measurements to native CAD.', 'Helper bodies for local walls and solid infill.', 'Geometry, FEA and extrusion-path comparisons.'],
+    links: [{ label: 'Read the method', href: '/fdm-reinforcement/' }],
   },
 ];
 
