@@ -25,7 +25,7 @@ export const projects: Project[] = [
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-riser',
     image: { src: '/p1s-riser/installed-u10.png', alt: 'Update 10 four-piece P1S light riser CAD with overlapping puzzle joints' },
     highlights: ['Four frame quarters with tapered puzzle joints and overlapping seams.', 'Interactive assembly and cutaways, including diffuser insertion.', '8 mm STEP/STL parts, assembly CAD and a small joint-fit coupon.'],
-    links: [{ label: 'Explore the riser', href: '/p1s-riser/' }, { label: 'Download the model', href: '/p1s-riser/#downloads' }, { label: 'Vase-printed diffuser prototype', href: '/p1s-riser/vase/' }],
+    links: [{ label: 'Explore the riser', href: '/p1s-riser/' }, { label: 'Download the model', href: '/p1s-riser/#downloads' }, { label: 'Vase-printed diffuser prototype', href: '/p1s-riser/vase/' }, { label: 'Reusable PC support kit', href: '/p1s-riser/pc-support/' }],
   },
   {
     slug: 'kraken', name: 'Kraken AMS remix', category: 'hardware',
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     links: [{ label: 'Explore D9 P5', href: '/5680-dock/' }, { label: 'Current assembly viewer', href: '/5680-dock/desk-dock-p5.html' }, { label: 'Prototype print history', href: '/5680-dock/prints/' }],
   },
   {
-    slug: 'dell-5560-wall-mount', name: 'Laptop wall mount', category: 'hardware',
+    slug: 'dell-5560-wall-mount', name: 'Precision 5560 laptop wall mount', category: 'hardware',
     keywords: ['laptop', 'wall mount', 'dell', 'precision 5560', 'cfd', 'cooling', 'duct', 'step', 'stl', 'cable'],
     summary: 'Minimalist M1 and ducted Rev H: two approaches to mounting and cooling a closed laptop.',
     description: 'Download the models and inspect the assembly, retention and cable-routing guides. The current Rev H D4 update repairs the fan-cover sockets. CFD startup evidence includes methods and limitations alongside the flow videos.',
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     highlights: ['A live type tester using the actual font files.', 'Print-size calculator based on extrusion line width.', 'Three downloadable font families with broad Latin coverage.'],
     sourceHref: 'https://github.com/thereprocase/double-bead',
     image: { src: '/fillaprint/images/hero.png', alt: 'Fillaprint letterforms and measurement symbols rendered from the font' },
-    links: [{ label: 'Font specimens', href: '/fillaprint/' }, { label: 'Download the fonts', href: '/fillaprint/#downloads' }],
+    links: [{ label: 'Font specimens', href: '/fillaprint/' }, { label: 'Download the fonts', href: '/fillaprint/#downloads' }, { label: 'Color leveling', href: '/fillaprint/color/' }],
   },
   {
     slug: 'paver-feet', name: 'TPU paver feet', category: 'hardware',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     highlights: ['Interactive CAD viewer and printable STL / STEP downloads.', 'Load and clearance estimates with explicit material assumptions.', 'Transmission analysis distinguishes modeled forces from audible noise.'],
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/p1s-feet',
     image: { src: '/media/render/cradle.png', alt: 'P02 squash-ball cradle and base separated horizontally for inspection; actual CAD' },
-    links: [{ label: 'Explore P02', href: '/p1s-feet/' }, { label: 'Load and deflection calculation', href: '/p1s-feet/#calculation' }],
+    links: [{ label: 'Explore P02', href: '/p1s-feet/' }, { label: 'Load and deflection calculation', href: '/p1s-feet/#calculation' }, { label: 'Isolation review', href: '/p1s-feet/review/' }],
   },
   {
     slug: 'spool-wall-rack', name: 'Spool wall rack', category: 'hardware',
@@ -204,7 +204,7 @@ export const projects: Project[] = [
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-build-tray',
     image: { src: '/gridfinity-build-tray/preview.png', alt: 'Gridfinity build tray carrier deck and wall separated for assembly' },
     highlights: ['Interactive preview with loaded, stacked and lid views.', 'Full STL and CAD package, plus a lids-only package.', 'Design and fit notes.'],
-    links: [{ label: 'Open the build tray', href: '/gridfinity-build-tray/' }, { label: 'Full STL + CAD download', href: '/gridfinity-build-tray/gridfinity-workspace-v5.zip' }],
+    links: [{ label: 'Open the build tray', href: '/gridfinity-build-tray/' }, { label: 'Full STL + CAD download', href: '/gridfinity-build-tray/gridfinity-workspace-v5.zip' }, { label: 'Lids-only download', href: '/gridfinity-build-tray/gridfinity-lids-v5.zip' }],
   },
   {
     slug: 'gridfinity-shelves', name: 'Gridfinity pegboard shelf generator', category: 'generators', sitePath: '/gridfinity-shelves/',

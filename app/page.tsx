@@ -22,8 +22,8 @@ const illustrations = [
 const imageOverrides: Record<string, string> = {'5680-dock':'/media/projects/dock.png','dell-5560-wall-mount':'/media/projects/wall-mount.png','peg':'/media/projects/peg.png','claude-statusline':'/media/projects/statusline.svg','kraken':'/media/render/kraken.png', 'spool-wall-rack':'/media/render/rack.png','bambu-bridge':'/media/bambu-bridge/dashboard.webp'};
 const captions: Record<string, string> = {'thermal-field':'Synthetic thermal scene · illustrative temperatures','bambu-bridge':'Real dashboard · synthetic demonstration data','trio':'Application interface · example collaboration','lord-of-the-code':'Actual agent workflow demonstration','claude-statusline':'Theme preview · example session indicators','deepseek-spark':'Published experiment · limited sample','fillaprint':'Rendered font specimens · three families'};
 
-// Lowercase text the filter box matches against: name, summary, group and search keywords.
-const filterText = (project: Project) => [project.name, project.summary, categories.find(c=>c.id===project.category)?.name, ...(project.keywords ?? [])].join(' ').toLowerCase();
+// Lowercase text the filter box matches against: name, summary, group, keywords and link labels.
+const filterText = (project: Project) => [project.name, project.summary, categories.find(c=>c.id===project.category)?.name, ...(project.keywords ?? []), ...project.links.map(link => link.label)].join(' ').toLowerCase();
 
 export default function Home() {
  return <GridlineShell>
