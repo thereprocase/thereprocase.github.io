@@ -18,6 +18,7 @@ const allCategories = [
 export const projects: Project[] = [
   {
     slug: 'p1s-riser', name: 'P1S USB light riser', category: 'hardware', sitePath: '/p1s-riser/',
+    keywords: ['p1s', 'bambu', 'usb', 'led', 'light', 'enclosure', 'step', 'stl', 'diffuser', 'riser'],
     summary: 'A four-piece glass riser with downward-facing USB LEDs, tapered puzzle joints and lift-in diffusers.',
     description: 'An 8 mm LED strip aims down into the enclosure and twists upright around the corners. A rounded shade limits overhead glare; thin diffusers lift into an upper pocket and drop into their seats.',
     status: 'R13 update 10 · CAD checks passed; fitting trial and fresh slice next',
@@ -28,6 +29,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'kraken', name: 'Kraken AMS remix', category: 'hardware',
+    keywords: ['kraken', 'ams', 'bambu', 'p1s', 'asa', 'remix', 'spool', 'step', 'stl', 'reinforcement'],
     summary: 'Locally reinforced ASA bodies and removable front bars: about 562 g for both print plates.',
     description: 'A remix of humebeam’s Kraken for the original Bambu Lab AMS, with gear-clearance pockets, removable front bars and printable underside ramps. Download P1S ASA projects with editable reinforcement, fit coupons and assembly instructions.',
     status: 'Ready for first ASA print and fitting · full-size warp and physical fit remain to be checked',
@@ -38,6 +40,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'thermal-field', name: 'Thermal Field', category: 'apps', sitePath: '/projects/thermal-field/',
+    keywords: ['thermal', 'camera', 'android', 'apk', 'p2 pro', 'radiometric', 'usb', 'uvc', 'infrared', 'app'],
     summary: 'An independent open-source Android thermal viewer with lossless radiometry and a Gridline interface.',
     description: 'A native arm64 Android app for the USB 0bda:5830 thermal device used by the P2 Pro. Capture runs through UsbManager, libusb and libuvc; the app renders the original radiometric plane with its own GPU palettes. No proprietary camera SDK is included.',
     status: '0.1.3-rc1 · experimental release candidate; physical lifecycle/baseline/bath gates remain open',
@@ -50,6 +53,7 @@ export const projects: Project[] = [
   },
   {
     slug: '5680-dock', name: 'Precision 5680 desk dock', category: 'hardware',
+    keywords: ['laptop', 'dock', 'dell', 'precision 5680', 'usb-c', 'cooling', 'fan', 'step', 'stl', 'desk'],
     summary: 'D9 P5: a printable laptop cradle with ducted cooling and an adjustable USB-C plug positioner.',
     description: 'The current D9 P5 CAD uses bonded plenum shells, standard wire fan guards, removable H contact cassettes and a polar plug positioner. Inspect the assembly and verification records; the earlier P5 print kit is archived test history.',
     status: 'D9 P5 engineering prototype · physical fit, loads and cooling remain to be qualified',
@@ -59,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'dell-5560-wall-mount', name: 'Laptop wall mount', category: 'hardware',
+    keywords: ['laptop', 'wall mount', 'dell', 'precision 5560', 'cfd', 'cooling', 'duct', 'step', 'stl', 'cable'],
     summary: 'Minimalist M1 and ducted Rev H: two approaches to mounting and cooling a closed laptop.',
     description: 'Download the models and inspect the assembly, retention and cable-routing guides. The current Rev H D4 update repairs the fan-cover sockets. CFD startup evidence includes methods and limitations alongside the flow videos.',
     status: 'Engineering prototypes · physical fit, retention and cooling qualification remain',
@@ -68,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'fillaprint', name: 'Fillaprint', category: 'fonts-methods',
+    keywords: ['font', 'typeface', 'ttf', 'label', 'text', 'extrusion width', 'monospace', 'ofl', 'fdm', 'lettering'],
     summary: 'Nominal strokes and minimum clear gaps are both two extrusion widths.',
     description: 'Three TrueType families designed around extrusion width. Try your own lettering, calculate a reference print size, and download proportional, tabular-figure, and monospace fonts.',
     status: 'v0.1.3 beta · SIL Open Font License 1.1 · commercial use welcome',
@@ -78,6 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'paver-feet', name: 'TPU paver feet', category: 'hardware',
+    keywords: ['tpu', 'paver', 'feet', 'vibration', 'isolation', 'step', 'stl', 'load', 'concrete', 'shelf'],
     summary: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf.',
     description: 'Flat 3-inch square, two-piece TPU supports for isolating a concrete paver from its shelf. Inspect the actual CAD, load and clearance calculations, and modeled force transmission before printing.',
     status: 'C01 engineering prototype · physical load and vibration testing remain',
@@ -88,6 +95,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'p1s-feet', name: 'P1S squash-ball cradles', category: 'hardware',
+    keywords: ['p1s', 'bambu', 'tpu', 'squash ball', 'feet', 'vibration', 'isolation', 'step', 'stl', 'noise'],
     summary: 'Two-piece TPU cradles with compliant ribs beneath the P1S squash-ball feet.',
     description: 'Two-piece TPU cradles with compliant ribs beneath the P1S squash-ball feet. Inspect the actual CAD, load and clearance calculations, and modeled force transmission before printing.',
     status: 'P02 engineering prototype · physical load and vibration testing remain',
@@ -98,6 +106,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'spool-wall-rack', name: 'Spool wall rack', category: 'hardware',
+    keywords: ['spool', 'rack', 'wall mount', 'filament', 'bracket', 'step', 'stl', 'reinforcement', 'orcaslicer', 'fea'],
     summary: 'A printable two-rail spool rack with an angular reinforced bracket, finished CAD and a full engineering record.',
     description: 'E13 combines an 11 mm angular reinforcement with preserved snap fingers and mirrored 50° chamfers. Explore the geometry, refined three-dimensional stress fields, actual slicer paths and downloadable print geometry.',
     status: 'E13 engineering prototype · physical fit, hot-load and lifetime testing remain',
@@ -107,6 +116,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'peg', name: 'Conformal pegboard anchor', category: 'hardware',
+    keywords: ['pegboard', 'peg', 'anchor', 'holder', 'bracket', 'step', 'quarter-inch', 'storage', 'bin', 'workshop'],
     summary: 'A reusable pegboard attachment with a defined movement envelope for the parts you build around it.',
     description: 'The anchor follows the lower curve of standard quarter-inch pegboard holes. Download the functional anchor and a reference volume for attached holders, bins, and brackets. Movement checks are documented separately from physical testing.',
     status: 'Geometry-checked prototype · printed fit and load testing remain',
@@ -116,9 +126,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'trio', name: 'Trio / nth', category: 'agent-collaboration', spotlight: true, sitePath: '/projects/trio/',
+    keywords: ['claude code', 'codex', 'mcp', 'agents', 'channels', 'tasks', 'dashboard', 'tailscale', 'sqlite', 'skills'],
     summary: 'Shared channels for Claude Code and Codex sessions: messages, atomic task claims and background delivery.',
     description: 'Trio is an MCP server with two skills. /trio runs channels on one machine over stdio and SQLite; /quartet connects machines to a shared hub over Tailscale. Messages are pushed into Claude Code as channel events and into Codex as tool output, and a web dashboard shows the roster, chat and tasks.',
-    status: 'Developer tool · MIT · 8.3.0-beta.4',
+    status: 'Developer tool · MIT · 8.3.0-beta.5',
     highlights: ['Asynchronous channels with @mentions, #references and atomic task claims.', 'Push delivery for Claude Code (trio claude) and stock Codex (trio codex).', 'A web dashboard, an installer for each client and the nth-doctor diagnostic.'],
     image: { src: '/media/trio/channel-midnight.png', alt: 'Trio dashboard showing a release-prep channel where four agents trade messages with @mentions, #references and task updates' },
     details: [
@@ -136,6 +147,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'lord-of-the-code', name: 'Lord of the Code', category: 'agent-collaboration', spotlight: true, sitePath: '/projects/lord-of-the-code/',
+    keywords: ['claude code', 'skill', 'code review', 'agents', 'opus', 'sonnet', 'haiku', 'pull request', 'subagents', 'lotc'],
     summary: 'A Claude Code skill that runs code reviews with named reviewer agents, each on a set model tier.',
     description: 'Nine Middle-earth characters each cover one area: correctness, architecture, user experience, security, performance, builds, tests, adversarial bug hunting and style. Deploy them individually or as formations, or use Scribe-Merge to take a branch from review through fixes to a pull request.',
     status: 'Claude Code skill · MIT',
@@ -154,6 +166,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'claude-statusline', name: 'Claude Code status line', category: 'agent-collaboration',
+    keywords: ['claude code', 'statusline', 'terminal', 'bash', 'themes', 'context', 'rate limit', 'cli', 'prompt', 'shell'],
     summary: 'Context, rate limits, and workspace information in a compact, themeable terminal status line.',
     description: 'Keep useful session details visible while you work. Choose from fourteen themes and monitor context and rate limits.',
     status: 'Terminal utility · Bash required',
@@ -164,6 +177,7 @@ export const projects: Project[] = [
   {
     image: { src: '/media/bambu-bridge/dashboard.webp', alt: 'Earlier Bambu Bridge browser dashboard with synthetic demonstration data' },
     slug: 'bambu-bridge', name: 'Bambu Bridge', category: 'apps',
+    keywords: ['bambu', 'p1s', 'mqtt', 'home assistant', 'lan', 'camera', 'dashboard', 'api', 'agpl', 'printer'],
     summary: 'A local P1S printer bridge with a browser dashboard, 3D print-progress viewer, and Home Assistant integration.',
     description: 'Connect to your own printer over the LAN with its access code. The bridge shares MQTT, file-transfer, and camera connections among browser and API clients. The AGPL source release includes installation instructions, upstream notices, and firmware compatibility limits.',
     status: 'AGPL source release · mock-tested; current firmware acceptance remains',
@@ -172,6 +186,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'deepseek-spark', name: 'DeepSeek V4.1 Flash on DGX Spark', category: 'self-hosted-models', sitePath: '/deepseek-spark/',
+    keywords: ['deepseek', 'dgx spark', 'litellm', 'open webui', 'llm', 'self-hosted', 'local model', 'reasoning', 'tool calls', 'guide'],
     summary: 'Serving DeepSeek V4.1 Flash from DGX Spark-class machines to Open WebUI through LiteLLM, with measurements of its long planning loops.',
     description: 'A field guide to the stack, a reproducible way to measure the model\'s commitment-deferral loop, which settings change it, and a LiteLLM hook that restores earlier reasoning between tool calls. Recommendations are grouped as must, should, consider and avoid.',
     status: 'Field guide · October 2026 · one deployment, small samples',
@@ -182,6 +197,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'gridfinity-build-tray', name: 'Gridfinity build tray', category: 'hardware', sitePath: '/gridfinity-build-tray/',
+    keywords: ['gridfinity', 'tray', 'carrier', 'magnets', 'lid', 'stl', 'step', 'bins', 'storage', '42 mm'],
     summary: 'A portable 4×4 Gridfinity carrier with magnetic bases, stacking, a slim lid and a receiver lid.',
     description: 'A 176 mm square carrier on the standard 42 mm grid. The grid deck and carrying wall print separately and bond together with optional alignment gauges. Six bin layouts are included.',
     status: 'V5 · STL and CAD downloads',
@@ -192,6 +208,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'gridfinity-shelves', name: 'Gridfinity pegboard shelf generator', category: 'generators', sitePath: '/gridfinity-shelves/',
+    keywords: ['gridfinity', 'pegboard', 'shelf', 'generator', 'stl', 'freecad', 'browser', 'angle', 'bins', 'quarter-inch'],
     summary: 'Configure a Gridfinity shelf for quarter-inch pegboard and download the STL.',
     description: 'Choose the Gridfinity array, seat clearance, reinforcement and angle from 5° up to 30° down. The mounting pegs and board-contact faces stay fixed. Native FreeCAD source is available for editable CAD.',
     status: 'Browser generator · STL in your browser, FreeCAD source',
@@ -202,6 +219,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'gridfinity-drawers', name: 'Gridfinity drawer insert generator', category: 'generators', sitePath: '/gridfinity-drawers/',
+    keywords: ['gridfinity', 'drawer', 'insert', 'generator', 'tiles', 'stl', 'browser', 'grid', 'split', 'organizer'],
     summary: 'Fit a Gridfinity grid to a drawer outline and split it into printable tiles.',
     description: 'Choose the drawer outline, grid quantity and X/Y placement. Divide larger inserts automatically or at selected cuts. Shallow V faces register the glued tiles, with independent X/Y corrections for cross-seam pitch.',
     status: 'Browser generator · STL tiles in your browser',
@@ -212,6 +230,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'gridfinity-converter', name: 'Gridfinity base converter', category: 'generators', sitePath: '/gridfinity-converter/',
+    keywords: ['gridfinity', 'converter', 'stl', '3mf', 'step', 'base', 'socket', 'feet', 'browser', 'mesh'],
     summary: 'Load an existing part and convert its Gridfinity male feet or female sockets.',
     description: 'Automatic detection checks male feet and female sockets at several depths. Only complete cells on a 42 mm grid are selected. Review the orientation and selected cells before converting.',
     status: 'Browser tool · STL, 3MF, STEP and other mesh or CAD files',
@@ -221,6 +240,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'kraken-rings', name: 'Kraken spool rings, nut and gear generator', category: 'generators', sitePath: '/kraken-rings/',
+    keywords: ['kraken', 'ams', 'bambu', 'spool', 'adapter', 'cardboard', 'rings', 'generator', 'stl', 'gear'],
     summary: 'Cardboard spool adapter rings for any hole from 45 to 95 mm, plus the Kraken nut and gear.',
     description: 'Generate spool adapter rings in 0.1 mm steps for the Kraken AMS remix, or download ready-made sizes. The nut and gear parts are on the same page.',
     status: 'Browser generator · STL downloads',
@@ -231,6 +251,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'fdm-reinforcement', name: 'FDM reinforcement method', category: 'fonts-methods', sitePath: '/fdm-reinforcement/',
+    keywords: ['fdm', 'reinforcement', 'infill', 'modifier', 'helper body', 'fea', 'orcaslicer', 'step', 'stl', 'method'],
     summary: 'Reconstruct editable CAD from STL measurements, add local solid infill with helper bodies, and check the sliced paths.',
     description: 'An aligned helper body can turn a small region of a print into solid infill, add walls around a fastening point, or create a continuous internal plate. The method page walks through reconstruction, helper bodies and the analysis checks.',
     status: 'Method write-up · used by the spool rack and Kraken parts',

@@ -34,6 +34,7 @@ html = (review / 'index.html').read_text()
 # Public pages use the shared site stylesheets and the riser landing page.
 html = html.replace('href="gridline/gridline.css"', 'href="/gridline/gridline.css"').replace('href="gridline/polish.css"', 'href="/gridline/polish.css"')
 html = html.replace('href="riser.css"', 'href="/p1s-riser/riser.css"').replace('<a class="gl-brand" href="../">P1S riser</a>', '<a class="gl-brand" href="/p1s-riser/">P1S USB light riser</a>')
+html = html.replace('<span>VASE DIFFUSERS</span>', '<span>VASE DIFFUSERS</span><a href="/" style="margin-left:auto;color:inherit">← All projects</a>')
 html = html.replace('<a href="SHA256SUMS">Checksum</a>', '<a href="SHA256SUMS">Checksum</a> · <a href="provenance.json">Download hash</a>')
 assert 'gridline/' not in re.sub(r'href="/gridline/', '', html)
 (dest / 'index.html').write_text(html)

@@ -34,7 +34,13 @@ const urls = [];
 for (const href of [...paths].sort()) {
   // Skip redirect stubs: they point visitors elsewhere and carry their own canonical link.
   const local = path.join(published, href, 'index.html');
-  if (await exists(local) && (await readFile(local, 'utf8')).includes('http-equiv="refresh"')) continue;
+  if (await exists(local)) {
+    const page = await readFile(local, 'utf8');
+    if (page.includes('http-equiv="refresh"')) continue;
+    // Generated landing pages whose canonical is the project's own page are listed once, there.
+    const canonical = page.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    if (canonical && new URL(canonical, site).pathname !== href) continue;
+  }
   urls.push(`  <url><loc>${site}${href}</loc></url>`);
 }
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;

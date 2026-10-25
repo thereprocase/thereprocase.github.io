@@ -1,7 +1,7 @@
 /* oxlint-disable next/no-html-link-for-pages, next/no-img-element -- Static Pages uses document navigation and existing assets without an image server. */
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { categories, projects, sourceUrl } from '@/lib/projects';
+import { categories, projects, projectUrl, sourceUrl } from '@/lib/projects';
 import { GridlineShell } from '@/components/gridline-shell';
 import { SpoolRackProject } from '@/components/spool-rack-project';
 
@@ -10,7 +10,7 @@ export function generateStaticParams() { return projects.map(project => ({ slug:
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find(item => item.slug === slug);
-  return project ? { title: `${project.name} | thereprocase`, description: project.summary, alternates: { canonical: slug === 'spool-wall-rack' ? '/spool-wall-rack/' : `/projects/${slug}/` } } : {};
+  return project ? { title: `${project.name} | thereprocase`, description: project.summary, alternates: { canonical: projectUrl(project) } } : {};
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
