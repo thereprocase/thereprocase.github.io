@@ -2,7 +2,7 @@ export type Project = {
   slug: string; name: string; category: string; summary: string; description: string;
   status: string; highlights: string[]; links: { label: string; href: string }[];
   sourceHref?: string; sitePath?: string; image?: { src: string; alt: string }; spotlight?: boolean; fork?: boolean;
-  details?: string[]; gallery?: { src: string; alt: string; caption: string; width: number; height: number }[];
+  details?: string[]; keywords?: string[]; gallery?: { src: string; alt: string; caption: string; width: number; height: number }[];
 };
 
 const allCategories = [
@@ -214,7 +214,7 @@ export const projects: Project[] = [
     slug: 'gridfinity-converter', name: 'Gridfinity base converter', category: 'generators', sitePath: '/gridfinity-converter/',
     summary: 'Load an existing part and convert its Gridfinity male feet or female sockets.',
     description: 'Automatic detection checks male feet and female sockets at several depths. Only complete cells on a 42 mm grid are selected. Review the orientation and selected cells before converting.',
-    status: 'Browser tool · STL and STEP input',
+    status: 'Browser tool · STL, 3MF, STEP and other mesh or CAD files',
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-converter',
     highlights: ['Automatic foot and socket detection on a 42 mm grid.', 'Orientation and cell review before conversion.', 'Runs in your browser.'],
     links: [{ label: 'Open the converter', href: '/gridfinity-converter/' }],
