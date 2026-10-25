@@ -86,3 +86,4 @@
 .gl-home .io-project-image img{height:260px}
 @media(min-width:1800px){.gl-home .io-project-image img{height:360px}}
 @media(max-width:650px){.gl-home .io-project-image img{height:240px}}
+@media(max-width:650px){.io-az-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;padding:8px 14px 14px}.io-az-list a{font-size:14px}.io-az-list span{font-size:11px}}

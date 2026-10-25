@@ -1,6 +1,6 @@
 {
   "../thereprocase.github.io/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-LmdhFrf0.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-C3AXRaqz.js",
     "name": "app-route-prefetch-policy",
     "src": "../thereprocase.github.io/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -9,7 +9,7 @@
     ]
   },
   "../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-DLy5Y2VG.js",
+    "file": "_next/static/chunks/layout-segment-context-C6x4KC_I.js",
     "name": "layout-segment-context",
     "src": "../thereprocase.github.io/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -61,7 +61,7 @@
     ]
   },
   "components/project-navigation.tsx": {
-    "file": "_next/static/chunks/project-navigation-C-zhsxrO.js",
+    "file": "_next/static/chunks/project-navigation-DWQeI-Ql.js",
     "name": "project-navigation",
     "src": "components/project-navigation.tsx",
     "isDynamicEntry": true,
@@ -71,7 +71,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-BxRChKel.js",
+    "file": "_next/static/chunks/index-jvD02aNX.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
