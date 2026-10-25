@@ -152,6 +152,18 @@ for old in list((out / 'variants').rglob('index.html')) + list((out / 'faux-ligh
     target = {'installed': 'context', 'installed-section': 'installed-section', 'assembly': 'context', 'lighting': 'led-route', 'exploded': 'exploded', 'section': 'section', 'retention': 'section', 'clearance': 'clearance', 'vase': 'diffusers', 'faux-light': 'full-printer'}.get(old.parent.name)
     destination = '/p1s-riser/' + (target + '-u10/' if target else '')
     old.write_text(('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=/p1s-riser/"><title>P1S riser — updated design</title><p>This version has been replaced. <a href="/p1s-riser/">Open the current four-piece riser.</a></p></html>''').replace('/p1s-riser/', destination))
+# Earlier R13 updates: each view redirects to its update 10 equivalent, and their renders,
+# reports and CAD packages are removed. The retired 8/10/12 mm variants keep only their redirects.
+import re, shutil
+for old_dir in sorted(list(out.glob('*-u8')) + list(out.glob('*-u9'))):
+    if old_dir.is_dir():
+        view = old_dir.name.rsplit('-', 1)[0]
+        shutil.rmtree(old_dir); old_dir.mkdir()
+        (old_dir / 'index.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://thereprocase.github.io/p1s-riser/{view}-u10/"><meta http-equiv="refresh" content="0;url=/p1s-riser/{view}-u10/"><title>P1S riser — updated design</title><p>This version has been replaced. <a href="/p1s-riser/{view}-u10/">Open the update 10 view.</a></p></html>')
+for old_file in list(out.iterdir()):
+    if old_file.is_file() and re.search(r'[-_]u[89]([-_.]|$)', old_file.name, re.I): old_file.unlink()
+for old_file in list((out / 'variants').rglob('*')):
+    if old_file.is_file() and old_file.name != 'index.html': old_file.unlink()
 files = [package, out / 'p1s-riser-r13-u10-8mm-review.step', out / 'ASSEMBLY-R13-U10.txt', out / 'REFERENCE-ATTRIBUTION.txt']
 records = [{'file': p.name, 'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
 (out / 'SHA256SUMS-R13-U10').write_text(''.join(f"{r['sha256']}  {r['file']}\n" for r in records))

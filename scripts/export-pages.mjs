@@ -1,10 +1,12 @@
-import { cp, mkdir, readdir, copyFile, writeFile, readFile, access } from 'node:fs/promises';
+import { cp, mkdir, readdir, copyFile, writeFile, readFile, access, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const built = path.join(root, 'dist', 'client');
 const published = path.join(root, 'docs');
+// Start from an empty docs/ so files removed from the build are removed from the published site.
+await rm(published, { recursive: true, force: true });
 await mkdir(published, { recursive: true });
 await cp(built, published, { recursive: true });
 // Keep the framework's flat output and add canonical directory URLs for Pages.

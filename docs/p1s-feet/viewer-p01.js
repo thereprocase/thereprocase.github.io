@@ -14,7 +14,7 @@ try{
  const material=color=>new THREE.MeshStandardMaterial({color,roughness:.75,metalness:0,side:THREE.DoubleSide});
  const grid=new THREE.GridHelper(220,22,0xa8adb3,0xc8ccd0);grid.rotation.x=Math.PI/2;grid.position.z=-.1;scene.add(grid);
  const loader=new STLLoader();
- const [b,c]=await Promise.all([loader.loadAsync('./base.stl'),loader.loadAsync('./cradle.stl')]);
+ const [b,c]=await Promise.all([loader.loadAsync('./p01/base.stl'),loader.loadAsync('./p01/cradle.stl')]);
  const base=new THREE.Mesh(b,material(0x66717e)),cradle=new THREE.Mesh(c,material(0x008e9c));scene.add(base,cradle);
  const ball=new THREE.Mesh(new THREE.SphereGeometry(20,48,32),new THREE.MeshStandardMaterial({color:0x20252c,roughness:.85,transparent:true,opacity:.72}));scene.add(ball);
  let layout=false;
