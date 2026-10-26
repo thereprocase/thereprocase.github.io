@@ -34,7 +34,9 @@
 .gl-home>#projects{display:block!important}
 .io-category{margin-bottom:24px}
 .io-category-description{padding:16px 22px;font-size:14px;background:var(--gl-light);border-bottom:1px solid var(--gl-rule)}
-.io-project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1px;background:var(--gl-rule)}
+.io-project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1px}
+/* Each card draws its own rule in the 1px gap, so unused cells in a short last row stay the pane colour. */
+.io-project-grid>*{outline:1px solid var(--gl-rule)}
 .io-project{background:white;display:flex;flex-direction:column;min-width:0}
 .io-project-image{display:flex;justify-content:center;align-items:center;background:#f3efe6;border-bottom:1px solid #ccc;overflow:hidden}
 .io-project-image img{width:100%;height:260px;object-fit:contain;transition:transform .25s ease}

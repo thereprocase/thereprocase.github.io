@@ -235,6 +235,7 @@ export const projects: Project[] = [
     description: 'Automatic detection checks male feet and female sockets at several depths. Only complete cells on a 42 mm grid are selected. Review the orientation and selected cells before converting.',
     status: 'Browser tool · STL, 3MF, STEP and other mesh or CAD files',
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/gridfinity-converter',
+    image: { src: '/gridfinity-converter/converter-card.png', alt: 'Gridfinity base converter with its example bin loaded and both male feet selected' },
     highlights: ['Automatic foot and socket detection on a 42 mm grid.', 'Orientation and cell review before conversion.', 'Runs in your browser.'],
     links: [{ label: 'Open the converter', href: '/gridfinity-converter/' }],
   },
