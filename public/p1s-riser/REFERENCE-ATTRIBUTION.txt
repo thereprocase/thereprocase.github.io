@@ -21,9 +21,9 @@ original author, link the license, and indicate modifications. Distribute a
 shared adaptation under CC BY-NC-SA 4.0; commercial use is not granted.
 No endorsement by the original author is implied.
 
-Current revision: R13 update 10, October 24, 2026.
+Current revision: R13 update 14, October 27, 2026.
 Changes by thereprocase: four-piece frame, tapered puzzle joints and overlapping
-seams, downward-facing LED backing, lift-in diffusers, rounded contact edges,
-bed-starting chamfers and a rear cable plug. The original riser was used as a
-reference for the printer/glass interface. This package contains the revised
-geometry, not the original author's files. CC BY-NC-SA 4.0 applies.
+seams, downward-facing LED backing, lift-in diffusers, a raised glass rim and a
+push-up corner block for the LED strip joint and cord. The original riser was
+used as a reference for the printer/glass interface. This package contains the
+revised geometry, not the original author's files. CC BY-NC-SA 4.0 applies.

@@ -1,0 +1,47 @@
+P1S USB light riser - R13 update 14 - 8 mm LED strip
+
+Changes from update 10
+- u11: thicker quarter seams. u11-u14 quarters mate with each other, not with u10.
+- u12: 3.4 mm glass rim and a lid-handle pocket. Overall height 26.9 mm.
+- u14: the LED strip joint and cord live in a corner block that pushes up into
+  the rear-right corner from below. The corner pockets under the glass are filled.
+
+Corner block
+- The block is the whole corner body from the printer seat up to Z13.5, 1 mm
+  below the visor underside, from X123.4 round the corner to Y83 (frame
+  coordinates, origin at the glass centre). The frame keeps the visor, glass
+  seat and rim.
+- It is held by friction: each end is a shallow crescent, 2.5 mm deep over
+  26 mm, with 0.20 mm clearance per side. Lifted off the printer, nothing but
+  that friction holds it; on the printer, the printer's lip does.
+- It stops against the Z13.5 ceiling on 6 mm lands at each end. Its bottom then
+  sits 0.25 mm above the frame bottom, so the frame carries the riser.
+- Cord route: open on top, so a strip with its factory cord and plug lays in.
+  Joint pocket 14 x 7 x 25 mm; channel cord diameter + 0.8 mm; exit through the
+  back skin. Blocks for 3, 4 and 5 mm cord, and a blank with no cord route.
+- Strain relief: two M3 heat-set inserts (holes 4.0 mm x 6 mm deep) in the back
+  pad and a screw-on keeper for the matching cord size.
+- The strip runs clockwise seen from above. Its far end overlaps the fed end
+  on the block face anywhere from Y89.3 to Y96.9. Counter-clockwise needs a
+  mirrored block, which is not included.
+
+Fitting, riser lifted: lay the joint in the pocket and the cord along the
+channel and out of the slot; push the block up until it stops; screw the
+keeper on; stick the strip round the frame; fit the diffusers; place the glass.
+
+Printing
+- Quarters print seat-down. The rear-right Z13.5 ceiling over the block spans
+  140 mm between its ends and needs support from the bed only, through the
+  open socket.
+- Blocks print as supplied, bottom face on the bed. Keepers print flat face down.
+- Print socket-coupon-rear-right-corner with the 4 mm cord block and keeper
+  first to check the friction fit on your printer.
+
+Status: CAD checks pass (64 of 64 assembly checks; 21,125 of 21,125 sampled seam
+sightlines blocked, front and rear). The corner block has not been printed yet.
+Three update 10 quarters have been printed in PETG.
+
+u14g adds a TPU glass gasket: rim 3.9 mm above the seat, 27.4 mm overall, a
+4.0 x 1.0 mm groove in the seat, and seven TPU pieces. It uses the same blocks.
+
+All dimensions are millimetres. Attribution and license are in the package.

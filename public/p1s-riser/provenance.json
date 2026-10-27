@@ -32,5 +32,34 @@
     "masks-v10.json": "b64bb5adfe617b6c54349946d6dd4a27dc25031db2de26fb0d8be8f50960a7c8",
     "render_sections_v10.py": "4e366faef6773b983aeafdb937c00617fb2555e00053447ed7ae2fe33097800d",
     "beam_sections_v10.py": "ae8f5e02efd0d28ce87b50498678db4e800f15523edbdcdae08c5254d713d6cc"
+  },
+  "current": {
+    "revision": "R13 update 14",
+    "downloads": [
+      {
+        "file": "p1s-riser-r13-u14-8mm-cad.zip",
+        "bytes": 16269570,
+        "sha256": "32fb567f4be2c744a502e6760bbd2c1904d136d01376c803ca7b5e14aec63c4f"
+      },
+      {
+        "file": "p1s-riser-r13-u14g-gasket-8mm-cad.zip",
+        "bytes": 16625546,
+        "sha256": "1682fe8968cea87bec83edcf336762972eb4a5bf4a04195e79ae7f5c804416f8"
+      },
+      {
+        "file": "ASSEMBLY-R13-U14.txt",
+        "bytes": 2648,
+        "sha256": "07acfd7651ce8111aecc9d899da6113e9a3df297f4aa30295cdc8db9e698d0c6"
+      },
+      {
+        "file": "REFERENCE-ATTRIBUTION.txt",
+        "bytes": 1575,
+        "sha256": "4a2b57e8f574d463e08e7b3e5454367fae008e153c6ad066fffc75a9ee71cf96"
+      }
+    ],
+    "geometry_modified": false,
+    "sources_sha256": {
+      "assembly.step": "d3c563b0f668c083225306885b797efef31e0daddf740bda9121c1e379aa6fc0"
+    }
   }
 }
