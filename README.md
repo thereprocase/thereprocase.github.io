@@ -109,7 +109,7 @@ showcase images; it never touches the PNGs or `tuner/provenance.json` itself).
 
 ## Kraken AMS remix
 
-`public/kraken/` contains the dated ASA print and assembly guide, actual accepted-CAD illustrations and final-plate toolpath previews. The project registry links to `/kraken/`; GitHub Release assets remain in `thereprocase/kraken-remix-ogAMS`. Keep the release tag, download hashes, settings and physical acceptance limits synchronized with the checked print package. Build and export `docs/` with the rest of the site.
+`public/kraken/` contains the v5 PCTG section (release pctg-print-2026-10-28) and the dated ASA print and assembly guide, actual accepted-CAD illustrations and final-plate toolpath previews. The project registry links to `/kraken/`; GitHub Release assets remain in `thereprocase/kraken-remix-ogAMS`. Keep the release tag, download hashes, settings and physical acceptance limits synchronized with the checked print package. Build and export `docs/` with the rest of the site.
 
 ## Kraken spool rings and nut
 
