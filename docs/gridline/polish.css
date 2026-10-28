@@ -35,7 +35,7 @@ body.gl-polished{background:#c6c6c6;color:#101010;font-family:var(--gl-font,'IBM
 .gl-legacy :where(h1,h2,h3,h4,p,li,td,th,summary,label,.small,.muted,.eyebrow,.badge,.copy){color:#101010!important;font-family:var(--gl-font)}
 .gl-legacy :where(h1){color:#0000a8!important}
 .gl-legacy :where(a){color:#0000a8!important;text-underline-offset:4px}
-.gl-legacy :where(article,.card,.panel,.box,.tile,.viewer-card,.copy,.controls,.toolbar,details,.model-card,.side,.sidebar){background:#fff!important;color:#101010!important;border-color:#9a9a9a!important}
+.gl-legacy :where(article:not(.wordmark-card),.card,.panel,.box,.tile,.viewer-card,.copy,.controls,.toolbar,details,.model-card,.side,.sidebar){background:#fff!important;color:#101010!important;border-color:#9a9a9a!important}
 .gl-legacy :where(article,.card,.panel,.box,.tile,.model-card){border:1px solid #9a9a9a!important}
 .gl-legacy :where(button,.button,.btn,select,input){background:white!important;color:#0000a8!important;border:1px solid #666!important;border-radius:0!important;min-height:42px}
 .gl-legacy :where(button[aria-pressed=true],.button.primary,.btn.primary){background:#0000a8!important;color:white!important}
@@ -58,3 +58,8 @@ body.gl-polished{background:#c6c6c6;color:#101010;font-family:var(--gl-font,'IBM
 .gl-legacy figure img{object-fit:contain;border-radius:0!important}
 .gl-legacy .gl-polish-figure{background:#f3efe6!important}
 .gl-polished .gl-directory .gl-index{flex:0 0 2ch;white-space:nowrap}
+/* Text on Active Blue and dark fills stays white. The forced ink and link colours above are for light panes; these
+   rules sit last and carry class specificity so they win over both. */
+.gl-legacy .gl-titlebar,.gl-legacy .gl-titlebar a,.gl-legacy .gl-pane-title,.gl-legacy .gl-pane-title :is(h2,span),.gl-legacy section[id]>h2{color:#fff!important}
+.gl-legacy :is(a.primary,.button.primary,.btn.primary),.gl-legacy :is(a.primary,.button.primary,.btn.primary) *{color:#fff!important}
+.gl-legacy .wordmark-card:is(.lowercase,.uppercase) :is(h3,p,a,span){color:#fff!important}
