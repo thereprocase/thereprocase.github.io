@@ -241,8 +241,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'kraken-rings', name: 'Kraken spool rings, nut and gear generator', category: 'generators', sitePath: '/kraken-rings/',
-    keywords: ['kraken', 'ams', 'bambu', 'spool', 'adapter', 'cardboard', 'rings', 'generator', 'stl', 'gear'],
-    summary: 'Cardboard spool adapter rings for any hole from 45 to 95 mm, plus the Kraken nut and gear.',
+    keywords: ['kraken', 'ams', 'bambu', 'spool', 'adapter', 'cardboard', 'hard plastic', 'rings', 'generator', 'stl', 'gear'],
+    summary: 'Spool adapter rings for any hole from 45 to 95 mm: pentagon rings for cardboard spools, spring rings for hard plastic spools, plus the Kraken nut and gear.',
     description: 'Generate spool adapter rings in 0.1 mm steps for the Kraken AMS remix, or download ready-made sizes. The nut and gear parts are on the same page.',
     status: 'Browser generator · STL downloads',
     sourceHref: 'https://github.com/thereprocase/thereprocase.github.io/tree/main/public/kraken-rings',

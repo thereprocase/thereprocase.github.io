@@ -8,16 +8,23 @@
  * added thickness as a parameter. scripts/check-kraken-rings.mjs compares both with the Python output.
  */
 export const RING = Object.freeze({
-  lead_radial_reduction: 1.9, lead_height: 2.0, lip_thickness: 0.4,
-  gear_flange_thickness: 1.5, flange_radial_reach: 10.25,
+  lead_radial_reduction: 1.9, lead_height: 2.0, lip_thickness: 0.4, flange_radial_reach: 10.25,
   maximum_preserved_radius: 22.5, preserved_region_overlap: 0.1, minimum_preserved_radius: 20.3,
   circular_segments: 256, corners: 5, phase_degrees: 90,
 });
+// Flange sets in mm (generate_family.FLANGE_SETS). humebeam's 0.4 mm source lip is too thin to
+// survive bed removal and handling on the cap side, so "normal" thickens both sides.
+export const FLANGE_SETS = Object.freeze({normal: Object.freeze({cap: 0.6, gear: 2.2}), skinny: Object.freeze({cap: 0.4, gear: 0.4})});
+// Hard plastic hubs (generate_family.SPRING): round spigot at a friction clearance, four spring fingers.
+export const SPRING = Object.freeze({clearance: 0.2, fingers: 4, finger_degrees: 30, slot: 1.0, finger_thickness: 1.3,
+  bow: 0.2, root_above_base: 1.6, root_overlap: 0.3, peak_fraction: 0.75, minimum_core_wall: 0.8});
+export const CORES = Object.freeze(['pentagon', 'spring']);
+export const sideNames = set => ({gear: `gear-side-${mm(FLANGE_SETS[set].gear)}mm-flange`, cap: `cap-side-${mm(FLANGE_SETS[set].cap)}mm-lip`});
 export const NUT = Object.freeze({
   pitch: 6.0, split_radius: 16.5, chamfer_r0: 15.40, chamfer_slope: 0.578, chamfer_depth: 1.05,
   fill_top: 1.0, original_flange: 1.5, maximum_added: 6.0, segments: 720, petg_density: 1.26,
 });
-export const ringDefaults = Object.freeze({hole: 53.4, bite: 0.7, clearance: 0.1});
+export const ringDefaults = Object.freeze({hole: 53.4, bite: 0.7, clearance: 0.1, set: 'normal', core: 'pentagon'});
 export const nutDefaults = Object.freeze({flange: 3.5});
 export const ringLimits = Object.freeze({hole: [45, 95], bite: [0, 1.5], clearance: [0, 0.5]});
 export const nutLimits = Object.freeze({flange: [NUT.original_flange, NUT.original_flange + NUT.maximum_added]});
@@ -30,6 +37,8 @@ export const mm = x => String(Number(Number(x).toFixed(2)));
 export function ringParameters(input = {}) {
   for (const k of Object.keys(input)) if (!(k in ringDefaults)) throw Error(`Unknown ring setting: ${k}`);
   const p = {...ringDefaults, ...input};
+  if (!Object.hasOwn(FLANGE_SETS, p.set)) throw Error(`Flange set: choose ${Object.keys(FLANGE_SETS).join(' or ')}.`);
+  if (!CORES.includes(p.core)) throw Error(`Spool core: choose ${CORES.join(' or ')}.`);
   const [hlo, hhi] = ringLimits.hole;
   if (!Number.isFinite(p.hole) || p.hole < hlo - 1e-9 || p.hole > hhi + 1e-9 || !onStep(p.hole, 0.1))
     throw Error(`Spool hole: enter ${hlo}.0 to ${hhi}.0 mm in 0.1 mm steps.`);
@@ -39,15 +48,21 @@ export function ringParameters(input = {}) {
       throw Error(`${label}: enter ${lo} to ${hi} mm radial in 0.01 mm steps.`);
   }
   p.hole = Math.round(p.hole * 10) / 10; p.bite = Math.round(p.bite * 100) / 100; p.clearance = Math.round(p.clearance * 100) / 100;
-  const radius = p.hole / 2, support = radius - p.clearance, corner = radius + p.bite;
+  const radius = p.hole / 2, spring = p.core === 'spring';
+  // A spring ring sits at the fixed friction clearance; its fingers do the gripping, so bite and undersize do not apply.
+  const support = radius - (spring ? SPRING.clearance : p.clearance), corner = spring ? support : radius + p.bite;
   const scale = (corner - RING.lead_radial_reduction) / corner;
   // At the smallest sizes the lead-in must clear the preserved holder core.
   const preserve = Math.min(RING.maximum_preserved_radius, support * scale - RING.preserved_region_overlap);
   if (!(preserve > RING.minimum_preserved_radius))
     throw Error(`At ${mm(p.hole)} mm the lead-in would cut into humebeam's holder core (needs ${RING.minimum_preserved_radius} mm radius, has ${preserve.toFixed(2)}). Reduce the undersize or the bite.`);
+  const fingerInner = support - SPRING.finger_thickness, coreWall = fingerInner - SPRING.slot - preserve;
+  if (spring && coreWall < SPRING.minimum_core_wall - 1e-9)
+    throw Error(`Spring rings need a hole of at least ${mm(2 * (RING.maximum_preserved_radius + SPRING.minimum_core_wall + SPRING.slot + SPRING.finger_thickness + SPRING.clearance))} mm: below that the finger slots would cut into humebeam's holder core.`);
   // A fractional size uses the holder interface of the next smaller stock ring (generate_family.main).
-  const stock = Math.floor(p.hole + 1e-9);
-  return {...p, radius, support, corner, scale, preserve, stock,
+  const stock = Math.floor(p.hole + 1e-9), {cap: capT, gear: gearT} = FLANGE_SETS[p.set], sides = sideNames(p.set);
+  return {...p, radius, support, corner, scale, preserve, stock, capT, gearT, sides,
+    fingerInner, coreWall, peakDiameter: 2 * (radius + SPRING.bow),
     lipDiameter: stock + 5, flangeOD: p.hole + 2 * RING.flange_radial_reach,
     topCornerDiameter: 2 * corner * scale, topSupportDiameter: 2 * support * scale};
 }
@@ -61,10 +76,9 @@ export function nutParameters(input = {}) {
   return {...p, added: Math.round((p.flange - NUT.original_flange) * 10) / 10};
 }
 
-export const ringSides = ['gear-side-1.5mm-flange', 'cap-side'];
 export function ringStem(p, side) {
-  const tuned = p.bite !== ringDefaults.bite || p.clearance !== ringDefaults.clearance ? `-bite${mm(p.bite)}-under${mm(p.clearance)}` : '';
-  return `kraken-spool-ring-${mm(p.hole)}-mm-pentagon-${side}${tuned}`;
+  const tuned = p.core === 'pentagon' && (p.bite !== ringDefaults.bite || p.clearance !== ringDefaults.clearance) ? `-bite${mm(p.bite)}-under${mm(p.clearance)}` : '';
+  return `kraken-spool-ring-${mm(p.hole)}-mm-${p.core}-${side}${tuned}`;
 }
 export const nutStem = p => `kraken-spool-nut-${mm(p.flange)}mm-flange`;
 
@@ -109,33 +123,78 @@ function exportSolid(s, shape, label) {
   return {vertices, triangles, volume: final.volume(), bounds: [...b.min, ...b.max]};
 }
 
-/** Cap-side and gear-side rings from one stock ring's core+lip asset (see scripts/build-kraken-ring-assets.py). */
+/**
+ * Grow the Z0 lip of `cap` to `baseT` and optionally widen it to `reach` (generate_family.thicken).
+ * Everything above the lip moves up; the new base keeps the source-lip section (bore, snap ribs)
+ * as a constant prism.
+ */
+function thicken(s, cap, baseT, preserve, reach) {
+  const {Manifold, CrossSection, keep} = s, R = RING, n = R.circular_segments, lipT = R.lip_thickness, rise = baseT - lipT;
+  if (Math.abs(rise) < 1e-9 && reach === undefined) return cap;
+  const b = cap.boundingBox(), half = Math.max(...[b.min[0], b.min[1], b.max[0], b.max[1]].map(Math.abs)) + 30;
+  const above = keep(keep(Manifold.cube([2 * half, 2 * half, b.max[2] + rise + 2])).translate([-half, -half, baseT]));
+  let section = keep(cap.slice(lipT / 2));
+  if (reach !== undefined) section = keep(section.add(keep(keep(CrossSection.circle(reach, n)).subtract(keep(CrossSection.circle(reach - R.flange_radial_reach - 0.01, n))))));
+  return keep(keep(keep(cap.translate([0, 0, rise])).intersect(above)).add(keep(section.extrude(baseT))));
+}
+
+function wedge(s, halfDegrees, r, z0, z1, phase) {
+  const pts = [[0, 0]];
+  for (let i = 0; i < 48; i++) { const a = (phase - halfDegrees + 2 * halfDegrees * i / 47) * Math.PI / 180; pts.push([r * Math.cos(a), r * Math.sin(a)]); }
+  return s.keep(s.keep(s.keep(s.CrossSection.ofPolygons([pts])).extrude(z1 - z0)).translate([0, 0, z0]));
+}
+
+/** Spring fingers cut into a thickened round ring (generate_family.spring_pair). */
+function addFingers(s, ring, p, baseT, top) {
+  const {Manifold, CrossSection, keep} = s, S = SPRING, n = RING.circular_segments;
+  const zRoot = baseT + S.root_above_base, leadStart = top - RING.lead_height, peak = p.radius + S.bow;
+  const zPeak = zRoot + S.peak_fraction * (leadStart - zRoot), z0 = zRoot - S.root_overlap;
+  const profile = [[p.fingerInner, z0], [p.support, z0], [p.support, zRoot], [peak, zPeak], [peak, leadStart],
+    [p.support - RING.lead_radial_reduction + 0.2, top], [p.fingerInner, top]];
+  const finger = keep(Manifold.revolve(keep(CrossSection.ofPolygons([profile])), n));
+  const span = S.finger_degrees / 2 + S.slot / p.support * 180 / Math.PI;
+  const behind = keep(Manifold.cylinder(top + 2, p.fingerInner - S.slot, p.fingerInner - S.slot, n));
+  for (let i = 0; i < S.fingers; i++) {
+    const phase = 45 + 360 / S.fingers * i;
+    ring = keep(ring.subtract(keep(wedge(s, span, p.support + 2, zRoot, top + 1, phase).subtract(behind))));
+    ring = keep(ring.add(keep(finger.intersect(wedge(s, S.finger_degrees / 2, peak + 2, z0, top, phase)))));
+  }
+  // The reference mesh can leave zero-volume slivers at the core boundary; keep the real solid.
+  const pieces = ring.decompose(); pieces.forEach(keep);
+  const real = pieces.filter(q => q.volume() > 1e-3);
+  if (real.length !== 1) throw Error('The spring ring is not one closed solid.');
+  const section = keep(real[0].slice(zPeak)).toPolygons().flat();
+  if (Math.abs(Math.max(...section.map(([x, y]) => Math.hypot(x, y))) - peak) > 1e-3) throw Error('Spring finger peak check failed.');
+  return real[0];
+}
+
+/** Gear-side and cap-side rings from one stock ring's core+lip asset (see scripts/build-kraken-ring-assets.py). */
 export function buildRings(module, core, input) {
   const p = ringParameters(input), s = scope(module), {Manifold, CrossSection, keep} = s, R = RING, n = R.circular_segments;
   try {
     const stock = s.solid(core), height = stock.boundingBox().max[2];
     if (Math.abs(height - 10.4) > 1e-3) throw Error('Unexpected holder core height.');
-    const angles = Array.from({length: R.corners}, (_, i) => (R.phase_degrees + 360 / R.corners * i) * Math.PI / 180);
-    const polygon = keep(CrossSection.ofPolygons([angles.map(a => [p.corner * Math.cos(a), p.corner * Math.sin(a)])]));
-    const outline = keep(polygon.add(keep(CrossSection.circle(p.support, n))));
+    let outline = keep(CrossSection.circle(p.support, n));
+    if (p.core === 'pentagon') {
+      const angles = Array.from({length: R.corners}, (_, i) => (R.phase_degrees + 360 / R.corners * i) * Math.PI / 180);
+      outline = keep(keep(CrossSection.ofPolygons([angles.map(a => [p.corner * Math.cos(a), p.corner * Math.sin(a)])])).add(outline));
+    }
     const lipT = R.lip_thickness, leadH = R.lead_height, r = p.radius;
     const straight = keep(keep(outline.extrude(height - leadH - lipT)).translate([0, 0, lipT]));
     const lead = keep(keep(outline.extrude(leadH, 0, 0, [p.scale, p.scale])).translate([0, 0, height - leadH]));
     const keepCyl = keep(keep(Manifold.cylinder(height + 2, p.preserve, p.preserve, n)).translate([0, 0, -1]));
     const lipMask = keep(keep(Manifold.cube([2 * (r + 5), 2 * (r + 5), lipT])).translate([-r - 5, -r - 5, 0]));
     const cap = keep(keep(keep(stock.intersect(keepCyl)).add(keep(keep(straight.add(lead)).subtract(keepCyl)))).add(keep(stock.intersect(lipMask))));
-    const flangeT = R.gear_flange_thickness, rise = flangeT - lipT;
-    const raised = keep(cap.translate([0, 0, rise]));
-    const above = keep(keep(Manifold.cube([2 * (r + 15), 2 * (r + 15), height + 2])).translate([-r - 15, -r - 15, flangeT]));
-    const outer = keep(CrossSection.circle(r + R.flange_radial_reach, n)), inner = keep(CrossSection.circle(r - 0.01, n));
-    const flange = keep(keep(keep(cap.slice(lipT / 2)).add(keep(outer.subtract(inner)))).extrude(flangeT));
-    const gear = keep(keep(raised.intersect(above)).add(flange));
-    // Independent section check from build_pair: five corners at the requested radius.
-    const section = keep(cap.slice(height - leadH - 0.1)).toPolygons().flat();
-    const reach = Math.max(...section.map(([x, y]) => Math.hypot(x, y)));
-    if (Math.abs(reach - p.corner) > 1e-5) throw Error('Pentagon corner radius check failed.');
+    if (p.core === 'pentagon') {
+      // Independent section check from build_pair: five corners at the requested radius.
+      const section = keep(cap.slice(height - leadH - 0.1)).toPolygons().flat();
+      const reach = Math.max(...section.map(([x, y]) => Math.hypot(x, y)));
+      if (Math.abs(reach - p.corner) > 1e-5) throw Error('Pentagon corner radius check failed.');
+    }
     const parts = {};
-    for (const [side, body] of [['gear-side-1.5mm-flange', gear], ['cap-side', cap]]) {
+    for (const [side, baseT, reach] of [[p.sides.gear, p.gearT, r + R.flange_radial_reach], [p.sides.cap, p.capT, undefined]]) {
+      let body = thicken(s, cap, baseT, p.preserve, reach);
+      if (p.core === 'spring') body = addFingers(s, body, p, baseT, height + baseT - lipT);
       const pieces = body.decompose(); pieces.forEach(keep);
       if (body.status() !== 'NoError' || pieces.length !== 1 || !(body.volume() > 0)) throw Error(`The ${side} ring is not one closed solid.`);
       parts[side] = {...exportSolid(s, body, side), stem: ringStem(p, side)};

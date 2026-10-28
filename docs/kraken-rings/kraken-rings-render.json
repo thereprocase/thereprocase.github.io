@@ -1,13 +1,13 @@
 {
   "renderer": "~/.claude/skills/render (prepare.py + capture.mjs)",
   "scene": {
-    "title": "Kraken spool rings, nut and gear · Repro remix",
-    "subtitle": "r54t12 spoked gear · 53.4 mm gear-side and cap-side rings · nut with a 3.5 mm flange",
-    "caption": "Rendered from the generator's STL files. Repro's remix of Kraken by humebeam, CC BY-NC 4.0.",
+    "title": "Kraken spool rings, nut and gear \u00b7 Repro remix",
+    "subtitle": "r54t12 spoked gear \u00b7 53.4 mm pentagon pair for cardboard \u00b7 52.1 mm spring pair for hard plastic \u00b7 3.5 mm flange nut",
+    "caption": "Rendered from the generator's STL files: normal flange set, 2.2 mm gear flange and 0.6 mm cap lip. Repro's remix of Kraken by humebeam, CC BY-NC 4.0.",
     "camera": {
       "yaw": -1.5708,
       "pitch": 0.95,
-      "zoom": 0.62
+      "zoom": 0.6
     },
     "parts": [
       {
@@ -22,7 +22,7 @@
             1,
             0,
             0,
-            -120
+            -165
           ],
           [
             0,
@@ -45,7 +45,7 @@
         ]
       },
       {
-        "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange.stl",
+        "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-2.2mm-flange.stl",
         "color": [
           0.36,
           0.64,
@@ -56,13 +56,13 @@
             1,
             0,
             0,
-            30
+            -5
           ],
           [
             0,
             0,
             -1,
-            -45
+            -42
           ],
           [
             0,
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "mesh": "kraken-spool-ring-53.4-mm-pentagon-cap-side.stl",
+        "mesh": "kraken-spool-ring-53.4-mm-pentagon-cap-side-0.6mm-lip.stl",
         "color": [
           0.36,
           0.64,
@@ -90,13 +90,81 @@
             1,
             0,
             0,
-            30
+            -5
           ],
           [
             0,
             0,
             -1,
-            45
+            48
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "mesh": "kraken-spool-ring-52.1-mm-spring-gear-side-2.2mm-flange.stl",
+        "color": [
+          0.36,
+          0.64,
+          0.69
+        ],
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            85
+          ],
+          [
+            0,
+            0,
+            -1,
+            -42
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "mesh": "kraken-spool-ring-52.1-mm-spring-cap-side-0.6mm-lip.stl",
+        "color": [
+          0.36,
+          0.64,
+          0.69
+        ],
+        "transform": [
+          [
+            1,
+            0,
+            0,
+            85
+          ],
+          [
+            0,
+            0,
+            -1,
+            48
           ],
           [
             0,
@@ -124,7 +192,7 @@
             1,
             0,
             0,
-            128
+            185
           ],
           [
             0,
@@ -150,14 +218,14 @@
   },
   "inputs": [
     {
-      "mesh": "kraken-spool-gear-8-spokes-pad54-root35.25-tip12-outer88-fillet3.stl",
+      "mesh": "/tmp/kr-render/kraken-spool-gear-8-spokes-pad54-root35.25-tip12-outer88-fillet3.stl",
       "sha256": "4c1a7679e8a03aacfd693aca58ee7f616128000a0c60f5a590e0e1dbeed992e2",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          -120.0
+          -165.0
         ],
         [
           0.0,
@@ -182,20 +250,20 @@
       "triangles": 79582
     },
     {
-      "mesh": "kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange.stl",
-      "sha256": "70482d7af6a0adf29ea6c80406eefd530b1c312bee2177fa1cb9b9ff232ac6ba",
+      "mesh": "/tmp/kr-render/kraken-spool-ring-53.4-mm-pentagon-gear-side-2.2mm-flange.stl",
+      "sha256": "9ead4a6bc39e6850d6a810e9667bcd86a1acfdf696d86f74f63ad44f2a6d7eab",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          30.0
+          -5.0
         ],
         [
           0.0,
           0.0,
           -1.0,
-          -45.0
+          -42.0
         ],
         [
           0.0,
@@ -210,24 +278,24 @@
           1.0
         ]
       ],
-      "vertices": 8577,
-      "triangles": 17576
+      "vertices": 8630,
+      "triangles": 17684
     },
     {
-      "mesh": "kraken-spool-ring-53.4-mm-pentagon-cap-side.stl",
-      "sha256": "35e34de3fccdcedaea508ca6a1f28fcd60d44f2d5ccda540490c4f46d743acfb",
+      "mesh": "/tmp/kr-render/kraken-spool-ring-53.4-mm-pentagon-cap-side-0.6mm-lip.stl",
+      "sha256": "f0c51c4b9676d0b02feb45fdfd90ef792bbede14ac696857743e4e69928e89ba",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          30.0
+          -5.0
         ],
         [
           0.0,
           0.0,
           -1.0,
-          45.0
+          48.0
         ],
         [
           0.0,
@@ -242,18 +310,82 @@
           1.0
         ]
       ],
-      "vertices": 7827,
-      "triangles": 16084
+      "vertices": 8863,
+      "triangles": 18150
     },
     {
-      "mesh": "kraken-spool-nut-3.5mm-flange.stl",
+      "mesh": "/tmp/kr-render/kraken-spool-ring-52.1-mm-spring-gear-side-2.2mm-flange.stl",
+      "sha256": "80aa0e29fb1266b05ab5d69888e115797875e9fbf26bd21845e1f8b7a36362c1",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          85.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 9249,
+      "triangles": 19124
+    },
+    {
+      "mesh": "/tmp/kr-render/kraken-spool-ring-52.1-mm-spring-cap-side-0.6mm-lip.stl",
+      "sha256": "9185f7e8d1c55bfb8b62a4d477b3c53a2c1072c3a5bf8ff439e1e6c827fb0071",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          85.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          48.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "vertices": 9481,
+      "triangles": 19588
+    },
+    {
+      "mesh": "/tmp/kr-render/kraken-spool-nut-3.5mm-flange.stl",
       "sha256": "ed0170738d7a223af94efa716a129b776b08954f9fad3e22dda8e7f55075a27d",
       "transform": [
         [
           1.0,
           0.0,
           0.0,
-          128.0
+          185.0
         ],
         [
           0.0,
@@ -277,5 +409,9 @@
       "vertices": 29367,
       "triangles": 61768
     }
-  ]
+  ],
+  "crops": {
+    "kraken-rings-hero.png": "magick kraken-rings.png -crop 1520x570+40+255 +repage -resize 1600x600!",
+    "kraken-rings-og.png": "magick kraken-rings.png -crop 1560x819+20+130 +repage -resize 1200x630!"
+  }
 }

@@ -2,11 +2,11 @@ import * as THREE from 'three';
 import {OrbitControls} from '/p1s-feet/vendor/OrbitControls.js';
 import {demandRenderer, taskWorker} from '../gridfinity-common/generator-runtime.js?v=runtime-3';
 import {readSettingsLink, settingsURL, copySettingsLink} from '../gridfinity-common/settings-link.js?v=share-1';
-import {ringParameters, nutParameters, gearParameters, ringDefaults, nutDefaults, gearDefaults, gearPresets, ringStem, mm} from './kernel.js?v=rings-2';
-import {ringDiagram, gearDiagram} from './diagram.js?v=rings-2';
+import {ringParameters, nutParameters, gearParameters, ringDefaults, nutDefaults, gearDefaults, gearPresets, ringStem, mm} from './kernel.js?v=rings-3';
+import {ringDiagram, gearDiagram} from './diagram.js?v=rings-3';
 
 const $ = id => document.getElementById(id);
-const WORKER = './worker.js?v=rings-2', PETG = 1.26;
+const WORKER = './worker.js?v=rings-3', PETG = 1.26;
 const gearKeys = ['plain', 'count', 'pad', 'root', 'tip', 'outer', 'fillet'];
 const linkDefaults = {...ringDefaults, flange: nutDefaults.flange, ...Object.fromEntries(gearKeys.map(k => ['gear_' + k, gearDefaults[k]]))};
 const state = {ring: null, nut: null, ringJob: null, nutJob: null, nutStarted: false};
@@ -87,7 +87,11 @@ let diagramParams, diagramNarrow;
 const narrowDiagram = () => $('diagram').clientWidth < 640;
 function drawDiagram(p) { diagramParams = p; diagramNarrow = narrowDiagram(); $('diagram').innerHTML = ringDiagram(p, {narrow: diagramNarrow}); }
 new ResizeObserver(() => { if (diagramParams && narrowDiagram() !== diagramNarrow) drawDiagram(diagramParams); }).observe($('diagram'));
-const ringInput = () => ({hole: Number($('hole').value), bite: Number($('bite').value), clearance: Number($('clearance').value)});
+const choice = name => ringForm.querySelector(`input[name="${name}"]:checked`)?.value ?? ringDefaults[name];
+const ringInput = () => ({hole: Number($('hole').value), bite: Number($('bite').value), clearance: Number($('clearance').value), set: choice('set'), core: choice('core')});
+function setChoice(name, value) { for (const r of ringForm.querySelectorAll(`input[name="${name}"]`)) r.checked = r.value === value; }
+// Bite and undersize shape the pentagon only; a spring ring has a fixed friction clearance.
+function syncCore() { const spring = choice('core') === 'spring'; $('advanced').hidden = spring; $('hole-help').textContent = spring ? '51.6–95.0 mm for spring rings. Enter your smallest reading: the spigot sits 0.2 mm under it and the fingers reach 0.2 mm past it.' : '45.0–95.0 mm. Enter the size to print: your smallest reading, or up to 0.9 mm less.'; }
 function ringError(message, field) {
   for (const id of ['hole', 'bite', 'clearance']) $(id).removeAttribute('aria-invalid');
   $('ring-error').hidden = !message; $('ring-error').textContent = message ?? '';
@@ -95,16 +99,18 @@ function ringError(message, field) {
 }
 function ringField(message) { return /bite/i.test(message) ? 'bite' : /undersize/i.test(message) ? 'clearance' : 'hole'; }
 function stockHint(p) {
+  if (p.core === 'spring') return p.hole === 52.1 ? `Same geometry as the published 52.1 mm hard plastic pair above (${p.set} set).` : 'Spring ring for a hard plastic hub. The fingers bow 0.2 mm past the hole and flex back as the ring goes in.';
   if (p.hole === 55.5) return 'Same geometry as the published Polymaker 55.5 mm pair above.';
   if (p.hole === 53.4) return 'Same geometry as the published Elegoo 53.4 mm pair above.';
   if (p.hole === p.stock) return `Same geometry as the ready-made ${p.stock} mm pair above.`;
   return `For a ${mm(p.hole)} mm reading, the ready-made ${p.stock} mm pair also fits (${mm(Math.round((p.hole - p.stock) * 10) / 10)} mm smaller). This size uses its holder core.`;
 }
 function ringFacts(p, r) {
-  const rows = [['Support core', dia(2 * p.support)], ['Pentagon points', dia(2 * p.corner)], ['Flange OD · gear side', dia(p.flangeOD)], ['Cap lip', dia(p.lipDiameter)],
-    ['Height · gear / cap', '11.5 / 10.4 mm'], ['Holder core from', `humebeam ${p.stock} mm`]];
+  const rows = [['Support core', dia(2 * p.support)], p.core === 'spring' ? ['Spring finger peak', dia(p.peakDiameter)] : ['Pentagon points', dia(2 * p.corner)],
+    ['Flange · gear side', `${dia(p.flangeOD)} × ${mm(p.gearT)} mm`], ['Lip · cap side', `${dia(p.lipDiameter)} × ${mm(p.capT)} mm`],
+    ['Height · gear / cap', `${mm(10 + p.gearT)} / ${mm(10 + p.capT)} mm`], ['Holder core from', `humebeam ${p.stock} mm`]];
   // Solid-body mass; a sliced part with sparse infill weighs less.
-  if (r) rows.push(['Gear side · solid PETG', `${(r.parts['gear-side-1.5mm-flange'].volume * PETG / 1000).toFixed(1)} g`], ['Cap side · solid PETG', `${(r.parts['cap-side'].volume * PETG / 1000).toFixed(1)} g`]);
+  if (r) rows.push(['Gear side · solid PETG', `${(r.parts[p.sides.gear].volume * PETG / 1000).toFixed(1)} g`], ['Cap side · solid PETG', `${(r.parts[p.sides.cap].volume * PETG / 1000).toFixed(1)} g`]);
   facts($('ring-facts'), rows);
 }
 let ringTimer;
@@ -128,7 +134,7 @@ function generateRings(p) {
   job.onmessage = ({data}) => {
     job.terminate(); if (state.ringJob !== job) return;
     if (data.error) { $('ring-status').textContent = 'Generation failed: ' + data.error; viewNote(ringView, $('ring-note'), 'Generation failed · see the message beside the settings.'); return; }
-    const r = state.ring = data.result, gear = r.parts['gear-side-1.5mm-flange'], cap = r.parts['cap-side'];
+    const r = state.ring = data.result, gear = r.parts[r.parameters.sides.gear], cap = r.parts[r.parameters.sides.cap];
     for (const id of ['dl-gear', 'dl-cap', 'dl-zip']) $(id).disabled = false;
     $('ring-status').textContent = `${mm(r.parameters.hole)} mm pair ready · checked as closed solids`;
     ringFacts(r.parameters, r);
@@ -138,19 +144,19 @@ function generateRings(p) {
     if (!state.nutStarted && nutVisible) startNut();
   };
   job.onerror = () => { job.terminate(); $('ring-status').textContent = 'The geometry engine could not start. Reload the page; this needs a browser with WebAssembly and module workers.'; };
-  job.postMessage({kind: 'rings', parameters: {hole: p.hole, bite: p.bite, clearance: p.clearance}});
+  job.postMessage({kind: 'rings', parameters: {hole: p.hole, bite: p.bite, clearance: p.clearance, set: p.set, core: p.core}});
 }
 ringForm.addEventListener('input', () => ringChanged());
 ringForm.addEventListener('submit', e => { e.preventDefault(); ringChanged({immediate: true}); });
-ringForm.addEventListener('change', e => { if (e.target.type === 'number') ringChanged({immediate: true}); });
+ringForm.addEventListener('change', e => { if (e.target.type === 'radio') syncCore(); if (e.target.type === 'number' || e.target.type === 'radio') ringChanged({immediate: true}); });
 for (const b of ringForm.querySelectorAll('[data-step]')) b.onclick = () => {
   const v = Math.round((Number($('hole').value || ringDefaults.hole) + Number(b.dataset.step)) * 10) / 10;
   $('hole').value = Math.min(95, Math.max(45, v)).toFixed(1); ringChanged();
 };
 $('reset-fit').onclick = () => { $('bite').value = ringDefaults.bite; $('clearance').value = ringDefaults.clearance; ringChanged({immediate: true}); };
 const pairName = () => ringStem(state.ring.parameters, 'pair') + '.zip';
-$('dl-gear').onclick = () => { const x = state.ring?.parts['gear-side-1.5mm-flange']; if (x) download(x.stl, 'model/stl', x.stem + '.stl'); };
-$('dl-cap').onclick = () => { const x = state.ring?.parts['cap-side']; if (x) download(x.stl, 'model/stl', x.stem + '.stl'); };
+$('dl-gear').onclick = () => { const x = state.ring?.parts[state.ring.parameters.sides.gear]; if (x) download(x.stl, 'model/stl', x.stem + '.stl'); };
+$('dl-cap').onclick = () => { const x = state.ring?.parts[state.ring.parameters.sides.cap]; if (x) download(x.stl, 'model/stl', x.stem + '.stl'); };
 $('dl-zip').onclick = () => { if (state.ring) download(state.ring.zip, 'application/zip', pairName()); };
 
 // ---- Nut
@@ -207,7 +213,7 @@ new IntersectionObserver(entries => { nutVisible = entries.some(e => e.isInterse
 $('share').onclick = async () => {
   try {
     const g = gearInput(); gearParameters(g);
-    const input = {...ringInput(), ...nutInput(), ...Object.fromEntries(gearKeys.map(k => ['gear_' + k, g[k]]))}; ringParameters({hole: input.hole, bite: input.bite, clearance: input.clearance}); nutParameters({flange: input.flange});
+    const input = {...ringInput(), ...nutInput(), ...Object.fromEntries(gearKeys.map(k => ['gear_' + k, g[k]]))}; ringParameters({hole: input.hole, bite: input.bite, clearance: input.clearance, set: input.set, core: input.core}); nutParameters({flange: input.flange});
     const url = settingsURL(location.href, 'kraken-rings', input); $('share-url').value = url;
     const copied = await copySettingsLink(url); $('share-url').hidden = copied;
     $('share-status').textContent = copied ? 'Settings link copied.' : 'Copy the settings link below.';
@@ -217,9 +223,9 @@ $('share').onclick = async () => {
 function restore() {
   try {
     const linked = readSettingsLink(location.href, 'kraken-rings', linkDefaults); if (!linked) return false;
-    const {flange, ...rest} = linked.parameters, ring = {hole: rest.hole, bite: rest.bite, clearance: rest.clearance}, gear = Object.fromEntries(gearKeys.map(k => [k, rest['gear_' + k]]));
+    const {flange, ...rest} = linked.parameters, ring = {hole: rest.hole, bite: rest.bite, clearance: rest.clearance, set: rest.set, core: rest.core}, gear = Object.fromEntries(gearKeys.map(k => [k, rest['gear_' + k]]));
     ringParameters(ring); nutParameters({flange}); gearParameters(gear); setGearInputs(gear);
-    $('hole').value = ring.hole.toFixed(1); $('bite').value = ring.bite; $('clearance').value = ring.clearance; $('flange').value = flange.toFixed(1);
+    $('hole').value = ring.hole.toFixed(1); $('bite').value = ring.bite; $('clearance').value = ring.clearance; $('flange').value = flange.toFixed(1); setChoice('set', ring.set); setChoice('core', ring.core); syncCore();
     if (ring.bite !== ringDefaults.bite || ring.clearance !== ringDefaults.clearance) $('advanced').open = true;
     $('share-status').textContent = 'Settings restored from link.'; return true;
   } catch (e) { $('share-status').textContent = 'Could not load settings link: ' + e.message + ' Showing defaults.'; return false; }

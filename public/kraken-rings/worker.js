@@ -1,5 +1,5 @@
 import Module from '../gridfinity-shelves/vendor/manifold.js';
-import {buildRings, buildNut, buildGear, readKRM, ringParameters, binarySTL, ringHeader, nutHeader, gearHeader} from './kernel.js?v=rings-2';
+import {buildRings, buildNut, buildGear, readKRM, ringParameters, binarySTL, ringHeader, nutHeader, gearHeader} from './kernel.js?v=rings-3';
 import {zip} from '../gridfinity-drawers/zip.js';
 
 const ready = Module().then(m => { m.setup(); return m; });
@@ -18,7 +18,8 @@ The holder core (bore and snap ribs) comes unchanged from humebeam's kraken-spoo
 License: CC BY-NC 4.0 https://creativecommons.org/licenses/by-nc/4.0/ (credit humebeam; non-commercial use).
 Generated at https://thereprocase.github.io/kraken-rings/
 
-Support (core) diameter ${(2 * p.support).toFixed(2)} mm; pentagon point diameter ${(2 * p.corner).toFixed(2)} mm.
+Support (core) diameter ${(2 * p.support).toFixed(2)} mm; ${p.core === 'spring' ? `spring finger peak diameter ${p.peakDiameter.toFixed(2)} mm (for hard plastic hubs)` : `pentagon point diameter ${(2 * p.corner).toFixed(2)} mm (for cardboard hubs)`}.
+Gear-side flange ${p.gearT} mm thick; cap-side lip ${p.capT} mm thick (${p.set} set).
 Print one gear-side ring and one cap-side ring per spool, flat face down, no supports.
 The gear-side ring goes between the spool and the large gear; the cap-side ring between the spool and the threaded holder cap.
 `;

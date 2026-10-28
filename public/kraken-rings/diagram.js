@@ -1,7 +1,7 @@
 // Live fit diagram for the ring generator. Pure string output so node checks can render it.
 // Wide layout: top view with leaders, detail and legend to the right, sections below.
 // Narrow layout (phones): the same parts stacked, with numbered markers and a legend.
-import {RING, mm} from './kernel.js?v=rings-2';
+import {RING, SPRING, mm} from './kernel.js?v=rings-3';
 import {coreOutline} from './core-outline.js';
 
 const C = {ink: '#101010', rule: '#666', blue: '#0000a8', gear: '#e8a45f', gearLine: '#9a5a17', ring: '#5da3ad', ringLine: '#243c40',
@@ -14,6 +14,13 @@ const text = (x, y, s, a = '') => `<text x="${f(x)}" y="${f(y)}" ${a}>${esc(s)}<
 const circle = (cx, cy, r, a) => `<circle cx="${f(cx)}" cy="${f(cy)}" r="${f(r)}" ${a}/>`;
 const line = (x1, y1, x2, y2, a) => `<line x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}" ${a}/>`;
 const path = (points, a) => `<path d="${points.map(([x, y], i) => (i ? 'L' : 'M') + f(x) + ' ' + f(y)).join('')}Z" ${a}/>`;
+// Spring fingers as drawn: SPRING.fingers arcs at the peak radius, first one centred on +Y.
+const fingerArcs = (p, phase0 = 90) => Array.from({length: SPRING.fingers}, (_, i) => {
+  const c = phase0 + 360 / SPRING.fingers * i, h = SPRING.finger_degrees / 2, pts = [];
+  for (let j = 0; j <= 16; j++) { const t = (c - h + 2 * h * j / 16) * Math.PI / 180; pts.push([(p.radius + SPRING.bow) * Math.cos(t), (p.radius + SPRING.bow) * Math.sin(t)]); }
+  for (let j = 16; j >= 0; j--) { const t = (c - h + 2 * h * j / 16) * Math.PI / 180; pts.push([p.fingerInner * Math.cos(t), p.fingerInner * Math.sin(t)]); }
+  return pts;
+});
 const pentagon = r => Array.from({length: RING.corners}, (_, i) => { const t = (RING.phase_degrees + 72 * i) * Math.PI / 180; return [r * Math.cos(t), r * Math.sin(t)]; });
 
 /** Features labelled on the top view: name, value, note, colour, marker radius, marker angle. */
@@ -25,13 +32,18 @@ function features(p) {
     ['Holder core · from humebeam', d(2 * p.preserve), 'bore and snap ribs unchanged', C.core, p.preserve * .985, -14],
   ];
 }
-const fitRows = p => [['Pentagon point', d(2 * p.corner), `hole + ${mm(2 * p.bite)}`, C.bite], ['Spool hole', d(p.hole), 'nominal', C.hole], ['Support core', d(2 * p.support), `hole − ${mm(2 * p.clearance)}`, C.ringLine]];
+const fitRows = p => p.core === 'spring'
+  ? [['Finger peak', d(p.peakDiameter), `hole + ${mm(2 * SPRING.bow)}`, C.bite], ['Spool hole', d(p.hole), 'nominal', C.hole], ['Support core', d(2 * p.support), `hole − ${mm(2 * SPRING.clearance)}`, C.ringLine]]
+  : [['Pentagon point', d(2 * p.corner), `hole + ${mm(2 * p.bite)}`, C.bite], ['Spool hole', d(p.hole), 'nominal', C.hole], ['Support core', d(2 * p.support), `hole − ${mm(2 * p.clearance)}`, C.ringLine]];
+const grip = (p, X, Y, a) => p.core === 'spring'
+  ? fingerArcs(p).map(arc => path(arc.map(([x, y]) => [X(x), Y(y)]), a)).join('')
+  : path(pentagon(p.corner).map(([x, y]) => [X(x), Y(y)]), a);
 
 function topView(out, p, cx, cy, radiusPx, numbered) {
   const R = p.flangeOD / 2, s = radiusPx / R, X = x => cx + x * s, Y = y => cy - y * s;
   out.push(circle(cx, cy, R * s, `fill="${C.gear}" fill-opacity=".55" stroke="${C.gearLine}" stroke-width="1.5"`));
   out.push(circle(cx, cy, p.lipDiameter / 2 * s, `fill="none" stroke="${C.ringLine}" stroke-width="1.2" stroke-dasharray="7 5"`));
-  out.push(circle(cx, cy, p.support * s, `fill="${C.ring}" stroke="none"`), path(pentagon(p.corner).map(([x, y]) => [X(x), Y(y)]), `fill="${C.ring}" stroke="none"`));
+  out.push(circle(cx, cy, p.support * s, `fill="${C.ring}" stroke="none"`), grip(p, X, Y, `fill="${C.ring}" stroke="${p.core === 'spring' ? C.ringLine : 'none'}"`));
   out.push(circle(cx, cy, p.radius * s, `fill="none" stroke="${C.hole}" stroke-width="1.6" stroke-dasharray="3 3"`));
   const coreD = coreOutline.map(poly => poly.map(([x, y], i) => (i ? 'L' : 'M') + f(X(x)) + ' ' + f(Y(y))).join('') + 'Z').join('');
   out.push(circle(cx, cy, p.preserve * s, `fill="url(#dg-hatch)" stroke="${C.coreLine}" stroke-width="1"`));
@@ -46,24 +58,26 @@ function topView(out, p, cx, cy, radiusPx, numbered) {
 }
 
 function detail(out, p, ix, iy, iw, ih, k, view, leader) {
-  // Magnified +Y pentagon point: the spool hole edge sits 62% down the window.
+  // Magnified +Y pentagon point or spring finger: the spool hole edge sits 62% down the window.
   const half = iw / 2 / k, above = ih * .62 / k, ox = ix + iw / 2, oy = iy + ih * .62 + p.radius * k, x2 = x => ox + x * k, y2 = y => oy - y * k;
   out.push(`<rect x="${f(view.X(-half))}" y="${f(view.Y(p.radius + above))}" width="${f(2 * half * view.s)}" height="${f(ih / k * view.s)}" fill="none" stroke="${C.blue}" stroke-width="1.5"/>`);
   if (leader) out.push(line(view.X(half), view.Y(p.radius + above), ix, iy, `stroke="${C.blue}" stroke-width="1" stroke-dasharray="4 4"`));
   out.push(`<clipPath id="dg-clip"><rect x="${ix}" y="${iy}" width="${iw}" height="${ih}"/></clipPath>`, `<rect x="${ix}" y="${iy}" width="${iw}" height="${ih}" fill="${C.paper}" stroke="${C.blue}" stroke-width="1.5"/>`);
   out.push(`<g clip-path="url(#dg-clip)">`, circle(ox, oy, p.radius * k, `fill="${C.hole}" fill-opacity=".14" stroke="none"`));
-  out.push(circle(ox, oy, p.support * k, `fill="${C.ring}" stroke="${C.ringLine}" stroke-width="1"`), path(pentagon(p.corner).map(([x, y]) => [x2(x), y2(y)]), `fill="${C.ring}" stroke="${C.ringLine}" stroke-width="1"`));
+  out.push(circle(ox, oy, p.support * k, `fill="${C.ring}" stroke="${C.ringLine}" stroke-width="1"`), grip(p, x2, y2, `fill="${C.ring}" stroke="${C.ringLine}" stroke-width="1"`));
   out.push(circle(ox, oy, p.support * k - .5, `fill="${C.ring}" stroke="none"`));
-  out.push(circle(ox, oy, p.radius * k, `fill="none" stroke="${C.hole}" stroke-width="2" stroke-dasharray="6 4"`), circle(ox, oy, p.corner * k, `fill="none" stroke="${C.bite}" stroke-width="1" stroke-dasharray="2 4"`), `</g>`);
+  out.push(circle(ox, oy, p.radius * k, `fill="none" stroke="${C.hole}" stroke-width="2" stroke-dasharray="6 4"`), circle(ox, oy, (p.core === 'spring' ? p.peakDiameter / 2 : p.corner) * k, `fill="none" stroke="${C.bite}" stroke-width="1" stroke-dasharray="2 4"`), `</g>`);
   const dim = (r1, r2, x, color, name) => {
     const ya = y2(r1), yb = y2(r2), arrow = `url(#dg-arrow-${color.slice(1)})`;
     out.push(line(x, ya, x, yb, `stroke="${color}" stroke-width="2" marker-start="${arrow}" marker-end="${arrow}"`));
     out.push(line(ox, ya, x + 6, ya, `stroke="${color}" stroke-width=".8"`), line(ox, yb, x + 6, yb, `stroke="${color}" stroke-width=".8"`));
     out.push(text(x + (x < ox ? -8 : 10), (ya + yb) / 2 + 5, name, `class="dg-dim dg-halo" fill="${color}"${x < ox ? ' text-anchor="end"' : ''}`));
   };
-  if (p.bite > 0) dim(p.radius, p.corner, ox + 70, C.bite, `bite ${mm(p.bite)}`);
-  if (p.clearance > 0) dim(p.support, p.radius, ox - 60, C.ringLine, `${mm(p.clearance)} under`);
-  out.push(`<rect x="${ix + 1}" y="${iy + 1}" width="${iw - 2}" height="26" fill="${C.paper}" fill-opacity=".9"/>`, text(ix + 12, iy + 19, `PENTAGON POINT · ${Math.round(k / view.s)}× DETAIL`, 'class="dg-head"'));
+  const spring = p.core === 'spring', under = spring ? SPRING.clearance : p.clearance;
+  if (spring) dim(p.radius, p.peakDiameter / 2, ox + 70, C.bite, `finger ${mm(SPRING.bow)} out`);
+  else if (p.bite > 0) dim(p.radius, p.corner, ox + 70, C.bite, `bite ${mm(p.bite)}`);
+  if (under > 0) dim(p.support, p.radius, ox - 60, C.ringLine, `${mm(under)} under`);
+  out.push(`<rect x="${ix + 1}" y="${iy + 1}" width="${iw - 2}" height="26" fill="${C.paper}" fill-opacity=".9"/>`, text(ix + 12, iy + 19, `${spring ? 'SPRING FINGER' : 'PENTAGON POINT'} · ${Math.round(k / view.s)}× DETAIL`, 'class="dg-head"'));
 }
 
 // Rows of [name, value, note, colour, marker]; cols = [name x, value x, note x or undefined to put the note below].
@@ -79,19 +93,21 @@ function legend(out, rows, x, y, step, cols) {
 
 function section(out, p, px, top, width, gear, kk) {
   const R = p.flangeOD / 2, r0 = 15.5, base = top + 56 + 11.5 * kk, Z = z => base - z * kk, Rr = r => px + (r - r0) * kk;
-  const rise = gear ? RING.gear_flange_thickness - RING.lip_thickness : 0, h = 10.4 + rise;
-  const lipT = gear ? RING.gear_flange_thickness : RING.lip_thickness, lipR = gear ? R : p.lipDiameter / 2, z1 = h - RING.lead_height;
+  const lipT = gear ? p.gearT : p.capT, h = 10.4 + lipT - RING.lip_thickness, lipR = gear ? R : p.lipDiameter / 2, z1 = h - RING.lead_height;
+  const spring = p.core === 'spring', zRoot = lipT + SPRING.root_above_base, peakR = p.peakDiameter / 2, zPeak = zRoot + SPRING.peak_fraction * (z1 - zRoot);
   const tag = (x, y, s, a = 'class="dg-note dg-halo"') => out.push(text(x, y, s, a));
-  out.push(text(px, top + 18, gear ? 'Gear side · 1.5 mm flange' : 'Cap side · 0.4 mm lip', 'class="dg-name"'));
+  out.push(text(px, top + 18, gear ? `Gear side · ${mm(p.gearT)} mm flange` : `Cap side · ${mm(p.capT)} mm lip`, 'class="dg-name"'));
   out.push(path([[Rr(p.preserve), Z(lipT)], [Rr(lipR), Z(lipT)], [Rr(lipR), Z(0)], [Rr(p.preserve), Z(0)]], `fill="${gear ? C.gear : C.ring}" stroke="${C.ink}" stroke-width="1"`));
   out.push(path([[Rr(p.preserve), Z(lipT)], [Rr(p.support), Z(lipT)], [Rr(p.support), Z(z1)], [Rr(p.support * p.scale), Z(h)], [Rr(p.preserve), Z(h)]], `fill="${C.ring}" stroke="${C.ink}" stroke-width="1"`));
-  out.push(`<polyline points="${f(Rr(p.corner))},${f(Z(lipT))} ${f(Rr(p.corner))},${f(Z(z1))} ${f(Rr(p.corner * p.scale))},${f(Z(h))}" fill="none" stroke="${C.bite}" stroke-width="1.2" stroke-dasharray="4 3"/>`);
+  const gripLine = spring ? [[p.support, zRoot], [peakR, zPeak], [peakR, z1], [p.support - RING.lead_radial_reduction + 0.2, h]] : [[p.corner, lipT], [p.corner, z1], [p.corner * p.scale, h]];
+  out.push(`<polyline points="${gripLine.map(([r, z]) => `${f(Rr(r))},${f(Z(z))}`).join(' ')}" fill="none" stroke="${C.bite}" stroke-width="1.2" stroke-dasharray="4 3"/>`);
   out.push(`<rect x="${f(Rr(BORE))}" y="${f(Z(h))}" width="${f((p.preserve - BORE) * kk)}" height="${f(h * kk)}" fill="url(#dg-hatch)" stroke="${C.coreLine}" stroke-width="1"/>`);
   out.push(line(Rr(p.radius), Z(h + 1.2), Rr(p.radius), Z(-.6), `stroke="${C.hole}" stroke-width="1.4" stroke-dasharray="3 3"`), line(px, base, px + width, base, `stroke="${C.ink}" stroke-width="1"`));
   out.push(line(Rr(BORE) - 3, Z(h), Rr(BORE) - 3, Z(0), `stroke="${C.rule}" stroke-width="1"`));
   tag(Rr(p.radius) + 8, Z(h + .9), `spool hole ${d(p.hole)}`);
-  tag(Rr(p.corner) + 8, Z(z1 + 1), `lead-in ${mm(RING.lead_height)} mm`);
-  tag(Rr(p.corner) + 8, Z(z1 / 2), `point ${d(2 * p.corner)}`, `class="dg-note dg-halo" fill="${C.bite}"`);
+  const gripR = spring ? peakR : p.corner;
+  tag(Rr(gripR) + 8, Z(z1 + 1), `lead-in ${mm(RING.lead_height)} mm`);
+  tag(Rr(gripR) + 8, Z(spring ? zPeak - 1 : z1 / 2), spring ? `finger ${d(p.peakDiameter)}` : `point ${d(2 * p.corner)}`, `class="dg-note dg-halo" fill="${C.bite}"`);
   tag(Rr(lipR) - 4, Z(lipT) - 6, gear ? `${mm(lipT)} mm flange · ${d(p.flangeOD)}` : `${mm(lipT)} mm lip · ${d(p.lipDiameter)}`, 'class="dg-note dg-halo" text-anchor="end"');
   tag(Rr(BORE) - 6, Z(h / 2) + 4, `${mm(h)} mm`, 'class="dg-note dg-halo" text-anchor="end"');
   tag(Rr(BORE) + 4, Z(h) + 14, 'holder core');
@@ -99,7 +115,8 @@ function section(out, p, px, top, width, gear, kk) {
 }
 
 function wrap(W, H, p, body, narrow) {
-  const desc = `Spool hole ${d(p.hole)}; support core ${d(2 * p.support)}; pentagon point ${d(2 * p.corner)}; flange OD ${d(p.flangeOD)}; cap lip ${d(p.lipDiameter)}; holder core ${d(2 * p.preserve)}; millimetres.`;
+  const grip = p.core === 'spring' ? `spring finger peak ${d(p.peakDiameter)}` : `pentagon point ${d(2 * p.corner)}`;
+  const desc = `Spool hole ${d(p.hole)}; support core ${d(2 * p.support)}; ${grip}; flange OD ${d(p.flangeOD)}, ${mm(p.gearT)} mm thick; cap lip ${d(p.lipDiameter)}, ${mm(p.capT)} mm thick; holder core ${d(2 * p.preserve)}; millimetres.`;
   const arrows = [C.bite, C.ringLine].map(c => `<marker id="dg-arrow-${c.slice(1)}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="${c}"/></marker>`).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="dg-title dg-desc" class="ring-diagram${narrow ? ' narrow' : ''}"><title id="dg-title">Kraken spool ring fit diagram, ${mm(p.hole)} mm</title><desc id="dg-desc">${esc(desc)}</desc><defs><pattern id="dg-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="${C.core}"/><line x1="0" y1="0" x2="0" y2="7" stroke="${C.coreLine}" stroke-width="1.2"/></pattern>${arrows}</defs><rect x="0" y="0" width="${W}" height="${H}" fill="${C.paper}"/>${body.join('')}</svg>`;
 }
@@ -113,11 +130,11 @@ export function ringDiagram(p, {narrow = false} = {}) {
     legend(out, features(p).map(([n, v, note, color], i) => [n, v, note, color, String(i + 1)]), 16, 512, 50, [30, 340]);
     detail(out, p, 16, 714, W - 32, 210, 110, view, false);
     legend(out, fitRows(p), 16, 956, 28, [24, 180, 290]);
-    out.push(line(16, 1050, W - 16, 1050, `stroke="${C.rule}"`), text(16, 1076, 'HALF SECTIONS · THROUGH A POINT', 'class="dg-head"'));
+    out.push(line(16, 1050, W - 16, 1050, `stroke="${C.rule}"`), text(16, 1076, p.core === 'spring' ? 'HALF SECTIONS · THROUGH A FINGER' : 'HALF SECTIONS · THROUGH A POINT', 'class="dg-head"'));
     const kk = Math.min((W - 60) / (p.flangeOD / 2 + 1.5 - 15.5), 13);
     const b1 = section(out, p, 44, 1086, W - 60, true, kk), b2 = section(out, p, 44, b1 + 20, W - 60, false, kk);
     const H = b2 + 44;
-    out.push(text(16, H - 14, 'Hatched: humebeam holder core. Dashed red: points.', 'class="dg-sub"'));
+    out.push(text(16, H - 14, `Hatched: humebeam holder core. Dashed red: ${p.core === 'spring' ? 'fingers' : 'points'}.`, 'class="dg-sub"'));
     return wrap(W, H, p, out, true);
   }
   const W = 1000, H = 930, view = topView(out, p, 300, 330, 255, false);
@@ -130,9 +147,9 @@ export function ringDiagram(p, {narrow = false} = {}) {
   detail(out, p, 610, 340, 370, 210, 110, view, true);
   legend(out, fitRows(p), 610, 576, 24, [22, 170, 262]);
   const kk = Math.min(430 / (p.flangeOD / 2 + 1.5 - 15.5), 150 / 11.5);
-  out.push(line(20, 650, 980, 650, `stroke="${C.rule}"`), text(24, 674, 'HALF SECTIONS · THROUGH A PENTAGON POINT', 'class="dg-head"'));
+  out.push(line(20, 650, 980, 650, `stroke="${C.rule}"`), text(24, 674, p.core === 'spring' ? 'HALF SECTIONS · THROUGH A SPRING FINGER' : 'HALF SECTIONS · THROUGH A PENTAGON POINT', 'class="dg-head"'));
   section(out, p, 28, 680, 440, true, kk); section(out, p, 530, 680, 440, false, kk);
-  out.push(text(24, H - 14, 'Hatched: humebeam\'s holder core. Teal: support circle and pentagon. Dashed red: pentagon points. Dashed brown: spool hole. Millimetres.', 'class="dg-sub"'));
+  out.push(text(24, H - 14, p.core === 'spring' ? 'Hatched: humebeam\'s holder core. Teal: support circle and spring fingers. Dashed red: finger profile. Dashed brown: spool hole. Millimetres.' : 'Hatched: humebeam\'s holder core. Teal: support circle and pentagon. Dashed red: pentagon points. Dashed brown: spool hole. Millimetres.', 'class="dg-sub"'));
   return wrap(W, H, p, out, false);
 }
 

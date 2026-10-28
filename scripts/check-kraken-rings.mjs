@@ -1,5 +1,5 @@
 // Kraken ring and nut kernel checks under node, against the Python generators' output.
-// Usage: node scripts/check-kraken-rings.mjs [--rings DIR] [--sizes 55,53.4,45] [--nut NUT_STL --nut-flange 3] [--gears DIR]
+// Usage: node scripts/check-kraken-rings.mjs [--rings DIR] [--sizes 55,53.4,45] [--set normal|skinny] [--core pentagon|spring] [--nut NUT_STL --nut-flange 3] [--gears DIR]
 //   --rings: a generate_family.py output (models/*.3mf and *.stl) or a published models directory.
 //   --nut:   build_nut.py output (outer face at Z = -(flange - 1.5)).
 //   --gears: directory with gear-spokes.stl, gear-taper-r54t12.stl, gear-n6r42t12.stl (gear_web*.py output).
@@ -12,7 +12,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import Module from '../public/gridfinity-shelves/vendor/manifold.js';
 import {ringDiagram, gearDiagram} from '../public/kraken-rings/diagram.js';
-import {buildRings, buildNut, buildGear, readKRM, ringParameters, nutParameters, gearParameters, gearPresets, ringStem, binarySTL, ringHeader, nutHeader, gearHeader, RING} from '../public/kraken-rings/kernel.js';
+import {buildRings, buildNut, buildGear, readKRM, ringParameters, nutParameters, gearParameters, gearPresets, ringStem, binarySTL, ringHeader, nutHeader, gearHeader, RING, FLANGE_SETS, sideNames} from '../public/kraken-rings/kernel.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const assets = path.join(root, 'public/kraken-rings/assets');
@@ -60,34 +60,42 @@ async function read3MF(file) { // stored or deflated entries; 3D/3dmodel.model o
 assert.throws(() => ringParameters({hole: 44.9})); assert.throws(() => ringParameters({hole: 95.1})); assert.throws(() => ringParameters({hole: 53.45}));
 assert.equal(ringParameters({hole: 95}).hole, 95); assert.equal(ringParameters({hole: 45}).stock, 45); assert.equal(ringParameters({hole: 53.4}).stock, 53);
 assert.throws(() => ringParameters({hole: 45, bite: 0, clearance: 0.5}), /holder core/);
-assert.equal(ringStem(ringParameters({hole: 53.4}), 'gear-side-1.5mm-flange'), 'kraken-spool-ring-53.4-mm-pentagon-gear-side-1.5mm-flange');
-assert.equal(ringStem(ringParameters({hole: 55}), 'cap-side'), 'kraken-spool-ring-55-mm-pentagon-cap-side');
-assert.equal(ringStem(ringParameters({hole: 55, bite: 0.8}), 'cap-side'), 'kraken-spool-ring-55-mm-pentagon-cap-side-bite0.8-under0.1');
+assert.deepEqual(sideNames('normal'), {gear: 'gear-side-2.2mm-flange', cap: 'cap-side-0.6mm-lip'});
+assert.deepEqual(sideNames('skinny'), {gear: 'gear-side-0.4mm-flange', cap: 'cap-side-0.4mm-lip'});
+assert.equal(ringStem(ringParameters({hole: 53.4}), 'gear-side-2.2mm-flange'), 'kraken-spool-ring-53.4-mm-pentagon-gear-side-2.2mm-flange');
+assert.equal(ringStem(ringParameters({hole: 55}), 'cap-side-0.6mm-lip'), 'kraken-spool-ring-55-mm-pentagon-cap-side-0.6mm-lip');
+assert.equal(ringStem(ringParameters({hole: 55, bite: 0.8}), 'cap-side-0.6mm-lip'), 'kraken-spool-ring-55-mm-pentagon-cap-side-0.6mm-lip-bite0.8-under0.1');
+assert.equal(ringStem(ringParameters({hole: 52.1, core: 'spring', bite: 0.8}), 'cap-side-0.4mm-lip'), 'kraken-spool-ring-52.1-mm-spring-cap-side-0.4mm-lip');
+assert.throws(() => ringParameters({hole: 51.5, core: 'spring'}), /at least 51.6 mm/); assert.equal(ringParameters({hole: 51.6, core: 'spring'}).core, 'spring');
+assert.throws(() => ringParameters({set: 'thick'}), /Flange set/); assert.throws(() => ringParameters({core: 'round'}), /Spool core/);
 assert.throws(() => nutParameters({flange: 1.4})); assert.throws(() => nutParameters({flange: 7.6})); assert.equal(nutParameters({flange: 7.5}).added, 6);
 assert.equal(nutParameters({}).flange, 3.5);
-const header = new TextDecoder().decode(new Uint8Array(binarySTL({vertices: [0, 0, 0, 1, 0, 0, 0, 1, 0], triangles: [0, 1, 2]}, ringHeader(ringParameters({hole: 95}), 'gear-side-1.5mm-flange')), 0, 80));
+const header = new TextDecoder().decode(new Uint8Array(binarySTL({vertices: [0, 0, 0, 1, 0, 0, 0, 1, 0], triangles: [0, 1, 2]}, ringHeader(ringParameters({hole: 95}), 'gear-side-2.2mm-flange')), 0, 80));
 assert.match(header, /Repro remix of Kraken by humebeam, CC BY-NC 4\.0/); assert.ok(!header.startsWith('solid'));
-for (const h of [ringHeader(ringParameters({hole: 95, bite: 1.25}), 'gear-side-1.5mm-flange'), nutHeader(nutParameters({flange: 7.5})), gearHeader(gearParameters({count: 12, root: 10, tip: 10})), gearHeader(gearParameters({plain: true}))])
+for (const h of [ringHeader(ringParameters({hole: 95, bite: 1.25}), 'gear-side-2.2mm-flange'), nutHeader(nutParameters({flange: 7.5})), gearHeader(gearParameters({count: 12, root: 10, tip: 10})), gearHeader(gearParameters({plain: true}))])
   assert.ok(new TextEncoder().encode(h).length <= 80 && h.endsWith('Repro remix of Kraken by humebeam, CC BY-NC 4.0'), 'STL header too long: ' + h);
 console.log('Limits, stock-interface selection, file names and STL credit header: PASS');
-for (const input of [{hole: 45}, {hole: 53.4}, {hole: 95}, {hole: 60, bite: 0, clearance: 0}, {hole: 70, bite: 1.5, clearance: 0.5}]) for (const narrow of [false, true]) {
+for (const input of [{hole: 45}, {hole: 53.4, set: 'skinny'}, {hole: 95}, {hole: 60, bite: 0, clearance: 0}, {hole: 70, bite: 1.5, clearance: 0.5}, {hole: 52.1, core: 'spring'}, {hole: 95, core: 'spring', set: 'skinny'}]) for (const narrow of [false, true]) {
   const p = ringParameters(input), svg = ringDiagram(p, {narrow});
   assert.ok(!/NaN|undefined|Infinity/.test(svg), `diagram ${input.hole} narrow=${narrow}`);
-  for (const value of [p.hole, p.flangeOD, 2 * p.corner, 2 * p.support]) assert.ok(svg.includes(`Ø${Number(value.toFixed(2))}`), `diagram label ${value}`);
+  for (const value of [p.hole, p.flangeOD, p.core === 'spring' ? p.peakDiameter : 2 * p.corner, 2 * p.support]) assert.ok(svg.includes(`Ø${Number(value.toFixed(2))}`), `diagram label ${value}`);
+  assert.ok(svg.includes(`${p.gearT} mm flange`) && svg.includes(`${p.capT} mm lip`), 'diagram flange thicknesses');
 }
 for (const input of [gearPresets.spokes, gearPresets.r54t12, gearPresets.n6r42t12, {...gearPresets.spokes, plain: true}, {...gearPresets.spokes, count: 12}]) for (const narrow of [false, true])
   assert.ok(!/NaN|undefined|Infinity/.test(gearDiagram(input, {narrow})), 'gear diagram');
 console.log('Fit diagrams (rings and gear), wide and narrow: PASS');
 
-const sizes = (opt('--sizes') ?? '55,53.4,45').split(',').map(Number), refs = opt('--rings'), rows = [];
+const set = opt('--set') ?? 'normal', core = opt('--core') ?? 'pentagon';
+const sizes = (opt('--sizes') ?? (core === 'spring' ? '52.1,95' : '55,53.4,45')).split(',').map(Number), refs = opt('--rings'), rows = [];
 for (const hole of sizes) {
-  const p = ringParameters({hole}), t0 = performance.now();
-  const r = buildRings(m, await load(`core-${p.stock}.bin`), {hole});
+  const p = ringParameters({hole, set, core}), t0 = performance.now();
+  const r = buildRings(m, await load(`core-${p.stock}.bin`), {hole, set, core});
   const ms = performance.now() - t0;
   for (const [side, part] of Object.entries(r.parts)) {
     const top = 10.4; // every stock core is 10.4 mm tall
-    assert.ok(Math.abs(part.bounds[2]) < 1e-5 && Math.abs(part.bounds[5] - (top + (side.startsWith('gear') ? RING.gear_flange_thickness - RING.lip_thickness : 0))) < 1e-3, 'bounds ' + side);
-    const row = {hole, side, js_volume_mm3: +part.volume.toFixed(4), build_ms: Math.round(ms)};
+    const base = side.startsWith('gear') ? FLANGE_SETS[set].gear : FLANGE_SETS[set].cap;
+    assert.ok(Math.abs(part.bounds[2]) < 1e-5 && Math.abs(part.bounds[5] - (top + base - RING.lip_thickness)) < 1e-3, 'bounds ' + side);
+    const row = {hole, core, side, js_volume_mm3: +part.volume.toFixed(4), build_ms: Math.round(ms)};
     if (refs) {
       const stem = path.join(refs, part.stem), ours = solid(part.vertices, part.triangles);
       for (const ext of ['3mf', 'stl']) {
