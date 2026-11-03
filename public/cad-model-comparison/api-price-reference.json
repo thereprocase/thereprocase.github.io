@@ -1,0 +1,424 @@
+{
+  "pricing_as_of": "2026-11-03",
+  "verified_at_utc": "2026-11-03T23:18:54.732150+00:00",
+  "currency": "USD",
+  "unit": "per 1 million tokens",
+  "selection_policy": "Standard/global first-party rates where directly documented. For OpenRouter models and the Qwen hosted reference, select the original publisher Standard endpoint; GPT-OSS uses the benchmark-restricted Cerebras endpoint. No lowest-provider shopping or personal account pricing.",
+  "models": {
+    "gpt-6-astra": {
+      "provider": "OpenAI",
+      "priced_model_id": "gpt-6-astra",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 10,
+        "output": 50,
+        "cache_read": 1,
+        "cache_write": 12.5
+      },
+      "source_urls": [
+        "https://developers.openai.com/api/docs/models/gpt-6-astra"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "30m": 12.5,
+        "12h": 25.0
+      },
+      "context_tier": {
+        "threshold_input_tokens": 272000,
+        "condition": "strictly greater than threshold, evaluated separately per request including cached input",
+        "input_and_cache_multiplier": 2,
+        "output_multiplier": 1.5
+      },
+      "route_basis": "First-party published Standard API rates.",
+      "notes": [
+        "Fast is 2x Standard; Batch/Flex are 0.5x. These comparison calculations select Standard, not a latency-premium tier.",
+        "Cache-write base rate uses 30m retention; 12h write rate retained separately."
+      ]
+    },
+    "gpt-6.1-sol": {
+      "provider": "OpenAI",
+      "priced_model_id": "gpt-6.1-sol",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 2,
+        "output": 10,
+        "cache_read": 0.1,
+        "cache_write": 2.5
+      },
+      "source_urls": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "30m": 2.5,
+        "12h": 5.0
+      },
+      "context_tier": {
+        "threshold_input_tokens": 272000,
+        "condition": "strictly greater than threshold, evaluated separately per request including cached input",
+        "input_and_cache_multiplier": 2,
+        "output_multiplier": 1.5
+      },
+      "route_basis": "First-party published Standard API rates.",
+      "notes": [
+        "Fast is 2x Standard; Batch/Flex are 0.5x. These comparison calculations select Standard, not a latency-premium tier.",
+        "Cache-write base rate uses 30m retention; 12h write rate retained separately."
+      ]
+    },
+    "gpt-6.1-terra": {
+      "provider": "OpenAI",
+      "priced_model_id": "gpt-6.1-terra",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 1,
+        "output": 5,
+        "cache_read": 0.05,
+        "cache_write": 1.25
+      },
+      "source_urls": [
+        "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "30m": 1.25,
+        "12h": 2.5
+      },
+      "context_tier": {
+        "threshold_input_tokens": 272000,
+        "condition": "strictly greater than threshold, evaluated separately per request including cached input",
+        "input_and_cache_multiplier": 2,
+        "output_multiplier": 1.5
+      },
+      "route_basis": "First-party published Standard API rates.",
+      "notes": [
+        "Fast is 2x Standard; Batch/Flex are 0.5x. These comparison calculations select Standard, not a latency-premium tier.",
+        "Cache-write base rate uses 30m retention; 12h write rate retained separately."
+      ]
+    },
+    "claude-opus-5-5": {
+      "provider": "Anthropic",
+      "priced_model_id": "claude-opus-5-5",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 4,
+        "output": 20,
+        "cache_read": 0.2,
+        "cache_write": 5.0
+      },
+      "source_urls": [
+        "https://platform.claude.com/docs/en/about-claude/pricing"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "5m": 5.0,
+        "1h": 8
+      },
+      "route_basis": "First-party published Standard/global API rates.",
+      "notes": [
+        "Full 1M context at Standard rates; no long-context surcharge for these models.",
+        "Use measured 5m/1h cache-creation counters when available; unknown retention is bounded by both rates.",
+        "No batch, fast-mode or geographic premium applied."
+      ]
+    },
+    "claude-sonnet-5-5": {
+      "provider": "Anthropic",
+      "priced_model_id": "claude-sonnet-5-5",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 2,
+        "output": 10,
+        "cache_read": 0.1,
+        "cache_write": 2.5
+      },
+      "source_urls": [
+        "https://platform.claude.com/docs/en/about-claude/pricing"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "5m": 2.5,
+        "1h": 4
+      },
+      "route_basis": "First-party published Standard/global API rates.",
+      "notes": [
+        "Full 1M context at Standard rates; no long-context surcharge for these models.",
+        "Use measured 5m/1h cache-creation counters when available; unknown retention is bounded by both rates.",
+        "No batch, fast-mode or geographic premium applied."
+      ]
+    },
+    "claude-fable-5-1": {
+      "provider": "Anthropic",
+      "priced_model_id": "claude-fable-5-1",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 10,
+        "output": 50,
+        "cache_read": 0.25,
+        "cache_write": 12.5
+      },
+      "source_urls": [
+        "https://platform.claude.com/docs/en/about-claude/pricing"
+      ],
+      "cache_write_rates_usd_per_million": {
+        "5m": 12.5,
+        "1h": 20
+      },
+      "route_basis": "First-party published Standard/global API rates.",
+      "notes": [
+        "Full 1M context at Standard rates; no long-context surcharge for these models.",
+        "Use measured 5m/1h cache-creation counters when available; unknown retention is bounded by both rates.",
+        "No batch, fast-mode or geographic premium applied."
+      ]
+    },
+    "mistral-large-4": {
+      "provider": "Mistral",
+      "priced_model_id": "mistral-large-4",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.7,
+        "output": 2.1,
+        "cache_read": 0.07,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://docs.mistral.ai/models/mistral-large-4"
+      ],
+      "route_basis": "Canonical exact-model Mistral page, USD tab, current published rates.",
+      "notes": [
+        "No separate cache-write token price published; these runs have no measured cache-write tokens.",
+        "Priority 1.75x premium and regional premiums excluded by Standard/global reference policy."
+      ]
+    },
+    "zai-glm-5-3": {
+      "provider": "Mistral",
+      "priced_model_id": "zai-glm-5-3",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 1.4,
+        "output": 4.4,
+        "cache_read": 0.14,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://docs.mistral.ai/models/zai-glm-5-3"
+      ],
+      "route_basis": "Mistral-hosted GLM 5.3 exact model; not a Z.AI direct rate.",
+      "notes": [
+        "No separate cache-write token price published; these runs have no measured cache-write tokens."
+      ]
+    },
+    "deepseek-v4.1-flash": {
+      "provider": "DeepSeek",
+      "priced_model_id": "DeepSeek-V4.1-Flash-1017",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.15,
+        "output": 0.6,
+        "cache_read": 0.003,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://api-docs.deepseek.com/quick_start/pricing/"
+      ],
+      "route_basis": "Exact checkpoint name appears in measured request metadata; current deepseek-flash API alias resolves to DeepSeek-V4.1-Flash-1017.",
+      "peak_rates_usd_per_million": {
+        "input": 0.3,
+        "output": 1.2,
+        "cache_read": 0.006,
+        "cache_write": null
+      },
+      "peak_schedule": "Weekdays 01:00\u201304:00 and 06:00\u201310:00 UTC except Chinese public holidays; all other hours off-peak.",
+      "notes": [
+        "Apply published peak/off-peak schedule separately to request timestamps. All measured benchmark requests fall outside peak hours.",
+        "No separate cache-write price; zero measured write tokens."
+      ]
+    },
+    "moonshotai/kimi-k3": {
+      "provider": "OpenRouter / Moonshot AI",
+      "priced_model_id": "moonshotai/kimi-k3",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 3.0,
+        "output": 15.0,
+        "cache_read": 0.3,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+        "https://openrouter.ai/moonshotai/kimi-k3"
+      ],
+      "route_basis": "Published exact-model upstream publisher endpoint moonshotai on OpenRouter.",
+      "endpoint_tag": "moonshotai",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference."
+      ]
+    },
+    "google/gemini-4-argon": {
+      "provider": "OpenRouter / Google AI Studio",
+      "priced_model_id": "google/gemini-4-argon",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 2.0,
+        "output": 10.0,
+        "cache_read": 0.09999999999999999,
+        "cache_write": 0.1875
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints",
+        "https://openrouter.ai/google/gemini-4-argon",
+        "https://ai.google.dev/gemini-api/docs/pricing#gemini-4-argon"
+      ],
+      "route_basis": "Published exact-model upstream publisher endpoint google-ai-studio on OpenRouter.",
+      "endpoint_tag": "google-ai-studio",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference.",
+        "Published 50% discount is already reflected in returned $2/$10 and $0.10 cache-read prices; do not apply discount again. Google documents this introductory price through November 30, 2026; it doubles on December 1, 2026. Cache-write rate is $0.1875/M as listed; no measured write tokens."
+      ]
+    },
+    "minimax/minimax-m3.1-flash": {
+      "provider": "OpenRouter / MiniMax",
+      "priced_model_id": "minimax/minimax-m3.1-flash",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.075,
+        "output": 0.3,
+        "cache_read": 0.0075,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/minimax/minimax-m3.1-flash/endpoints",
+        "https://openrouter.ai/minimax/minimax-m3.1-flash"
+      ],
+      "route_basis": "Published exact-model upstream publisher endpoint minimax on OpenRouter.",
+      "endpoint_tag": "minimax",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference.",
+        "Free launch ended 2026-10-22. Published list input/output/cache-read rates are $0.15/$0.60/$0.015; endpoint reports half-price UTC 15:00\u201301:00 override. Apply request timestamps individually. All recorded requests occur in this lower-rate window."
+      ],
+      "time_overrides": [
+        {
+          "utc_start": 1500,
+          "utc_end": 100,
+          "prompt": "0.000000075",
+          "completion": "0.0000003",
+          "input_cache_read": "0.0000000075"
+        },
+        {
+          "utc_start": 100,
+          "utc_end": 1500,
+          "prompt": "0.00000015",
+          "completion": "0.0000006",
+          "input_cache_read": "0.000000015"
+        }
+      ],
+      "peak_rates_usd_per_million": {
+        "input": 0.15,
+        "output": 0.6,
+        "cache_read": 0.015,
+        "cache_write": null
+      }
+    },
+    "z-ai/glm-5.3-flash": {
+      "provider": "OpenRouter / Z.AI",
+      "priced_model_id": "z-ai/glm-5.3-flash",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.15,
+        "output": 0.5,
+        "cache_read": 0.03,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+        "https://openrouter.ai/z-ai/glm-5.3-flash"
+      ],
+      "route_basis": "Published exact-model upstream publisher endpoint z-ai/fp8 on OpenRouter.",
+      "endpoint_tag": "z-ai/fp8",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference."
+      ]
+    },
+    "openai/gpt-oss-120b": {
+      "provider": "OpenRouter / Cerebras",
+      "priced_model_id": "openai/gpt-oss-120b",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.35,
+        "output": 0.75,
+        "cache_read": 0.35,
+        "cache_write": null
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+        "https://openrouter.ai/openai/gpt-oss-120b"
+      ],
+      "route_basis": "Published Cerebras endpoint, matching the benchmark provider restriction.",
+      "endpoint_tag": "cerebras/fp16",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference.",
+        "Cerebras cached-input rate equals ordinary input rate; no assumed cache discount."
+      ]
+    },
+    "qwen3.8-27b": {
+      "provider": "OpenRouter / Alibaba",
+      "priced_model_id": "qwen/qwen3.8-27b",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 0.425,
+        "output": 2.5500000000000003,
+        "cache_read": 0.08499999999999999,
+        "cache_write": 0.53125
+      },
+      "source_urls": [
+        "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+        "https://openrouter.ai/qwen/qwen3.8-27b",
+        "https://help.aliyun.com/en/model-studio/qwen3-8-27b"
+      ],
+      "route_basis": "Published exact-model upstream publisher endpoint alibaba on OpenRouter.",
+      "endpoint_tag": "alibaba",
+      "notes": [
+        "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference.",
+        "Exact Qwen3.8-27B hosted reference. USD rates come from the Alibaba endpoint on OpenRouter, avoiding an assumed CNY exchange rate. Official Alibaba model page also documents this exact model and CNY regional rates."
+      ]
+    }
+  },
+  "scope": "Published API token prices only. Client-side tools have no added per-call charge here; separate provider-hosted tools, storage, taxes and transaction fees are excluded.",
+  "sources": [
+    {
+      "label": "OpenAI API pricing",
+      "url": "https://developers.openai.com/api/docs/pricing"
+    },
+    {
+      "label": "Anthropic model/cache pricing",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "label": "Mistral prompt caching",
+      "url": "https://docs.mistral.ai/studio/conversations/advanced/prompt-caching"
+    }
+  ]
+}

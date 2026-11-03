@@ -1,8 +1,9 @@
 {
-  "as_of_utc": "2026-11-03T22:42:42.158619+00:00",
-  "scope": "All currently persisted usage in each isolated run, including follow-ups and native child sessions. Active calls may not be recorded yet. Setup attempts archived outside these runtime directories are excluded.",
-  "token_semantics": "Input includes cache reads and writes; cache columns are subsets. Reasoning is reported as a subset of output where provided; zero can mean no separate counter. Do not add subset columns to input/output. Native providers may count tokens differently.",
-  "cost_notes": "No price estimates. OpenCode recorded cost may be computed by its provider adapter; it is not independently confirmed billing. Native subscription costs cannot be allocated from these records. Local Spark API charge is zero; electricity and hardware costs are not measured. Missing usage or billing fields are unavailable, not zero.",
+  "as_of_utc": "2026-11-03T23:22:04.973087+00:00",
+  "pricing_as_of": "2026-11-03",
+  "scope": "Measured counters in each isolated design run, including follow-ups and native guardian review overhead where present. Calls without recorded counters are excluded; archived setup attempts are excluded.",
+  "token_semantics": "Counts accumulate across requests, including repeated context. Input includes cache reads and writes; cache columns are subsets. Reported reasoning is a subset of output. Do not add subset columns to input/output. Native counters may differ.",
+  "cost_notes": "Measured token totals accumulate across requests; context thresholds and published time windows are evaluated per request, never against whole-run totals. Cache reads/writes are subsets of inclusive input; reasoning is a subset of inclusive output. Provider tokenizers may differ. Claude TTL-specific cache-creation counters are deduplicated by message ID; known 1h writes use the 1h rate. API reference endpoints are selected consistently by the published publisher/global Standard policy; rates can change after the stated date. Token prices only; provider-hosted tools, cache storage time, taxes and payment fees are outside this calculation. Missing token counters are not priced.",
   "runs": {
     "opus-dimm": {
       "model": "claude-opus-5-5",
@@ -16,9 +17,34 @@
       },
       "usage_records": 35,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-opus-5-5",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 3.5555922,
+        "usd_low": 3.5555922,
+        "usd_high": 3.5555922,
+        "available": true,
+        "max_request_input_tokens": 156516,
+        "request_pricing_groups": {
+          "standard": 35,
+          "default": 35
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 129621
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "sol-dimm": {
       "model": "gpt-6.1-sol",
@@ -32,9 +58,39 @@
       },
       "usage_records": 2,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6.1-sol",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again.",
+          "Includes native auxiliary harness-review token counters. Its metadata names codex-auto-review rather than a public API model; the tested model rate is explicitly assumed for this overhead, not attributed as design delegation."
+        ],
+        "usd": 0.3162784,
+        "usd_low": 0.3162784,
+        "usd_high": 0.3162784,
+        "available": true,
+        "max_request_input_tokens": 47968,
+        "request_pricing_groups": {
+          "standard": 24,
+          "default": 24
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0,
+        "harness_review_tokens": {
+          "input_tokens": 43985,
+          "cached_input_tokens": 25856,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 518,
+          "reasoning_output_tokens": 315
+        }
+      }
     },
     "fable-dimm": {
       "model": "claude-fable-5-1",
@@ -48,9 +104,34 @@
       },
       "usage_records": 34,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-fable-5-1",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 9.19778025,
+        "usd_low": 9.19778025,
+        "usd_high": 9.19778025,
+        "available": true,
+        "max_request_input_tokens": 187061,
+        "request_pricing_groups": {
+          "standard": 34,
+          "default": 34
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 187029
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "astra-dimm": {
       "model": "gpt-6-astra",
@@ -64,9 +145,39 @@
       },
       "usage_records": 2,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6-astra",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6-astra"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again.",
+          "Includes native auxiliary harness-review token counters. Its metadata names codex-auto-review rather than a public API model; the tested model rate is explicitly assumed for this overhead, not attributed as design delegation."
+        ],
+        "usd": 1.791008,
+        "usd_low": 1.791008,
+        "usd_high": 1.791008,
+        "available": true,
+        "max_request_input_tokens": 49140,
+        "request_pricing_groups": {
+          "standard": 22,
+          "default": 22
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0,
+        "harness_review_tokens": {
+          "input_tokens": 36259,
+          "cached_input_tokens": 26880,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 302,
+          "reasoning_output_tokens": 122
+        }
+      }
     },
     "sonnet-dimm": {
       "model": "claude-sonnet-5-5",
@@ -80,9 +191,34 @@
       },
       "usage_records": 13,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-sonnet-5-5",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.6520469,
+        "usd_low": 0.6520469,
+        "usd_high": 0.6520469,
+        "available": true,
+        "max_request_input_tokens": 83525,
+        "request_pricing_groups": {
+          "standard": 13,
+          "default": 13
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 55882
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "terra-dimm": {
       "model": "gpt-6.1-terra",
@@ -96,9 +232,31 @@
       },
       "usage_records": 1,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6.1-terra",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.0540246,
+        "usd_low": 0.0540246,
+        "usd_high": 0.0540246,
+        "available": true,
+        "max_request_input_tokens": 23161,
+        "request_pricing_groups": {
+          "standard": 11,
+          "default": 11
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "deepseek-dimm": {
       "model": "deepseek-v4.1-flash",
@@ -112,9 +270,34 @@
       },
       "usage_records": 221,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0,
-      "cost_basis": "local_inference_no_api_charge",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "deepseek-v4.1-flash",
+        "source_urls": [
+          "https://api-docs.deepseek.com/quick_start/pricing/"
+        ],
+        "route_basis": "Exact checkpoint name appears in measured request metadata; current deepseek-flash API alias resolves to DeepSeek-V4.1-Flash-1017.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.39421111,
+        "usd_low": 0.39421111,
+        "usd_high": 0.39421111,
+        "available": true,
+        "max_request_input_tokens": 189812,
+        "request_pricing_groups": {
+          "standard": 221,
+          "off_peak": 221
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 0
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "qwen-dimm": {
       "model": "qwen3.8-27b",
@@ -128,9 +311,36 @@
       },
       "usage_records": 113,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0,
-      "cost_basis": "local_inference_no_api_charge",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "qwen3.8-27b",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+          "https://openrouter.ai/qwen/qwen3.8-27b",
+          "https://help.aliyun.com/en/model-studio/qwen3-8-27b"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint alibaba on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 5.4655663,
+        "usd_low": 5.4655663,
+        "usd_high": 5.4655663,
+        "available": true,
+        "max_request_input_tokens": 175652,
+        "request_pricing_groups": {
+          "standard": 113,
+          "default": 113
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 0
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "opus-gridfinity": {
       "model": "claude-opus-5-5",
@@ -144,9 +354,34 @@
       },
       "usage_records": 29,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-opus-5-5",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 4.0325484,
+        "usd_low": 4.0325484,
+        "usd_high": 4.0325484,
+        "available": true,
+        "max_request_input_tokens": 171394,
+        "request_pricing_groups": {
+          "standard": 29,
+          "default": 29
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 144499
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "sol-gridfinity": {
       "model": "gpt-6.1-sol",
@@ -160,9 +395,39 @@
       },
       "usage_records": 2,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6.1-sol",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again.",
+          "Includes native auxiliary harness-review token counters. Its metadata names codex-auto-review rather than a public API model; the tested model rate is explicitly assumed for this overhead, not attributed as design delegation."
+        ],
+        "usd": 0.6661576,
+        "usd_low": 0.6661576,
+        "usd_high": 0.6661576,
+        "available": true,
+        "max_request_input_tokens": 77406,
+        "request_pricing_groups": {
+          "standard": 41,
+          "default": 41
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0,
+        "harness_review_tokens": {
+          "input_tokens": 55612,
+          "cached_input_tokens": 43904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 430,
+          "reasoning_output_tokens": 180
+        }
+      }
     },
     "fable-gridfinity": {
       "model": "claude-fable-5-1",
@@ -176,9 +441,34 @@
       },
       "usage_records": 36,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-fable-5-1",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 11.96015875,
+        "usd_low": 11.96015875,
+        "usd_high": 11.96015875,
+        "available": true,
+        "max_request_input_tokens": 223303,
+        "request_pricing_groups": {
+          "standard": 36,
+          "default": 36
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 196378
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "astra-gridfinity": {
       "model": "gpt-6-astra",
@@ -192,9 +482,39 @@
       },
       "usage_records": 2,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6-astra",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6-astra"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again.",
+          "Includes native auxiliary harness-review token counters. Its metadata names codex-auto-review rather than a public API model; the tested model rate is explicitly assumed for this overhead, not attributed as design delegation."
+        ],
+        "usd": 2.471898,
+        "usd_low": 2.471898,
+        "usd_high": 2.471898,
+        "available": true,
+        "max_request_input_tokens": 49892,
+        "request_pricing_groups": {
+          "standard": 35,
+          "default": 35
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0,
+        "harness_review_tokens": {
+          "input_tokens": 114698,
+          "cached_input_tokens": 83456,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 551,
+          "reasoning_output_tokens": 158
+        }
+      }
     },
     "sonnet-gridfinity": {
       "model": "claude-sonnet-5-5",
@@ -208,9 +528,34 @@
       },
       "usage_records": 18,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "claude-sonnet-5-5",
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "route_basis": "First-party published Standard/global API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 1.290274,
+        "usd_low": 1.290274,
+        "usd_high": 1.290274,
+        "available": true,
+        "max_request_input_tokens": 126151,
+        "request_pricing_groups": {
+          "standard": 18,
+          "default": 18
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 99140
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "terra-gridfinity": {
       "model": "gpt-6.1-terra",
@@ -224,9 +569,31 @@
       },
       "usage_records": 1,
       "assistant_records_without_tokens": 0,
-      "cost_usd": null,
-      "cost_basis": "subscription_allocation_unavailable",
-      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+      "provenance": "Codex cumulative session counters, including native guardian review overhead where present.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gpt-6.1-terra",
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+        ],
+        "route_basis": "First-party published Standard API rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.1030056,
+        "usd_low": 0.1030056,
+        "usd_high": 0.1030056,
+        "available": true,
+        "max_request_input_tokens": 32791,
+        "request_pricing_groups": {
+          "standard": 30,
+          "default": 30
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "deepseek-gridfinity": {
       "model": "deepseek-v4.1-flash",
@@ -240,9 +607,34 @@
       },
       "usage_records": 196,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0,
-      "cost_basis": "local_inference_no_api_charge",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "deepseek-v4.1-flash",
+        "source_urls": [
+          "https://api-docs.deepseek.com/quick_start/pricing/"
+        ],
+        "route_basis": "Exact checkpoint name appears in measured request metadata; current deepseek-flash API alias resolves to DeepSeek-V4.1-Flash-1017.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.30122169,
+        "usd_low": 0.30122169,
+        "usd_high": 0.30122169,
+        "available": true,
+        "max_request_input_tokens": 167175,
+        "request_pricing_groups": {
+          "standard": 196,
+          "off_peak": 196
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 0
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "qwen-gridfinity": {
       "model": "qwen3.8-27b",
@@ -256,9 +648,36 @@
       },
       "usage_records": 107,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0,
-      "cost_basis": "local_inference_no_api_charge",
-      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+      "provenance": "Native assistant usage counters, deduplicated by message ID; includes continuations and follow-ups.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "qwen3.8-27b",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+          "https://openrouter.ai/qwen/qwen3.8-27b",
+          "https://help.aliyun.com/en/model-studio/qwen3-8-27b"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint alibaba on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 4.66137365,
+        "usd_low": 4.66137365,
+        "usd_high": 4.66137365,
+        "available": true,
+        "max_request_input_tokens": 153391,
+        "request_pricing_groups": {
+          "standard": 107,
+          "default": 107
+        },
+        "measured_cache_write_ttl_tokens": {
+          "5m": 0,
+          "1h": 0
+        },
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "mistral-dimm": {
       "model": "mistral-large-4",
@@ -272,9 +691,31 @@
       },
       "usage_records": 37,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0.67740442,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "mistral-large-4",
+        "source_urls": [
+          "https://docs.mistral.ai/models/mistral-large-4"
+        ],
+        "route_basis": "Canonical exact-model Mistral page, USD tab, current published rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.67740442,
+        "usd_low": 0.67740442,
+        "usd_high": 0.67740442,
+        "available": true,
+        "max_request_input_tokens": 114471,
+        "request_pricing_groups": {
+          "standard": 37,
+          "default": 37
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "mistral-gridfinity": {
       "model": "mistral-large-4",
@@ -288,9 +729,31 @@
       },
       "usage_records": 133,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 3.56759354,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "mistral-large-4",
+        "source_urls": [
+          "https://docs.mistral.ai/models/mistral-large-4"
+        ],
+        "route_basis": "Canonical exact-model Mistral page, USD tab, current published rates.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 3.56759354,
+        "usd_low": 3.56759354,
+        "usd_high": 3.56759354,
+        "available": true,
+        "max_request_input_tokens": 289220,
+        "request_pricing_groups": {
+          "standard": 133,
+          "default": 133
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "glm-dimm": {
       "model": "zai-glm-5-3",
@@ -304,25 +767,70 @@
       },
       "usage_records": 74,
       "assistant_records_without_tokens": 2,
-      "cost_usd": 2.54125144,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "zai-glm-5-3",
+        "source_urls": [
+          "https://docs.mistral.ai/models/zai-glm-5-3"
+        ],
+        "route_basis": "Mistral-hosted GLM 5.3 exact model; not a Z.AI direct rate.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again.",
+          "Only persisted measured tokens are priced; requests lacking token counters cannot be included."
+        ],
+        "usd": 2.54125144,
+        "usd_low": 2.54125144,
+        "usd_high": 2.54125144,
+        "available": true,
+        "max_request_input_tokens": 199234,
+        "request_pricing_groups": {
+          "standard": 74,
+          "default": 74
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "glm-gridfinity": {
       "model": "zai-glm-5-3",
       "engine": "opencode",
       "tokens": {
-        "input_tokens": 41294888,
-        "cached_input_tokens": 40112704,
+        "input_tokens": 56732303,
+        "cached_input_tokens": 54621824,
         "cache_write_input_tokens": 0,
-        "output_tokens": 379741,
+        "output_tokens": 418816,
         "reasoning_output_tokens": 0
       },
-      "usage_records": 155,
+      "usage_records": 188,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 8.94169656,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "zai-glm-5-3",
+        "source_urls": [
+          "https://docs.mistral.ai/models/zai-glm-5-3"
+        ],
+        "route_basis": "Mistral-hosted GLM 5.3 exact model; not a Z.AI direct rate.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 12.44451636,
+        "usd_low": 12.44451636,
+        "usd_high": 12.44451636,
+        "available": true,
+        "max_request_input_tokens": 484431,
+        "request_pricing_groups": {
+          "standard": 188,
+          "default": 188
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "kimi-dimm": {
       "model": "moonshotai/kimi-k3",
@@ -336,9 +844,32 @@
       },
       "usage_records": 60,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 1.994828272,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "moonshotai/kimi-k3",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+          "https://openrouter.ai/moonshotai/kimi-k3"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint moonshotai on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 4.000116,
+        "usd_low": 4.000116,
+        "usd_high": 4.000116,
+        "available": true,
+        "max_request_input_tokens": 125608,
+        "request_pricing_groups": {
+          "standard": 60,
+          "default": 60
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "kimi-gridfinity": {
       "model": "moonshotai/kimi-k3",
@@ -352,9 +883,32 @@
       },
       "usage_records": 86,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 4.705479192,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "moonshotai/kimi-k3",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+          "https://openrouter.ai/moonshotai/kimi-k3"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint moonshotai on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 7.9302855,
+        "usd_low": 7.9302855,
+        "usd_high": 7.9302855,
+        "available": true,
+        "max_request_input_tokens": 189738,
+        "request_pricing_groups": {
+          "standard": 86,
+          "default": 86
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "gemini-dimm": {
       "model": "google/gemini-4-argon",
@@ -368,9 +922,33 @@
       },
       "usage_records": 20,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 1.0198646,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "google/gemini-4-argon",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints",
+          "https://openrouter.ai/google/gemini-4-argon",
+          "https://ai.google.dev/gemini-api/docs/pricing#gemini-4-argon"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint google-ai-studio on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 1.0198646,
+        "usd_low": 1.0198646,
+        "usd_high": 1.0198646,
+        "available": true,
+        "max_request_input_tokens": 138344,
+        "request_pricing_groups": {
+          "standard": 20,
+          "default": 20
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "gemini-gridfinity": {
       "model": "google/gemini-4-argon",
@@ -384,9 +962,33 @@
       },
       "usage_records": 44,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 3.1464299,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "google/gemini-4-argon",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints",
+          "https://openrouter.ai/google/gemini-4-argon",
+          "https://ai.google.dev/gemini-api/docs/pricing#gemini-4-argon"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint google-ai-studio on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 3.1464299,
+        "usd_low": 3.1464299,
+        "usd_high": 3.1464299,
+        "available": true,
+        "max_request_input_tokens": 219610,
+        "request_pricing_groups": {
+          "standard": 44,
+          "default": 44
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "minflash-dimm": {
       "model": "minimax/minimax-m3.1-flash",
@@ -400,9 +1002,32 @@
       },
       "usage_records": 39,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0.14687568,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "minimax/minimax-m3.1-flash",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/minimax/minimax-m3.1-flash/endpoints",
+          "https://openrouter.ai/minimax/minimax-m3.1-flash"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint minimax on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.14687568,
+        "usd_low": 0.14687568,
+        "usd_high": 0.14687568,
+        "available": true,
+        "max_request_input_tokens": 280528,
+        "request_pricing_groups": {
+          "standard": 39,
+          "published_time_override": 39
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "minflash-gridfinity": {
       "model": "minimax/minimax-m3.1-flash",
@@ -416,9 +1041,32 @@
       },
       "usage_records": 228,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 1.43962827,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "minimax/minimax-m3.1-flash",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/minimax/minimax-m3.1-flash/endpoints",
+          "https://openrouter.ai/minimax/minimax-m3.1-flash"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint minimax on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.71981414,
+        "usd_low": 0.71981414,
+        "usd_high": 0.71981414,
+        "available": true,
+        "max_request_input_tokens": 497626,
+        "request_pricing_groups": {
+          "standard": 228,
+          "published_time_override": 228
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "glmflash-dimm": {
       "model": "z-ai/glm-5.3-flash",
@@ -432,9 +1080,32 @@
       },
       "usage_records": 130,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 1.606550388,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "z-ai/glm-5.3-flash",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+          "https://openrouter.ai/z-ai/glm-5.3-flash"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint z-ai/fp8 on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 1.33477113,
+        "usd_low": 1.33477113,
+        "usd_high": 1.33477113,
+        "available": true,
+        "max_request_input_tokens": 369152,
+        "request_pricing_groups": {
+          "standard": 130,
+          "default": 130
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "glmflash-gridfinity": {
       "model": "z-ai/glm-5.3-flash",
@@ -448,9 +1119,32 @@
       },
       "usage_records": 95,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0.703813344,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "z-ai/glm-5.3-flash",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+          "https://openrouter.ai/z-ai/glm-5.3-flash"
+        ],
+        "route_basis": "Published exact-model upstream publisher endpoint z-ai/fp8 on OpenRouter.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.6688187,
+        "usd_low": 0.6688187,
+        "usd_high": 0.6688187,
+        "available": true,
+        "max_request_input_tokens": 217469,
+        "request_pricing_groups": {
+          "standard": 95,
+          "default": 95
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "oss120-dimm": {
       "model": "openai/gpt-oss-120b",
@@ -464,9 +1158,32 @@
       },
       "usage_records": 23,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0.1392982,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "openai/gpt-oss-120b",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+          "https://openrouter.ai/openai/gpt-oss-120b"
+        ],
+        "route_basis": "Published Cerebras endpoint, matching the benchmark provider restriction.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.1392982,
+        "usd_low": 0.1392982,
+        "usd_high": 0.1392982,
+        "available": true,
+        "max_request_input_tokens": 30109,
+        "request_pricing_groups": {
+          "standard": 23,
+          "default": 23
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     },
     "oss120-gridfinity": {
       "model": "openai/gpt-oss-120b",
@@ -480,193 +1197,374 @@
       },
       "usage_records": 35,
       "assistant_records_without_tokens": 0,
-      "cost_usd": 0.22830385,
-      "cost_basis": "client_recorded_usd",
-      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+      "provenance": "OpenCode persisted assistant token counters.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "openai/gpt-oss-120b",
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+          "https://openrouter.ai/openai/gpt-oss-120b"
+        ],
+        "route_basis": "Published Cerebras endpoint, matching the benchmark provider restriction.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.22830385,
+        "usd_low": 0.22830385,
+        "usd_high": 0.22830385,
+        "available": true,
+        "max_request_input_tokens": 34504,
+        "request_pricing_groups": {
+          "standard": 35,
+          "default": 35
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     }
   },
   "models": {
     "claude-opus-5-5": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 7007691,
         "cached_input_tokens": 6733443,
         "cache_write_input_tokens": 274120,
         "output_tokens": 202399,
         "reasoning_output_tokens": 134902
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 7.5881406,
+        "usd_low": 7.5881406,
+        "usd_high": 7.5881406,
+        "available": true,
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "rate_key": "claude-opus-5-5"
       }
     },
     "gpt-6.1-sol": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 2813898,
         "cached_input_tokens": 2707200,
         "cache_write_input_tokens": 0,
         "output_tokens": 49832,
         "reasoning_output_tokens": 26755
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 0.982436,
+        "usd_low": 0.982436,
+        "usd_high": 0.982436,
+        "available": true,
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+        ],
+        "rate_key": "gpt-6.1-sol"
       }
     },
     "claude-fable-5-1": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 9641511,
         "cached_input_tokens": 9256076,
         "cache_write_input_tokens": 383407,
         "output_tokens": 223110,
         "reasoning_output_tokens": 141180
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 21.157939,
+        "usd_low": 21.157939,
+        "usd_high": 21.157939,
+        "available": true,
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "rate_key": "claude-fable-5-1"
       }
     },
     "gpt-6-astra": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 1716632,
         "cached_input_tokens": 1629696,
         "cache_write_input_tokens": 0,
         "output_tokens": 35277,
         "reasoning_output_tokens": 13121
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 4.262906,
+        "usd_low": 4.262906,
+        "usd_high": 4.262906,
+        "available": true,
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6-astra"
+        ],
+        "rate_key": "gpt-6-astra"
       }
     },
     "claude-sonnet-5-5": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 2535573,
         "cached_input_tokens": 2380489,
         "cache_write_input_tokens": 155022,
         "output_tokens": 108406,
         "reasoning_output_tokens": 73807
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 1.9423209,
+        "usd_low": 1.9423209,
+        "usd_high": 1.9423209,
+        "available": true,
+        "source_urls": [
+          "https://platform.claude.com/docs/en/about-claude/pricing"
+        ],
+        "rate_key": "claude-sonnet-5-5"
       }
     },
     "gpt-6.1-terra": {
       "runs": 2,
-      "recorded_cost_usd": null,
-      "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 980541,
         "cached_input_tokens": 942464,
         "cache_write_input_tokens": 0,
         "output_tokens": 14366,
         "reasoning_output_tokens": 4554
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 0.1570302,
+        "usd_low": 0.1570302,
+        "usd_high": 0.1570302,
+        "available": true,
+        "source_urls": [
+          "https://developers.openai.com/api/docs/models/gpt-6.1-terra"
+        ],
+        "rate_key": "gpt-6.1-terra"
       }
     },
     "deepseek-v4.1-flash": {
       "runs": 2,
-      "recorded_cost_usd": 0,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 42060222,
         "cached_input_tokens": 41234432,
         "cache_write_input_tokens": 0,
         "output_tokens": 746435,
         "reasoning_output_tokens": 0
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 0.6954328,
+        "usd_low": 0.6954328,
+        "usd_high": 0.6954328,
+        "available": true,
+        "source_urls": [
+          "https://api-docs.deepseek.com/quick_start/pricing/"
+        ],
+        "rate_key": "deepseek-v4.1-flash"
       }
     },
     "qwen3.8-27b": {
       "runs": 2,
-      "recorded_cost_usd": 0,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 21461286,
         "cached_input_tokens": 0,
         "cache_write_input_tokens": 0,
         "output_tokens": 394468,
         "reasoning_output_tokens": 0
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 10.12693995,
+        "usd_low": 10.12693995,
+        "usd_high": 10.12693995,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+          "https://openrouter.ai/qwen/qwen3.8-27b",
+          "https://help.aliyun.com/en/model-studio/qwen3-8-27b"
+        ],
+        "rate_key": "qwen3.8-27b"
       }
     },
     "mistral-large-4": {
       "runs": 2,
-      "recorded_cost_usd": 4.24499796,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 27940125,
         "cached_input_tokens": 25366528,
         "cache_write_input_tokens": 0,
         "output_tokens": 318011,
         "reasoning_output_tokens": 0
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 4.24499796,
+        "usd_low": 4.24499796,
+        "usd_high": 4.24499796,
+        "available": true,
+        "source_urls": [
+          "https://docs.mistral.ai/models/mistral-large-4"
+        ],
+        "rate_key": "mistral-large-4"
       }
     },
     "zai-glm-5-3": {
       "runs": 2,
-      "recorded_cost_usd": 11.482948,
-      "runs_without_cost": 0,
       "tokens": {
-        "input_tokens": 51200442,
-        "cached_input_tokens": 49658560,
+        "input_tokens": 66637857,
+        "cached_input_tokens": 64167680,
         "cache_write_input_tokens": 0,
-        "output_tokens": 539117,
+        "output_tokens": 578192,
         "reasoning_output_tokens": 0
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 14.9857678,
+        "usd_low": 14.9857678,
+        "usd_high": 14.9857678,
+        "available": true,
+        "source_urls": [
+          "https://docs.mistral.ai/models/zai-glm-5-3"
+        ],
+        "rate_key": "zai-glm-5-3"
       }
     },
     "moonshotai/kimi-k3": {
       "runs": 2,
-      "recorded_cost_usd": 6.700307464,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 15602092,
         "cached_input_tokens": 14266135,
         "cache_write_input_tokens": 0,
         "output_tokens": 242846,
         "reasoning_output_tokens": 174508
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 11.9304015,
+        "usd_low": 11.9304015,
+        "usd_high": 11.9304015,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+          "https://openrouter.ai/moonshotai/kimi-k3"
+        ],
+        "rate_key": "moonshotai/kimi-k3"
       }
     },
     "google/gemini-4-argon": {
       "runs": 2,
-      "recorded_cost_usd": 4.166294499999999,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 7473668,
         "cached_input_tokens": 6602885,
         "cache_write_input_tokens": 0,
         "output_tokens": 176444,
         "reasoning_output_tokens": 101696
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 4.1662945,
+        "usd_low": 4.1662945,
+        "usd_high": 4.1662945,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/google/gemini-4-argon/endpoints",
+          "https://openrouter.ai/google/gemini-4-argon",
+          "https://ai.google.dev/gemini-api/docs/pricing#gemini-4-argon"
+        ],
+        "rate_key": "google/gemini-4-argon"
       }
     },
     "minimax/minimax-m3.1-flash": {
       "runs": 2,
-      "recorded_cost_usd": 1.58650395,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 79888261,
         "cached_input_tokens": 79020672,
         "cache_write_input_tokens": 0,
         "output_tokens": 696552,
         "reasoning_output_tokens": 585327
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 0.86668982,
+        "usd_low": 0.86668982,
+        "usd_high": 0.86668982,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/minimax/minimax-m3.1-flash/endpoints",
+          "https://openrouter.ai/minimax/minimax-m3.1-flash"
+        ],
+        "rate_key": "minimax/minimax-m3.1-flash"
       }
     },
     "z-ai/glm-5.3-flash": {
       "runs": 2,
-      "recorded_cost_usd": 2.310363732,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 48950671,
         "cached_input_tokens": 46423936,
         "cache_write_input_tokens": 0,
         "output_tokens": 463723,
         "reasoning_output_tokens": 373267
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 2.00358983,
+        "usd_low": 2.00358983,
+        "usd_high": 2.00358983,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+          "https://openrouter.ai/z-ai/glm-5.3-flash"
+        ],
+        "rate_key": "z-ai/glm-5.3-flash"
       }
     },
     "openai/gpt-oss-120b": {
       "runs": 2,
-      "recorded_cost_usd": 0.36760205,
-      "runs_without_cost": 0,
       "tokens": {
         "input_tokens": 1001533,
         "cached_input_tokens": 842240,
         "cache_write_input_tokens": 0,
         "output_tokens": 22754,
         "reasoning_output_tokens": 10206
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 0.36760205,
+        "usd_low": 0.36760205,
+        "usd_high": 0.36760205,
+        "available": true,
+        "source_urls": [
+          "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+          "https://openrouter.ai/openai/gpt-oss-120b"
+        ],
+        "rate_key": "openai/gpt-oss-120b"
       }
     }
   },
-  "known_recorded_cost_usd": 30.859017656,
-  "runs_without_cost": 12
+  "total_api_price_usd": 85.47848891,
+  "price_reference": "api-price-reference.json"
 }

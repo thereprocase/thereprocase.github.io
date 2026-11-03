@@ -604,7 +604,6 @@
   ],
   "font_review": {
     "authoritative_embedded_ttf_description": "Two-bead FDM font: every stroke is exactly two extrusion widths (w). Fusion text Height = 14 x line width (cap height); em = 20 x line width.",
-    "minimum_em_at_0_4mm_line_width_mm": 8,
     "submitted_small_text_em_mm": [
       6,
       7
@@ -613,8 +612,10 @@
       0.6,
       0.7
     ],
-    "two_bead_em_threshold_met_at_0_4mm_line_width": false,
-    "note": "Actual line width matters. Smaller text could meet the two-bead geometry with 0.3mm/0.35mm lines; submitted README recommends 0.4mm nozzle and derives a 1.5-bead floor instead."
+    "note": "Specified two-bead design target at assumed0.4mm line width, not a universal minimum printable size. Smaller or variable line widths may print the6/7mm em text; physical readability is untested. The README incorrectly says there is no embedded guidance.",
+    "specified_two_bead_em_target_at_0_4mm_line_width_mm": 8,
+    "two_bead_design_target_met_at_0_4mm_line_width": false,
+    "physical_printability_or_readability_tested": false
   },
   "limitations": [
     "Rigid checks do not certify detent feel, friction, tolerance, fatigue, bag folds, foam compression, actual shipping or physical retrieval.",
