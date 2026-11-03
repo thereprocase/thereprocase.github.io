@@ -27,6 +27,13 @@ const filterText = (project: Project) => [project.name, project.summary, categor
 
 export default function Home() {
  return <GridlineShell>
+  <section className="gl-pane io-cad-comparison" aria-labelledby="cad-comparison-title">
+   <div className="gl-pane-title"><span>DESIGN COMPARISON / IN PROGRESS</span><span>CAD GEOMETRY · FUNCTIONAL CHECKS</span></div>
+   <div className="io-cad-comparison-layout">
+    <div className="io-cad-comparison-copy"><p className="gl-kicker">TWO DESIGN TASKS / MULTIPLE MODELS</p><h2 id="cad-comparison-title">AI models designing printable parts</h2><p>Compare independent DDR4 mailers and Gridfinity hardware organizers in interactive 3D. Each finished design includes the model’s handover and an independent functional review.</p><p className="io-cad-note">The comparison is ongoing. CAD checks do not replace physical fit or shipping tests.</p><a className="gl-button io-primary" href="/cad-model-comparison/">Open the comparison →</a></div>
+    <div className="io-cad-comparison-images"><figure><a href="/cad-model-comparison/#dimm"><img src="/cad-model-comparison/gemini-dimm/closed.png" alt="Gemini’s closed two-module mailer, rendered from delivered CAD geometry" /></a><figcaption>DDR4 mailer · delivered CAD</figcaption></figure><figure><a href="/cad-model-comparison/#gridfinity"><img src="/cad-model-comparison/sol-gridfinity/closed.png" alt="Codex Sol’s assembled Gridfinity hardware organizer, rendered from delivered CAD geometry" /></a><figcaption>Hardware organizer · delivered CAD</figcaption></figure></div>
+   </div>
+  </section>
   <section className="gl-pane io-intro" aria-labelledby="home-title">
    <div className="gl-pane-title"><span>THEREPROCASE / PROJECT INDEX</span><span>{featuredProjects.length} PROJECTS</span></div>
    <div className="io-intro-body">

@@ -1,0 +1,24 @@
+{
+  "baseplate_bounds_mm": [
+    210.0,
+    168.0,
+    5.1000001
+  ],
+  "bin_bounds_mm": [
+    41.5000002,
+    41.9000001,
+    29.500000200000002
+  ],
+  "assembled_base_bin_collision_mm3": 0,
+  "adjacent_row_collision_mm3": 0,
+  "adjacent_row_min_distance_mm": 0.10000000000000142,
+  "stack_samples_collision_mm3": {
+    "25": 3.143067810703119,
+    "25.1": 0.7847197551078295,
+    "25.2": 0,
+    "25.3": 0,
+    "25.5": 0
+  },
+  "label_review": "Labels are on vertical -Y faces. In the four-row assembled layout, each rear-row front face sits about 0.1 mm from the bin in front. Those labels are occluded during ordinary front/top drawer use. An exposed upper label face is needed to meet read-without-lifting use.",
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP shapes in assembled coordinates; sampled paths are rigid-motion checks, not flexure simulation."
+}

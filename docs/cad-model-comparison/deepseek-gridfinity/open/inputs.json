@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/baseplate-5x4.stl",
+    "sha256": "74e6be4d41d5a9b16869b92be41ebe394b8425e2dd554a2c0d698ae922d6afcb",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7844,
+    "triangles": 15684
+  }
+]

@@ -1,0 +1,250 @@
+{
+  "assembly_unavailable": true,
+  "parts": [
+    {
+      "name": "base_plate",
+      "stl": "./output/base_plate.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_1_M2_screws",
+      "stl": "./output/bin_1_M2_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_2_M2.5_screws",
+      "stl": "./output/bin_2_M2.5_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_3_M3_screws",
+      "stl": "./output/bin_3_M3_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_4_M4_screws",
+      "stl": "./output/bin_4_M4_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_5_Hex_nuts",
+      "stl": "./output/bin_5_Hex_nuts.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_6_Flat_washers",
+      "stl": "./output/bin_6_Flat_washers.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verification_method": "Direct OpenCascade BRepAlgoAPI_Common on delivered STEP files at submitted assembly pose, with representative supported bagged-module gauges.",
+  "closed_intersection_mm3": 0,
+  "lift_intersection_mm3": {
+    "0.5": 13.5,
+    "1": 40.5,
+    "2": 94.5,
+    "2.5": 118.26,
+    "4": 124.11
+  },
+  "module_base_intersection_mm3": {
+    "-7.1": 0,
+    "7.1": 0
+  },
+  "module_lid_intersection_mm3": {
+    "-7.1": 0,
+    "7.1": 0
+  },
+  "limitations": [
+    "Rigid Boolean checks do not model flex, fatigue, friction, loaded shipping, or real bag/foam geometry."
+  ]
+}

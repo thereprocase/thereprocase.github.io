@@ -1,0 +1,418 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/baseplate-5x4.stl",
+    "sha256": "74e6be4d41d5a9b16869b92be41ebe394b8425e2dd554a2c0d698ae922d6afcb",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7844,
+    "triangles": 15684
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/nut-m2.stl",
+    "sha256": "fc82afffeaea74097b8b06b6bc26982ad494d59072a29c8ecc558366ea942c2c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3928,
+    "triangles": 7848
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/nut-m25.stl",
+    "sha256": "e56b809ab693a114fb5d400ec4c9edefc1a5b0e6c6a29e9928d330ddb43149d6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4220,
+    "triangles": 8432
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/nut-m3.stl",
+    "sha256": "1006543401171edc8e22d9214a3e1b173c5cc42092c277149c2180e75285908b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3918,
+    "triangles": 7828
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/nut-m4.stl",
+    "sha256": "2da9877b6853ea965e8b8e2c11bbed4bd77d005c304b5449e15934ed83a8ff06",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3846,
+    "triangles": 7684
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/wsh-m2.stl",
+    "sha256": "0d8c75372bcfd3743d33e9fb2faa065e4292d7c6dda424a27f978d6e9063f6fe",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4206,
+    "triangles": 8404
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/wsh-m25.stl",
+    "sha256": "a6d2adda533e8dc14416e32bde2828bf14197c6bf278e4a83b444220e570c7b7",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4498,
+    "triangles": 8988
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/wsh-m3.stl",
+    "sha256": "2496822b675375b93aa80c874a1b0085def319d896b119ca34d4505a0ce11900",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4196,
+    "triangles": 8384
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/wsh-m4.stl",
+    "sha256": "e14c2f290d883d6511733199fba75edae631c29e682e31a507c6cfd163d250e5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4124,
+    "triangles": 8240
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/scr-m2.stl",
+    "sha256": "621e7cbce9b4d620c897dd97718f9621165c971dab72acd8562b8b16f84d58d5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4632,
+    "triangles": 9260
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/scr-m25.stl",
+    "sha256": "859d23cad316136a5c7f8fe5751acb16a39a5223f47b6bfcc01fbd9ded042f43",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4924,
+    "triangles": 9844
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/scr-m3.stl",
+    "sha256": "37cf35ae7fb9f46dfa2213146c4a8f40818f628fe399138fe3cc55d10d0f1176",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4622,
+    "triangles": 9240
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-gridfinity/scr-m4.stl",
+    "sha256": "7abe1baa09f0f12c2220b459b10275e9618833ffb7cbb24953d6963e6a92207b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4551,
+    "triangles": 9098
+  }
+]

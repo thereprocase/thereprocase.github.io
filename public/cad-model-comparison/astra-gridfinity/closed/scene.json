@@ -1,0 +1,243 @@
+{
+  "title": "Astra Gridfinity",
+  "subtitle": "Assembled starter layout",
+  "caption": "Assembled starter layout \u00b7 actual submitted transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 26808,
+      "triangles": 53612,
+      "edges": 13132,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 5101,
+      "triangles": 10198,
+      "edges": 3371,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 5031,
+      "triangles": 10058,
+      "edges": 3303,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 5281,
+      "triangles": 10558,
+      "edges": 3553,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 4994,
+      "triangles": 9984,
+      "edges": 3252,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 5436,
+      "triangles": 10868,
+      "edges": 3700,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 5393,
+      "triangles": 10782,
+      "edges": 3668,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 5485,
+      "triangles": 10966,
+      "edges": 3761,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 5563,
+      "triangles": 11122,
+      "edges": 3841,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 5286,
+      "triangles": 10568,
+      "edges": 3549,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 5728,
+      "triangles": 11452,
+      "edges": 3997,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 5021,
+      "triangles": 10038,
+      "edges": 3292,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 5271,
+      "triangles": 10538,
+      "edges": 3542,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 5241,
+      "triangles": 10478,
+      "edges": 3513,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 4984,
+      "triangles": 9964,
+      "edges": 3241,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 5426,
+      "triangles": 10848,
+      "edges": 3689,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-16.bin",
+      "vertices": 5111,
+      "triangles": 10218,
+      "edges": 3380,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-17.bin",
+      "vertices": 5189,
+      "triangles": 10374,
+      "edges": 3460,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-18.bin",
+      "vertices": 5169,
+      "triangles": 10334,
+      "edges": 3440,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-19.bin",
+      "vertices": 4912,
+      "triangles": 9820,
+      "edges": 3168,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-20.bin",
+      "vertices": 5354,
+      "triangles": 10704,
+      "edges": 3616,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/base_5x4.stl",
+    "sha256": "c3e96c039d7d202904d79ea373ff9ff820f5b2ea0619f77440d3b7621bb8634b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 28888,
+    "triangles": 57772
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2_x6.stl",
+    "sha256": "ae7f09372e6600286425c1afc769d21b7aba3d613085be975e375b7d86bba2d1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4588,
+    "triangles": 9172
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2_x10.stl",
+    "sha256": "1c41a37196046929ad31da6997c546d1a8f67809c08aa22ab5b6de28f60d349d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4680,
+    "triangles": 9356
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2_x16.stl",
+    "sha256": "83fdb8d2581ae9eba7c82c6a0a6170a00eb01057def7d5b449fe1a84bf167699",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4758,
+    "triangles": 9512
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2_nut.stl",
+    "sha256": "2a225e724609453e427eb1745383906ccf37926162f1c7ad6104f4dbf32faad7",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4594,
+    "triangles": 9184
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2_wash.stl",
+    "sha256": "010f9ef5c773a887f6d08eb2648fcee5566d1808227d75c3ac86b09ea6c7ceba",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5036,
+    "triangles": 10068
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2p5_x6.stl",
+    "sha256": "b232ab84155d5a28c8aad57fe25b958b77d574c6e1ddc9e29b088674129ffd06",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4880,
+    "triangles": 9756
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2p5_x10.stl",
+    "sha256": "7e18b84b4125c61c62efa435bef610817733906e3aa794d3284c6ac65a8dc2bf",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4972,
+    "triangles": 9940
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2p5_x16.stl",
+    "sha256": "3cfe6f9dacee9fd925956de97bb144830b8aa5461f8fa24ca0ba019fb334817c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5050,
+    "triangles": 10096
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2p5_nut.stl",
+    "sha256": "fb0c8c84018c5cd5bf3b94c9de55c402af7a162df0a34021158849741920fa27",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4886,
+    "triangles": 9768
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M2p5_wash.stl",
+    "sha256": "48a0ef3792cb0c18a3f53da65f71f03760838da58a23e4321ecae2f253d0be77",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5328,
+    "triangles": 10652
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M3_x8.stl",
+    "sha256": "0769d0636442b8bf9e42686fa59da83016226614d8cca666063617f443c53977",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4508,
+    "triangles": 9012
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M3_x12.stl",
+    "sha256": "b8676bbf1d50a98405d9e711d36affd870e2b21f610df4bbeed764aabc871600",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4758,
+    "triangles": 9512
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M3_x20.stl",
+    "sha256": "232558281db9752fdf4f20f7c064d36f4e91decbe400654fc65158cd308348da",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4728,
+    "triangles": 9452
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M3_nut.stl",
+    "sha256": "ee0e1c25984ac06526da2820899658e98917f81e7e5e65cf1939b6579f6a8ad7",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4584,
+    "triangles": 9164
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M3_wash.stl",
+    "sha256": "cb745565619d8a54d4e3d2717582e878ba841716e3fe8d5cacaa850bb3b0574e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5026,
+    "triangles": 10048
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M4_x8.stl",
+    "sha256": "cb293f6c638615d9e2a24a8757d584f9b32a3a738db1d8053a80f87e987670fd",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4436,
+    "triangles": 8868
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M4_x12.stl",
+    "sha256": "d71f8400c0dfa92873b9ae6edd53d9e01c9a865de1f5e560133cae7697178102",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4686,
+    "triangles": 9368
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M4_x20.stl",
+    "sha256": "036861fd35e90b90a87d2cdf77c342f7aeb0c2f536882f80949c16dfb6ce599e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4656,
+    "triangles": 9308
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M4_nut.stl",
+    "sha256": "dd565e9e84e06b5f6a156aa97a6b13def67f91b8d6b4cf457c3e97e8909a7062",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4512,
+    "triangles": 9020
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sol-gridfinity/bin_M4_wash.stl",
+    "sha256": "fd86dea7d4ce4c450dea01a9d389eea6378a4192068c67d4e3e6f6525184d295",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4954,
+    "triangles": 9904
+  }
+]

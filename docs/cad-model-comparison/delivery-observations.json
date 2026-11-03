@@ -1,0 +1,38 @@
+{
+  "deepseek-dimm": {
+    "observed_at": "2026-11-03T21:19:43.237905+00:00",
+    "original_prompt_at": "2026-11-03T15:09:46.121Z",
+    "final_handover_at": "2026-11-03T19:24:16.591Z",
+    "elapsed_wall_minutes": 254,
+    "stl_files": 4,
+    "step_files": 4,
+    "timing_note": "Elapsed time includes infrastructure interruptions, reasoning-budget changes and the approved follow-up. This is delivery status, not a controlled speed ranking."
+  },
+  "qwen-dimm": {
+    "observed_at": "2026-11-03T21:19:43.237905+00:00",
+    "original_prompt_at": "2026-11-03T15:20:55.298Z",
+    "final_handover_at": null,
+    "elapsed_wall_minutes": 358,
+    "stl_files": 2,
+    "step_files": 3,
+    "timing_note": "Elapsed time includes infrastructure interruptions, reasoning-budget changes and the approved follow-up. This is delivery status, not a controlled speed ranking."
+  },
+  "deepseek-gridfinity": {
+    "observed_at": "2026-11-03T21:19:43.237905+00:00",
+    "original_prompt_at": "2026-11-03T15:10:38.578Z",
+    "final_handover_at": "2026-11-03T19:05:24.843Z",
+    "elapsed_wall_minutes": 234,
+    "stl_files": 13,
+    "step_files": 13,
+    "timing_note": "Elapsed time includes infrastructure interruptions, reasoning-budget changes and the approved follow-up. This is delivery status, not a controlled speed ranking."
+  },
+  "qwen-gridfinity": {
+    "observed_at": "2026-11-03T21:19:43.237905+00:00",
+    "original_prompt_at": "2026-11-03T15:20:55.319Z",
+    "final_handover_at": "2026-11-03T20:37:20.020Z",
+    "elapsed_wall_minutes": 316,
+    "stl_files": 24,
+    "step_files": 24,
+    "timing_note": "Elapsed time includes infrastructure interruptions, reasoning-budget changes and the approved follow-up. This is delivery status, not a controlled speed ranking."
+  }
+}

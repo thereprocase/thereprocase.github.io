@@ -1,0 +1,37 @@
+I've built the mailer as two printed parts, a base and a lid, with no hardware. The geometry checks pass in CAD, but nothing has been printed or tried with real sticks, and the vendor dimensions below are from memory.
+
+**Design**
+- **Layout:** Each stick lies flat in its own 138 × 47 × 13 mm pocket, heatspreader face down, with the gold edge toward the outer wall. The closed box is 148.5 × 107.5 × 17.8 mm, or 166.5 mm long with the two grip tabs.
+- **Gold contacts:** Nothing presses on them. The floor is lowered 1.2 mm along the contact edge, and the wall has a 1.2 mm recess there for the bare PCB edge.
+- **Lid retention:** The lid skirt slides over the base's upper wall. Two ramped detent bumps on each long wall of the base click into matching grooves in the lid. Pushing the lid down onto the base rim stops it, and there is no positive lock.
+- **Opening:** Pinch the lid tab and the base tab at either end and pull apart; the lid peels off the detents. A scoop in the divider lets you pinch a stick's top edge and tip it out.
+- **Labels:** Fillaprint size 9, which is 6.3 mm cap height and a 0.9 mm stroke (two 0.45 mm beads), engraved 0.6 mm deep. The lid reads "DDR4 DIMM PAIR / UP TO 45 X 10 MM / LIFT TABS TO OPEN", and each pocket floor has "1 GOLD EDGE" or "2 GOLD EDGE". The font's minimum on a 0.4 mm nozzle is size 8, so every label is above it.
+
+**Supported envelope:** length up to 134.5 mm, height 31–45 mm, thickness up to 10 mm including clips. That covers Vengeance LPX, Fury, Ripjaws V, Ballistix and Trident Z class modules. It does not cover Vengeance RGB Pro (about 51 mm) or Dominator Platinum (about 55 mm). The proxy returned nothing, so the module sizes are recalled approximations. Measure your own sticks against the envelope.
+
+**Checked in CAD**
+- Both parts are single watertight solids, and the STLs are binary.
+- Lid and base overlap by 0 mm³ when assembled.
+- Four module models (34, 42 and 45 mm tall, plus a thin 31 mm one), each in three positions in either pocket, touch nothing printed. That includes the gold-finger band pushed fully into the recess. A deliberate overlap test did register, so the zeros mean something.
+- A 10 mm module leaves 3 mm of clearance under the lid for bag and padding.
+
+**Needs a physical test**
+- Detent click and release force, and whether the lid stays shut in transit. It relies on the detents plus your outer box, and the 0.25 mm clearance depends on your printer.
+- How real modules fit, and how much padding a thin stick needs. The pocket is oversize, so the padding holds the sticks, not the walls.
+- Whether the tabs and scoop feel comfortable.
+- Whether the engraved Fillaprint text reads well in a real print.
+- Solid volume is 110 cm³, about 137 g at 100% infill; I haven't looked at it in a slicer.
+
+Files are in `./cadcomp-20261103-sonnet-dimm`:
+- README.md
+- assembly.json
+- checks.json
+- parts/base.stl
+- parts/base.step
+- parts/lid.stl
+- parts/lid.step
+- src/build.py
+- src/checks.py
+- src/mesh_checks.py
+
+The lid is exported in print pose, top face on the bed. `assembly.json` carries the transform back to assembled pose (rotate 180° about X, lift to z = 17.8).

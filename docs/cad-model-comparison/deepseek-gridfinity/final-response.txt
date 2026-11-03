@@ -1,0 +1,49 @@
+Done. Here's the handover.
+
+## What was built
+
+A 5 × 4 Gridfinity organiser (210 × 168 mm) for M2 / M2.5 / M3 / M4 socket-head screws, hex nuts and flat washers — 13 printable parts: one baseplate and 12 bins.
+
+**Layout** (labels face the front, so you read sizes without lifting):
+
+```
+        col 0      col 1      col 2    col 3    col 4
+row 3   M3 6-20    M4 6-20    —        —        spare
+row 2   M2 6-20    M2.5 6-20  —        —        spare
+row 1   WSH M2     WSH M2.5   WSH M3   WSH M4   spare
+row 0   NUT M2     NUT M2.5   NUT M3   NUT M4   spare
+```
+
+- Screw bins are 2 × 1 with a 1.2 mm divider: **short (6/8/10)** and **long (12/16/20)** compartments.
+- Nut and washer bins are 1 × 1, one open tray each — no little holes anywhere.
+- Column 4 of rows 0–3 is the extension reserve: four free sockets for M5 or a duplicate bin.
+
+## Interfaces and clear spaces (measured, not assumed)
+
+- Gridfinity base: 41.5 mm top, 0.8/1.8/2.15 mm stepped 45° flank, 7 mm base, lip 0.7/2.5/4.4 mm with a 0.6 mm tip fillet. Taken from the published spec and the reference OpenSCAD implementation's constants, not guessed.
+- Baseplate: per-cell sockets grown 0.15 mm radially / 0.35 mm in depth; bins seat on a 0.35 mm floor. **Bin–plate interference 0 mm³; bin-on-bin stacking interference 0 mm³.**
+- Compartment clear width 39.1 mm, floor area 1224 mm², floor fillet 2.0 mm (a 0.3 mm washer slides up it), lip throat 36.3 mm. An 18 mm "fingertip" block enters the tray unobstructed.
+- Capacity at 0.40–0.45 loose packing: 30 nuts (0.46 fill, M4 worst case), 30 washers (0.18), 20 screws (0.49, M4×20 worst case).
+
+## Labels
+
+Fillaprint at **em 8.0 mm** — its own metadata says cap height = 0.7 em and strokes = 2 × 0.4 mm, so at em 8 the strokes are exactly two nozzle widths (measured 0.8 mm) and the cap height 5.6 mm. Engraved 0.6 mm into the outer front wall (permanent, no colour change). Widest label `M2.5 6-20` = 28.2 mm on a 41.5 mm wall.
+
+## Deliverables
+
+`src/` (5 parametric modules), `step/` and `stl/` (13 each, all STL watertight), `assembly.json` (13 parts, placements in mm, bins at z = 0.35 on the plate), `checks.json` (**27/27 pass**), `README.md`.
+
+## What still needs a physical fit test
+
+1. **Socket clearance** — 0.15 mm radial is a judgement call; print one bin + one plate cell first and tune `SOCKET_CLEAR_R`.
+2. **Stacking lip** — follows the spec, but first-layer squish changes real seating; test a two-high stack.
+3. **Label legibility** — 0.6 mm deep at em 8 should be crisp on a 0.4 mm nozzle; a 0.6 mm nozzle will fill the strokes and needs a larger em.
+4. **Divider stiffness** — 1.2 mm web under a pile of M4 screws; widen to 1.6 mm if it flexes.
+5. **Capacity in practice** — fill fractions are from nominal volumes; real threaded parts pack differently.
+6. **Plate flatness** — 210 × 168 × 5 mm may warp; use a brim or split into 2 × 2 tiles if it lifts.
+
+## Known limitations
+
+No lid (carry bins level), no magnet/screw holes (deliberate — the standard foot profile allows adding them), screws split short/long only rather than by individual length, and labels read correctly only when bins face front.
+
+Sources: [Gridfinity specification](https://gridfinity.xyz/specification/), [gridfinity-rebuilt-openscad](https://github.com/kennetek/gridfinity-rebuilt-openscad).

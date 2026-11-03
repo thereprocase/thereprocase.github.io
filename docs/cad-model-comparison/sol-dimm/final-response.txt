@@ -1,0 +1,9 @@
+Completed: [download the complete CAD package](ddr4_mailer.zip).
+
+- **148 × 104 × 18.4 mm**, with a captive sliding lid, integral press-down catch, and central finger well.
+- Fits two modules up to **136 × 36 × 8 mm**, each bagged and padded to **138 × 40 × 10 mm maximum**. Kingston FURY Beast and HyperX FURY examples fit; taller heatsinks are excluded.
+- Includes parametric source, STEP and binary STL per part, assembly transforms, supplied font/license, and measured checks.
+
+CAD fit, catch-blocking, released sliding, and bag-extraction checks passed. Both exported meshes are watertight.
+
+Physical testing remains necessary for catch force and fatigue, printed clearances, bag snagging, and loaded shipping performance. See the [README](README.md) for loading instructions and limitations.

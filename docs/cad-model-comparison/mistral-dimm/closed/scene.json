@@ -1,0 +1,34 @@
+{
+  "title": "Mistral Dimm",
+  "subtitle": "closed view",
+  "caption": "Closed assembly \u00b7 actual assembled transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 974,
+      "triangles": 1960,
+      "edges": 1030,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 8568,
+      "triangles": 17132,
+      "edges": 8778,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

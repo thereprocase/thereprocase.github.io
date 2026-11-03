@@ -1,0 +1,74 @@
+{
+  "units": "mm",
+  "coordinate_system": "Parts exported in assembled coordinates. Tray bottom is Z=0; lid above tray.",
+  "parts": [
+    {
+      "name": "tray",
+      "step": "./output/tray.step",
+      "stl": "./output/tray.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "lid",
+      "step": "./output/lid.step",
+      "stl": "./output/lid.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    }
+  ],
+  "presentation_provenance": "Identity assembly transforms from submission; lid X rotation 180 degrees for outside-down orientation explicitly requested in submitted README. Rendering copies only."
+}

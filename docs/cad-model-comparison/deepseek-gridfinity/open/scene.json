@@ -1,0 +1,23 @@
+{
+  "title": "Deepseek Gridfinity",
+  "subtitle": "Baseplate",
+  "caption": "Baseplate \u00b7 bins removed",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 7844,
+      "triangles": 15684,
+      "edges": 5612,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

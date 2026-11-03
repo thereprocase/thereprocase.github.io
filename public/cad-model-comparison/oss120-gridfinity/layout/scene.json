@@ -1,0 +1,89 @@
+{
+  "title": "Oss120 Gridfinity",
+  "subtitle": "layout view",
+  "caption": "Delivered parts \u00b7 export orientation \u00b7 assembly transforms not supplied",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 8,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 1648,
+      "triangles": 3260,
+      "edges": 1687,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 1940,
+      "triangles": 3836,
+      "edges": 1984,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 1638,
+      "triangles": 3240,
+      "edges": 1676,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 1566,
+      "triangles": 3096,
+      "edges": 1603,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 1270,
+      "triangles": 2508,
+      "edges": 1310,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 1940,
+      "triangles": 3840,
+      "edges": 1998,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "sol-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "sol-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "sol-gridfinity/open/"
+  }
+]

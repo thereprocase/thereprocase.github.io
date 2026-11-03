@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/base_5x4.stl",
+    "sha256": "6daeea96987ba52f519ea997f6f15b5c065e762eda1a122f489009509b38b737",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 26808,
+    "triangles": 53612
+  }
+]

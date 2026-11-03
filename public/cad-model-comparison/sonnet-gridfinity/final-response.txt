@@ -1,0 +1,35 @@
+I've built the 5 × 4 organiser: a 210 × 168 baseplate and 20 bins, plus an optional 5 × 1 extension strip. All 22 STLs are watertight binary, and the assembled-fit and stacking checks pass. Nothing has been printed, so every clearance is still a design value.
+
+**Layout**
+- Each row is one size, from M2 at the front to M4 at the back, and all 20 cells are used.
+- Each row has three screw bins, with two lengths per bin: 6 and 8, 10 and 12, 16 and 20 mm. After those come a bin for nuts and a bin for washers, so nuts and washers never share a compartment.
+- Rows rise one 7 mm height unit toward the back (21, 28, 35 and 42 mm). That makes every label readable from above, from about 50° elevation or steeper.
+
+**Reading, picking and carrying**
+- **Labels:** each bin has a recessed label deck at the top front with raised FillaPrint text, 5.6 mm tall with 0.8 mm strokes (14 × a 0.4 mm line width). Nut bins carry a hex-ring icon and washer bins a round-ring icon, beside the words NUT and WASHER.
+- **Picking out parts:** there is an open window behind the deck, 24 mm deep and 17.4 mm wide per screw compartment, with a rear scoop to pinch against. The widest screw head is 7 mm.
+- **Lifting a bin:** you lift a bin by hooking a finger under the rear edge of the label deck. Neighbours sit 0.5 mm away, so they aren't disturbed.
+- **Stacking:** any bin stacks on any other of the same footprint. A stacked bin seats 0.2 mm below the lower bin's wall top, and the overlap there is 0 mm³.
+- **Capacity:** every screw compartment holds at least 20 of its screws by my estimate; the tightest is M4 × 20 at about 21. Nut and washer bins hold several hundred, far more than the 30 you wanted, because the cell is the unit.
+
+**Extending:** append a row to `src/layout.json` and rerun the script, which also grows the baseplate. Or print the extension strip and tile it beside the existing plate.
+
+**Still needs a physical fit test**
+- The 0.2 mm per-side clearance between foot, baseplate pocket and stacking lip.
+- Whether the hook-under-the-deck lift is comfortable, and whether a 0.3 mm M2 washer comes off a flat floor without a fingernail.
+- The label-deck bridge, the 0.6 mm raised letters at a 0.4 mm line width, and the 45° underhang under the lip, all printed without supports.
+- The capacity figures, which assume a loose-pile packing fraction.
+
+**Departures from the standard Gridfinity profile**
+- The stacking lip is 3.9 mm tall rather than the standard 4.4 mm, and it is cut open at the front across the label.
+- There are no magnet or screw holes in the plate or the bins.
+- The baseplate needs a 210 × 168 mm print bed.
+
+Files are in `./cadcomp-20261103-sonnet-gridfinity`:
+- `README.md`
+- `src/gridfinity_fasteners.py`
+- `src/layout.json`
+- `out/assembly.json`
+- `out/checks.json`
+- `out/stl/`
+- `out/step/`

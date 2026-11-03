@@ -1,0 +1,75 @@
+{
+  "assembly_unavailable": true,
+  "parts": [
+    {
+      "name": "base",
+      "stl": "./output/base.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "lid",
+      "stl": "./output/lid.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on delivered STEP geometry with declared placement and rectangular bagged module gauges.",
+  "body_bounds_mm": [
+    147.85000000000002,
+    108.4,
+    20.5
+  ],
+  "lid_bounds_mm": [
+    158.05,
+    104.7,
+    3.4
+  ],
+  "closed_body_lid_mm3": 0,
+  "lift_mm3": {
+    "0.5": 0,
+    "1": 303.766,
+    "2": 1115.609,
+    "4": 346.062
+  },
+  "slide_mm3": {
+    "1": 1.088,
+    "2": 2.448,
+    "5": 4.624,
+    "10": 4.624,
+    "25": 4.624,
+    "50": 0,
+    "100": 0,
+    "142": 0,
+    "150": 0
+  },
+  "bagged_module_body_mm3": {
+    "1": 0,
+    "2": 0
+  },
+  "limitations": [
+    "Rigid interference tests do not measure detent flex, retention force, abrasion, shipping protection, or physical fit. Foam templates are consumables and are excluded from printed parts."
+  ]
+}

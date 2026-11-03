@@ -1,0 +1,29 @@
+Done. Here's the handover.
+
+## What was built
+
+A reusable two-stick DDR4 mailer: two side-by-side pockets, modules flat in their own bags on foam pads, closed by a sliding lid with no hardware.
+
+**Envelope:** body 147.85 × 108.40 × 20.50 mm measured (the 0.8 mm is the embossed end label), lid 158.05 × 104.70 mm including the pull tab. Closed assembly 158.85 × 108.40 × 20.50 mm. A ~183 × 132 × 44 mm stock carton carries it with 12 mm padding all round.
+
+**Supported module:** 133.35 × 44.0 × 9.0 mm bagged. 133.35 is JEDEC DIMM length; 44 mm comes from G.SKILL's published DDR4 height table (Trident Z / Neo / RGB / Royal all 44 mm, Sniper X 43, Ripjaws V 42, Flare X and Ripjaws 4 40, Aegis/Fortis 31.2). Fits LPX, Ripjaws V, Fury Beast, Ballistix and similar. Deliberately excludes the 59 mm Trident Z RGB DC and other extra-tall modules.
+
+**Lid retention:** flat plate with rails running in 3.4 mm grooves cut into the 5 mm long walls (1.6 mm outer skin). Grooves are closed at the −X end and roofed, so the lid is captured in Y and Z and can only slide. A trapezoidal detent on a cantilever finger in each rail drops into a ramped pocket in the groove floor — zero interference when seated, and sliding either way forces the finger to climb the 0.6 mm bump. Finger has 1.0 mm of relief. 34 × 16 mm pull tab overhangs the mouth.
+
+**Extraction:** slide the lid out by the tab, then a 14 × 30 mm finger well at the mouth end of each pocket lets a fingertip get under the module's end and lift it.
+
+**Contacts:** 12 mm wide × 2 mm deep relief channel under the gold-finger band, bag + 1.5 mm air to the side wall, foam cut back short of it.
+
+**Labels (Fillaprint, real embossed/engraved geometry):** DDR4 PAIR 8.0 mm caps / 1.14 mm stroke (embossed 0.8), SLIDE TO OPEN 6.0 mm caps / 0.86 mm stroke (engraved), DDR4 ×2 8.0 mm caps on the lid, PULL 6.0 mm on the tab. All above the font's 5.88 mm reference; the main labels are 1.36× it.
+
+## Delivered
+
+`src/params.py` and `src/build.py` (parametric build123d), STEP + binary STL for body, lid and both foam cut templates, `parts/dims.json`, `assembly.json` with actual seated transforms, `README.md`, and `checks/check.py`.
+
+## Verified
+
+36 checks, all passing. Module solid at the full envelope intersects the body by 0 mm³ in both pockets; contact relief is open with air under and beside the fingers; lid seats with 0 interference, collides with 331 mm³ when lifted 4 mm (so it is captured), and slides 142 mm with only detent-bump contact; all four parts are valid solids and watertight meshes; assembly transforms seat every part clear of the body; label cap heights and strokes measured from the actual outlines.
+
+## Needs a physical test
+
+Detent click and pull-out force are unmeasured — they depend on material, layers and printer tolerance. Finger fatigue at the 1.2 mm leaf root is untested. The 0.25 mm side / 0.20 mm vertical groove clearance may be tight or loose on a poorly calibrated printer; print the lid first and check the slide. The 44 × 9 mm envelope is from published heights and typical plate spacing, not from every module — measure the sticks before mailing. Drop performance inside the carton, foam grade (1.5 mm closed-cell assumed) and bag thickness (0.35 mm/side assumed) all remain assumptions.

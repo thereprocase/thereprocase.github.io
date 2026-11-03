@@ -1,0 +1,452 @@
+{
+  "title": "Opus Gridfinity",
+  "subtitle": "layout view",
+  "caption": "All parts in submitted print orientations \u00b7 illustrative spacing, unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 11066,
+      "triangles": 22128,
+      "edges": 7111,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 4098,
+      "triangles": 8192,
+      "edges": 3615,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 2356,
+      "triangles": 4680,
+      "edges": 2397,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 4390,
+      "triangles": 8776,
+      "edges": 3912,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 2648,
+      "triangles": 5256,
+      "edges": 2694,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 4088,
+      "triangles": 8172,
+      "edges": 3604,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 2346,
+      "triangles": 4660,
+      "edges": 2386,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 3978,
+      "triangles": 7952,
+      "edges": 3495,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 2274,
+      "triangles": 4516,
+      "edges": 2313,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 2946,
+      "triangles": 5888,
+      "edges": 2452,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 1204,
+      "triangles": 2396,
+      "edges": 1234,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 3288,
+      "triangles": 6572,
+      "edges": 2795,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 1546,
+      "triangles": 3064,
+      "edges": 1577,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 3298,
+      "triangles": 6592,
+      "edges": 2810,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 1594,
+      "triangles": 3164,
+      "edges": 1628,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 3200,
+      "triangles": 6396,
+      "edges": 2713,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-16.bin",
+      "vertices": 1496,
+      "triangles": 2972,
+      "edges": 1531,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-17.bin",
+      "vertices": 3542,
+      "triangles": 7080,
+      "edges": 3056,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-18.bin",
+      "vertices": 1838,
+      "triangles": 3640,
+      "edges": 1874,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-19.bin",
+      "vertices": 3590,
+      "triangles": 7176,
+      "edges": 3107,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-20.bin",
+      "vertices": 1886,
+      "triangles": 3740,
+      "edges": 1925,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-21.bin",
+      "vertices": 2898,
+      "triangles": 5792,
+      "edges": 2405,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-22.bin",
+      "vertices": 1194,
+      "triangles": 2376,
+      "edges": 1223,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-23.bin",
+      "vertices": 3240,
+      "triangles": 6476,
+      "edges": 2748,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-24.bin",
+      "vertices": 1536,
+      "triangles": 3044,
+      "edges": 1566,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-25.bin",
+      "vertices": 2616,
+      "triangles": 5228,
+      "edges": 2126,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-26.bin",
+      "vertices": 1030,
+      "triangles": 2044,
+      "edges": 1050,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-27.bin",
+      "vertices": 2596,
+      "triangles": 5188,
+      "edges": 2106,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-28.bin",
+      "vertices": 1010,
+      "triangles": 2004,
+      "edges": 1030,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-29.bin",
+      "vertices": 2304,
+      "triangles": 4604,
+      "edges": 1812,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-30.bin",
+      "vertices": 718,
+      "triangles": 1428,
+      "edges": 736,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-31.bin",
+      "vertices": 2466,
+      "triangles": 4928,
+      "edges": 1973,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-32.bin",
+      "vertices": 880,
+      "triangles": 1744,
+      "edges": 897,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-33.bin",
+      "vertices": 2554,
+      "triangles": 5104,
+      "edges": 2062,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-34.bin",
+      "vertices": 968,
+      "triangles": 1916,
+      "edges": 986,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-35.bin",
+      "vertices": 2544,
+      "triangles": 5084,
+      "edges": 2053,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-36.bin",
+      "vertices": 958,
+      "triangles": 1900,
+      "edges": 977,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-37.bin",
+      "vertices": 3096,
+      "triangles": 6188,
+      "edges": 2357,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-38.bin",
+      "vertices": 918,
+      "triangles": 1828,
+      "edges": 927,
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ]
+    },
+    {
+      "file": "part-39.bin",
+      "vertices": 2840,
+      "triangles": 5676,
+      "edges": 1852,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

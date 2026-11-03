@@ -1,0 +1,83 @@
+{
+  "units": "mm",
+  "coordinate_system": "right-handed; X slide direction, Y across bays, Z up",
+  "parts": [
+    {
+      "name": "base",
+      "step": "base.step",
+      "stl": "base.stl",
+      "quantity": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "lid",
+      "step": "lid.step",
+      "stl": "lid.stl",
+      "quantity": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.4
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          14.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "closed_assembly_bounds_mm": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      148.0,
+      104.0,
+      18.4
+    ]
+  ],
+  "opening": "Press tongue down 1.6 mm through lid window; slide lid along -X until free."
+}

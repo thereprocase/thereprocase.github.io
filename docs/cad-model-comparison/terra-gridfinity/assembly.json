@@ -1,0 +1,993 @@
+{
+  "units": "mm",
+  "coordinate_system": "base centered in XY; front is -Y; Z up",
+  "parts": [
+    {
+      "id": "base",
+      "step": "./output/base_5x4.step",
+      "stl": "./output/base_5x4.stl",
+      "translation_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "id": "m2_6mm",
+      "contents": "M2 6mm screw",
+      "step": "./output/m2_6mm.step",
+      "stl": "./output/m2_6mm.stl",
+      "translation_mm": [
+        -84,
+        -63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2_10mm",
+      "contents": "M2 10mm screw",
+      "step": "./output/m2_10mm.step",
+      "stl": "./output/m2_10mm.stl",
+      "translation_mm": [
+        -42,
+        -63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2_16mm",
+      "contents": "M2 16mm screw",
+      "step": "./output/m2_16mm.step",
+      "stl": "./output/m2_16mm.stl",
+      "translation_mm": [
+        0,
+        -63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2p5_6mm",
+      "contents": "M2.5 6mm screw",
+      "step": "./output/m2p5_6mm.step",
+      "stl": "./output/m2p5_6mm.stl",
+      "translation_mm": [
+        42,
+        -63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2p5_12mm",
+      "contents": "M2.5 12mm screw",
+      "step": "./output/m2p5_12mm.step",
+      "stl": "./output/m2p5_12mm.stl",
+      "translation_mm": [
+        84,
+        -63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2p5_20mm",
+      "contents": "M2.5 20mm screw",
+      "step": "./output/m2p5_20mm.step",
+      "stl": "./output/m2p5_20mm.stl",
+      "translation_mm": [
+        -84,
+        -21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m3_8mm",
+      "contents": "M3 8mm screw",
+      "step": "./output/m3_8mm.step",
+      "stl": "./output/m3_8mm.stl",
+      "translation_mm": [
+        -42,
+        -21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m3_12mm",
+      "contents": "M3 12mm screw",
+      "step": "./output/m3_12mm.step",
+      "stl": "./output/m3_12mm.stl",
+      "translation_mm": [
+        0,
+        -21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m3_20mm",
+      "contents": "M3 20mm screw",
+      "step": "./output/m3_20mm.step",
+      "stl": "./output/m3_20mm.stl",
+      "translation_mm": [
+        42,
+        -21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m4_8mm",
+      "contents": "M4 8mm screw",
+      "step": "./output/m4_8mm.step",
+      "stl": "./output/m4_8mm.stl",
+      "translation_mm": [
+        84,
+        -21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m4_16mm",
+      "contents": "M4 16mm screw",
+      "step": "./output/m4_16mm.step",
+      "stl": "./output/m4_16mm.stl",
+      "translation_mm": [
+        -84,
+        21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m4_20mm",
+      "contents": "M4 20mm screw",
+      "step": "./output/m4_20mm.step",
+      "stl": "./output/m4_20mm.stl",
+      "translation_mm": [
+        -42,
+        21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2_nut",
+      "contents": "M2 NUT nut",
+      "step": "./output/m2_nut.step",
+      "stl": "./output/m2_nut.stl",
+      "translation_mm": [
+        0,
+        21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2_washer",
+      "contents": "M2 WASHER washer",
+      "step": "./output/m2_washer.step",
+      "stl": "./output/m2_washer.stl",
+      "translation_mm": [
+        42,
+        21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2p5_nut",
+      "contents": "M2.5 NUT nut",
+      "step": "./output/m2p5_nut.step",
+      "stl": "./output/m2p5_nut.stl",
+      "translation_mm": [
+        84,
+        21.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          21.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m2p5_washer",
+      "contents": "M2.5 WASHER washer",
+      "step": "./output/m2p5_washer.step",
+      "stl": "./output/m2p5_washer.stl",
+      "translation_mm": [
+        -84,
+        63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m3_nut",
+      "contents": "M3 NUT nut",
+      "step": "./output/m3_nut.step",
+      "stl": "./output/m3_nut.stl",
+      "translation_mm": [
+        -42,
+        63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m3_washer",
+      "contents": "M3 WASHER washer",
+      "step": "./output/m3_washer.step",
+      "stl": "./output/m3_washer.stl",
+      "translation_mm": [
+        0,
+        63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m4_nut",
+      "contents": "M4 NUT nut",
+      "step": "./output/m4_nut.step",
+      "stl": "./output/m4_nut.stl",
+      "translation_mm": [
+        42,
+        63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          42.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "id": "m4_washer",
+      "contents": "M4 WASHER washer",
+      "step": "./output/m4_washer.step",
+      "stl": "./output/m4_washer.stl",
+      "translation_mm": [
+        84,
+        63.0,
+        0.8
+      ],
+      "rotation_deg_xyz": [
+        0,
+        0,
+        0
+      ],
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          84.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          63.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ],
+  "presentation_provenance": "Assembly translations from submission; all files specified upright in submitted README. Layout translates each unchanged part to a common plane with illustrative spacing."
+}

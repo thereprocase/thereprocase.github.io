@@ -1,0 +1,74 @@
+{
+  "parts": [
+    {
+      "name": "base",
+      "stl": "./parts/base.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "lid",
+      "stl": "./parts/lid.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.0
+        ],
+        [
+          0,
+          0,
+          1,
+          53.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    }
+  ]
+}

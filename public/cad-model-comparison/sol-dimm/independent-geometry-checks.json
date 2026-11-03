@@ -1,0 +1,48 @@
+{
+  "closed_interference_mm3": 0,
+  "parts": {
+    "base": {
+      "solids": 1,
+      "bounds": [
+        148.0,
+        104.0,
+        18.4
+      ],
+      "volume_mm3": 76553.02440461115
+    },
+    "lid": {
+      "solids": 1,
+      "bounds": [
+        143.60000000000002,
+        98.4,
+        3.8
+      ],
+      "volume_mm3": 31160.615367531747
+    }
+  },
+  "bag_gauges": [
+    {
+      "base_collision_mm3": 0,
+      "lid_collision_mm3": 0,
+      "vertical_lift_samples_mm3": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "base_collision_mm3": 0,
+      "lid_collision_mm3": 0,
+      "vertical_lift_samples_mm3": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP shapes in assembled coordinates; sampled paths are rigid-motion checks, not flexure simulation."
+}

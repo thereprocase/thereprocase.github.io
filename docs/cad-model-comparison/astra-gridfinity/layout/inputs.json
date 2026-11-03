@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/base_5x4.stl",
+    "sha256": "6daeea96987ba52f519ea997f6f15b5c065e762eda1a122f489009509b38b737",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 26808,
+    "triangles": 53612
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2_6mm.stl",
+    "sha256": "09b2adbc2aa3e1ef069018034234e32d32ade959760062dd73359001806bd616",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5101,
+    "triangles": 10198
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2_8mm.stl",
+    "sha256": "b7c1bc974067b5078b6e8daafc74e5a45929c2143a5fed61670da5f462410045",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5031,
+    "triangles": 10058
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2_12mm.stl",
+    "sha256": "d81e2e89260e916f43c7669d426173a0ba7cbf5ac92657d4e10252d813f9b9d0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5281,
+    "triangles": 10558
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2_NUT.stl",
+    "sha256": "1567b6d29f3d4a8dcc15d546823eedc3dac16a1563e715316e1cd9471404f932",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4994,
+    "triangles": 9984
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2_WASH.stl",
+    "sha256": "376b341f7f0c574d95354b14dc03c4ed19343fadd711deb36e5885b3b5568c99",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5436,
+    "triangles": 10868
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2p5_6mm.stl",
+    "sha256": "a67dec0ab7f0e732e42677b5a9e236a542b88b5909c858465f9a0a86f709bdab",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5393,
+    "triangles": 10782
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2p5_10mm.stl",
+    "sha256": "8241e22063014d3cf239c51f33ea15ebf64a7000bebe93ae25cb0ba0c753fe56",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5485,
+    "triangles": 10966
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2p5_16mm.stl",
+    "sha256": "78bb6836a083f33082d97f69f5b23e310c7613e9343ed707a1486427dd5ba4a3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5563,
+    "triangles": 11122
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2p5_NUT.stl",
+    "sha256": "a7f31df1f4382904abc22dbb0e95fbc29378ac9a498d91017a76b0865e721afa",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5286,
+    "triangles": 10568
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M2p5_WASH.stl",
+    "sha256": "de71815c0a43b0fb0abede0c4639d8df96b6dc88f1d1dae845d00565ff535c4a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5728,
+    "triangles": 11452
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M3_8mm.stl",
+    "sha256": "39efa70c9b4edd0989d55c34626f456b5e1ba7cc2a1214d7714357857b981f89",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5021,
+    "triangles": 10038
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M3_12mm.stl",
+    "sha256": "bcfd7629a035dfec8ae15d0811f050ca00da93c3a1e0b87007a1f3846c2fc343",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5271,
+    "triangles": 10538
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M3_20mm.stl",
+    "sha256": "30af8f525ac8e3d1fc25eb9aa34b369e54eb3a9e2e30fa5bdcde5223716d35d6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5241,
+    "triangles": 10478
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M3_NUT.stl",
+    "sha256": "b517cd82b691bb1448b40d930d04de087ccc40725a0648e21e762a733fb70285",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4984,
+    "triangles": 9964
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M3_WASH.stl",
+    "sha256": "e3aca706661e9c9ff94527bf1f4fadc787a6239a622d82e834c6f8c5b4915d48",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5426,
+    "triangles": 10848
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M4_10mm.stl",
+    "sha256": "e6b26bcbdf4afa1795d9fd2e512a9402910e616e4cc63ce65249c0e16d52c130",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5111,
+    "triangles": 10218
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M4_16mm.stl",
+    "sha256": "dec08022437a291559302b17107e6784968d09ee4f7ea10b10643604d6e8c3e8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5189,
+    "triangles": 10374
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M4_20mm.stl",
+    "sha256": "172252275a76e462653e5febb6195cbb23795bf29ff9dae61751767200ae94cf",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5169,
+    "triangles": 10334
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M4_NUT.stl",
+    "sha256": "17edd55b0f7e8335be04ba0d98366581d1933ceb2510c159c2b74760493f7e6f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4912,
+    "triangles": 9820
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-gridfinity/M4_WASH.stl",
+    "sha256": "2dd373aa152a664f33899431bcad5a0b620eb094fe91a59de114a9b5dde52bed",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5354,
+    "triangles": 10704
+  }
+]

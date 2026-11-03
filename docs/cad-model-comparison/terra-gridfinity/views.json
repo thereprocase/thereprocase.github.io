@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "terra-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "terra-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "terra-gridfinity/open/"
+  }
+]

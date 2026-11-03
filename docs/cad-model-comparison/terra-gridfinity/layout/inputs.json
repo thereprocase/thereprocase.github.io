@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/base_5x4.stl",
+    "sha256": "d8225118f3bf4f70322cbfc77ea1ce70264bcd1324e70168df7b546f91964954",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 12176,
+    "triangles": 24348
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2_6mm.stl",
+    "sha256": "b1d497350c1a781c3ba2986b9cca6bb1d7f41f483031d72c126e664e2e3a628b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.149999618530273
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3874,
+    "triangles": 7744
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2_10mm.stl",
+    "sha256": "4c094ef7528e00bcd00a9b9db8fd2c89675c91691a11711d4a1ded2f7178982c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.149999618530273
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3966,
+    "triangles": 7928
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2_16mm.stl",
+    "sha256": "7348c99f040fbd7d97fa2759f3543a39f91bec96d691f60926a0ea1eb257e5f6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4044,
+    "triangles": 8084
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2p5_6mm.stl",
+    "sha256": "92995b4c52bd805944fcbdb61f8a62494defbc2b9cef4be9e3f75666b65e7845",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4166,
+    "triangles": 8328
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2p5_12mm.stl",
+    "sha256": "152f829abc9c26193b18df57829ff6604142bc87cdb8992bb59a1cf2d0f0086c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4346,
+    "triangles": 8688
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2p5_20mm.stl",
+    "sha256": "f3af3f17ae0069ce2418621b0641a8465d43013649ba490998c68d9fd1b86144",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4316,
+    "triangles": 8628
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m3_8mm.stl",
+    "sha256": "630c7896b0617210859632e43ffe39d23e6981e6d6d2d8d8c13c0feb3ff8544a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3794,
+    "triangles": 7584
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m3_12mm.stl",
+    "sha256": "0bc5161ccb8c70d21b280585dfcdbc27a7133932f05de2b5410dd495375cbba1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        201.14999961853027
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4044,
+    "triangles": 8084
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m3_20mm.stl",
+    "sha256": "2830808536e622f31e7e7cc5dfa1d36befe7be0590829330da1cd1fdd7aec3b9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4014,
+    "triangles": 8024
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m4_8mm.stl",
+    "sha256": "90ae6f50a96f5515f055af4845b6e072022846facef30e655ca3248bb9a67c71",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3722,
+    "triangles": 7440
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m4_16mm.stl",
+    "sha256": "31e3785eecb47e24cb494e7f5f28b9551a622ef30e1763dea8947fb94bced43b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3962,
+    "triangles": 7920
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m4_20mm.stl",
+    "sha256": "49df010a62059fc31e632ab5aaa34b2837c29f5bd57d3053a568f3d35f193575",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3942,
+    "triangles": 7880
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2_nut.stl",
+    "sha256": "05d60f50cfb3b4e51293ecee854265381d5645a918f4616d0dd099489f33c2c9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3764,
+    "triangles": 7524
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2_washer.stl",
+    "sha256": "ea81e3c31cac73cf59220d4fba54bf8e050e80634a1325d06133ede0d3a436b9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        255.04999923706055
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4552,
+    "triangles": 9100
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2p5_nut.stl",
+    "sha256": "a6cc0219294949b55919636b5a5ce797591ffb623ac24ace88175a91dfbec66b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4056,
+    "triangles": 8108
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m2p5_washer.stl",
+    "sha256": "7a065a5d3323c1194b268be270cca111b2f2ab2e1ea8a134d5c3a3c3e9c47f91",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4844,
+    "triangles": 9684
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m3_nut.stl",
+    "sha256": "2b9de933a4b9fefbb57abd084eca5de075ef870767c0e09d99fe0e9904a3e413",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3754,
+    "triangles": 7504
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m3_washer.stl",
+    "sha256": "93b81b0efe243319fd2ee54ccb0694614afa1c2498c20405e96a2c5be3c7bd16",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4542,
+    "triangles": 9080
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m4_nut.stl",
+    "sha256": "c50ff37ce530e08f5e9b22a9f44adb3173afd36d14b0b8fb0ac45d6ad3e28943",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3682,
+    "triangles": 7360
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-gridfinity/m4_washer.stl",
+    "sha256": "cb6abf18b634392790be439a306d86d0809cc4473b7558996286fafd065bd737",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        308.9499988555908
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4470,
+    "triangles": 8936
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "verification_method": "Direct OCP Boolean and bounding boxes on delivered STEP files at submitted assembly translations.",
+  "base_bounds_mm": {
+    "min": [
+      -105.0000001,
+      -84.0000001,
+      -1e-07
+    ],
+    "max": [
+      105.0000001,
+      84.0000001,
+      6.250000100000033
+    ]
+  },
+  "seated_base_intersections_mm3": {
+    "screw_M2_6": 0,
+    "screw_M2.5_8": 0,
+    "screw_M2.5_10": 0,
+    "screw_M3_6": 0,
+    "screw_M3_8": 0,
+    "screw_M3_10": 0,
+    "screw_M3_12": 0,
+    "screw_M3_16": 0,
+    "screw_M3_20": 0,
+    "screw_M4_8": 0,
+    "screw_M4_10": 0,
+    "screw_M4_16": 0,
+    "screw_M4_20": 0,
+    "nut_M3_nut": 0,
+    "nut_M4_nut": 0,
+    "nut_M2_nut": 0,
+    "nut_M2.5_nut": 0,
+    "washer_M2.5_washer": 0,
+    "washer_M3_washer": 0,
+    "washer_M4_washer": 0
+  },
+  "bin_outside_base_xy": [
+    "screw_M2.5_10",
+    "screw_M3_6",
+    "screw_M3_8",
+    "screw_M3_16",
+    "screw_M3_20",
+    "screw_M4_8",
+    "screw_M4_10",
+    "screw_M4_16",
+    "screw_M4_20",
+    "nut_M3_nut",
+    "nut_M4_nut",
+    "nut_M2_nut",
+    "nut_M2.5_nut",
+    "washer_M2.5_washer",
+    "washer_M3_washer",
+    "washer_M4_washer"
+  ],
+  "individual_export_solid_counts": {
+    "screw_M2_6": 1,
+    "screw_M2.5_8": 1,
+    "screw_M2.5_10": 1,
+    "screw_M3_6": 1,
+    "screw_M3_8": 1,
+    "screw_M3_10": 1,
+    "screw_M3_12": 1,
+    "screw_M3_16": 1,
+    "screw_M3_20": 1,
+    "screw_M4_8": 1,
+    "screw_M4_10": 1,
+    "screw_M4_16": 1,
+    "screw_M4_20": 1,
+    "nut_M3_nut": 1,
+    "nut_M4_nut": 1,
+    "nut_M2_nut": 1,
+    "nut_M2.5_nut": 1,
+    "washer_M2.5_washer": 1,
+    "washer_M3_washer": 1,
+    "washer_M4_washer": 1
+  },
+  "neighbor_overlap_mm3": {},
+  "limitations": [
+    "The submitted assembly transformations are used without repair. CAD checks do not certify physical print fit, loaded handling, or actual label readability."
+  ],
+  "mesh_connectivity_samples": {
+    "screw_M2_6.stl": 1,
+    "nut_M3_nut.stl": 1,
+    "washer_M4_washer.stl": 1
+  },
+  "mesh_check_method": "trimesh connected-component count of three sampled exported STL files",
+  "visual_observations": "Baseplate mesh has sockets only in its positive-X/positive-Y corner. The submitted assembled view places 16 of 20 bins partly or wholly outside the base bounding rectangle. Rear rows obscure the front-facing labels."
+}

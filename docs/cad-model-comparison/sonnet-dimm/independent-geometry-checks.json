@@ -1,0 +1,36 @@
+{
+  "closed_interference_mm3": 0,
+  "module_envelope_collisions_mm3": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "upward_lift_collision_mm3": {
+    "0": 0,
+    "2": 0,
+    "5": 0,
+    "10": 0,
+    "20": 0
+  },
+  "unreleased_lid_lift_collision_mm3": {
+    "0": 0,
+    "0.5": 0,
+    "1": 26.151428571422613,
+    "2": 89.13702857142022,
+    "4": 119.26051948051779,
+    "8": 0,
+    "15": 0
+  },
+  "closed_bounds_mm": [
+    166.5,
+    107.5,
+    17.800000000000015
+  ],
+  "gauge_note": "134.5 x45 x10 solid envelopes centered in each pocket, bottom Z2.4. Conservative solid envelope includes contact region.",
+  "verification_method": "Direct OCP BRepAlgoAPI_Common; earlier build123d convenience intersections were discarded because transformed solids produced impossible intersections."
+}

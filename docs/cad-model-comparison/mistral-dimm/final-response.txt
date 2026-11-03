@@ -1,0 +1,15 @@
+Done. Handover:
+
+**What you got** (in `./cadcomp-20261103-mistral-dimm`):
+- `src/mailer.py` — parametric build123d source (all dims in one `P` dict); rebuilds everything
+- `parts/base.{step,stl}`, `parts/lid.{step,stl}` — STEP + binary STL per part (2 parts)
+- `assembly.json` — base at identity, lid translated `[0, 0, 53]` mm (closed pose), with local bboxes
+- `README.md`, `build_report.json`, `checks/checks.py` + `checks/report.json` — **31/31 measured checks pass**
+
+**Design**: a base tray with two vertical channels (148 × 10.2 × 47 mm) and a lid that is a plate + perimeter skirt with four snap hooks. Close = press down (hooks cam over the wall tops and snap into a groove, 0.75 mm undercut); open = squeeze the two long sides (labelled `PRESS`) ~1.5 mm and lift. Sticks drop in from the top and lift straight out; rounded notches through the end walls let you pinch the bag low. Each bagged stick stands on its bare FR4 bottom edge — the gold-pad zone has ≥ 0.7 mm air to every case surface, verified by keep-out sampling against the assembled meshes. Assembled: 158.5 × 35.1 × 53.8 mm, ~136 g PETG.
+
+**Envelope**: bagged modules up to **136 × 45 × 8 mm**. That covers JEDEC 133.35 mm sticks, Corsair LPX (135 × 6.64 × 33.53), Ripjaws V (42), Trident Z family (44), Flare X/Sniper X, and excludes the tall RGB bars by design (Vengeance LED 49, RGB Pro 51/138.3 long, Dominator 56, Trident Z RGB DC 59) — sources cited in the README.
+
+**Labels** in Fillaprint: the font's own spec says em = 20 × line width (every stroke = 2 beads), so with w = 0.45 mm the minimum printable em is 9 mm; all labels use em ≥ 9 mm (title 12 mm, others 9 mm, cap 6.3 mm, stroke 0.9 mm).
+
+**Still needs a physical test**: snap force/fatigue over repeated cycles, FDM tolerance vs the 0.25 mm skirt clearance, actual bag thickness, and a drop test inside the cardboard box — geometry and fit are verified on the meshes, forces are not.

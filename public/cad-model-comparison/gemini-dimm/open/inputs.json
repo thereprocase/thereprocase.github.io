@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/gemini-dimm/mailer_base.stl",
+    "sha256": "6d140688b4bc84f800c3835da231553fbbffd970936378743c66a0e709684c12",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7352,
+    "triangles": 14700
+  }
+]

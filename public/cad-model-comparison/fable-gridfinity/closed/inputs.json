@@ -1,0 +1,354 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/baseplate_5x4.stl",
+    "sha256": "70fd08ecbc552c593cf4a12b5e57a250edc880e565d152545b9c05d6a8effd45",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21864,
+    "triangles": 43724
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M2_short.stl",
+    "sha256": "e43bd0ecd518dff0eb55fe08086d4ed397d7e61ff912e07bac61fd65c773ce94",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6836,
+    "triangles": 13668
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M2_nut_washer.stl",
+    "sha256": "514184f52facc9545e57cbceef323240de40c43d987386f85e56a9ee3586c300",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6724,
+    "triangles": 13444
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M2.5_short.stl",
+    "sha256": "faf635b6e4a6987e7884ee66163d99e7cf4788da16d49e44b52cbc60a0716768",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7712,
+    "triangles": 15420
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M2.5_long.stl",
+    "sha256": "3ca789569ec5dc760c62698bce98dd475af08367417ad02c05f71f709334ef37",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 8190,
+    "triangles": 16376
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M3_short.stl",
+    "sha256": "80e8dfe2f8d4f250e81ba6815ff49d63aee1811a9db2a7a0a0013c0d1e22f89f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6806,
+    "triangles": 13608
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M3_long.stl",
+    "sha256": "3a40550f8ed5393d6fd994f56e30e3e7b68055b86c15577a3084d681cfdf1c1d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7284,
+    "triangles": 14564
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M4_long.stl",
+    "sha256": "0c8e4856f9b780597edf5bbb56472b95c4b05bcc1870c5231f3ee62cd7f4104d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7068,
+    "triangles": 14132
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M4_nut_washer.stl",
+    "sha256": "6050e66db8d51a94eef4fac64f720011f122b743e7e98179e23e9587d676235b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6560,
+    "triangles": 13116
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M2.5_nut_washer.stl",
+    "sha256": "a9ed14cd017c24e3d948814de124a2b72a97e4c3eedd508b4a4464742a0136f6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7308,
+    "triangles": 14612
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/bin_M3_nut_washer.stl",
+    "sha256": "50163484fddd26c2c4d473fc9537474dc2e8ef811dddff477f7cab4a3672c6a6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.35
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        126.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6704,
+    "triangles": 13404
+  }
+]

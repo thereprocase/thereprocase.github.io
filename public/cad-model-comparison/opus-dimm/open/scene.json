@@ -1,0 +1,23 @@
+{
+  "title": "Opus Dimm",
+  "subtitle": "open view",
+  "caption": "Base with lid removed \u00b7 interior and access features",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 17068,
+      "triangles": 34140,
+      "edges": 17478,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

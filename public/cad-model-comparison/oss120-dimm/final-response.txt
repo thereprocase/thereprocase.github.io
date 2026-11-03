@@ -1,0 +1,77 @@
+**Outcome**  
+- A parametric CAD model for a reusable DDR4‑RAM mailer (clamshell box with two stick cavities, snap‑fit lid, and optional foam spacer) has been generated.  
+- Exported files are in `output/`:
+  - `base.step` & `base.stl` – the bottom half of the box.  
+  - `lid.step` & `lid.stl` – the top half with a snap latch.  
+- A concise README, measured dimensions, and an `assembly.json` describing part placement are also provided.
+
+**Key Design Details**
+
+| Item | Dimension (mm) | Notes |
+|------|----------------|-------|
+| Stick length (incl. heatspreader) | 133.35 |
+| Stick width (height) | 34.0 |
+| Stick thickness (PCB) | 2.5 |
+| Clearance per stick | +2 mm X/Y, +0.5 mm Z |
+| Spacer between sticks | 2 mm foam/paper |
+| Wall thickness | 1.5 |
+| Base thickness | 10 |
+| Lid thickness | 10 |
+| Snap latch (front) | 2 mm × 3 mm × 10 mm, offset 5 mm from front edge |
+| Lip/ridge for lid snap‑over | 0.5 mm tall on top edge of base |
+| Overall outer size (≈) | 137 × 78 × 10 mm (fits typical heat‑spread‑er DDR4 modules, excludes large RGB heatsinks) |
+
+**Mechanism**  
+- The lid snaps over the 0.5 mm ridge on the base top edge (no hardware, purely elastic flex).  
+- To open, press the latch outward, releasing the snap; the lid lifts off cleanly.  
+- Sticks are placed in individual cavities, each wrapped in a static‑shielding bag; a thin foam sheet (≈2 mm) can be inserted between them to prevent rattling.
+
+**Exported Files**  
+```
+output/
+│─ base.step    (STEP CAD of the bottom half)
+│─ base.stl     (binary STL of the bottom half)
+│─ lid.step     (STEP CAD of the top half with latch)
+│─ lid.stl      (binary STL of the top half)
+│─ README.md
+│─ assembly.json
+```
+
+**README (excerpt)**
+```
+# DDR4 Mailer – Reusable Clamshell Box
+Two‑part box for shipping two DDR4 DIMM modules with ordinary heat spreaders.
+- No metal hardware; lid snaps onto a thin ridge.
+- Adjustable foam spacer to prevent rattling.
+- Designed for standard 133 mm DDR4 sticks (width up to ~34 mm). Larger RGB heatsinks are out‑of‑scope.
+- Font used for optional label: Fillaprint-Regular.ttf (minimum printable size 2 mm height).
+
+## Files
+- `base.step` / `base.stl` – bottom half.
+- `lid.step` / `lid.stl` – top half with latch.
+- `assembly.json` – part filenames with their transformation matrices (mm).
+```
+
+**assembly.json (example)**
+```json
+{
+  "parts": [
+    {
+      "file": "base.step",
+      "transform": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]
+    },
+    {
+      "file": "lid.step",
+      "transform": [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]
+    }
+  ]
+}
+```
+
+**Limitations / What Still Needs Physical Testing**  
+- **Snap‑fit durability:** The 0.5 mm ridge and 2 mm latch thickness rely on material flex (assumed PETG/PLA). Real‑world testing will confirm the number of cycles before wear.  
+- **Foam spacer fit:** The 2 mm gap works for typical thin foam or paper; thicker padding may need the cavity clearance increased.  
+- **Label embossing:** Font rendering was disabled due to environment limits; the model can easily re‑enable it once font handling is resolved.  
+
+**Hand‑over**  
+All source code (`mailbox_design.py`), exported STEP/STL files, README, and assembly description are ready in the `output/` folder. The design is parametric—adjusting the defined constants (e.g., stick dimensions, wall thickness, latch size) will regenerate appropriate models for other DDR4 variants.

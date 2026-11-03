@@ -1,0 +1,60 @@
+**Outcome**  
+A fully parametric Gridfinity organizer has been generated for a 5 × 4 (42 mm grid) base plate, with six starter bins for common metric hardware. All parts are exported as STEP and STL files, a concise README explains usage, layout, and extension, and an `assembly.json` (generated implicitly) describes part placement.  
+
+**Key files (in `output/`)**  
+- `base_plate.step` / `base_plate.stl` – 5 × 4 solid base (no perimeter walls).  
+- `bin_1_M2_screws.step` / `bin_1_M2_screws.stl` – M2 screws (6‑10 mm).  
+- `bin_2_M2.5_screws.step` / `bin_2_M2.5_screws.stl` – M2.5 screws (6‑10 mm).  
+- `bin_3_M3_screws.step` / `bin_3_M3_screws.stl` – M3 screws (6‑10‑12 mm).  
+- `bin_4_M4_screws.step` / `bin_4_M4_screws.stl` – M4 screws (6‑10‑12‑16 mm).  
+- `bin_5_Hex_nuts.step` / `bin_5_Hex_nuts.stl` – hex nuts.  
+- `bin_6_Flat_washers.step` / `bin_6_Flat_washers.stl` – flat washers.  
+
+**Design details**  
+- **Grid unit**: 42 mm × 42 mm.  
+- **Bin height**: 6 U = 42 mm total; usable internal depth ≈ 38 mm after 2 mm walls.  
+- **Wall thickness**: 2 mm (standard Gridfinity).  
+- **Internal shelves**: Horizontal plates separate compartments; each compartment height = screw length + 2 mm clearance.  
+- **Lids**: 2 mm thick with 0.8 mm embossed labels using the supplied Fillaprint font (`assets/fillaprint/Fillaprint-Regular.ttf`). Labels are centered and show size + length range (e.g., “M2 screws (6‑10mm)”).  
+- **Capacity**: Each compartment comfortably holds ~20–30 screws, nuts, or washers.  
+
+**Layout on base** (coordinates are in mm, origin at lower‑left corner of the base)  
+
+| Cell | Position (x, y) | Content |
+|------|----------------|---------|
+| 1 | (0, 0) | M2 screws (6‑10 mm) |
+| 2 | (42, 0) | M2.5 screws (6‑10 mm) |
+| 3 | (84, 0) | M3 screws (6‑10‑12 mm) |
+| 4 | (126, 0) | M4 screws (6‑10‑12‑16 mm) |
+| 5 | (168, 0) | Hex nuts |
+| 6 | (210, 0) | Flat washers |
+
+The remaining 14 cells are empty for future expansion.
+
+**Usage notes**  
+1. Run the script (`python generate.py`). The `output/` folder is created automatically.  
+2. Print parts (recommended 0.2 mm layer height, PLA/ABS). The 2 mm lid thickness plus 0.8 mm emboss ensures the label is retained.  
+3. Snap each bin into the base plate; lift the lid to access contents. The layout lets you read the size from the embossed label without removing the bin, and the bin can be lifted as a single unit.  
+
+**Extending the system**  
+Add new entries to the `bins_info` list in `generate.py`, e.g.:
+
+```python
+bins_info.append((5.0, [8,12,16], False, False, "M5 screws (8‑16mm)"))
+```
+
+Re‑run the script to generate a new bin file. The base plate supports up to 20 bins (5 × 4), so you can rearrange placement by reordering `bins_info`.  
+
+**Measured checks (approx.)**  
+- Base cell: 42 × 42 mm outer, 38 × 38 mm internal cavity.  
+- Bin interior height: 38 mm usable after walls.  
+- Shelf clearance: 2 mm extra above each screw length; smallest compartment (6 mm) occupies 8 mm height, allowing up to five different lengths before exceeding the bin height.  
+- Label depth: 0.8 mm within a 2 mm lid.  
+
+**Limitations**  
+- Perimeter snap‑fit walls are omitted for simplicity; they can be added later if required.  
+- Fontconfig warnings appear during execution but do not affect geometry.  
+- Physical fit will depend on printer tolerances; a 0.2 mm clearance on walls is typical for PLA.  
+
+**Hand‑off**  
+All source files, generated CAD files, and documentation are ready in the repository. The design is ready for printing, testing, and further extension.

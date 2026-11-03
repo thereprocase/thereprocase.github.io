@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/fable-gridfinity/baseplate_5x4.stl",
+    "sha256": "70fd08ecbc552c593cf4a12b5e57a250edc880e565d152545b9c05d6a8effd45",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21864,
+    "triangles": 43724
+  }
+]

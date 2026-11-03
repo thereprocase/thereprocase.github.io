@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-dimm/base.stl",
+    "sha256": "119aa7d6c3c775e8fc518e28b2bd9299dc89916ec09053ce228016edc65dd26d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 11881,
+    "triangles": 21208
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-dimm/lid.stl",
+    "sha256": "436702335311f9ada2afdfd153b2f3e871eb8eaeee984c075e661291fcf4180f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        2.3
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -14.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3172,
+    "triangles": 6340
+  }
+]

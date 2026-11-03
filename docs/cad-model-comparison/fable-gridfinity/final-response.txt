@@ -1,0 +1,24 @@
+Done. The complete Gridfinity hardware system is in `./cadcomp-20261103-fable-gridfinity`, with all 70 checks passing.
+
+**What was delivered**
+
+- `src/gridfinity_hardware.py`: the parametric build123d source. One generator makes both bin types; the assortment is a 10-line table of labels, compartment counts, heights and scoop radii.
+- `export/step` and `export/stl`: 12 parts (10 bins, the 5×4 plate, a 1×4 extension column), binary STL and STEP each.
+- `assembly.json`: part files with their assembled translations, plus per-compartment geometry.
+- `checks/checks.json`: 37 CAD boolean checks and 33 ray-cast mesh checks, merged, `all_pass: true`.
+- `README.md`: interfaces, clear spaces, handling, print notes, fit-test list, limitations.
+
+**The design**
+
+- Ten identical-footprint 1×2 bins (41.5 × 83.5 × 32.1 mm, 4 height units) tile the 5×4 patch exactly, one diameter per column. Screw bins hold three lengths front to back; each diameter's nuts and washers share one two-compartment bin, washers in front.
+- Starter assortment: M3 and M2.5 in all six lengths, M2 in 6/8/10, M4 in 12/16/20. Omitted lengths are label edits.
+- Every compartment is 39 mm wide with a 45° label face on its front edge, a scoop at the back, and a top opening of 20 mm (screws) or 27 mm (nuts/washers) through to the floor. A 16 mm hemispherical fingertip reaches the floor of all 26 compartments with zero interference.
+- Labels are debossed Fillaprint at the font's own rule: 6.30 mm capitals for a 0.45 mm line width, 0.9 mm strokes, measured on the exported mesh. Nut/washer labels are two full-word lines, since "M2.5 WASHER" is 42 mm long at that size.
+
+**What the checks proved** (not just that solids exist)
+
+- Bins seat on the plate with 0.25 mm free lateral play and touch at 0.30 mm, the standard Gridfinity fit.
+- Stacking seats on the lip chamfer at 27.65 mm pitch: zero interference at the seat, interference when pushed lower.
+- Plate pocket profile, open-top dimensions, cap height and deboss depth all measured from the STL within sampling resolution.
+
+**Still needs a physical fit test**: foot-to-pocket fit on your printer (print the small 1×4 plate plus one bin first), lip stacking, label stroke rendering at your slicer's line width, real-hand finger access, and real heap capacity with 20 M4×20 screws. Limitations are listed honestly in the README: no magnets by default, one-piece 210 mm plate, 45° reading angle is a compromise between bench and drawer viewing, and nothing was printed.

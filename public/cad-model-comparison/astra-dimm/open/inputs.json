@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/astra-dimm/tray.stl",
+    "sha256": "faed063c0e4f204fb4a7811965ab8465a92c0c818688b92e2d636f2dc9937229",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6002,
+    "triangles": 12000
+  }
+]

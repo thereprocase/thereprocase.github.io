@@ -1,0 +1,75 @@
+{
+  "parts": [
+    {
+      "name": "base",
+      "stl": "./parts/base.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "name": "lid",
+      "stl": "./parts/lid.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          17.8
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ],
+  "provenance": "Original submitted print meshes and assembled transforms. Reference module envelopes excluded."
+}

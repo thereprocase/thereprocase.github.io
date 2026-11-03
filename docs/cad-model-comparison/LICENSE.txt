@@ -1,0 +1,11 @@
+CAD model comparison — license and attribution
+
+The original comparison text, CAD geometry, illustrations, and original scripts in this collection are offered by thereprocase under the Creative Commons Attribution 4.0 International license (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Credit thereprocase, link the license, and indicate changes when sharing or adapting the material. This permission covers material the publisher may license; third-party material remains subject to its own terms and attribution notices.
+
+FillaPrint font files are separately licensed under the SIL Open Font License 1.1. See assets/fillaprint/OFL.txt in the download, or https://github.com/thereprocase/double-bead.
+
+The models are CAD prototypes. Digital checks do not establish physical fit, strength, shipping safety, or print success.

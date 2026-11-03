@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-03T16:44:26.626391+00:00",
+  "native_clients": {
+    "Claude Code": "2.1.317",
+    "Codex CLI": "0.166.0"
+  },
+  "cad_runtime": {
+    "Python": "3.12.13",
+    "build123d": "0.13.0",
+    "OCP": "8.0.1.1"
+  },
+  "mesh_runtime": {
+    "Python": "3.12.13",
+    "trimesh": "5.1.0",
+    "numpy": "2.5.3"
+  },
+  "qwen_serving": {
+    "engine": "vLLM",
+    "version": "0.30.0",
+    "verification": "Read-only /version endpoint on both Qwen servers"
+  },
+  "deepseek_serving": {
+    "engine": "TensorFold",
+    "version": "Not reported by the inspected health endpoint",
+    "thinking_budget_for_comparison_runs": 2048
+  },
+  "launch_script_sha256": "32566fc0c93847dcd8bf0bc1318c77f169c4fd0c1310f6274315dbebf7f3dd34",
+  "reasoning_transport_sha256": "27a4c2e25123d9124a537dfbc024d2b7c054a30b5f9ca190c468810f8920b61b",
+  "note": "Versions observed during the comparison. Filesystem isolation and native client entry points are documented in the page; no authentication material is included."
+}

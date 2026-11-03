@@ -1,0 +1,38 @@
+{
+  "closed_interference_mm3": 0,
+  "unreleased_lift_collision_mm3": {
+    "0.5": 2.3399999999999865,
+    "1": 14.039999999999962,
+    "2": 37.439999999999905,
+    "5": 42.119999999999926
+  },
+  "outer_lid_bounds_mm": [
+    154.7,
+    101.7,
+    13.850000000000001
+  ],
+  "module_gauges": [
+    {
+      "tray_collision_mm3": 0,
+      "lid_collision_mm3": 0,
+      "upward_removal_samples_mm3": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "tray_collision_mm3": 0,
+      "lid_collision_mm3": 0,
+      "upward_removal_samples_mm3": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "print_pose_note": "Submitted lid outside-down puts raised 0.5 mm lettering below the broad lid face; no flat broad first contact face. This display follows the submission and does not repair it.",
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP shapes in assembled coordinates; sampled paths are rigid-motion checks, not flexure simulation."
+}

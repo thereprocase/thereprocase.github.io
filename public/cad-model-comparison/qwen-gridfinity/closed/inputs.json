@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/base_5x4.stl",
+    "sha256": "97a7d1d0a57e051fd4d1da9a35066cd64de3502b760ad45717791e6ca94c6e1f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 78697,
+    "triangles": 157406
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M2_6.stl",
+    "sha256": "039424bfcc82acb5438e72ee71d86867db981811975cbc8a8e85a0f576633fbf",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17760,
+    "triangles": 35516
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M2.5_8.stl",
+    "sha256": "42f63b853e8a15ef734099bb09019178bd722b62eb85f26fd834765ba7275a03",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17982,
+    "triangles": 35960
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M2.5_10.stl",
+    "sha256": "66c1a6755c51abe182ef37848170906a1e4932ff20a88b44dcb2c1a3f5e379f5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 18144,
+    "triangles": 36284
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_6.stl",
+    "sha256": "8246780323398d14841ed40f1eb3103e2d58bdff1075d6c32f0756fb8ff92ecc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17750,
+    "triangles": 35496
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_8.stl",
+    "sha256": "e5b5976750f215aef9c4cb51183d0ed498b6e3a361e7247adb6a9c87c99af09a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17680,
+    "triangles": 35356
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_10.stl",
+    "sha256": "a73be11a049c91507ba2ca3dcddcef8430662d041b45fd9f0157f8ac7722fdad",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17842,
+    "triangles": 35680
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_12.stl",
+    "sha256": "1ffd8a0a5f708538ab60a3505124843ad74da07c6259c50db9b91bd7253777f3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17930,
+    "triangles": 35856
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_16.stl",
+    "sha256": "d338b6a77b2a66372e0822e1460da968cc10d6cb1a49c702ab09efa8986b9aa1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17920,
+    "triangles": 35836
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M3_20.stl",
+    "sha256": "5ddf6b0e397fe30ea3346bbc22bc60c9db25b0d9b8a62c9298e58020d0c4a790",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17900,
+    "triangles": 35796
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M4_8.stl",
+    "sha256": "dd7f3c9e876249c8f56905664d5da9efbc97a8f01595c4e208edac766f3980dc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17608,
+    "triangles": 35212
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M4_10.stl",
+    "sha256": "8d3e72cc2ac01314260becf1769faf2fa863d7225d380feb66f1591c2b7c2f89",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17770,
+    "triangles": 35536
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M4_16.stl",
+    "sha256": "146600efef3e1e3def91009553258ea2cfa7d8406c0bfc6e667bf1f0f73654f6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17848,
+    "triangles": 35692
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/screw_M4_20.stl",
+    "sha256": "cfaa8151e09ce910e06f3135fe4a81997258e764140910ad36d3d947b92251a5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17828,
+    "triangles": 35652
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/nut_M3_nut.stl",
+    "sha256": "5dafadf3028de5377f5a4a8518130340131e973f12ac54c88235b281ba5ae1a6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17976,
+    "triangles": 35948
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/nut_M4_nut.stl",
+    "sha256": "7830da4a316635bb41e7fd6c85e5b69a7af2a538de0a4df24f244d44c431ad81",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17904,
+    "triangles": 35804
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/nut_M2_nut.stl",
+    "sha256": "ed8c47cff0b0168ea705cbd773660bc0179045cc5371d062ae5441df7b67d651",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17986,
+    "triangles": 35968
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/nut_M2.5_nut.stl",
+    "sha256": "e9d44c2348bc9bab344c3c45812fda4e4b9d8a15b1c5d8c18501ac1a5bcd7b7e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 18278,
+    "triangles": 36552
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/washer_M2.5_washer.stl",
+    "sha256": "bc781cbe443bd5bb8be519966d95f5ebb7fb61e6e96632563d41fe12f0fc3481",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 18572,
+    "triangles": 37140
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/washer_M3_washer.stl",
+    "sha256": "fed9b9dfb961cb9b74080f4fa0427207d55edc22f0b73a64c800cd7abaeb52ab",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 18270,
+    "triangles": 36536
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-gridfinity/washer_M4_washer.stl",
+    "sha256": "87cc3d2b0dc90f12e4403b965ef399b60557983919f3c4afa1027eff17618833",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 18198,
+    "triangles": 36392
+  }
+]

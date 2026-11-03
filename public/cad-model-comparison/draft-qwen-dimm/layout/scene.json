@@ -1,0 +1,34 @@
+{
+  "title": "Draft Qwen Dimm",
+  "subtitle": "layout view",
+  "caption": "Provisional exported parts \u00b7 export orientation \u00b7 unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 824,
+      "triangles": 1644,
+      "edges": 840,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 2396,
+      "triangles": 4772,
+      "edges": 2507,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

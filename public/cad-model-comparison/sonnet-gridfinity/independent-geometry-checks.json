@@ -1,0 +1,27 @@
+{
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP geometry.",
+  "base_bounds_mm": [
+    210.0,
+    168.0,
+    6.25
+  ],
+  "base_removal_collision_mm3": {
+    "0": 0,
+    "0.2": 0,
+    "1": 0,
+    "3": 0,
+    "5": 0
+  },
+  "adjacent_row_collision_mm3": 0,
+  "adjacent_row_distance_mm": 0.5,
+  "stacking_collision_mm3": {
+    "20.3": 175.4243973530764,
+    "20.8": 0,
+    "21": 0
+  },
+  "vertical_finger_probe_collision_mm3": {
+    "14": 0,
+    "16": 0.006566060329166104
+  },
+  "probe_note": "Rigid cylindrical probe down one empty screw compartment; does not establish loaded picking ergonomics or compliant human finger access."
+}

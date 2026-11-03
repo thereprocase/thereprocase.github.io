@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-dimm/tray.stl",
+    "sha256": "45dc5447a70b8cc38630748feb6b6568af83a77db8859bc021d6a1c860d9580d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 48,
+    "triangles": 92
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/terra-dimm/lid.stl",
+    "sha256": "f01fa20c47a9f974e9898cef052adac2e355816a624bf975369dec405fe5b9e1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2112,
+    "triangles": 4220
+  }
+]

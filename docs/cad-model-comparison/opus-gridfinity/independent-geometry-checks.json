@@ -1,0 +1,30 @@
+{
+  "tray_base_collision_mm3": 0,
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP geometry. Snapshot hashes rechecked against the completed native submission before publication.",
+  "base_bounds_mm": [
+    210.0000002,
+    168.0000002,
+    6.650000100000001
+  ],
+  "bin_bounds_mm": [
+    41.5000002,
+    41.5000002,
+    32.0000002
+  ],
+  "base_seating_removal_collision_mm3": {
+    "0": 0,
+    "0.2": 0,
+    "1": 0,
+    "3": 0,
+    "5": 0
+  },
+  "adjacent_column_collision_mm3": 0,
+  "adjacent_column_min_distance_mm": 0.5,
+  "stacking_collision_mm3": {
+    "-0.5": 165.75919842257207,
+    "0": 0,
+    "0.2": 0
+  },
+  "source_snapshot_manifest": "source-hashes.json",
+  "final_files_verified_at": "2026-11-03T16:03:48.916222+00:00"
+}

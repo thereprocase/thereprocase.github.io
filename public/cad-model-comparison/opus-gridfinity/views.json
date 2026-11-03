@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "opus-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "opus-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "opus-gridfinity/open/"
+  }
+]

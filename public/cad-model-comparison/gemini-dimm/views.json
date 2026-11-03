@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "gemini-dimm/layout/"
+  },
+  {
+    "label": "Closed",
+    "url": "gemini-dimm/closed/"
+  },
+  {
+    "label": "Open",
+    "url": "gemini-dimm/open/"
+  }
+]

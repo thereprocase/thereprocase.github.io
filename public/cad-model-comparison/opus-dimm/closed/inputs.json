@@ -1,0 +1,98 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/opus-dimm/tray.stl",
+    "sha256": "72b75e822f4e41489526134c83607b80b53b9bcc4097d811058dd898363aa1ab",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 17068,
+    "triangles": 34140
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/opus-dimm/lid.stl",
+    "sha256": "3460fcd49aede229f4cebdbed129912e03512108bb8a64b2e77947c71e8f6f16",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -19.2
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 12254,
+    "triangles": 24508
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/opus-dimm/lid_label_inlay.stl",
+    "sha256": "f4374ca406671c871b623d0e2cdde93377de199eda9944eaa3d74362ae9b0f8f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -19.2
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 12010,
+    "triangles": 23828
+  }
+]

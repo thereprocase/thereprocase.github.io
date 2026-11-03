@@ -1,0 +1,5 @@
+Delivered [the complete CAD bundle](gridfinity_starter.zip): a 5×4 base and twenty individually removable, permanently labeled bins using two reusable body types.
+
+Includes parametric source, 21 STEP files, 21 binary STLs, assembly transforms and measured checks. All solids and meshes pass validation; capacity and interface collision checks pass.
+
+The [README](README.md) explains the assortment, handling and extension. Physical tests remain for printer fit, stacking, shelf bridging, lettering and loaded grip comfort. Capacity was verified with arranged hardware, not random pouring.

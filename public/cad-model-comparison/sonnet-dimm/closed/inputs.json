@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-dimm/base.stl",
+    "sha256": "87c41f946ad7b757c189c106d3bb8ea990527d47de71c1f3c43efa75f159f8fb",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4818,
+    "triangles": 9632
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-dimm/lid.stl",
+    "sha256": "4ed038289fd63cacf0d5f94e63cfe4e161ddf7ffbb9793c4a770c5dfd1844e34",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        -17.8
+      ],
+      [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7114,
+    "triangles": 14136
+  }
+]

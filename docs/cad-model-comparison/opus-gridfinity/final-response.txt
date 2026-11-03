@@ -1,0 +1,58 @@
+The organizer is complete: a 5 × 4 baseplate (210 × 168 mm) and 19 bins filling all 20 cells, with parametric source, STEP and binary STL for every part, a README, measured checks and `assembly.json`. Every check passed on the final build. Nothing has been printed, so fit, label legibility and capacity are checked only in the model.
+
+**Layout:** each row is one thread size, with the smallest at the front. Left to right, each row has a nut-and-washer bin, then screws from shortest to longest.
+
+| Row | Bins |
+|---|---|
+| M2 (front) | NUT/WSHR · ×6/×8 · ×10/×12 · ×16/×20 · SORT tray (1×2, spans this row and the next) |
+| M2.5 | NUT/WSHR · ×6/×8 · ×10/×12 · ×16/×20 · (SORT) |
+| M3 | NUT/WSHR · ×6/×8 · ×10/×12 · M3×16 · M3×20 |
+| M4 (back) | NUT/WSHR · M4×8 · M4×10 · M4×12 · M4×16 |
+
+M4×6 and M4×20 are left out of the starter set. SORT is a tray for leftovers from a project until you put them away, and it's the first slot to give up when you add a size.
+
+**Bin types:** there are three, all the same height (28 mm body plus the stacking lip):
+- **Split:** two 19 mm troughs. The label has two lines: thread size at the back (`M3`), and what's in each compartment in front (`×6` `×8`, or `NUT` `WSHR`). Nuts are always on the left, with a hexagon icon; washers on the right, with a ring icon.
+- **Single:** one full-width compartment with a one-line label such as `M4×16`.
+- **Tray:** 1×2, labelled `SORT`.
+
+Where the parts are small enough, the floor is raised 6 mm so they sit closer to your fingertips. That applies to the M2, M2.5 and M3 nut/washer bins and M2 ×6–×12.
+
+**Handling:**
+- **Reading:** labels lie flat at the back of each bin and can be read from the front at roughly 15° or more above the bench.
+- **Picking one part:** each compartment has a curved scoop at the front and rounded floor edges. Slide a washer or short screw forward up the curve with a fingertip. Openings are at least 17.5 × 20 mm, and the floor is at most 26 mm below the rim.
+- **Lifting a bin:** hook a finger under the small ledge at the front edge of the label shelf, put your thumb inside the front wall, and lift straight up. Neighbouring bins have a 0.5 mm gap and don't move.
+- **Stacking:** every bin has the standard stacking lip. A stacked bin clears the lower bin's dividers and label by 0.65 mm, but it covers that label, so the everyday layer is one high.
+- **Extending:** a 5×1 extension baseplate is included for a new size row behind the main plate. The README shows the two lines of code to add that row's bins.
+
+**Measured results:**
+- **Fit:** a bin sits in the baseplate with no overlap and 0.25 mm clearance.
+- **Labels:** capital letters measure 6.3 mm. That meets the Fillaprint minimum for both common 0.4 mm-nozzle text line widths (5.88 mm at 0.42 mm, 6.30 mm at 0.45 mm). The text is a flush 0.8 mm inlay with a separate second-colour STL per bin. On a single-colour printer it comes out as engraved text, which is much less clear.
+- **Capacity:** the fullest compartment is M3×12 at 73% (60% with a more typical packing assumption). These figures rest on my guessed packing density for loose screws, nuts and washers, not on measurements.
+- **Spill:** with that estimate, contents would reach a divider top at about 37° of sideways tilt. The full M4 single bins would reach the rim at about 23°, so carry those level.
+- **Files:** all 40 STLs are watertight, and their volumes are within 0.11% of the CAD.
+
+**Needs a physical test:**
+- One bin in a 2×2 piece of baseplate. Elephant's foot on the plate's first layers is the usual cause of binding.
+- Label legibility at your slicer's line width, and whether the label colour covers in 0.8 mm.
+- A slight droop is likely on the 1.5 mm unsupported ledge under the label.
+- Pour 20 M3×12 into their compartment to check the capacity estimate.
+- Finger access for washers in the 19 mm troughs.
+- Stacking: the lip and feet have nominally zero clearance, as in the Gridfinity spec, so it relies on print tolerance.
+- The plate needs a bed at least 220 mm wide. It can be split into 3×4 and 2×4 pieces, but there are no connectors between pieces.
+
+There are no magnet holes, the bin feet are solid in the CAD so the plastic saving depends on slicer infill, and the STEP files total about 109 MB because of the text outlines.
+
+To rebuild, run `src/fastener_grid.py` (about 8 minutes), then `src/check_fit.py` and `src/check_mesh.py`.
+
+Files are in ./cadcomp-20261103-opus-gridfinity:
+- README.md
+- assembly.json
+- src/fastener_grid.py
+- src/check_fit.py
+- src/check_mesh.py
+- out/stl/
+- out/step/
+- out/checks_fit.json
+- out/checks_mesh.json
+- out/build_report.json

@@ -1,0 +1,140 @@
+{
+  "reviewed_layouts": 19,
+  "rows": [
+    {
+      "run": "sol-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "astra-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "terra-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "opus-dimm",
+      "layout_instances": 3,
+      "expected_printed_instances": 3,
+      "assembled_parts": 3,
+      "minimum_z_mm": -0.0010000000474903459
+    },
+    {
+      "run": "terra-gridfinity",
+      "layout_instances": 21,
+      "expected_printed_instances": 21,
+      "assembled_parts": 21,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "fable-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "astra-gridfinity",
+      "layout_instances": 21,
+      "expected_printed_instances": 21,
+      "assembled_parts": 21,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "sonnet-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "sol-gridfinity",
+      "layout_instances": 21,
+      "expected_printed_instances": 21,
+      "assembled_parts": 21,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "sonnet-gridfinity",
+      "layout_instances": 22,
+      "expected_printed_instances": 22,
+      "assembled_parts": 21,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "opus-gridfinity",
+      "layout_instances": 40,
+      "expected_printed_instances": 40,
+      "assembled_parts": 39,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "fable-gridfinity",
+      "layout_instances": 12,
+      "expected_printed_instances": 12,
+      "assembled_parts": 11,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "deepseek-gridfinity",
+      "layout_instances": 13,
+      "expected_printed_instances": 13,
+      "assembled_parts": 13,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "deepseek-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "qwen-gridfinity",
+      "layout_instances": 24,
+      "expected_printed_instances": 24,
+      "assembled_parts": 21,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "oss120-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 0,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "oss120-gridfinity",
+      "layout_instances": 7,
+      "expected_printed_instances": 7,
+      "assembled_parts": 0,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "gemini-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "mistral-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    }
+  ],
+  "issues": [],
+  "scope": "Source mesh identity, part counts, unique exported filenames, print-layout floor placement. Submitted orientation choices were reviewed separately; this audit does not certify printability."
+}

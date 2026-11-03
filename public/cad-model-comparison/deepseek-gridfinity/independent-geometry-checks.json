@@ -1,0 +1,63 @@
+{
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on final exported STEP geometry, at submitted assembly placements.",
+  "base_bounds_mm": [
+    210.00000020000036,
+    168.00000020000036,
+    5.000000200001226
+  ],
+  "seated_base_intersections_mm3": {
+    "nut-m2": 0,
+    "nut-m25": 0,
+    "nut-m3": 0,
+    "nut-m4": 0,
+    "wsh-m2": 0,
+    "wsh-m25": 0,
+    "wsh-m3": 0,
+    "wsh-m4": 0,
+    "scr-m2": 0,
+    "scr-m25": 0,
+    "scr-m3": 0,
+    "scr-m4": 0
+  },
+  "vertical_lift_1mm_intersections_mm3": {
+    "nut-m2": 0,
+    "nut-m25": 0,
+    "nut-m3": 0,
+    "nut-m4": 0,
+    "wsh-m2": 0,
+    "wsh-m25": 0,
+    "wsh-m3": 0,
+    "wsh-m4": 0,
+    "scr-m2": 0,
+    "scr-m25": 0,
+    "scr-m3": 0,
+    "scr-m4": 0
+  },
+  "neighbor_intersections_mm3": {},
+  "stack_intersections_mm3": {
+    "small_on_small z=14": 136.73986,
+    "small_on_small z=17.7": 0,
+    "small_on_small z=21": 0,
+    "small_on_small z=24.7": 0,
+    "small_on_wide z=14": 758.92672,
+    "small_on_wide z=17.7": 177.28053,
+    "small_on_wide z=21": 102.58827,
+    "small_on_wide z=24.7": 0,
+    "wide_on_wide z=14": 1482.75692,
+    "wide_on_wide z=17.7": 342.94957,
+    "wide_on_wide z=21": 205.17656,
+    "wide_on_wide z=24.7": 0
+  },
+  "limitations": [
+    "Numerical contact checks do not establish printed fit, strength, label readability, capacity or physical usability.",
+    "Bounding-box separated neighbor pairs have zero volumetric overlap; no minimum clearance or real-world grip was measured."
+  ],
+  "additional_stack_checks_mm3": {
+    "nut_on_nut_z17.0": 0,
+    "nut_on_nut_z16.5": 19.39618,
+    "nut_on_nut_z17.6": 0,
+    "nut_on_screw_z24.6": 0,
+    "screw_on_screw_z24.6": 0
+  },
+  "visual_observations": "In the submitted assembled render, the front-facing labels of rows behind the front row are obstructed by the preceding bins; they cannot all be read as claimed while seated."
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Fable Gridfinity",
+  "subtitle": "Baseplate",
+  "caption": "Baseplate \u00b7 bins removed",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 21864,
+      "triangles": 43724,
+      "edges": 13464,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

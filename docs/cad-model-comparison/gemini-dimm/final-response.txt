@@ -1,0 +1,40 @@
+I have designed, modeled, and verified a two-part reusable mailer (`mailer_base` and `mailer_lid`) for two desktop DDR4 UDIMM sticks in individual static-shielding bags with light paper or foam damping.
+
+### 1. Supported Module Envelope & Real-World Compatibility
+- **Assembled Exterior Size:** `160.0 × 38.4 × 56.0 mm`
+- **Supported Module Range (per bay, 2 bays total):**
+  - **Length:** `133.0 – 140.0 mm` (`136.4 mm` lower PCB locating span; `143.6 mm` upper bay length plus a `6.6 mm` wide full-depth central bag-tail channel for folded `2" × 6"` or `3" × 6"` ESD bag ends).
+  - **Height:** `30.0 – 43.0 mm` (`43.5 mm` clearance between end saddles and lid end ceiling pads; `46.0 mm` in the `129.0 mm` central ceiling cushion vault).
+  - **Thickness:** `3.5 – 8.5 mm` (`12.6 mm` bay width per stick, leaving `4.1 – 9.1 mm` for the ESD bag and a slip of paper or `2–3 mm` foam).
+- **What Fits (0.000 $\text{mm}^3$ CAD interference with ESD bag allowance):**
+  - Bare JEDEC DDR4 UDIMMs (`133.35 × 31.25 × 3.9 mm`, e.g., Crucial / Kingston ValueRAM / Samsung)
+  - Corsair Vengeance LPX DDR4 (`135.0 × 34.0 × 7.0 mm`)
+  - Kingston FURY Beast DDR4 Non-RGB (`133.35 × 34.1 × 7.2 mm`)
+  - TeamGroup T-Force Vulcan Z DDR4 (`140.0 × 32.0 × 7.0 mm`, winged heatspreader ends)
+  - Crucial Ballistix DDR4 (`133.35 × 39.2 × 7.0 mm`)
+  - G.Skill Ripjaws V DDR4 (`133.35 × 42.0 × 8.0 mm`)
+  - Kingston FURY Beast RGB / Renegade DDR4 (`133.35 × 43.0 × 8.2 mm`, upper limit)
+- **Intentionally Excluded (Oversized Exotic RGB Modules):**
+  - G.Skill Trident Z Royal / Neo (`44.5 mm` tall, `9.0 mm` thick), Corsair Vengeance RGB Pro (`51.0 mm` tall), and Corsair Dominator Platinum RGB (`56.0 mm` tall).
+
+### 2. Pin Protection, Closure, and Retrieval
+- **Zero Gold-Contact Pressure:** Each bay in `mailer_base` supports the module only on raised non-contact end saddles (`Z = 7.0 mm` across `|X| in [64.5, 71.8] mm`, outside the `124.35 mm` JEDEC gold-finger array), while the central `129.0 mm` span (`127.0 mm` floor) drops `4.0 mm` down to `Z = 3.0 mm` in an unobstructed relief trench. Loading the bagged sticks contacts-down suspends the gold contacts over `4.0 mm` of air while placing the solid top spine of the heatspreaders upward against any paper/foam pad in the lid's `2.5 mm` recessed ceiling vault (`Z = 53.0 mm`).
+- **Lid Retention & Reopening:** `mailer_lid` telescopes `17.8 mm` down over the stepped base neck (`0.25 mm` per-side XY clearance, `0.20 mm` parting gap) and locks onto two end-mounted U-slotted cantilever snap-latches (`1.80 mm` thick × `13.60 mm` wide, `0.85 mm` catch overlap per end / `1.70 mm` total, isolated from the RAM bays by a solid `2.20 mm` inner wall and `1.75 mm` deflection gap). Pressing the two textured end thumb buttons inward (`~1.0 mm` travel, `~5.1 N` force in PETG, `0.64%` button bending strain) releases the lid cleanly.
+- **Stick Removal:** When the lid is lifted off, the end cradle walls stay `27.0 mm` above the saddles (`Z = 34.0 mm`) to keep both sticks upright, while a `54.0 mm` wide (`84.0 mm` top opening) central finger-pinch cutout drops the side walls and center divider to `12.0 mm` above the saddles (`Z = 19.0 mm`), leaving `19.25 – 31.0 mm` of each stick exposed in the center to pinch and lift straight out.
+
+### 3. FillaPrint Labels (`assets/fillaprint/Fillaprint-Regular.ttf`)
+All labels are debossed `0.60 mm` deep on horizontal XY exterior faces at or above the font's two-bead minimum printable size (`em = 20w`, `cap = 14w`, `stroke = 2w`; `font_size >= 9.0 mm` gives `cap >= 6.30 mm` and `stroke >= 0.90 mm` for `w = 0.45 mm`):
+- **Lid Top (`mailer_lid`):** `2x DDR4 UDIMM` (`font_size = 11.0 mm`, `7.70 mm` cap, `1.10 mm` stroke) and `MAX 140x43x8.5MM` (`font_size = 9.0 mm`, `6.30 mm` cap, `0.90 mm` stroke).
+- **Base Bottom (`mailer_base`):** `BAG + FOAM / PINS SAFE` (`font_size = 9.5 mm`, `6.65 mm` cap, `0.95 mm` stroke) and `PRESS ENDS TO OPEN` (`font_size = 9.0 mm`, `6.30 mm` cap, `0.90 mm` stroke).
+
+### 4. Limitations Requiring Physical Test
+1. **Latch Friction & Printer Tolerance:** Layer-line stepping on the `45°` catch ramps will affect initial snap/release feel; a test print in the target filament (PETG recommended) is needed to confirm whether `xy_clearance` (`0.25 mm`) or catch overlap (`0.85 mm`) needs a `±0.10 mm` adjustment.
+2. **Bag & Cushion Packing:** Different `2" × 6"` / `3" × 6"` ESD bags and foam/paper wraps vary in folded stiffness and seam width; physical shake testing inside an outer cardboard box should confirm damping snugness across your specific modules.
+
+### 5. Delivered Files
+- `ram_mailer.py` — Parametric `build123d` CAD script.
+- `mailer_base.step`, `mailer_lid.step`, `mailer_assembly.step` — STEP models.
+- `mailer_base.stl`, `mailer_lid.stl` — Verified watertight binary STL meshes.
+- `assembly.json` — Part file references and assembled transforms in millimeters.
+- `verify_design.py`, `checks.json` — Automated verification script and measured check results.
+- `README.md` — Design documentation and printing guide.

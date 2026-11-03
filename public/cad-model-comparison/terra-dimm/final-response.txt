@@ -1,0 +1,11 @@
+The two-part mailer is complete. It has separate bays, a lowered divider for lifting out the bags, and two flexible snap tongues that release by pulling outward.
+
+- [README and loading instructions](README.md)
+- [Parametric CAD source](mailer.py)
+- [Tray STEP](output/tray.step) · [Tray binary STL](output/tray.stl)
+- [Lid STEP](output/lid.step) · [Lid binary STL](output/lid.stl)
+- [Assembly transforms](output/assembly.json) · [Measured checks](output/measured_checks.txt)
+
+The target is a **bare DIMM up to 140 × 39 × 9 mm**, leaving room in each bay for a thin shielding bag and modest padding. The README identifies two mainstream examples, but their dimensions could not be independently verified because the specified research proxy was unreachable; measure the modules and packed bags before relying on the fit.
+
+Both exported parts are valid single solids with watertight meshes, and the closed CAD assembly has no solid interference. The supplied FillaPrint font is used for the raised labels. **Snap retention, reopening, print tolerances, label readability, packed fit, and shipping protection still need physical testing.**

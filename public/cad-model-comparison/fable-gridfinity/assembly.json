@@ -1,0 +1,438 @@
+{
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/baseplate_5x4.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/baseplate_5x4.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          84.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "name": "bin_M2_short",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M2_short.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M2_short.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M2_nut_washer",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M2_nut_washer.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M2_nut_washer.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          126.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M2.5_short",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M2.5_short.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M2.5_short.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M2.5_long",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M2.5_long.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M2.5_long.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          126.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M3_short",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M3_short.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M3_short.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M3_long",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M3_long.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M3_long.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          126.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M4_long",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M4_long.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M4_long.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M4_nut_washer",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M4_nut_washer.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M4_nut_washer.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          126.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M2.5_nut_washer",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M2.5_nut_washer.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M2.5_nut_washer.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "bin_M3_nut_washer",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/bin_M3_nut_washer.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/bin_M3_nut_washer.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          126.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "baseplate_ext_1x4",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/stl/baseplate_ext_1x4.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/fable-gridfinity/snapshot/export/step/baseplate_ext_1x4.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          231.0
+        ],
+        [
+          0,
+          1,
+          0,
+          84.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "layout_only": true
+    }
+  ],
+  "provenance": "Private pre-review snapshot. Verify original files still match source-hashes.json before publication. Label inlays remain registered to bin bodies; optional extension shown in layout only."
+}

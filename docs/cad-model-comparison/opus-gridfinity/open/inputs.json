@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/render-staging/opus-gridfinity/baseplate_5x4.stl",
+    "sha256": "5ecfde973259ab7704e1823c5d1f6215392f50e3b84e51138096cc42e1afdf04",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 11066,
+    "triangles": 22128
+  }
+]

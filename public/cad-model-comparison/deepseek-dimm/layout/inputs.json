@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-dimm/body.stl",
+    "sha256": "68e8bc5f407f72225ba16f69e4bb79f8a9ec1c4eed29be52acbad087c49b870e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.800000011920929
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5450,
+    "triangles": 10896
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/deepseek-dimm/lid.stl",
+    "sha256": "54555c60f480f3d044bcb2bd820c02bc862af4281c75090caf95737620a9bce6",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.6000000238418579
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        120.4000015258789
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1614,
+    "triangles": 3224
+  }
+]

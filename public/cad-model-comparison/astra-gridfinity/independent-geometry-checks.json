@@ -1,0 +1,24 @@
+{
+  "assembled_base_bin_collision_mm3": 0,
+  "base_withdrawal_collision_mm3": {
+    "0": 0,
+    "0.2": 0,
+    "1": 0,
+    "3": 0,
+    "5": 0
+  },
+  "adjacent_row_collision_mm3": 0,
+  "adjacent_row_min_distance_mm": 0.5,
+  "stack_collision_mm3": 0,
+  "base_bounds_mm": [
+    210.0,
+    168.0,
+    6.400000100000002
+  ],
+  "bin_bounds_mm": [
+    41.5000002,
+    41.5000002,
+    38.8000002
+  ],
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP geometry."
+}

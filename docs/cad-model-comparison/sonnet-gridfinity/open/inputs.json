@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/baseplate_5x4.stl",
+    "sha256": "99db79a9ef7836bb7a7cb7de4c08a9c708c0f2c14184190ce4825ce56746c7ee",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21608,
+    "triangles": 43212
+  }
+]

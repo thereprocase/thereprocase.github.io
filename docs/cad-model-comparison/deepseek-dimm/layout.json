@@ -1,0 +1,80 @@
+{
+  "title": "Deepseek Dimm",
+  "subtitle": "layout view",
+  "caption": "All parts in submitted print orientations \u00b7 illustrative spacing, unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "mesh": "body.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.800000011920929
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "mesh": "lid.stl",
+      "transform": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          -0.6000000238418579
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          120.4000015258789
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

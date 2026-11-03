@@ -1,0 +1,7 @@
+[Download the complete CAD package](gridfinity_starter.zip): parametric source, 21 STEP files, 21 binary STLs, assembly transforms, font and measured checks.
+
+The 210 × 168 mm starter holds 12 screw assortments plus eight nut/washer compartments, with permanent Fillaprint labels, scoops and stacking interfaces.
+
+Checks passed for modeled fit, withdrawal, stacking and ordered capacity. Physical fit, loose-fill capacity, finger access and grip strength still need testing.
+
+See [README](README.md) for layout and handling; [measured checks](CHECKS.md) for dimensions and limitations.

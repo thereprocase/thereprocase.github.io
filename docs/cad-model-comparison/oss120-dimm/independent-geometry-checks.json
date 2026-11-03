@@ -1,0 +1,67 @@
+{
+  "verification_method": "Independent inspection of delivered STEP bounding boxes and solid components using build123d/OpenCascade; source geometry review.",
+  "parts": {
+    "base": {
+      "size_mm": [
+        140.35,
+        81.0,
+        14.75
+      ],
+      "solid_count": 2,
+      "solids": [
+        {
+          "volume_mm3": 90608.7,
+          "bounds_min": [
+            -70.175,
+            -40.5,
+            -5.0
+          ],
+          "bounds_max": [
+            70.175,
+            40.5,
+            5.0
+          ]
+        },
+        {
+          "volume_mm3": 5684.175,
+          "bounds_min": [
+            -70.175,
+            -40.5,
+            9.25
+          ],
+          "bounds_max": [
+            70.175,
+            40.5,
+            9.75
+          ]
+        }
+      ]
+    },
+    "lid": {
+      "size_mm": [
+        140.35,
+        81.0,
+        10.0
+      ],
+      "solid_count": 1,
+      "solids": [
+        {
+          "volume_mm3": 76207.95,
+          "bounds_min": [
+            -70.175,
+            -40.5,
+            -5.0
+          ],
+          "bounds_max": [
+            70.175,
+            40.5,
+            5.0
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "No physical fit or print tests; no assembly.json was delivered."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP geometry. Final STL/assembly bytes and STEP DATA sections rechecked against the completed native submission.",
+  "base_bounds_mm": [
+    210.0,
+    168.0,
+    6.0000001
+  ],
+  "bin_bounds_mm": [
+    41.5000002,
+    83.5000001,
+    32.100000200000004
+  ],
+  "base_seating_removal_collision_mm3": {
+    "0": 0,
+    "0.2": 0,
+    "1": 0,
+    "3": 0,
+    "5": 0
+  },
+  "adjacent_column_collision_mm3": 0,
+  "adjacent_column_min_distance_mm": 0.5,
+  "stacking_collision_mm3": {
+    "-0.5": 253.60946727355392,
+    "0": 0,
+    "0.2": 0
+  },
+  "source_snapshot_manifest": "source-hashes.json",
+  "label_visibility": {
+    "method": "First-hit rays from front at stated elevation to nominal label-face/line centers. Positive first_surface_lead_mm >2 indicates another surface in front of the label, beyond engraving tolerance. Targets derived from submitted label face centers and 9 mm line pitch.",
+    "bin_M2_short": {
+      "first_label_center": {
+        "target_mm": [
+          0.0,
+          -37.474,
+          23.924
+        ],
+        "first_surface_lead_mm": {
+          "30": 4.937,
+          "45": 6.047,
+          "50": 6.652,
+          "60": 8.552,
+          "75": -0.306,
+          "85": -0.238,
+          "90": -0.216
+        }
+      }
+    },
+    "bin_M4_nut_washer": {
+      "upper_size_line": {
+        "target_mm": [
+          0.0,
+          -31.110019484660537,
+          23.923980515339466
+        ],
+        "first_surface_lead_mm": {
+          "30": 12.286,
+          "45": -0.6,
+          "50": -0.602,
+          "60": -0.621,
+          "75": -0.693,
+          "85": -0.783,
+          "90": -0.848
+        }
+      },
+      "lower_WASHER_line": {
+        "target_mm": [
+          0.0,
+          -37.47398051533946,
+          17.560019484660536
+        ],
+        "first_surface_lead_mm": {
+          "30": 4.938,
+          "45": 6.047,
+          "50": 6.652,
+          "60": 8.552,
+          "75": 14.94,
+          "85": 0.0,
+          "90": 0.0
+        }
+      }
+    }
+  },
+  "final_files_verified_at": "2026-11-03T16:10:03.944949+00:00",
+  "step_equivalence": {
+    "export/step/baseplate_5x4.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M2_short.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M2_nut_washer.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M2.5_short.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M2.5_long.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M3_short.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M3_long.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M4_long.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M4_nut_washer.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M2.5_nut_washer.step": "STEP DATA section identical; header differs",
+    "export/step/bin_M3_nut_washer.step": "STEP DATA section identical; header differs",
+    "export/step/baseplate_ext_1x4.step": "STEP DATA section identical; header differs"
+  }
+}

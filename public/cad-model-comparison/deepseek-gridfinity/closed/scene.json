@@ -1,0 +1,155 @@
+{
+  "title": "Deepseek Gridfinity",
+  "subtitle": "Assembled starter layout",
+  "caption": "Assembled starter layout \u00b7 actual submitted transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 7844,
+      "triangles": 15684,
+      "edges": 5612,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 3928,
+      "triangles": 7848,
+      "edges": 2078,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 4220,
+      "triangles": 8432,
+      "edges": 2375,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 3918,
+      "triangles": 7828,
+      "edges": 2067,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 3846,
+      "triangles": 7684,
+      "edges": 1994,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 4206,
+      "triangles": 8404,
+      "edges": 2356,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 4498,
+      "triangles": 8988,
+      "edges": 2653,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 4196,
+      "triangles": 8384,
+      "edges": 2345,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 4124,
+      "triangles": 8240,
+      "edges": 2272,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 4632,
+      "triangles": 9260,
+      "edges": 2652,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 4924,
+      "triangles": 9844,
+      "edges": 2949,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 4622,
+      "triangles": 9240,
+      "edges": 2641,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 4551,
+      "triangles": 9098,
+      "edges": 2569,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

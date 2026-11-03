@@ -1,0 +1,7 @@
+Completed the 5 × 4 starter system: twelve screw bins and eight nut and washer bins, each with a raised FillaPrint label and a rounded floor.
+
+[Download the complete CAD package](sandbox:./gridfinity-starter.zip) · [README and layout](./README.md) · [Measured checks](./output/checks.txt) · [Assembly transforms](./output/assembly.json)
+
+The package includes the parametric source, STEP and binary STL for the base and all 20 labeled bins. All 21 STL meshes passed watertightness checks; nominal CAD checks found no interference for a seated bin or a stacked pair.
+
+Physical testing is still needed for base compatibility, stacking, label legibility, fingertip access and capacity. In particular, the nominal clearance between a raised label and the neighboring bin is only **0.10 mm**. The specified research proxy was unreachable, so the Gridfinity dimensions could not be independently checked against a current specification.

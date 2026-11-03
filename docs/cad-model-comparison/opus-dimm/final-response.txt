@@ -1,0 +1,53 @@
+The mailer is finished: a two-part printed case (tray and lid) with no hardware. Closed, it measures 153.7 × 110 × 19.2 mm. In the CAD checks the lid doesn't collide with the tray, every supported module fits, and the gold contacts never touch plastic. Nothing has been printed, so the latch feel and the fits still need a real test.
+
+**How the sticks sit.** Each bagged stick lies flat on four floor rails. The heatspreader's top edge goes toward the outer wall and the gold edge toward the centre. A low 1.6 mm stop catches the heatspreader's lower edge if the stick slides inward. The thinner circuit board passes over the stop, so the contact area stays in the air. I checked both ends of the stick's travel for every supported module: the bare gold area stays at least 1.37 mm away from anything. The ends of the pocket only touch the board's short edges, which have no contacts.
+
+**How the lid stays on.**
+- **Hinge end:** two tongues on the lid fit into two windows in the tray's end wall.
+- **Latch end:** a slot in the lid leaves a long, thin strip that acts as a spring. A hook on it clicks under a small ledge on the tray wall. The catch face is square, so foam pushing up on the lid tightens it rather than loosening it.
+- **Closing:** tuck the tongues in with the lid tilted (anything up to 16° clears), then press the other end down until it clicks.
+- **Opening:** lift the pull flange at the latch end. That twists the hook free. Raise that end, slide the lid about 3 mm toward the latch to free the tongues, and lift it off.
+
+**Getting the sticks out.** Each long wall has a 28 mm finger notch. Under the notch the outer rail is cut away, leaving a 2.4 mm gap under the stick's edge, so you can get a fingertip under it and tip the stick up.
+
+**Supported modules:** up to 137 mm long, 45 mm tall and 8.5 mm thick, plus the bag.
+- **Fits:** Vengeance LPX, FURY Beast, T-Force Vulcan Z, Ballistix, Ripjaws V, FURY Beast RGB, Trident Z / Z RGB.
+- **Left out on purpose:** Vengeance RGB Pro (51 mm) and Dominator Platinum (55 mm). Covering them would make the case about 20 mm wider.
+- **Unverified heights:** the web proxy blocked search engines and the makers' spec tables. The heights I used are well-known published figures and the thicknesses are estimates. Please measure your own sticks.
+- **Not supported:** bare sticks without heatspreaders. Their board would rest on the stop, and the check flags this.
+
+**Packing:** lay a 5–6 mm soft foam strip over the heatspreader area of each stick, not over the gold edge. There is 3.7–5.6 mm of space above the sticks. Short sticks (about 34 mm) can shift up to about 13 mm across the pocket. That is safe for the contacts, but to stop rattle, push them in to the stop and put folded paper at the outer wall.
+
+**Labels:** Fillaprint, recessed 0.6 mm. All are 6.0 mm tall in capitals, above the font's 5.88 mm minimum; the lid title is 9.0 mm. I measured each one's position, and none hits a rail or the latch slot. For two-colour labels, a separate text body for the lid is included.
+
+**Checks I ran:**
+- Clearance checks on the exact CAD for the lid, the hinge motion and each module size.
+- Watertightness, overhangs and assembled collisions on the exported STL files.
+- The steepest unsupported spots are small: 1.2–2 mm ledges and 24 mm bridges.
+
+**Still needs a physical test:**
+- **Latch feel.** The spring is modelled at only about 1.6 N in PETG. If it feels loose, change `beam_w` to 2.8 in the parameters.
+- **Tongue fit** in the windows: 0.3 mm above the tongue, 0.25 mm clearance at the end walls.
+- **Your actual modules.** The heatspreader needs to stop at least about 4.5 mm above the contact edge.
+- **Foam firmness.** Stiff foam pushes much harder than the soft foam assumed.
+- **Drops** inside the outer carton.
+
+Everything is in `./cadcomp-20261103-opus-dimm`. `src/dimm_mailer.py` regenerates the parts, and `assembly.json` gives each part's transform in mm. The lid file is flipped for printing top-down. Printing notes are in the README.
+
+Files are in `./cadcomp-20261103-opus-dimm`:
+- README.md
+- assembly.json
+- src/dimm_mailer.py
+- src/check_fit.py
+- src/check_mesh.py
+- out/tray.step
+- out/tray.stl
+- out/lid.step
+- out/lid.stl
+- out/lid_label_inlay.step
+- out/lid_label_inlay.stl
+- out/ref_module_envelopes.step
+- out/ref_module_envelopes.stl
+- checks/fit_checks.json
+- checks/mesh_checks.json
+- checks/label_checks.txt

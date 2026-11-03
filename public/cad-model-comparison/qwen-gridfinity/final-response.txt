@@ -1,0 +1,29 @@
+
+
+Everything is complete and verified. Here's the final handover.
+
+## Handover
+
+**Delivered** (all in the run directory):
+- `src/gridfinity_fasteners.py` — the parametric source (build123d), single source of truth
+- `src/validate_meshes.py` — trimesh sanity checks
+- `out/` — **24 STEP + 24 binary STL** (base, 20 labelled bins, 3 blank templates), `assembly.json` (mm transforms), `checks.txt`
+- `README.md` — design, interface, build steps, handling, verification, limitations
+
+**What it is:** a 42 mm Gridfinity organizer — one 5×4 base (210×168×6.25) with a 4.75 mm funnel pocket per cell, plus 20 finger-accessible bins (39.1×39.1×16 open cavity). Starter set: 13 screw sizes, 4 nut sizes, 3 washer sizes — a useful subset, not every thread×length combo; each bin holds ~20 screws or ~30 nuts/washers.
+
+**Verified function (measured, not just "a solid exists"):**
+- Interface is the standard 42 mm module with **0.25 mm radial clearance** at every foot section; a seated bin overlaps the base by **0.0000 mm³** — it seats, resists sideways knock, and lifts straight out (this is the "lift a bin without spilling its neighbours" requirement).
+- **All 24 meshes watertight**; base footprint exactly 210×168×6.25; bins 41.5×41.5 footprint.
+- Labels are raised FillaPrint on the front face, **capital height 6.0/5.88 mm (≥ the 5.88 mm font minimum)**, thread size + length / `NUT` / `WAS`. Confirmed as a **single bonded solid** protruding **0.4 mm** (kept under the 0.5 mm module gap so it never hits the row in front).
+- `assembly.json`: base at origin, each bin centred in its cell (x=col·42+21, y=row·42+21, z=1.5, no rotation); all 21 referenced files exist.
+
+**Handling:** seat each bin in its pocket; the open cavity reaches straight in for a single washer/short screw; take one bin (or the whole base) off the tray to a project; read sizes off the front labels without picking up bins.
+
+**Unresolved limitations (stated plainly):**
+1. **Bins don't stack on one another.** The full-cell foot flares to the module width (41.5 mm) at its top — wider than the 39.1 mm cavity — so a plain cavity can't nest a second bin (measured 14.17 mm³ interference). Real Gridfinity bins use a contoured top lip for this; it isn't modelled here, so bins are single-level and the **base is the extension unit** (add more 42 mm patches to grow it).
+2. **Back-row labels read at an angle** (all labels face front; rows 2–4 are 42 mm back, readable looking down at the tray, not straight-on).
+3. **0.4 mm label relief** — readable and permanent, but shallow (constrained by the inter-bin gap).
+4. **Not physically fit-tested** — these are CAD checks. Seat feel, any print swelling against the 0.25 mm clearance, and 0.4 mm relief legibility still need a physical test on a printer.
+
+To extend a size: add the entry to `ASSORTMENT` in the source and re-run; or use a blank `template_*` bin and re-label.

@@ -1,0 +1,845 @@
+{
+  "verification_method": "Independent inspection of delivered STEP bounding boxes and solid components using build123d/OpenCascade; source geometry review.",
+  "parts": {
+    "base_plate": {
+      "size_mm": [
+        210.0,
+        168.0,
+        4.0
+      ],
+      "solid_count": 1,
+      "solids": [
+        {
+          "volume_mm3": 141120.0,
+          "bounds_min": [
+            -105.0,
+            -84.0,
+            -2.0
+          ],
+          "bounds_max": [
+            105.0,
+            84.0,
+            2.0
+          ]
+        }
+      ]
+    },
+    "bin_1_M2_screws": {
+      "size_mm": [
+        57.92,
+        44.8,
+        43.8
+      ],
+      "solid_count": 9,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 10.102,
+          "bounds_min": [
+            -15.92,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -11.92,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.017,
+          "bounds_min": [
+            -11.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -8.32,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            -6.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -3.32,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.788,
+          "bounds_min": [
+            -2.52,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            0.28,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.165,
+          "bounds_min": [
+            1.088,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            3.888,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            4.688,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            7.488,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.417,
+          "bounds_min": [
+            8.312,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            12.312,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            13.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            15.92,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    },
+    "bin_2_M2.5_screws": {
+      "size_mm": [
+        60.72,
+        44.8,
+        43.8
+      ],
+      "solid_count": 11,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 10.102,
+          "bounds_min": [
+            -18.72,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -14.72,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.017,
+          "bounds_min": [
+            -13.92,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -11.12,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 0.903,
+          "bounds_min": [
+            -10.32,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -9.12,
+            -1.6,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.12,
+          "bounds_min": [
+            -8.32,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -5.52,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            -3.32,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -0.52,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.788,
+          "bounds_min": [
+            0.28,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            3.08,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.165,
+          "bounds_min": [
+            3.888,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            6.688,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            7.488,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            10.288,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.417,
+          "bounds_min": [
+            11.112,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            15.112,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            15.92,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            18.72,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    },
+    "bin_3_M3_screws": {
+      "size_mm": [
+        57.92,
+        44.8,
+        43.8
+      ],
+      "solid_count": 9,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 10.102,
+          "bounds_min": [
+            -15.92,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -11.92,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.78,
+          "bounds_min": [
+            -11.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -8.32,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            -6.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -3.32,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.788,
+          "bounds_min": [
+            -2.52,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            0.28,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.165,
+          "bounds_min": [
+            1.088,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            3.888,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            4.688,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            7.488,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.417,
+          "bounds_min": [
+            8.312,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            12.312,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            13.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            15.92,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    },
+    "bin_4_M4_screws": {
+      "size_mm": [
+        57.92,
+        44.8,
+        43.8
+      ],
+      "solid_count": 9,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 10.102,
+          "bounds_min": [
+            -15.92,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -11.92,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.248,
+          "bounds_min": [
+            -11.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -8.32,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            -6.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -3.32,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.788,
+          "bounds_min": [
+            -2.52,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            0.28,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.165,
+          "bounds_min": [
+            1.088,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            3.888,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            4.688,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            7.488,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.417,
+          "bounds_min": [
+            8.312,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            12.312,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            13.12,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            15.92,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    },
+    "bin_5_Hex_nuts": {
+      "size_mm": [
+        55.044,
+        44.8,
+        43.8
+      ],
+      "solid_count": 8,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 7.88,
+          "bounds_min": [
+            -13.044,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -10.244,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            -9.444,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -6.644,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.425,
+          "bounds_min": [
+            -5.844,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -2.644,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.74,
+          "bounds_min": [
+            -0.444,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            2.356,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.754,
+          "bounds_min": [
+            3.236,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            6.036,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.914,
+          "bounds_min": [
+            6.844,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            9.444,
+            2.4,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            10.244,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            13.044,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    },
+    "bin_6_Flat_washers": {
+      "size_mm": [
+        61.956,
+        44.8,
+        43.8
+      ],
+      "solid_count": 12,
+      "solids": [
+        {
+          "volume_mm3": 19216.0,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            42.0,
+            42.0,
+            42.0
+          ]
+        },
+        {
+          "volume_mm3": 5.583,
+          "bounds_min": [
+            -19.956,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -17.356,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 3.915,
+          "bounds_min": [
+            -16.532,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -14.932,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.515,
+          "bounds_min": [
+            -14.132,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -11.332,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.914,
+          "bounds_min": [
+            -10.532,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -7.932,
+            2.4,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 7.417,
+          "bounds_min": [
+            -5.732,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            -1.732,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.515,
+          "bounds_min": [
+            -0.924,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            1.876,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            2.684,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            5.484,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.761,
+          "bounds_min": [
+            6.292,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            9.092,
+            2.8,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 6.416,
+          "bounds_min": [
+            9.948,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            12.748,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 4.165,
+          "bounds_min": [
+            13.556,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            16.356,
+            1.2,
+            43.8
+          ]
+        },
+        {
+          "volume_mm3": 5.846,
+          "bounds_min": [
+            17.156,
+            -2.8,
+            43.0
+          ],
+          "bounds_max": [
+            19.956,
+            1.2,
+            43.8
+          ]
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "No physical fit or print tests; no assembly.json was delivered."
+  ]
+}

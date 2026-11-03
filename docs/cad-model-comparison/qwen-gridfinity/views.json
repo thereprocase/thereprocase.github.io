@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "qwen-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "qwen-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "qwen-gridfinity/open/"
+  }
+]

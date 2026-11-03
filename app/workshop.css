@@ -89,3 +89,17 @@
 @media(min-width:1800px){.gl-home .io-project-image img{height:360px}}
 @media(max-width:650px){.gl-home .io-project-image img{height:240px}}
 @media(max-width:650px){.io-az-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;padding:8px 14px 14px}.io-az-list a{font-size:14px}.io-az-list span{font-size:11px}}
+
+.io-cad-comparison{margin-bottom:24px}
+.io-cad-comparison-layout{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr)}
+.io-cad-comparison-copy{padding:clamp(22px,3vw,44px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.io-cad-comparison-copy h2{font-size:clamp(28px,3vw,46px);line-height:1.08;letter-spacing:-.035em;max-width:22ch}
+.io-cad-comparison-copy p:not(.gl-kicker){max-width:55ch;line-height:1.6}
+.io-cad-comparison-copy .io-cad-note{border-left:3px solid #b87900;background:#fff4dc;padding:10px 14px;font-size:14px}
+.io-cad-comparison-images{display:grid;grid-template-columns:1fr 1fr;min-width:0;border-left:1px solid var(--gl-rule)}
+.io-cad-comparison-images figure{min-width:0;background:#f3efe6;display:flex;flex-direction:column;justify-content:center}
+.io-cad-comparison-images figure+figure{border-left:1px solid var(--gl-rule)}
+.io-cad-comparison-images img{display:block;width:100%;height:auto}
+.io-cad-comparison-images figcaption{padding:10px 14px;border-top:1px solid var(--gl-rule);font:11px/1.5 var(--gl-mono)}
+@media(max-width:900px){.io-cad-comparison-layout{grid-template-columns:1fr}.io-cad-comparison-images{border-left:0;border-top:1px solid var(--gl-rule)}}
+@media(max-width:500px){.io-cad-comparison-images{grid-template-columns:1fr}.io-cad-comparison-images figure+figure{border-left:0;border-top:1px solid var(--gl-rule)}}

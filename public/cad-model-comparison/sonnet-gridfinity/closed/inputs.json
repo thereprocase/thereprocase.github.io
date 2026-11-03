@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/baseplate_5x4.stl",
+    "sha256": "99db79a9ef7836bb7a7cb7de4c08a9c708c0f2c14184190ce4825ce56746c7ee",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21608,
+    "triangles": 43212
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2_screw_6_8.stl",
+    "sha256": "8d88cf4118dd93e2e4a821c150ced83a467e6ddf03cfc5a48b6dfb32f53f7bca",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5276,
+    "triangles": 10604
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2_screw_10_12.stl",
+    "sha256": "c682d797601371697c6be3f0bd80a1917adf50e3b6f064a17da5fdfd3918684b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5694,
+    "triangles": 11448
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2_screw_16_20.stl",
+    "sha256": "0389385f76c1ce852a6d1490b104ea3c6261e4b29b69d3189ea5c805a7234ade",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5748,
+    "triangles": 11556
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2_nut.stl",
+    "sha256": "ce4231843931ed107876860dc8c2386d6f702e1f427153e93e36d75c1d399379",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3699,
+    "triangles": 7410
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2_washer.stl",
+    "sha256": "4e34deb125a22463898c05a6696a6574802cac1552650a810e32fa7e92648bc2",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4739,
+    "triangles": 9514
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2p5_screw_6_8.stl",
+    "sha256": "8500ae457e2b376d9c2b2afa4c7df29ca2410985458368cc6ff993b45d19c738",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5576,
+    "triangles": 11204
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2p5_screw_10_12.stl",
+    "sha256": "d85b2e52045dfe9c6a7111c7c9f77217de039985b61ce3e870e39ed7b6371d7b",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5994,
+    "triangles": 12048
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2p5_screw_16_20.stl",
+    "sha256": "6657ffafae52d2966b7bba663e67c996668b171bf1591d0b872aaa515be1f8dd",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6048,
+    "triangles": 12156
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2p5_nut.stl",
+    "sha256": "2bce6a10c90243077f0741f1d537b0374ceb6dc6bbda377ab8407fd46d681ad0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3991,
+    "triangles": 7994
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M2p5_washer.stl",
+    "sha256": "4f8d5f9f9a5b72889bef92cc7e903047c4b2b4bd51179561e9517d0167ccff5f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        -21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5031,
+    "triangles": 10098
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M3_screw_6_8.stl",
+    "sha256": "3ede34537d958982832b2afb261022e9cffb8a064f95f4b63d6c8c0cfa489305",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5266,
+    "triangles": 10584
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M3_screw_10_12.stl",
+    "sha256": "6bebc676e8968849c579674c48757f3c49a50719216703737af45c69aa01a336",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5684,
+    "triangles": 11428
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M3_screw_16_20.stl",
+    "sha256": "2f263266ea5ac496e143d1b01bc0a982b6472b8c7d3afd4dc9f188a3c77c4a5f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5738,
+    "triangles": 11536
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M3_nut.stl",
+    "sha256": "2fc4a69f388cfaf7638f758c34cd6273936b28d52b3938b706718054d836cbbe",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3689,
+    "triangles": 7390
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M3_washer.stl",
+    "sha256": "dbdcce86425dc3028adeb22314fd6aa2556c28afa96eaeb431d2154baf3ea9ad",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4729,
+    "triangles": 9494
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M4_screw_6_8.stl",
+    "sha256": "12a3c25cabcfc262444f19d1a2b05a0f9c368e21e552ecc3a47d8b0e1be612b0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5194,
+    "triangles": 10440
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M4_screw_10_12.stl",
+    "sha256": "f201dcda52aede2cbe4d8da064347ee2982c96fdfda580159b12bac1313a0aaa",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5612,
+    "triangles": 11284
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M4_screw_16_20.stl",
+    "sha256": "3bcf0ce0947092add1c9751f910b8b1a5df232c02291a2b59f96eeeea8c585dc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5666,
+    "triangles": 11392
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M4_nut.stl",
+    "sha256": "412389278a2f4d101c51ab33da2b58355c63fcd9c0c4da04d2d5ba1a0383f116",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        42.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3617,
+    "triangles": 7246
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/sonnet-gridfinity/bin_M4_washer.stl",
+    "sha256": "433e80f3f71808a698c2d9ac33d5ece822b1c3d85e0c2a30b6ce9ebd68a5bd55",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4657,
+    "triangles": 9350
+  }
+]

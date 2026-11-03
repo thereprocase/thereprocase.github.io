@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "deepseek-dimm/layout/"
+  },
+  {
+    "label": "Closed",
+    "url": "deepseek-dimm/closed/"
+  },
+  {
+    "label": "Open",
+    "url": "deepseek-dimm/open/"
+  }
+]

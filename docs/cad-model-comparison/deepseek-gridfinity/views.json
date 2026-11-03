@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "deepseek-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "deepseek-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "deepseek-gridfinity/open/"
+  }
+]

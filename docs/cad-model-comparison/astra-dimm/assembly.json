@@ -1,0 +1,78 @@
+{
+  "units": "mm",
+  "coordinate_system": "+X closing direction; +Y latch-release direction; +Z up from tray print bed",
+  "transform_convention": "4x4 row-major matrices act on column vectors; file coordinates to assembled coordinates",
+  "parts": [
+    {
+      "id": "tray",
+      "step": "output/tray.step",
+      "stl": "output/tray.stl",
+      "quantity": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "lid",
+      "step": "output/lid.step",
+      "stl": "output/lid.stl",
+      "quantity": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          15.35
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "assembly_step": "output/assembled.step",
+  "nonprinted_items": [
+    "Two individually closed ESD shielding bags",
+    "Two loose paper lifting strips, approximately 20 x 140 mm",
+    "Light nonabrasive paper or suitable ESD-compatible foam at heatspreaders only",
+    "Outer corrugated cardboard shipping box and cushioning"
+  ]
+}

@@ -1,0 +1,10 @@
+Completed: [download the full CAD package](ram_mailer.zip).
+
+The two-part case measures **154 × 102 × 20 mm**, with a captured sliding lid, integral release latch, recessed contact lanes and paper lifting strips.
+
+- Supports modules up to **135 × 40 × 8.5 mm**, subject to the documented bag and support requirements.
+- Fits the documented Kingston Beast and HyperX FURY examples; excludes the taller Beast RGB.
+- Includes parametric source, STEP, binary STL per part, `assembly.json`, and readable FillaPrint labels.
+- CAD clearance checks, STEP re-import checks and watertight mesh checks passed.
+
+See [README](README.md) and [measured checks](MEASURED_CHECKS.md). **Physical testing remains necessary** for bag fit, latch force and fatigue, rail friction, and shipping protection.

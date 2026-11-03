@@ -1,0 +1,37 @@
+{
+  "closed_interference_mm3": 0,
+  "reference_module_collisions_mm3": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "reference_upward_lift_collision_mm3": {
+    "0": 0,
+    "2": 0,
+    "5": 0,
+    "10": 0,
+    "20": 0
+  },
+  "lid_slide_collision_mm3": {
+    "0": 0,
+    "1": 1.4628571428560901,
+    "2": 7.394285714286035,
+    "4": 14.000000000002004,
+    "8": 14.000000000002004,
+    "15": 14.000000000002004,
+    "40": 14.000000000002004,
+    "100": 14.000000000002004,
+    "148": 0
+  },
+  "base_bounds_mm": [
+    150.0,
+    106.0,
+    18.700000000004536
+  ],
+  "verification_method": "Direct OCP BRepAlgoAPI_Common on exported STEP shapes in assembled coordinates; sampled paths are rigid-motion checks, not flexure simulation."
+}

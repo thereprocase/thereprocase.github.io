@@ -1,0 +1,1465 @@
+{
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/baseplate_5x4.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/baseplate_5x4.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "name": "M2_NUT-WSHR_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_NUT-WSHR_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2_NUT-WSHR_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_NUT-WSHR_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2_NUT-WSHR_body"
+    },
+    {
+      "name": "M2.5_NUT-WSHR_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_NUT-WSHR_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2.5_NUT-WSHR_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_NUT-WSHR_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2.5_NUT-WSHR_body"
+    },
+    {
+      "name": "M3_NUT-WSHR_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_NUT-WSHR_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M3_NUT-WSHR_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_NUT-WSHR_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M3_NUT-WSHR_body"
+    },
+    {
+      "name": "M4_NUT-WSHR_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_NUT-WSHR_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M4_NUT-WSHR_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_NUT-WSHR_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_NUT-WSHR.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M4_NUT-WSHR_body"
+    },
+    {
+      "name": "M2_6-8_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_6-8_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2_6-8_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_6-8_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2_6-8_body"
+    },
+    {
+      "name": "M2_10-12_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_10-12_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2_10-12_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_10-12_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2_10-12_body"
+    },
+    {
+      "name": "M2_16-20_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_16-20_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_16-20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2_16-20_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2_16-20_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2_16-20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2_16-20_body"
+    },
+    {
+      "name": "M2.5_6-8_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_6-8_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2.5_6-8_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_6-8_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2.5_6-8_body"
+    },
+    {
+      "name": "M2.5_10-12_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_10-12_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2.5_10-12_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_10-12_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2.5_10-12_body"
+    },
+    {
+      "name": "M2.5_16-20_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_16-20_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_16-20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M2.5_16-20_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M2.5_16-20_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M2.5_16-20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M2.5_16-20_body"
+    },
+    {
+      "name": "M3_6-8_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_6-8_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M3_6-8_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_6-8_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_6-8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M3_6-8_body"
+    },
+    {
+      "name": "M3_10-12_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_10-12_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M3_10-12_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_10-12_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_10-12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M3_10-12_body"
+    },
+    {
+      "name": "M3_16_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_16_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_16.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M3_16_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_16_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_16.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M3_16_body"
+    },
+    {
+      "name": "M3_20_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_20_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M3_20_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M3_20_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M3_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M3_20_body"
+    },
+    {
+      "name": "M4_8_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_8_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M4_8_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_8_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_8.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M4_8_body"
+    },
+    {
+      "name": "M4_10_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_10_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_10.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M4_10_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_10_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_10.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M4_10_body"
+    },
+    {
+      "name": "M4_12_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_12_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M4_12_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_12_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M4_12_body"
+    },
+    {
+      "name": "M4_16_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_16_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_16.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "M4_16_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_M4_16_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_M4_16.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "M4_16_body"
+    },
+    {
+      "name": "SORT_1x2_body",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_SORT_1x2_body.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_SORT_1x2.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "name": "SORT_1x2_label",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/bin_SORT_1x2_label.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/bin_SORT_1x2.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          42.0
+        ],
+        [
+          0,
+          0,
+          1,
+          2.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.95,
+        0.94,
+        0.9
+      ],
+      "layout_with": "SORT_1x2_body"
+    },
+    {
+      "name": "baseplate_5x1_extension",
+      "stl": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/stl/baseplate_5x1_extension.stl",
+      "step": "./lab/cad-design-comparison-20261103/reviews/opus-gridfinity/snapshot/out/step/baseplate_5x1_extension.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          168.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ],
+      "layout_only": true
+    }
+  ],
+  "provenance": "Private pre-review snapshot. Verify original files still match source-hashes.json before publication. Label inlays remain registered to bin bodies; optional extension shown in layout only."
+}
