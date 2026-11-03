@@ -1306,5 +1306,8 @@
     "exports/label_washer_M4.step": "42a050bba94420ec8e671b604f5b6552a49a0bd223034b7c91e83e6f424a3a6f",
     "exports/lid_washer_M4.step": "043f3b2c3cb6555d30c06a8b6322f187380d152661a45d4e3fcae7c38dab3353"
   },
-  "capacity_method": "Conservative actual STEP free volume in34x34mm rectangular bounds above scoop, with60% unvalidated packing. Solid nominal head/shank cylinders, hex nut prisms and washer disks ignore holes; no physical loading test."
+  "capacity_method": "Conservative actual STEP free volume in34x34mm rectangular bounds above scoop, with60% unvalidated packing. Solid nominal head/shank cylinders, hex nut prisms and washer disks ignore holes; no physical loading test.",
+  "source_inspection": {
+    "upright_print_window_bridges": "Bins print upright with37mm-wide front through-windows. Bridging/support assumptions at window roofs are untested; source claims support-free printing without a slicer or specimen."
+  }
 }

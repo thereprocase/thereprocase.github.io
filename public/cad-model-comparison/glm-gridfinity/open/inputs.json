@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/glm-gridfinity/baseplate_5x4.stl",
+    "sha256": "d9f3c685d0985f39e917549c55ddc0e0494c7f7d9e9521ab3430f184392c679f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        117.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        96.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 24310,
+    "triangles": 48632
+  }
+]

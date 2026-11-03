@@ -1,0 +1,23 @@
+{
+  "title": "Glm Gridfinity",
+  "subtitle": "Baseplate",
+  "caption": "Baseplate \u00b7 bins removed",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 24310,
+      "triangles": 48632,
+      "edges": 14945,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

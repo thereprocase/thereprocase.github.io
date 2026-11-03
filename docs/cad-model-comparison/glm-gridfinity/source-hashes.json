@@ -1,0 +1,18 @@
+{
+  "parts/stl/baseplate_5x4.stl": "d9f3c685d0985f39e917549c55ddc0e0494c7f7d9e9521ab3430f184392c679f",
+  "parts/stl/bin_washer_m2_m25_m3.stl": "5c209172943d8caaf3dff7464dcd0b760fa9a8c09e629d08384abaac4447c8ac",
+  "parts/stl/bin_washer_m4.stl": "fca4162b260a7eb96475ed80c8026108fbb6c351f26ed14272b867e10db24730",
+  "parts/stl/bin_nut_m2_m25_m3.stl": "02257204bed6ff39c294ba5bc710b9b49b2346095575cb55e94d06d5b97ccf85",
+  "parts/stl/bin_nut_m4.stl": "bca185c1292416035cd836a92e551c2535b3a550d02f88cced023160717b5093",
+  "parts/stl/bin_m2_screws.stl": "a471b7b953a7deca8d7db35f851d77237c43a64d421fe9a008a430f1324f7f99",
+  "parts/stl/bin_m2_5_screws.stl": "6fa37ca458310b3cc555491c8c13374ee7863e53336e63f7d4444f346c9f6ac6",
+  "parts/stl/bin_m3x6.stl": "eac4840b0cc4d99539356a5074a8d5f5b990b74d6783e12a72345a21d25883e1",
+  "parts/stl/bin_m3x8.stl": "413d9bf50ae47b482b85a0d16cd9d842afd76cfe66be711a8cdeb922ba871a43",
+  "parts/stl/bin_m3x10.stl": "6be72451aa7b04e841108e097b7ff5ae0288d9a5f8e19194728c7c7fab167848",
+  "parts/stl/bin_m3x12.stl": "49937659ee52c95a7e694242cc06be4110c21bc5eab9cd39f43652d39adbdb1f",
+  "parts/stl/bin_m3x16.stl": "aa9ba67874bb014bb5625b54722630b52ca0db2bdb42abc6166971b1ce6287b0",
+  "parts/stl/bin_m3x20.stl": "ee84ca82a4ad70b4939c9175c316b7cf8ebfc65bfa42311b748d0bd93c95d9c3",
+  "parts/stl/bin_m4x8.stl": "b6a1342e49a68618439143f99968c8c19ad2f06ef3adec13ecf5c5781160e682",
+  "parts/stl/bin_m4x12.stl": "4b5d71baf357f7a5750d65d344675b0a6d875b21504ba9fa08633315f8b07955",
+  "parts/stl/bin_m4x20.stl": "374778dbe35f3291a8072b86f34a855c083dc1c54f452e1488c7157fa05b366c"
+}

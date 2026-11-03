@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-11-03T23:22:04.973087+00:00",
+  "as_of_utc": "2026-11-03T23:30:02.379964+00:00",
   "pricing_as_of": "2026-11-03",
   "scope": "Measured counters in each isolated design run, including follow-ups and native guardian review overhead where present. Calls without recorded counters are excluded; archived setup attempts are excluded.",
   "token_semantics": "Counts accumulate across requests, including repeated context. Input includes cache reads and writes; cache columns are subsets. Reported reasoning is a subset of output. Do not add subset columns to input/output. Native counters may differ.",

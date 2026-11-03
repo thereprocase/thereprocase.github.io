@@ -1,0 +1,564 @@
+{
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./parts/stl/baseplate_5x4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          117.0
+        ],
+        [
+          0,
+          1,
+          0,
+          96.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m2_m25_m3",
+      "stl": "./parts/stl/bin_washer_m2_m25_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          54.0
+        ],
+        [
+          0,
+          1,
+          0,
+          33.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m4",
+      "stl": "./parts/stl/bin_washer_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          117.0
+        ],
+        [
+          0,
+          1,
+          0,
+          33.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m2_m25_m3",
+      "stl": "./parts/stl/bin_nut_m2_m25_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          180.0
+        ],
+        [
+          0,
+          1,
+          0,
+          33.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m4",
+      "stl": "./parts/stl/bin_nut_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          33.0
+        ],
+        [
+          0,
+          1,
+          0,
+          75.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_screws",
+      "stl": "./parts/stl/bin_m2_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          96.0
+        ],
+        [
+          0,
+          1,
+          0,
+          75.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_5_screws",
+      "stl": "./parts/stl/bin_m2_5_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          180.0
+        ],
+        [
+          0,
+          1,
+          0,
+          75.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x6",
+      "stl": "./parts/stl/bin_m3x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          33.0
+        ],
+        [
+          0,
+          1,
+          0,
+          117.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x8",
+      "stl": "./parts/stl/bin_m3x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          75.0
+        ],
+        [
+          0,
+          1,
+          0,
+          117.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x10",
+      "stl": "./parts/stl/bin_m3x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          117.0
+        ],
+        [
+          0,
+          1,
+          0,
+          117.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x12",
+      "stl": "./parts/stl/bin_m3x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          159.0
+        ],
+        [
+          0,
+          1,
+          0,
+          117.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x16",
+      "stl": "./parts/stl/bin_m3x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          201.0
+        ],
+        [
+          0,
+          1,
+          0,
+          117.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x20",
+      "stl": "./parts/stl/bin_m3x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          33.0
+        ],
+        [
+          0,
+          1,
+          0,
+          159.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x8",
+      "stl": "./parts/stl/bin_m4x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          75.0
+        ],
+        [
+          0,
+          1,
+          0,
+          159.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x12",
+      "stl": "./parts/stl/bin_m4x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          117.0
+        ],
+        [
+          0,
+          1,
+          0,
+          159.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x20",
+      "stl": "./parts/stl/bin_m4x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          159.0
+        ],
+        [
+          0,
+          1,
+          0,
+          159.0
+        ],
+        [
+          0,
+          0,
+          1,
+          3.1999999999999993
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1578 @@
+{
+  "verification_method": "Independent direct OpenCascade Common on final exported STEP. Exact submitted matrices retained. Stacking uses actual lip/foot crops that contain the complete possible overlap z range. Label center rays use IntCurvesFace_ShapeIntersector, not sampled ray boxes.",
+  "parts": [
+    {
+      "id": "baseplate_5x4",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        234.0,
+        192.0,
+        8.200000100018979
+      ],
+      "volume_mm3": 220240.63
+    },
+    {
+      "id": "bin_washer_m2_m25_m3",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        83.50000020000002,
+        41.5000002,
+        17.551471962576134
+      ],
+      "volume_mm3": 25034.823
+    },
+    {
+      "id": "bin_washer_m4",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        17.551471962576127
+      ],
+      "volume_mm3": 13678.836
+    },
+    {
+      "id": "bin_nut_m2_m25_m3",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        83.50000020000002,
+        41.5000002,
+        17.551471962576134
+      ],
+      "volume_mm3": 25033.296
+    },
+    {
+      "id": "bin_nut_m4",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        24.551471962576127
+      ],
+      "volume_mm3": 17028.294
+    },
+    {
+      "id": "bin_m2_screws",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        83.50000020000002,
+        41.5000002,
+        24.551471962576134
+      ],
+      "volume_mm3": 29619.606
+    },
+    {
+      "id": "bin_m2_5_screws",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        83.50000020000002,
+        41.5000002,
+        24.551471962576134
+      ],
+      "volume_mm3": 29597.819
+    },
+    {
+      "id": "bin_m3x6",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18954.14
+    },
+    {
+      "id": "bin_m3x8",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18953.097
+    },
+    {
+      "id": "bin_m3x10",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18948.965
+    },
+    {
+      "id": "bin_m3x12",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18950.166
+    },
+    {
+      "id": "bin_m3x16",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18949.266
+    },
+    {
+      "id": "bin_m3x20",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18947.07
+    },
+    {
+      "id": "bin_m4x8",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18953.611
+    },
+    {
+      "id": "bin_m4x12",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18950.679
+    },
+    {
+      "id": "bin_m4x20",
+      "valid": true,
+      "solid_count": 1,
+      "bbox_mm": [
+        41.50000020000002,
+        41.50000020000002,
+        31.551471962576127
+      ],
+      "volume_mm3": 18947.584
+    }
+  ],
+  "submitted_assembly_seats": [
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_washer_m4",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_nut_m4",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m2_screws",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x6",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x8",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x10",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 2861.983921,
+      "lift1_intersection_mm3": 2207.213033,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x12",
+      "outside_base_axes": [],
+      "seat_intersection_mm3": 2731.188082,
+      "lift1_intersection_mm3": 2029.603146,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x16",
+      "outside_base_axes": [],
+      "seat_intersection_mm3": 2731.188082,
+      "lift1_intersection_mm3": 2029.603146,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m3x20",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m4x8",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 0.0,
+      "lift1_intersection_mm3": 0.0,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m4x12",
+      "outside_base_axes": [
+        "X"
+      ],
+      "seat_intersection_mm3": 2722.32895,
+      "lift1_intersection_mm3": 2104.755832,
+      "lift5_intersection_mm3": 0.0
+    },
+    {
+      "bin": "bin_m4x20",
+      "outside_base_axes": [],
+      "seat_intersection_mm3": 1287.8579,
+      "lift1_intersection_mm3": 908.551665,
+      "lift5_intersection_mm3": 0.0
+    }
+  ],
+  "neighbors": [
+    {
+      "bins": [
+        "bin_washer_m2_m25_m3",
+        "bin_washer_m4"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_washer_m2_m25_m3",
+        "bin_nut_m4"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_washer_m2_m25_m3",
+        "bin_m2_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_washer_m4",
+        "bin_nut_m2_m25_m3"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_washer_m4",
+        "bin_m2_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_washer_m4",
+        "bin_m2_5_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_nut_m2_m25_m3",
+        "bin_m2_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_nut_m2_m25_m3",
+        "bin_m2_5_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_nut_m4",
+        "bin_m2_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_nut_m4",
+        "bin_m3x6"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_nut_m4",
+        "bin_m3x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_screws",
+        "bin_m2_5_screws"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_screws",
+        "bin_m3x6"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_screws",
+        "bin_m3x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_screws",
+        "bin_m3x10"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_screws",
+        "bin_m3x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws",
+        "bin_m3x10"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws",
+        "bin_m3x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws",
+        "bin_m3x16"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m3x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m3x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m4x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x8",
+        "bin_m3x10"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x8",
+        "bin_m3x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x8",
+        "bin_m4x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x8",
+        "bin_m4x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m3x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x12",
+        "bin_m3x16"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x12",
+        "bin_m4x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x12",
+        "bin_m4x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x16",
+        "bin_m4x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m3x20",
+        "bin_m4x8"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m4x8",
+        "bin_m4x12"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    },
+    {
+      "bins": [
+        "bin_m4x12",
+        "bin_m4x20"
+      ],
+      "positive_xy_separating_gap_mm": 0.5,
+      "vertical_withdrawal_clear": true,
+      "intersection_mm3": 0
+    }
+  ],
+  "same_footprint_stacks": [
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "offset_z_mm": 13.65,
+      "lower_crop_zmin": 13.649000000000001,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_washer_m4",
+      "offset_z_mm": 13.65,
+      "lower_crop_zmin": 13.649000000000001,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "offset_z_mm": 13.65,
+      "lower_crop_zmin": 13.649000000000001,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_m4",
+      "offset_z_mm": 20.65,
+      "lower_crop_zmin": 20.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_screws",
+      "offset_z_mm": 20.65,
+      "lower_crop_zmin": 20.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "offset_z_mm": 20.65,
+      "lower_crop_zmin": 20.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x6",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x8",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x10",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x12",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x16",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x20",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x8",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x12",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x20",
+      "offset_z_mm": 27.65,
+      "lower_crop_zmin": 27.648999999999997,
+      "upper_crop_zmax": 5.11,
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "4": 0.0
+      }
+    }
+  ],
+  "compartments": [
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M2",
+      "free_volume_mm3": 7083.783,
+      "nominal_hardware_volume_mm3": 5.89,
+      "packing_fraction": 0.6,
+      "estimated_count": 721,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M2.5",
+      "free_volume_mm3": 7024.832,
+      "nominal_hardware_volume_mm3": 14.137,
+      "packing_fraction": 0.6,
+      "estimated_count": 298,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M3",
+      "free_volume_mm3": 6801.951,
+      "nominal_hardware_volume_mm3": 19.242,
+      "packing_fraction": 0.6,
+      "estimated_count": 212,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_washer_m4",
+      "label": "M4",
+      "free_volume_mm3": 9947.111,
+      "nominal_hardware_volume_mm3": 50.894,
+      "packing_fraction": 0.6,
+      "estimated_count": 117,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M2",
+      "free_volume_mm3": 7083.783,
+      "nominal_hardware_volume_mm3": 22.17,
+      "packing_fraction": 0.6,
+      "estimated_count": 191,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M2.5",
+      "free_volume_mm3": 7024.832,
+      "nominal_hardware_volume_mm3": 43.301,
+      "packing_fraction": 0.6,
+      "estimated_count": 97,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M3",
+      "free_volume_mm3": 6801.951,
+      "nominal_hardware_volume_mm3": 62.873,
+      "packing_fraction": 0.6,
+      "estimated_count": 64,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_m4",
+      "label": "M4",
+      "free_volume_mm3": 18568.392,
+      "nominal_hardware_volume_mm3": 135.793,
+      "packing_fraction": 0.6,
+      "estimated_count": 82,
+      "target": 30,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 6",
+      "free_volume_mm3": 13937.287,
+      "nominal_hardware_volume_mm3": 41.532,
+      "packing_fraction": 0.6,
+      "estimated_count": 201,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 8",
+      "free_volume_mm3": 13790.66,
+      "nominal_hardware_volume_mm3": 47.815,
+      "packing_fraction": 0.6,
+      "estimated_count": 173,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 12",
+      "free_volume_mm3": 12792.205,
+      "nominal_hardware_volume_mm3": 60.381,
+      "packing_fraction": 0.6,
+      "estimated_count": 127,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d76",
+      "free_volume_mm3": 13937.287,
+      "nominal_hardware_volume_mm3": 69.213,
+      "packing_fraction": 0.6,
+      "estimated_count": 120,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d78",
+      "free_volume_mm3": 13790.66,
+      "nominal_hardware_volume_mm3": 79.031,
+      "packing_fraction": 0.6,
+      "estimated_count": 104,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d712",
+      "free_volume_mm3": 12792.205,
+      "nominal_hardware_volume_mm3": 98.666,
+      "packing_fraction": 0.6,
+      "estimated_count": 77,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x6",
+      "label": "M3 \u00d7 6",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 113.686,
+      "packing_fraction": 0.6,
+      "estimated_count": 151,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x8",
+      "label": "M3 \u00d7 8",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 127.824,
+      "packing_fraction": 0.6,
+      "estimated_count": 134,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x10",
+      "label": "M3 \u00d7 10",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 141.961,
+      "packing_fraction": 0.6,
+      "estimated_count": 120,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x12",
+      "label": "M3 \u00d7 12",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 156.098,
+      "packing_fraction": 0.6,
+      "estimated_count": 110,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x16",
+      "label": "M3 \u00d7 16",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 184.372,
+      "packing_fraction": 0.6,
+      "estimated_count": 93,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m3x20",
+      "label": "M3 \u00d7 20",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 212.647,
+      "packing_fraction": 0.6,
+      "estimated_count": 80,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m4x8",
+      "label": "M4 \u00d7 8",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 254.469,
+      "packing_fraction": 0.6,
+      "estimated_count": 67,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m4x12",
+      "label": "M4 \u00d7 12",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 304.734,
+      "packing_fraction": 0.6,
+      "estimated_count": 56,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_m4x20",
+      "label": "M4 \u00d7 20",
+      "free_volume_mm3": 28620.3,
+      "nominal_hardware_volume_mm3": 405.265,
+      "packing_fraction": 0.6,
+      "estimated_count": 42,
+      "target": 20,
+      "access14mm_above_z12_intersection_mm3": 0
+    }
+  ],
+  "label_center_rays": [
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M2",
+      "start_mm": [
+        26.833333333333336,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M2.5",
+      "start_mm": [
+        54.0,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_washer_m2_m25_m3",
+      "label": "M3",
+      "start_mm": [
+        81.16666666666666,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_washer_m4",
+      "label": "M4",
+      "start_mm": [
+        117.0,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M2",
+      "start_mm": [
+        152.83333333333334,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M2.5",
+      "start_mm": [
+        180.0,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_nut_m2_m25_m3",
+      "label": "M3",
+      "start_mm": [
+        207.16666666666666,
+        12.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_nut_m4",
+      "label": "M4",
+      "start_mm": [
+        33.0,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_washer_m2_m25_m3",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 6",
+      "start_mm": [
+        68.83333333333334,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_washer_m2_m25_m3",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 8",
+      "start_mm": [
+        96.0,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": []
+    },
+    {
+      "bin": "bin_m2_screws",
+      "label": "M2 \u00d7 12",
+      "start_mm": [
+        123.16666666666666,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_washer_m4",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d76",
+      "start_mm": [
+        152.83333333333334,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_nut_m2_m25_m3",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d78",
+      "start_mm": [
+        180.0,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_nut_m2_m25_m3",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m2_5_screws",
+      "label": "M2.5\u00d712",
+      "start_mm": [
+        207.16666666666666,
+        54.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_nut_m2_m25_m3",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x6",
+      "label": "M3 \u00d7 6",
+      "start_mm": [
+        33.0,
+        96.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_nut_m4",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x8",
+      "label": "M3 \u00d7 8",
+      "start_mm": [
+        75.0,
+        96.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m2_screws",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x10",
+      "label": "M3 \u00d7 10",
+      "start_mm": [
+        117.0,
+        96.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m2_screws",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x12",
+      "label": "M3 \u00d7 12",
+      "start_mm": [
+        159.0,
+        96.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m2_5_screws",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x16",
+      "label": "M3 \u00d7 16",
+      "start_mm": [
+        201.0,
+        96.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m2_5_screws",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m3x20",
+      "label": "M3 \u00d7 20",
+      "start_mm": [
+        33.0,
+        138.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m3x6",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m4x8",
+      "label": "M4 \u00d7 8",
+      "start_mm": [
+        75.0,
+        138.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m3x8",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m4x12",
+      "label": "M4 \u00d7 12",
+      "start_mm": [
+        117.0,
+        138.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m3x10",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    },
+    {
+      "bin": "bin_m4x20",
+      "label": "M4 \u00d7 20",
+      "start_mm": [
+        159.0,
+        138.15,
+        12.089999999999998
+      ],
+      "elevation_degrees": 45,
+      "blocking_parts": [
+        {
+          "part": "bin_m3x12",
+          "first_ray_parameter_mm": 0.5657
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "parts/step/baseplate_5x4.step": "ed6835b81d786d1acb6c5cfc50cb4faeae5b123cde0661707864f08da9378d11",
+    "parts/step/bin_washer_m2_m25_m3.step": "197337e74a824ba5c34142b923ff2aaf14ee676ede15c8f8bab479839926902d",
+    "parts/step/bin_washer_m4.step": "685a051bbc610b7e91c88771793f846b5544b9564a459eebbedbd451ac7315f3",
+    "parts/step/bin_nut_m2_m25_m3.step": "3c2bd70e87752c62b58f76942939232b884590dbd3c8fe1d5605bc2a921c8b6f",
+    "parts/step/bin_nut_m4.step": "22e2b7f116b4d6e27dc82c15f2046af9520f7f747c8bbcdb95260fe429fe52a0",
+    "parts/step/bin_m2_screws.step": "a1044983d2cf8c3a28c8a9692406d90753b72c0de45f61d5fb050442bc039ca6",
+    "parts/step/bin_m2_5_screws.step": "59304fabf69790b92c102d1150f94ac9486740589fbd7b216f26f2facf3c313e",
+    "parts/step/bin_m3x6.step": "66586c4536104176f3acd149be69fe809128d57d4cbc1c9bcc9ec64c331d13c9",
+    "parts/step/bin_m3x8.step": "cc78043b34cab963ba3ac2b8cb43a83fcb7342906fecf1a17458306f44f390cc",
+    "parts/step/bin_m3x10.step": "1345927f8dbf65765b07e224ba83203b5c13fd4d08156e327ed8979cf86b2298",
+    "parts/step/bin_m3x12.step": "8b1e4cab68ebd3b25a6bc0b3eff0c6cae1e555df7e6e8ecf5a0251729054d3a1",
+    "parts/step/bin_m3x16.step": "a386521b08e044768bab3d59d8c4a496d0b24402e2ca45f099ff9b473265fdc3",
+    "parts/step/bin_m3x20.step": "6f6b203639a9ad9d572fecf8cc27798f52988b5bd59f1fbb34817c4237ffd33d",
+    "parts/step/bin_m4x8.step": "34fdb86df2830c46b129acb648cfe8a350767802c24864422f6c3622809680e5",
+    "parts/step/bin_m4x12.step": "d743c2883d5d6f49ef97dddc3d487eebe5e7dff3881b4ad67b17fc82e8a4d1ea",
+    "parts/step/bin_m4x20.step": "591451a451a5baa2d72d708772d511ad4aff9ec24b67af8660d501b5efe2b524",
+    "parts/stl/baseplate_5x4.stl": "d9f3c685d0985f39e917549c55ddc0e0494c7f7d9e9521ab3430f184392c679f",
+    "parts/stl/bin_washer_m2_m25_m3.stl": "5c209172943d8caaf3dff7464dcd0b760fa9a8c09e629d08384abaac4447c8ac",
+    "parts/stl/bin_washer_m4.stl": "fca4162b260a7eb96475ed80c8026108fbb6c351f26ed14272b867e10db24730",
+    "parts/stl/bin_nut_m2_m25_m3.stl": "02257204bed6ff39c294ba5bc710b9b49b2346095575cb55e94d06d5b97ccf85",
+    "parts/stl/bin_nut_m4.stl": "bca185c1292416035cd836a92e551c2535b3a550d02f88cced023160717b5093",
+    "parts/stl/bin_m2_screws.stl": "a471b7b953a7deca8d7db35f851d77237c43a64d421fe9a008a430f1324f7f99",
+    "parts/stl/bin_m2_5_screws.stl": "6fa37ca458310b3cc555491c8c13374ee7863e53336e63f7d4444f346c9f6ac6",
+    "parts/stl/bin_m3x6.stl": "eac4840b0cc4d99539356a5074a8d5f5b990b74d6783e12a72345a21d25883e1",
+    "parts/stl/bin_m3x8.stl": "413d9bf50ae47b482b85a0d16cd9d842afd76cfe66be711a8cdeb922ba871a43",
+    "parts/stl/bin_m3x10.stl": "6be72451aa7b04e841108e097b7ff5ae0288d9a5f8e19194728c7c7fab167848",
+    "parts/stl/bin_m3x12.stl": "49937659ee52c95a7e694242cc06be4110c21bc5eab9cd39f43652d39adbdb1f",
+    "parts/stl/bin_m3x16.stl": "aa9ba67874bb014bb5625b54722630b52ca0db2bdb42abc6166971b1ce6287b0",
+    "parts/stl/bin_m3x20.stl": "ee84ca82a4ad70b4939c9175c316b7cf8ebfc65bfa42311b748d0bd93c95d9c3",
+    "parts/stl/bin_m4x8.stl": "b6a1342e49a68618439143f99968c8c19ad2f06ef3adec13ecf5c5781160e682",
+    "parts/stl/bin_m4x12.stl": "4b5d71baf357f7a5750d65d344675b0a6d875b21504ba9fa08633315f8b07955",
+    "parts/stl/bin_m4x20.stl": "374778dbe35f3291a8072b86f34a855c083dc1c54f452e1488c7157fa05b366c"
+  },
+  "raw_base_frame_diagnostic": {
+    "verification_method": "Direct OCP diagnostic uses base in its delivered file coordinates, without the extra assembly.json translation. This diagnoses metadata mismatch; published assembly render remains uncorrected.",
+    "raw_base_bbox": {
+      "min": [
+        0.0,
+        0.0,
+        -1.0001897881851675e-07
+      ],
+      "max": [
+        234.0,
+        192.0,
+        8.200000000000001
+      ]
+    },
+    "declared_extra_base_translation": [
+      117.0,
+      96.0,
+      0
+    ],
+    "raw_frame_seats": [
+      {
+        "bin": "bin_washer_m2_m25_m3",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 326.694448
+      },
+      {
+        "bin": "bin_washer_m4",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.060267
+      },
+      {
+        "bin": "bin_nut_m2_m25_m3",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 326.749654
+      },
+      {
+        "bin": "bin_nut_m4",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m2_screws",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 326.749654
+      },
+      {
+        "bin": "bin_m2_5_screws",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 326.749654
+      },
+      {
+        "bin": "bin_m3x6",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m3x8",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m3x10",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m3x12",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m3x16",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m3x20",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m4x8",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m4x12",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      },
+      {
+        "bin": "bin_m4x20",
+        "within_raw_base_bounds": true,
+        "seat_mm3": 0,
+        "lift1_mm3": 0,
+        "down0_1_support_mm3": 163.078669
+      }
+    ]
+  },
+  "limitations": [
+    "The raw-base diagnostic intentionally omits the extra manifest translation to diagnose its coordinate error; it is not a corrected submitted assembly and is not the displayed pose.",
+    "No physical print, printer-fit, filled handling, real hardware capacity, or fingertip retrieval tests.60% packing is an explicit estimate using submission nominal hardware dimensions.",
+    "One45degree center ray per label establishes center occlusion, not complete glyph readability.14mm square access probes are geometric gauges, not anatomy.",
+    "Stacking validates same-footprint self-stacks at documented registration and sampled release; this does not establish every possible cross-variant combination."
+  ],
+  "summary": {
+    "bins": 15,
+    "compartments": 23,
+    "submitted_bins_outside_base": 12,
+    "submitted_seats_with_interference": 5,
+    "same_footprint_stacks_with_interference": 0,
+    "labels_with_blocked_center_rays": 15,
+    "capacity_estimates_below_target": 0,
+    "neighbor_minimum_separating_gap_mm": 0.5,
+    "all_23_access14mm_probes_clear": true
+  },
+  "source_inspection": {
+    "label_font": "Supplied FillaPrint8.4mm em/5.88mm cap; meets two-bead design target at0.42mm line width; engravings0.7mm into1.6mm walls.",
+    "print_pose": "All parts submitted opening-up/base-flat; normalized rotations are identity. Printed fit is not established."
+  },
+  "render_source_stl_identity_verified": true
+}

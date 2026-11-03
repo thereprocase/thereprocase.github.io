@@ -161,10 +161,10 @@
       4.3,
       5.0
     ],
-    "supplied_font_minimum_cap_at_0_42mm_width": 5.88,
     "layout_front_row_conflict": "README calls row1 front but coordinates put row1 at+63Y while declared front is-Y",
     "labels": "inner back wall engraving plus outer front; inner label needs above-front view over rim, physical readability untested",
-    "usable_storage": "Every bin has0.65mm sealed top; central260mm3 probes entirely filled in all19. Claimed internal capacity is inaccessible."
+    "usable_storage": "Every bin has0.65mm sealed top; central260mm3 probes entirely filled in all19. Claimed internal capacity is inaccessible.",
+    "specified_two_bead_cap_target_at_0_42mm_line_width": 5.88
   },
   "source_sha256": {
     "cad/baseplate_5x4.step": "fcd23a46a7675014f0e75f5e0ae914ca9a6b8ac3b058018a0d50b0532aae7f25",

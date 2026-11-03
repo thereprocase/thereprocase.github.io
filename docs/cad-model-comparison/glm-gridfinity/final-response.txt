@@ -1,0 +1,16 @@
+Done. Everything is delivered and verified in `./cadcomp-20261103-glm-gridfinity`.
+
+## Handover
+
+**What was built** — a parametric Gridfinity fastener organizer on the standard 42 mm grid: one 5×4 baseplate (210×168 mm of grid, 234×192 mm with a 12 mm mounting border) plus 15 bins in two reusable families:
+
+- **1×1 scoop bin** (2U/3U/4U): washers M2/M2.5/M3 (shared), M4 washer, M4 nut, and one bin per M3 length (6–20) and M4 (8/12/20)
+- **2×1 divided scoop bin** (3 compartments): washers M2|M2.5|M3, nuts M2|M2.5|M3, M2 screws 6/8/12, M2.5 screws 6/8/12
+
+One cell stays empty as the extension slot (e.g. for M4×16 or M5). 23 compartments, all sized for ≥20 screws / ≥30 nuts or washers (analytic estimates 27–511 per compartment, all targets met).
+
+**Handling, as designed and verified:** labels sit at identical height on every front face (cap 5.88 mm Fillaprint — exactly the font's minimum for 0.42 mm lines, engraved 0.7 mm because side walls have only 0.25 mm to neighbors); rows step up 2U→3U→4U so all labels read from the front without lifting. Washer compartments are the widest and shallowest, with a 6° front-sloping floor and an R8 scoop fillet (confirmed in the mesh: parts gather in a spoon that presents them at a pinchable angle). Bins are independent with a measured 0.5 mm neighbor gap and lift out alone; every bin carries the spec stacking lip for same-footprint stacking, with zero measured interference including divided bins.
+
+**Interfaces are exact spec** (pitch 42, footprint 42u−0.5, base profile 0.8/1.8/2.15 to 4.75, plate cavity 36.3/37.7/42 at depth 5, lip funnel 0.7/1.8/1.9 with 0.6 tip fillet) — sourced from the community-maintained spec reconstruction. The multi-cell bins use per-unit base blocks with the bridge/pocket geometry that clears plate ribs and their corner notches. Verification record in `measured_checks.json`: 16/16 exact bboxes, 0.000000 mm³ interference across the whole assembly, seat/stack contact with zero overlap, 0.5000 mm neighbor gap, groove depths 0.70 mm by ray casting, plate cavity floor 3.200 mm, all STLs binary/watertight, printability audit clean (45° chamfers only; remaining ceilings are 0.5–0.84 mm bridges).
+
+**Still needs a physical fit test** (spelled out in the README): cell fit on your printer, stack seating feel, washer-pinch feel, label legibility in your lighting/filament, a real pour against the capacity model, and the pocket bridge ceilings. Limitations are stated honestly — nominal fastener dimensions, a small cosmetic corner step inside the lip support, same-footprint-only stacking, knife-edge plate ribs per spec.

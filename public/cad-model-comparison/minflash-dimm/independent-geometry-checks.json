@@ -41,7 +41,8 @@
     "packing": "declared8mm-thick,44mm-high modules have no width allowance at44mm usable limit; expanded bag gauge tests this explicitly",
     "print_orientation": "lid source explicitly says engraved outer top face against bed, normalized180X; base bottom down; filler optional and layout-only",
     "removal": "no finger scallops in base; unseparated stacked modules must be retrieved from full-height open cavity",
-    "labels": "source uses supplied FillaPrint; self-check flags B counter gap; actual print readability untested"
+    "labels": "source uses supplied FillaPrint; self-check flags B counter gap; actual print readability untested",
+    "front_wall_labels": "Raised front-wall instruction lines overlap visibly in actual render. Base instructions say lift while skirt says slide; sampled rigid sliding collides."
   },
   "source_sha256": {
     "mailer_base.step": "9142432ff25f0ac4c74dbac8c43c6677a093a25a1b80cf9b8b755794d84a576d",
