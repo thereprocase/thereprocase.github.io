@@ -488,7 +488,7 @@
   "models": {
     "claude-opus-5-5": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 7007691,
@@ -500,7 +500,7 @@
     },
     "gpt-6.1-sol": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 2813898,
@@ -512,7 +512,7 @@
     },
     "claude-fable-5-1": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 9641511,
@@ -524,7 +524,7 @@
     },
     "gpt-6-astra": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 1716632,
@@ -536,7 +536,7 @@
     },
     "claude-sonnet-5-5": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 2535573,
@@ -548,7 +548,7 @@
     },
     "gpt-6.1-terra": {
       "runs": 2,
-      "recorded_cost_usd": 0,
+      "recorded_cost_usd": null,
       "runs_without_cost": 2,
       "tokens": {
         "input_tokens": 980541,
