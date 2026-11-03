@@ -1566,5 +1566,7 @@
     }
   },
   "total_api_price_usd": 85.47848891,
-  "price_reference": "api-price-reference.json"
+  "price_reference": "api-price-reference.json",
+  "display_methodology": "Calculated from measured counters using published Standard/global reference rates. Context tiers apply per request; cache and reasoning subsets are not counted twice. Claude cache writes use the measured one-hour TTL. Harness-review tokens use the tested model\u2019s rate. Tokenizers vary; missing counters, tools, storage time, taxes and fees are excluded.",
+  "display_token_notes": "Measured counters accumulate across requests. Cache reads/writes are input subsets; reported reasoning is an output subset. Rates, sources and context/cache assumptions appear in the pricing details and reference."
 }

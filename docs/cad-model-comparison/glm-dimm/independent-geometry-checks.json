@@ -612,7 +612,7 @@
       0.6,
       0.7
     ],
-    "note": "The specified two-bead design target is em = 20 \u00d7 line width, hence 8 mm em at an assumed 0.4 mm line width. This is not a universal minimum printable text size. The 6/7 mm em text could use 0.3/0.35 mm lines or variable-width extrusion; physical readability remains untested. The README incorrectly says there is no embedded font guidance.",
+    "note": "Specified two-bead design target at assumed0.4mm line width, not a universal minimum printable size. Smaller or variable line widths may print the6/7mm em text; physical readability is untested. The README incorrectly says there is no embedded guidance.",
     "specified_two_bead_em_target_at_0_4mm_line_width_mm": 8,
     "two_bead_design_target_met_at_0_4mm_line_width": false,
     "physical_printability_or_readability_tested": false
