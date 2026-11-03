@@ -33,7 +33,7 @@
   },
   {
     "mesh": "./lab/cad-design-comparison-20261103/site/draft-qwen-dimm/lid.stl",
-    "sha256": "21173b5214d489372e204c95cac7709979ddfd390f641c90975df37fb89d1099",
+    "sha256": "0da3e33f2f8bb69f58c625e9f21e667a76b72fc29c7d7c0318853e1e400d446f",
     "transform": [
       [
         1.0,
@@ -45,7 +45,7 @@
         0.0,
         0.0,
         -1.0,
-        -10.0
+        -11.875
       ],
       [
         0.0,
@@ -60,7 +60,7 @@
         1.0
       ]
     ],
-    "vertices": 2396,
-    "triangles": 4772
+    "vertices": 2444,
+    "triangles": 4884
   }
 ]

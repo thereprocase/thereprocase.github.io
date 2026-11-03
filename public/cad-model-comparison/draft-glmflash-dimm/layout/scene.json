@@ -1,0 +1,45 @@
+{
+  "title": "Draft Glmflash Dimm",
+  "subtitle": "layout view",
+  "caption": "Provisional exported parts \u00b7 export orientation \u00b7 unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 6909,
+      "triangles": 13814,
+      "edges": 4351,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 2080,
+      "triangles": 4160,
+      "edges": 1605,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 2748,
+      "triangles": 5460,
+      "edges": 2797,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

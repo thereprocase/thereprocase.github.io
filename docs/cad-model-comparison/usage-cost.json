@@ -1,0 +1,672 @@
+{
+  "as_of_utc": "2026-11-03T21:58:38.848534+00:00",
+  "scope": "All currently persisted usage in each isolated run, including follow-ups and native child sessions. Active calls may not be recorded yet. Setup attempts archived outside these runtime directories are excluded.",
+  "token_semantics": "Input includes cache reads and writes; cache columns are subsets. Reasoning is reported as a subset of output where provided; zero can mean no separate counter. Do not add subset columns to input/output. Native providers may count tokens differently.",
+  "cost_notes": "No price estimates. OpenCode recorded cost may be computed by its provider adapter; it is not independently confirmed billing. Native subscription costs cannot be allocated from these records. Local Spark API charge is zero; electricity and hardware costs are not measured. Missing usage or billing fields are unavailable, not zero.",
+  "runs": {
+    "opus-dimm": {
+      "model": "claude-opus-5-5",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 3565950,
+        "cached_input_tokens": 3436261,
+        "cache_write_input_tokens": 129621,
+        "output_tokens": 91555,
+        "reasoning_output_tokens": 59060
+      },
+      "usage_records": 35,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "sol-dimm": {
+      "model": "gpt-6.1-sol",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 833406,
+        "cached_input_tokens": 790144,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15074,
+        "reasoning_output_tokens": 5661
+      },
+      "usage_records": 2,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "fable-dimm": {
+      "model": "claude-fable-5-1",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 4258156,
+        "cached_input_tokens": 4070161,
+        "cache_write_input_tokens": 187029,
+        "output_tokens": 88600,
+        "reasoning_output_tokens": 47762
+      },
+      "usage_records": 34,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "astra-dimm": {
+      "model": "gpt-6-astra",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 665959,
+        "cached_input_tokens": 632448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 16469,
+        "reasoning_output_tokens": 6418
+      },
+      "usage_records": 2,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "sonnet-dimm": {
+      "model": "claude-sonnet-5-5",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 872977,
+        "cached_input_tokens": 817069,
+        "cache_write_input_tokens": 55882,
+        "output_tokens": 34676,
+        "reasoning_output_tokens": 21164
+      },
+      "usage_records": 13,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "terra-dimm": {
+      "model": "gpt-6.1-terra",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 203740,
+        "cached_input_tokens": 181632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4567,
+        "reasoning_output_tokens": 1124
+      },
+      "usage_records": 1,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "deepseek-dimm": {
+      "model": "deepseek-v4.1-flash",
+      "engine": "spark",
+      "tokens": {
+        "input_tokens": 23535751,
+        "cached_input_tokens": 23089152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 429923,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 221,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0,
+      "cost_basis": "local_inference_no_api_charge",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "qwen-dimm": {
+      "model": "qwen3.8-27b",
+      "engine": "spark",
+      "tokens": {
+        "input_tokens": 11672834,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 197887,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 113,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0,
+      "cost_basis": "local_inference_no_api_charge",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "opus-gridfinity": {
+      "model": "claude-opus-5-5",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 3441741,
+        "cached_input_tokens": 3297182,
+        "cache_write_input_tokens": 144499,
+        "output_tokens": 110844,
+        "reasoning_output_tokens": 75842
+      },
+      "usage_records": 29,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "sol-gridfinity": {
+      "model": "gpt-6.1-sol",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 1980492,
+        "cached_input_tokens": 1917056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 34758,
+        "reasoning_output_tokens": 21094
+      },
+      "usage_records": 2,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "fable-gridfinity": {
+      "model": "claude-fable-5-1",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 5383355,
+        "cached_input_tokens": 5185915,
+        "cache_write_input_tokens": 196378,
+        "output_tokens": 134510,
+        "reasoning_output_tokens": 93418
+      },
+      "usage_records": 36,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "astra-gridfinity": {
+      "model": "gpt-6-astra",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 1050673,
+        "cached_input_tokens": 997248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 18808,
+        "reasoning_output_tokens": 6703
+      },
+      "usage_records": 2,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "sonnet-gridfinity": {
+      "model": "claude-sonnet-5-5",
+      "engine": "claude",
+      "tokens": {
+        "input_tokens": 1662596,
+        "cached_input_tokens": 1563420,
+        "cache_write_input_tokens": 99140,
+        "output_tokens": 73730,
+        "reasoning_output_tokens": 52643
+      },
+      "usage_records": 18,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "terra-gridfinity": {
+      "model": "gpt-6.1-terra",
+      "engine": "codex",
+      "tokens": {
+        "input_tokens": 776801,
+        "cached_input_tokens": 760832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9799,
+        "reasoning_output_tokens": 3430
+      },
+      "usage_records": 1,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": null,
+      "cost_basis": "subscription_allocation_unavailable",
+      "provenance": "Codex cumulative native session counters, maxima per session summed across parent/child sessions and resumptions."
+    },
+    "deepseek-gridfinity": {
+      "model": "deepseek-v4.1-flash",
+      "engine": "spark",
+      "tokens": {
+        "input_tokens": 18524471,
+        "cached_input_tokens": 18145280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 316512,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 196,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0,
+      "cost_basis": "local_inference_no_api_charge",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "qwen-gridfinity": {
+      "model": "qwen3.8-27b",
+      "engine": "spark",
+      "tokens": {
+        "input_tokens": 9788452,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 196581,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 107,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0,
+      "cost_basis": "local_inference_no_api_charge",
+      "provenance": "Native assistant usage, deduplicated by message ID using counter maxima; includes continuations and follow-ups."
+    },
+    "mistral-dimm": {
+      "model": "mistral-large-4",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 2507371,
+        "cached_input_tokens": 2012416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 90508,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 37,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0.67740442,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "mistral-gridfinity": {
+      "model": "mistral-large-4",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 11867279,
+        "cached_input_tokens": 10380544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 182809,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 81,
+      "assistant_records_without_tokens": 1,
+      "cost_usd": 2.15125148,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "glm-dimm": {
+      "model": "zai-glm-5-3",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 598166,
+        "cached_input_tokens": 547136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 74340,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 15,
+      "assistant_records_without_tokens": 2,
+      "cost_usd": 0.47513704,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "glm-gridfinity": {
+      "model": "zai-glm-5-3",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 20250257,
+        "cached_input_tokens": 19863872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 297935,
+        "reasoning_output_tokens": 0
+      },
+      "usage_records": 103,
+      "assistant_records_without_tokens": 1,
+      "cost_usd": 4.63279508,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "kimi-dimm": {
+      "model": "moonshotai/kimi-k3",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 5028511,
+        "cached_input_tokens": 4627510,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 93924,
+        "reasoning_output_tokens": 62414
+      },
+      "usage_records": 60,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 1.994828272,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "kimi-gridfinity": {
+      "model": "moonshotai/kimi-k3",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 10573581,
+        "cached_input_tokens": 9638625,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 148922,
+        "reasoning_output_tokens": 112094
+      },
+      "usage_records": 86,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 4.705479192,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "gemini-dimm": {
+      "model": "google/gemini-4-argon",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 1661608,
+        "cached_input_tokens": 1510906,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 56737,
+        "reasoning_output_tokens": 32960
+      },
+      "usage_records": 20,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 1.0198646,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "gemini-gridfinity": {
+      "model": "google/gemini-4-argon",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 5812060,
+        "cached_input_tokens": 5091979,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 119707,
+        "reasoning_output_tokens": 68736
+      },
+      "usage_records": 44,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 3.1464299,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "minflash-dimm": {
+      "model": "minimax/minimax-m3.1-flash",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 5838820,
+        "cached_input_tokens": 5553664,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 279455,
+        "reasoning_output_tokens": 253670
+      },
+      "usage_records": 39,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0.14687568,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "minflash-gridfinity": {
+      "model": "minimax/minimax-m3.1-flash",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 45968551,
+        "cached_input_tokens": 45449216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 377313,
+        "reasoning_output_tokens": 310318
+      },
+      "usage_records": 169,
+      "assistant_records_without_tokens": 1,
+      "cost_usd": 0.98602629,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "glmflash-dimm": {
+      "model": "z-ai/glm-5.3-flash",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 27949764,
+        "cached_input_tokens": 27411200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 278719,
+        "reasoning_output_tokens": 230951
+      },
+      "usage_records": 108,
+      "assistant_records_without_tokens": 1,
+      "cost_usd": 1.258122216,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "glmflash-gridfinity": {
+      "model": "z-ai/glm-5.3-flash",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 12968860,
+        "cached_input_tokens": 11352640,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 171613,
+        "reasoning_output_tokens": 134552
+      },
+      "usage_records": 95,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0.703813344,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "oss120-dimm": {
+      "model": "openai/gpt-oss-120b",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 382772,
+        "cached_input_tokens": 323584,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7104,
+        "reasoning_output_tokens": 2383
+      },
+      "usage_records": 23,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0.1392982,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    },
+    "oss120-gridfinity": {
+      "model": "openai/gpt-oss-120b",
+      "engine": "opencode",
+      "tokens": {
+        "input_tokens": 618761,
+        "cached_input_tokens": 518656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15650,
+        "reasoning_output_tokens": 7823
+      },
+      "usage_records": 35,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 0.22830385,
+      "cost_basis": "client_recorded_usd",
+      "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
+    }
+  },
+  "models": {
+    "claude-opus-5-5": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 7007691,
+        "cached_input_tokens": 6733443,
+        "cache_write_input_tokens": 274120,
+        "output_tokens": 202399,
+        "reasoning_output_tokens": 134902
+      }
+    },
+    "gpt-6.1-sol": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 2813898,
+        "cached_input_tokens": 2707200,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 49832,
+        "reasoning_output_tokens": 26755
+      }
+    },
+    "claude-fable-5-1": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 9641511,
+        "cached_input_tokens": 9256076,
+        "cache_write_input_tokens": 383407,
+        "output_tokens": 223110,
+        "reasoning_output_tokens": 141180
+      }
+    },
+    "gpt-6-astra": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 1716632,
+        "cached_input_tokens": 1629696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 35277,
+        "reasoning_output_tokens": 13121
+      }
+    },
+    "claude-sonnet-5-5": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 2535573,
+        "cached_input_tokens": 2380489,
+        "cache_write_input_tokens": 155022,
+        "output_tokens": 108406,
+        "reasoning_output_tokens": 73807
+      }
+    },
+    "gpt-6.1-terra": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 2,
+      "tokens": {
+        "input_tokens": 980541,
+        "cached_input_tokens": 942464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14366,
+        "reasoning_output_tokens": 4554
+      }
+    },
+    "deepseek-v4.1-flash": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 42060222,
+        "cached_input_tokens": 41234432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 746435,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "qwen3.8-27b": {
+      "runs": 2,
+      "recorded_cost_usd": 0,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 21461286,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 394468,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "mistral-large-4": {
+      "runs": 2,
+      "recorded_cost_usd": 2.8286559000000002,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 14374650,
+        "cached_input_tokens": 12392960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 273317,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "zai-glm-5-3": {
+      "runs": 2,
+      "recorded_cost_usd": 5.10793212,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 20848423,
+        "cached_input_tokens": 20411008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 372275,
+        "reasoning_output_tokens": 0
+      }
+    },
+    "moonshotai/kimi-k3": {
+      "runs": 2,
+      "recorded_cost_usd": 6.700307464,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 15602092,
+        "cached_input_tokens": 14266135,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 242846,
+        "reasoning_output_tokens": 174508
+      }
+    },
+    "google/gemini-4-argon": {
+      "runs": 2,
+      "recorded_cost_usd": 4.166294499999999,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 7473668,
+        "cached_input_tokens": 6602885,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 176444,
+        "reasoning_output_tokens": 101696
+      }
+    },
+    "minimax/minimax-m3.1-flash": {
+      "runs": 2,
+      "recorded_cost_usd": 1.13290197,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 51807371,
+        "cached_input_tokens": 51002880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656768,
+        "reasoning_output_tokens": 563988
+      }
+    },
+    "z-ai/glm-5.3-flash": {
+      "runs": 2,
+      "recorded_cost_usd": 1.9619355600000001,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 40918624,
+        "cached_input_tokens": 38763840,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 450332,
+        "reasoning_output_tokens": 365503
+      }
+    },
+    "openai/gpt-oss-120b": {
+      "runs": 2,
+      "recorded_cost_usd": 0.36760205,
+      "runs_without_cost": 0,
+      "tokens": {
+        "input_tokens": 1001533,
+        "cached_input_tokens": 842240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 22754,
+        "reasoning_output_tokens": 10206
+      }
+    }
+  },
+  "known_recorded_cost_usd": 22.265629564,
+  "runs_without_cost": 12
+}

@@ -1,0 +1,564 @@
+{
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/baseplate_5x4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_5_screws",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m2_5_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_screws",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m2_screws.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x10",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x12",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x16",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x20",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x6",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3x8",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m3x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x12",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m4x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x20",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m4x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4x8",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_m4x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m2_m25_m3",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_nut_m2_m25_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m4",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_nut_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m2_m25_m3",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_washer_m2_m25_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m4",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-gridfinity/bin_washer_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

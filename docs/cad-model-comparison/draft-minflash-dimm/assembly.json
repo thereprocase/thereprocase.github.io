@@ -1,0 +1,109 @@
+{
+  "parts": [
+    {
+      "name": "mailer_base",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/minflash-dimm/mailer_base.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bay_filler",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/minflash-dimm/bay_filler.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mailer_lid",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/minflash-dimm/mailer_lid.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

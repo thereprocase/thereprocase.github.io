@@ -1,0 +1,188 @@
+{
+  "title": "Draft Glm Gridfinity",
+  "subtitle": "layout view",
+  "caption": "Provisional exported parts \u00b7 export orientation \u00b7 unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 6308,
+      "triangles": 12616,
+      "edges": 3977,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 15412,
+      "triangles": 30820,
+      "edges": 5098,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 14473,
+      "triangles": 28942,
+      "edges": 4144,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 13971,
+      "triangles": 27942,
+      "edges": 1898,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 14059,
+      "triangles": 28118,
+      "edges": 1987,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 14049,
+      "triangles": 28098,
+      "edges": 1978,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 14029,
+      "triangles": 28058,
+      "edges": 1958,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 13879,
+      "triangles": 27758,
+      "edges": 1805,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 13809,
+      "triangles": 27618,
+      "edges": 1737,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 13987,
+      "triangles": 27974,
+      "edges": 1914,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 13957,
+      "triangles": 27914,
+      "edges": 1885,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 13737,
+      "triangles": 27474,
+      "edges": 1664,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 12481,
+      "triangles": 24958,
+      "edges": 4486,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 13931,
+      "triangles": 27862,
+      "edges": 1858,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 13936,
+      "triangles": 27868,
+      "edges": 5908,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 16078,
+      "triangles": 32154,
+      "edges": 2323,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}
