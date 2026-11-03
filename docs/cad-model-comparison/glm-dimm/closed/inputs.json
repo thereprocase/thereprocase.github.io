@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/glm-dimm/ddr4_mailer_tray.stl",
+    "sha256": "059d764ef17fe64c56d7a1390e5a282256c37dcde664f7409d8f1bcb3fbd851a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2988,
+    "triangles": 5972
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/glm-dimm/ddr4_mailer_lid.stl",
+    "sha256": "24868d32f96c64ce8555401169aa7fdf05210827f9260025d4f7ac5e5026a818",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -0.75
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 8178,
+    "triangles": 16352
+  }
+]

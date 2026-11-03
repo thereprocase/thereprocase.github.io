@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-11-03T22:23:43.214915+00:00",
+  "as_of_utc": "2026-11-03T22:42:42.158619+00:00",
   "scope": "All currently persisted usage in each isolated run, including follow-ups and native child sessions. Active calls may not be recorded yet. Setup attempts archived outside these runtime directories are excluded.",
   "token_semantics": "Input includes cache reads and writes; cache columns are subsets. Reasoning is reported as a subset of output where provided; zero can mean no separate counter. Do not add subset columns to input/output. Native providers may count tokens differently.",
   "cost_notes": "No price estimates. OpenCode recorded cost may be computed by its provider adapter; it is not independently confirmed billing. Native subscription costs cannot be allocated from these records. Local Spark API charge is zero; electricity and hardware costs are not measured. Missing usage or billing fields are unavailable, not zero.",
@@ -280,15 +280,15 @@
       "model": "mistral-large-4",
       "engine": "opencode",
       "tokens": {
-        "input_tokens": 21468220,
-        "cached_input_tokens": 19440640,
+        "input_tokens": 25432754,
+        "cached_input_tokens": 23354112,
         "cache_write_input_tokens": 0,
-        "output_tokens": 215843,
+        "output_tokens": 227503,
         "reasoning_output_tokens": 0
       },
-      "usage_records": 119,
-      "assistant_records_without_tokens": 1,
-      "cost_usd": 3.2334211,
+      "usage_records": 133,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 3.56759354,
       "cost_basis": "client_recorded_usd",
       "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
     },
@@ -296,15 +296,15 @@
       "model": "zai-glm-5-3",
       "engine": "opencode",
       "tokens": {
-        "input_tokens": 5306246,
-        "cached_input_tokens": 5146304,
+        "input_tokens": 9905554,
+        "cached_input_tokens": 9545856,
         "cache_write_input_tokens": 0,
-        "output_tokens": 131243,
+        "output_tokens": 159376,
         "reasoning_output_tokens": 0
       },
-      "usage_records": 49,
+      "usage_records": 74,
       "assistant_records_without_tokens": 2,
-      "cost_usd": 1.52187056,
+      "cost_usd": 2.54125144,
       "cost_basis": "client_recorded_usd",
       "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
     },
@@ -312,15 +312,15 @@
       "model": "zai-glm-5-3",
       "engine": "opencode",
       "tokens": {
-        "input_tokens": 31012022,
-        "cached_input_tokens": 30255232,
+        "input_tokens": 41294888,
+        "cached_input_tokens": 40112704,
         "cache_write_input_tokens": 0,
-        "output_tokens": 359813,
+        "output_tokens": 379741,
         "reasoning_output_tokens": 0
       },
-      "usage_records": 131,
-      "assistant_records_without_tokens": 1,
-      "cost_usd": 6.87841568,
+      "usage_records": 155,
+      "assistant_records_without_tokens": 0,
+      "cost_usd": 8.94169656,
       "cost_basis": "client_recorded_usd",
       "provenance": "OpenCode persisted assistant token counters; cost is client-recorded USD, not invoice verified."
     },
@@ -584,25 +584,25 @@
     },
     "mistral-large-4": {
       "runs": 2,
-      "recorded_cost_usd": 3.9108255200000004,
+      "recorded_cost_usd": 4.24499796,
       "runs_without_cost": 0,
       "tokens": {
-        "input_tokens": 23975591,
-        "cached_input_tokens": 21453056,
+        "input_tokens": 27940125,
+        "cached_input_tokens": 25366528,
         "cache_write_input_tokens": 0,
-        "output_tokens": 306351,
+        "output_tokens": 318011,
         "reasoning_output_tokens": 0
       }
     },
     "zai-glm-5-3": {
       "runs": 2,
-      "recorded_cost_usd": 8.40028624,
+      "recorded_cost_usd": 11.482948,
       "runs_without_cost": 0,
       "tokens": {
-        "input_tokens": 36318268,
-        "cached_input_tokens": 35401536,
+        "input_tokens": 51200442,
+        "cached_input_tokens": 49658560,
         "cache_write_input_tokens": 0,
-        "output_tokens": 491056,
+        "output_tokens": 539117,
         "reasoning_output_tokens": 0
       }
     },
@@ -667,6 +667,6 @@
       }
     }
   },
-  "known_recorded_cost_usd": 27.442183456,
+  "known_recorded_cost_usd": 30.859017656,
   "runs_without_cost": 12
 }

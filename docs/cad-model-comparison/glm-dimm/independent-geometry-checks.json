@@ -1,0 +1,666 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common of final exported STEP; actual submitted locked/entry poses, sampled lid motions, supported module/bag gauges, access probes. No design source executed.",
+  "source_hashes": {
+    "./exports/ddr4_mailer_tray.step": "b3b859e6f6a85f16fa10aa1bab58fa15f45ac38bec6cad2ab69199c0b42e8f59",
+    "./exports/ddr4_mailer_tray.stl": "059d764ef17fe64c56d7a1390e5a282256c37dcde664f7409d8f1bcb3fbd851a",
+    "./exports/ddr4_mailer_lid.step": "d043b799409a0d5faf0f1f3a92f0999a6d94d3b85ae1b9fd1e8f1f5723817582",
+    "./exports/ddr4_mailer_lid.stl": "24868d32f96c64ce8555401169aa7fdf05210827f9260025d4f7ac5e5026a818"
+  },
+  "part_geometry": {
+    "tray": {
+      "size_mm": [
+        143.85,
+        99.0,
+        14.800000000000024
+      ],
+      "valid": true,
+      "solids": 1
+    },
+    "lid": {
+      "size_mm": [
+        144.45,
+        104.4,
+        16.6
+      ],
+      "valid": true,
+      "solids": 1
+    }
+  },
+  "lid_motion": [
+    {
+      "state": "locked",
+      "lid_translation_mm": [
+        0,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "locked_lift_0.1",
+      "lid_translation_mm": [
+        0,
+        0,
+        0.85
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "locked_lift_0.3",
+      "lid_translation_mm": [
+        0,
+        0,
+        1.05
+      ],
+      "intersection_mm3": 5.382
+    },
+    {
+      "state": "locked_lift_1",
+      "lid_translation_mm": [
+        0,
+        0,
+        1.75
+      ],
+      "intersection_mm3": 34.341
+    },
+    {
+      "state": "wrong_direction",
+      "lid_translation_mm": [
+        0.5,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 3.423
+    },
+    {
+      "state": "entry",
+      "lid_translation_mm": [
+        -7,
+        0,
+        0.6
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "entry_lift_1",
+      "lid_translation_mm": [
+        -7,
+        0,
+        1.6
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "entry_lift_5",
+      "lid_translation_mm": [
+        -7,
+        0,
+        5.6
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "entry_lift_20",
+      "lid_translation_mm": [
+        -7,
+        0,
+        20.6
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -1,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -2,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -3,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -4,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -5,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -6,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    },
+    {
+      "state": "slide_sample",
+      "lid_translation_mm": [
+        -7,
+        0,
+        0.75
+      ],
+      "intersection_mm3": 0
+    }
+  ],
+  "bag_gauges": [
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.35,
+        31.25,
+        1.2
+      ],
+      "center_xy": [
+        0.75,
+        -18.625
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.75,
+        31.65,
+        1.6
+      ],
+      "center_xy": [
+        0.75,
+        -18.825
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": -1,
+      "gauge_mm": [
+        134.35,
+        32.25,
+        2.2
+      ],
+      "center_xy": [
+        0.75,
+        -19.125
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.35,
+        34.9,
+        8.5
+      ],
+      "center_xy": [
+        0.75,
+        -20.45
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.75,
+        35.3,
+        8.9
+      ],
+      "center_xy": [
+        0.75,
+        -20.65
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": -1,
+      "gauge_mm": [
+        134.35,
+        35.9,
+        9.5
+      ],
+      "center_xy": [
+        0.75,
+        -20.95
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.35,
+        42,
+        9
+      ],
+      "center_xy": [
+        0.75,
+        -24.0
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": -1,
+      "gauge_mm": [
+        133.75,
+        42.4,
+        9.4
+      ],
+      "center_xy": [
+        0.75,
+        -24.2
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": -1,
+      "gauge_mm": [
+        134.35,
+        43.0,
+        10.0
+      ],
+      "center_xy": [
+        0.75,
+        -24.5
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.35,
+        31.25,
+        1.2
+      ],
+      "center_xy": [
+        0.75,
+        18.625
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.75,
+        31.65,
+        1.6
+      ],
+      "center_xy": [
+        0.75,
+        18.825
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "module_thickness_mm": 1.2,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": 1,
+      "gauge_mm": [
+        134.35,
+        32.25,
+        2.2
+      ],
+      "center_xy": [
+        0.75,
+        19.125
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.35,
+        34.9,
+        8.5
+      ],
+      "center_xy": [
+        0.75,
+        20.45
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.75,
+        35.3,
+        8.9
+      ],
+      "center_xy": [
+        0.75,
+        20.65
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "module_thickness_mm": 8.5,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": 1,
+      "gauge_mm": [
+        134.35,
+        35.9,
+        9.5
+      ],
+      "center_xy": [
+        0.75,
+        20.95
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.35,
+        42,
+        9
+      ],
+      "center_xy": [
+        0.75,
+        24.0
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0.2,
+      "bay_sign": 1,
+      "gauge_mm": [
+        133.75,
+        42.4,
+        9.4
+      ],
+      "center_xy": [
+        0.75,
+        24.2
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "module_thickness_mm": 9,
+      "bag_allowance_per_face_mm": 0.5,
+      "bay_sign": 1,
+      "gauge_mm": [
+        134.35,
+        43.0,
+        10.0
+      ],
+      "center_xy": [
+        0.75,
+        24.5
+      ],
+      "tray_intersection_mm3": 0,
+      "lid_intersection_mm3": 0,
+      "lift_5mm_intersection_mm3": 0
+    }
+  ],
+  "contact_gauges": [
+    {
+      "module_height_mm": 31.25,
+      "bay_sign": -1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "bay_sign": -1,
+      "outward_shift_mm": 12.25,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "bay_sign": -1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "bay_sign": -1,
+      "outward_shift_mm": 8.600000000000001,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "bay_sign": -1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "bay_sign": -1,
+      "outward_shift_mm": 1.5,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "bay_sign": 1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 31.25,
+      "bay_sign": 1,
+      "outward_shift_mm": 12.25,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "bay_sign": 1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 34.9,
+      "bay_sign": 1,
+      "outward_shift_mm": 8.600000000000001,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "bay_sign": 1,
+      "outward_shift_mm": 0,
+      "tray_intersection_mm3": 0
+    },
+    {
+      "module_height_mm": 42,
+      "bay_sign": 1,
+      "outward_shift_mm": 1.5,
+      "tray_intersection_mm3": 0
+    }
+  ],
+  "access_probes": [
+    {
+      "bay_sign": -1,
+      "probe_size_mm": [
+        10,
+        5,
+        3
+      ],
+      "position": [
+        50,
+        0,
+        10.4
+      ],
+      "tray_intersection_mm3": 17.033944
+    },
+    {
+      "bay_sign": 1,
+      "probe_size_mm": [
+        10,
+        5,
+        3
+      ],
+      "position": [
+        50,
+        0,
+        10.4
+      ],
+      "tray_intersection_mm3": 17.033944
+    }
+  ],
+  "font_review": {
+    "authoritative_embedded_ttf_description": "Two-bead FDM font: every stroke is exactly two extrusion widths (w). Fusion text Height = 14 x line width (cap height); em = 20 x line width.",
+    "minimum_em_at_0_4mm_line_width_mm": 8,
+    "submitted_small_text_em_mm": [
+      6,
+      7
+    ],
+    "submitted_small_text_stroke_mm": [
+      0.6,
+      0.7
+    ],
+    "two_bead_em_threshold_met_at_0_4mm_line_width": false,
+    "note": "Actual line width matters. Smaller text could meet the two-bead geometry with 0.3mm/0.35mm lines; submitted README recommends 0.4mm nozzle and derives a 1.5-bead floor instead."
+  },
+  "limitations": [
+    "Rigid checks do not certify detent feel, friction, tolerance, fatigue, bag folds, foam compression, actual shipping or physical retrieval.",
+    "Bag gauges reserve an explicit extra allowance around the submitted module envelope; they do not represent an unfolded bag.",
+    "Lid motion is sampled, not a continuous swept collision proof.",
+    "Contact gauges do not model packing compression; module must be oriented as documented, with contacts outward."
+  ],
+  "render_source_stl_identity_verified": true,
+  "access_detail": {
+    "method": "Local rectangular probes across actual curved center-wall notch at maximum-module top and bare-PCB top. Contact-free width at one height is not a human-removal trial.",
+    "probes": [
+      {
+        "width_mm": 10,
+        "depth_mm": 5,
+        "height_mm": 3,
+        "zmin_mm": 10.4,
+        "intersection_mm3": 17.033944
+      },
+      {
+        "width_mm": 8,
+        "depth_mm": 5,
+        "height_mm": 3,
+        "zmin_mm": 11.8,
+        "intersection_mm3": 0
+      },
+      {
+        "width_mm": 10,
+        "depth_mm": 5,
+        "height_mm": 3,
+        "zmin_mm": 12.5,
+        "intersection_mm3": 0
+      },
+      {
+        "width_mm": 8,
+        "depth_mm": 5,
+        "height_mm": 3,
+        "zmin_mm": 4.0,
+        "intersection_mm3": 76.8
+      }
+    ]
+  },
+  "summary": {
+    "bag_gauges_checked": 18,
+    "gold_band_poses_checked": 12,
+    "locked_entry_and_sampled_slide_intersection_mm3": 0,
+    "font_guidance_in_embedded_ttf": true,
+    "small_text_meets_two_bead_geometry_at_0_4mm_line_width": false
+  }
+}

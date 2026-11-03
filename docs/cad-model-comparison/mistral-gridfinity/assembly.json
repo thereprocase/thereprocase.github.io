@@ -1,0 +1,2076 @@
+{
+  "parts": [
+    {
+      "name": "base_5x4",
+      "stl": "./exports/base_5x4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "bin_screw",
+      "stl": "./exports/bin_screw.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ],
+      "quantity": 12,
+      "assembled_transforms": [
+        [
+          [
+            1,
+            0,
+            0,
+            21.0
+          ],
+          [
+            0,
+            1,
+            0,
+            147.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            63.0
+          ],
+          [
+            0,
+            1,
+            0,
+            147.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            105.0
+          ],
+          [
+            0,
+            1,
+            0,
+            147.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            147.0
+          ],
+          [
+            0,
+            1,
+            0,
+            147.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            189.0
+          ],
+          [
+            0,
+            1,
+            0,
+            147.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            21.0
+          ],
+          [
+            0,
+            1,
+            0,
+            105.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            63.0
+          ],
+          [
+            0,
+            1,
+            0,
+            105.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            105.0
+          ],
+          [
+            0,
+            1,
+            0,
+            105.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            147.0
+          ],
+          [
+            0,
+            1,
+            0,
+            105.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            189.0
+          ],
+          [
+            0,
+            1,
+            0,
+            105.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            21.0
+          ],
+          [
+            0,
+            1,
+            0,
+            63.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            63.0
+          ],
+          [
+            0,
+            1,
+            0,
+            63.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "bin_hw",
+      "stl": "./exports/bin_hw.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ],
+      "quantity": 8,
+      "assembled_transforms": [
+        [
+          [
+            1,
+            0,
+            0,
+            105.0
+          ],
+          [
+            0,
+            1,
+            0,
+            63.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            147.0
+          ],
+          [
+            0,
+            1,
+            0,
+            63.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            189.0
+          ],
+          [
+            0,
+            1,
+            0,
+            63.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            21.0
+          ],
+          [
+            0,
+            1,
+            0,
+            21.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            63.0
+          ],
+          [
+            0,
+            1,
+            0,
+            21.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            105.0
+          ],
+          [
+            0,
+            1,
+            0,
+            21.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            147.0
+          ],
+          [
+            0,
+            1,
+            0,
+            21.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0,
+            0,
+            189.0
+          ],
+          [
+            0,
+            1,
+            0,
+            21.0
+          ],
+          [
+            0,
+            0,
+            1,
+            0.0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "label_screw_M4x20",
+      "stl": "./exports/label_screw_M4x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          127.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M4x20",
+      "stl": "./exports/lid_screw_M4x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M4x16",
+      "stl": "./exports/label_screw_M4x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          127.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M4x16",
+      "stl": "./exports/lid_screw_M4x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M4x12",
+      "stl": "./exports/label_screw_M4x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          127.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M4x12",
+      "stl": "./exports/lid_screw_M4x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M3x20",
+      "stl": "./exports/label_screw_M3x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          127.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M3x20",
+      "stl": "./exports/lid_screw_M3x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M3x16",
+      "stl": "./exports/label_screw_M3x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          127.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M3x16",
+      "stl": "./exports/lid_screw_M3x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M3x12",
+      "stl": "./exports/label_screw_M3x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          85.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M3x12",
+      "stl": "./exports/lid_screw_M3x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M3x10",
+      "stl": "./exports/label_screw_M3x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          85.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M3x10",
+      "stl": "./exports/lid_screw_M3x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M2p5x12",
+      "stl": "./exports/label_screw_M2p5x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          85.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M2p5x12",
+      "stl": "./exports/lid_screw_M2p5x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M2p5x10",
+      "stl": "./exports/label_screw_M2p5x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          85.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M2p5x10",
+      "stl": "./exports/lid_screw_M2p5x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M2p5x8",
+      "stl": "./exports/label_screw_M2p5x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          85.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M2p5x8",
+      "stl": "./exports/lid_screw_M2p5x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M2x8",
+      "stl": "./exports/label_screw_M2x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          43.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M2x8",
+      "stl": "./exports/lid_screw_M2x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_screw_M2x6",
+      "stl": "./exports/label_screw_M2x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          43.25
+        ],
+        [
+          0,
+          0,
+          1,
+          18.5
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_screw_M2x6",
+      "stl": "./exports/lid_screw_M2x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          35.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_nut_M2",
+      "stl": "./exports/label_nut_M2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          43.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_nut_M2",
+      "stl": "./exports/lid_nut_M2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_nut_M2p5",
+      "stl": "./exports/label_nut_M2p5.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          43.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_nut_M2p5",
+      "stl": "./exports/lid_nut_M2p5.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_nut_M3",
+      "stl": "./exports/label_nut_M3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          43.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_nut_M3",
+      "stl": "./exports/lid_nut_M3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_nut_M4",
+      "stl": "./exports/label_nut_M4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          1.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_nut_M4",
+      "stl": "./exports/lid_nut_M4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_washer_M2",
+      "stl": "./exports/label_washer_M2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          1.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_washer_M2",
+      "stl": "./exports/lid_washer_M2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_washer_M2p5",
+      "stl": "./exports/label_washer_M2p5.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          1.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_washer_M2p5",
+      "stl": "./exports/lid_washer_M2p5.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_washer_M3",
+      "stl": "./exports/label_washer_M3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          1.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_washer_M3",
+      "stl": "./exports/lid_washer_M3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "label_washer_M4",
+      "stl": "./exports/label_washer_M4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          1.25
+        ],
+        [
+          0,
+          0,
+          1,
+          15.75
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        90,
+        0,
+        0
+      ],
+      "quantity": 1
+    },
+    {
+      "name": "lid_washer_M4",
+      "stl": "./exports/lid_washer_M4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          32.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ],
+      "quantity": 1
+    }
+  ]
+}

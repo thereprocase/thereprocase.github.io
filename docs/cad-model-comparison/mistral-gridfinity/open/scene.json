@@ -1,0 +1,23 @@
+{
+  "title": "Mistral Gridfinity",
+  "subtitle": "Baseplate",
+  "caption": "Baseplate \u00b7 bins removed",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 5727,
+      "triangles": 11466,
+      "edges": 3585,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1310 @@
+{
+  "verification_method": "Independent direct OpenCascade intersections of delivered STEP exports in submitted instance transforms; bbox coverage/downward support probes distinguish real seats from off-base zero-overlap false passes.",
+  "base_bbox": {
+    "min": [
+      -105.0,
+      -84.0,
+      0.0
+    ],
+    "max": [
+      105.0000001,
+      84.0000001,
+      5.000000100000004
+    ]
+  },
+  "seats": [
+    {
+      "bin": "bin_screw_M4x20",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M4x16",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M4x12",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x20",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x16",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x12",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x10",
+      "outside_base_axes": [
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x12",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x10",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x8",
+      "outside_base_axes": [
+        "X",
+        "Y"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2x8",
+      "outside_base_axes": [],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 17.845713
+    },
+    {
+      "bin": "bin_screw_M2x6",
+      "outside_base_axes": [],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 17.845713
+    },
+    {
+      "bin": "bin_nut_M2",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 8.77443
+    },
+    {
+      "bin": "bin_nut_M2p5",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M3",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M4",
+      "outside_base_axes": [],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 17.799354
+    },
+    {
+      "bin": "bin_washer_M2",
+      "outside_base_axes": [],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 17.799354
+    },
+    {
+      "bin": "bin_washer_M2p5",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 8.899677
+    },
+    {
+      "bin": "bin_washer_M3",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    },
+    {
+      "bin": "bin_washer_M4",
+      "outside_base_axes": [
+        "X"
+      ],
+      "intersection_mm3_by_lift": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      },
+      "down0_05_support_intersection_mm3": 0
+    }
+  ],
+  "bin_lid": [
+    {
+      "bin": "bin_screw_M4x20",
+      "lid": "lid_screw_M4x20",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M4x16",
+      "lid": "lid_screw_M4x16",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M4x12",
+      "lid": "lid_screw_M4x12",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x20",
+      "lid": "lid_screw_M3x20",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x16",
+      "lid": "lid_screw_M3x16",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x12",
+      "lid": "lid_screw_M3x12",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M3x10",
+      "lid": "lid_screw_M3x10",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x12",
+      "lid": "lid_screw_M2p5x12",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x10",
+      "lid": "lid_screw_M2p5x10",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2p5x8",
+      "lid": "lid_screw_M2p5x8",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2x8",
+      "lid": "lid_screw_M2x8",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_screw_M2x6",
+      "lid": "lid_screw_M2x6",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M2",
+      "lid": "lid_nut_M2",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M2p5",
+      "lid": "lid_nut_M2p5",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M3",
+      "lid": "lid_nut_M3",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_nut_M4",
+      "lid": "lid_nut_M4",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_washer_M2",
+      "lid": "lid_washer_M2",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_washer_M2p5",
+      "lid": "lid_washer_M2p5",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_washer_M3",
+      "lid": "lid_washer_M3",
+      "closed_mm3": 0
+    },
+    {
+      "bin": "bin_washer_M4",
+      "lid": "lid_washer_M4",
+      "closed_mm3": 0
+    }
+  ],
+  "label_fits": [
+    {
+      "bin": "bin_screw_M4x20",
+      "label": "label_screw_M4x20",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M4x16",
+      "label": "label_screw_M4x16",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M4x12",
+      "label": "label_screw_M4x12",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M3x20",
+      "label": "label_screw_M3x20",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M3x16",
+      "label": "label_screw_M3x16",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M3x12",
+      "label": "label_screw_M3x12",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M3x10",
+      "label": "label_screw_M3x10",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M2p5x12",
+      "label": "label_screw_M2p5x12",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M2p5x10",
+      "label": "label_screw_M2p5x10",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M2p5x8",
+      "label": "label_screw_M2p5x8",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M2x8",
+      "label": "label_screw_M2x8",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_screw_M2x6",
+      "label": "label_screw_M2x6",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_nut_M2",
+      "label": "label_nut_M2",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_nut_M2p5",
+      "label": "label_nut_M2p5",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_nut_M3",
+      "label": "label_nut_M3",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_nut_M4",
+      "label": "label_nut_M4",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_washer_M2",
+      "label": "label_washer_M2",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_washer_M2p5",
+      "label": "label_washer_M2p5",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_washer_M3",
+      "label": "label_washer_M3",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    },
+    {
+      "bin": "bin_washer_M4",
+      "label": "label_washer_M4",
+      "intersection_mm3": 0,
+      "attachment": "0.1mm perimeter gap; README explicitly requires glue for permanent retention"
+    }
+  ],
+  "neighbor_groups": [
+    {
+      "a": "bin_screw_M4x20",
+      "b": "bin_screw_M4x16",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M4x20",
+      "b": "bin_screw_M3x12",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M4x16",
+      "b": "bin_screw_M4x12",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M4x16",
+      "b": "bin_screw_M3x10",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M4x12",
+      "b": "bin_screw_M3x20",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M4x12",
+      "b": "bin_screw_M2p5x12",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x20",
+      "b": "bin_screw_M3x16",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x20",
+      "b": "bin_screw_M2p5x10",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x16",
+      "b": "bin_screw_M2p5x8",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x12",
+      "b": "bin_screw_M3x10",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x12",
+      "b": "bin_screw_M2x8",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x10",
+      "b": "bin_screw_M2p5x12",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M3x10",
+      "b": "bin_screw_M2x6",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2p5x12",
+      "b": "bin_screw_M2p5x10",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2p5x12",
+      "b": "bin_nut_M2",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2p5x10",
+      "b": "bin_screw_M2p5x8",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2p5x10",
+      "b": "bin_nut_M2p5",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2p5x8",
+      "b": "bin_nut_M3",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2x8",
+      "b": "bin_screw_M2x6",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2x8",
+      "b": "bin_nut_M4",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2x6",
+      "b": "bin_nut_M2",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_screw_M2x6",
+      "b": "bin_washer_M2",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M2",
+      "b": "bin_nut_M2p5",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M2",
+      "b": "bin_washer_M2p5",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M2p5",
+      "b": "bin_nut_M3",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M2p5",
+      "b": "bin_washer_M3",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M3",
+      "b": "bin_washer_M4",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_nut_M4",
+      "b": "bin_washer_M2",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_washer_M2",
+      "b": "bin_washer_M2p5",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_washer_M2p5",
+      "b": "bin_washer_M3",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_washer_M3",
+      "b": "bin_washer_M4",
+      "closed_mm3": 0,
+      "withdrawal_mm3": {
+        "1": 0,
+        "5": 0
+      }
+    }
+  ],
+  "stacking": {
+    "bin_screw/bin_screw": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw/bin_hw": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_hw/bin_screw": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_hw/bin_hw": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    }
+  },
+  "access_capacity": [
+    {
+      "bin": "bin_screw_M4x20",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M4 SHCS x 20 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 405.2655,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 42,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M4x16",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M4 SHCS x 16 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 355.0,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 48,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M4x12",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M4 SHCS x 12 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 304.7345,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 56,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M3x20",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M3 SHCS x 20 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 212.6466,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 81,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M3x16",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M3 SHCS x 16 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 184.3722,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 94,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M3x12",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M3 SHCS x 12 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 156.0979,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 111,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M3x10",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M3 SHCS x 10 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 141.9607,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 122,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M2p5x12",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M2.5 SHCS x 12 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 98.6656,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 175,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M2p5x10",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M2.5 SHCS x 10 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 88.8482,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 195,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M2p5x8",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M2.5 SHCS x 8 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 79.0307,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 219,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M2x8",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M2 SHCS x 8 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 47.815,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 362,
+      "target": 20
+    },
+    {
+      "bin": "bin_screw_M2x6",
+      "conservative_actual_void_mm3": 28900.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 27.0000001,
+      "contents": "M2 SHCS x 6 mm (ISO 4762), up to ~20 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 41.5319,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 417,
+      "target": 20
+    },
+    {
+      "bin": "bin_nut_M2",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M2 hex nut (ISO 4032), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 22.1703,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 688,
+      "target": 30
+    },
+    {
+      "bin": "bin_nut_M2p5",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M2.5 hex nut (ISO 4032), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 43.3013,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 352,
+      "target": 30
+    },
+    {
+      "bin": "bin_nut_M3",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M3 hex nut (ISO 4032), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 62.8734,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 242,
+      "target": 30
+    },
+    {
+      "bin": "bin_nut_M4",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M4 hex nut (ISO 4032), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 135.7928,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 112,
+      "target": 30
+    },
+    {
+      "bin": "bin_washer_M2",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M2 flat washer (ISO 7089), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 5.8905,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 2590,
+      "target": 30
+    },
+    {
+      "bin": "bin_washer_M2p5",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M2.5 flat washer (ISO 7089), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 14.1372,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 1079,
+      "target": 30
+    },
+    {
+      "bin": "bin_washer_M3",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M3 flat washer (ISO 7089), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 19.2423,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 793,
+      "target": 30
+    },
+    {
+      "bin": "bin_washer_M4",
+      "conservative_actual_void_mm3": 25432.0,
+      "central14mm_finger_probe_mm3": 0,
+      "usable_depth_mm": 24.0000001,
+      "contents": "M4 flat washer (ISO 7089), up to ~30 pcs",
+      "note": "Largest nominal M4x20 envelope has24mm overall screw length including head, below27mm screw-bin depth; loose-fill counts need physical trial.",
+      "nominal_hardware_volume_mm3": 50.8938,
+      "assumed_packing_fraction": 0.6,
+      "estimated_count": 299,
+      "target": 30
+    }
+  ],
+  "label_visibility": [
+    {
+      "label": "label_screw_M4x20",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M3x12"
+      ]
+    },
+    {
+      "label": "label_screw_M4x20",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M4x16",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M3x10"
+      ]
+    },
+    {
+      "label": "label_screw_M4x16",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M4x12",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M2p5x12"
+      ]
+    },
+    {
+      "label": "label_screw_M4x12",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M3x20",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M2p5x10"
+      ]
+    },
+    {
+      "label": "label_screw_M3x20",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M3x16",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M2p5x8"
+      ]
+    },
+    {
+      "label": "label_screw_M3x16",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M3x12",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M2x8"
+      ]
+    },
+    {
+      "label": "label_screw_M3x12",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M3x10",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_screw_M2x6"
+      ]
+    },
+    {
+      "label": "label_screw_M3x10",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M2p5x12",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_M2"
+      ]
+    },
+    {
+      "label": "label_screw_M2p5x12",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M2p5x10",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_M2p5"
+      ]
+    },
+    {
+      "label": "label_screw_M2p5x10",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M2p5x8",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_M3"
+      ]
+    },
+    {
+      "label": "label_screw_M2p5x8",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M2x8",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_M4"
+      ]
+    },
+    {
+      "label": "label_screw_M2x8",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_screw_M2x6",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_washer_M2"
+      ]
+    },
+    {
+      "label": "label_screw_M2x6",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_nut_M2",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_washer_M2p5"
+      ]
+    },
+    {
+      "label": "label_nut_M2",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_nut_M2p5",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_washer_M3"
+      ]
+    },
+    {
+      "label": "label_nut_M2p5",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_nut_M3",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_washer_M4"
+      ]
+    },
+    {
+      "label": "label_nut_M3",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_nut_M4",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_nut_M4",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M2",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M2",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M2p5",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M2p5",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M3",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M3",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M4",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "label": "label_washer_M4",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    }
+  ],
+  "limitations": [
+    "No physical printing, glue adhesion, snap force/fatigue, random loose-fill or loaded handling tests. Capacity arithmetic uses submission nominal hardware dimensions and60% packing.",
+    "Sightlines and withdrawal sample discrete positions. Top labels require lids present; vertical front plates require exposed sightlines."
+  ],
+  "source_sha256": {
+    "exports/base_5x4.step": "a3155de1b9eb4a83184c041cb0cdde6476b4c85e5cf5ee3a731e312132e9ac98",
+    "exports/bin_screw.step": "fa726946164ed0ca751412ed0460376b784f94f2eda3e51b4307bbfed503fffd",
+    "exports/bin_hw.step": "b4603007718c5b9082936c9dc94afb50278e83fd2499165d27f7127017cf8f2d",
+    "exports/label_screw_M4x20.step": "1ff02e804881ba514961d643cd7cfbf87e04629381620c7994adbda69cec3898",
+    "exports/lid_screw_M4x20.step": "c12561469f93710f5d12decd0898a3044c70567acd15eec40d16cb464a66cc18",
+    "exports/label_screw_M4x16.step": "ed78af4c0a907f2f8ed2416e9d62be056fc410affe09b2bfc81138547b1e06aa",
+    "exports/lid_screw_M4x16.step": "2f8221041f7a47320eb0a93ead02964815ac71332529085db19ef65867b68496",
+    "exports/label_screw_M4x12.step": "c5e95c024a3047100acd7c018661d65cf527aaaa11b344704c591dea2193e568",
+    "exports/lid_screw_M4x12.step": "42d8fb7601700510f12d39a9014fa96714c02812a81a7781bad519deb8cce153",
+    "exports/label_screw_M3x20.step": "77239520014462b7a812a420935a8e2f8c805b614ad37f0a56f9bd0456c4bd3d",
+    "exports/lid_screw_M3x20.step": "3b01bd4d3c0aacd618139b902a3f7799a197c5cef2d7a5188ebd9ee48914efe2",
+    "exports/label_screw_M3x16.step": "b2b3b0459a9c837e4f971067e30ff6392721f82fca21adb6e4195f6ea967aec7",
+    "exports/lid_screw_M3x16.step": "c4c3cfba6d8a369f0cc8ae08db3c78aee7b03042044cfc4a0735968e7005c046",
+    "exports/label_screw_M3x12.step": "b81d16c8f0f99b1780f5c96c2384ed81d0a97c11d1da89464c985d58452d8ddd",
+    "exports/lid_screw_M3x12.step": "6aabddf6426bc36161051d7cbec0c3ce58bc9d4a36d51b7326fff7fafc71a230",
+    "exports/label_screw_M3x10.step": "844429d4c8bd6f13628ac3645f93a4050840e2d1861465ca89f0df48a4e23ece",
+    "exports/lid_screw_M3x10.step": "eb717ccb4fc6211aeda5509210c413dace1392358fd19302ccb012d82ba21cb7",
+    "exports/label_screw_M2p5x12.step": "25beb46883b8ced14ef0275d051ca77e33ee44e3f070ead3825aee94b4e3ddd9",
+    "exports/lid_screw_M2p5x12.step": "a85c6a9a6f964c14954eed56cad76545a215a6d2a7601255ab0f65bd6f432817",
+    "exports/label_screw_M2p5x10.step": "85547906088537252604a840dcd6ade85492b77f7e13183589502e18a4e42410",
+    "exports/lid_screw_M2p5x10.step": "91b18f927655a01ec3f60dcf26883033a92c9196ab039cee24c95df09f394a4d",
+    "exports/label_screw_M2p5x8.step": "da72f05abda2d452debc175190b4f0975a688829f40049371e2537f47803794d",
+    "exports/lid_screw_M2p5x8.step": "f13e2f5489092023bc428b32e47a8d59951a694d75452c24749131a6cae0baf0",
+    "exports/label_screw_M2x8.step": "a0f18860701d27e5c75363bb5600ef66fd0de56512d4dd81051e129127ed8f8f",
+    "exports/lid_screw_M2x8.step": "8a75725c4c2d1b769d9ef9e09a6151c505a8aeae8e0d40855022f16920201a0f",
+    "exports/label_screw_M2x6.step": "0209699901fe9e858bda1f780690fe1aad542d2f79d16b0806ae832e20573cb9",
+    "exports/lid_screw_M2x6.step": "21b6b6a60599a9cf7453c751cf99627590c816767f6f3be140bf43161df8bf47",
+    "exports/label_nut_M2.step": "3a5d1bb7d94dc897beb2bd9080c4a960d316f46690ccfc9642f68d2b22cb3e6f",
+    "exports/lid_nut_M2.step": "e9e11e2d5528744905866318e0825b9ccc94a8e7b788d9ba127044e18b563618",
+    "exports/label_nut_M2p5.step": "ae51fd0adbf19dd1b36374fc1dde3e8b6fad6c79b8c1f268ee72861e8c7476be",
+    "exports/lid_nut_M2p5.step": "c2c0f2512bcd18b9b5d7e733094197462e5e643210f002ea5093d96bae621492",
+    "exports/label_nut_M3.step": "f2235a34435acbdb1688cae4d3d361443c943c4fac09a1bed78ac5b7f0d02b36",
+    "exports/lid_nut_M3.step": "b2a43a91a65c77bc3f1d6bd52aa12e0d123e5e0cd388a064ba95862661095b2f",
+    "exports/label_nut_M4.step": "a6dee70a91413ce50de757af05d76b0ff8620817eb90a515168c57d5dabb0795",
+    "exports/lid_nut_M4.step": "a57008558dae44577d419272c2105bdd5d03326096635fd558bd4f7e91af50e6",
+    "exports/label_washer_M2.step": "f2ccb72528ad69865c0c43240b3db164884ce54199f89d434d364bc000e56732",
+    "exports/lid_washer_M2.step": "d297224f0e6b524da6ff2521991fded196912546f27d969b98c25e31ee564ec5",
+    "exports/label_washer_M2p5.step": "05c039ebc63562f2fb40500375cbe5f364b4e19a21456ba8dbf29f057c69705a",
+    "exports/lid_washer_M2p5.step": "d8f51c2551639bb0186835879eacafc06997854664b1e7a48c36bbf6bc56eb3f",
+    "exports/label_washer_M3.step": "6b0d08b06247cb23dbc25f98fd336ffc5330a88a3ef24471a3ed5970fed3f57b",
+    "exports/lid_washer_M3.step": "6ecd99f64ab58388c3d459e27ff0a5bcabac399456f8e3ed349233a46fe45d94",
+    "exports/label_washer_M4.step": "42a050bba94420ec8e671b604f5b6552a49a0bd223034b7c91e83e6f424a3a6f",
+    "exports/lid_washer_M4.step": "043f3b2c3cb6555d30c06a8b6322f187380d152661a45d4e3fcae7c38dab3353"
+  },
+  "capacity_method": "Conservative actual STEP free volume in34x34mm rectangular bounds above scoop, with60% unvalidated packing. Solid nominal head/shank cylinders, hex nut prisms and washer disks ignore holes; no physical loading test."
+}

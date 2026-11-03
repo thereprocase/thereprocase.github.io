@@ -1,0 +1,14 @@
+[
+  {
+    "label": "All parts \u00b7 print orientation",
+    "url": "mistral-gridfinity/layout/"
+  },
+  {
+    "label": "Assembled starter layout",
+    "url": "mistral-gridfinity/closed/"
+  },
+  {
+    "label": "Baseplate",
+    "url": "mistral-gridfinity/open/"
+  }
+]

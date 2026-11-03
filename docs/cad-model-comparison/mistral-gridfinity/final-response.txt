@@ -1,0 +1,13 @@
+Done. Everything is in `./cadcomp-20261103-mistral-gridfinity`, built from original parametric geometry and verified functionally.
+
+## Handover
+
+**System** — a standard 5×4 Gridfinity baseplate (210×168×5 mm, refined spec profile) plus 20 independent 1×1 bins, each with its own snap lid and glued FillaPrint label plate. Two reusable bin types: **Type A screw bin** (41.5×41.5×35 mm, one open 37.5×37.5×27 mm compartment) and **Type B hardware bin** (×32 mm, 24 mm deep). Starter assortment: M3 screws ×8/10/12/16/20, M4 ×12/16/20, M2.5 ×8/10/12, M2 ×6/8, plus nuts and washers for all four sizes — 20/20 cells used.
+
+**Use** — labels face front (`M3 x 12 / SCREW`, `M3 / NUT`, `M3 / WASHER`, same text engraved on each lid top) in Fillaprint-Regular at em 10 mm (cap 7.0 mm ≥ the 5.88 mm minimum at 0.42 mm line width), engraved 0.6 mm = 3 layers for the first-layer colour swap; print plates face-down, lids flipped. Compartments are single open wells (37.5 mm opening, scooped floor) so one washer/short screw comes out with fingers; bins seat in real 42 mm bases with 0.25 mm drop, neighbours keep the 0.5 mm gap so lifting one never spills the rest; snap the lid on and lift the bin by its walls to carry it spill-free; bins stack nesting 0.35 mm into the standard top lip. Extending = one more Type A bin + lid + label per new size, and another baseplate tiles at 42 mm pitch.
+
+**Deliverables** — `src/` (gf.py, parts.py, textlabel.py, build_all.py, check_meshes.py), `exports/` with 43 STEP + 43 binary STL (base, 2 bin types, 20 lids, 20 labels), `assembly.json` (43 parts, 61 instances, row-major 4×4 mm transforms), `README.md`, `checks/{cad_report.md, mesh_report.md, checks.json}`.
+
+**Measured verification** — exact OpenCASCADE booleans: all 20 bins seat on the base with 0.000000 mm³ overlap (17.8 mm³ when pushed 0.05 mm down, proving contact), adjacent bins/lids 0 mm³, stacking 0 mm³ at nest (0.81 mm³ when forced), lids 0 mm³ at rest, labels 0.1 mm clearance in their windows; ray-measured on the exported meshes: frustum inside pocket for all z with ≥0.25 mm clearance, rim 36.10 vs lip 36.34, bead 37.90 in groove 38.10 with 0.4 mm retention interference; all 43 STLs binary + watertight, STEP re-imports match volumes; capacity table (20 screws / 30 nuts / 30 washers) all pass — worst case M4×20 needs 21 mm of 27 mm.
+
+**Still needs a physical fit test** — lid snap flex (0.8 mm pass / 0.2 mm retention, tune `LID_BEAD_OUT`/`GROOVE_DEPTH` if needed in real filament), glue bond of label plates, one bin on your own third-party baseplate, and real-world fill vs the analytic 55%-packing capacity estimate. Baseplate is plain (no magnet holes); M2 washer OD varies 4.5–5.0 mm by series (sized for 5.0).

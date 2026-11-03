@@ -1,0 +1,18 @@
+Everything is complete and verified. Here's the handover.
+
+## Handover — Reusable DDR4 mailer (2× UDIMM)
+
+**What it is:** a two-part printed case — a **tray** with two bays and a **slide-lock lid** — closed at **144.5 × 104.4 × 17.4 mm**, ~120 g of PETG equivalent. No hardware, no supports, no springs.
+
+**Key design decisions**
+- **Sticks lie flat**, one per bay, gold edge toward the outer wall. A full-length **relief trench (18.5 × 1.8 mm)** in each bay floor sits under every possible gold-strip position for module heights 31–42 mm and runs right to the bay wall, so nothing can ever rest on the contacts — the lid has no hold-down ribs at all, and reserves 3 mm of foam space per the user's plan.
+- **Lid mechanism:** drop on (tabs enter open-top notches), slide 7 mm to lock (tabs pass under covered channels, over detents, to blind endstops). Locked, it can't be lifted, over-slid, or slid off; reopening is slide-back-and-lift. I chose this over snap flexures deliberately: no spring rates to guess, nothing to fatigue, geometry-only retention. Stick removal: press the spine edge through a thumb scallop in the center wall, grab the stick by its top face.
+- **Labels:** Fillaprint debossed — "DDR4 ×2" (16 mm), envelope spec, "LOCK → / ← OPEN" slide cues, "GOLD ↑/↓" + bay numbers on the floors. The font ships no minimum-size guidance, so I measured it (stroke = 0.10 em, cap 0.70 em) and derived a 5 mm floor; the smallest text used is 6 mm (0.6 mm strokes = 1.5× a 0.4 mm extrusion).
+
+**What fits:** all DDR4 UDIMMs (JEDEC 133.35 × 31.25 × 1.2 mm, verified online) up to **42 mm tall × 9 mm thick** — covers bare PCB, Flare X (32.8), Vengeance LPX (34), FURY Beast (34.9), Ballistix (~34–35), Vulcan (~35), Ripjaws V (42, the limit). Excludes RGB Pro (44) and Dominator (55) by design; `stick_h_max` is one parameter to change if you disagree. Honest caveat: per-module heights are manufacturer spec-sheet values (vendor pages weren't fetchable through this network); only the JEDEC dims were independently confirmed.
+
+**Verified (30/30 checks in `checks.json`):** collision-free insertion sweeps for bare/low/max envelopes in both bays; 12 worst-case gold placements all clear, with a sampled mesh audit showing ≥1.00 mm finger clearance; the full latch state machine proven by exact boolean intersections (drop, lock, lift-blocked, slop ≤0.15 mm, endstop, wrong-way block, mid-slide lift-block, release only at entry notches); watertight single-shell meshes, binary STLs, closed footprint matches CAD; label metrics and extents.
+
+**Still needs a physical test:** detent feel and drop-slide resistance (tape over the seam is a complete fallback); your printer's fit on the 0.2–0.3 mm clearance stack; lid label quality on the bed face; your foam thickness; and measuring your actual bagged sticks against the 42/9 mm envelope.
+
+**Files:** `ddr4_mailer.py` (parametric source), `exports/` (STEP + binary STL per part), `assembly.json` (locked-state 4×4 transforms, mm), `checks.py`/`mesh_audit.py`/`checks.json`, `README.md`, font + OFL in `assets/fillaprint/`. Regenerate with the two python runtimes as documented in the README.

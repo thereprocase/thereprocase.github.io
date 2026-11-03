@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/glm-dimm/ddr4_mailer_tray.stl",
+    "sha256": "059d764ef17fe64c56d7a1390e5a282256c37dcde664f7409d8f1bcb3fbd851a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2988,
+    "triangles": 5972
+  }
+]

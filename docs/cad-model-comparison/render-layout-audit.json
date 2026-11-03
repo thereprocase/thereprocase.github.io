@@ -1,5 +1,5 @@
 {
-  "reviewed_layouts": 27,
+  "reviewed_layouts": 29,
   "rows": [
     {
       "run": "sol-dimm",
@@ -188,6 +188,20 @@
       "layout_instances": 22,
       "expected_printed_instances": 22,
       "assembled_parts": 22,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "mistral-gridfinity",
+      "layout_instances": 61,
+      "expected_printed_instances": 61,
+      "assembled_parts": 61,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "glm-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
       "minimum_z_mm": 0.0
     }
   ],
