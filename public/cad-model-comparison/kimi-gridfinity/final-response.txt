@@ -1,0 +1,17 @@
+Done. Complete, verified, one-shot delivery in the run directory.
+
+**Handover**
+
+**System:** 5×4 (210×168 mm) open-frame Gridfinity baseplate + 18 labelled 1×1 bins on a strict 42 mm grid. One row per size: M2 (2 screw bins + nut + washer), M2.5 (same), M3 (4 screw bins + divided nut|washer bin), M4 (3 screw bins in taller 3u + nut + washer). Cells (4,0) and (4,1) are left spare as documented extension points. All bins share one parametric body (S/N/W/D variants via height/label/divider params) — no decorative tray, four reusable types.
+
+**Key verified numbers** (47 trimesh checks on the exported STLs, all pass — `out/checks.json`):
+- Base profile matches the spec stations (35.6/37.2/37.2/41.5 mm; R0.8/R1.6/R3.75), so bins fit any ordinary Gridfinity base; baseplate openings are profile + 0.25 mm radial, measured seat clearance 0.15–0.25 mm, zero interference (1068 sample points).
+- Stacking lip is the spec funnel + 0.10 mm clearance; 2u-on-2u stacks register at the lip top edge with 0.07 mm median clearance, zero interference; cross-stacks with standard bins both ways.
+- Interior clear space 39.1 mm wide, floor at 5.75 mm with 45° edge chamfer (finger access), usable depth 8.25 mm (2u) / 15.25 mm (3u).
+- Capacity vs real ISO 4762/4032/7089 dimensions at 0.6 packing: worst fill 52% (M3×20/M4×20) — lift-and-carry without spilling.
+- Labels: FillaPrint at cap 6.5 mm = the font's designed minimum (stroke exactly cap/7 = 0.93 mm = two 0.46 mm beads), debossed 0.6 mm; "M3×10"-style for screws, hexagon ring = nut / circle ring = washer + size; glyph renders confirmed crisp, upright, unmirrored.
+- Magnet pockets 6.5×2.4 mm + M3 screw holes measured at spec positions (±13.8); every part watertight single solid; STLs confirmed binary.
+
+**Files:** `src/*.py` (parametric source), `build.py` (rebuild), `checks.py` (verification), `out/stl/` + `out/step/` per part, `out/assembly.step` (19 located parts), `assembly.json` (mm transforms, Z-up, fronts at −Y), `README.md` (layout map, handling, extension guide, print notes).
+
+**Needs a physical fit test (detailed in README):** printer-specific seat/stack tightness (tune `LIP_CLEAR`/`OPEN_CLEAR`, print one bin + a plate section first), vendor variance in screw heads/nuts, 6×2 magnet press fit, label contrast (paint-fill option), and large-plate bed warping. Stated limitations: 1×1 bins only in the generator, spec-exact lip registration edge (prints ~0.3 mm), labels hidden when stacked, capacity figures are volumetric estimates.

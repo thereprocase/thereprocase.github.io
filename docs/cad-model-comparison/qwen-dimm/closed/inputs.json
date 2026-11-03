@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-dimm/tray.stl",
+    "sha256": "6f299944456e4d46fc3fc5b71e750844fa8368424b7a70592d6637295d505e6f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 824,
+    "triangles": 1644
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/qwen-dimm/lid.stl",
+    "sha256": "0da3e33f2f8bb69f58c625e9f21e667a76b72fc29c7d7c0318853e1e400d446f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -19.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2444,
+    "triangles": 4884
+  }
+]

@@ -1,0 +1,17 @@
+Done. Everything rebuilds cleanly from scratch and every check passes.
+
+## Handover
+
+**What was built** — a parametric two-part mailer (`mailer.py`, build123d) for two heatspreaded DDR4 UDIMMs: **144.8 × 30.6 × 49.9 mm** outer. Sticks stand vertically, **spreader edge down, gold-contact edge up** — the pads face into a 1.65 mm air gap under the closed lid, drops load through the spreader edge, and no part of the box can ever touch them (verified geometrically for every SKU, bare and bagged).
+
+**How the lid stays on / comes off** — each long wall has a lid track whose floor rises toward its mouth (a dovetail undercut); the lid's stepped edge rails are taller than the track mouth, so it cannot be lifted (jams at +0.30 mm), tilted (jams immediately) or pulled sideways. A tooth under each rail drops into a latch pocket at the back wall — a felt click at closed; pulling the tab lifts it ~0.2 mm over the stepped lip and the lid slides fully out the front (removal is the loading method). Sticks then lift straight up. A `CONTACTS ↑` FillaPrint label is engraved in each slot floor, read at the moment of loading.
+
+**Envelope, from researched real products** — ≤ 134.5 × 42.5 × 9.0 mm per module: verified against Kingston FURY Beast DDR4 (133.35 × 34 × 7.2, official datasheet in `research/`), Corsair Vengeance LPX (34 mm official), G.Skill Ripjaws V (42 mm official), Patriot Viper 4 (42 mm), Vulcan Z (~32 mm). Deliberately excluded: Trident Z RGB (~44.5), Vengeance RGB Pro (44.45), Dominator (56). The three parameters at the top of `mailer.py` regenerate the whole design for anything else.
+
+**Labels** — FillaPrint glyphs (OFL font as supplied): `2 × DDR4` on the lid at size 12 (1.22 mm strokes), `CONTACTS UP` in the slot floors at size 10 (1.02 mm) — the font's minimum practical size, measured from its own glyph geometry (≈0.10 mm stroke per point); pockets 0.8 mm deep for inlay filling.
+
+**Verification, two independent layers, all passing** — 21 exact B-rep boolean checks (interference=0 in riding *and* seated closed poses, full 155 mm slide path clear, lift/tilt/side jam, five module cases × bare/bagged × both slots with a contact-edge guard slab, extraction, lid coverage, label pockets actually cut) and 13 mesh-level checks from the STLs alone (binary/watertight/volume, bboxes, ray-interval assembled interference over 11 711 columns: worst overlap 0.000 mm, stick+guard clearance re-proven). Logs: `cad_checks.txt`, `checks_report.txt`.
+
+**Needs a physical test (honestly):** latch click force and vibration retention (~1 N design target — `TOOTH_H/STEP1/STEP2/RAIL_LIFT` tune it); track friction/slop at real printer tolerance (0.15 mm clearances; elephant-foot compensation on the track mouths); drop robustness of the 1.2 mm outer wall leaf beside the tracks; whether a thick folded bag seam fits the slot end comfortably; filled-inlay appearance.
+
+**Files:** `mailer.py`, `checks.py`, `out/{base,lid}.{step,stl}`, `out/assembly.json` (includes the settled-pose 4×4 transform for the lid), `README.md`, `cad_checks.txt`, `checks_report.txt`, `research/kingston_bb1.pdf`. Print with 0.2 mm layers, 3 walls, no supports (largest bridge is the 2.2 mm track roof).

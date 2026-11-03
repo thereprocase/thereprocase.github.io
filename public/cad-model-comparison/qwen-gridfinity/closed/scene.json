@@ -9,7 +9,7 @@
   },
   "parts": [
     {
-      "file": "part-0.bin",
+      "file": "part-0.bin.gz",
       "vertices": 78697,
       "triangles": 157406,
       "edges": 2335,
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "file": "part-1.bin",
+      "file": "part-1.bin.gz",
       "vertices": 17760,
       "triangles": 35516,
       "edges": 1242,
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "file": "part-2.bin",
+      "file": "part-2.bin.gz",
       "vertices": 17982,
       "triangles": 35960,
       "edges": 1471,
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "file": "part-3.bin",
+      "file": "part-3.bin.gz",
       "vertices": 18144,
       "triangles": 36284,
       "edges": 1632,
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "file": "part-4.bin",
+      "file": "part-4.bin.gz",
       "vertices": 17750,
       "triangles": 35496,
       "edges": 1231,
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "file": "part-5.bin",
+      "file": "part-5.bin.gz",
       "vertices": 17680,
       "triangles": 35356,
       "edges": 1163,
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "file": "part-6.bin",
+      "file": "part-6.bin.gz",
       "vertices": 17842,
       "triangles": 35680,
       "edges": 1324,
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "file": "part-7.bin",
+      "file": "part-7.bin.gz",
       "vertices": 17930,
       "triangles": 35856,
       "edges": 1413,
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "file": "part-8.bin",
+      "file": "part-8.bin.gz",
       "vertices": 17920,
       "triangles": 35836,
       "edges": 1404,
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "file": "part-9.bin",
+      "file": "part-9.bin.gz",
       "vertices": 17900,
       "triangles": 35796,
       "edges": 1384,
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "file": "part-10.bin",
+      "file": "part-10.bin.gz",
       "vertices": 17608,
       "triangles": 35212,
       "edges": 1090,
@@ -130,7 +130,7 @@
       ]
     },
     {
-      "file": "part-11.bin",
+      "file": "part-11.bin.gz",
       "vertices": 17770,
       "triangles": 35536,
       "edges": 1251,
@@ -141,7 +141,7 @@
       ]
     },
     {
-      "file": "part-12.bin",
+      "file": "part-12.bin.gz",
       "vertices": 17848,
       "triangles": 35692,
       "edges": 1331,
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "file": "part-13.bin",
+      "file": "part-13.bin.gz",
       "vertices": 17828,
       "triangles": 35652,
       "edges": 1311,
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "file": "part-14.bin",
+      "file": "part-14.bin.gz",
       "vertices": 17976,
       "triangles": 35948,
       "edges": 1461,
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "file": "part-15.bin",
+      "file": "part-15.bin.gz",
       "vertices": 17904,
       "triangles": 35804,
       "edges": 1388,
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "file": "part-16.bin",
+      "file": "part-16.bin.gz",
       "vertices": 17986,
       "triangles": 35968,
       "edges": 1472,
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "file": "part-17.bin",
+      "file": "part-17.bin.gz",
       "vertices": 18278,
       "triangles": 36552,
       "edges": 1769,
@@ -207,7 +207,7 @@
       ]
     },
     {
-      "file": "part-18.bin",
+      "file": "part-18.bin.gz",
       "vertices": 18572,
       "triangles": 37140,
       "edges": 2064,
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "file": "part-19.bin",
+      "file": "part-19.bin.gz",
       "vertices": 18270,
       "triangles": 36536,
       "edges": 1756,
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "file": "part-20.bin",
+      "file": "part-20.bin.gz",
       "vertices": 18198,
       "triangles": 36392,
       "edges": 1683,

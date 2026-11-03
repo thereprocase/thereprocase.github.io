@@ -1,0 +1,291 @@
+{
+  "verification_method": "Direct OpenCascade kernel intersections of delivered STEP exports in actual submitted assembly poses; bounding-box separation proves neighbor clearance without convenience Boolean cleanup.",
+  "seats": {
+    "bin_washer_m2": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_washer_m25": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_washer_m3": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m3x12": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_washer_m4": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_nut_m2": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_nut_m25": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_nut_m3": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m3x16": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_nut_m4": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m2x6": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m25x6": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m3x8": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m4x10": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m4x20": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m2x8": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m25x10": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m3x10": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_screw_m4x16": {
+      "0": 0,
+      "1": 0,
+      "5": 0
+    }
+  },
+  "stack": {
+    "25.4/25.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "25.4/32.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "25.4/39.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "32.4/25.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "32.4/32.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "32.4/39.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "39.4/25.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "39.4/32.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    },
+    "39.4/39.4": {
+      "0": 1002.55393,
+      "1": 909.81888,
+      "4": 0
+    }
+  },
+  "limitations": [
+    "No physical fit, loading, print bridging or label legibility tests. Capacity estimates are geometric, not measured packing."
+  ],
+  "overlapping_xy_bounding_boxes": [],
+  "source_inspection": {
+    "print_pose": "all bins upside down, as README; cavity floor is then a ceiling spanning39.1mm",
+    "cavity_width_mm": 39.1,
+    "cavity_depths_mm": [
+      14.45,
+      21.45,
+      28.45
+    ],
+    "finger_access": "open39.1mm square wells; no scoop or finger ramps",
+    "label_cap_range_claimed_mm": [
+      4.3,
+      5.0
+    ],
+    "supplied_font_minimum_cap_at_0_42mm_width": 5.88,
+    "layout_front_row_conflict": "README calls row1 front but coordinates put row1 at+63Y while declared front is-Y",
+    "labels": "inner back wall engraving plus outer front; inner label needs above-front view over rim, physical readability untested",
+    "usable_storage": "Every bin has0.65mm sealed top; central260mm3 probes entirely filled in all19. Claimed internal capacity is inaccessible."
+  },
+  "source_sha256": {
+    "cad/baseplate_5x4.step": "fcd23a46a7675014f0e75f5e0ae914ca9a6b8ac3b058018a0d50b0532aae7f25",
+    "cad/bin_washer_m2.step": "998f4c74a7cbb9586cececb6e4b27a1de7dd0ab3090ee25277f761fc2fded86a",
+    "cad/bin_washer_m25.step": "7c6f7391294d77249d4336208cb69246a050b97075b583cc326bc92c07dfd863",
+    "cad/bin_washer_m3.step": "d57753320521fea6d4189a49750c7141dee9ab412f251a150b0cb25bee24169b",
+    "cad/bin_screw_m3x12.step": "8d76ea51b60396b4105d71b473e163302ac1b3ae165c63ab493b549c4addc0c8",
+    "cad/bin_washer_m4.step": "1b9b3c61f8dbe10594810926e2cd7f3c3ef8f2df61568d7460721395ea51ba5a",
+    "cad/bin_nut_m2.step": "ab685fc95e39f23068489dcc26da96abe8f68539e23801ff7f5de8ab1f42b710",
+    "cad/bin_nut_m25.step": "ddb365fe2fef2ce5678820fad3933668a3c4974b7fce2566f73b6c80bbab9d83",
+    "cad/bin_nut_m3.step": "91eda3841c538e118e948c3372812d19b36e944a1acf4f5b05c67e80c1a769e6",
+    "cad/bin_screw_m3x16.step": "8f6a4b7dd966276b59979bff068545bf2b3b815a6b9b70b47ded804c232a55b9",
+    "cad/bin_nut_m4.step": "aa930ff198815b78faa22467482890cf1f5c36d68e94eb223a0182098b407c11",
+    "cad/bin_screw_m2x6.step": "bb2b7f6fc90015be8fcaef807c9f2a6e51febd50c712ab5f8aa94cf4ded05ee5",
+    "cad/bin_screw_m25x6.step": "a1114e1e19ce72912dd2e232668fa5ec6517a161e790c1cd92e0a4c0e56d5c66",
+    "cad/bin_screw_m3x8.step": "e57b056b5f3d9a4f9e48017b12168bf850aaf0f558148c39b8172fc270febc9d",
+    "cad/bin_screw_m4x10.step": "8215e104e01e9ba54b2f30e9f543fbf9d9468d76fdb96681f2ebccfafcebfeb7",
+    "cad/bin_screw_m4x20.step": "c2c05de83513252859d94f97050146735364b393f76a127cba9d12d73cd07c3f",
+    "cad/bin_screw_m2x8.step": "b6841a04bf04e7886d585826a3b491cc8e6c62bcf7e3b3433b922d9a7d4dc3c4",
+    "cad/bin_screw_m25x10.step": "f755e4e6a3c2bc591203993df06c485b44dd7d9562bb4239f236134cf677ce31",
+    "cad/bin_screw_m3x10.step": "e9e61f8cf497a1dbd9c69c901729283e797a19a7ab358e8abcb7c34352c4b2af",
+    "cad/bin_screw_m4x16.step": "f833a0d009ed0bc92c0303a8b368e71885da13a8c53cc67763e0a1127697a42a"
+  },
+  "top_cap_probes": {
+    "verification_method": "Direct OCP intersections with central20x20x0.65mm top-layer probes, all19 delivered STEP bins. Filled probes demonstrate sealed loading opening.",
+    "bins": {
+      "bin_washer_m2": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_washer_m25": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_washer_m3": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m3x12": {
+        "height": 32.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_washer_m4": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_nut_m2": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_nut_m25": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_nut_m3": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m3x16": {
+        "height": 32.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_nut_m4": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m2x6": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m25x6": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m3x8": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m4x10": {
+        "height": 32.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m4x20": {
+        "height": 39.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m2x8": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m25x10": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m3x10": {
+        "height": 25.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      },
+      "bin_screw_m4x16": {
+        "height": 32.4,
+        "top_cap_probe_mm3": 260.0,
+        "probe_solid_mm3": 260
+      }
+    }
+  }
+}

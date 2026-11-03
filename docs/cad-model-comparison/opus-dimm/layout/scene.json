@@ -9,7 +9,7 @@
   },
   "parts": [
     {
-      "file": "part-0.bin",
+      "file": "part-0.bin.gz",
       "vertices": 17068,
       "triangles": 34140,
       "edges": 17478,
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "file": "part-1.bin",
+      "file": "part-1.bin.gz",
       "vertices": 12254,
       "triangles": 24508,
       "edges": 12580,
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "file": "part-2.bin",
+      "file": "part-2.bin.gz",
       "vertices": 12010,
       "triangles": 23828,
       "edges": 12284,

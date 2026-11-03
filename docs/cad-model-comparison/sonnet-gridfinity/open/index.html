@@ -136,7 +136,7 @@ async function start(){
  const r=await fetch("scene.json");if(!r.ok)throw Error("Scene unavailable");scene=await r.json();
  for(const k of ["title","subtitle","caption"])$(k).textContent=scene[k]||"";
  cam.yaw=scene.camera?.yaw??-1.05;cam.pitch=scene.camera?.pitch??.87;
- models=await Promise.all(scene.parts.map(async info=>{const r=await fetch(info.file);if(!r.ok)throw Error(info.file+": "+r.status);return upload(await r.arrayBuffer(),info);}));
+ models=await Promise.all(scene.parts.map(async info=>{const r=await fetch(info.file);if(!r.ok)throw Error(info.file+": "+r.status);const raw=await r.arrayBuffer();const bytes=new Uint8Array(raw);const decoded=info.file.endsWith(".gz")&&bytes[0]===31&&bytes[1]===139?await new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream("gzip"))).arrayBuffer():raw;return upload(decoded,info);}));
  home();cam.dist*=scene.camera?.zoom??.8;$("load").style.display="none";draw();
 }
 

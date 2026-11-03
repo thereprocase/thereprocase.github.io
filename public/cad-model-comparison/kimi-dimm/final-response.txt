@@ -1,0 +1,13 @@
+Done. Handover:
+
+**What it is.** A two-part printed mailer (base + snap lid), 149.3 × 112.3 × 16.7 mm assembled, holding two bagged DDR4 UDIMMs lying flat in separate recessed pockets. Sticks ride only on their bagged heatspreader faces; the gold-contact edge always faces a void — ≥1.2 mm to any rigid wall in the worst jammed pose, plus 8 mm relief grooves in each pocket floor under the contact-adjacent face strips. ESD protection comes from the bags; the box is purely mechanical.
+
+**Lid and access.** The lid is a cap retained by four 0.7 mm wedge nubs snapping into grooves in the base wall (measured 0.45 mm release deflection, 0.25 mm skirt gap, ~0.1 % skirt strain); its ceiling lands on the base rim so sticks can't be crushed. Open by pinching the lid's end scallops against the base's end grip-ribs (arrows on the lid point at the lift ends). Sticks come out via a 7 mm finger scoop per pocket plus a divider notch — 5.4 mm of grip height; straight-lift and 18° tilt removal are collision-free in simulation. A foam/paper sheet on top kills rattle.
+
+**Envelope (researched, not guessed).** L ≤136, H ≤45, T ≤8.5 mm, plus 1.2 mm/face bag allowance. Fits: Fury Beast/HyperX (34 mm), Vengeance LPX (34), Ballistix (39.25), Ripjaws V (42), Sniper X (43), Trident Z family (44), Viper Steel (44.4×135.7), all bare sticks. Excluded by design: RGB towers >45 mm (RGB Pro 51, Dominator 55, TZ RGB DC 59). Sources in `research/notes.md`.
+
+**Labels.** Debossed Fillaprint (OFL). The font's own rule (em = 20 × line width; stroke = 2 beads) sets the minimum: 9 mm em at 0.45 mm line width. Title em 12, body em 9 — all at or above minimum; measured widths match the TTF metrics within 1 %.
+
+**Deliverables.** `src/mailer_cad.py` (parametric), `out/base.step|stl`, `out/lid.step|stl` (binary STL), `out/assembly.step`, `assembly.json` (lid assembles at z +6.5), `README.md`, `research/notes.md`, `verify/check_fit.py` → `verify/checks.json|md`. **30/30 checks pass**, all measured from the exported meshes: watertight solids, zero lid/base interpenetration, detent dimensions, worst-case bagged-envelope poses (end/side/corner-jam/yaw/lift/tilt) all collision-free, contact-strip clearance, scoop/notch reach, label depths and font metrics.
+
+**Needs one physical print to confirm:** (1) actual snap/open force of the detent (tune `NUB_PROTRUDE` 0.6–0.8); (2) my 1.2 mm/face bag allowance against your real bags; (3) bag-on-PETG friction feel when pulling sticks. Lid has 1.0 mm/side axial play by design (harmless inside the outer box); bare/VLP sticks need the paper wedge as usual since they don't fill the pocket width.

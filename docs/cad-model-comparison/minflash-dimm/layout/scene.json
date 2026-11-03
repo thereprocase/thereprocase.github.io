@@ -1,0 +1,45 @@
+{
+  "title": "Minflash Dimm",
+  "subtitle": "layout view",
+  "caption": "All parts in submitted print orientations \u00b7 illustrative spacing, unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 11200,
+      "triangles": 22404,
+      "edges": 11480,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin.gz",
+      "vertices": 11572,
+      "triangles": 23140,
+      "edges": 11857,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin.gz",
+      "vertices": 8,
+      "triangles": 12,
+      "edges": 12,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "verification_method": "Independent direct OpenCascade intersections of delivered assembled-frame STEP geometry; supplied print-to-assembled matrices used separately for STL rendering.",
+  "closed_mm3": 0,
+  "lid_travel": {
+    "0": {
+      "seated": 0,
+      "raised0.17": 0
+    },
+    "-1": {
+      "seated": 0,
+      "raised0.17": 0
+    },
+    "-8": {
+      "seated": 0,
+      "raised0.17": 0
+    },
+    "-30": {
+      "seated": 0,
+      "raised0.17": 0
+    },
+    "-80": {
+      "seated": 0,
+      "raised0.17": 0
+    },
+    "-156": {
+      "seated": 0,
+      "raised0.17": 0
+    }
+  },
+  "bagged_envelope": {
+    "-6.6": {
+      "base": 0,
+      "lid": 7.900318,
+      "removed_lift5": 0,
+      "contact_guard_base": 0,
+      "contact_guard_lid": 0
+    },
+    "6.6": {
+      "base": 0,
+      "lid": 7.900318,
+      "removed_lift5": 0,
+      "contact_guard_base": 0,
+      "contact_guard_lid": 0
+    }
+  },
+  "lift": {
+    "0.3": 0,
+    "0.5": 113.16,
+    "1": 396.06
+  },
+  "limitations": [
+    "Rigid geometry checks do not measure latch force, friction, print accuracy, bag seam bulk, fatigue or shipping performance. Source promises optional label inlay but exports only base and lid."
+  ],
+  "source_inspection": {
+    "base_outer_mm": [
+      144.8,
+      30.6,
+      49.9
+    ],
+    "lid_length_with_pulltab_mm": 155.4,
+    "module_limit_mm": [
+      134.5,
+      42.5,
+      9
+    ],
+    "slot_mm": [
+      138,
+      10.6,
+      44.3
+    ],
+    "label_pockets_depth_mm": 0.8,
+    "print_pose": "STL exports already in submitted bed orientations, base upright and lid label-face-down",
+    "access": "modules stand upright in narrow wells;42.5mm module top45.1mm below46.5mm divider and49.9mm outerwall; front sill43.5mm gives1.6mm exposed at limit, shorter34mm modules lie well below sill. Pulltab opens lid but dedicated DIMM finger scallops are absent."
+  },
+  "source_sha256": {
+    "base.step": "b983d61ce402389f77580935547fd5b38ca9c8f5566c5e9a17886f09cfa60d7f",
+    "lid.step": "51dd9b0c1d0e6caa0630d441b7d3a949564973c601826c07bef6058114837594"
+  }
+}

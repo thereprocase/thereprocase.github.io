@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-dimm/mailer_base.stl",
+    "sha256": "87399e86f1e8886f411b06a52612c030a1ccb64395eea8048849e83aba836168",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 11200,
+    "triangles": 22404
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-dimm/mailer_lid.stl",
+    "sha256": "4683da2820ce811604c12331b26de7fc2968ad57c948d524020d52cb4614eab8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 11572,
+    "triangles": 23140
+  }
+]

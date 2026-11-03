@@ -1,0 +1,34 @@
+{
+  "title": "Kimi Dimm",
+  "subtitle": "closed view",
+  "caption": "Closed assembly \u00b7 actual assembled transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 8784,
+      "triangles": 17564,
+      "edges": 9053,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin.gz",
+      "vertices": 12456,
+      "triangles": 24908,
+      "edges": 11573,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

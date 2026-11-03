@@ -1,0 +1,34 @@
+Everything is verified and complete. Handover:
+
+## What was built
+
+A 5×4 Gridfinity patch (209.5 × 167.5 × 5 mm original-style baseplate, dovetail sockets per the official Design Reference v5) plus **19 labelled 1×1 bins** and one reserved empty slot. Parametric source in `src/organizer.py` (build123d); one script builds all 20 parts and writes `assembly.json` with the assembled transforms (mm, origin = plate underside centre, front = −Y).
+
+**Starter assortment** (rows front→back, columns left→right):
+
+| | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| front | WASHER M2 | WASHER M2.5 | WASHER M3 | M3 x 12 | WASHER M4 |
+| | NUT M2 | NUT M2.5 | NUT M3 | M3 x 16 | NUT M4 |
+| | M2 x 6 | M2.5 x 6 | M3 x 8 | M4 x 10 | M4 x 20 |
+| back | M2 x 8 | M2.5 x 10 | M3 x 10 | M4 x 16 | *extension slot* |
+
+All six requested lengths covered; only **three bin types** (3u/4u/5u, 25.4/32.4/39.4 mm tall) differ by nothing but height and label.
+
+**Labels:** engraved 0.5 mm with the supplied FilaPrint font on two faces — inner back wall (readable from above for *every* bin while seated; column heights are ordered so nothing occludes) and outer front wall (front row / in hand). Cap heights 4.3–5.0 mm, wording spells out NUT/WASHER.
+
+**Interfaces & clear spaces** (verified numerically in `checks.json`): bin body 41.5 (0.25/side grid clearance) → exactly 0.500 mm gap between assembled neighbours, zero overlap; dovetail pad/socket straight fit 0.25 mm/side; bins rest 0.1 mm high on the 0.1 mm socket floors; stacking socket bore 37.7 with 0.75 rim ring — stacked bins never touch contents.
+
+**Capacities (geometric, measured):** every screw bin holds ≥ 20 screws standing head-down (23 for M4 … 68 for M2) with the stack fully below the rim; 30 nuts or 30 washers per bin stay a 0.5–6.4 mm pile. All 20 STLs binary + watertight; all 20 STEPs re-import.
+
+## Handling
+
+Read sizes looking down into the drawer; pinch a screw's shank and pull it up; washers/nuts are top-layer picks; lift bins straight out to carry (nothing spills past the rim); stack for transport only.
+
+## Still needs a physical fit test
+
+The capacities are geometric bounds, not drop tests. Print one bin first and check: ① bin↔plate fit at the 0.25 mm/side fit (wax or ease if your printer runs tight — don't sand the bin pad, it's the stacking interface too), ② cheap M4 heads >7.0 mm eat the 23-screw margin, ③ M2.5 nut assortments that ignore ISO 4032 (AF 5.0), ④ non-standard washer ODs, ⑤ stacking fit against other vendors' bins, ⑥ legibility of the densest label ("WASHER M2.5", 4.3 mm cap), ⑦ drawer depth ≥ 40 mm and a 210 × 168 mm patch.
+
+## Files
+
+`README.md` (layout, interfaces table, print settings, extension guide) · `src/organizer.py` · `src/check_assembly.py` · `cad/` + `stl/` (20 parts each) · `assembly.json` · `checks.json` · `build_report.json` · font stays in `assets/fillaprint/` (OFL beside it). To add a size: one line in `LAYOUT`, re-run the two scripts — the empty slot in column 5 is its reserved place.

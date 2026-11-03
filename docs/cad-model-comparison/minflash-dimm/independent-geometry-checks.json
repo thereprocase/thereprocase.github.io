@@ -1,0 +1,51 @@
+{
+  "verification_method": "Independent direct OpenCascade Boolean intersections of delivered STEP parts and explicit envelope/support/contact gauges; source inspection corroborates geometry, without rerunning design source.",
+  "closed_mm3": 55.63646,
+  "filler_vs_base_mm3": 0,
+  "module_bays": {
+    "2": {
+      "bare_base": 0,
+      "bare_lid": 0,
+      "bag_base": 751.824,
+      "bag_lid": 0
+    },
+    "16.4": {
+      "bare_base": 0,
+      "bare_lid": 0,
+      "bag_base": 751.824,
+      "bag_lid": 0
+    }
+  },
+  "slide_x_mm3": {
+    "-16": 15.13646,
+    "-8": 45.51146,
+    "-1": 55.63646,
+    "0": 55.63646,
+    "1": 379.63646,
+    "8": 119.63646,
+    "16": 119.63646
+  },
+  "lift_z_mm3": {
+    "0.5": 40.5,
+    "1": 40.5,
+    "3": 28.35,
+    "8": 0
+  },
+  "limitations": [
+    "No physical fit, flexibility, friction or bag packing tests. No public final answer text was supplied; terminal metadata is retained without private reasoning."
+  ],
+  "claimed_divider_support_probe_mm3": 0,
+  "declared_connector_edge_vs_base_mm3": 40.5,
+  "source_inspection": {
+    "missing_divider": "build_base subtracts full main cavity, then subtracts divider region rather than adding a shelf",
+    "packing": "declared8mm-thick,44mm-high modules have no width allowance at44mm usable limit; expanded bag gauge tests this explicitly",
+    "print_orientation": "lid source explicitly says engraved outer top face against bed, normalized180X; base bottom down; filler optional and layout-only",
+    "removal": "no finger scallops in base; unseparated stacked modules must be retrieved from full-height open cavity",
+    "labels": "source uses supplied FillaPrint; self-check flags B counter gap; actual print readability untested"
+  },
+  "source_sha256": {
+    "mailer_base.step": "9142432ff25f0ac4c74dbac8c43c6677a093a25a1b80cf9b8b755794d84a576d",
+    "mailer_lid.step": "10d260eb04e461dab2401704d49431df13ddf544a1d8d4ce76b0c89858a93ebb",
+    "bay_filler.step": "557944e31689c216fc3923c75726f004b82415d22184798d9510b81c9e0ecd99"
+  }
+}

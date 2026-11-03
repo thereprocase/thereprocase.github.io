@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/kimi-dimm/base.stl",
+    "sha256": "5712fa703a110ad158900cb34f552e7eb9a7b4dc5a66810aca83640dae251de5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 8784,
+    "triangles": 17564
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/kimi-dimm/lid.stl",
+    "sha256": "ee0efbe5914825733ac937d692d52cd05f6e9fe6bfa6471cd81f1ea86d481ec8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -6.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 12456,
+    "triangles": 24908
+  }
+]

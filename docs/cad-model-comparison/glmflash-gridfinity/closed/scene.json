@@ -1,0 +1,232 @@
+{
+  "title": "Glmflash Gridfinity",
+  "subtitle": "Assembled starter layout",
+  "caption": "Assembled starter layout \u00b7 actual submitted transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 21374,
+      "triangles": 42744,
+      "edges": 13043,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin.gz",
+      "vertices": 6296,
+      "triangles": 12584,
+      "edges": 4922,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin.gz",
+      "vertices": 6880,
+      "triangles": 13752,
+      "edges": 5516,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin.gz",
+      "vertices": 6276,
+      "triangles": 12544,
+      "edges": 4900,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin.gz",
+      "vertices": 5048,
+      "triangles": 10088,
+      "edges": 3636,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin.gz",
+      "vertices": 6132,
+      "triangles": 12256,
+      "edges": 4754,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin.gz",
+      "vertices": 4720,
+      "triangles": 9432,
+      "edges": 3308,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin.gz",
+      "vertices": 5304,
+      "triangles": 10600,
+      "edges": 3902,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-8.bin.gz",
+      "vertices": 4700,
+      "triangles": 9392,
+      "edges": 3286,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-9.bin.gz",
+      "vertices": 5028,
+      "triangles": 10048,
+      "edges": 3618,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-10.bin.gz",
+      "vertices": 4556,
+      "triangles": 9104,
+      "edges": 3140,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-11.bin.gz",
+      "vertices": 4708,
+      "triangles": 9408,
+      "edges": 3294,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-12.bin.gz",
+      "vertices": 5292,
+      "triangles": 10576,
+      "edges": 3888,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-13.bin.gz",
+      "vertices": 4548,
+      "triangles": 9088,
+      "edges": 3136,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-14.bin.gz",
+      "vertices": 4728,
+      "triangles": 9448,
+      "edges": 3312,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-15.bin.gz",
+      "vertices": 4848,
+      "triangles": 9688,
+      "edges": 3432,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-16.bin.gz",
+      "vertices": 4568,
+      "triangles": 9128,
+      "edges": 3158,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-17.bin.gz",
+      "vertices": 5476,
+      "triangles": 10944,
+      "edges": 4074,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-18.bin.gz",
+      "vertices": 4872,
+      "triangles": 9736,
+      "edges": 3458,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-19.bin.gz",
+      "vertices": 4884,
+      "triangles": 9760,
+      "edges": 3472,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

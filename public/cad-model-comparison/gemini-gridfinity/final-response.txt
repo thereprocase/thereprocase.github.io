@@ -1,0 +1,51 @@
+### Handover: Gridfinity Metric Socket-Head Fastener Organizer (`5 × 4` System)
+
+#### 1. Starter Assortment & `5 × 4` Layout (`210.0 × 168.0 mm`)
+The system organizes **M2, M2.5, M3, and M4** socket-head cap screws (ISO 4762), plain hex nuts (ISO 4032), and flat washers (ISO 7089) into **four 5-unit rows** (one thread family per row from front to back) built from **three reusable parametric bin types** (`1x1_dual_hw`, `2x1_triple_screw`, `2x1_dual_screw`) in a **stepped stadium height profile**:
+- **Front 2 Rows (`M2` at `Y = -63.0 mm`, `M2.5` at `Y = -21.0 mm`) — `3U` Height (`25.40 mm` total)**: Shallow `13.80 mm` cavity depth below the label shelf keeps tiny `0.3–0.5 mm` washers and short `6 mm` screws within effortless fingertip reach.
+- **Rear 2 Rows (`M3` at `Y = +21.0 mm`, `M4` at `Y = +63.0 mm`) — `4U` Height (`32.40 mm` total)**: Rises `7.00 mm` above the front rows so rear labels remain in direct view while providing the extra volume needed for 20 bulky `M3/M4 × 20 mm` screws and 30 `M4` hex nuts.
+
+| Row / Thread | Height | Col 0 (`X = -84.0 mm`)<br>`1×1` Dual Hardware Bin | Cols 1–2 (`X = -21.0 mm`)<br>`2×1` Triple Screw Bin | Cols 3–4 (`X = +63.0 mm`)<br>`2×1` Screw Bin |
+| :--- | :---: | :--- | :--- | :--- |
+| **Row 0: M2** | `3U` (`25.4 mm`) | `bin_m2_nuts_washers`<br>`NUT` (left) \| `WASH` (right) | `bin_m2_screws_6_8_10`<br>`6mm` \| `8mm` \| `10mm` | `bin_m2_screws_12_16` *(Dual)*<br>`12mm` \| `16mm` |
+| **Row 1: M2.5** | `3U` (`25.4 mm`) | `bin_m2_5_nuts_washers`<br>`NUT` (left) \| `WASH` (right) | `bin_m2_5_screws_6_8_10`<br>`6mm` \| `8mm` \| `10mm` | `bin_m2_5_screws_12_16` *(Dual)*<br>`12mm` \| `16mm` |
+| **Row 2: M3** | `4U` (`32.4 mm`) | `bin_m3_nuts_washers`<br>`NUT` (left) \| `WASH` (right) | `bin_m3_screws_6_8_10`<br>`6mm` \| `8mm` \| `10mm` | `bin_m3_screws_12_16_20` *(Triple)*<br>`12mm` \| `16mm` \| `20mm` |
+| **Row 3: M4** | `4U` (`32.4 mm`) | `bin_m4_nuts_washers`<br>`NUT` (left) \| `WASH` (right) | `bin_m4_screws_8_10_12`<br>`8mm` \| `10mm` \| `12mm` | `bin_m4_screws_16_20` *(Dual)*<br>`16mm` \| `20mm` |
+
+- **Assortment rationale**: `M3` includes all six lengths (`6, 8, 10, 12, 16, 20 mm`). `M2` and `M2.5` cover `6, 8, 10, 12, 16 mm` (omitting rare `20 mm` lengths to give `12 mm` and `16 mm` wide `39.0 mm` dual compartments). `M4` covers `8, 10, 12, 16, 20 mm` (omitting `M4×6`, which has under two threads of engagement, and placing bulky `16 mm` and `20 mm` screws in `39.0 mm` dual compartments).
+
+---
+
+#### 2. Clear Spaces, Finger Access, Interfaces & Typography
+- **Clear Compartment Spaces & Measured Capacities**:
+  - **Front-to-back span**: `37.80 mm` total internal length with a **`22.60 mm` unobstructed vertical top opening** in front of the `15.20 mm` horizontal rear label shelf.
+  - **`1×1` Dual Hardware Bin (`41.50 × 41.50 mm`)**: Two `18.10 mm` wide compartments; usable volume below shelf is `6.98 cm³` (`3U`) and `11.50 cm³` (`4U`), holding **45–300+ hex nuts** or **90–500+ flat washers** (target: 30 pcs).
+  - **`2×1` Triple Screw Bin (`83.50 × 41.50 mm`)**: Three `25.60 mm` wide compartments; usable volume below shelf is `9.87 cm³` (`3U`) and `16.26 cm³` (`4U`), holding **26–120+ screws** (target: 20 pcs).
+  - **`2×1` Dual Screw Bin (`83.50 × 41.50 mm`)**: Two `39.00 mm` wide compartments; usable volume below shelf is `15.03 cm³` (`3U`) and `24.77 cm³` (`4U`), holding **30–140+ long screws** (`M4×20` total length is `24.0 mm`, lying flat in both X and Y).
+- **Zero-Overhang Front Scoop & Support-Free Shelf**:
+  - The `1.85 mm` perimeter wall is flush with the inner vertical face of the Gridfinity stacking lip (`37.80 mm` inner span) and transitions into an `R = 11.00 mm` concave floor scoop at the front (`-Y`), so sliding a `0.3 mm` `M2` washer up the front wall with a finger meets no inward lip overhang.
+  - The horizontal rear label shelf is supported underneath by a continuous `45°` ramp down to the floor/rear wall, eliminating any blind undercut where tiny washers could hide and printing without supports.
+- **Permanent FillaPrint Labels & Nut/Washer Distinction**:
+  - Uses `assets/fillaprint/Fillaprint-Regular.ttf` on a horizontal XY shelf (`Z = 19.60 mm` on `3U`, `Z = 26.60 mm` on `4U`, `+0.60 mm` raised relief) so FDM slicers trace each character stroke as two continuous perimeter beads (`2w`).
+  - Primary thread and screw-length labels use `em = 9.00 mm` (`cap = 6.30 mm`, `stroke = 0.90 mm`, `w = 0.45 mm`); secondary `NUT` and `WASH` labels use `em = 8.60 mm` (`cap = 6.02 mm`, `stroke = 0.86 mm`, `w = 0.43 mm`), exceeding the `0.40–0.42 mm` nozzle minimums (`em = 8.00–8.40 mm`, `cap = 5.60–5.88 mm`).
+  - Every `1×1` Hardware Bin pairs `NUT` (left) and `WASH` (right) with a raised **3D Hexagon Nut Icon** (`6.4 mm` across corners) on the left and a raised **3D Flat Washer Ring Icon** (`6.4 mm` OD) on the right.
+
+---
+
+#### 3. Handling, Stacking, Extension & Physical Fit Tests Needed
+- **Handling & Stacking**:
+  - All 12 bins sit in a single layer on `baseplate_5x4` with a `0.50 mm` gap between adjacent bins (`0.25 mm/side` foot-to-socket clearance) so any bin lifts out cleanly without disturbing neighbors.
+  - Bins stack in any combination (`2×1` on `2×1`, `1×1` on `1×1`, or `1×1` on either cell of a `2×1` bin, indexed by the perimeter stacking lip and the `X = 0` front inter-foot locator rib) with `1.55 mm` vertical clearance between the raised FillaPrint text and the upper bin's foot.
+- **Extending with Another Size**:
+  - Add a new row entry to `STARTER_BINS` in `generate_organizer.py` using `1x1_dual_hw`, `2x1_triple_screw`, or `2x1_dual_screw` and increment `BASEPLATE_ROWS`.
+- **Physical Fit Tests & Limitations**:
+  1. **Baseplate & Stacking Tolerance Test**: Print one `1×1` bin (`bin_m2_nuts_washers.stl`) first to verify drop-in seating and release against your printer's first-layer elephant's foot compensation (`0.25 mm/side` nominal lateral clearance) on an existing `42 mm` Gridfinity baseplate and `baseplate_5x4.stl`.
+  2. **Two-Bead Slicer Preview Check**: Slice with a `0.40 mm` nozzle at `0.20 mm` layer height and `0.40–0.44 mm` top extrusion width to confirm clean two-bead stroke fill on the top 3 label layers.
+  3. **Bare-Finger vs. Gloved Access**: The `18.10 × 22.60 mm` top opening on the `1×1` Nut/Washer bin is sized for bare fingertips (`~14–16 mm` wide); gloved handling requires widening the hardware bin to `grid_x = 2`.
+
+---
+
+#### 4. Delivered Files
+- **CAD & Verification Source**: `generate_organizer.py`, `verify_organizer.py`
+- **Documentation & Metadata**: `README.md`, `assembly.json`, `checks.json`
+- **STEP & Binary STL Parts (13 parts)**: `baseplate_5x4.{step,stl}`, `bin_m2_nuts_washers.{step,stl}`, `bin_m2_screws_6_8_10.{step,stl}`, `bin_m2_screws_12_16.{step,stl}`, `bin_m2_5_nuts_washers.{step,stl}`, `bin_m2_5_screws_6_8_10.{step,stl}`, `bin_m2_5_screws_12_16.{step,stl}`, `bin_m3_nuts_washers.{step,stl}`, `bin_m3_screws_6_8_10.{step,stl}`, `bin_m3_screws_12_16_20.{step,stl}`, `bin_m4_nuts_washers.{step,stl}`, `bin_m4_screws_8_10_12.{step,stl}`, `bin_m4_screws_16_20.{step,stl}`

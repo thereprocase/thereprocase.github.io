@@ -1,0 +1,46 @@
+{
+  "verification_method": "Direct OpenCascade Boolean intersections of delivered STEP geometry, in submitted closed pose, with declared bag envelopes.",
+  "closed_mm3": 0,
+  "unreleased_lift_mm3": {
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "4": 240.0
+  },
+  "bag_intersection_mm3": {
+    "-25.5": {
+      "tray": 0,
+      "lid": 0
+    },
+    "25.5": {
+      "tray": 0,
+      "lid": 0
+    }
+  },
+  "limitations": [
+    "Rigid checks do not simulate snap flex, friction, shipping or real bag packing."
+  ],
+  "release_probe": {
+    "verification_method": "Direct OCP intersection of cropped +Y hook geometry (excluding plate/text) with original tray after4mm lift and varying outward travel. Original models unchanged.",
+    "release_lift4_intersection_mm3": {
+      "0": 60.0,
+      "0.3": 60.0,
+      "1": 46.0,
+      "2": 26.0,
+      "3": 6.0,
+      "3.3": 0,
+      "3.5": 0
+    }
+  },
+  "source_inspection": {
+    "removal": "Bag gauge has0.7mm side clearance and1.825mm end clearance; no finger scallops in tray; only lid has corner grip cutouts.",
+    "latch": "Source specifies0.3mm inward past inner face, but hook passes across3mm wall. Positive-Y hook requires3.3mm outward movement to avoid tray after4mm lift, not0.3mm. Source instructs pressing tabs inward.",
+    "print_pose": "Lid rotated180X, engraved label face against bed and tabs up as source describes; tray pockets upright.",
+    "font": "Actual supplied FillaPrint engraved0.4mm,10mm/7.5mm cap labels visible in closed render."
+  },
+  "source_sha256": {
+    "out/tray.step": "cb090099f5f38e8d184068cd2f2ca79685de11ca0136c3c16b5ab32cc4928136",
+    "out/lid.step": "6471ebcf9164d67b3e34ef609706a55aa6cc84b73fe919db49068454dac0820f",
+    "out/assembly.step": "90e4913853858b9f23f5a83c655f3c3cdf065e1306de75e75ce7de7cdc3a36eb"
+  }
+}

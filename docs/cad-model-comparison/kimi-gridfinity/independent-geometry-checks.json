@@ -1,0 +1,2076 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common on exported STEP, actual submitted transforms. All base seats and neighboring pairs; sampled withdrawal; representative stack gauges and compartment probes. No design generator executed.",
+  "source_hashes": {
+    "./out/step/baseplate_5x4.step": "73285fc168df3ab38e3ae741cd7ccecfb8d7ee6f3d4da8356049fd9f898f3fd9",
+    "./out/stl/baseplate_5x4.stl": "6eea56472b30a4b7aa62171965816980a4036cfcc7fa68879d41c49b530587fc",
+    "./out/step/bin_m2x6.step": "dbee0493975b35b39469c0e5f51f6dd67fbd01ef39ce26613d283434063f6925",
+    "./out/stl/bin_m2x6.stl": "6348dfb24bf8fdd6184f825251c7e52e933de409cff5137d11f9abe20c4f9bde",
+    "./out/step/bin_m2x10.step": "8d9df311a82744ab8246d3c49ef0446f3d79f88eb3dceacc5d71dd50b6f54ff5",
+    "./out/stl/bin_m2x10.stl": "cefa7f6ad8dd2b7ee3313ed9c072b94adb5919917145b721eb0f607973c23686",
+    "./out/step/bin_nut_m2.step": "bd362016b82a0b48e7eb0595ee0b969eab3ba57961926333794b6104df687f81",
+    "./out/stl/bin_nut_m2.stl": "051f318cab07dc2b38f9bd3e7ebf63f8dad64fef56d3270f79fcac999d9f170a",
+    "./out/step/bin_wshr_m2.step": "a0fbde16732df532d39f9a612f4b86777f3fa260353b13fe13dab7ed9027e199",
+    "./out/stl/bin_wshr_m2.stl": "90e78c83fb6e9a091a61f1d36913b5527031c849eb5990550931f048e2e5218a",
+    "./out/step/bin_m2_5x6.step": "e67206053beb21dd56eabe24a7611b8c991e9a53ba476bfe94f017fd95cd44dd",
+    "./out/stl/bin_m2_5x6.stl": "81fe6d5878b41d2845cc02a5384ddc81fed7aebf5d544647dd44dbba13f497c8",
+    "./out/step/bin_m2_5x10.step": "025ef87933e2b6053371452705b443c6d6be1a54aba7d91bf6b2f273a2046b47",
+    "./out/stl/bin_m2_5x10.stl": "4578fa0e1f4a6636b6c5a54c18c128572442aacdcfd10d0bd893b3a29f98d5be",
+    "./out/step/bin_nut_m2_5.step": "8749fe7607b76ba6b5e316882e01d8e1452976d8855f3386782f1919b36ad5bd",
+    "./out/stl/bin_nut_m2_5.stl": "750d4241d59c9613c6ba601fb09039820a21db11259b4136c56f98348f27d82b",
+    "./out/step/bin_wshr_m2_5.step": "e0f5e7988b62203fb6dfb0c3c351641d0ae6bdccfce32c1bf34489374350382c",
+    "./out/stl/bin_wshr_m2_5.stl": "92eb6b6e1373ae382bd2f73d00bf0813eef566e026538655772d0705560abd1d",
+    "./out/step/bin_m3x6.step": "feb88fa802de5f3442c8708e17fd91418cd7bb30ac9f3456e622f1c5556df5f1",
+    "./out/stl/bin_m3x6.stl": "58af67940300ec6f7c8f477c11d141df4d09bab2858c87a256367ce8c80fad66",
+    "./out/step/bin_m3x10.step": "5f3ac0f1989c2e66b646d7dd550b738eee9ac372b9ab1a8040bb29a24982bba4",
+    "./out/stl/bin_m3x10.stl": "505dbcdecc58a1317b7ec82e263fc8b2cd3fe522fb7d66cafbf636f4419441ef",
+    "./out/step/bin_m3x16.step": "bfd8360afaddc96d5e4b49852ee74e2d3e7c3deac82a3d941fbcbf923f0d6200",
+    "./out/stl/bin_m3x16.stl": "d7cc2b402ccbaa34d5906087ea32bc4612a8709fe4e2b5a1c154b6ff809b24b8",
+    "./out/step/bin_m3x20.step": "20c2e00f842c4003d545fe1823b2c61891bb1f2ec22d05ff32252ac96c37f827",
+    "./out/stl/bin_m3x20.stl": "8c50b3ebcfb4494eda6cac63b52df5db0565860260d3432d004dca22ddf6ad19",
+    "./out/step/bin_nut_wshr_m3.step": "d73b15595368a558f620cc8e3ff6a82ddeea3354cf8892035f652821f40a7526",
+    "./out/stl/bin_nut_wshr_m3.stl": "e3d9a6fdb6aeba511b502639fb642504d28460483ffafdc944417bb03610211d",
+    "./out/step/bin_m4x10.step": "ba54a48dcbebaab2ce3598025464b3ff489e8d19b74c32e275a7f3e08dd9fc73",
+    "./out/stl/bin_m4x10.stl": "74cf96ffadb348aafec14fb3942f15bbd71eae1dafb5b42843d0c710686e0844",
+    "./out/step/bin_m4x16.step": "c57f86c6a63952b9da8e511a5c7cb8fa4587fb1e33b6a2116646ea5a4683374e",
+    "./out/stl/bin_m4x16.stl": "fd987a02701873e92ca34f7f939de5be03f79426f4a7f9e14623ad964f513404",
+    "./out/step/bin_m4x20.step": "080ecc89a06a01e39eb96603e5f085b8f34dc88869f0825fcf8b2448552cb15f",
+    "./out/stl/bin_m4x20.stl": "84a8cdb466116917f24cdab8ee000e1fe1e9bf5048983b0c2c1a2fad5f9eb7c3",
+    "./out/step/bin_nut_m4.step": "e6ed98c6fe3351666d5c53809719584e31c7905b8837313a247e9577e9e13f4d",
+    "./out/stl/bin_nut_m4.stl": "0f5c0ea260928a8f4fb0271c77555627ed1a662166ba621ce9dcdbe0469ff05f",
+    "./out/step/bin_wshr_m4.step": "992cddc1346c994a76c81fd31473d12a6f6875424f0418125d6b230f0f2bb3de",
+    "./out/stl/bin_wshr_m4.stl": "95be9f986e961032f8affe777b4b22826a5997b90d0663a77db621c16262280a"
+  },
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "size_mm": [
+        210.0,
+        168.0,
+        4.750000200000001
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2x6",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2x10",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_nut_m2",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_wshr_m2",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_5x6",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_5x10",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_nut_m2_5",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_wshr_m2_5",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3x6",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3x10",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3x16",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3x20",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_nut_wshr_m3",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4x10",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4x16",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4x20",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_nut_m4",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_wshr_m4",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        18.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    }
+  ],
+  "seats": [
+    {
+      "bin": "bin_m2x6",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2x10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_m2",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_wshr_m2",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5x6",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5x10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_m2_5",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_wshr_m2_5",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x6",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x16",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3x20",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_wshr_m3",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x16",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4x20",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_nut_m4",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_wshr_m4",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    }
+  ],
+  "neighbor_pairs": [
+    {
+      "bins": [
+        "bin_m2x6",
+        "bin_m2x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x6",
+        "bin_m2_5x6"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x6",
+        "bin_m2_5x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x10",
+        "bin_nut_m2"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x10",
+        "bin_m2_5x6"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x10",
+        "bin_m2_5x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2x10",
+        "bin_nut_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m2",
+        "bin_wshr_m2"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m2",
+        "bin_m2_5x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m2",
+        "bin_nut_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m2",
+        "bin_wshr_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_wshr_m2",
+        "bin_nut_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_wshr_m2",
+        "bin_wshr_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5x6",
+        "bin_m2_5x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5x6",
+        "bin_m3x6"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5x6",
+        "bin_m3x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5x10",
+        "bin_nut_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5x10",
+        "bin_m3x6"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5x10",
+        "bin_m3x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5x10",
+        "bin_m3x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_nut_m2_5",
+        "bin_wshr_m2_5"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m2_5",
+        "bin_m3x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_nut_m2_5",
+        "bin_m3x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_nut_m2_5",
+        "bin_m3x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_wshr_m2_5",
+        "bin_m3x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_wshr_m2_5",
+        "bin_m3x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_wshr_m2_5",
+        "bin_nut_wshr_m3"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m3x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m4x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x6",
+        "bin_m4x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m3x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x10",
+        "bin_m4x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x16",
+        "bin_m3x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x16",
+        "bin_m4x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x16",
+        "bin_m4x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x16",
+        "bin_nut_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x20",
+        "bin_nut_wshr_m3"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x20",
+        "bin_m4x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x20",
+        "bin_nut_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3x20",
+        "bin_wshr_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_wshr_m3",
+        "bin_nut_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_wshr_m3",
+        "bin_wshr_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m4x10",
+        "bin_m4x16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m4x16",
+        "bin_m4x20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m4x20",
+        "bin_nut_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_nut_m4",
+        "bin_wshr_m4"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    }
+  ],
+  "stacking": [
+    {
+      "lower": "bin_m2x6",
+      "upper": "bin_m2x6",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2x10",
+      "upper": "bin_m2x10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_nut_m2",
+      "upper": "bin_nut_m2",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_wshr_m2",
+      "upper": "bin_wshr_m2",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5x6",
+      "upper": "bin_m2_5x6",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5x10",
+      "upper": "bin_m2_5x10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_nut_m2_5",
+      "upper": "bin_nut_m2_5",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_wshr_m2_5",
+      "upper": "bin_wshr_m2_5",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3x6",
+      "upper": "bin_m3x6",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3x10",
+      "upper": "bin_m3x10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3x16",
+      "upper": "bin_m3x16",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3x20",
+      "upper": "bin_m3x20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_nut_wshr_m3",
+      "upper": "bin_nut_wshr_m3",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 15.099,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4x10",
+      "upper": "bin_m4x10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        20.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4x16",
+      "upper": "bin_m4x16",
+      "offset_xyz_mm": [
+        0,
+        0,
+        20.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4x20",
+      "upper": "bin_m4x20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        20.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_nut_m4",
+      "upper": "bin_nut_m4",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_wshr_m4",
+      "upper": "bin_wshr_m4",
+      "offset_xyz_mm": [
+        0,
+        0,
+        13.65
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    }
+  ],
+  "compartment_probes": [
+    {
+      "bin": "bin_m2x6",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m2x10",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_nut_m2",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_wshr_m2",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m2_5x6",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m2_5x10",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_nut_m2_5",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_wshr_m2_5",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m3x6",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m3x10",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m3x16",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_m3x20",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_nut_wshr_m3",
+      "compartment": 0,
+      "probe_size_mm": [
+        14,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        -9.8,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 2664.76
+    },
+    {
+      "bin": "bin_nut_wshr_m3",
+      "compartment": 1,
+      "probe_size_mm": [
+        14,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        9.8,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 2664.76
+    },
+    {
+      "bin": "bin_m4x10",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        13.139999999999999
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 12627.54
+    },
+    {
+      "bin": "bin_m4x16",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        13.139999999999999
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 12627.54
+    },
+    {
+      "bin": "bin_m4x20",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        13.139999999999999
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 12627.54
+    },
+    {
+      "bin": "bin_nut_m4",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    },
+    {
+      "bin": "bin_wshr_m4",
+      "compartment": 0,
+      "probe_size_mm": [
+        31,
+        31,
+        6.140000000000001
+      ],
+      "probe_center_xy": [
+        0,
+        0
+      ],
+      "probe_zmin": 7.76,
+      "solid_intersection_mm3": 0,
+      "free_volume_mm3": 5900.54
+    }
+  ],
+  "label_visibility": [
+    {
+      "bin": "bin_m2x6",
+      "view_elevation_deg": 0,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2x6",
+      "view_elevation_deg": 45,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2x10",
+      "view_elevation_deg": 0,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2x10",
+      "view_elevation_deg": 45,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m2",
+      "view_elevation_deg": 0,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m2",
+      "view_elevation_deg": 45,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m2",
+      "view_elevation_deg": 0,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m2",
+      "view_elevation_deg": 45,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2_5x6",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m2x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2_5x6",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m2x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2_5x10",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m2x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m2_5x10",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m2x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m2_5",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_nut_m2"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m2_5",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_m2"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m2_5",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_wshr_m2"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m2_5",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_wshr_m2"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x6",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m2_5x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x6",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m2_5x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x10",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m2_5x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x10",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m2_5x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x16",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_nut_m2_5"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x16",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_m2_5"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x20",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_wshr_m2_5"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m3x20",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_wshr_m2_5"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_wshr_m3",
+      "view_elevation_deg": 0,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_wshr_m3",
+      "view_elevation_deg": 45,
+      "blocking_bins": [],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x10",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m3x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x10",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m3x6"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x16",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m3x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x16",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m3x10"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x20",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m3x16"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_m4x20",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m3x16"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m4",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_m3x20"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_nut_m4",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_m3x20"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m4",
+      "view_elevation_deg": 0,
+      "blocking_bins": [
+        "bin_nut_wshr_m3"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    },
+    {
+      "bin": "bin_wshr_m4",
+      "view_elevation_deg": 45,
+      "blocking_bins": [
+        "bin_nut_wshr_m3"
+      ],
+      "method": "Sampled center sightline toward -Y; a clear center ray alone does not prove every glyph visible."
+    }
+  ],
+  "capacity_assessment": "Free-volume gauges establish geometric space only. Submitted ISO nominal hardware dimensions and loose-packing estimates were read but not accepted as independent physical capacity proof; actual 20-screw/30-nut/30-washer loading and tiny-part retrieval remain untested.",
+  "limitations": [
+    "Rigid STEP checks omit printer tolerance, warp, friction, filled handling, and physical pour/retrieval trials.",
+    "Withdrawal and sightlines are discrete samples, not a continuous motion/visibility proof.",
+    "No independent printed/sliced specimen exists; font labels and source use were visually inspected; exact bead resolution requires slicer preview."
+  ],
+  "capacity_estimate": {
+    "method": "Direct OCP measures actual void inside per-compartment rectangular bounds below shelf/lip. Nominal hardware dimensions read from submission; solid head/shank cylinders, full hex-prism nuts and full washer disks conservatively ignore holes. 60% packing is an unvalidated estimate, not a loading test.",
+    "compartments": [
+      {
+        "bin": "bin_m2x6",
+        "compartment": "6",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 41.532,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 177,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2x10",
+        "compartment": "10",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 54.098,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 135,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_nut_m2",
+        "compartment": "NUT",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 22.17,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 331,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_wshr_m2",
+        "compartment": "WASH",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 5.89,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 1248,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5x6",
+        "compartment": "6",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 69.213,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 106,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5x10",
+        "compartment": "10",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 88.848,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 82,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_nut_m2_5",
+        "compartment": "NUT",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 43.301,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 169,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_wshr_m2_5",
+        "compartment": "WASH",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 14.137,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 520,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3x6",
+        "compartment": "6",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 113.686,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 64,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3x10",
+        "compartment": "10",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 141.961,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 51,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3x16",
+        "compartment": "16",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 184.372,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 39,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3x20",
+        "compartment": "20",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 212.647,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 34,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_nut_wshr_m3",
+        "compartment": "NUT",
+        "free_volume_mm3": 5935.582,
+        "conservative_nominal_hardware_volume_mm3": 62.873,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 56,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_nut_wshr_m3",
+        "compartment": "WASH",
+        "free_volume_mm3": 5935.582,
+        "conservative_nominal_hardware_volume_mm3": 19.242,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 185,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4x10",
+        "compartment": "10",
+        "free_volume_mm3": 22916.052,
+        "conservative_nominal_hardware_volume_mm3": 279.602,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 49,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4x16",
+        "compartment": "16",
+        "free_volume_mm3": 22916.052,
+        "conservative_nominal_hardware_volume_mm3": 355.0,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 38,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4x20",
+        "compartment": "20",
+        "free_volume_mm3": 22916.052,
+        "conservative_nominal_hardware_volume_mm3": 405.265,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 33,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_nut_m4",
+        "compartment": "NUT",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 135.793,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 54,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_wshr_m4",
+        "compartment": "WASH",
+        "free_volume_mm3": 12253.455,
+        "conservative_nominal_hardware_volume_mm3": 50.894,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 144,
+        "target": 30,
+        "estimate_meets_target": true
+      }
+    ]
+  },
+  "render_source_stl_identity_verified": true,
+  "stack_detail": {
+    "ordinary_bin_on_divided_bin_at_z13_65_mm3": 15.099,
+    "ordinary_bin_on_divided_bin_at_z14_00_mm3": 0,
+    "divider_top_probe_mm3": 7.0
+  },
+  "summary": {
+    "occupied_seats_checked": 18,
+    "neighbor_pairs_checked": 48,
+    "all_seat_and_neighbor_lift_intersections_mm3": 0,
+    "self_stacks_checked": 18,
+    "self_stacks_with_interference": 1,
+    "rear_labels_with_blocked_0_and_45_degree_center_sightlines": 13
+  }
+}

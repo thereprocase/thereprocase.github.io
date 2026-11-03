@@ -1,0 +1,212 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common on delivered STEP, submitted assembly transforms; rectangular bag allowance gauges and local access probes. No model source executed.",
+  "source_hashes": {
+    "./out/base.step": "1169f9ba2a7859e9f0eb46471cd8d5daf3659a7f26a593ff0a5babee4960eab6",
+    "./out/base.stl": "5712fa703a110ad158900cb34f552e7eb9a7b4dc5a66810aca83640dae251de5",
+    "./out/lid.step": "fd59c8dca0a30b4d840da46f4990d903b3047c25f327bb89f8f4efef3ea38fc3",
+    "./out/lid.stl": "ee0efbe5914825733ac937d692d52cd05f6e9fe6bfa6471cd81f1ea86d481ec8"
+  },
+  "closed_intersection_mm3": 0,
+  "lid_lift_intersection_mm3": {
+    "0.2": 0,
+    "0.5": 0,
+    "1": 3.0825,
+    "2": 6.165,
+    "4": 0,
+    "8": 0,
+    "12": 0
+  },
+  "gauges": [
+    {
+      "center_y": -26.25,
+      "offset_xy": [
+        0,
+        0
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    },
+    {
+      "center_y": -26.25,
+      "offset_xy": [
+        0.79,
+        1.54
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    },
+    {
+      "center_y": -26.25,
+      "offset_xy": [
+        -0.79,
+        -1.54
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    },
+    {
+      "center_y": 26.25,
+      "offset_xy": [
+        0,
+        0
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    },
+    {
+      "center_y": 26.25,
+      "offset_xy": [
+        0.79,
+        1.54
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    },
+    {
+      "center_y": 26.25,
+      "offset_xy": [
+        -0.79,
+        -1.54
+      ],
+      "gauge_mm": [
+        138.4,
+        47.4,
+        10.9
+      ],
+      "base_mm3": 0,
+      "lid_mm3": 0,
+      "lift_5mm_mm3": 0
+    }
+  ],
+  "access_probes": [
+    {
+      "center_y": 0,
+      "probe_mm": [
+        20,
+        3,
+        5
+      ],
+      "zmin": 8.1,
+      "base_intersection_mm3": 0
+    },
+    {
+      "center_y": -51.5,
+      "probe_mm": [
+        20,
+        3,
+        5
+      ],
+      "zmin": 8.1,
+      "base_intersection_mm3": 0
+    },
+    {
+      "center_y": 0,
+      "probe_mm": [
+        20,
+        3,
+        5
+      ],
+      "zmin": 8.1,
+      "base_intersection_mm3": 0
+    },
+    {
+      "center_y": 51.5,
+      "probe_mm": [
+        20,
+        3,
+        5
+      ],
+      "zmin": 8.1,
+      "base_intersection_mm3": 0
+    }
+  ],
+  "part_geometry": {
+    "base": {
+      "size_mm": [
+        146.4,
+        107.80000000000274,
+        14.500000000000025
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    "lid": {
+      "size_mm": [
+        149.3000001,
+        112.3000001,
+        10.2
+      ],
+      "solids": 1,
+      "valid": true
+    }
+  },
+  "contact_protection": {
+    "submitted_module_mm": [
+      136,
+      45,
+      8.5
+    ],
+    "pocket_mm": [
+      140,
+      50.5,
+      12.5
+    ],
+    "side_clearance_for_centered_bagged_envelope_mm": 1.55,
+    "relief_groove_width_mm": 8,
+    "relief_groove_depth_mm": 0.8,
+    "note": "Floor grooves and scoops inspected in actual open render; paper/foam/bag folds are user supplied and not simulated."
+  },
+  "print_orientation": {
+    "base_xyz_deg": [
+      0,
+      0,
+      0
+    ],
+    "lid_xyz_deg": [
+      180,
+      0,
+      0
+    ],
+    "label_type": "Debossed on base underside and lid exterior; no raised text creates an isolated bed contact.",
+    "font_em_mm": [
+      9,
+      12
+    ],
+    "line_width_assumed_mm": 0.45
+  },
+  "limitations": [
+    "Bag gauge assumes folded bag fits the stated 1.2 mm per-face allowance, not the full unfolded bag footprint.",
+    "Rigid lid lift intersects snap nubs; geometry requires skirt deflection. Opening force, skirt durability, foam compression, film friction and loaded shipping remain physically untested.",
+    "Access probes are local geometric openings, not human trials."
+  ]
+}

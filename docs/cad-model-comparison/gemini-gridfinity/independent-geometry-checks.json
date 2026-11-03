@@ -1,0 +1,2376 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common on exported STEP, actual submitted transforms. All base seats and neighboring pairs; sampled withdrawal; representative stack gauges and compartment probes. No design generator executed.",
+  "source_hashes": {
+    "./baseplate_5x4.step": "7c6a91f3d0d9fbe10a17704c2d96e04ee31b0379ba7e00fafe1274a45d9bf23b",
+    "./baseplate_5x4.stl": "efdc7c6ca89c94e667f1836daf06f1436671b61732a972578190311317ad3872",
+    "./bin_m2_nuts_washers.step": "9107eb161d530ed78102e7b25acde15f5ae4966e3a248fa63cb739385db6de7b",
+    "./bin_m2_nuts_washers.stl": "ab94171651f4fd1457a99d90597e53687c01b243ad1e2d191ad4ce6c69f26de1",
+    "./bin_m2_screws_6_8_10.step": "3e1a918020f83b2b45c9cf6243d0c636337e2aeff74c7618805fa05d057040ba",
+    "./bin_m2_screws_6_8_10.stl": "21d7d247950e70f8a9f83563c6f5a31f17f746b5e9cf41f76c2c24ad50590e7e",
+    "./bin_m2_screws_12_16.step": "9028efdd2e6e3de685ee9e126c6f2845872b23bd193dc25713d71f194252783a",
+    "./bin_m2_screws_12_16.stl": "bd78238a6ea25bb6361022044190aa7262c8f2de1dfdef360ab7ee5cada4179e",
+    "./bin_m2_5_nuts_washers.step": "1182088325ffd698116282eb5ec3368021b55c3475f3d2b2e477b86067095c09",
+    "./bin_m2_5_nuts_washers.stl": "6decf281a92ce91e0f828ceb7fed394a8bf40bbff81fa13e559d77d7495ec2ec",
+    "./bin_m2_5_screws_6_8_10.step": "bc99cc3e1a72232782336ddc97bc5643f5dd60a523482e506c2f23a4458dc150",
+    "./bin_m2_5_screws_6_8_10.stl": "de8dfd156c1c19696d63de07b661dd437516f6fd854ff00277f2be67d7d5c204",
+    "./bin_m2_5_screws_12_16.step": "1fb7c00633d39460f77b95c8f7341c8bedd6711a0aa65b8d6615ab064184b54e",
+    "./bin_m2_5_screws_12_16.stl": "5201c3aa39f873a72fbf0de18da4dacbadab350fd9119259effeca9dc08b4e65",
+    "./bin_m3_nuts_washers.step": "31b2dd1d550b681776459af61314ad07ca3e1fd217d9bc34ccefb4fc68077bd2",
+    "./bin_m3_nuts_washers.stl": "7e3da5d65906bc59959d921365507c9dc84193c30a2c630af1704c6e85b15103",
+    "./bin_m3_screws_6_8_10.step": "ad1973122a42eb7d9459fba4b025db925c586af20af475d33b2ef8e0cc02632d",
+    "./bin_m3_screws_6_8_10.stl": "6c0911b7aee871609bbae7859f2379380c74ab5cc059c930a4bbd89c6f326d31",
+    "./bin_m3_screws_12_16_20.step": "4733bb1d622e61102f77e4ac47cac8b355074096ac1f52b9459781d1813b8ac4",
+    "./bin_m3_screws_12_16_20.stl": "9f2294dff41d8a47eb75acd5fee57976a82528557b5897a933e5bb6f98846931",
+    "./bin_m4_nuts_washers.step": "9577abea7ac03941851eb5c8e53a4152f3a6aee4e7dcc813ca1d90457f410486",
+    "./bin_m4_nuts_washers.stl": "a33b4a0dd45b2ea0103dd9d2b6242871b382b20778a2b32e1baec5070529fbc1",
+    "./bin_m4_screws_8_10_12.step": "3bf5a968a10921d46166dc89c857df28f74e1b488f361c704e3a4259b5b63ecf",
+    "./bin_m4_screws_8_10_12.stl": "e3ef92c2406ea5be2d846dadaefea42a6e829d10aed2b5a6b2982c7618945a0a",
+    "./bin_m4_screws_16_20.step": "87ea117eabbeaf282e93a5303b93823b15cc3e1dfe5e9d067b58fa6867d33738",
+    "./bin_m4_screws_16_20.stl": "3cb4136faee6c000bb47b81aa234d83b19166c44443e70eeff4c88ac2de4971b"
+  },
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "size_mm": [
+        210.0,
+        168.0,
+        4.500000200000001
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_nuts_washers",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_screws_6_8_10",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_screws_12_16",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_5_nuts_washers",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_5_screws_6_8_10",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m2_5_screws_12_16",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        25.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3_nuts_washers",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3_screws_6_8_10",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m3_screws_12_16_20",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4_nuts_washers",
+      "size_mm": [
+        41.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4_screws_8_10_12",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    },
+    {
+      "name": "bin_m4_screws_16_20",
+      "size_mm": [
+        83.5000002,
+        41.5000002,
+        32.4000002
+      ],
+      "solids": 1,
+      "valid": true
+    }
+  ],
+  "seats": [
+    {
+      "bin": "bin_m2_nuts_washers",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_screws_6_8_10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_screws_12_16",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5_nuts_washers",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5_screws_6_8_10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_5_screws_12_16",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_nuts_washers",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_screws_6_8_10",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_screws_12_16_20",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_nuts_washers",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_screws_8_10_12",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_screws_16_20",
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    }
+  ],
+  "neighbor_pairs": [
+    {
+      "bins": [
+        "bin_m2_nuts_washers",
+        "bin_m2_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_nuts_washers",
+        "bin_m2_5_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_nuts_washers",
+        "bin_m2_5_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_6_8_10",
+        "bin_m2_screws_12_16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_6_8_10",
+        "bin_m2_5_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_6_8_10",
+        "bin_m2_5_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_6_8_10",
+        "bin_m2_5_screws_12_16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_12_16",
+        "bin_m2_5_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_screws_12_16",
+        "bin_m2_5_screws_12_16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5_nuts_washers",
+        "bin_m2_5_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5_nuts_washers",
+        "bin_m3_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_nuts_washers",
+        "bin_m3_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_6_8_10",
+        "bin_m2_5_screws_12_16"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_6_8_10",
+        "bin_m3_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_6_8_10",
+        "bin_m3_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_6_8_10",
+        "bin_m3_screws_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_12_16",
+        "bin_m3_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m2_5_screws_12_16",
+        "bin_m3_screws_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.4999998
+    },
+    {
+      "bins": [
+        "bin_m3_nuts_washers",
+        "bin_m3_screws_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_nuts_washers",
+        "bin_m4_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_nuts_washers",
+        "bin_m4_screws_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_6_8_10",
+        "bin_m3_screws_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_6_8_10",
+        "bin_m4_nuts_washers"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_6_8_10",
+        "bin_m4_screws_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_6_8_10",
+        "bin_m4_screws_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_12_16_20",
+        "bin_m4_screws_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m3_screws_12_16_20",
+        "bin_m4_screws_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m4_nuts_washers",
+        "bin_m4_screws_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    },
+    {
+      "bins": [
+        "bin_m4_screws_8_10_12",
+        "bin_m4_screws_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0
+      },
+      "min_positive_xy_gap_mm": 0.49999979999999766
+    }
+  ],
+  "stacking": [
+    {
+      "lower": "bin_m2_nuts_washers",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_6_8_10",
+      "upper": "bin_m2_screws_6_8_10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_6_8_10",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_6_8_10",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_12_16",
+      "upper": "bin_m2_screws_12_16",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_12_16",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_screws_12_16",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_nuts_washers",
+      "upper": "bin_m2_5_nuts_washers",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_6_8_10",
+      "upper": "bin_m2_5_screws_6_8_10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_6_8_10",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_6_8_10",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_12_16",
+      "upper": "bin_m2_5_screws_12_16",
+      "offset_xyz_mm": [
+        0,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_12_16",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m2_5_screws_12_16",
+      "upper": "bin_m2_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        21.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_nuts_washers",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_6_8_10",
+      "upper": "bin_m3_screws_6_8_10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_6_8_10",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_6_8_10",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_12_16_20",
+      "upper": "bin_m3_screws_12_16_20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_12_16_20",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m3_screws_12_16_20",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_nuts_washers",
+      "upper": "bin_m4_nuts_washers",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_8_10_12",
+      "upper": "bin_m4_screws_8_10_12",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_8_10_12",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_8_10_12",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_16_20",
+      "upper": "bin_m4_screws_16_20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_16_20",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "lower": "bin_m4_screws_16_20",
+      "upper": "bin_m3_nuts_washers",
+      "offset_xyz_mm": [
+        21,
+        0,
+        28.75
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    }
+  ],
+  "compartment_probes": [
+    {
+      "bin": "bin_m2_nuts_washers",
+      "compartment": 0,
+      "probe_size_mm": [
+        17.9,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 3492.111
+    },
+    {
+      "bin": "bin_m2_nuts_washers",
+      "compartment": 1,
+      "probe_size_mm": [
+        17.9,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 3492.111
+    },
+    {
+      "bin": "bin_m2_screws_6_8_10",
+      "compartment": 0,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -27.1,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_screws_6_8_10",
+      "compartment": 1,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -3.552713678800501e-15,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_screws_6_8_10",
+      "compartment": 2,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        27.099999999999994,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_screws_12_16",
+      "compartment": 0,
+      "probe_size_mm": [
+        38.8,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 7569.492
+    },
+    {
+      "bin": "bin_m2_screws_12_16",
+      "compartment": 1,
+      "probe_size_mm": [
+        38.8,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 7569.492
+    },
+    {
+      "bin": "bin_m2_5_nuts_washers",
+      "compartment": 0,
+      "probe_size_mm": [
+        17.9,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 3492.111
+    },
+    {
+      "bin": "bin_m2_5_nuts_washers",
+      "compartment": 1,
+      "probe_size_mm": [
+        17.9,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 3492.111
+    },
+    {
+      "bin": "bin_m2_5_screws_6_8_10",
+      "compartment": 0,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -27.1,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_5_screws_6_8_10",
+      "compartment": 1,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -3.552713678800501e-15,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_5_screws_6_8_10",
+      "compartment": 2,
+      "probe_size_mm": [
+        25.4,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        27.099999999999994,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 4955.286
+    },
+    {
+      "bin": "bin_m2_5_screws_12_16",
+      "compartment": 0,
+      "probe_size_mm": [
+        38.8,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        -20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 7569.492
+    },
+    {
+      "bin": "bin_m2_5_screws_12_16",
+      "compartment": 1,
+      "probe_size_mm": [
+        38.8,
+        15,
+        13.690000000000001
+      ],
+      "probe_center_xy": [
+        20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 7569.492
+    },
+    {
+      "bin": "bin_m3_nuts_washers",
+      "compartment": 0,
+      "probe_size_mm": [
+        17.9,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 5371.611
+    },
+    {
+      "bin": "bin_m3_nuts_washers",
+      "compartment": 1,
+      "probe_size_mm": [
+        17.9,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 5371.611
+    },
+    {
+      "bin": "bin_m3_screws_6_8_10",
+      "compartment": 0,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -27.1,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m3_screws_6_8_10",
+      "compartment": 1,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -3.552713678800501e-15,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m3_screws_6_8_10",
+      "compartment": 2,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        27.099999999999994,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m3_screws_12_16_20",
+      "compartment": 0,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -27.1,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m3_screws_12_16_20",
+      "compartment": 1,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -3.552713678800501e-15,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m3_screws_12_16_20",
+      "compartment": 2,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        27.099999999999994,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m4_nuts_washers",
+      "compartment": 0,
+      "probe_size_mm": [
+        17.9,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 5371.611
+    },
+    {
+      "bin": "bin_m4_nuts_washers",
+      "compartment": 1,
+      "probe_size_mm": [
+        17.9,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        9.85,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 183.654,
+      "free_volume_mm3": 5371.611
+    },
+    {
+      "bin": "bin_m4_screws_8_10_12",
+      "compartment": 0,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -27.1,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m4_screws_8_10_12",
+      "compartment": 1,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -3.552713678800501e-15,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m4_screws_8_10_12",
+      "compartment": 2,
+      "probe_size_mm": [
+        25.4,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        27.099999999999994,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 260.604,
+      "free_volume_mm3": 7622.286
+    },
+    {
+      "bin": "bin_m4_screws_16_20",
+      "compartment": 0,
+      "probe_size_mm": [
+        38.8,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        -20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 11643.492
+    },
+    {
+      "bin": "bin_m4_screws_16_20",
+      "compartment": 1,
+      "probe_size_mm": [
+        38.8,
+        15,
+        20.69
+      ],
+      "probe_center_xy": [
+        20.4,
+        0
+      ],
+      "probe_zmin": 5.81,
+      "solid_intersection_mm3": 398.088,
+      "free_volume_mm3": 11643.492
+    }
+  ],
+  "label_visibility": [
+    {
+      "bin": "bin_m2_nuts_washers",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m2_screws_6_8_10",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m2_screws_12_16",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m2_5_nuts_washers",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m2_5_screws_6_8_10",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m2_5_screws_12_16",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m3_nuts_washers",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m3_screws_6_8_10",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m3_screws_12_16_20",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m4_nuts_washers",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m4_screws_8_10_12",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_m4_screws_16_20",
+      "view": "directly above horizontal label shelf",
+      "blocking_bins": []
+    }
+  ],
+  "capacity_assessment": "Free-volume gauges establish geometric space only. Submitted ISO nominal hardware dimensions and loose-packing estimates were read but not accepted as independent physical capacity proof; actual 20-screw/30-nut/30-washer loading and tiny-part retrieval remain untested.",
+  "limitations": [
+    "Rigid STEP checks omit printer tolerance, warp, friction, filled handling, and physical pour/retrieval trials.",
+    "Withdrawal and sightlines are discrete samples, not a continuous motion/visibility proof.",
+    "No independent printed/sliced specimen exists; font labels and source use were visually inspected; exact bead resolution requires slicer preview."
+  ],
+  "capacity_estimate": {
+    "method": "Direct OCP measures actual void inside per-compartment rectangular bounds below shelf/lip. Nominal hardware dimensions read from submission; solid head/shank cylinders, full hex-prism nuts and full washer disks conservatively ignore holes. 60% packing is an unvalidated estimate, not a loading test.",
+    "compartments": [
+      {
+        "bin": "bin_m2_nuts_washers",
+        "compartment": "NUT",
+        "free_volume_mm3": 6676.763,
+        "conservative_nominal_hardware_volume_mm3": 22.17,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 180,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_nuts_washers",
+        "compartment": "WASH",
+        "free_volume_mm3": 6676.763,
+        "conservative_nominal_hardware_volume_mm3": 5.89,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 680,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "6mm",
+        "free_volume_mm3": 9445.149,
+        "conservative_nominal_hardware_volume_mm3": 41.532,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 136,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "8mm",
+        "free_volume_mm3": 9449.425,
+        "conservative_nominal_hardware_volume_mm3": 47.815,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 118,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "10mm",
+        "free_volume_mm3": 9445.149,
+        "conservative_nominal_hardware_volume_mm3": 54.098,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 104,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_screws_12_16",
+        "compartment": "12mm",
+        "free_volume_mm3": 14391.333,
+        "conservative_nominal_hardware_volume_mm3": 60.381,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 143,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_screws_12_16",
+        "compartment": "16mm",
+        "free_volume_mm3": 14391.333,
+        "conservative_nominal_hardware_volume_mm3": 72.948,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 118,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_nuts_washers",
+        "compartment": "NUT",
+        "free_volume_mm3": 6676.763,
+        "conservative_nominal_hardware_volume_mm3": 43.301,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 92,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_nuts_washers",
+        "compartment": "WASH",
+        "free_volume_mm3": 6676.763,
+        "conservative_nominal_hardware_volume_mm3": 14.137,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 283,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "6mm",
+        "free_volume_mm3": 9445.149,
+        "conservative_nominal_hardware_volume_mm3": 69.213,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 81,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "8mm",
+        "free_volume_mm3": 9449.425,
+        "conservative_nominal_hardware_volume_mm3": 79.031,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 71,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "10mm",
+        "free_volume_mm3": 9445.149,
+        "conservative_nominal_hardware_volume_mm3": 88.848,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 63,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_screws_12_16",
+        "compartment": "12mm",
+        "free_volume_mm3": 14391.333,
+        "conservative_nominal_hardware_volume_mm3": 98.666,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 87,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_5_screws_12_16",
+        "compartment": "16mm",
+        "free_volume_mm3": 14391.333,
+        "conservative_nominal_hardware_volume_mm3": 118.301,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 72,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_nuts_washers",
+        "compartment": "NUT",
+        "free_volume_mm3": 11408.756,
+        "conservative_nominal_hardware_volume_mm3": 62.873,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 108,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_nuts_washers",
+        "compartment": "WASH",
+        "free_volume_mm3": 11408.755,
+        "conservative_nominal_hardware_volume_mm3": 19.242,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 355,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "6mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 113.686,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 85,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "8mm",
+        "free_volume_mm3": 16155.473,
+        "conservative_nominal_hardware_volume_mm3": 127.824,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 75,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "10mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 141.961,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 68,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "12mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 156.098,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 62,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "16mm",
+        "free_volume_mm3": 16155.473,
+        "conservative_nominal_hardware_volume_mm3": 184.372,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 52,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "20mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 212.647,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 45,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_nuts_washers",
+        "compartment": "NUT",
+        "free_volume_mm3": 11408.756,
+        "conservative_nominal_hardware_volume_mm3": 135.793,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 50,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_nuts_washers",
+        "compartment": "WASH",
+        "free_volume_mm3": 11408.755,
+        "conservative_nominal_hardware_volume_mm3": 50.894,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 134,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "8mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 254.469,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 38,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "10mm",
+        "free_volume_mm3": 16155.473,
+        "conservative_nominal_hardware_volume_mm3": 279.602,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 34,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "12mm",
+        "free_volume_mm3": 16141.804,
+        "conservative_nominal_hardware_volume_mm3": 304.734,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 31,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_screws_16_20",
+        "compartment": "16mm",
+        "free_volume_mm3": 24598.185,
+        "conservative_nominal_hardware_volume_mm3": 355.0,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 41,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_screws_16_20",
+        "compartment": "20mm",
+        "free_volume_mm3": 24598.185,
+        "conservative_nominal_hardware_volume_mm3": 405.265,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 36,
+        "target": 20,
+        "estimate_meets_target": true
+      }
+    ]
+  },
+  "compartment_probe_interpretation": "Rectangular volume probes intentionally include some solid scoop/shelf ramps; nonzero intersection records occupied volume, not a failed fit gauge. Actual free volumes are reported separately in capacity_estimate.",
+  "summary": {
+    "occupied_bin_seats_checked": 12,
+    "occupied_grid_cells": 20,
+    "neighbor_pairs_checked": 29,
+    "stack_scenarios_checked": 28,
+    "all_seat_neighbor_and_stack_lift_intersections_mm3": 0,
+    "all_12_horizontal_label_shelves_visible_from_above": true
+  },
+  "render_source_stl_identity_verified": true,
+  "access_detail": {
+    "method": "14mm square open-top finger probe above each shelf; conservative overall screw boxes in largest 20mm compartments. Geometry only, no human retrieval claim.",
+    "probes": [
+      {
+        "bin": "bin_m2_nuts_washers",
+        "compartment": "NUT",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -9.85,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_nuts_washers",
+        "compartment": "WASH",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          9.85,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "6mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -27.1,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "8mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -3.552713678800501e-15,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_screws_6_8_10",
+        "compartment": "10mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          27.099999999999994,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_screws_12_16",
+        "compartment": "12mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -20.4,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_screws_12_16",
+        "compartment": "16mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          20.4,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_nuts_washers",
+        "compartment": "NUT",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -9.85,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_nuts_washers",
+        "compartment": "WASH",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          9.85,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "6mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -27.1,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "8mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -3.552713678800501e-15,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_screws_6_8_10",
+        "compartment": "10mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          27.099999999999994,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_screws_12_16",
+        "compartment": "12mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -20.4,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m2_5_screws_12_16",
+        "compartment": "16mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          20.4,
+          -7
+        ],
+        "finger_probe_zmin": 19.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_nuts_washers",
+        "compartment": "NUT",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -9.85,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_nuts_washers",
+        "compartment": "WASH",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          9.85,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "6mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -27.1,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "8mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -3.552713678800501e-15,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_6_8_10",
+        "compartment": "10mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          27.099999999999994,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "12mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -27.1,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "16mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -3.552713678800501e-15,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m3_screws_12_16_20",
+        "compartment": "20mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          27.099999999999994,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0,
+        "long_screw_bounding_gauge_mm": [
+          23,
+          5.5,
+          5.5
+        ],
+        "long_screw_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_nuts_washers",
+        "compartment": "NUT",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -9.85,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_nuts_washers",
+        "compartment": "WASH",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          9.85,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "8mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -27.1,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "10mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -3.552713678800501e-15,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_screws_8_10_12",
+        "compartment": "12mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          27.099999999999994,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_screws_16_20",
+        "compartment": "16mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          -20.4,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0
+      },
+      {
+        "bin": "bin_m4_screws_16_20",
+        "compartment": "20mm",
+        "finger_probe_mm": [
+          14,
+          14,
+          20
+        ],
+        "finger_probe_center_xy": [
+          20.4,
+          -7
+        ],
+        "finger_probe_zmin": 26.7,
+        "finger_probe_overlap_mm3": 0,
+        "long_screw_bounding_gauge_mm": [
+          24,
+          7,
+          7
+        ],
+        "long_screw_overlap_mm3": 0
+      }
+    ]
+  }
+}

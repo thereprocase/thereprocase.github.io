@@ -1,0 +1,21 @@
+{
+  "out/stl/baseplate_5x4.stl": "6eea56472b30a4b7aa62171965816980a4036cfcc7fa68879d41c49b530587fc",
+  "out/stl/bin_m2x6.stl": "6348dfb24bf8fdd6184f825251c7e52e933de409cff5137d11f9abe20c4f9bde",
+  "out/stl/bin_m2x10.stl": "cefa7f6ad8dd2b7ee3313ed9c072b94adb5919917145b721eb0f607973c23686",
+  "out/stl/bin_nut_m2.stl": "051f318cab07dc2b38f9bd3e7ebf63f8dad64fef56d3270f79fcac999d9f170a",
+  "out/stl/bin_wshr_m2.stl": "90e78c83fb6e9a091a61f1d36913b5527031c849eb5990550931f048e2e5218a",
+  "out/stl/bin_m2_5x6.stl": "81fe6d5878b41d2845cc02a5384ddc81fed7aebf5d544647dd44dbba13f497c8",
+  "out/stl/bin_m2_5x10.stl": "4578fa0e1f4a6636b6c5a54c18c128572442aacdcfd10d0bd893b3a29f98d5be",
+  "out/stl/bin_nut_m2_5.stl": "750d4241d59c9613c6ba601fb09039820a21db11259b4136c56f98348f27d82b",
+  "out/stl/bin_wshr_m2_5.stl": "92eb6b6e1373ae382bd2f73d00bf0813eef566e026538655772d0705560abd1d",
+  "out/stl/bin_m3x6.stl": "58af67940300ec6f7c8f477c11d141df4d09bab2858c87a256367ce8c80fad66",
+  "out/stl/bin_m3x10.stl": "505dbcdecc58a1317b7ec82e263fc8b2cd3fe522fb7d66cafbf636f4419441ef",
+  "out/stl/bin_m3x16.stl": "d7cc2b402ccbaa34d5906087ea32bc4612a8709fe4e2b5a1c154b6ff809b24b8",
+  "out/stl/bin_m3x20.stl": "8c50b3ebcfb4494eda6cac63b52df5db0565860260d3432d004dca22ddf6ad19",
+  "out/stl/bin_nut_wshr_m3.stl": "e3d9a6fdb6aeba511b502639fb642504d28460483ffafdc944417bb03610211d",
+  "out/stl/bin_m4x10.stl": "74cf96ffadb348aafec14fb3942f15bbd71eae1dafb5b42843d0c710686e0844",
+  "out/stl/bin_m4x16.stl": "fd987a02701873e92ca34f7f939de5be03f79426f4a7f9e14623ad964f513404",
+  "out/stl/bin_m4x20.stl": "84a8cdb466116917f24cdab8ee000e1fe1e9bf5048983b0c2c1a2fad5f9eb7c3",
+  "out/stl/bin_nut_m4.stl": "0f5c0ea260928a8f4fb0271c77555627ed1a662166ba621ce9dcdbe0469ff05f",
+  "out/stl/bin_wshr_m4.stl": "95be9f986e961032f8affe777b4b22826a5997b90d0663a77db621c16262280a"
+}

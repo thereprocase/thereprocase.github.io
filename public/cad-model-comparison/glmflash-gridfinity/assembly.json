@@ -1,0 +1,704 @@
+{
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./stl/baseplate_5x4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m2",
+      "stl": "./stl/bin_washer_m2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m25",
+      "stl": "./stl/bin_washer_m25.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m3",
+      "stl": "./stl/bin_washer_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m3x12",
+      "stl": "./stl/bin_screw_m3x12.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_washer_m4",
+      "stl": "./stl/bin_washer_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m2",
+      "stl": "./stl/bin_nut_m2.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m25",
+      "stl": "./stl/bin_nut_m25.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m3",
+      "stl": "./stl/bin_nut_m3.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m3x16",
+      "stl": "./stl/bin_screw_m3x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_nut_m4",
+      "stl": "./stl/bin_nut_m4.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m2x6",
+      "stl": "./stl/bin_screw_m2x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m25x6",
+      "stl": "./stl/bin_screw_m25x6.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m3x8",
+      "stl": "./stl/bin_screw_m3x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m4x10",
+      "stl": "./stl/bin_screw_m4x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m4x20",
+      "stl": "./stl/bin_screw_m4x20.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m2x8",
+      "stl": "./stl/bin_screw_m2x8.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m25x10",
+      "stl": "./stl/bin_screw_m25x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          -42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m3x10",
+      "stl": "./stl/bin_screw_m3x10.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_screw_m4x16",
+      "stl": "./stl/bin_screw_m4x16.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          42.0
+        ],
+        [
+          0,
+          1,
+          0,
+          -63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        180,
+        0,
+        0
+      ]
+    }
+  ]
+}
