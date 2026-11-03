@@ -1,0 +1,1446 @@
+{
+  "verification_method": "Independent direct OpenCascade intersections of delivered STEP geometry in submitted transforms; all occupied seats, neighbor withdrawal, all-bin stacking, explicit cavity/finger and label sightline probes. No model source executed.",
+  "seats": {
+    "bin_tray_M2_WASH": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M2_5_WASH": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M3_WASH": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M4_WASH": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_SPARES": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M2_NUT": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M2_5_NUT": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M3_NUT": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_tray_M4_NUT": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M3x6": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M2x6": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M2_5x8": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M3x10": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M4x10": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_std_M3x16": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_deep_M2x10": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_deep_M2_5x12": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_deep_M3x20": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_deep_M4x16": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    },
+    "bin_deep_M4x20": {
+      "0": 2.605961,
+      "0.5": 0,
+      "1": 0,
+      "5": 0
+    }
+  },
+  "neighbors": [
+    {
+      "a": "bin_tray_M2_WASH",
+      "b": "bin_tray_M2_5_WASH",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_WASH",
+      "b": "bin_tray_M2_NUT",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_WASH",
+      "b": "bin_tray_M2_5_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_WASH",
+      "b": "bin_tray_M3_WASH",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_WASH",
+      "b": "bin_tray_M2_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_WASH",
+      "b": "bin_tray_M2_5_NUT",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_WASH",
+      "b": "bin_tray_M3_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_WASH",
+      "b": "bin_tray_M4_WASH",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_WASH",
+      "b": "bin_tray_M2_5_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_WASH",
+      "b": "bin_tray_M3_NUT",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_WASH",
+      "b": "bin_tray_M4_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_WASH",
+      "b": "bin_tray_SPARES",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_WASH",
+      "b": "bin_tray_M3_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_WASH",
+      "b": "bin_tray_M4_NUT",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_WASH",
+      "b": "bin_std_M3x6",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_SPARES",
+      "b": "bin_tray_M4_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_SPARES",
+      "b": "bin_std_M3x6",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_NUT",
+      "b": "bin_tray_M2_5_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_NUT",
+      "b": "bin_std_M2x6",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_NUT",
+      "b": "bin_std_M2_5x8",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_NUT",
+      "b": "bin_tray_M3_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_NUT",
+      "b": "bin_std_M2x6",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_NUT",
+      "b": "bin_std_M2_5x8",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M2_5_NUT",
+      "b": "bin_std_M3x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_NUT",
+      "b": "bin_tray_M4_NUT",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_NUT",
+      "b": "bin_std_M2_5x8",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_NUT",
+      "b": "bin_std_M3x10",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M3_NUT",
+      "b": "bin_std_M4x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_NUT",
+      "b": "bin_std_M3x6",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_NUT",
+      "b": "bin_std_M3x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_NUT",
+      "b": "bin_std_M4x10",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_tray_M4_NUT",
+      "b": "bin_std_M3x16",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x6",
+      "b": "bin_std_M4x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x6",
+      "b": "bin_std_M3x16",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2x6",
+      "b": "bin_std_M2_5x8",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2x6",
+      "b": "bin_deep_M2x10",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2x6",
+      "b": "bin_deep_M2_5x12",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2_5x8",
+      "b": "bin_std_M3x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2_5x8",
+      "b": "bin_deep_M2x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2_5x8",
+      "b": "bin_deep_M2_5x12",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M2_5x8",
+      "b": "bin_deep_M3x20",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x10",
+      "b": "bin_std_M4x10",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x10",
+      "b": "bin_deep_M2_5x12",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x10",
+      "b": "bin_deep_M3x20",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x10",
+      "b": "bin_deep_M4x16",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M4x10",
+      "b": "bin_std_M3x16",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M4x10",
+      "b": "bin_deep_M3x20",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M4x10",
+      "b": "bin_deep_M4x16",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M4x10",
+      "b": "bin_deep_M4x20",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M4x10",
+      "b": "bin_tray_M4_SPARE_stacked",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x16",
+      "b": "bin_deep_M4x16",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x16",
+      "b": "bin_deep_M4x20",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_std_M3x16",
+      "b": "bin_tray_M4_SPARE_stacked",
+      "xy_gap_mm": -1.4210854715202004e-12,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M2x10",
+      "b": "bin_deep_M2_5x12",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M2_5x12",
+      "b": "bin_deep_M3x20",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M3x20",
+      "b": "bin_deep_M4x16",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M4x16",
+      "b": "bin_deep_M4x20",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M4x16",
+      "b": "bin_tray_M4_SPARE_stacked",
+      "xy_gap_mm": 0.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 0,
+        "5": 0
+      }
+    },
+    {
+      "a": "bin_deep_M4x20",
+      "b": "bin_tray_M4_SPARE_stacked",
+      "xy_gap_mm": -42.0,
+      "lift_mm3": {
+        "0": 0,
+        "1": 148.523611,
+        "5": 1501.592829
+      },
+      "motion_note": "Intentional stacked pair: this lifts LOWER while UPPER held fixed, so overlap is expected. See actual_starter_stack for upper-first withdrawal, which is clear."
+    }
+  ],
+  "stack": {
+    "bin_tray_M2_WASH": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M2_5_WASH": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M3_WASH": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M4_WASH": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_SPARES": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M2_NUT": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M2_5_NUT": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M3_NUT": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M4_NUT": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M3x6": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M2x6": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M2_5x8": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M3x10": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M4x10": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_std_M3x16": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_deep_M2x10": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_deep_M2_5x12": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_deep_M3x20": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_deep_M4x16": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_deep_M4x20": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    },
+    "bin_tray_M4_SPARE_stacked": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0
+    }
+  },
+  "capacity": [
+    {
+      "bin": "bin_tray_M2_WASH",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 1741,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M2_5_WASH",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 725,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M3_WASH",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 533,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M4_WASH",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 201,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_SPARES",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": null,
+      "target": null
+    },
+    {
+      "bin": "bin_tray_M2_NUT",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 462,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M2_5_NUT",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 236,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M3_NUT",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 163,
+      "target": 30
+    },
+    {
+      "bin": "bin_tray_M4_NUT",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": 75,
+      "target": 30
+    },
+    {
+      "bin": "bin_std_M3x6",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 114,
+      "target": 20
+    },
+    {
+      "bin": "bin_std_M2x6",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 313,
+      "target": 20
+    },
+    {
+      "bin": "bin_std_M2_5x8",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 164,
+      "target": 20
+    },
+    {
+      "bin": "bin_std_M3x10",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 91,
+      "target": 20
+    },
+    {
+      "bin": "bin_std_M4x10",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 46,
+      "target": 20
+    },
+    {
+      "bin": "bin_std_M3x16",
+      "conservative_measured_void_mm3": 21701.797,
+      "estimated_count_at_60percent_packing": 70,
+      "target": 20
+    },
+    {
+      "bin": "bin_deep_M2x10",
+      "conservative_measured_void_mm3": 27461.797,
+      "estimated_count_at_60percent_packing": 304,
+      "target": 20
+    },
+    {
+      "bin": "bin_deep_M2_5x12",
+      "conservative_measured_void_mm3": 27461.797,
+      "estimated_count_at_60percent_packing": 166,
+      "target": 20
+    },
+    {
+      "bin": "bin_deep_M3x20",
+      "conservative_measured_void_mm3": 27461.797,
+      "estimated_count_at_60percent_packing": 77,
+      "target": 20
+    },
+    {
+      "bin": "bin_deep_M4x16",
+      "conservative_measured_void_mm3": 27461.797,
+      "estimated_count_at_60percent_packing": 46,
+      "target": 20
+    },
+    {
+      "bin": "bin_deep_M4x20",
+      "conservative_measured_void_mm3": 27461.797,
+      "estimated_count_at_60percent_packing": 40,
+      "target": 20
+    },
+    {
+      "bin": "bin_tray_M4_SPARE_stacked",
+      "conservative_measured_void_mm3": 17093.797,
+      "estimated_count_at_60percent_packing": null,
+      "target": null
+    }
+  ],
+  "label_sightlines": [
+    {
+      "bin": "bin_tray_M2_WASH",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_WASH",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_WASH",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_5_WASH",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_5_WASH",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_5_WASH",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M3_WASH",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M3_WASH",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M3_WASH",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_WASH",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_WASH",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_WASH",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_SPARES",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_SPARES",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_SPARES",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_NUT",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M2_WASH"
+      ]
+    },
+    {
+      "bin": "bin_tray_M2_NUT",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_NUT",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_5_NUT",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M2_5_WASH"
+      ]
+    },
+    {
+      "bin": "bin_tray_M2_5_NUT",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M2_5_NUT",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M3_NUT",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M3_WASH"
+      ]
+    },
+    {
+      "bin": "bin_tray_M3_NUT",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M3_NUT",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_NUT",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M4_WASH"
+      ]
+    },
+    {
+      "bin": "bin_tray_M4_NUT",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_NUT",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x6",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_SPARES"
+      ]
+    },
+    {
+      "bin": "bin_std_M3x6",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x6",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M2x6",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M2_NUT"
+      ]
+    },
+    {
+      "bin": "bin_std_M2x6",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M2x6",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M2_5x8",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M2_5_NUT"
+      ]
+    },
+    {
+      "bin": "bin_std_M2_5x8",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M2_5x8",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x10",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M3_NUT"
+      ]
+    },
+    {
+      "bin": "bin_std_M3x10",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x10",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M4x10",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_tray_M4_NUT"
+      ]
+    },
+    {
+      "bin": "bin_std_M4x10",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M4x10",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x16",
+      "elevation_deg": 45,
+      "blocking_bins": [
+        "bin_std_M3x6"
+      ]
+    },
+    {
+      "bin": "bin_std_M3x16",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_std_M3x16",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2x10",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2x10",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2x10",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2_5x12",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2_5x12",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M2_5x12",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M3x20",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M3x20",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M3x20",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x16",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x16",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x16",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x20",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x20",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_deep_M4x20",
+      "elevation_deg": 90,
+      "blocking_bins": [
+        "bin_tray_M4_SPARE_stacked"
+      ]
+    },
+    {
+      "bin": "bin_tray_M4_SPARE_stacked",
+      "elevation_deg": 45,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_SPARE_stacked",
+      "elevation_deg": 75,
+      "blocking_bins": []
+    },
+    {
+      "bin": "bin_tray_M4_SPARE_stacked",
+      "elevation_deg": 90,
+      "blocking_bins": []
+    }
+  ],
+  "access": [
+    {
+      "bin": "bin_tray_M2_WASH",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M2_5_WASH",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M3_WASH",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M4_WASH",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_SPARES",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M2_NUT",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M2_5_NUT",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M3_NUT",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M4_NUT",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M3x6",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M2x6",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M2_5x8",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M3x10",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M4x10",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_std_M3x16",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_deep_M2x10",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_deep_M2_5x12",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_deep_M3x20",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_deep_M4x16",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_deep_M4x20",
+      "central14mm_finger_probe_mm3": 0
+    },
+    {
+      "bin": "bin_tray_M4_SPARE_stacked",
+      "central14mm_finger_probe_mm3": 0
+    }
+  ],
+  "limitations": [
+    "No physical tests, random packing or printing/slicing; nominal hardware dimensions and60% packing assumptions are estimates.",
+    "Sampled withdrawal and center sightlines cannot certify every motion or glyph.",
+    "The2.4/3.2mm front slots are too short for a full finger; fingernail hooking and filled-bin carrying require physical tests."
+  ],
+  "source_sha256": {
+    "exports/base_5x4.step": "97c1f695baca39a14bc898b7ea557089c2cdcdfa160cb719b97834dcf245b148",
+    "exports/bin_tray_M2_WASH.step": "5eb7e17aa28d04f431b05f985a1a9778c8751f4fd5dc001fef8826efadf67900",
+    "exports/bin_tray_M2_5_WASH.step": "8f5afbf80ca9c920759d9be203674c5befa9758edcc6176fe02dac84d59ce2a8",
+    "exports/bin_tray_M3_WASH.step": "c73ef2ed98d8dcd7c8bc5fe50f6e9fbc4a5ba0afb28067e4b0f818ef7afff5d8",
+    "exports/bin_tray_M4_WASH.step": "f2bd7e035e7fbab91cb6f23d6cc280f3479b0116195402ff90e08919b40d63b0",
+    "exports/bin_tray_SPARES.step": "b9a64364b041bb6072a673fc7a40684b4fb9a4466840ca3541924a68cf928b07",
+    "exports/bin_tray_M2_NUT.step": "ee29c457ede1ce1563c55bd9c938e747ecff38c6efff579463276104a22dc922",
+    "exports/bin_tray_M2_5_NUT.step": "0736854904449b734e67beedd6f8fad6014b3f95ef7095c905a25d1173661193",
+    "exports/bin_tray_M3_NUT.step": "3099dddf30cb48fa8286dd926e202cb92049b82315336f28b9db326d2b284316",
+    "exports/bin_tray_M4_NUT.step": "50d03d4366b0507def2d5171604a3a0c0878ff4f6d6f86239415f0509faeddd0",
+    "exports/bin_std_M3x6.step": "4819a4681c970f7df7b614b142d667264470d948a523831e33ba8d887ee5ea03",
+    "exports/bin_std_M2x6.step": "2630d86032a4aab5e4e84efd2bdffcc562ef96eecd00ce95435b84c86f0b2778",
+    "exports/bin_std_M2_5x8.step": "c43f0662d7dd2723f2847626690433f102d78c040fab4473c51373bb8a038deb",
+    "exports/bin_std_M3x10.step": "39de3129a09a6175867d9e662c41c2e2a36cd5c5175bb3c3d07b6aa0c943de30",
+    "exports/bin_std_M4x10.step": "dc3b1794bf318ce700e1792ab3fbf1b96326f696b600c6cbe33226a4e1f3dd0c",
+    "exports/bin_std_M3x16.step": "213f54428dbe38dcbdd6d0a6387caf3fc4fcdab34c5f3e1c89af814a625aecb7",
+    "exports/bin_deep_M2x10.step": "1120ca61fe773b28d28f6cd0876f1bf2189f73cc345747b9ab54e4aa7de81ab6",
+    "exports/bin_deep_M2_5x12.step": "69768c93d69c7e985fb1b0f888e26e3f0ac8ca42efe91c8fd811544ce8857970",
+    "exports/bin_deep_M3x20.step": "c86006a6969e84895ff2bb9eb39687b383e2cad2f4d7c484f5fed3fb29b09f13",
+    "exports/bin_deep_M4x16.step": "44d2f0b352deb3939d8d8a6350736ea54a69962898c199cc24ca39b764ab1e13",
+    "exports/bin_deep_M4x20.step": "d020bf8628556e8ccfca27ef80f63c8c7b4a4c0cc349514102e80cd28747c41c",
+    "exports/bin_tray_M4_SPARE_stacked.step": "5124d379c1b75125141e84c6f56b92e3ab5e512896592d0fe12b75c2b2309447"
+  },
+  "actual_starter_stack": {
+    "upper_tray_withdrawal_mm3": {
+      "0": 0,
+      "0.5": 0,
+      "1": 0,
+      "4": 0,
+      "8": 0
+    },
+    "note": "Lifting the lower bin while holding the intentionally stacked upper tray fixed causes expected collision. Remove the upper tray first, or carry the stack together."
+  },
+  "source_inspection": {
+    "body_width_mm": 42,
+    "grid_pitch_mm": 42,
+    "neighbor_nominal_clearance_mm": 0,
+    "font": "Supplied FillaPrint outline conversion;5mm cap and0.6mm relief on60-degree facet",
+    "print_pose": "All exports base-down, bins openings up; no transforms changed",
+    "finger_slot_dimensions_mm": "14mm wide but only2.4/3.2mm tall; fingernail/rim handling untested"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "reviewed_layouts": 26,
+  "reviewed_layouts": 27,
   "rows": [
     {
       "run": "sol-dimm",
@@ -181,6 +181,13 @@
       "layout_instances": 13,
       "expected_printed_instances": 13,
       "assembled_parts": 13,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "minflash-gridfinity",
+      "layout_instances": 22,
+      "expected_printed_instances": 22,
+      "assembled_parts": 22,
       "minimum_z_mm": 0.0
     }
   ],

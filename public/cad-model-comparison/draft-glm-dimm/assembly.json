@@ -1,0 +1,74 @@
+{
+  "parts": [
+    {
+      "name": "ddr4_mailer_tray",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-dimm/ddr4_mailer_tray.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "ddr4_mailer_lid",
+      "stl": "./lab/cad-design-comparison-20261103/draft-snapshots/glm-dimm/ddr4_mailer_lid.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

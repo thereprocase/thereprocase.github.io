@@ -1,0 +1,34 @@
+Everything is built, measured and verified. Final handover:
+
+## What was delivered
+
+**A Gridfinity bench organiser** for M2/M2.5/M3/M4 socket-head screws, hex nuts and flat washers: one 5 × 4 base plate (210 × 168 mm) plus 21 bins in 20 cells.
+
+| | |
+|---|---|
+| `src/gf_spec.py` | Gridfinity standard geometry (male profile, female socket, base plate), numbers taken from the Gridfinity Design Reference v5 and cross-checked against `gridfinity-rebuilt-openscad`, with citations in the source |
+| `src/gf_text.py` | Label outlines taken from `assets/fillaprint/Fillaprint-Regular.ttf` via fontTools (build123d's own `Text()` silently falls back to DejaVu Sans here) |
+| `src/gf_bins.py` | Three reusable bin types: **tray** (21 mm, washers/nuts), **std** (25 mm), **deep** (30 mm) |
+| `src/gf_layout.py` | The starter assortment table |
+| `exports/` | 22 binary STLs + 22 STEPs (base + 21 bins) |
+| `assembly.json` | Part files and their assembled transforms in mm (origin = plate's bottom-left corner, +y into the bench, row 0 = front) |
+| `README.md`, `checks.md` | Design/handling notes and the measured checks |
+
+**Layout:** columns are thread sizes, rows are content class (washers → nuts → short screws → long screws), column 5 is overflow. Row heights step 21 → 25 → 30 mm so nothing in front hides a label behind it.
+
+**Interfaces worked out, not assumed**
+- Bins carry the exact published male profile (35.6/37.2/41.5 across, 4.75 tall); measured clearance in the base socket 0.08–0.25 mm/side, 0 mm³ interference.
+- Label: 60° facet on the front wall, FillaPrint text at a measured 5.0 mm cap height, 0.6 mm relief; readable at 96.6 % of true height from 45° elevation. A 1.4 mm wall cannot take that ramp, so the front wall is locally thickened (the "cheek").
+- Finger slot (14 × 2.4 mm) through the front wall: the grip for lifting one bin, and a scoop at part level in the tray; sill 2.36 mm so washers cannot escape.
+- Stacking: a second bin's base profile drops into the mouth of the bin below and rests on the rim (seat 3.6 mm below the rim, 1.15 mm step, 0 mm³ interference). The label facet is deliberately clear of that band.
+
+**Measured, not asserted:** `checks.md` is generated from the run — 22 watertight STLs, 0.003 % mesh-vs-solid volume error, 0 mm³ overlap between placed bins, every bin over a socket centre and inside its socket, pocket volumes and the 30-washer/30-nut/20-screw capacities.
+
+## Honest limitations
+- Nothing was printed or physically fitted; all verification is geometric.
+- The socket is the published profile with a 0.08 mm radial relief (`BASE_RELIEF`) so the fit is a slip fit, not a press fit — it may need tuning per printer.
+- The published socket mouth is 42.0 mm at a 42 mm pitch, so the webs between sockets (and at the plate edge) taper to knife edges; the plate corners are therefore square.
+- The M2.5 washer label reads "WASH", not "WASHER": the full word is 34.0 mm against a 34.5 mm flat facet.
+- The thickened front wall takes 3.2 mm off the front of the pocket over the label band (above the fill line).
+
+**Needs a physical fit test:** the drop-in force of a bin into the socket, how easily a stacked bin comes off again, and whether the label reads well under bench lighting.

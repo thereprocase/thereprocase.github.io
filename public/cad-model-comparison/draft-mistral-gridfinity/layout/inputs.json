@@ -1,0 +1,1378 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/base_5x4.stl",
+    "sha256": "f7d318f22d637fecf401ed5f388d76b634fa8ea0de1f01d8688389fd91ee7ce5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5727,
+    "triangles": 11466
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/bin_hw.stl",
+    "sha256": "23af73a5168cd42737313a7ff8540ef4d45d3d1e142e4866ce9cf78b1e48834c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5049,
+    "triangles": 10098
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/bin_screw.stl",
+    "sha256": "553641304b8217724e9467eb27bc6e49d3c2cbaf3758edd7c87fe0bf31dceb87",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5059,
+    "triangles": 10118
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_nut_M2.stl",
+    "sha256": "69e40bc77d5428504f7647f2cd4a7f50fc0b2ea8798edc4364c62ea04371a9f9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        18.399999618530273
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 918,
+    "triangles": 1832
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_nut_M2p5.stl",
+    "sha256": "283eabd3e43f1ac52dc7e2181759e9894a6e8890ceb5d74e824e57d718d1b002",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        67.19999885559082
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1210,
+    "triangles": 2416
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_nut_M3.stl",
+    "sha256": "0131e726fa3c11d58cc73ed5f618584277ecaf6590dd0523e302694fcd7fdff8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        115.99999809265137
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 908,
+    "triangles": 1812
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_nut_M4.stl",
+    "sha256": "7f5d5f35e6749c6f52e65643985ae9c1aadcc7a1dfbefc246af4fe976a6c4c60",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        164.7999973297119
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 836,
+    "triangles": 1668
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M2p5x10.stl",
+    "sha256": "c8301f7f000b41371b99fe36ac86444e37bd3c0a80b50e971445a2c560c16962",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        213.59999656677246
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2434,
+    "triangles": 4864
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M2p5x12.stl",
+    "sha256": "e074e9d24fcb1dc3616a4172082c2407e68846c12fa3bbefff48de7f085f8286",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        262.399995803833
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2522,
+    "triangles": 5040
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M2p5x8.stl",
+    "sha256": "99b2d52ef9b85399fc89fb6e887497edeac6108fc6c6d7acb70ec64b938e91cc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        311.19999504089355
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        181.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2272,
+    "triangles": 4540
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M2x6.stl",
+    "sha256": "b03cc0d54080d8d028dcbce907ad637a29bae6b0da7a83bcd5321ad8493e4856",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        18.399999618530273
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2050,
+    "triangles": 4096
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M2x8.stl",
+    "sha256": "067fb9ff6e11d8378791a32148b17e37764854b319ca66f1e3e198f9a82b3546",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        67.19999885559082
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1980,
+    "triangles": 3956
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M3x10.stl",
+    "sha256": "86f8da41d752e6cd924ebe029725bb1330a75faf7737e56cbe3f20d674cb0a40",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        115.99999809265137
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2132,
+    "triangles": 4260
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M3x12.stl",
+    "sha256": "09a7e010b8bc471bba9e33fcd6cf8f7ac30ba786e9d62a4d7a41c6b73b840c45",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        164.7999973297119
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2220,
+    "triangles": 4436
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M3x16.stl",
+    "sha256": "42ab120d102cdcba28d7bab7140e8500ef1db49519a198bb8e31adfbebde7a91",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        213.59999656677246
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2210,
+    "triangles": 4416
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M3x20.stl",
+    "sha256": "c7c8ea90dba92cb90d07397c61d79d7d070f8d48ff32dea6a0991704c1033d1f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        262.399995803833
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2190,
+    "triangles": 4376
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M4x12.stl",
+    "sha256": "7ce94c46412125e445d3b65e0a3f0f8052c171fe1ffc46939ad89ec4930dcd95",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        311.19999504089355
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        195.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2148,
+    "triangles": 4292
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M4x16.stl",
+    "sha256": "faba71f87214d9f85773542fb1f517d439858a3511e155e4200a35d3aa14c17c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        18.399999618530273
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2138,
+    "triangles": 4272
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_screw_M4x20.stl",
+    "sha256": "3f9197ead49d52ba1855f3b1d3210d2d5c8224dd76ae25a8cfa96a53e6fd3e3d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        67.19999885559082
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2118,
+    "triangles": 4232
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_washer_M2.stl",
+    "sha256": "d94b04a95aadf13007558293868c713b4dfdc6e1e9c2f0ee1103570f26a099a7",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        115.99999809265137
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1706,
+    "triangles": 3408
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_washer_M2p5.stl",
+    "sha256": "922558625868ea18ddf42717ec8bfa8bc538fef0a11aba307cc3ad9a19784295",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        164.7999973297119
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1998,
+    "triangles": 3992
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_washer_M3.stl",
+    "sha256": "baa9b35d7e68080d6531cfcaaaa5870f317f8d7def5589ca4075f9b5d543d838",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        213.59999656677246
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1696,
+    "triangles": 3388
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/label_washer_M4.stl",
+    "sha256": "1ff6738e7c1237d81bcf88f50a2e2c3f5623da2f87f092bf7c1acdc05b1ddbd9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        262.399995803833
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -10.899999618530273
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        209.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 1624,
+    "triangles": 3244
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_nut_M2.stl",
+    "sha256": "27d317c670c4ae484777f928fd32edd8570f82511d9982d7fb2f522032e73dd4",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        313.5499954223633
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        228.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2454,
+    "triangles": 4904
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_nut_M2p5.stl",
+    "sha256": "c919494af78f6ef075467445a5538ef3d38aa49796740f945a5b9123dda3da7f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2746,
+    "triangles": 5488
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_nut_M3.stl",
+    "sha256": "6f269b0f56142e30c6551a7d50ed3e8a87674199d847c2d973282c8177d56451",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2444,
+    "triangles": 4884
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_nut_M4.stl",
+    "sha256": "26436036c7aa80721e24dbae1c2f009b4649ecf99d72084aeadb931a51990991",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2372,
+    "triangles": 4740
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M2p5x10.stl",
+    "sha256": "49f2913750a1f706cba24e218801fbe71f317d164f38dc77a93b06ddfee7897e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3970,
+    "triangles": 7936
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M2p5x12.stl",
+    "sha256": "27302b7d12e309253d9bc391500e693fd89461de05e2ffda6051a2e4a4953d3c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4058,
+    "triangles": 8112
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M2p5x8.stl",
+    "sha256": "76e1fe00470ce2e12b9ea7ad77c881c1938e856736d9d343e940fbff30b1ce06",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        282.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3808,
+    "triangles": 7612
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M2x6.stl",
+    "sha256": "b93ebf0491a5dd7851228e38bebf19559dc5d6bf50ee0ed64d4aec5e26936d31",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3586,
+    "triangles": 7168
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M2x8.stl",
+    "sha256": "100aeef2d4c318e006ef85d506a9d0a1e74d85187f4ceeb5ca2f81f6662a8d01",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3516,
+    "triangles": 7028
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M3x10.stl",
+    "sha256": "c97069d602558e4207df4c3144e61c8e0ef2bd3d85feb8e0f8d2f98823664dbd",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3668,
+    "triangles": 7332
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M3x12.stl",
+    "sha256": "7687e2fb87d30ca1a4aa666a7fa1fcf4043821498da35a4f3f92ecf0dbf84c87",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3756,
+    "triangles": 7508
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M3x16.stl",
+    "sha256": "dcea59543a608b2d83fc07d6294b81228c5ad157a6fc56ad5bbf3e150dc24bce",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3746,
+    "triangles": 7488
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M3x20.stl",
+    "sha256": "ccadb22f52056df9dc6194916fb4a4a952ac86950789ea20d69f73899544c837",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        335.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3726,
+    "triangles": 7448
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M4x12.stl",
+    "sha256": "f55e0b329eedc815e3aa5eb0cd41d05674bdb8205447cf45f58044ec22e0bc3e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3684,
+    "triangles": 7364
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M4x16.stl",
+    "sha256": "2e9e997d1e3edf6e5677d7908e9b3632df35589073dcda3324252f79d57bb777",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3674,
+    "triangles": 7344
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_screw_M4x20.stl",
+    "sha256": "2636c4be661e22fd2fd185eb32943e9519022db11feabb863b6dab2eadfb9e82",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3654,
+    "triangles": 7304
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_washer_M2.stl",
+    "sha256": "88c4db31d93adb5b7ec6748c9b2ecbb02a812724a10bfe8f93759b6595af989f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3242,
+    "triangles": 6480
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_washer_M2p5.stl",
+    "sha256": "3dd976e8bcf9130ba56e061b253db71d64377ab30839485eca4ba9b0c4159ca8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3534,
+    "triangles": 7064
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_washer_M3.stl",
+    "sha256": "9495fda2911827a860a26e5dab305a88ad40cd258ba84e4983fef8c3f7bd8d0a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        389.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3232,
+    "triangles": 6460
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-mistral-gridfinity/lid_washer_M4.stl",
+    "sha256": "8309f7794bbcc0c5d05786f918729feccd788b79a11e5db8b10733fdb21be094",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.900000095367432
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        442.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3160,
+    "triangles": 6316
+  }
+]

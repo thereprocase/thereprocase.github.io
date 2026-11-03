@@ -1,0 +1,706 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/base_5x4.stl",
+    "sha256": "7b72cc24a829c6786cec47730955ba4410b29f3ab02ecca2ca174b7dae9459d8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21786,
+    "triangles": 43568
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M2_WASH.stl",
+    "sha256": "15444b9b50d4a20b4b22018fcc545287300d5dbb8f27ae827b02533587d1dfd1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3239,
+    "triangles": 6482
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M2_5_WASH.stl",
+    "sha256": "43131608d010a41ae83af19559b88d4ca08b2e71ee9c9a16de5168748d9bb157",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3483,
+    "triangles": 6970
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M3_WASH.stl",
+    "sha256": "51989556613a47ab4a356e3db2ad8967cfb865b48b1d193358ae9fa0b52fca3e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3241,
+    "triangles": 6486
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M4_WASH.stl",
+    "sha256": "6f391ca08d3601e69b8c32c8c99c9f6e2f28b8de252e1e2a82178c01cade07a3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3159,
+    "triangles": 6322
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_SPARES.stl",
+    "sha256": "2819c1492493da23691166f5c4b4af9bdd4b536f6bc0056854c3c275c17c8605",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3241,
+    "triangles": 6486
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M2_NUT.stl",
+    "sha256": "cc7167898e4df0916cb748db6a8471e266a16c0d93da7c2b4c1e0a66fc48a840",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2829,
+    "triangles": 5662
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M2_5_NUT.stl",
+    "sha256": "7360be43765cf37e0eaf712f0b465121662c8168fc925999b156e29622507609",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3073,
+    "triangles": 6150
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M3_NUT.stl",
+    "sha256": "b79a3f5917a9c349aa4ed5d6f255e560e2d57f52e693c1015a89f33003b040fc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2831,
+    "triangles": 5666
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M4_NUT.stl",
+    "sha256": "412bd7b90e496a65f7c8901ad8d7b2ee665e426e075069a03bf945729d3cd90d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2749,
+    "triangles": 5502
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M3x6.stl",
+    "sha256": "5429f446cbed3dcf846be176c00b480aeafdcd43a5039c6917b19793dbeafde2",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2845,
+    "triangles": 5694
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M2x6.stl",
+    "sha256": "8666885de685c4bb0dd269f643cecb67364970c863f01c1dee483a51a73fc0b5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2843,
+    "triangles": 5690
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M2_5x8.stl",
+    "sha256": "5d71e1b02f3f62f528c7304b792bf7783000e5e1d7d992f5ce7cda13d3b7446e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3023,
+    "triangles": 6050
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M3x10.stl",
+    "sha256": "64e3234a1f4b0fe2a57b659a11e2e4ec23dcac4fff01e984878eb3d58b0e3e60",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2917,
+    "triangles": 5838
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M4x10.stl",
+    "sha256": "112b055a316d288173bc9fe37d53e5a76f4a2c39325a692d505dc345f2ce84a9",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2835,
+    "triangles": 5674
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_std_M3x16.stl",
+    "sha256": "cf3724a6c6a3c695f2e52038ad0807dde92dd7535337dc7b9670af157cead535",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2991,
+    "triangles": 5986
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_deep_M2x10.stl",
+    "sha256": "a74038ec6adb950a4deea4f7b82af54e55452c920e561db3e0acb997b6cfae85",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2915,
+    "triangles": 5834
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_deep_M2_5x12.stl",
+    "sha256": "d801d53c35828fff0b7c4aa50991ce5e8a6630302bc34469361eb2c347aeb98f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3225,
+    "triangles": 6454
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_deep_M3x20.stl",
+    "sha256": "18772af8fe58cea5a5494d3b39a75a3b4afb430dfe44d2236759df1c772e6736",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2971,
+    "triangles": 5946
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_deep_M4x16.stl",
+    "sha256": "8a320c7fbba02cb74d7038b28fa438e69b2ea4178a60c256cca496c4b0b8d979",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2909,
+    "triangles": 5822
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_deep_M4x20.stl",
+    "sha256": "7cfda4659c544cc42ff7093e358c7d37a08cc77e4ffef5a960d46b1e2fb1a23e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2889,
+    "triangles": 5782
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/minflash-gridfinity/bin_tray_M4_SPARE_stacked.stl",
+    "sha256": "4efe5ac411386e0c8e5e2f8fa95223ca579533ebaa2f29cbee43d78747513bc8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        189.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -27.4
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3251,
+    "triangles": 6506
+  }
+]
