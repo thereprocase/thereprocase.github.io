@@ -1,0 +1,510 @@
+{
+  "version": 1,
+  "scored_on": "2026-11-03",
+  "kind": "Editorial CAD review, one submission per model per task",
+  "categories": {
+    "function": {
+      "weight": 0.5,
+      "description": "Fit, usable geometry, closure or seating/stacking, and meeting the primary task."
+    },
+    "printability": {
+      "weight": 0.2,
+      "description": "Supplied print poses, connected geometry, wall/rim robustness and support assumptions."
+    },
+    "labels_handling": {
+      "weight": 0.2,
+      "description": "Required font/labels, visibility, removal access, finger clearance and everyday handling."
+    },
+    "completeness": {
+      "weight": 0.1,
+      "description": "Delivered CAD, source, assembly placement and usable handover."
+    }
+  },
+  "rubric": {
+    "0": "Absent or unusable",
+    "2": "Major failures",
+    "4": "Substantial corrections required",
+    "6": "Workable portions with meaningful limitations",
+    "8": "Strong CAD prototype with remaining physical checks",
+    "10": "All category requirements fully demonstrated"
+  },
+  "cost_score": {
+    "formula": "clamp(8 - log2(max(API_cost_USD, 0.25)), 0, 10)",
+    "anchors_usd": {
+      "0.25": 10,
+      "0.5": 9,
+      "1": 8,
+      "2": 7,
+      "4": 6,
+      "8": 5,
+      "16": 4,
+      "32": 3,
+      "64": 2,
+      "128": 1,
+      "256": 0
+    },
+    "scope": "Per design run. Combined-model cost score uses mean calculated API cost per task. Unavailable costs stay unranked."
+  },
+  "value_formula": "3 / (2 / quality + 1 / cost_score); zero if either score is zero",
+  "default_order": "CAD-acceptable prototypes first, then descending value. Revisions follow, also by value. Missing prices remain unranked. Combined models are grouped by number of acceptable tasks first.",
+  "limitations": [
+    "These category scores are editorial judgments, not interval-scale measurements or statistical performance estimates.",
+    "The cost curve is an explicit budget preference anchored at $1\u20132 per design, not a fitted statistical relationship.",
+    "A weighted harmonic mean gives quality twice the weight and limits compensation by low cost.",
+    "One submission per task cannot estimate success rates or confidence intervals; small score gaps should not be treated as reliable differences.",
+    "CAD-acceptable means no blocking issue in the completed review; physical fit, print success, fatigue and loaded behavior remain untested.",
+    "Spark follow-ups and recorded runtime interventions remain marked; scores do not remove those differences."
+  ],
+  "runs": {
+    "sol-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 7,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 7.9,
+      "api_cost_usd": 0.3162784,
+      "cost_score": 9.660733,
+      "value": 8.410986,
+      "cad_acceptable": true,
+      "basis": "Compact, verified bag clearance and direct lifting; catch support cleanup remains.",
+      "review_status": "Reviewed prototype"
+    },
+    "astra-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 7,
+        "labels_handling": 7,
+        "completeness": 9
+      },
+      "quality": 7.7,
+      "api_cost_usd": 1.791008,
+      "cost_score": 7.159228,
+      "value": 7.510889,
+      "cad_acceptable": true,
+      "basis": "Verified bag clearance and height headroom; separate lifting strips and latch support remain.",
+      "review_status": "Reviewed prototype"
+    },
+    "opus-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 7,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 7.9,
+      "api_cost_usd": 3.5555922,
+      "cost_score": 6.16991,
+      "value": 7.224712,
+      "cad_acceptable": true,
+      "basis": "Verified fit and deliberate latch; contact protection depends on heatspreader shape.",
+      "review_status": "Reviewed prototype"
+    },
+    "fable-dimm": {
+      "categories": {
+        "function": 7,
+        "printability": 7,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 7.4,
+      "api_cost_usd": 9.19778025,
+      "cost_score": 4.798714,
+      "value": 6.267504,
+      "cad_acceptable": true,
+      "basis": "Fit and thumb access pass; detent friction and open underside reduce protection certainty.",
+      "review_status": "Reviewed prototype"
+    },
+    "sonnet-dimm": {
+      "categories": {
+        "function": 6,
+        "printability": 7,
+        "labels_handling": 8,
+        "completeness": 8
+      },
+      "quality": 6.8,
+      "api_cost_usd": 0.6520469,
+      "cost_score": 8.616952,
+      "value": 7.314077,
+      "cad_acceptable": false,
+      "basis": "CAD envelope clears, but the named LPX example exceeds the stated fit limit.",
+      "review_status": "Fit claims need revision"
+    },
+    "terra-dimm": {
+      "categories": {
+        "function": 5,
+        "printability": 3,
+        "labels_handling": 6,
+        "completeness": 8
+      },
+      "quality": 5.1,
+      "api_cost_usd": 0.0540246,
+      "cost_score": 10.0,
+      "value": 6.095618,
+      "cad_acceptable": false,
+      "basis": "Closure clears; raised lid text conflicts with the prescribed print pose.",
+      "review_status": "Needs revision"
+    },
+    "deepseek-dimm": {
+      "categories": {
+        "function": 7,
+        "printability": 7,
+        "labels_handling": 7,
+        "completeness": 9
+      },
+      "quality": 7.2,
+      "api_cost_usd": 0.39421111,
+      "cost_score": 9.34296,
+      "value": 7.79605,
+      "cad_acceptable": true,
+      "basis": "Separate bagged pockets and end wells; flexing detents and foam consumables need trials.",
+      "review_status": "Reviewed prototype"
+    },
+    "qwen-dimm": {
+      "categories": {
+        "function": 3,
+        "printability": 6,
+        "labels_handling": 4,
+        "completeness": 7
+      },
+      "quality": 4.2,
+      "api_cost_usd": 5.4655663,
+      "cost_score": 5.549629,
+      "value": 4.570504,
+      "cad_acceptable": false,
+      "basis": "Release requires much more travel than claimed; extraction gaps are insufficiently established.",
+      "review_status": "Needs revision"
+    },
+    "mistral-dimm": {
+      "categories": {
+        "function": 7,
+        "printability": 3,
+        "labels_handling": 7,
+        "completeness": 9
+      },
+      "quality": 6.4,
+      "api_cost_usd": 0.67740442,
+      "cost_score": 8.561911,
+      "value": 6.988179,
+      "cad_acceptable": false,
+      "basis": "Upright bag fit and catch engagement pass; raised text makes the lid print pose unsuitable.",
+      "review_status": "Needs print-orientation revision"
+    },
+    "kimi-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.1,
+      "api_cost_usd": 4.000116,
+      "cost_score": 5.999958,
+      "value": 7.253711,
+      "cad_acceptable": true,
+      "basis": "Bag, removal and finger probes pass; recessed text suits the supplied print pose.",
+      "review_status": "Reviewed prototype"
+    },
+    "gemini-dimm": {
+      "categories": {
+        "function": 9,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.6,
+      "api_cost_usd": 1.0198646,
+      "cost_score": 7.971622,
+      "value": 8.379815,
+      "cad_acceptable": true,
+      "basis": "Verified narrow upright layout, central access and intended catch engagement.",
+      "review_status": "Reviewed prototype"
+    },
+    "glm-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 8,
+        "labels_handling": 4,
+        "completeness": 9
+      },
+      "quality": 7.3,
+      "api_cost_usd": 2.54125144,
+      "cost_score": 6.654461,
+      "value": 7.07134,
+      "cad_acceptable": false,
+      "basis": "Fit, slide-lock and contact clearances pass; text misses the supplied font specification and access is limited.",
+      "review_status": "Needs label revision"
+    },
+    "glmflash-dimm": {
+      "categories": {
+        "function": 5,
+        "printability": 7,
+        "labels_handling": 3,
+        "completeness": 9
+      },
+      "quality": 5.4,
+      "api_cost_usd": 1.33477113,
+      "cost_score": 7.583408,
+      "value": 5.973273,
+      "cad_acceptable": false,
+      "basis": "Short modules are deeply recessed; maximum bag allowance clashes with the lid.",
+      "review_status": "Needs access revision"
+    },
+    "minflash-dimm": {
+      "categories": {
+        "function": 1,
+        "printability": 4,
+        "labels_handling": 5,
+        "completeness": 6
+      },
+      "quality": 2.9,
+      "api_cost_usd": 0.14687568,
+      "cost_score": 10.0,
+      "value": 3.799127,
+      "cad_acceptable": false,
+      "basis": "Missing separating shelf plus lid, bag and contact-edge interference.",
+      "review_status": "Needs revision"
+    },
+    "oss120-dimm": {
+      "categories": {
+        "function": 0,
+        "printability": 1,
+        "labels_handling": 0,
+        "completeness": 2
+      },
+      "quality": 0.4,
+      "api_cost_usd": 0.1392982,
+      "cost_score": 10.0,
+      "value": 0.588235,
+      "cad_acceptable": false,
+      "basis": "Closed pockets, floating retaining ridge, missing label and missing handover artifacts.",
+      "review_status": "Needs revision"
+    },
+    "sol-gridfinity": {
+      "categories": {
+        "function": 9,
+        "printability": 8,
+        "labels_handling": 9,
+        "completeness": 9
+      },
+      "quality": 8.8,
+      "api_cost_usd": 0.6661576,
+      "cost_score": 8.586065,
+      "value": 8.727513,
+      "cad_acceptable": true,
+      "basis": "Seats, withdrawals and stack combinations pass; readable labels and thicker custom rim.",
+      "review_status": "Reviewed prototype"
+    },
+    "astra-gridfinity": {
+      "categories": {
+        "function": 9,
+        "printability": 7,
+        "labels_handling": 9,
+        "completeness": 9
+      },
+      "quality": 8.6,
+      "api_cost_usd": 2.471898,
+      "cost_score": 6.694381,
+      "value": 7.854695,
+      "cad_acceptable": true,
+      "basis": "Seats, withdrawal and stacking pass; readable shelves and three heights, but thin rim.",
+      "review_status": "Reviewed prototype"
+    },
+    "opus-gridfinity": {
+      "categories": {
+        "function": 8,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.1,
+      "api_cost_usd": 4.0325484,
+      "cost_score": 5.988308,
+      "value": 7.248029,
+      "cad_acceptable": true,
+      "basis": "Seating and stacking pass; contrasting inlays and raised floors; narrow split openings.",
+      "review_status": "Reviewed prototype"
+    },
+    "sonnet-gridfinity": {
+      "categories": {
+        "function": 8,
+        "printability": 6,
+        "labels_handling": 7,
+        "completeness": 9
+      },
+      "quality": 7.5,
+      "api_cost_usd": 1.290274,
+      "cost_score": 7.632323,
+      "value": 7.543595,
+      "cad_acceptable": true,
+      "basis": "Broad assortment and passing geometry; tight access, thin ridges and deck bridges.",
+      "review_status": "Reviewed prototype"
+    },
+    "fable-gridfinity": {
+      "categories": {
+        "function": 8,
+        "printability": 7,
+        "labels_handling": 3,
+        "completeness": 9
+      },
+      "quality": 6.9,
+      "api_cost_usd": 11.96015875,
+      "cost_score": 4.419835,
+      "value": 5.812739,
+      "cad_acceptable": false,
+      "basis": "Seating and stacking pass; rims obstruct the requested reading angles.",
+      "review_status": "Needs label revision"
+    },
+    "terra-gridfinity": {
+      "categories": {
+        "function": 7,
+        "printability": 4,
+        "labels_handling": 2,
+        "completeness": 9
+      },
+      "quality": 5.6,
+      "api_cost_usd": 0.1030056,
+      "cost_score": 10.0,
+      "value": 6.5625,
+      "cad_acceptable": false,
+      "basis": "Seating clears; fragile rim and hidden rear labels with only 0.10 mm neighbor clearance.",
+      "review_status": "Needs revision"
+    },
+    "deepseek-gridfinity": {
+      "categories": {
+        "function": 6,
+        "printability": 6,
+        "labels_handling": 2,
+        "completeness": 9
+      },
+      "quality": 5.5,
+      "api_cost_usd": 0.30122169,
+      "cost_score": 9.731102,
+      "value": 6.432252,
+      "cad_acceptable": false,
+      "basis": "Seating and shallow stacking pass; mixed length groups and hidden rear labels.",
+      "review_status": "Needs label revision"
+    },
+    "qwen-gridfinity": {
+      "categories": {
+        "function": 1,
+        "printability": 5,
+        "labels_handling": 2,
+        "completeness": 5
+      },
+      "quality": 2.4,
+      "api_cost_usd": 4.66137365,
+      "cost_score": 5.779245,
+      "value": 2.981022,
+      "cad_acceptable": false,
+      "basis": "Sixteen placements lie outside the base; rear labels hidden and no stacking lip.",
+      "review_status": "Needs revision"
+    },
+    "mistral-gridfinity": {
+      "categories": {
+        "function": 3,
+        "printability": 6,
+        "labels_handling": 6,
+        "completeness": 6
+      },
+      "quality": 4.5,
+      "api_cost_usd": 3.56759354,
+      "cost_score": 6.165049,
+      "value": 4.945198,
+      "cad_acceptable": false,
+      "basis": "Coordinate mismatch defeats most base seats; individual lid, stack and finger fits pass.",
+      "review_status": "Needs revision"
+    },
+    "kimi-gridfinity": {
+      "categories": {
+        "function": 5,
+        "printability": 7,
+        "labels_handling": 3,
+        "completeness": 9
+      },
+      "quality": 5.4,
+      "api_cost_usd": 7.9302855,
+      "cost_score": 5.012627,
+      "value": 5.26439,
+      "cad_acceptable": false,
+      "basis": "Base seating passes; divided-bin stacking collides and thirteen labels are hidden.",
+      "review_status": "Needs revision"
+    },
+    "gemini-gridfinity": {
+      "categories": {
+        "function": 9,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.6,
+      "api_cost_usd": 3.1464299,
+      "cost_score": 6.346284,
+      "value": 7.689731,
+      "cad_acceptable": true,
+      "basis": "All tested seats, neighbors, withdrawal and stack cases pass; visible labels and access probes.",
+      "review_status": "Reviewed prototype"
+    },
+    "glm-gridfinity": {
+      "categories": {
+        "function": 4,
+        "printability": 7,
+        "labels_handling": 3,
+        "completeness": 6
+      },
+      "quality": 4.6,
+      "api_cost_usd": 12.44451636,
+      "cost_score": 4.362562,
+      "value": 4.518033,
+      "cad_acceptable": false,
+      "basis": "Raw-frame bins work, but submitted assembly double-shifts the base and obscures most labels.",
+      "review_status": "Needs revision"
+    },
+    "glmflash-gridfinity": {
+      "categories": {
+        "function": 0,
+        "printability": 2,
+        "labels_handling": 2,
+        "completeness": 8
+      },
+      "quality": 1.6,
+      "api_cost_usd": 0.6688187,
+      "cost_score": 8.580313,
+      "value": 2.195316,
+      "cad_acceptable": false,
+      "basis": "Every bin is sealed; all documented height-pair stacks collide.",
+      "review_status": "Needs revision"
+    },
+    "minflash-gridfinity": {
+      "categories": {
+        "function": 3,
+        "printability": 5,
+        "labels_handling": 3,
+        "completeness": 9
+      },
+      "quality": 4.0,
+      "api_cost_usd": 0.71981414,
+      "cost_score": 8.474304,
+      "value": 4.854339,
+      "cad_acceptable": false,
+      "basis": "All seats interfere, adjacent bins have zero gap and half the labels are obscured.",
+      "review_status": "Needs revision"
+    },
+    "oss120-gridfinity": {
+      "categories": {
+        "function": 0,
+        "printability": 1,
+        "labels_handling": 0,
+        "completeness": 2
+      },
+      "quality": 0.4,
+      "api_cost_usd": 0.22830385,
+      "cost_score": 10.0,
+      "value": 0.588235,
+      "cad_acceptable": false,
+      "basis": "Sealed bins, floating letters and a solid base without sockets.",
+      "review_status": "Needs revision"
+    }
+  }
+}
