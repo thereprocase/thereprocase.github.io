@@ -2,7 +2,8 @@
   "observed_at": "2026-11-03T16:44:26.626391+00:00",
   "native_clients": {
     "Claude Code": "2.1.317",
-    "Codex CLI": "0.166.0"
+    "Codex CLI": "0.166.0",
+    "Antigravity CLI": "1.5.9 (observed 2026-11-16 for the Gemini 4 Hydrogen runs)"
   },
   "cad_runtime": {
     "Python": "3.12.13",
@@ -26,5 +27,6 @@
   },
   "launch_script_sha256": "32566fc0c93847dcd8bf0bc1318c77f169c4fd0c1310f6274315dbebf7f3dd34",
   "reasoning_transport_sha256": "27a4c2e25123d9124a537dfbc024d2b7c054a30b5f9ca190c468810f8920b61b",
-  "note": "Versions observed during the comparison. Filesystem isolation and native client entry points are documented in the page; no authentication material is included."
+  "note": "Versions observed during the comparison. Filesystem isolation and native client entry points are documented in the page; no authentication material is included.",
+  "antigravity_launch_script_sha256": "d9bcc39cba7cde92b14e1219cbd55046512cf80999a673e8356054f7bc1ff8e0"
 }

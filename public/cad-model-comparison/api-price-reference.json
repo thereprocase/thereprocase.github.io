@@ -404,6 +404,27 @@
         "Reference endpoint policy prefers original publisher/global Standard routes, not the lowest advertised provider. Routing can change prices; this is a specified reproducible reference.",
         "Exact Qwen3.8-27B hosted reference. USD rates come from the Alibaba endpoint on OpenRouter, avoiding an assumed CNY exchange rate. Official Alibaba model page also documents this exact model and CNY regional rates."
       ]
+    },
+    "gemini-4-hydrogen": {
+      "provider": "Google AI Studio / Gemini API",
+      "priced_model_id": "gemini-4-hydrogen",
+      "currency": "USD",
+      "unit": "per 1 million tokens",
+      "service_tier": "Standard / global",
+      "rates_usd_per_million": {
+        "input": 1.5,
+        "output": 7.5,
+        "cache_read": 0.075
+      },
+      "source_urls": [
+        "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+      ],
+      "route_basis": "First-party published Standard paid-tier API rates; the run itself used the Antigravity CLI.",
+      "notes": [
+        "Rates read 2026-11-16, later than the 2026-11-03 reference date of the other entries.",
+        "Output price includes thinking tokens. Implicit caching only; no cache-write or storage price applies and no write tokens were measured.",
+        "No long-context tier or time-limited price is listed for this model. The Medium preset does not change the published rate."
+      ]
     }
   },
   "scope": "Published API token prices only. Client-side tools have no added per-call charge here; separate provider-hosted tools, storage, taxes and transaction fees are excluded.",

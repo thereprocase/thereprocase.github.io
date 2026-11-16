@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-hydrogen-dimm/ddr4_mailer_base.stl",
+    "sha256": "10a4347b9fd47d96805f1e9fa297d18e9d270be85942e7da19cfcca69d91b5c8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        73.5
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -8.326672684688674e-16
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        15.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2302,
+    "triangles": 4600
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/draft-hydrogen-dimm/ddr4_mailer_lid.stl",
+    "sha256": "e53dc1dca3f623b2a89a33781ada4e38348d2e763781ff67d3e3d83752b4d57f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        232.5
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        18.600000381469727
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3744,
+    "triangles": 7484
+  }
+]

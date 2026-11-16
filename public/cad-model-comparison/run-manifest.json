@@ -330,5 +330,27 @@
     "font_sha256": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
     "effort": "model default",
     "one_shot": true
+  },
+  {
+    "slug": "hydrogen",
+    "engine": "agy",
+    "model": "gemini-4-hydrogen",
+    "provider": "Google Antigravity CLI (agy 1.5.9), Gemini 4 Hydrogen Medium preset",
+    "design": "dimm",
+    "prompt_sha256": "f33801a484c793219acf3bfaf5c9ca4eda49a596f049dd3005f0ca716cd5f8ff",
+    "font_sha256": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
+    "effort": "Antigravity CLI Medium preset (explicitly selected)",
+    "one_shot": true
+  },
+  {
+    "slug": "hydrogen",
+    "engine": "agy",
+    "model": "gemini-4-hydrogen",
+    "provider": "Google Antigravity CLI (agy 1.5.9), Gemini 4 Hydrogen Medium preset",
+    "design": "gridfinity",
+    "prompt_sha256": "535ec85c4d374a7fb93deb96fad124a7ae5b6e2ff1d07f087d38d8e72aa54642",
+    "font_sha256": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
+    "effort": "Antigravity CLI Medium preset (explicitly selected)",
+    "one_shot": true
   }
 ]

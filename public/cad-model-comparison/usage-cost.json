@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-11-03T23:30:02.379964+00:00",
+  "as_of_utc": "2026-11-16T19:30:44.053115+00:00",
   "pricing_as_of": "2026-11-03",
   "scope": "Measured counters in each isolated design run, including follow-ups and native guardian review overhead where present. Calls without recorded counters are excluded; archived setup attempts are excluded.",
   "token_semantics": "Counts accumulate across requests, including repeated context. Input includes cache reads and writes; cache columns are subsets. Reported reasoning is a subset of output. Do not add subset columns to input/output. Native counters may differ.",
@@ -1223,6 +1223,82 @@
         "measured_cache_write_ttl_tokens": {},
         "unknown_cache_write_ttl_tokens": 0
       }
+    },
+    "hydrogen-dimm": {
+      "model": "gemini-4-hydrogen",
+      "engine": "agy",
+      "tokens": {
+        "input_tokens": 1942620,
+        "cached_input_tokens": 1757165,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 45514,
+        "reasoning_output_tokens": 24531
+      },
+      "usage_records": 40,
+      "assistant_records_without_tokens": 0,
+      "provenance": "Antigravity CLI per-generation usage counters; output includes thinking.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gemini-4-hydrogen",
+        "source_urls": [
+          "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+        ],
+        "route_basis": "First-party published Standard paid-tier API rates; the run itself used the Antigravity CLI.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.75132488,
+        "usd_low": 0.75132488,
+        "usd_high": 0.75132488,
+        "available": true,
+        "max_request_input_tokens": 75058,
+        "request_pricing_groups": {
+          "standard": 40,
+          "default": 40
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
+    },
+    "hydrogen-gridfinity": {
+      "model": "gemini-4-hydrogen",
+      "engine": "agy",
+      "tokens": {
+        "input_tokens": 902998,
+        "cached_input_tokens": 810876,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 32868,
+        "reasoning_output_tokens": 17946
+      },
+      "usage_records": 25,
+      "assistant_records_without_tokens": 0,
+      "provenance": "Antigravity CLI per-generation usage counters; output includes thinking.",
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "rate_key": "gemini-4-hydrogen",
+        "source_urls": [
+          "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+        ],
+        "route_basis": "First-party published Standard paid-tier API rates; the run itself used the Antigravity CLI.",
+        "assumptions": [
+          "Standard/global published reference route; no batch, priority, geographic, tax or payment-fee adjustment.",
+          "Inclusive input minus cache-read minus cache-write gives ordinary input. Reasoning is already part of output and is not added again."
+        ],
+        "usd": 0.4455087,
+        "usd_low": 0.4455087,
+        "usd_high": 0.4455087,
+        "available": true,
+        "max_request_input_tokens": 58862,
+        "request_pricing_groups": {
+          "standard": 25,
+          "default": 25
+        },
+        "measured_cache_write_ttl_tokens": {},
+        "unknown_cache_write_ttl_tokens": 0
+      }
     }
   },
   "models": {
@@ -1563,9 +1639,31 @@
         ],
         "rate_key": "openai/gpt-oss-120b"
       }
+    },
+    "gemini-4-hydrogen": {
+      "runs": 2,
+      "tokens": {
+        "input_tokens": 2845618,
+        "cached_input_tokens": 2568041,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 78382,
+        "reasoning_output_tokens": 42477
+      },
+      "api_price": {
+        "currency": "USD",
+        "pricing_as_of": "2026-11-03",
+        "usd": 1.19683358,
+        "usd_low": 1.19683358,
+        "usd_high": 1.19683358,
+        "available": true,
+        "source_urls": [
+          "https://aistudio.google.com/docs/pricing#gemini-4-hydrogen"
+        ],
+        "rate_key": "gemini-4-hydrogen"
+      }
     }
   },
-  "total_api_price_usd": 85.47848891,
+  "total_api_price_usd": 86.67532249,
   "price_reference": "api-price-reference.json",
   "display_methodology": "Calculated from measured counters using published Standard/global reference rates. Context tiers apply per request; cache and reasoning subsets are not counted twice. Claude cache writes use the measured one-hour TTL. Harness-review tokens use the tested model\u2019s rate. Tokenizers vary; missing counters, tools, storage time, taxes and fees are excluded.",
   "display_token_notes": "Measured counters accumulate across requests. Cache reads/writes are input subsets; reported reasoning is an output subset. Rates, sources and context/cache assumptions appear in the pricing details and reference."
