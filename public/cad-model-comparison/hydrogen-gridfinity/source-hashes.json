@@ -1,0 +1,16 @@
+{
+  "exports/stl/baseplate_5x4.stl": "1730cbdfe8bc148c3fb71553274d9bb414c12e50e195fb71e2ed6e4faff18588",
+  "exports/stl/bin_m2_nut_wsh.stl": "53ba5fe582e5d1040b4e988df912d8f53781b5dbd922128109f9d05231016540",
+  "exports/stl/bin_m2_6_8_10.stl": "462db6f3b8538868fe31f29be3e881b197c7fa7d46601fd4ccdbe2a61def65e5",
+  "exports/stl/bin_m2_12_16_20.stl": "379f8db01c950754bc4cedac7433115748e638bb8b769c85f82b185adeda3ace",
+  "exports/stl/bin_m25_nut_wsh.stl": "a9be3216cbe66f74b3c3769cdc880325dbbc267243eb7a26503d0057ee063d55",
+  "exports/stl/bin_m25_6_8_10.stl": "62dd784606c717927a9a604c1fdd3017d3f020fd27009a4730aa2116246c6498",
+  "exports/stl/bin_m25_12_16_20.stl": "d52cf51f040a621d089765e3f89865d7a6c6bde444b2cb17628c680c7702ead3",
+  "exports/stl/bin_m3_nut_wsh.stl": "ec6988af4940e5031657ba4b9aa409117f02ad202450b4fa229068e3b99ff73c",
+  "exports/stl/bin_m3_6_8_10.stl": "3193ec11c5cfc40f61f31a0653ffcbfb8202423ab7664cf166ba09aefd093933",
+  "exports/stl/bin_m3_12_16_20.stl": "f7fcf668a03db0deff03883ebea979cf4473910de7b34b03cc6289715c1ba7fd",
+  "exports/stl/bin_m4_nut_wsh.stl": "4198934a775e74a4a336f826142778652fba3c7ce86003fb4e00acaa6f6f5679",
+  "exports/stl/bin_m4_8_10_12.stl": "507b6637e16e5c67c55c63153cc29bba17e24444e9b9f6644067db62563959b9",
+  "exports/stl/bin_m4_16_20.stl": "62a7f381506b79e5b9ad3b1a583f34a1b03afe685f976da83ce69ae20580b55c",
+  "exports/stl/bin_m3_stack_lck.stl": "1ef8ecd99bd3f56afa62b971ebcc5e7edcb005fc82be5ea39efb1c88616d55ca"
+}

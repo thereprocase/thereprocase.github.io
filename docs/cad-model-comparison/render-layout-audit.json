@@ -1,5 +1,5 @@
 {
-  "reviewed_layouts": 30,
+  "reviewed_layouts": 32,
   "rows": [
     {
       "run": "sol-dimm",
@@ -209,6 +209,20 @@
       "layout_instances": 16,
       "expected_printed_instances": 16,
       "assembled_parts": 16,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "hydrogen-dimm",
+      "layout_instances": 2,
+      "expected_printed_instances": 2,
+      "assembled_parts": 2,
+      "minimum_z_mm": 0.0
+    },
+    {
+      "run": "hydrogen-gridfinity",
+      "layout_instances": 14,
+      "expected_printed_instances": 14,
+      "assembled_parts": 14,
       "minimum_z_mm": 0.0
     }
   ],

@@ -1,0 +1,20 @@
+{
+  "source_assembly": "./assembly.json",
+  "note": "Transforms copied from the run's assembly.json matrix_4x4 (print-pose STL to assembled pose). Both exported STLs are already in the submitted print orientations (base bottom down; lid top face down), so no extra print rotation is applied.",
+  "parts": [
+    {
+      "name": "base",
+      "stl": "./exports/ddr4_mailer_base.stl",
+      "step": "./exports/ddr4_mailer_base.step",
+      "transform": [[1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]],
+      "print_rotation_degrees_xyz": [0, 0, 0]
+    },
+    {
+      "name": "lid",
+      "stl": "./exports/ddr4_mailer_lid.stl",
+      "step": "./exports/ddr4_mailer_lid.step",
+      "transform": [[1.0,0.0,0.0,0.0],[0.0,-1.0,0.0,0.0],[0.0,0.0,-1.0,54.5],[0.0,0.0,0.0,1.0]],
+      "print_rotation_degrees_xyz": [0, 0, 0]
+    }
+  ]
+}

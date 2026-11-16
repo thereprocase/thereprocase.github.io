@@ -1,0 +1,510 @@
+{
+  "source": "./assembly.json translation_mm (rotation_deg all zero); bin_m3_stack_lck assembled stacked on bin_m3_nut_wsh as submitted",
+  "print_orientation_basis": "README and final response: bins and baseplate print flat in exported orientation, labels upward, no supports",
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "stl": "./exports/stl/baseplate_5x4.stl",
+      "step": "./exports/step/baseplate_5x4.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0.0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.0
+        ],
+        [
+          0,
+          0,
+          1,
+          0.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_nut_wsh",
+      "stl": "./exports/stl/bin_m2_nut_wsh.stl",
+      "step": "./exports/step/bin_m2_nut_wsh.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_6_8_10",
+      "stl": "./exports/stl/bin_m2_6_8_10.stl",
+      "step": "./exports/step/bin_m2_6_8_10.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m2_12_16_20",
+      "stl": "./exports/stl/bin_m2_12_16_20.stl",
+      "step": "./exports/step/bin_m2_12_16_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          168.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m25_nut_wsh",
+      "stl": "./exports/stl/bin_m25_nut_wsh.stl",
+      "step": "./exports/step/bin_m25_nut_wsh.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m25_6_8_10",
+      "stl": "./exports/stl/bin_m25_6_8_10.stl",
+      "step": "./exports/step/bin_m25_6_8_10.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m25_12_16_20",
+      "stl": "./exports/stl/bin_m25_12_16_20.stl",
+      "step": "./exports/step/bin_m25_12_16_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          168.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3_nut_wsh",
+      "stl": "./exports/stl/bin_m3_nut_wsh.stl",
+      "step": "./exports/step/bin_m3_nut_wsh.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3_6_8_10",
+      "stl": "./exports/stl/bin_m3_6_8_10.stl",
+      "step": "./exports/step/bin_m3_6_8_10.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3_12_16_20",
+      "stl": "./exports/stl/bin_m3_12_16_20.stl",
+      "step": "./exports/step/bin_m3_12_16_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          168.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4_nut_wsh",
+      "stl": "./exports/stl/bin_m4_nut_wsh.stl",
+      "step": "./exports/step/bin_m4_nut_wsh.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4_8_10_12",
+      "stl": "./exports/stl/bin_m4_8_10_12.stl",
+      "step": "./exports/step/bin_m4_8_10_12.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          84.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m4_16_20",
+      "stl": "./exports/stl/bin_m4_16_20.stl",
+      "step": "./exports/step/bin_m4_16_20.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          168.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "bin_m3_stack_lck",
+      "stl": "./exports/stl/bin_m3_stack_lck.stl",
+      "step": "./exports/step/bin_m3_stack_lck.step",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          28.85
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "print_rotation_degrees_xyz": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

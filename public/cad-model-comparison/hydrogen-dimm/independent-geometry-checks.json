@@ -1,0 +1,1554 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common/Cut and BRepExtrema on the delivered STEP files at the submitted assembly transforms; thin air probes for slot/relief dimensions; rectangular bagged-module gauges for the six claimed profiles plus rejected examples; latch-arm release by translating the measured arm regions; label pockets compared against reference Fillaprint text; print-pose facet analysis of the binary STLs. The design generator and the submission verify script were not executed.",
+  "source_hashes": {
+    "./exports/ddr4_mailer_base.step": "2f2e667c8cff18c3a3bb0992b7b8e6c17dbc6c40af97542d6040057e67a68a03",
+    "./exports/ddr4_mailer_base.stl": "10a4347b9fd47d96805f1e9fa297d18e9d270be85942e7da19cfcca69d91b5c8",
+    "./exports/ddr4_mailer_lid.step": "be1466fbf32a04571ccd41fda9b3e65136cc5074e1cf86f30ba787736de2a058",
+    "./exports/ddr4_mailer_lid.stl": "e53dc1dca3f623b2a89a33781ada4e38348d2e763781ff67d3e3d83752b4d57f",
+    "./exports/ddr4_mailer_assembled.step": "101fec6b7ea06b3b3d3412343794e52572d5638806562d761b95ee00da8032ff",
+    "./assembly.json": "e88e99e3d9b7e5587dfb7e530bad2390ceb2ae299ba00ef2e1f9373d0b063e41",
+    "./PROMPT.txt": "9609783b03b57e80850f430c9fea96e98735d074832e36e40499ecbf2da6665e",
+    "./README.md": "97d956ea8eb3d5446aef9694ec57770d533cd3fae378cca0cada8bc84c912d24",
+    "./cad/params.py": "fee4538814380f2c56ae70065903a6a770c5ded7ac27100fe78a6cafa7e83f2e",
+    "./cad/build_mailer.py": "5ca01c80cf445ba2a57a7fe22a9f3226cb0ab8692a1ac605d70b73d387803273",
+    "./verify/verify_mailer.py": "8bb699a1f6a5353f3766bd3880f8e2bf1530fbe92d6b52a28f0845ab82daae6d",
+    "./assets/fillaprint/Fillaprint-Regular.ttf": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
+    "./lab/cad-design-comparison-20261103/site/hydrogen-dimm/final-response.txt": "6367ae98da0d4399ce7942e0612a9c6d069cd23e13a84b1cc2ab038ecdb2d6da"
+  },
+  "part_geometry": {
+    "base": {
+      "assembled_bbox_mm": [
+        -73.5,
+        -15.0,
+        -0.0,
+        73.5,
+        15.0,
+        27.0
+      ],
+      "print_bbox_mm": [
+        -73.5,
+        -15.0,
+        -0.0,
+        73.5,
+        15.0,
+        27.0
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 41966.54
+    },
+    "lid": {
+      "assembled_bbox_mm": [
+        -73.5,
+        -18.6,
+        13.0,
+        73.5,
+        18.6,
+        54.5
+      ],
+      "print_bbox_mm": [
+        -73.5,
+        -18.6,
+        -0.0,
+        73.5,
+        18.6,
+        41.5
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 42946.1
+    },
+    "assembled_envelope_mm": [
+      147.0,
+      37.2,
+      54.5
+    ],
+    "assembled_step_consistency": {
+      "assembled_step_volume_mm3": 84912.63,
+      "solids": [
+        {
+          "volume_mm3": 41966.54,
+          "bbox_mm": [
+            -73.5,
+            -15.0,
+            -0.0,
+            73.5,
+            15.0,
+            27.0
+          ]
+        },
+        {
+          "volume_mm3": 42946.1,
+          "bbox_mm": [
+            -73.5,
+            -18.6,
+            13.0,
+            73.5,
+            18.6,
+            54.5
+          ]
+        }
+      ],
+      "matches_base_and_transformed_lid": true
+    }
+  },
+  "slot_dimensions": {
+    "slot_air_y_at_x0": [
+      {
+        "z": 10.0,
+        "air_y": [
+          [
+            -20.0,
+            -15.0
+          ],
+          [
+            -12.0,
+            -1.2
+          ],
+          [
+            1.2,
+            12.0
+          ],
+          [
+            15.0,
+            20.0
+          ]
+        ]
+      },
+      {
+        "z": 20.0,
+        "air_y": [
+          [
+            -20.0,
+            -15.0
+          ],
+          [
+            -12.0,
+            -1.2
+          ],
+          [
+            1.2,
+            12.0
+          ],
+          [
+            15.0,
+            20.0
+          ]
+        ]
+      },
+      {
+        "z": 25.0,
+        "air_y": [
+          [
+            -20.0,
+            -13.4
+          ],
+          [
+            -12.0,
+            -1.2
+          ],
+          [
+            1.2,
+            12.0
+          ],
+          [
+            13.4,
+            20.0
+          ]
+        ]
+      }
+    ],
+    "slot_air_x_at_y6p6_z10": [
+      [
+        -80.0,
+        -73.5
+      ],
+      [
+        -70.5,
+        70.5
+      ],
+      [
+        73.5,
+        80.0
+      ]
+    ],
+    "relief_air_x_at_y6p6_z4": [
+      [
+        -80.0,
+        -73.5
+      ],
+      [
+        -61.5,
+        61.5
+      ],
+      [
+        73.5,
+        80.0
+      ]
+    ],
+    "floor_z_air_at_x0_y6p6": [
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        2.4,
+        29.0
+      ]
+    ],
+    "pedestal_z_air_at_x66_y6p6": [
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        5.4,
+        29.0
+      ]
+    ],
+    "lid_ceiling_air_z_at_x0_y6p6": [
+      [
+        20.0,
+        52.0
+      ],
+      [
+        54.5,
+        60.0
+      ]
+    ],
+    "lid_rib_air_z_at_x0_y0": [
+      [
+        20.0,
+        44.0
+      ],
+      [
+        54.5,
+        60.0
+      ]
+    ],
+    "base_top_z": 27.0,
+    "derived": {
+      "pedestal_top_z": 5.4,
+      "relief_floor_z": 2.4,
+      "relief_gap_mm": 3.0,
+      "lid_ceiling_z": 52.0,
+      "usable_height_above_pedestal_mm": 46.6,
+      "slot_length_mm": 141.0,
+      "relief_length_mm": 123.0,
+      "pedestal_length_each_mm": 9.0,
+      "slot_width_mm": 10.8,
+      "slot_center_y": 6.6
+    }
+  },
+  "closed_pose": {
+    "closed_intersection_mm3": 0,
+    "closed_min_distance_mm": 0.0,
+    "tongue_to_lid_min_distance_mm": 0.2,
+    "radial_gap_at_z24p5_mm": 0.2,
+    "base_air_y_at_x0_z24p5": [
+      [
+        -20.0,
+        -13.4
+      ],
+      [
+        -12.0,
+        -1.2
+      ],
+      [
+        1.2,
+        12.0
+      ],
+      [
+        13.4,
+        20.0
+      ]
+    ],
+    "base_air_y_at_x40_z24p5": [
+      [
+        -20.0,
+        -13.4
+      ],
+      [
+        -12.0,
+        -1.2
+      ],
+      [
+        1.2,
+        12.0
+      ],
+      [
+        13.4,
+        20.0
+      ]
+    ],
+    "base_air_y_at_x-60_z24p5": [
+      [
+        -20.0,
+        -13.4
+      ],
+      [
+        -12.0,
+        -1.2
+      ],
+      [
+        1.2,
+        12.0
+      ],
+      [
+        13.4,
+        20.0
+      ]
+    ],
+    "lid_skirt_material_y_at_x40_z24p5": [
+      [
+        -15.0,
+        -13.6
+      ],
+      [
+        13.6,
+        15.0
+      ]
+    ],
+    "lid_skirt_bottom_z": 22.0,
+    "latch_arm_material_y_at_x0": {
+      "z13.5": [
+        [
+          -18.04,
+          -15.2
+        ],
+        [
+          15.2,
+          18.04
+        ]
+      ],
+      "z14.5": [
+        [
+          -18.12,
+          -15.1
+        ],
+        [
+          15.1,
+          18.12
+        ]
+      ],
+      "z17": [
+        [
+          -16.8,
+          -14.2
+        ],
+        [
+          14.2,
+          16.8
+        ]
+      ],
+      "z20": [
+        [
+          -16.8,
+          -15.2
+        ],
+        [
+          15.2,
+          16.8
+        ]
+      ],
+      "z25": [
+        [
+          -16.8,
+          -15.2
+        ],
+        [
+          -15.0,
+          -13.6
+        ],
+        [
+          13.6,
+          15.0
+        ],
+        [
+          15.2,
+          16.8
+        ]
+      ],
+      "z30": [
+        [
+          -16.8,
+          -15.2
+        ],
+        [
+          -15.0,
+          -12.0
+        ],
+        [
+          12.0,
+          15.0
+        ],
+        [
+          15.2,
+          16.8
+        ]
+      ],
+      "z33": [
+        [
+          -15.765,
+          -12.0
+        ],
+        [
+          12.0,
+          15.765
+        ]
+      ]
+    },
+    "base_wall_material_y_at_x0": {
+      "z14": [
+        [
+          -15.0,
+          -12.0
+        ],
+        [
+          -1.2,
+          1.2
+        ],
+        [
+          12.0,
+          15.0
+        ]
+      ],
+      "z17": [
+        [
+          -13.8,
+          -12.0
+        ],
+        [
+          -1.2,
+          1.2
+        ],
+        [
+          12.0,
+          13.8
+        ]
+      ],
+      "z20": [
+        [
+          -15.0,
+          -12.0
+        ],
+        [
+          -1.2,
+          1.2
+        ],
+        [
+          12.0,
+          15.0
+        ]
+      ]
+    },
+    "bead_to_base_min_distance_mm": 0.2,
+    "lid_relief_slot_window": {
+      "note": "Probe through the lid side wall at x=12.75 (relief slot), z=30: lid material intersected by a 0.2 mm probe from y=10 to y=17.",
+      "lid_material_mm3": 0,
+      "lid_air_z_in_wall_at_x12p75_y14p5": [
+        [
+          15.0,
+          34.0
+        ],
+        [
+          54.1,
+          55.0
+        ]
+      ],
+      "base_air_z_at_x12p75_y12p7": [
+        [
+          27.0,
+          55.0
+        ]
+      ]
+    }
+  },
+  "lid_motion": {
+    "rigid_lid": {
+      "0.1": 0,
+      "0.2": 0,
+      "0.3": 0,
+      "0.5": 0.85714,
+      "1.0": 19.74857,
+      "2.0": 58.14857,
+      "3.0": 94.38857,
+      "4.0": 97.68791,
+      "6.0": 34.56,
+      "9.0": 0
+    },
+    "lid_without_arm_tips": {
+      "0.1": 0,
+      "0.2": 0,
+      "0.3": 0,
+      "0.5": 0,
+      "1.0": 0,
+      "2.0": 0,
+      "3.0": 0,
+      "4.0": 0,
+      "6.0": 0,
+      "9.0": 0
+    },
+    "arms_deflected_outward": {
+      "0.6": {
+        "0.5": 0,
+        "1.0": 0,
+        "2.0": 9.18858,
+        "3.0": 18.78858,
+        "4.0": 22.62858,
+        "5.0": 15.36,
+        "6.0": 5.76,
+        "7.0": 0,
+        "9.0": 0
+      },
+      "0.8": {
+        "0.5": 0,
+        "1.0": 0,
+        "2.0": 0,
+        "3.0": 0,
+        "4.0": 0,
+        "5.0": 0,
+        "6.0": 0,
+        "7.0": 0,
+        "9.0": 0
+      },
+      "0.9": {
+        "0.5": 0,
+        "1.0": 0,
+        "2.0": 0,
+        "3.0": 0,
+        "4.0": 0,
+        "5.0": 0,
+        "6.0": 0,
+        "7.0": 0,
+        "9.0": 0
+      },
+      "1.0": {
+        "0.5": 0,
+        "1.0": 0,
+        "2.0": 0,
+        "3.0": 0,
+        "4.0": 0,
+        "5.0": 0,
+        "6.0": 0,
+        "7.0": 0,
+        "9.0": 0
+      },
+      "1.2": {
+        "0.5": 0,
+        "1.0": 0,
+        "2.0": 0,
+        "3.0": 0,
+        "4.0": 0,
+        "5.0": 0,
+        "6.0": 0,
+        "7.0": 0,
+        "9.0": 0
+      }
+    },
+    "arm_region_volume_mm3": [
+      496.56,
+      496.56
+    ],
+    "note": "Arm tips (|X|<14, |Y|>15, Z 12.9-21.9 in the assembled frame) are translated outward rigidly; a real arm rotates about its root near Z 32-34, so this approximates the deflection needed at the bead. The same rigid geometry governs lowering the lid on.",
+    "latch_estimate": {
+      "arm_thickness_mm": 1.6,
+      "bead_inner_y": 14.2,
+      "base_wall_outer_y": 15.0,
+      "bead_interference_mm": 0.8,
+      "root_to_bead_mm": 15.0,
+      "root_strain_percent_at_interference": 0.85,
+      "submission_claim": "1.6 mm arm, 18 mm cantilever, 1.0 mm bead, 0.74 % strain",
+      "note": "Euler cantilever estimate, root at the end of the arm-to-wall bridge (Z 32). Release force and fatigue are not modelled."
+    }
+  },
+  "module_gauges": [
+    {
+      "profile": "JEDEC bare UDIMM",
+      "module_LHT_mm": [
+        133.35,
+        31.25,
+        4.0
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        4.0,
+        31.25
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 15.35
+    },
+    {
+      "profile": "JEDEC bare UDIMM",
+      "module_LHT_mm": [
+        133.35,
+        31.25,
+        4.0
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        5.0,
+        32.25
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 14.35
+    },
+    {
+      "profile": "JEDEC bare UDIMM",
+      "module_LHT_mm": [
+        133.35,
+        31.25,
+        4.0
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        6.0,
+        33.25
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 13.35
+    },
+    {
+      "profile": "JEDEC bare UDIMM",
+      "module_LHT_mm": [
+        133.35,
+        31.25,
+        4.0
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        6.78,
+        34.03
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 12.57
+    },
+    {
+      "profile": "Corsair Vengeance LPX",
+      "module_LHT_mm": [
+        135.0,
+        33.5,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        135.0,
+        7.0,
+        33.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.99,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 13.1
+    },
+    {
+      "profile": "Corsair Vengeance LPX",
+      "module_LHT_mm": [
+        135.0,
+        33.5,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        136.0,
+        8.0,
+        34.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.49,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 12.1
+    },
+    {
+      "profile": "Corsair Vengeance LPX",
+      "module_LHT_mm": [
+        135.0,
+        33.5,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        137.0,
+        9.0,
+        35.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 1.99,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 11.1
+    },
+    {
+      "profile": "Corsair Vengeance LPX",
+      "module_LHT_mm": [
+        135.0,
+        33.5,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        137.78,
+        9.78,
+        36.28
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 1.6,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 10.32
+    },
+    {
+      "profile": "Kingston FURY Beast",
+      "module_LHT_mm": [
+        133.35,
+        34.1,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        7.2,
+        34.1
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 12.5
+    },
+    {
+      "profile": "Kingston FURY Beast",
+      "module_LHT_mm": [
+        133.35,
+        34.1,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        8.2,
+        35.1
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 11.5
+    },
+    {
+      "profile": "Kingston FURY Beast",
+      "module_LHT_mm": [
+        133.35,
+        34.1,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        9.2,
+        36.1
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 10.5
+    },
+    {
+      "profile": "Kingston FURY Beast",
+      "module_LHT_mm": [
+        133.35,
+        34.1,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        9.98,
+        36.88
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 9.72
+    },
+    {
+      "profile": "Crucial Ballistix",
+      "module_LHT_mm": [
+        133.35,
+        39.17,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        7.2,
+        39.17
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 7.43
+    },
+    {
+      "profile": "Crucial Ballistix",
+      "module_LHT_mm": [
+        133.35,
+        39.17,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        8.2,
+        40.17
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 6.43
+    },
+    {
+      "profile": "Crucial Ballistix",
+      "module_LHT_mm": [
+        133.35,
+        39.17,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        9.2,
+        41.17
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 5.43
+    },
+    {
+      "profile": "Crucial Ballistix",
+      "module_LHT_mm": [
+        133.35,
+        39.17,
+        7.2
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        9.98,
+        41.95
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 4.65
+    },
+    {
+      "profile": "G.Skill Ripjaws V",
+      "module_LHT_mm": [
+        133.35,
+        42.0,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        7.0,
+        42.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 4.6
+    },
+    {
+      "profile": "G.Skill Ripjaws V",
+      "module_LHT_mm": [
+        133.35,
+        42.0,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        8.0,
+        43.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 3.6
+    },
+    {
+      "profile": "G.Skill Ripjaws V",
+      "module_LHT_mm": [
+        133.35,
+        42.0,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        9.0,
+        44.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 2.6
+    },
+    {
+      "profile": "G.Skill Ripjaws V",
+      "module_LHT_mm": [
+        133.35,
+        42.0,
+        7.0
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        9.78,
+        44.78
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 1.82
+    },
+    {
+      "profile": "Max supported envelope",
+      "module_LHT_mm": [
+        135.5,
+        42.5,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        135.5,
+        8.0,
+        42.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.74,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 4.1
+    },
+    {
+      "profile": "Max supported envelope",
+      "module_LHT_mm": [
+        135.5,
+        42.5,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        136.5,
+        9.0,
+        43.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.24,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 3.1
+    },
+    {
+      "profile": "Max supported envelope",
+      "module_LHT_mm": [
+        135.5,
+        42.5,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        137.5,
+        10.0,
+        44.5
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 1.74,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 2.1
+    },
+    {
+      "profile": "Max supported envelope",
+      "module_LHT_mm": [
+        135.5,
+        42.5,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        138.28,
+        10.78,
+        45.28
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 1.35,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 1.32
+    },
+    {
+      "profile": "Excluded: G.Skill Trident Z (~44 mm, as named)",
+      "module_LHT_mm": [
+        133.35,
+        44.0,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        8.0,
+        44.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 2.6
+    },
+    {
+      "profile": "Excluded: G.Skill Trident Z (~44 mm, as named)",
+      "module_LHT_mm": [
+        133.35,
+        44.0,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        9.0,
+        45.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 1.6
+    },
+    {
+      "profile": "Excluded: G.Skill Trident Z (~44 mm, as named)",
+      "module_LHT_mm": [
+        133.35,
+        44.0,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        10.0,
+        46.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 0,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 0,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        0
+      ],
+      "top_clearance_mm": 0.6
+    },
+    {
+      "profile": "Excluded: G.Skill Trident Z (~44 mm, as named)",
+      "module_LHT_mm": [
+        133.35,
+        44.0,
+        8.0
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        10.78,
+        46.78
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 264.14665,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 264.14665,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        264.14665
+      ],
+      "top_clearance_mm": -0.18
+    },
+    {
+      "profile": "Excluded: Corsair Vengeance RGB Pro",
+      "module_LHT_mm": [
+        133.35,
+        51.0,
+        7.5
+      ],
+      "bag_allowance_per_face_mm": 0.0,
+      "gauge_LTH_mm": [
+        133.35,
+        7.5,
+        51.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 2485.44691,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 2485.13466,
+      "end_shift_mm": 3.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        2485.44691
+      ],
+      "top_clearance_mm": -4.4
+    },
+    {
+      "profile": "Excluded: Corsair Vengeance RGB Pro",
+      "module_LHT_mm": [
+        133.35,
+        51.0,
+        7.5
+      ],
+      "bag_allowance_per_face_mm": 0.5,
+      "gauge_LTH_mm": [
+        134.35,
+        8.5,
+        52.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 2829.70659,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 2827.77425,
+      "end_shift_mm": 3.315,
+      "end_shift_base_lid_mm3": [
+        0,
+        2829.70659
+      ],
+      "top_clearance_mm": -5.4
+    },
+    {
+      "profile": "Excluded: Corsair Vengeance RGB Pro",
+      "module_LHT_mm": [
+        133.35,
+        51.0,
+        7.5
+      ],
+      "bag_allowance_per_face_mm": 1.0,
+      "gauge_LTH_mm": [
+        135.35,
+        9.5,
+        53.0
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 3180.43207,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 3176.91066,
+      "end_shift_mm": 2.815,
+      "end_shift_base_lid_mm3": [
+        0,
+        3180.43207
+      ],
+      "top_clearance_mm": -6.4
+    },
+    {
+      "profile": "Excluded: Corsair Vengeance RGB Pro",
+      "module_LHT_mm": [
+        133.35,
+        51.0,
+        7.5
+      ],
+      "bag_allowance_per_face_mm": 1.39,
+      "gauge_LTH_mm": [
+        136.13,
+        10.28,
+        53.78
+      ],
+      "bay+1_base_mm3": 0,
+      "bay+1_lid_mm3": 3458.21582,
+      "bay-1_base_mm3": 0,
+      "bay-1_lid_mm3": 3454.14442,
+      "end_shift_mm": 2.425,
+      "end_shift_base_lid_mm3": [
+        0,
+        3458.21582
+      ],
+      "top_clearance_mm": -7.18
+    }
+  ],
+  "module_gauge_note": "Gauges are rectangular boxes resting on the pedestal tops, centred in each slot unless noted; the allowance is added to every face, including below the module, as folded bag/wrap thickness. Module dimensions are the submission's own values; they were not re-sourced from manufacturer data in this review.",
+  "contact_protection": {
+    "relief_gap_below_card_mm": 3.0,
+    "relief_length_mm": 123.0,
+    "pedestal_length_each_mm": 9.0,
+    "centred_133p35_card_bearing_per_end_mm": 5.175,
+    "x_slack_for_133p35_card_mm": 7.65,
+    "bearing_at_loaded_end_when_shifted_fully_mm": 9.0,
+    "bearing_at_far_end_when_shifted_fully_mm": 1.35,
+    "assumed_contact_free_end_margin_mm": 5.1,
+    "note": "Assumption: 288 pads at 0.85 mm pitch leave roughly 5 mm of pad-free card edge at each end of a 133.35 mm DDR4 card. Centred, the pedestals bear only on those end margins and the pad field spans the 3.0 mm relief. Nothing in the slot centres the card lengthwise: pushed to one slot end, the pedestal under that end extends about 4 mm into the pad field (card edge bearing through the bag). Slot side walls are 10.8 mm apart; with an 8 mm heatspreader there is 1.4 mm per face, so the PCB faces do not reach the walls.",
+    "pad_band_gauge": {
+      "centred": {
+        "band_x_mm": [
+          -61.575,
+          61.575
+        ],
+        "base_intersection_mm3": 0.0018
+      },
+      "shifted_to_slot_end": {
+        "band_x_mm": [
+          -57.76,
+          65.39
+        ],
+        "base_intersection_mm3": 0.04668
+      }
+    }
+  },
+  "finger_access": {
+    "base_top_z": 27.0,
+    "protrusion_above_rim_mm": {
+      "JEDEC bare UDIMM": 9.65,
+      "Corsair Vengeance LPX": 11.9,
+      "Kingston FURY Beast": 12.5,
+      "Crucial Ballistix": 17.57,
+      "G.Skill Ripjaws V": 20.4,
+      "Max supported envelope": 20.9
+    },
+    "gap_between_centred_modules_mm": {
+      "JEDEC bare UDIMM": 9.2,
+      "Corsair Vengeance LPX": 6.2,
+      "Kingston FURY Beast": 6.0,
+      "Crucial Ballistix": 6.0,
+      "G.Skill Ripjaws V": 6.2,
+      "Max supported envelope": 5.2
+    },
+    "end_gap_each_mm": {
+      "JEDEC bare UDIMM": 3.83,
+      "Corsair Vengeance LPX": 3.0,
+      "Kingston FURY Beast": 3.83,
+      "Crucial Ballistix": 3.83,
+      "G.Skill Ripjaws V": 3.83,
+      "Max supported envelope": 2.75
+    },
+    "open_probe_above_rim_mm3": 0,
+    "note": "With the lid off nothing of the base rises above the rim, so every stick top is reachable from above and from the slot ends; a pinch between the two sticks has only the listed centre gap minus bag thickness."
+  },
+  "labels": {
+    "lid_top_floor_z": 53.9,
+    "lid_top_depth_mm": 0.6,
+    "lid_2x_DDR4": {
+      "pieces": 6,
+      "x_extent": [
+        -48.956,
+        -15.044
+      ],
+      "y_extent": [
+        -4.2,
+        4.2
+      ],
+      "tallest_piece_mm": 8.4,
+      "volume_mm3": 49.498
+    },
+    "lid_MAX_135x42p5x8": {
+      "pieces": 13,
+      "x_extent": [
+        -1.53,
+        49.53
+      ],
+      "y_extent": [
+        -2.975,
+        2.975
+      ],
+      "tallest_piece_mm": 5.95,
+      "volume_mm3": 48.372
+    },
+    "lid_gap_between_strings_mm": 13.514,
+    "lid_top_flat_face": "lid top 147 x 30 mm with 0.8 mm edge chamfer",
+    "base_bottom_depth_mm": 0.6,
+    "base_ESD_BAG_FOAM": {
+      "pieces": 11,
+      "x_extent": [
+        -23.477,
+        23.477
+      ],
+      "y_extent": [
+        -2.975,
+        2.975
+      ],
+      "tallest_piece_mm": 5.95,
+      "volume_mm3": 45.868
+    },
+    "reference_text_match": {
+      "2x DDR4 @ 12 mm em": {
+        "pocket_mm3": 49.498,
+        "reference_mm3": 49.498,
+        "overlap_fraction_of_pocket": 1.0
+      },
+      "MAX 135x42.5x8 @ 8.5 mm em": {
+        "pocket_mm3": 48.372,
+        "reference_mm3": 48.372,
+        "overlap_fraction_of_pocket": 1.0
+      },
+      "ESD BAG + FOAM @ 8.5 mm em, mirrored (reads from below)": {
+        "pocket_mm3": 45.868,
+        "reference_mm3": 45.868,
+        "overlap_fraction_of_pocket": 1.0
+      },
+      "ESD BAG + FOAM @ 8.5 mm em, unmirrored": {
+        "pocket_mm3": 45.868,
+        "reference_mm3": 45.868,
+        "overlap_fraction_of_pocket": 0.3716
+      }
+    },
+    "font_rule": {
+      "embedded_ttf_description": "Two-bead FDM font: every stroke is exactly two extrusion widths (w). Fusion text Height = 14 x line width (cap height); em = 20 x line width.",
+      "em_needed_at_0p4mm_line_mm": 8.0,
+      "cap_needed_at_0p4mm_line_mm": 5.6,
+      "submitted_em_mm": [
+        12.0,
+        8.5,
+        8.5
+      ],
+      "implied_line_width_mm": [
+        0.6,
+        0.425,
+        0.425
+      ],
+      "two_bead_target_met_at_0p4mm": true
+    }
+  },
+  "print_orientation": {
+    "base": {
+      "stated": "Bottom face on build plate (Z=0), slots facing up",
+      "bounds_mm": [
+        [
+          -73.5,
+          -15.0,
+          -0.0
+        ],
+        [
+          73.5,
+          15.0,
+          27.0
+        ]
+      ],
+      "volume_mm3": 41966.54,
+      "bed_contact_area_mm2": 4081.3,
+      "downward_faces_off_bed_by_angle": {
+        "0-30_deg_from_horizontal_mm2": 114.67,
+        "30-40_deg_from_horizontal_mm2": 0.0,
+        "40-45_deg_from_horizontal_mm2": 325.8
+      },
+      "flat_downward_off_bed_mm2": 114.67,
+      "flat_downward_off_bed_z_levels": [
+        0.6
+      ]
+    },
+    "lid": {
+      "stated": "Top face (with debossed labels) on build plate (Z=0), skirt facing up",
+      "bounds_mm": [
+        [
+          -73.5,
+          -18.6,
+          0.0
+        ],
+        [
+          73.5,
+          18.6,
+          41.5
+        ]
+      ],
+      "volume_mm3": 42946.09,
+      "bed_contact_area_mm2": 3882.1,
+      "downward_faces_off_bed_by_angle": {
+        "0-30_deg_from_horizontal_mm2": 244.67,
+        "30-40_deg_from_horizontal_mm2": 112.47,
+        "40-45_deg_from_horizontal_mm2": 575.64
+      },
+      "flat_downward_off_bed_mm2": 244.67,
+      "flat_downward_off_bed_z_levels": [
+        0.6
+      ]
+    },
+    "note": "Facet areas facing downward off the bed, binned by angle from horizontal. Both labels are debossed into the bed face, so no raised lettering carries the part. Flat downward faces off the bed would need bridging or support."
+  },
+  "summary": {
+    "closed_pose_collision_free": true,
+    "tongue_radial_clearance_mm": 0.2,
+    "rigid_lift_blocked_from_mm": 0.5,
+    "lid_clears_without_arm_tips": true,
+    "arm_outward_travel_to_release_mm": 0.8,
+    "all_six_claimed_profiles_clear_both_bays_up_to_allowance_mm": 1.39,
+    "rgb_pro_51mm_rejected_top_clearance_mm": -4.4,
+    "relief_gap_mm": 3.0,
+    "label_depth_mm": 0.6,
+    "label_cap_heights_mm": [
+      8.4,
+      5.95,
+      5.95
+    ]
+  },
+  "limitations": [
+    "Rigid Boolean checks; latch flex is approximated by translating the arm tips. Release force, retention force, fatigue, creep and printer tolerance are untested.",
+    "Bag gauges are rectangular boxes with a uniform allowance; real bag folds, foam or paper compression and rattle are not modelled.",
+    "Module example dimensions are the submission's; the DDR4 pad-free end margin (about 5 mm) is an estimate from the 0.85 mm pin pitch.",
+    "Lid motion is sampled at discrete lifts, not a continuous swept volume.",
+    "No printing, slicing or physical handling test has occurred."
+  ]
+}

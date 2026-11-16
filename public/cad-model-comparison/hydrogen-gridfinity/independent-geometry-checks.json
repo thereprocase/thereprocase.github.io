@@ -1,0 +1,7206 @@
+{
+  "verification_method": "Independent direct OpenCascade BRepAlgoAPI_Common on the exported STEP solids at the actual submitted assembly.json translations (all rotations zero). All 12 base seats, all neighbouring pairs, sampled vertical withdrawal, the submitted stacked pose plus a generic stacking matrix, label text geometry, finger probes, long-screw gauges and free-volume capacity. Label sightlines are ray casts on the exported STLs (sightlines.py, trimesh). Design generator and the submission verify.py were never executed.",
+  "reproduce": [
+    "python reviews/hydrogen-gridfinity/sightlines.py",
+    "python reviews/hydrogen-gridfinity/geometry.py"
+  ],
+  "source_hashes": {
+    "./assembly.json": "ab711f36957c2110db04c95f70ccb540eaca98254fd71cef09ec17446a632822",
+    "./README.md": "52a9992dcb0885be8527386043b3936baaf19c4ba4e8822312293f2938674b65",
+    "./PROMPT.txt": "3bc04c1866247bd71518ed75d5cbe7733f6e06fc978465837be6c4e44f3f3f51",
+    "./verify.py": "2846a23cc8fa95a6b5ea34bc0100f0020338b2201a795c79adc433b8aba0bda2",
+    "./cad/gridfinity_organizer.py": "ed6a852a1f1385c3f314d702ad7a5ae2d5a1cfd1f7154ce5a723170546bcf3c5",
+    "./assets/fillaprint/Fillaprint-Regular.ttf": "f2986cc7cfd4ea2b00a23ead531076445f784576e577fffbf7e7b25431f4a88f",
+    "./exports/step/baseplate_5x4.step": "204f556e199a1969bdf90efe798bd06d5053e031db7981e3889e875c43fd1ca1",
+    "./exports/stl/baseplate_5x4.stl": "1730cbdfe8bc148c3fb71553274d9bb414c12e50e195fb71e2ed6e4faff18588",
+    "./exports/step/bin_m2_nut_wsh.step": "d191f33a4c302ad302d353c8aa8e39f23c47370a8a17afa53361dee5beb3a7db",
+    "./exports/stl/bin_m2_nut_wsh.stl": "53ba5fe582e5d1040b4e988df912d8f53781b5dbd922128109f9d05231016540",
+    "./exports/step/bin_m2_6_8_10.step": "4b6bca8d3ec95ddc0a177360d9e4ddbb588344a445299bc407a2a1dc863cae91",
+    "./exports/stl/bin_m2_6_8_10.stl": "462db6f3b8538868fe31f29be3e881b197c7fa7d46601fd4ccdbe2a61def65e5",
+    "./exports/step/bin_m2_12_16_20.step": "bcbea71310dc8b441b3eeacd03b165925f75123d35dd01f7fe948c3b5ba74c99",
+    "./exports/stl/bin_m2_12_16_20.stl": "379f8db01c950754bc4cedac7433115748e638bb8b769c85f82b185adeda3ace",
+    "./exports/step/bin_m25_nut_wsh.step": "db52b9755a6f5ff68b396e3639bf33a267f75597263065cc8c7674d6d7ab17bc",
+    "./exports/stl/bin_m25_nut_wsh.stl": "a9be3216cbe66f74b3c3769cdc880325dbbc267243eb7a26503d0057ee063d55",
+    "./exports/step/bin_m25_6_8_10.step": "43f133c8bda64e908e02d280b2d72a831b43300865614c6a9ec0ded8ce6ed786",
+    "./exports/stl/bin_m25_6_8_10.stl": "62dd784606c717927a9a604c1fdd3017d3f020fd27009a4730aa2116246c6498",
+    "./exports/step/bin_m25_12_16_20.step": "3a606b375803ef00e7461e24b33ced536cf33f5f30733d7824dcad6499fee36a",
+    "./exports/stl/bin_m25_12_16_20.stl": "d52cf51f040a621d089765e3f89865d7a6c6bde444b2cb17628c680c7702ead3",
+    "./exports/step/bin_m3_nut_wsh.step": "d6e20f3b262f9209134111547efb127f729d76b6fda4c8336c8bdc5f50e97543",
+    "./exports/stl/bin_m3_nut_wsh.stl": "ec6988af4940e5031657ba4b9aa409117f02ad202450b4fa229068e3b99ff73c",
+    "./exports/step/bin_m3_6_8_10.step": "c797b125e84e665ffae9a6206170160c7e934263ad9652f462e5379d8051682d",
+    "./exports/stl/bin_m3_6_8_10.stl": "3193ec11c5cfc40f61f31a0653ffcbfb8202423ab7664cf166ba09aefd093933",
+    "./exports/step/bin_m3_12_16_20.step": "72867238c2af10dee63eed8791d3fb22812a24311213f0d62e9776d57e61a7af",
+    "./exports/stl/bin_m3_12_16_20.stl": "f7fcf668a03db0deff03883ebea979cf4473910de7b34b03cc6289715c1ba7fd",
+    "./exports/step/bin_m4_nut_wsh.step": "e2652b7a5a0d562939f29969561d80327916210700b29b0b3acd7d276290a168",
+    "./exports/stl/bin_m4_nut_wsh.stl": "4198934a775e74a4a336f826142778652fba3c7ce86003fb4e00acaa6f6f5679",
+    "./exports/step/bin_m4_8_10_12.step": "447818560c84cb1fb8b731561d4f4645e2f8c3a0d2d55d8a3beee8ff8ca5526f",
+    "./exports/stl/bin_m4_8_10_12.stl": "507b6637e16e5c67c55c63153cc29bba17e24444e9b9f6644067db62563959b9",
+    "./exports/step/bin_m4_16_20.step": "c41a619d3d89b6c7780b7d809b82ec7594283ed57c8d9e3eacdb9046d7f813a5",
+    "./exports/stl/bin_m4_16_20.stl": "62a7f381506b79e5b9ad3b1a583f34a1b03afe685f976da83ce69ae20580b55c",
+    "./exports/step/bin_m3_stack_lck.step": "7a7f10376c13d128a8d68b1be7a8ffcb318de4435eb30876ae75180a49516d54",
+    "./exports/stl/bin_m3_stack_lck.stl": "1ef8ecd99bd3f56afa62b971ebcc5e7edcb005fc82be5ea39efb1c88616d55ca"
+  },
+  "parts": [
+    {
+      "name": "baseplate_5x4",
+      "size_mm": [
+        210.0,
+        168.0,
+        5.85
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 68085.0
+    },
+    {
+      "name": "bin_m2_nut_wsh",
+      "size_mm": [
+        41.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 23918.4
+    },
+    {
+      "name": "bin_m2_6_8_10",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46151.3
+    },
+    {
+      "name": "bin_m2_12_16_20",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46156.0
+    },
+    {
+      "name": "bin_m25_nut_wsh",
+      "size_mm": [
+        41.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 23921.3
+    },
+    {
+      "name": "bin_m25_6_8_10",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46152.7
+    },
+    {
+      "name": "bin_m25_12_16_20",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46156.6
+    },
+    {
+      "name": "bin_m3_nut_wsh",
+      "size_mm": [
+        41.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 23918.2
+    },
+    {
+      "name": "bin_m3_6_8_10",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46151.0
+    },
+    {
+      "name": "bin_m3_12_16_20",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46155.7
+    },
+    {
+      "name": "bin_m4_nut_wsh",
+      "size_mm": [
+        41.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 23917.8
+    },
+    {
+      "name": "bin_m4_8_10_12",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 46152.1
+    },
+    {
+      "name": "bin_m4_16_20",
+      "size_mm": [
+        83.5,
+        41.5,
+        32.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 45397.7
+    },
+    {
+      "name": "bin_m3_stack_lck",
+      "size_mm": [
+        41.5,
+        41.5,
+        25.4
+      ],
+      "solids": 1,
+      "valid": true,
+      "step_volume_mm3": 22103.1
+    }
+  ],
+  "grid_occupancy": {
+    "baseplate_cells": 20,
+    "occupied_cells": 20,
+    "multiply_occupied": [],
+    "outside_5x4": [],
+    "bins_on_base": 12,
+    "stacked_bins": [
+      "bin_m3_stack_lck"
+    ]
+  },
+  "seats": [
+    {
+      "bin": "bin_m2_nut_wsh",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "seated_z_mm": 1.2,
+      "intersection_mm3_by_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0
+      }
+    }
+  ],
+  "socket_lateral_play": [
+    {
+      "bin": "bin_m3_nut_wsh",
+      "direction": "+x",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "direction": "-x",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "direction": "+y",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "direction": "-y",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "direction": "+x",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "direction": "-x",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "direction": "+y",
+      "travel_to_contact_mm": 0.25
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "direction": "-y",
+      "travel_to_contact_mm": 0.25
+    }
+  ],
+  "neighbor_pairs": [
+    {
+      "bins": [
+        "bin_m2_nut_wsh",
+        "bin_m2_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_nut_wsh",
+        "bin_m25_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_nut_wsh",
+        "bin_m25_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_6_8_10",
+        "bin_m2_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_6_8_10",
+        "bin_m25_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_6_8_10",
+        "bin_m25_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_6_8_10",
+        "bin_m25_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_12_16_20",
+        "bin_m25_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m2_12_16_20",
+        "bin_m25_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_nut_wsh",
+        "bin_m25_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_nut_wsh",
+        "bin_m3_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_nut_wsh",
+        "bin_m3_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_nut_wsh",
+        "bin_m3_stack_lck"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0017
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_6_8_10",
+        "bin_m25_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_6_8_10",
+        "bin_m3_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_6_8_10",
+        "bin_m3_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_6_8_10",
+        "bin_m3_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_6_8_10",
+        "bin_m3_stack_lck"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_12_16_20",
+        "bin_m3_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m25_12_16_20",
+        "bin_m3_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_nut_wsh",
+        "bin_m3_6_8_10"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_nut_wsh",
+        "bin_m4_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_nut_wsh",
+        "bin_m4_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_6_8_10",
+        "bin_m3_12_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_6_8_10",
+        "bin_m4_nut_wsh"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_6_8_10",
+        "bin_m4_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_6_8_10",
+        "bin_m4_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_6_8_10",
+        "bin_m3_stack_lck"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0017
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_12_16_20",
+        "bin_m4_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    },
+    {
+      "bins": [
+        "bin_m3_12_16_20",
+        "bin_m4_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 21.0677
+      }
+    },
+    {
+      "bins": [
+        "bin_m4_nut_wsh",
+        "bin_m4_8_10_12"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m4_nut_wsh",
+        "bin_m3_stack_lck"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0017
+      }
+    },
+    {
+      "bins": [
+        "bin_m4_8_10_12",
+        "bin_m4_16_20"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 9.4732
+      }
+    },
+    {
+      "bins": [
+        "bin_m4_8_10_12",
+        "bin_m3_stack_lck"
+      ],
+      "intersection_mm3_by_lift_mm": {
+        "0": 0.0,
+        "1": 0.0,
+        "5": 0.0,
+        "20": 0.0
+      },
+      "bbox_xy_gap_mm": 0.5,
+      "intersection_mm3_after_shift_toward_neighbor_mm": {
+        "0.49": 0.0,
+        "0.51": 0.0
+      }
+    }
+  ],
+  "withdrawal": [
+    {
+      "bin": "bin_m2_nut_wsh",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": "stacked bin must be lifted first; host then lifts clear"
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    },
+    {
+      "bin": "bin_m3_stack_lck",
+      "lifts_mm": [
+        0,
+        0.5,
+        1,
+        2,
+        3,
+        5,
+        10,
+        20,
+        30,
+        40
+      ],
+      "max_intersection_mm3": 0.0,
+      "note": ""
+    }
+  ],
+  "stacking_submitted": [
+    {
+      "lower": "bin_m3_nut_wsh",
+      "upper": "bin_m3_stack_lck",
+      "submitted_offset_z_mm": 27.65,
+      "submitted_seat_depth_mm": 4.75,
+      "intersection_at_submitted_pose_mm3": 17.8776,
+      "intersection_pieces": [
+        {
+          "volume_mm3": 4.954,
+          "bbox_min": [
+            -20.75,
+            -20.75,
+            32.15
+          ],
+          "bbox_max": [
+            20.75,
+            20.75,
+            32.4
+          ]
+        },
+        {
+          "volume_mm3": 12.924,
+          "bbox_min": [
+            -0.6,
+            -18.1,
+            27.65
+          ],
+          "bbox_max": [
+            0.6,
+            18.1,
+            27.95
+          ]
+        }
+      ],
+      "lift_to_first_clear_pose_mm": 0.3,
+      "lower_divider_top_z_mm": 28.45,
+      "actual_seat_depth_resting_on_divider_mm": 4.45,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0": 0,
+        "0.5": 0,
+        "1": 0,
+        "3": 0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "lateral_play_at_clear_pose": [
+        {
+          "direction": "+x",
+          "travel_to_contact_mm": 0.0587
+        },
+        {
+          "direction": "+y",
+          "travel_to_contact_mm": 0.0587
+        }
+      ],
+      "lower_label_text_top_z_mm": 26.8,
+      "label_clearance_submitted_mm": 0.85,
+      "label_clearance_resting_on_divider_mm": 1.15
+    }
+  ],
+  "stacking_matrix": [
+    {
+      "upper": "bin_m3_stack_lck",
+      "lower": "bin_m2_nut_wsh",
+      "offset_xyz_mm": [
+        0,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 17.8776,
+      "lift_to_first_clear_pose_mm": 0.3,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m3_stack_lck",
+      "lower": "bin_m3_6_8_10",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 16.5082,
+      "lift_to_first_clear_pose_mm": 0.3,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m3_stack_lck",
+      "lower": "bin_m3_6_8_10",
+      "offset_xyz_mm": [
+        21,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 16.5082,
+      "lift_to_first_clear_pose_mm": 0.3,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m3_stack_lck",
+      "lower": "bin_m4_16_20",
+      "offset_xyz_mm": [
+        -21,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 3.5842,
+      "lift_to_first_clear_pose_mm": 0.2491,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m3_stack_lck",
+      "lower": "bin_m4_16_20",
+      "offset_xyz_mm": [
+        21,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 3.5842,
+      "lift_to_first_clear_pose_mm": 0.2491,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m2_nut_wsh",
+      "lower": "bin_m4_nut_wsh",
+      "offset_xyz_mm": [
+        0,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 17.8776,
+      "lift_to_first_clear_pose_mm": 0.3,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m2_6_8_10",
+      "lower": "bin_m3_6_8_10",
+      "offset_xyz_mm": [
+        0,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 33.0163,
+      "lift_to_first_clear_pose_mm": 0.3,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m4_16_20",
+      "lower": "bin_m4_16_20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 7.1683,
+      "lift_to_first_clear_pose_mm": 0.2494,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    },
+    {
+      "upper": "bin_m2_6_8_10",
+      "lower": "bin_m4_16_20",
+      "offset_xyz_mm": [
+        0,
+        0,
+        27.65
+      ],
+      "intersection_at_convention_mm3": 7.1683,
+      "lift_to_first_clear_pose_mm": 0.2494,
+      "release_intersection_mm3_by_extra_lift_mm": {
+        "0.5": 0,
+        "3": 0,
+        "10": 0.0
+      }
+    }
+  ],
+  "label_geometry": [
+    {
+      "bin": "bin_m2_nut_wsh",
+      "compartment": 0,
+      "label": "M2 / NUT",
+      "text_volume_mm3": 14.2,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.55,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_nut_wsh",
+      "compartment": 1,
+      "label": "M2 / WSH",
+      "text_volume_mm3": 14.52,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.72,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": 0,
+      "label": "M2x6",
+      "text_volume_mm3": 14.05,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        10.45,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": 1,
+      "label": "M2x8",
+      "text_volume_mm3": 14.55,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        10.45,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": 2,
+      "label": "M2x10",
+      "text_volume_mm3": 16.52,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": 0,
+      "label": "M2x12",
+      "text_volume_mm3": 15.95,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": 1,
+      "label": "M2x16",
+      "text_volume_mm3": 16.38,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": 2,
+      "label": "M2x20",
+      "text_volume_mm3": 17.43,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.93,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "compartment": 0,
+      "label": "M2.5 / NUT",
+      "text_volume_mm3": 15.63,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        7.59,
+        8.0
+      ],
+      "text_y_range_mm": [
+        10.1,
+        18.1
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "compartment": 1,
+      "label": "M2.5 / WSH",
+      "text_volume_mm3": 15.92,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        7.59,
+        8.0
+      ],
+      "text_y_range_mm": [
+        10.1,
+        18.1
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": 0,
+      "label": "M2.5x6",
+      "text_volume_mm3": 14.67,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        13.0,
+        3.5
+      ],
+      "text_y_range_mm": [
+        12.35,
+        15.85
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": 1,
+      "label": "M2.5x8",
+      "text_volume_mm3": 15.08,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        13.0,
+        3.5
+      ],
+      "text_y_range_mm": [
+        12.35,
+        15.85
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": 2,
+      "label": "M2.5 / x10",
+      "text_volume_mm3": 16.71,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        8.25,
+        8.7
+      ],
+      "text_y_range_mm": [
+        9.75,
+        18.45
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": 0,
+      "label": "M2.5 / x12",
+      "text_volume_mm3": 16.24,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        8.25,
+        8.7
+      ],
+      "text_y_range_mm": [
+        9.75,
+        18.45
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": 1,
+      "label": "M2.5 / x16",
+      "text_volume_mm3": 16.59,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        8.25,
+        8.7
+      ],
+      "text_y_range_mm": [
+        9.75,
+        18.45
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": 2,
+      "label": "M2.5 / x20",
+      "text_volume_mm3": 17.46,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        8.25,
+        8.7
+      ],
+      "text_y_range_mm": [
+        9.75,
+        18.45
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "compartment": 0,
+      "label": "M3 / NUT",
+      "text_volume_mm3": 14.12,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.55,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "compartment": 1,
+      "label": "M3 / WSH",
+      "text_volume_mm3": 14.44,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.72,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": 0,
+      "label": "M3x6",
+      "text_volume_mm3": 13.94,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        10.45,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": 1,
+      "label": "M3x8",
+      "text_volume_mm3": 14.44,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        10.45,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": 2,
+      "label": "M3x10",
+      "text_volume_mm3": 16.42,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": 0,
+      "label": "M3x12",
+      "text_volume_mm3": 15.84,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": 1,
+      "label": "M3x16",
+      "text_volume_mm3": 16.27,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": 2,
+      "label": "M3x20",
+      "text_volume_mm3": 17.32,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.93,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "compartment": 0,
+      "label": "M4 / NUT",
+      "text_volume_mm3": 13.93,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.55,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "compartment": 1,
+      "label": "M4 / WSH",
+      "text_volume_mm3": 14.25,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        6.72,
+        8.35
+      ],
+      "text_y_range_mm": [
+        9.92,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": 0,
+      "label": "M4x8",
+      "text_volume_mm3": 14.2,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        10.45,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": 1,
+      "label": "M4x10",
+      "text_volume_mm3": 16.17,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": 2,
+      "label": "M4x12",
+      "text_volume_mm3": 15.6,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        12.66,
+        3.85
+      ],
+      "text_y_range_mm": [
+        12.17,
+        16.03
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "compartment": 0,
+      "label": "M4x16",
+      "text_volume_mm3": 22.38,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        14.96,
+        4.55
+      ],
+      "text_y_range_mm": [
+        11.82,
+        16.38
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "compartment": 1,
+      "label": "M4x20",
+      "text_volume_mm3": 23.85,
+      "text_top_z_mm": 26.8,
+      "shelf_top_z_mm": 26.0,
+      "text_extent_xy_mm": [
+        15.28,
+        4.55
+      ],
+      "text_y_range_mm": [
+        11.82,
+        16.38
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 0
+    },
+    {
+      "bin": "bin_m3_stack_lck",
+      "compartment": 0,
+      "label": "M3 / LCK",
+      "text_volume_mm3": 74.6,
+      "text_top_z_mm": 20.0,
+      "shelf_top_z_mm": 19.0,
+      "text_extent_xy_mm": [
+        18.65,
+        37.58
+      ],
+      "text_y_range_mm": [
+        -19.3,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 62.2389
+    },
+    {
+      "bin": "bin_m3_stack_lck",
+      "compartment": 1,
+      "label": "M3 / SPR",
+      "text_volume_mm3": 75.9,
+      "text_top_z_mm": 20.0,
+      "shelf_top_z_mm": 19.0,
+      "text_extent_xy_mm": [
+        18.65,
+        37.58
+      ],
+      "text_y_range_mm": [
+        -19.3,
+        18.28
+      ],
+      "shelf_y_range_mm": [
+        8.85,
+        19.35
+      ],
+      "text_volume_in_front_of_shelf_mm3": 62.2389
+    }
+  ],
+  "font_review": {
+    "embedded_ttf_description": "Two-bead FDM font: every stroke is exactly two extrusion widths (w). Fusion text Height = 14 x line width (cap height); em = 20 x line width.",
+    "submitted_em_mm": [
+      4.6,
+      4.8,
+      5.0,
+      5.5,
+      6.5
+    ],
+    "measured_single_line_cap_heights_mm": [
+      3.5,
+      3.85,
+      4.55
+    ],
+    "implied_line_width_mm_at_submitted_em": [
+      0.23,
+      0.24,
+      0.25,
+      0.275,
+      0.325
+    ],
+    "two_bead_em_target_at_0_4mm_line_width_mm": 8.0,
+    "two_bead_target_met_at_0_4mm_line_width": false,
+    "note": "The README recommends a 0.4 mm nozzle. At em = 20 w the 4.6-6.5 mm em labels need 0.23-0.33 mm extrusion lines, below the font description target of 8 mm em at 0.4 mm lines. Readability at these sizes is a slicer/print question that remains untested."
+  },
+  "access": [
+    {
+      "bin": "bin_m2_nut_wsh",
+      "compartment": "M2 / NUT",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_nut_wsh",
+      "compartment": "M2 / WSH",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": "M2x6",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": "M2x8",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_6_8_10",
+      "compartment": "M2x10",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": "M2x12",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": "M2x16",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m2_12_16_20",
+      "compartment": "M2x20",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ],
+      "long_screw_bounding_gauge_mm": [
+        22.0,
+        3.8,
+        3.8
+      ],
+      "long_screw_gauge_overlap_mm3": 0
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "compartment": "M2.5 / NUT",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_nut_wsh",
+      "compartment": "M2.5 / WSH",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": "M2.5x6",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": "M2.5x8",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_6_8_10",
+      "compartment": "M2.5 / x10",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": "M2.5 / x12",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": "M2.5 / x16",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m25_12_16_20",
+      "compartment": "M2.5 / x20",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ],
+      "long_screw_bounding_gauge_mm": [
+        22.5,
+        4.5,
+        4.5
+      ],
+      "long_screw_gauge_overlap_mm3": 0
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "compartment": "M3 / NUT",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_nut_wsh",
+      "compartment": "M3 / WSH",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": "M3x6",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": "M3x8",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_6_8_10",
+      "compartment": "M3x10",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": "M3x12",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": "M3x16",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_12_16_20",
+      "compartment": "M3x20",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ],
+      "long_screw_bounding_gauge_mm": [
+        23.0,
+        5.5,
+        5.5
+      ],
+      "long_screw_gauge_overlap_mm3": 0
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "compartment": "M4 / NUT",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_nut_wsh",
+      "compartment": "M4 / WSH",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": "M4x8",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": "M4x10",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_8_10_12",
+      "compartment": "M4x12",
+      "comp_width_mm": 26.1,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        26.1,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "compartment": "M4x16",
+      "comp_width_mm": 39.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        39.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m4_16_20",
+      "compartment": "M4x20",
+      "comp_width_mm": 39.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        39.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ],
+      "long_screw_bounding_gauge_mm": [
+        24.0,
+        7.0,
+        7.0
+      ],
+      "long_screw_gauge_overlap_mm3": 0
+    },
+    {
+      "bin": "bin_m3_stack_lck",
+      "compartment": "M3 / LCK",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "bin": "bin_m3_stack_lck",
+      "compartment": "M3 / SPR",
+      "comp_width_mm": 18.75,
+      "open_plan_aperture_in_front_of_shelf_mm": [
+        18.75,
+        28.2
+      ],
+      "finger_probe_14mm_deep_to_floor_overlap_mm3_by_width": {
+        "14": 0,
+        "16": 0,
+        "18": 0
+      },
+      "front_floor_profile_y_z_mm": [
+        [
+          -19.0,
+          15.5
+        ],
+        [
+          -17.0,
+          15.5
+        ],
+        [
+          -15.0,
+          15.5
+        ],
+        [
+          -12.0,
+          15.5
+        ],
+        [
+          -9.0,
+          15.43
+        ],
+        [
+          -6.0,
+          10.21
+        ],
+        [
+          -3.0,
+          6.0
+        ]
+      ]
+    }
+  ],
+  "capacity_estimate": {
+    "method": "Direct OCP free volume inside each compartment rectangle from the 6.0 mm floor to the label-shelf top (nom_h - 2 mm); scoop, shelf and gusset solid subtracted. Solid nominal ISO hardware, 60% packing assumed, same convention as the earlier gemini-gridfinity review. Geometry only, no loading test.",
+    "compartments": [
+      {
+        "bin": "bin_m2_nut_wsh",
+        "compartment": "M2 NUT",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 22.17,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 279,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_nut_wsh",
+        "compartment": "M2 WSH",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 5.89,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 1050,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "compartment": "M2x6",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 41.53,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 207,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "compartment": "M2x8",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 47.82,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 180,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "compartment": "M2x10",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 54.1,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 159,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "compartment": "M2x12",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 60.38,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 142,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "compartment": "M2x16",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 72.95,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 118,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "compartment": "M2x20",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 85.51,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 100,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_nut_wsh",
+        "compartment": "M2.5 NUT",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 43.3,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 142,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_nut_wsh",
+        "compartment": "M2.5 WSH",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 14.14,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 437,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "compartment": "M2.5x6",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 69.21,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 124,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "compartment": "M2.5x8",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 79.03,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 109,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "compartment": "M2.5 x10",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 88.85,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 96,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "compartment": "M2.5 x12",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 98.67,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 87,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "compartment": "M2.5 x16",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 118.3,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 72,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "compartment": "M2.5 x20",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 137.94,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 62,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_nut_wsh",
+        "compartment": "M3 NUT",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 62.87,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 98,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_nut_wsh",
+        "compartment": "M3 WSH",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 19.24,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 321,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "compartment": "M3x6",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 113.69,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 75,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "compartment": "M3x8",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 127.82,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 67,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "compartment": "M3x10",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 141.96,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 60,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "compartment": "M3x12",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 156.1,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 55,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "compartment": "M3x16",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 184.37,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 46,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "compartment": "M3x20",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 212.65,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 40,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "compartment": "M4 NUT",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 135.79,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 45,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "compartment": "M4 WSH",
+        "free_volume_below_shelf_top_mm3": 10315.5,
+        "nominal_hardware_volume_mm3": 50.89,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 121,
+        "target": 30,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "compartment": "M4x8",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 254.47,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 33,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "compartment": "M4x10",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 279.6,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 30,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "compartment": "M4x12",
+        "free_volume_below_shelf_top_mm3": 14359.2,
+        "nominal_hardware_volume_mm3": 304.73,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 28,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_16_20",
+        "compartment": "M4x16",
+        "free_volume_below_shelf_top_mm3": 21868.9,
+        "nominal_hardware_volume_mm3": 355.0,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 36,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m4_16_20",
+        "compartment": "M4x20",
+        "free_volume_below_shelf_top_mm3": 21868.9,
+        "nominal_hardware_volume_mm3": 405.27,
+        "assumed_packing_fraction": 0.6,
+        "estimated_count": 32,
+        "target": 20,
+        "estimate_meets_target": true
+      },
+      {
+        "bin": "bin_m3_stack_lck",
+        "compartment": "M3 LCK",
+        "free_volume_below_shelf_top_mm3": 5301.6
+      },
+      {
+        "bin": "bin_m3_stack_lck",
+        "compartment": "M3 SPR",
+        "free_volume_below_shelf_top_mm3": 5301.6
+      }
+    ],
+    "submission_claims_rechecked": [
+      {
+        "bin": "bin_m4_16_20",
+        "compartment": "M4x20",
+        "claimed_fill_percent": 76.7,
+        "fill_percent_with_measured_free_volume": 94.7,
+        "measured_free_volume_mm3": 21868.9
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "compartment": "M3x20",
+        "claimed_fill_percent": 61.1,
+        "fill_percent_with_measured_free_volume": 73.2,
+        "measured_free_volume_mm3": 14359.2
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "compartment": "M4 NUT",
+        "claimed_fill_percent": 75.8,
+        "fill_percent_with_measured_free_volume": 91.9,
+        "measured_free_volume_mm3": 10315.5
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "compartment": "M4 WSH",
+        "claimed_fill_percent": 23.3,
+        "fill_percent_with_measured_free_volume": 28.3,
+        "measured_free_volume_mm3": 10315.5
+      }
+    ]
+  },
+  "label_sightlines": {
+    "method": "trimesh ray casts from up to 60 sampled raised-text top facets per label toward -Y at the listed elevations and yaw; a label counts as readable at an elevation when >= 95% of its rays clear all parts.",
+    "elevations_deg": [
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      60,
+      75,
+      90
+    ],
+    "yaw_deg": [
+      -30,
+      0,
+      30
+    ],
+    "labels": [
+      {
+        "bin": "bin_m2_nut_wsh",
+        "label": "M2 / NUT",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.567,
+            "20": 0.967,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.567,
+            "20": 0.967,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.767,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 20,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_nut_wsh",
+        "label": "M2 / WSH",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.483,
+            "20": 0.933,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.85,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.483,
+            "20": 0.933,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 20,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "label": "M2x6",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.317,
+            "15": 0.9,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "label": "M2x8",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_6_8_10",
+        "label": "M2x10",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.65,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.417,
+            "15": 0.867,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.417,
+            "15": 0.867,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "label": "M2x12",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.367,
+            "15": 0.767,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.367,
+            "15": 0.767,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "label": "M2x16",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m2_12_16_20",
+        "label": "M2x20",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.25,
+            "15": 0.767,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.25,
+            "15": 0.767,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_nut_wsh",
+        "label": "M2.5 / NUT",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.467,
+            "20": 0.883,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.267,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.017,
+            "35": 0.883,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.467,
+            "20": 0.883,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.883,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 40,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_nut_wsh",
+        "label": "M2.5 / WSH",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.783,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.3,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.633,
+            "20": 0.933,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.783,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.633,
+            "20": 0.933,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 40,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "label": "M2.5x6",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.35,
+            "15": 0.85,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "label": "M2.5x8",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.55,
+            "15": 0.55,
+            "20": 0.95,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_6_8_10",
+        "label": "M2.5 / x10",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.8,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.283,
+            "15": 0.983,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.8,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.283,
+            "15": 0.983,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "label": "M2.5 / x12",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.283,
+            "15": 0.983,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.8,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.283,
+            "15": 0.983,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.8,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "label": "M2.5 / x16",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.717,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.717,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m25_12_16_20",
+        "label": "M2.5 / x20",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.783,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.283,
+            "15": 0.95,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.783,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.283,
+            "15": 0.95,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_nut_wsh",
+        "label": "M3 / NUT",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.4,
+            "20": 0.95,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.85,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": null,
+        "overhead_clear_fraction": 0.0
+      },
+      {
+        "bin": "bin_m3_nut_wsh",
+        "label": "M3 / WSH",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          },
+          "yaw_0": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.0,
+            "20": 0.0,
+            "25": 0.0,
+            "30": 0.0,
+            "35": 0.0,
+            "40": 0.0,
+            "45": 0.0,
+            "50": 0.0,
+            "60": 0.0,
+            "75": 0.0,
+            "90": 0.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.767,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.4,
+            "20": 0.917,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": null,
+        "overhead_clear_fraction": 0.0
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "label": "M3x6",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.267,
+            "15": 0.267,
+            "20": 0.267,
+            "25": 0.267,
+            "30": 0.267,
+            "35": 0.3,
+            "40": 0.533,
+            "45": 0.667,
+            "50": 0.8,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.45,
+            "15": 0.8,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "label": "M3x8",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_6_8_10",
+        "label": "M3x10",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.45,
+            "15": 0.833,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.45,
+            "15": 0.833,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "label": "M3x12",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.417,
+            "15": 0.75,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.417,
+            "15": 0.75,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "label": "M3x16",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_12_16_20",
+        "label": "M3x20",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.483,
+            "15": 0.9,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.483,
+            "15": 0.9,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "label": "M4 / NUT",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.533,
+            "20": 0.95,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.75,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.533,
+            "20": 0.95,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.75,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_nut_wsh",
+        "label": "M4 / WSH",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.717,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.55,
+            "20": 0.917,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.717,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.55,
+            "20": 0.917,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "label": "M4x8",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.383,
+            "15": 0.8,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.383,
+            "15": 0.8,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "label": "M4x10",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_8_10_12",
+        "label": "M4x12",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.35,
+            "15": 0.8,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.35,
+            "15": 0.8,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_16_20",
+        "label": "M4x16",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.733,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 0.733,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m4_16_20",
+        "label": "M4x20",
+        "sample_points": 60,
+        "text_top_z_world_mm": 28.0,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.783,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.783,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 10,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_stack_lck",
+        "label": "M3 / LCK",
+        "sample_points": 60,
+        "text_top_z_world_mm": 48.65,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 0.0,
+            "15": 0.617,
+            "20": 0.983,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.833,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      },
+      {
+        "bin": "bin_m3_stack_lck",
+        "label": "M3 / SPR",
+        "sample_points": 60,
+        "text_top_z_world_mm": 48.65,
+        "clear_fraction": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 0.8,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 0.0,
+            "15": 0.583,
+            "20": 0.95,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "clear_fraction_without_stacked_bin": {
+          "yaw_-30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_0": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          },
+          "yaw_30": {
+            "10": 1.0,
+            "15": 1.0,
+            "20": 1.0,
+            "25": 1.0,
+            "30": 1.0,
+            "35": 1.0,
+            "40": 1.0,
+            "45": 1.0,
+            "50": 1.0,
+            "60": 1.0,
+            "75": 1.0,
+            "90": 1.0
+          }
+        },
+        "min_elevation_deg_95pct_clear_straight_on": 15,
+        "overhead_clear_fraction": 1.0
+      }
+    ],
+    "hidden_overhead": [
+      "bin_m3_nut_wsh: M3 / NUT",
+      "bin_m3_nut_wsh: M3 / WSH"
+    ],
+    "min_elevation_by_label": {
+      "bin_m2_nut_wsh: M2 / NUT": 20,
+      "bin_m2_nut_wsh: M2 / WSH": 20,
+      "bin_m2_6_8_10: M2x6": 10,
+      "bin_m2_6_8_10: M2x8": 10,
+      "bin_m2_6_8_10: M2x10": 10,
+      "bin_m2_12_16_20: M2x12": 10,
+      "bin_m2_12_16_20: M2x16": 10,
+      "bin_m2_12_16_20: M2x20": 10,
+      "bin_m25_nut_wsh: M2.5 / NUT": 40,
+      "bin_m25_nut_wsh: M2.5 / WSH": 40,
+      "bin_m25_6_8_10: M2.5x6": 10,
+      "bin_m25_6_8_10: M2.5x8": 10,
+      "bin_m25_6_8_10: M2.5 / x10": 15,
+      "bin_m25_12_16_20: M2.5 / x12": 15,
+      "bin_m25_12_16_20: M2.5 / x16": 15,
+      "bin_m25_12_16_20: M2.5 / x20": 15,
+      "bin_m3_nut_wsh: M3 / NUT": null,
+      "bin_m3_nut_wsh: M3 / WSH": null,
+      "bin_m3_6_8_10: M3x6": 10,
+      "bin_m3_6_8_10: M3x8": 10,
+      "bin_m3_6_8_10: M3x10": 10,
+      "bin_m3_12_16_20: M3x12": 10,
+      "bin_m3_12_16_20: M3x16": 10,
+      "bin_m3_12_16_20: M3x20": 10,
+      "bin_m4_nut_wsh: M4 / NUT": 15,
+      "bin_m4_nut_wsh: M4 / WSH": 15,
+      "bin_m4_8_10_12: M4x8": 10,
+      "bin_m4_8_10_12: M4x10": 10,
+      "bin_m4_8_10_12: M4x12": 10,
+      "bin_m4_16_20: M4x16": 10,
+      "bin_m4_16_20: M4x20": 10,
+      "bin_m3_stack_lck: M3 / LCK": 15,
+      "bin_m3_stack_lck: M3 / SPR": 15
+    }
+  },
+  "summary": {
+    "base_cells_occupied": 20,
+    "base_bins": 12,
+    "stacked_bins": 1,
+    "all_seats_clear": true,
+    "neighbor_pairs_checked": 34,
+    "all_neighbor_pairs_clear": true,
+    "min_neighbor_bbox_gap_mm": 0.5,
+    "neighbor_gap_confirmed_0_49_clear_0_51_touch": false,
+    "all_withdrawals_clear": true,
+    "submitted_stack_intersection_mm3": [
+      17.8776
+    ],
+    "stack_matrix_cases_with_seat_interference": 9,
+    "stack_matrix_cases": 9,
+    "labels_with_text_in_front_of_shelf": 2,
+    "finger_probes_14mm_blocked": 0,
+    "capacity_targets_met": 31,
+    "capacity_targets_checked": 31
+  },
+  "limitations": [
+    "Rigid exported-geometry checks; no print, slice, printer tolerance, elephant foot, friction or filled-bin handling.",
+    "Withdrawal, stacking release and sightlines are discrete samples, not continuous motion or visibility proofs.",
+    "Capacity is free volume times an assumed 60% packing fraction; no hardware was loaded and tiny-part pickup was not tried.",
+    "Probe positions use the submission parameters; text cap heights are measured from the exported solid.",
+    "Bench viewing positions are modelled as rays toward -Y (the M4 front row) with +/-30 degree yaw; eye height and distance are not modelled."
+  ]
+}

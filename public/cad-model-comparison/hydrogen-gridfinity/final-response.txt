@@ -1,0 +1,29 @@
+I have designed, exported, and verified the parametric 5×4 Gridfinity fastener organizer system.
+
+### Deliverables
+- **Parametric CAD Source**: [gridfinity_organizer.py](file://./cad/gridfinity_organizer.py)
+- **Assembly Manifest**: [assembly.json](file://./assembly.json) (14 parts with millimeter transforms on the 42 mm grid)
+- **STEP & Binary STL Exports**: `exports/step/*.step` and `exports/stl/*.stl` (14 parts total: `baseplate_5x4` + 13 labeled bins)
+- **Verification Script**: [verify.py](file://./verify.py)
+- **Documentation**: [README.md](file://./README.md)
+
+### Starter Assortment & Layout (5×4 Grid = 210 × 168 mm)
+Organized as **one row per thread size** (front-to-back: M4, M3, M2.5, M2) using **three reusable bin geometries** (4u / 28 mm nominal height, 32.4 mm with 4.4 mm stacking lip, plus one 3u / 21 mm stackable overflow bin):
+- **Row 1 (Front, Y=0) — M4**: `bin_m4_nut_wsh` (`1×1 Dual`: `M4 NUT` | `M4 WSH`), `bin_m4_8_10_12` (`2×1 Triple`: `M4x8` | `M4x10` | `M4x12`), `bin_m4_16_20` (`2×1 Dual`: `M4x16` | `M4x20`)
+- **Row 2 (Y=1) — M3**: `bin_m3_nut_wsh` (`1×1 Dual`: `M3 NUT` | `M3 WSH`), `bin_m3_6_8_10` (`2×1 Triple`), `bin_m3_12_16_20` (`2×1 Triple`)
+- **Row 3 (Y=2) — M2.5**: `bin_m25_nut_wsh` (`1×1 Dual`: `M2.5 NUT` | `M2.5 WSH`), `bin_m25_6_8_10` (`2×1 Triple`), `bin_m25_12_16_20` (`2×1 Triple`)
+- **Row 4 (Back, Y=3) — M2**: `bin_m2_nut_wsh` (`1×1 Dual`: `M2 NUT` | `M2 WSH`), `bin_m2_6_8_10` (`2×1 Triple`), `bin_m2_12_16_20` (`2×1 Triple`)
+- **Stacked on `bin_m3_nut_wsh`**: `bin_m3_stack_lck` (`1×1 Dual, 3u`: `M3 LCK` | `M3 SPR`)
+
+### Ergonomics, Labels & Extensibility
+- **Permanent Fillaprint Labels**: Raised `0.8 mm` text using [Fillaprint-Regular.ttf](file://./assets/fillaprint/Fillaprint-Regular.ttf) at `4.6–6.5 mm` font size (≥ 0.46 mm stroke width) on a recessed horizontal top-back shelf (`2.0 mm` below nominal top). Labels face the user from a bench/drawer viewing angle, print flat in XY without supports, and clear stacked bins by `0.85 mm`.
+- **Finger Access & Lifting**: Every compartment includes an `R14 mm` front finger scoop for sliding out tiny washers and short screws. Individual `1×1` and `2×1` bins maintain `0.500 mm` XY clearance to neighbors and seat `4.65 mm` into the baseplate so any bin can be lifted straight out without tipping adjacent bins.
+- **Extensibility**: Add another thread size (e.g. M5) by adding a `5×1` row in `get_starter_specs()` and adjusting `(nx, ny)` in `build_baseplate()`.
+
+### Measured Verification Results (`verify.py`)
+- **Mesh & File Integrity**: All 14 STEP files and binary STLs generated; all 14 STL meshes are `watertight=True` with positive volume (`baseplate_5x4`: `210.00 × 168.00 × 5.85 mm`; `1×1` 4u bins: `41.50 × 41.50 × 32.40 mm`; `2×1` 4u bins: `83.50 × 41.50 × 32.40 mm`; `bin_m3_stack_lck`: `41.50 × 41.50 × 25.40 mm`).
+- **Clearances & Stacking**: Minimum adjacent-bin XY gap = `0.500 mm`; stacked `bin_m3_stack_lck` seats `4.75 mm` into `bin_m3_nut_wsh` with `0.85 mm` vertical clearance above the lower bin's raised text.
+- **Capacity**: `M4x20` (20 pcs) fills `76.7%` of `bin_m4_16_20`; `M3x20` (20 pcs) fills `61.1%` of `bin_m3_12_16_20`; `M4 NUT` (30 pcs) fills `75.8%` and `M4 WSH` (30 pcs) fills `23.3%` of `bin_m4_nut_wsh`.
+
+### Physical Fit Test Still Required
+- Test-print one `1×1` bin and a corner of `baseplate_5x4` to verify your printer's elephant-foot / XY shrinkage against the `0.25 mm` radial socket clearance, `4.4 mm` stacking lip fit, and visual contrast of the `4.6 mm` two-line `M2.5 NUT / WSH` label.

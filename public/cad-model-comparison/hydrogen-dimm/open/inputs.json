@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-dimm/ddr4_mailer_base.stl",
+    "sha256": "10a4347b9fd47d96805f1e9fa297d18e9d270be85942e7da19cfcca69d91b5c8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2302,
+    "triangles": 4600
+  }
+]

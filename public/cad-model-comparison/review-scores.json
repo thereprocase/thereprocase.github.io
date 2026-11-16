@@ -281,6 +281,21 @@
       "basis": "Closed pockets, floating retaining ridge, missing label and missing handover artifacts.",
       "review_status": "Needs revision"
     },
+    "hydrogen-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.1,
+      "api_cost_usd": 0.75132488,
+      "cost_score": 8.412491,
+      "value": 8.201552,
+      "cad_acceptable": true,
+      "basis": "Verified upright bag clearance and latch engagement; lengthwise slack can put contact edge on a pedestal.",
+      "review_status": "Reviewed prototype"
+    },
     "sol-gridfinity": {
       "categories": {
         "function": 9,
@@ -505,6 +520,21 @@
       "cad_acceptable": false,
       "basis": "Sealed bins, floating letters and a solid base without sockets.",
       "review_status": "Needs revision"
+    },
+    "hydrogen-gridfinity": {
+      "categories": {
+        "function": 6,
+        "printability": 6,
+        "labels_handling": 5,
+        "completeness": 9
+      },
+      "quality": 6.1,
+      "api_cost_usd": 0.4455087,
+      "cost_score": 9.166474,
+      "value": 6.865585,
+      "cad_acceptable": false,
+      "basis": "Seats clear; every stack intersects its host and hides nut/washer labels; text below two-bead size.",
+      "review_status": "Needs stacking revision"
     }
   }
 }

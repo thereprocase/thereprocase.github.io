@@ -1,0 +1,22 @@
+I have designed, exported, and verified the parametric **Dual DDR4 RAM Reusable Mailer**.
+
+### Deliverables
+- **Parametric CAD**: [params.py](file://./cad/params.py), [build_mailer.py](file://./cad/build_mailer.py)
+- **Exports**:
+  - [ddr4_mailer_base.step](file://./exports/ddr4_mailer_base.step), [ddr4_mailer_base.stl](file://./exports/ddr4_mailer_base.stl) (`41,966.5 mm³`, `147.00 × 30.00 × 27.00 mm`)
+  - [ddr4_mailer_lid.step](file://./exports/ddr4_mailer_lid.step), [ddr4_mailer_lid.stl](file://./exports/ddr4_mailer_lid.stl) (`42,946.1 mm³`, `147.00 × 37.20 × 41.50 mm`, exported upside-down for support-free printing)
+  - [ddr4_mailer_assembled.step](file://./exports/ddr4_mailer_assembled.step)
+- **Assembly & Docs**: [assembly.json](file://./assembly.json), [README.md](file://./README.md)
+- **Verification**: [verify_mailer.py](file://./verify/verify_mailer.py)
+
+### Supported Envelope & Key Design Decisions
+- **Supported DDR4 Envelope**: Up to **135.5 × 42.5 × 8.0 mm** bare/heatsinked modules inside **141.0 × 10.8 × 46.6 mm** per-slot cavities (leaving room for individual ESD shielding bags and thin paper/foam shims).
+  - **Fits**: JEDEC bare DDR4 (`133.35 × 31.25 × 4.0 mm`), Corsair Vengeance LPX (`135.0 × 33.5 × 7.0 mm`), Kingston FURY Beast (`133.35 × 34.1 × 7.2 mm`), Crucial Ballistix (`133.35 × 39.17 × 7.2 mm`), G.Skill Ripjaws V (`133.35 × 42.0 × 7.0 mm`).
+  - **Excluded**: Tall RGB/enthusiast heatsinks such as Corsair Vengeance RGB Pro (`~51 mm` height), Dominator Platinum (`~55 mm`), and Trident Z (`~44 mm`) to keep the outer box compact (`147.00 × 37.20 × 54.50 mm` assembled).
+- **Gold-Contact Protection**: Each slot rests the module ends on **9.0 mm** raised end pedestals (`Z = 5.40 mm`) over a **123.0 mm** central recessed channel (`Z = 2.40 mm`), giving a **3.00 mm** gap under the gold edge connector.
+- **Lid Retention & Reopening**: A **5.0 mm** stepped perimeter alignment tongue (`0.200 mm` radial clearance) prevents lateral shear, secured by two centered compliant side snap-latches (`24.0 mm` wide, `1.6 mm` thick, `18.0 mm` cantilever, `1.0 mm` snap bead, `0.74%` bending strain) with flared finger-lift lips. When opened, modules protrude **+9.65 mm to +20.90 mm** above the base rim for easy finger extraction.
+- **FillaPrint Labels**: Debossed **0.60 mm** deep using [Fillaprint-Regular.ttf](file://./assets/fillaprint/Fillaprint-Regular.ttf) (`2x DDR4` at `8.40 mm` cap height and `MAX 135x42.5x8` at `5.95 mm` cap height on the lid top; `ESD BAG + FOAM` at `5.95 mm` cap height on the base bottom).
+
+### Measured Checks & Physical-Test Limitations
+- [verify_mailer.py](file://./verify/verify_mailer.py) passed all checks after the final build: both STLs are valid binary watertight meshes, `0.0000 mm` assembled penetration, `0.200 mm` tongue radial clearance, `3.00 mm` gold-contact relief gap, all 6 supported module profiles fit with `+4.10 mm` to `+15.35 mm` top Z clearance, and the excluded 51.0 mm RGB profile is rejected (`-4.40 mm`).
+- **Needs a physical test**: Snap-latch retention/release feel for your specific printer and filament flow, exact ESD bag fold bulk + foam compression in the `10.8 mm` slot, and first-layer bridging crispness of the `0.60 mm` debossed lid labels.
