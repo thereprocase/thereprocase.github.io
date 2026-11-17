@@ -1,0 +1,11 @@
+**Updated handover**
+
+Both review findings are fixed, re-measured, and all 53 checks pass (`out/checks.json`).
+
+**1. Stacking intersection — fixed.** Root cause: the divided M3 bin's divider ran up to the body top (z=14.0), inside the stacking throat (a stacked foot bottoms at 13.65 mm). The divider now stops 1.0 mm below the body top (z=13.0), keeping 0.65 mm nominal / 0.55 mm worst-case clearance to a stacked base while remaining far above any fill. Verified with manifold boolean intersections at the documented 13.65 mm offset: ordinary bin on the divided M3 bin = **0.0 mm³** (was 15.1), ordinary-on-ordinary = **0.0 mm³**. Compartment separation is unaffected (fills ≤ ~5 mm vs 7.25 mm divider height).
+
+**2. Hidden labels — fixed.** Front-face labels on rear rows are geometrically occluded at 0° and 45° elevation. Every bin now carries the same permanent debossed marking twice: the original front-face label (cap 6.5 mm), plus a new label on the **inner back wall** at the top of the wall (cap 6.0 mm on 2u, 6.5 mm on 3u — both ≥ the FillaPrint two-bead minimum, 0.6 mm deep). The back wall is the one surface sightlines reach over the row in front; a ray test confirms **all 13 previously hidden bins are readable at 45° elevation** (10/10 sample rays escape per bin). The divided bin shows hex+M3 / ring+M3 on its two back walls. Groove renders verified crisp and unmirrored.
+
+**Kept intact:** base seating (0.15–0.25 mm clearance), neighbour clearance and withdrawal, base profile vs spec, magnet/screw holes, capacity (worst fill 52%), watertight binary STLs, AP214 STEPs, `assembly.json` (19 parts, mm transforms, unchanged layout), and the front labels.
+
+**Remaining limitations (also in README):** at exactly 0° (eye-level) elevation a rear row's markings are hidden by the 18.4 mm row in front — physically unavoidable in a dense 42 mm grid of equal-height bins; read from above-front, or pull a bin forward to use its front label. In the fullest 2u bins (e.g. M3×20 completely full) the fill top can touch the rear label's bottom edge. Labels stay hidden while stacked (transport mode). Physical fit tests still advised before printing all 19 parts: printer seat/stack tolerance (tunable via `LIP_CLEAR`/`OPEN_CLEAR`), hardware variance, magnet fit, label contrast, plate flatness.

@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/baseplate_5x4.stl",
+    "sha256": "0972c458e5e10ba22119e51f521c9d479b42cada2416d4317374e0be2dcaf7d3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 19030,
+    "triangles": 38056
+  }
+]

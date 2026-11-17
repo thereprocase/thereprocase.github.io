@@ -1,0 +1,133 @@
+{
+  "title": "Fable Gridfinity Corrected",
+  "subtitle": "Assembled starter layout",
+  "caption": "Assembled starter layout \u00b7 actual submitted transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 21864,
+      "triangles": 43724,
+      "edges": 13464,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin.gz",
+      "vertices": 6350,
+      "triangles": 12696,
+      "edges": 5103,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-2.bin.gz",
+      "vertices": 6244,
+      "triangles": 12484,
+      "edges": 4987,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-3.bin.gz",
+      "vertices": 7226,
+      "triangles": 14448,
+      "edges": 5994,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-4.bin.gz",
+      "vertices": 7704,
+      "triangles": 15404,
+      "edges": 6477,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-5.bin.gz",
+      "vertices": 6320,
+      "triangles": 12636,
+      "edges": 5070,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-6.bin.gz",
+      "vertices": 6798,
+      "triangles": 13592,
+      "edges": 5553,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-7.bin.gz",
+      "vertices": 6582,
+      "triangles": 13160,
+      "edges": 5334,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-8.bin.gz",
+      "vertices": 6080,
+      "triangles": 12156,
+      "edges": 4819,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-9.bin.gz",
+      "vertices": 6828,
+      "triangles": 13652,
+      "edges": 5581,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    },
+    {
+      "file": "part-10.bin.gz",
+      "vertices": 6224,
+      "triangles": 12444,
+      "edges": 4965,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}

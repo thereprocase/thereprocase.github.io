@@ -1,0 +1,450 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/baseplate_5x4.stl",
+    "sha256": "0972c458e5e10ba22119e51f521c9d479b42cada2416d4317374e0be2dcaf7d3",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 19030,
+    "triangles": 38056
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m2_nut_wsh.stl",
+    "sha256": "c7f9197df5148cbda5585a5b97260f417f75b3d9e02aba0369787f6a886559f8",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3878,
+    "triangles": 7752
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m2_6_8_10.stl",
+    "sha256": "ea85c07efa89322fd87d9dd2a0bf9fda747a6d979e1caf32b433adf76ac29e5d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5674,
+    "triangles": 11344
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m2_12_16_20.stl",
+    "sha256": "f0ff02b4fca579939624f21de06ea09536d1b434f73808d08935fe30f02f2c7c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        168.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        147.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6152,
+    "triangles": 12300
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m25_nut_wsh.stl",
+    "sha256": "da0deed9a6380f3103d7ebef803cbb2ee34e2089e7dc71e49751a198ebf0bdf4",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4462,
+    "triangles": 8920
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m25_6_8_10.stl",
+    "sha256": "4ce6f90f896b10eb0a8ea376ae8a64174998b6ef903fbc3ca3a59c66cfdd2fbd",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6550,
+    "triangles": 13096
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m25_12_16_20.stl",
+    "sha256": "2f4628a7bcc956433a8f117759dbc506c23194fff0231bfc90b36237616a8bfd",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        168.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7028,
+    "triangles": 14052
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m3_nut_wsh.stl",
+    "sha256": "702dccb74ce63c5b4ab889a3a1ccc6500a01df5b6a87d6b48b45ea3f70f5bf3f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3858,
+    "triangles": 7712
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m3_6_8_10.stl",
+    "sha256": "4c66b57cf8952e71875eb0f572c092271881cdb28eb3cf852dabbc401dbcf18e",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5644,
+    "triangles": 11284
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m3_12_16_20.stl",
+    "sha256": "eebcbed5547816e186356dd3e11da116214c173a5c56f2af2ecdbffe3156a5ad",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        168.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        63.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6122,
+    "triangles": 12240
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m4_nut_wsh.stl",
+    "sha256": "7fa2b4fb825df2950470bf6269adb0791083efa91556e2db037584494ca58245",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5272,
+    "triangles": 10540
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m4_8_10_12.stl",
+    "sha256": "6c48105ebcab0f7e858b5290baf1b54741530e27a14c2df4fabdf380281aa4e4",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 5608,
+    "triangles": 11212
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m4_16_20.stl",
+    "sha256": "a9bde20480faa71466c09082d23c60f77a4b7320b457eb1de06c037b8bb30d4a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        168.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -1.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4824,
+    "triangles": 9644
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/hydrogen-gridfinity-corrected/bin_m4_stack_lck.stl",
+    "sha256": "b14275ba9aea30c671628fd0d87828688e7cc769c87f5744c0c30ffe39d20406",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -29.2
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        21.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3764,
+    "triangles": 7524
+  }
+]

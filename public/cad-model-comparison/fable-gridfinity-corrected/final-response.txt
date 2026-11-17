@@ -1,0 +1,25 @@
+Revision complete. The label-visibility finding is fixed by geometry and now measured on the full assembly; seating, play, stacking, neighbour clearance and fingertip access were re-run and are unchanged.
+
+**What changed**
+
+- Each label moved from the front edge of its compartment to the back. It is now the 35° sloped front face of a solid wedge divider, so the text stands 23 to 79 mm behind the bin's front rim instead of 1 to 7 mm.
+- The 45° face became 35° and the two-line pitch dropped to the font's 18 w, lifting the lower WASHER/NUT line by 2.4 mm. The nut/washer bins give the front compartment 3 mm more length so that line clears the rim earlier.
+- The wedge against the back wall stops 2 mm short of it, because the stacking lip's inward tip otherwise shadowed that label even from overhead.
+- Nothing overhangs a compartment any more. The price is floor length: 18.8 mm per screw compartment, 28.5 and 22.5 mm for washers and nuts, all still above the 16 mm fingertip test.
+
+**Visibility re-check against the finding** (new `label_visibility_assembly` in `checks/checks_mesh.json`): all 34 text lines sampled at 15 points each, with all 11 placed parts as occluders, at 15° to 90° elevation and 0° and ±20° azimuth.
+
+| View | Worst line clear from | Typical |
+|---|---|---|
+| straight ahead | 25° | screw labels 15 to 25° |
+| 20° off-axis | 35° (lower WASHER lines) | 15 to 30° |
+
+The previously blocked lower WASHER line of bin_M4_nut_washer now clears from 25° straight ahead.
+
+**Checks**: 37 CAD plus 34 mesh, `all_pass: true`. Deliverables regenerated in place: `src/` (generator, mesh checks, new `visibility.py`), 12 STEP and 12 binary STL files, `assembly.json` with unchanged transforms, `checks/checks.json`, README.
+
+**Remaining limitations, stated plainly**
+
+- Below 25° elevation the front rims hide the lower text line of the nut/washer bins. From 20° to one side, the wide WASHER lines need 35° because the bin's own side wall intrudes.
+- Parts pushed hard ride onto the 35° label ramp, and the text grooves (0.9 wide, 0.6 deep) are in that path. Small M2 washers lodging there is listed as a fit test.
+- Wedges are solid in the CAD (46 cm³ per bin); slicer infill keeps the printed weight around 20 g. Nothing has been printed, so the fit-test list in the README still stands.

@@ -1,0 +1,27 @@
+The Gridfinity fastener organizer has been revised and re-verified against all three review findings.
+
+### Revisions Made
+1. **Zero-Intersection Stacking (`0.000000 mm³`)**:
+   - Replaced multi-wire `make_loft` in the base pad, baseplate socket, and stacking lip with symmetric `extrude` + `chamfer` geometry, lowered compartment divider tops to `nom_h - 1.4 mm` (`26.6 mm`), clamped the label-shelf gusset above `z = 6.0 mm` (so it cannot protrude into the `0–5.0 mm` base pad of 3u bins), and tuned `LIP_RISER_H = 1.15 mm` / `LIP_UPPER_H = 2.30 mm` with `STACK_Z_OFFSET = 28.0 mm` (`z = 29.2 mm` in `assembly.json`).
+2. **Unobstructed Stacked-Host Labels**:
+   - Moved the 3u stacked overflow bin (`bin_m4_stack_lck`: `M4 LCK` | `M4 SPR`) onto front-row host `bin_m4_nut_wsh` at `(0, 0)` and added a `0.6 mm` recessed exterior front-face label (`M4` / `NUT WSH` at `8.0 mm` em) flush within the `41.5 mm` envelope, so the lower bin remains readable from the front while stacked.
+3. **FillaPrint Label Sizing (`≥ 8.0 mm` em)**:
+   - Increased all bin labels in [gridfinity_organizer.py](file://./cad/gridfinity_organizer.py) to `8.0–8.5 mm` em (`5.60 mm` cap height at `8.0 mm` em) using [Fillaprint-Regular.ttf](file://./assets/fillaprint/Fillaprint-Regular.ttf) on a `13.8 mm` deep recessed top-back shelf.
+
+### Measured Verification Results
+- **Mesh & File Integrity** ([verify.py](file://./verify.py)): All 14 STEP files (`exports/step/*.step`) and binary STLs (`exports/stl/*.stl`) generated; all 14 STL meshes are `watertight=True` with positive volume.
+- **Stacking Interference**:
+  - `verify.py`: `0` penetrating samples (`max_penetration = 0.000 mm`) on the submitted pose (`bin_m4_stack_lck` on `bin_m4_nut_wsh` at `z = 29.2 mm`) and `PASS` on all 9 tested grid placements (`1×1` and `2×1` left/right).
+  - Exact STEP B-rep `intersect()`: `B-rep solids=0, intersection vol=0.000000 mm3` across all 9 tested placements (`bin_m4_nut_wsh`, `bin_m3_nut_wsh`, `bin_m2_nut_wsh`, `bin_m4_8_10_12`, `bin_m3_6_8_10`, `bin_m4_16_20`).
+- **Clearances, Labels & Capacity**: Minimum adjacent-bin XY gap = `0.500 mm`; all 13 bins use `8.0–8.5 mm` em FillaPrint text; worst-case compartment fills are `76.3%` (`M4×20`, 20 pcs), `60.7%` (`M3×20`, 20 pcs), `77.6%` (`M4` nuts, 30 pcs), and `23.9%` (`M4` washers, 30 pcs).
+
+### Remaining Limitations & Physical Fit Test
+- **FDM Print Tolerances**: Real-world elephant-foot and XY shrinkage on the `0.25 mm` baseplate socket clearance and `0.15–0.30 mm` stacking lip clearances have not been physically printed yet.
+- **Vertical Front-Face Label**: The `0.6 mm` recessed `M4 / NUT WSH` label on `bin_m4_nut_wsh` prints vertically on the front wall rather than flat in XY like the top-back shelves, so its edge sharpness should be checked on a test print.
+
+### Deliverables
+- Source: [gridfinity_organizer.py](file://./cad/gridfinity_organizer.py)
+- Assembly: [assembly.json](file://./assembly.json)
+- Checks: [verify.py](file://./verify.py)
+- Docs: [README.md](file://./README.md)
+- CAD Exports: `exports/step/*.step` and `exports/stl/*.stl` (14 parts)

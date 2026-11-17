@@ -1,0 +1,386 @@
+[
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/baseplate_5x4.stl",
+    "sha256": "70fd08ecbc552c593cf4a12b5e57a250edc880e565d152545b9c05d6a8effd45",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        105.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        84.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 21864,
+    "triangles": 43724
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M2_short.stl",
+    "sha256": "5e0eebd3ea46ebb12e8e694af73f2f26faac48dfc9eeef7106b416a93a7fbec0",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        41.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6350,
+    "triangles": 12696
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M2_nut_washer.stl",
+    "sha256": "496a9ace7a743811c015aaf65ad8efe723e040912970629c666ff39308494d90",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        41.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6244,
+    "triangles": 12484
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M2.5_short.stl",
+    "sha256": "7e351f193a93bdfb7a3275033072e6088867ddc93b449e43780071aaef35ce85",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7226,
+    "triangles": 14448
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M2.5_long.stl",
+    "sha256": "2e77c9028993468a107b6c9cda1a7a2c4bc7c9a6115d20729a00a275783435a1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7704,
+    "triangles": 15404
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M3_short.stl",
+    "sha256": "2be96510d7110191248529558c70ab59893a5ee0cf458177ade3d1837a39a412",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6320,
+    "triangles": 12636
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M3_long.stl",
+    "sha256": "76699c33356fb30ef0f89a3fa4b1b22a5d6a625764e3480d4e4a7fc03268d0db",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6798,
+    "triangles": 13592
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M4_long.stl",
+    "sha256": "87cb4dd298a0067534c58a2a14e00b1c5760b9f33cdf7e98683ae110d0051c13",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6582,
+    "triangles": 13160
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M4_nut_washer.stl",
+    "sha256": "ff728b803a07f961c16657895066bfdbb0cde7279b52ffade1c6d643352dca5f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        221.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6080,
+    "triangles": 12156
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M2.5_nut_washer.stl",
+    "sha256": "b65c79d81d3a48095da771b63f599df6c68aa953e50938c5a174659e4aeb4339",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        317.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6828,
+    "triangles": 13652
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/bin_M3_nut_washer.stl",
+    "sha256": "5467709bb688cddb78564d76d20591923202819b0940bcae20f86f25dd652ecb",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        317.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6224,
+    "triangles": 12444
+  },
+  {
+    "mesh": "./lab/cad-design-comparison-20261103/site/fable-gridfinity-corrected/baseplate_ext_1x4.stl",
+    "sha256": "40d3114a0205e5a3a1a1934a04e16ea7658ea7175316fcac2c04528435fd6e5f",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        128.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        359.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 4584,
+    "triangles": 9164
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "title": "Hydrogen Gridfinity Corrected",
+  "subtitle": "Assembled starter layout",
+  "caption": "Assembled starter layout \u00b7 actual submitted transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin.gz",
+      "vertices": 19030,
+      "triangles": 38056,
+      "edges": 10675,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin.gz",
+      "vertices": 3878,
+      "triangles": 7752,
+      "edges": 3382,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin.gz",
+      "vertices": 5674,
+      "triangles": 11344,
+      "edges": 4785,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin.gz",
+      "vertices": 6152,
+      "triangles": 12300,
+      "edges": 5268,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin.gz",
+      "vertices": 4462,
+      "triangles": 8920,
+      "edges": 3976,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin.gz",
+      "vertices": 6550,
+      "triangles": 13096,
+      "edges": 5676,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin.gz",
+      "vertices": 7028,
+      "triangles": 14052,
+      "edges": 6159,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin.gz",
+      "vertices": 3858,
+      "triangles": 7712,
+      "edges": 3360,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-8.bin.gz",
+      "vertices": 5644,
+      "triangles": 11284,
+      "edges": 4752,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-9.bin.gz",
+      "vertices": 6122,
+      "triangles": 12240,
+      "edges": 5235,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-10.bin.gz",
+      "vertices": 5272,
+      "triangles": 10540,
+      "edges": 4802,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-11.bin.gz",
+      "vertices": 5608,
+      "triangles": 11212,
+      "edges": 4715,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-12.bin.gz",
+      "vertices": 4824,
+      "triangles": 9644,
+      "edges": 3908,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-13.bin.gz",
+      "vertices": 3764,
+      "triangles": 7524,
+      "edges": 3263,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}
