@@ -1,0 +1,243 @@
+{
+  "title": "Astra62 Gridfinity",
+  "subtitle": "layout view",
+  "caption": "All parts in submitted print orientations \u00b7 illustrative spacing, unsliced",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 41752,
+      "triangles": 83500,
+      "edges": 19352,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 6478,
+      "triangles": 12952,
+      "edges": 4023,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-2.bin",
+      "vertices": 6408,
+      "triangles": 12812,
+      "edges": 3955,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-3.bin",
+      "vertices": 6570,
+      "triangles": 13136,
+      "edges": 4116,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-4.bin",
+      "vertices": 7061,
+      "triangles": 14118,
+      "edges": 3781,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-5.bin",
+      "vertices": 7503,
+      "triangles": 15002,
+      "edges": 4229,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-6.bin",
+      "vertices": 6770,
+      "triangles": 13536,
+      "edges": 4320,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-7.bin",
+      "vertices": 6862,
+      "triangles": 13720,
+      "edges": 4413,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-8.bin",
+      "vertices": 6950,
+      "triangles": 13896,
+      "edges": 4502,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-9.bin",
+      "vertices": 7353,
+      "triangles": 14702,
+      "edges": 4078,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-10.bin",
+      "vertices": 7795,
+      "triangles": 15586,
+      "edges": 4526,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-11.bin",
+      "vertices": 6398,
+      "triangles": 12792,
+      "edges": 3944,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-12.bin",
+      "vertices": 6648,
+      "triangles": 13292,
+      "edges": 4194,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-13.bin",
+      "vertices": 6638,
+      "triangles": 13272,
+      "edges": 4185,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-14.bin",
+      "vertices": 7051,
+      "triangles": 14098,
+      "edges": 3770,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-15.bin",
+      "vertices": 7493,
+      "triangles": 14982,
+      "edges": 4218,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-16.bin",
+      "vertices": 6488,
+      "triangles": 12972,
+      "edges": 4032,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-17.bin",
+      "vertices": 6566,
+      "triangles": 13128,
+      "edges": 4112,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-18.bin",
+      "vertices": 6546,
+      "triangles": 13088,
+      "edges": 4092,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-19.bin",
+      "vertices": 6979,
+      "triangles": 13954,
+      "edges": 3697,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-20.bin",
+      "vertices": 7421,
+      "triangles": 14838,
+      "edges": 4145,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    }
+  ]
+}

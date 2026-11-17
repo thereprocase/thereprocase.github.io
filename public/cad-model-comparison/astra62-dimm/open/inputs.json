@@ -1,0 +1,34 @@
+[
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-dimm/tray.stl",
+    "sha256": "05d33c40d7f655dbf348973a0b6a0cb8ed3226ae585bf9912aa37cef0d4e9dec",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2774,
+    "triangles": 5544
+  }
+]

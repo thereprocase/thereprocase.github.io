@@ -1,0 +1,674 @@
+[
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/base.stl",
+    "sha256": "ee259e6b34f8c4a73f9b7da1e6968d9483a629d8e1e7bf1e8ee9719237c1527d",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 41752,
+    "triangles": 83500
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2-screw-6.stl",
+    "sha256": "dbf41211c387a9692abc405d7053c970c310b5060563ed7e694fe36555cd0284",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        242.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6478,
+    "triangles": 12952
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2-screw-8.stl",
+    "sha256": "60f007252314ccac4e2dcefb22c49951941bf5d2a43678398603fba59ffebcda",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        296.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6408,
+    "triangles": 12812
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2-screw-10.stl",
+    "sha256": "2c1f7b1f646017c455aedcbde027e3ac3346c4dc4bff7e98a35867324af62858",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6570,
+    "triangles": 13136
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2-nut.stl",
+    "sha256": "85a9ba8fb25659c15043ce9f97886022c4d080bfc67a59ad08aa930577dd33bf",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7061,
+    "triangles": 14118
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2-washer.stl",
+    "sha256": "53ee02b7fba0437d1d5b83dcc98ee5be9e6c66addeeb4171e437d274c1c4c284",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7503,
+    "triangles": 15002
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2p5-screw-6.stl",
+    "sha256": "cd5370b4f16f635bc168f0bed868d1cb318bd8c0aeb1b1d8ffd517203329a029",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6770,
+    "triangles": 13536
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2p5-screw-10.stl",
+    "sha256": "9559b704657a6532a676e8942097d9c3d789b86e43ce479ee82738ec2f2375a1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6862,
+    "triangles": 13720
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2p5-screw-12.stl",
+    "sha256": "2cf1f5ca2507b9becba4e1038671da8293ee059edfe9518014f771bba8135eb1",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        200.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6950,
+    "triangles": 13896
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2p5-nut.stl",
+    "sha256": "4df724be84d303f607e41b9e668ee5a69c956e40f6e831709c3a4c3d38b45b08",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7353,
+    "triangles": 14702
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m2p5-washer.stl",
+    "sha256": "52438049cd74a13a4eadaa19beca466b0bacbb95868ac7b42cbad20f94a6e4d5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7795,
+    "triangles": 15586
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m3-screw-8.stl",
+    "sha256": "c394cd33fc698424561a401935ad539f5dcf7320fd64ced9e66fbb9de0260c99",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6398,
+    "triangles": 12792
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m3-screw-12.stl",
+    "sha256": "5498203dec08ee4d32dcd52456daba7c9acb67b78fbd6ed20b2f264216726032",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6648,
+    "triangles": 13292
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m3-screw-16.stl",
+    "sha256": "a0422995e3f9dd346504009f6d2c12d2ad0638e51f5ee6a8a33c1b083a450596",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6638,
+    "triangles": 13272
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m3-nut.stl",
+    "sha256": "ba52a4d00ccbd0d6ef3252ce9de3cc099bb831cce3eff203b6fc4c8d93b60dd5",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        254.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7051,
+    "triangles": 14098
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m3-washer.stl",
+    "sha256": "8b6ad96c176146df91833c8156fa1a19a3350157626ebda76a01d3db9a58972c",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        20.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7493,
+    "triangles": 14982
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m4-screw-10.stl",
+    "sha256": "2948193410d0e0dec179527ac64bd65436b74c222af4cdf503ab9d286b317a73",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        74.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6488,
+    "triangles": 12972
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m4-screw-16.stl",
+    "sha256": "f84a2e57def4ad061cbeda5ec9adc6eb818542f0f6298f96422d1bb17464d36a",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        127.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6566,
+    "triangles": 13128
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m4-screw-20.stl",
+    "sha256": "24ebf90c491611ac2f8d2a0f06957dcc675328bba6de0b7a2317396703865f01",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        181.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6546,
+    "triangles": 13088
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m4-nut.stl",
+    "sha256": "5d3268db4850905ece4cd7a524f83e21b151bf6ac05fa15d3a8bc6b36eeaafcc",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        234.75
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 6979,
+    "triangles": 13954
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-gridfinity/m4-washer.stl",
+    "sha256": "1bb02575fe54c55656c0d34eb14c9cafe161e2a001298107080371d4a62ad397",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        288.25
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        307.75
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 7421,
+    "triangles": 14838
+  }
+]

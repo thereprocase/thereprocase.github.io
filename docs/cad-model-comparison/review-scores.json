@@ -535,6 +535,36 @@
       "cad_acceptable": false,
       "basis": "Seats clear; every stack intersects its host and hides nut/washer labels; text below two-bead size.",
       "review_status": "Needs stacking revision"
+    },
+    "astra62-dimm": {
+      "categories": {
+        "function": 8,
+        "printability": 8,
+        "labels_handling": 8,
+        "completeness": 9
+      },
+      "quality": 8.15,
+      "api_cost_usd": 1.99,
+      "cost_score": 7.007232,
+      "value": 7.750031,
+      "cad_acceptable": true,
+      "basis": "Verified closed clearance, compliant side-latch, 8 mm contact relief, and 7.0 mm FillaPrint text; tight 0.60 mm lid gap.",
+      "review_status": "Reviewed prototype"
+    },
+    "astra62-gridfinity": {
+      "categories": {
+        "function": 9,
+        "printability": 8,
+        "labels_handling": 9,
+        "completeness": 9
+      },
+      "quality": 8.75,
+      "api_cost_usd": 3.66045,
+      "cost_score": 6.127979,
+      "value": 7.832293,
+      "cad_acceptable": true,
+      "basis": "All 21 STEP/STL pairs pass seating, stacking, 30 deg label visibility, and capacity checks.",
+      "review_status": "Reviewed prototype"
     }
   }
 }

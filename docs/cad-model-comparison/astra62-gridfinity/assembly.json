@@ -1,0 +1,798 @@
+{
+  "units": "mm",
+  "axes": "+X right, +Y rear, +Z up; front is Y=0",
+  "transform_convention": "row-major 4x4, world = matrix @ local column vector",
+  "parts": [
+    {
+      "id": "base",
+      "step": "parts/base.step",
+      "stl": "parts/base.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2-screw-6",
+      "step": "parts/m2-screw-6.step",
+      "stl": "parts/m2-screw-6.stl",
+      "label": "M2\u00d76",
+      "kind": "screw",
+      "diameter": 2,
+      "length": 6,
+      "height_units": 5,
+      "row": 0,
+      "column": 0,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2-screw-8",
+      "step": "parts/m2-screw-8.step",
+      "stl": "parts/m2-screw-8.stl",
+      "label": "M2\u00d78",
+      "kind": "screw",
+      "diameter": 2,
+      "length": 8,
+      "height_units": 5,
+      "row": 0,
+      "column": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2-screw-10",
+      "step": "parts/m2-screw-10.step",
+      "stl": "parts/m2-screw-10.stl",
+      "label": "M2\u00d710",
+      "kind": "screw",
+      "diameter": 2,
+      "length": 10,
+      "height_units": 5,
+      "row": 0,
+      "column": 2,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2-nut",
+      "step": "parts/m2-nut.step",
+      "stl": "parts/m2-nut.stl",
+      "label": "M2 NUT",
+      "kind": "nut",
+      "diameter": 2,
+      "length": null,
+      "height_units": 3,
+      "row": 0,
+      "column": 3,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2-washer",
+      "step": "parts/m2-washer.step",
+      "stl": "parts/m2-washer.stl",
+      "label": "M2 WASH",
+      "kind": "washer",
+      "diameter": 2,
+      "length": null,
+      "height_units": 3,
+      "row": 0,
+      "column": 4,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          21.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2p5-screw-6",
+      "step": "parts/m2p5-screw-6.step",
+      "stl": "parts/m2p5-screw-6.stl",
+      "label": "M2.5\u00d76",
+      "kind": "screw",
+      "diameter": 2.5,
+      "length": 6,
+      "height_units": 5,
+      "row": 1,
+      "column": 0,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2p5-screw-10",
+      "step": "parts/m2p5-screw-10.step",
+      "stl": "parts/m2p5-screw-10.stl",
+      "label": "M2.5\u00d710",
+      "kind": "screw",
+      "diameter": 2.5,
+      "length": 10,
+      "height_units": 5,
+      "row": 1,
+      "column": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2p5-screw-12",
+      "step": "parts/m2p5-screw-12.step",
+      "stl": "parts/m2p5-screw-12.stl",
+      "label": "M2.5\u00d712",
+      "kind": "screw",
+      "diameter": 2.5,
+      "length": 12,
+      "height_units": 5,
+      "row": 1,
+      "column": 2,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2p5-nut",
+      "step": "parts/m2p5-nut.step",
+      "stl": "parts/m2p5-nut.stl",
+      "label": "M2.5 NUT",
+      "kind": "nut",
+      "diameter": 2.5,
+      "length": null,
+      "height_units": 3,
+      "row": 1,
+      "column": 3,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m2p5-washer",
+      "step": "parts/m2p5-washer.step",
+      "stl": "parts/m2p5-washer.stl",
+      "label": "M2.5 WASH",
+      "kind": "washer",
+      "diameter": 2.5,
+      "length": null,
+      "height_units": 3,
+      "row": 1,
+      "column": 4,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          63.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m3-screw-8",
+      "step": "parts/m3-screw-8.step",
+      "stl": "parts/m3-screw-8.stl",
+      "label": "M3\u00d78",
+      "kind": "screw",
+      "diameter": 3,
+      "length": 8,
+      "height_units": 5,
+      "row": 2,
+      "column": 0,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m3-screw-12",
+      "step": "parts/m3-screw-12.step",
+      "stl": "parts/m3-screw-12.stl",
+      "label": "M3\u00d712",
+      "kind": "screw",
+      "diameter": 3,
+      "length": 12,
+      "height_units": 5,
+      "row": 2,
+      "column": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m3-screw-16",
+      "step": "parts/m3-screw-16.step",
+      "stl": "parts/m3-screw-16.stl",
+      "label": "M3\u00d716",
+      "kind": "screw",
+      "diameter": 3,
+      "length": 16,
+      "height_units": 5,
+      "row": 2,
+      "column": 2,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m3-nut",
+      "step": "parts/m3-nut.step",
+      "stl": "parts/m3-nut.stl",
+      "label": "M3 NUT",
+      "kind": "nut",
+      "diameter": 3,
+      "length": null,
+      "height_units": 3,
+      "row": 2,
+      "column": 3,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m3-washer",
+      "step": "parts/m3-washer.step",
+      "stl": "parts/m3-washer.stl",
+      "label": "M3 WASH",
+      "kind": "washer",
+      "diameter": 3,
+      "length": null,
+      "height_units": 3,
+      "row": 2,
+      "column": 4,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          105.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m4-screw-10",
+      "step": "parts/m4-screw-10.step",
+      "stl": "parts/m4-screw-10.stl",
+      "label": "M4\u00d710",
+      "kind": "screw",
+      "diameter": 4,
+      "length": 10,
+      "height_units": 5,
+      "row": 3,
+      "column": 0,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          21.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m4-screw-16",
+      "step": "parts/m4-screw-16.step",
+      "stl": "parts/m4-screw-16.stl",
+      "label": "M4\u00d716",
+      "kind": "screw",
+      "diameter": 4,
+      "length": 16,
+      "height_units": 5,
+      "row": 3,
+      "column": 1,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          63.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m4-screw-20",
+      "step": "parts/m4-screw-20.step",
+      "stl": "parts/m4-screw-20.stl",
+      "label": "M4\u00d720",
+      "kind": "screw",
+      "diameter": 4,
+      "length": 20,
+      "height_units": 5,
+      "row": 3,
+      "column": 2,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          105.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m4-nut",
+      "step": "parts/m4-nut.step",
+      "stl": "parts/m4-nut.stl",
+      "label": "M4 NUT",
+      "kind": "nut",
+      "diameter": 4,
+      "length": null,
+      "height_units": 3,
+      "row": 3,
+      "column": 3,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          147.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "m4-washer",
+      "step": "parts/m4-washer.step",
+      "stl": "parts/m4-washer.stl",
+      "label": "M4 WASH",
+      "kind": "washer",
+      "diameter": 4,
+      "length": null,
+      "height_units": 3,
+      "row": 3,
+      "column": 4,
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          189.0
+        ],
+        [
+          0,
+          1,
+          0,
+          147.0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ]
+}

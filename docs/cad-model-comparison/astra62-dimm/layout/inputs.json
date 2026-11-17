@@ -1,0 +1,66 @@
+[
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-dimm/tray.stl",
+    "sha256": "05d33c40d7f655dbf348973a0b6a0cb8ed3226ae585bf9912aa37cef0d4e9dec",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        75.80000305175781
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        -4.385380947269368e-15
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        54.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 2774,
+    "triangles": 5544
+  },
+  {
+    "mesh": "/home/repro/lab/cad-design-comparison-20261103/render-staging/astra62-dimm/lid.stl",
+    "sha256": "b9eac9c0086719d81ba249e5136ce0767903255392852d9bb306d435adb088ef",
+    "transform": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        235.2800064086914
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        51.599998474121094
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertices": 3890,
+    "triangles": 7776
+  }
+]

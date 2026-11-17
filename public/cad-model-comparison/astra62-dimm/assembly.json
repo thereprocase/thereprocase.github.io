@@ -1,0 +1,69 @@
+{
+  "units": "mm",
+  "state": "closed, latch relaxed",
+  "convention": "row-major matrices multiplying local homogeneous column vectors",
+  "parts": [
+    {
+      "name": "tray",
+      "step": "parts/tray.step",
+      "stl": "parts/tray.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "lid",
+      "step": "parts/lid.step",
+      "stl": "parts/lid.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          17.0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ]
+}

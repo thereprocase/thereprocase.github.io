@@ -1,0 +1,34 @@
+{
+  "title": "Astra62 Dimm",
+  "subtitle": "closed view",
+  "caption": "Closed assembly \u00b7 actual assembled transforms",
+  "camera": {
+    "yaw": -1.05,
+    "pitch": 0.87,
+    "zoom": 1.05
+  },
+  "parts": [
+    {
+      "file": "part-0.bin",
+      "vertices": 2774,
+      "triangles": 5544,
+      "edges": 2488,
+      "color": [
+        0.36,
+        0.64,
+        0.69
+      ]
+    },
+    {
+      "file": "part-1.bin",
+      "vertices": 3890,
+      "triangles": 7776,
+      "edges": 3968,
+      "color": [
+        0.98,
+        0.63,
+        0.28
+      ]
+    }
+  ]
+}
