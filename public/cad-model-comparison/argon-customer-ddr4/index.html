@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DDR4 mailer from a customer brief | CAD model comparison</title>
+  <link rel="stylesheet" href="../gridline/gridline.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; background:#c6c6c6; color:#181818; font: 16px/1.55 "IBM Plex Sans",system-ui,sans-serif; }
+    main { max-width:1280px; margin:auto; padding:clamp(12px,2.3vw,28px); }
+    nav { margin-bottom:12px; }
+    header, section { margin:0 0 18px; border:1px solid #666; background:#fff; padding:clamp(14px,2vw,24px); }
+    h1 { margin:clamp(-24px,-2vw,-14px) clamp(-24px,-2vw,-14px) 14px; padding:14px clamp(14px,2vw,24px); background:#0000a8; color:#fff; font-size:clamp(24px,4vw,38px); line-height:1.18; }
+    h2 { margin:0 0 8px; font-size:22px; }
+    p, ul { max-width:82ch; }
+    a { color:#0000a8; text-underline-offset:2px; }
+    a:focus-visible { outline:2px solid #0000a8; outline-offset:3px; }
+    .views { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    figure { margin:0; border:1px solid #999; min-width:0; }
+    figure img { width:100%; height:auto; display:block; }
+    figcaption { padding:9px 12px; background:#f5f5f5; font-size:14px; }
+    blockquote { margin:0; padding:0 0 0 16px; border-left:3px solid #0000a8; max-width:76ch; }
+    blockquote p { margin:0 0 9px; }
+    blockquote p:last-child { margin-bottom:0; }
+    .physical { border-left:4px solid #a56500; }
+    @media(max-width:700px) { .views { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Site navigation"><a href="../">CAD model comparison</a></nav>
+    <header>
+      <h1>DDR4 mailer from a customer brief</h1>
+      <p>Gemini 4 Argon (Medium) in Antigravity CLI, November 19, 2026.</p>
+      <p>This supplemental run uses the customer brief below. The scored comparison uses a shared technical prompt.</p>
+    </header>
+    <section aria-labelledby="product-heading">
+      <h2 id="product-heading">Delivered design</h2>
+      <p>Argon designed a <strong>143 × 79 × 14.8 mm</strong> case with two slim desktop DDR4 bays side by side. The lid locates on the tray lip. Two bands of tape run through recessed channels to hold it closed. The design assumes that each board goes into its own shielding sleeve inside the printed case.</p>
+      <div class="views">
+
+        <figure><a href="closed.png"><img src="closed.png" width="1600" height="1000" alt="Closed CAD case with orange lid, teal base and two recessed tape channels"></a><figcaption>Closed case with two tape channels.</figcaption></figure>
+        <figure><a href="open.png"><img src="open.png" width="1600" height="1000" alt="Teal tray and upturned orange lid with two long module pockets and a central divider"></a><figcaption>Tray and lid turned open to show both module bays and the mating faces.</figcaption></figure>
+      </div>
+      <p><a href="cad-and-review.zip" download>Download CAD, meshes and review (ZIP)</a> · <a href="review.json">Measured checks (JSON)</a> · <a href="brief.txt">Brief (text)</a></p>
+    </section>
+    <section aria-labelledby="brief-heading">
+      <h2 id="brief-heading">Customer brief</h2>
+      <blockquote><p>Hey, it&#x27;s John Smith from engineering. I need to mail two DDR4 prototypes this afternoon. They&#x27;re the usual desktop RAM stick size and shape, but these two are really valuable to us. I need them to get there in one piece.</p><p>We&#x27;ve only got our regular mailers on hand, so whatever goes around them needs to stay pretty compact. The Bambu P1S is free this afternoon. Could you make me something I can print on it, pack up, and put in the mail today?</p><p>I&#x27;m tied up in the lab, so just use your judgment if there&#x27;s something I haven&#x27;t thought of. Send me the files and tell me how you&#x27;d pack it.</p></blockquote>
+      <p>John Smith is a pseudonym. The run instructions supplied the CAD environment and required source and exports. The model made the design decisions in one turn.</p>
+    </section>
+    <section aria-labelledby="review-heading">
+      <h2 id="review-heading">Independent review</h2>
+      <ul>
+        <li><strong>Closure.</strong> Re-imported STEP parts were valid single solids. The closed tray and lid had zero measured overlap, and all five sampled lid seating positions cleared.</li>
+        <li><strong>Fit and retention.</strong> Both bays passed the nominal shaped board gauge and shaped gauges expanded by up to 1 mm per face. A uniform 9 mm-thick gauge hit the edge rails in both bays. The centered bare reference also cleared at ±1.5 mm vertically. Check how the actual sleeves and padding limit motion.</li>
+        <li><strong>Print geometry.</strong> Both binary STLs were watertight single components. The nominal two-part layout occupies 143 × 169 mm, inside the P1S’s stated build envelope. The tape channels create 16 mm-wide bridge spans 0.6 mm above the bed in the submitted orientation. Validate their toolpaths and the print time in a slicer. <a href="https://cdn1.bambulab.com/documentation/quick-start-2024-01-17/Quick-Start-P1S_en.pdf">Bambu Lab P1S specifications</a></li>
+      </ul>
+    </section>
+    <section class="physical" aria-labelledby="physical-heading">
+      <h2 id="physical-heading">Physical checks still needed</h2>
+      <p>Check the actual sleeves and padding with a representative board. Verify the lid fit, movement inside the taped case, and retention after handling before using the design for valuable prototypes. The postal test also depends on the actual outer mailer.</p>
+    </section>
+  </main>
+</body>
+</html>

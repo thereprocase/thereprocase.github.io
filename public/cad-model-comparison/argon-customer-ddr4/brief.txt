@@ -1,0 +1,5 @@
+Hey, it's John Smith from engineering. I need to mail two DDR4 prototypes this afternoon. They're the usual desktop RAM stick size and shape, but these two are really valuable to us. I need them to get there in one piece.
+
+We've only got our regular mailers on hand, so whatever goes around them needs to stay pretty compact. The Bambu P1S is free this afternoon. Could you make me something I can print on it, pack up, and put in the mail today?
+
+I'm tied up in the lab, so just use your judgment if there's something I haven't thought of. Send me the files and tell me how you'd pack it.

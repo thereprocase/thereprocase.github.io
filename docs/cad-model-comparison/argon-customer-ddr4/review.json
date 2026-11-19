@@ -1,0 +1,234 @@
+{
+  "review_method": "Re-imported exported STEP, applied submitted closed transforms once, and recomputed B-rep intersections.",
+  "closed_size_mm": [
+    143.0,
+    79.0,
+    14.800000000000006
+  ],
+  "parts": {
+    "case_base": {
+      "valid": true,
+      "solid_count": 1,
+      "size_mm": [
+        143.0,
+        79.0,
+        9.6
+      ]
+    },
+    "case_lid": {
+      "valid": true,
+      "solid_count": 1,
+      "size_mm": [
+        143.0,
+        79.0,
+        7.4
+      ]
+    }
+  },
+  "closed_case_intersection_mm3": 0,
+  "lid_vertical_seating_samples": {
+    "0.25": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0
+  },
+  "bays": [
+    {
+      "center_xyz_mm": [
+        0.0,
+        -19.0,
+        7.4
+      ],
+      "nominal_bare_pcb": {
+        "base_mm3": 0,
+        "lid_mm3": 0
+      },
+      "wrapped_shape_gauges": [
+        {
+          "extra_each_face_mm": 0.15,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "extra_each_face_mm": 0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "extra_each_face_mm": 1.0,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        }
+      ],
+      "centered_full_rectangular_9mm_gauge": {
+        "base_mm3": 83.2596053,
+        "lid_mm3": 72.3996568
+      },
+      "bare_centered_vertical_play_samples": [
+        {
+          "delta_z_mm": -2,
+          "base_mm3": 15.7469254,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -1.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -1,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 1,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 1.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 2,
+          "base_mm3": 0,
+          "lid_mm3": 4.8869768
+        }
+      ]
+    },
+    {
+      "center_xyz_mm": [
+        0.0,
+        19.0,
+        7.4
+      ],
+      "nominal_bare_pcb": {
+        "base_mm3": 0,
+        "lid_mm3": 0
+      },
+      "wrapped_shape_gauges": [
+        {
+          "extra_each_face_mm": 0.15,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "extra_each_face_mm": 0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "extra_each_face_mm": 1.0,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        }
+      ],
+      "centered_full_rectangular_9mm_gauge": {
+        "base_mm3": 83.2596053,
+        "lid_mm3": 72.3996568
+      },
+      "bare_centered_vertical_play_samples": [
+        {
+          "delta_z_mm": -2,
+          "base_mm3": 15.7469254,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -1.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -1,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": -0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 0.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 1,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 1.5,
+          "base_mm3": 0,
+          "lid_mm3": 0
+        },
+        {
+          "delta_z_mm": 2,
+          "base_mm3": 0,
+          "lid_mm3": 4.8869768
+        }
+      ]
+    }
+  ],
+  "nominal_two_part_plate_extent_mm": [
+    143.0,
+    169.0,
+    9.6
+  ],
+  "plate_part_overlap_mm3": 0,
+  "checked_sha256": {
+    "case_base.step": "93482710cfb38f0bb01f2f4b1823a3ca51f2d5503776a23a3bf240cefe633c06",
+    "case_lid.step": "08675f5f03bac69b40a524306f813ee7f9bc8502012544036df110733a663beb",
+    "assembly_placement.json": "23bbee0eadc3e72800ef0e25e6da8c4fb84643e9be613d5a368bcefe3dd87759"
+  },
+  "stl_checks": {
+    "case_base.stl": {
+      "binary": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "components": 1,
+      "downward_horizontal_face_area_at_print_z_mm2": {
+        "0.6": 2312.216
+      }
+    },
+    "case_lid.stl": {
+      "binary": true,
+      "watertight": true,
+      "winding_consistent": true,
+      "components": 1,
+      "downward_horizontal_face_area_at_print_z_mm2": {
+        "0.6": 2312.216
+      }
+    }
+  },
+  "render_source_sha256": {
+    "case_base.stl": "6239e38ec7c0e920af0be676fba03d5bcd8d849df325824c926e6192166fdd0b",
+    "case_lid.stl": "18cd02c1a3b662a16126d3889108d5b05976024e0d6332e8c6c493932719b0ee"
+  },
+  "run": {
+    "model": "gemini-4-argon-medium",
+    "harness": "Antigravity CLI",
+    "brief": "customer brief",
+    "date": "2026-11-19",
+    "elapsed_seconds": 300
+  },
+  "limitations": [
+    "Board fit is a rigid gauge test with the outlined component placement. Actual dimensions, sleeve seams, and component layout can differ.",
+    "The centered bare reference clears at both -1.5 mm and +1.5 mm from its nominal resting plane.",
+    "Both printed parts have 16 mm-wide channels with downward-facing surfaces above the bed.",
+    "Tape retention, print settings and duration, ESD handling, fit with the actual wrapped modules, and loaded mailer durability have not been physically validated."
+  ]
+}
